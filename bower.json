@@ -1,0 +1,12 @@
+{
+  "name": "kawabunga",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib"
+  ],
+  "dependencies": {
+  
+  }
+}
