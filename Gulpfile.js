@@ -4,7 +4,8 @@ var webserver = require('gulp-webserver');
 var pixrem = require('gulp-pixrem');
 var autoprefixer = require('gulp-autoprefixer');
 var swig = require('gulp-swig');
-var runSequence = require('run-sequence')
+var runSequence = require('run-sequence');
+var del = require('del');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')

@@ -2,6 +2,7 @@
   "name": "compte-2015.xxx.fr-static",
   "private": true,
   "devDependencies": {
+    "del": "^1.1.1",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~3.0.1",
     "gulp-pixrem": "^0.2.3",
