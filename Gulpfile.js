@@ -2,7 +2,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var webserver = require('gulp-webserver');
 var pixrem = require('gulp-pixrem');
-var autoprefixer = require('gulp-autoprefixer')
+var autoprefixer = require('gulp-autoprefixer');
+var swig = require('gulp-swig');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
@@ -14,7 +15,8 @@ gulp.task('css', function () {
 
 gulp.task('html', function() {
     return gulp.src(['sandbox/**/*.html'])
-        .pipe(gulp.dest('build/sandbox'))
+      .pipe(swig({defaults: {cache: false}}))
+      .pipe(gulp.dest('build/sandbox'))
 });
 
 gulp.task('clean', function (cb) {

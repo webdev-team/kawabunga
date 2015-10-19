@@ -1,10 +1,139 @@
 
 @import '../assets/scss/_colors.scss';
+@import '../assets/scss/_colors-rtl.scss';
+@import '../assets/scss/_colors-rtl2.scss';
+@import '../assets/scss/_colors-funradio.scss';
+@import '../assets/scss/_colors-girls.scss';
 
-.green {
-  color: $green;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-.green-dark {
-  color: $green-dark;
+ul li {
+  list-style:none;
 }
+
+.color {
+  padding: 15px;
+}
+
+.dark {
+  color: white;
+}
+
+/* Base */
+.white { background-color: $white; }
+.black { background-color: $black; }
+.black-light { background-color: $black-light; }
+.black-lighter { background-color: $black-lighter; }
+
+/* Validation */
+.green { background-color: $green; }
+.green-dark { background-color: $green-dark; }
+.red { background-color: $red }
+.red-dark { background-color: $red-dark }
+.red-light { background-color: $red-light }
+
+/* Social */
+.twitter-cyan { background-color: $twitter-cyan }
+.twitter-cyan-light { background-color: $twitter-cyan-light }
+.fb-blue { background-color: $fb-blue }
+.fb-blue-light { background-color: $fb-blue-light }
+.fb-blue-dark { background-color: $fb-blue-dark }
+.instagram-blue { background-color: $instagram-blue }
+.instagram-blue-light { background-color: $instagram-blue-light }
+.googleplus-red { background-color: $googleplus-red }
+.googleplus-red-light { background-color: $googleplus-red-light }
+.youtube-red { background-color: $youtube-red }
+.linkedin-blue { background-color: $linkedin-blue }
+
+/* RTL.fr */
+.rtl-grey { background-color: $rtl-grey }
+.rtl-grey-dark { background-color: $rtl-grey-dark }
+.rtl-grey-light { background-color: $rtl-grey-light }
+
+.rtl-cream { background-color: $rtl-cream }
+.rtl-cream-dark { background-color: $rtl-cream-dark }
+.rtl-cream-light { background-color: $rtl-cream-light }
+
+.rtl-red { background-color: $rtl-red }
+.rtl-red-dark { background-color: $rtl-red-dark }
+.rtl-red-light { background-color: $rtl-red-light }
+.rtl-red-lighter { background-color: $rtl-red-lighter }
+
+.rtl-blue { background-color: $rtl-blue }
+.rtl-blue-dark { background-color: $rtl-blue-dark }
+.rtl-blue-light { background-color: $rtl-blue-light }
+
+.rtl-green { background-color: $rtl-green }
+.rtl-green-dark { background-color: $rtl-green-dark }
+
+.rtl-purple { background-color: $rtl-purple }
+
+.rtl-burgundy { background-color: $rtl-burgundy }
+
+/* RTL2.fr */
+.rtl2-black { background-color: $rtl2-black }
+
+.rtl2-grey { background-color: $rtl2-grey }
+.rtl2-grey-dark { background-color: $rtl2-grey-dark }
+.rtl2-grey-darker { background-color: $rtl2-grey-darker }
+
+.rtl2-cream { background-color: $rtl2-cream }
+.rtl2-cream-dark { background-color: $rtl2-cream-dark }
+.rtl2-cream-light { background-color: $rtl2-cream-light }
+
+.rtl2-gold { background-color: $rtl2-gold }
+.rtl2-gold-dark { background-color: $rtl2-gold-dark }
+.rtl2-gold-light { background-color: $rtl2-gold-light }
+
+.rtl2-red { background-color: $rtl2-red }
+.rtl2-red-dark { background-color: $rtl2-red-dark }
+
+.rtl2-green { background-color: $rtl2-green }
+.rtl2-green-dark { background-color: $rtl2-green-dark }
+
+.rtl2-purple { background-color: $rtl2-purple }
+
+.rtl2-burgundy { background-color: $rtl2-burgundy }
+
+/* Funradio.fr */
+.fun-grey { background-color: $fun-grey }
+.fun-grey-light { background-color: $fun-grey-light }
+.fun-grey-darker { background-color: $fun-grey-darker }
+
+.fun-cream { background-color: $fun-cream }
+.fun-cream-dark { background-color: $fun-cream-dark }
+.fun-cream-light { background-color: $fun-cream-light }
+
+.fun-blue { background-color: $fun-blue }
+.fun-blue-dark { background-color: $fun-blue-dark }
+.fun-blue-light { background-color: $fun-blue-light }
+
+.fun-pink { background-color: $fun-pink }
+.fun-pink-dark { background-color: $fun-pink-dark }
+.fun-pink-light { background-color: $fun-pink-light }
+
+.fun-yellow { background-color: $fun-yellow }
+
+/* Girls.fr */
+.girls-cream { background-color: $girls-cream }
+.girls-cream-dark { background-color: $girls-cream-dark }
+.girls-cream-light { background-color: $girls-cream-light }
+
+.girls-nude { background-color: $girls-nude }
+.girls-nude-dark { background-color: $girls-nude-dark }
+.girls-nude-light { background-color: $girls-nude-light }
+
+.girls-purple { background-color: $girls-purple }
+.girls-purple-dark { background-color: $girls-purple-dark }
+
+.girls-green { background-color: $girls-green }
+.girls-green-dark { background-color: $girls-green-dark }
+
+.girls-blue { background-color: $girls-blue }
+.girls-blue-dark { background-color: $girls-blue-dark }
+
+.girls-brown { background-color: $girls-brown }
+.girls-brown-darker { background-color: $girls-brown-darker }

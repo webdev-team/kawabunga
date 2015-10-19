@@ -6,7 +6,8 @@
     "gulp-autoprefixer": "~3.0.1",
     "gulp-pixrem": "^0.2.3",
     "gulp-sass": "^2.0.4",
-    "gulp-webserver": "^0.9.1"    
+    "gulp-swig": "^0.7.4",
+    "gulp-webserver": "^0.9.1"
   },
   "engines": {
     "node": ">=0.8.0"
