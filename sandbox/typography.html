@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Typography sandbox</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="typography.css">
+  </head>
+  <body>
+    <div class="container">
+      {% include '_navbar.html' with {active: 'typography'} %}
+
+      <h2>Usages</h2>
+      
+      <table class="table table-striped table-condensed">
+        <tr>
+          <td></td>
+          <td>Contenu éditable</td>
+          <td>Reste</td>
+        </tr>
+        <tr>
+          <td>RTL</td>
+          <td>Arial</td>
+          <td>Lato</td>
+        </tr>
+        <tr>
+          <td>RTL2</td>
+          <td>Helvetica</td>
+          <td>Oswald</td>
+        </tr>
+        <tr>
+          <td>Fun Radio</td>
+          <td>Arial</td>
+          <td>Eurostile</td>
+        </tr>
+        <tr>
+          <td>Girls</td>
+          <td>Arial</td>
+          <td>Raleway</td>
+        </tr>
+      </table>
+      
+      <h2>Arial</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 arial">
+          Arial regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 arial bold">
+          Arial bold <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 arial italic">
+          Arial italic <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Helvetica</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 helvetica">
+          Helvetica regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 helvetica bold">
+          Helvetica bold <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 helvetica italic">
+          Helvetica italic <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Lato</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 lato">
+          Lato regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 lato light">
+          Lato light <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Eurostile</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 eurostile">
+          Eurostile regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 eurostile bold">
+          Eurostile bold <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Oswald</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 oswald">
+          Oswald regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 oswald light">
+          Oswald light <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Raleway</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 raleway">
+          Raleway regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 raleway bold">
+          Raleway bold <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+
+      <h2>Roboto</h2>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 roboto">
+          Roboto regular <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+        <div class="col-sm-12 col-md-4 roboto light">
+          Roboto light <br/>
+          abcdefghijklmnopqrstuvwxyz <br/>
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/>
+          0123456789
+        </div>
+      </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -9,16 +9,21 @@ var del = require('del');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
-      .pipe(sass())
-      .pipe(autoprefixer())
-      .pipe(pixrem())
-      .pipe(gulp.dest('build/sandbox'))
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(pixrem())
+        .pipe(gulp.dest('build/sandbox'))
 });
 
-gulp.task('html', function() {
+gulp.task('html', function () {
     return gulp.src(['sandbox/**/*.html'])
-      .pipe(swig({defaults: {cache: false}}))
-      .pipe(gulp.dest('build/sandbox'))
+        .pipe(swig({defaults: {cache: false}}))
+        .pipe(gulp.dest('build/sandbox'))
+});
+
+gulp.task('fonts', function () {
+    return gulp.src(['assets/fonts/*.*'])
+        .pipe(gulp.dest('build/fonts'))
 });
 
 gulp.task('clean', function (cb) {
@@ -31,7 +36,7 @@ gulp.task('build', function (cb) {
 
 gulp.task('watch', function () {
     gulp.watch('sandbox/**/*.html', ['html']);
-    gulp.watch('sandbox/**/*.scss', ['css']);
+    gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
 });
 
 gulp.task('webserver', function () {
@@ -45,4 +50,4 @@ gulp.task('webserver', function () {
         }))
 });
 
-gulp.task('work', ['css', 'html', 'webserver', 'watch']);
+gulp.task('work', ['css', 'html', 'fonts', 'webserver', 'watch']);

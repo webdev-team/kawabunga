@@ -1,0 +1,70 @@
+
+@import '../assets/scss/_typography.scss';
+@import '../assets/scss/_typography-lato.scss';
+@import '../assets/scss/_typography-eurostile.scss';
+@import '../assets/scss/_typography-oswald.scss';
+@import '../assets/scss/_typography-raleway.scss';
+@import '../assets/scss/_typography-roboto.scss';
+
+.arial {
+  font-family: $arial;
+  font-size: 16px;
+}
+
+.helvetica {
+  font-family: $helvetica;
+  font-size: 16px;
+}
+
+.lato {
+  font-family: $lato-regular;
+  font-size: 16px;
+}
+
+.lato.light {
+  font-family: $lato-light;
+}
+
+.eurostile {
+  font-family: $eurostile-regular;
+  font-size: 16px;
+}
+
+.eurostile.bold {
+  font-family: $eurostile-bold;
+}
+
+.oswald {
+  font-family: $oswald-regular;
+  font-size: 16px;
+}
+
+.oswald.light {
+  font-family: $oswald-light;
+}
+
+.raleway {
+  font-family: $raleway-regular;
+  font-size: 16px;
+}
+
+.raleway.bold {
+  font-family: $raleway-bold;
+}
+
+.roboto {
+  font-family: $roboto-regular;
+  font-size: 16px;
+}
+
+.roboto.light {
+  font-family: $roboto-light;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
