@@ -1,5 +1,9 @@
 
 $arial: Arial, Verdana, sans-serif;
 $helvetica: Helvetica, Arial, Verdana, sans-serif;
-
 $default-font-family: $arial;
+
+@mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

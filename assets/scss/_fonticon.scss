@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "Kawabunga-Icon";
+    src: url('../fonts/Kawabunga-Icon.eot');
+    src: url('../fonts/Kawabunga-Icon.eot?#iefix') format('eot'),
+    url('../fonts/Kawabunga-Icon.woff') format('woff'),
+    url('../fonts/Kawabunga-Icon.ttf') format('truetype'),
+    url('../fonts/Kawabunga-Icon.svg#Kawabunga-Icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before {
+                     display: inline-block;
+                     font-family: "Kawabunga-Icon";
+                     font-style: normal;
+                     font-weight: normal;
+                     line-height: 1;
+                     -webkit-font-smoothing: antialiased;
+                     -moz-osx-font-smoothing: grayscale;
+                 }
+
+.icon-lg {
+                     font-size: 2.3333333333333333em;
+                     line-height: 0.75em;
+                     vertical-align: -15%;
+                 }
+.icon-2x { font-size: 2em; }
+.icon-3x { font-size: 3em; }
+.icon-4x { font-size: 4em; }
+.icon-5x { font-size: 5em; }
+.icon-fw {
+                     width: 1.2857142857142858em;
+                     text-align: center;
+                 }
+
+.icon-astro-balance:before { content: "\EA01" }
+.icon-astro-belier:before { content: "\EA02" }
+.icon-astro-cancer:before { content: "\EA03" }
+.icon-astro-capricorne:before { content: "\EA04" }
+.icon-astro-gemeaux:before { content: "\EA05" }
+.icon-astro-lion:before { content: "\EA06" }
+.icon-astro-poisson:before { content: "\EA07" }
+.icon-astro-sagittaire:before { content: "\EA08" }
+.icon-astro-scorpion:before { content: "\EA09" }
+.icon-astro-tauraux:before { content: "\EA0A" }
+.icon-astro-verso:before { content: "\EA0B" }
+.icon-astro-vierge:before { content: "\EA0C" }
+.icon-meteo-tempete:before { content: "\EA0D" }
+.icon-svg:before { content: "\EA0E" }
+.icon-svg10:before { content: "\EA0F" }
+.icon-svg11:before { content: "\EA10" }
+.icon-svg12:before { content: "\EA11" }
+.icon-svg13:before { content: "\EA12" }
+.icon-svg14:before { content: "\EA13" }
+.icon-svg15:before { content: "\EA14" }
+.icon-svg16:before { content: "\EA15" }
+.icon-svg17:before { content: "\EA16" }
+.icon-svg18:before { content: "\EA17" }
+.icon-svg19:before { content: "\EA18" }
+.icon-svg20:before { content: "\EA19" }
+.icon-svg21:before { content: "\EA1A" }
+.icon-svg22:before { content: "\EA1B" }
+.icon-svg23:before { content: "\EA1C" }
+.icon-svg24:before { content: "\EA1D" }
+.icon-svg25:before { content: "\EA1E" }
+.icon-svg26:before { content: "\EA1F" }
+.icon-svg3:before { content: "\EA20" }
+.icon-svg4:before { content: "\EA21" }
+.icon-svg5:before { content: "\EA22" }
+.icon-svg6:before { content: "\EA23" }
+.icon-svg7:before { content: "\EA24" }
+.icon-svg8:before { content: "\EA25" }
+.icon-svg9:before { content: "\EA26" }
+.icon-abus:before { content: "\EA27" }
+.icon-answer:before { content: "\EA28" }
+.icon-assister:before { content: "\EA29" }
+.icon-buy-music:before { content: "\EA2A" }
+.icon-calendar:before { content: "\EA2B" }
+.icon-check:before { content: "\EA2C" }
+.icon-chevron-bas:before { content: "\EA2D" }
+.icon-chevron-droite:before { content: "\EA2E" }
+.icon-chevron-gauche:before { content: "\EA2F" }
+.icon-chevron-haut:before { content: "\EA30" }
+.icon-chevron-left-bis:before { content: "\EA31" }
+.icon-chevron-left:before { content: "\EA32" }
+.icon-chevron-right-bis:before { content: "\EA33" }
+.icon-chevron-right:before { content: "\EA34" }
+.icon-clock:before { content: "\EA35" }
+.icon-close:before { content: "\EA36" }
+.icon-comment:before { content: "\EA37" }
+.icon-commentsquare:before { content: "\EA38" }
+.icon-cup:before { content: "\EA39" }
+.icon-des:before { content: "\EA3A" }
+.icon-enveloppe:before { content: "\EA3B" }
+.icon-flechemenu:before { content: "\EA3C" }
+.icon-fullscreen:before { content: "\EA3D" }
+.icon-home:before { content: "\EA3E" }
+.icon-info2:before { content: "\EA3F" }
+.icon-loupe:before { content: "\EA40" }
+.icon-menuhamburger:before { content: "\EA41" }
+.icon-menutexte:before { content: "\EA42" }
+.icon-news-zoom:before { content: "\EA43" }
+.icon-newsletter:before { content: "\EA44" }
+.icon-notification:before { content: "\EA45" }
+.icon-onair:before { content: "\EA46" }
+.icon-out:before { content: "\EA47" }
+.icon-participer:before { content: "\EA48" }
+.icon-play:before { content: "\EA49" }
+.icon-print:before { content: "\EA4A" }
+.icon-printsquare:before { content: "\EA4B" }
+.icon-pub:before { content: "\EA4C" }
+.icon-quote:before { content: "\EA4D" }
+.icon-quotebis:before { content: "\EA4E" }
+.icon-refresh:before { content: "\EA4F" }
+.icon-retweet:before { content: "\EA50" }
+.icon-rss:before { content: "\EA51" }
+.icon-screen:before { content: "\EA52" }
+.icon-send:before { content: "\EA53" }
+.icon-share:before { content: "\EA54" }
+.icon-sound:before { content: "\EA55" }
+.icon-star-empty:before { content: "\EA56" }
+.icon-star:before { content: "\EA57" }
+.icon-stop:before { content: "\EA58" }
+.icon-svg2:before { content: "\EA59" }
+.icon-telecharger:before { content: "\EA5A" }
+.icon-tweet-star:before { content: "\EA5B" }
+.icon-user:before { content: "\EA5C" }
+.icon-video:before { content: "\EA5D" }
+.icon-world:before { content: "\EA5E" }
+.icon-facebook-square:before { content: "\EA5F" }
+.icon-facebook:before { content: "\EA60" }
+.icon-fb-message:before { content: "\EA61" }
+.icon-fb-share:before { content: "\EA62" }
+.icon-fb:before { content: "\EA63" }
+.icon-fbsquare:before { content: "\EA64" }
+.icon-like:before { content: "\EA65" }
+.icon-googleplus:before { content: "\EA66" }
+.icon-googleplus2:before { content: "\EA67" }
+.icon-googleplussquare:before { content: "\EA68" }
+.icon-insta-like:before { content: "\EA69" }
+.icon-insta:before { content: "\EA6A" }
+.icon-instagram:before { content: "\EA6B" }
+.icon-instasquare:before { content: "\EA6C" }
+.icon-linkd-circle:before { content: "\EA6D" }
+.icon-linkd-square:before { content: "\EA6E" }
+.icon-linkd:before { content: "\EA6F" }
+.icon-pinterest:before { content: "\EA70" }
+.icon-twit:before { content: "\EA71" }
+.icon-twitter:before { content: "\EA72" }
+.icon-twittersquare:before { content: "\EA73" }
+.icon-youtube:before { content: "\EA74" }
+.icon-fun-short-logoBis:before { content: "\EA75" }
+.icon-funsquare:before { content: "\EA76" }
+.icon-logo-fun_radio:before { content: "\EA77" }
+.icon-logo_club-fun-radio:before { content: "\EA78" }
+.icon-brand-logo-club:before { content: "\EA79" }
+.icon-brandsquare:before { content: "\EA7A" }
+.icon-girls-logo-square-reverse:before { content: "\EA7B" }
+.icon-logo-girls:before { content: "\EA7C" }
+.icon-club-rtl:before { content: "\EA7D" }
+.icon-logo-rtl:before { content: "\EA7E" }
+.icon-logo_club-rtl:before { content: "\EA7F" }
+.icon-rtlsquare:before { content: "\EA80" }
+.icon-logo-rtl2:before { content: "\EA81" }
+.icon-logo_club-rtl2:before { content: "\EA82" }
+.icon-rtl2-baseline:before { content: "\EA83" }
+.icon-rtl2-logo:before { content: "\EA84" }
