@@ -249,6 +249,10 @@ a, a:hover, a:link {
   color: $white;
 }
 
+.hover-black:hover {
+  color: $black;
+}
+
 // RTL
 .bg-rtl-red {
   background-color: $rtl-red;
@@ -298,8 +302,28 @@ a, a:hover, a:link {
   text-decoration: none;
 }
 
+.color-rtl-red {
+  color: $rtl-red;
+}
+
+.color-rtl-grey-matt {
+  color: $rtl-grey-matt;
+}
+
+.before-rtl-red:before {
+  background-color: $rtl-red;
+}
+
+.before-rtl-grey-matt:before {
+  background-color: $rtl-grey-matt;
+}
+
 .lato-light {
   font-family: $lato-light;
+}
+
+.lato-regular {
+  font-family: $lato-regular;
 }
 
  // RTL2
@@ -334,6 +358,26 @@ a, a:hover, a:link {
   background-color: $rtl2-grey-dark;
   color: $white;
   text-decoration: none;
+}
+
+.hover-rtl2-black:hover {
+  color: $rtl2-black;
+}
+
+.color-rtl2-red {
+  color: $rtl2-red;
+}
+
+.color-rtl2-gold {
+  color: $rtl2-gold;
+}
+
+.before-rtl2-red:before {
+  background-color: $rtl2-red;
+}
+
+.before-rtl2-gold:before {
+  background-color: $rtl2-gold;
 }
 
 .oswald-regular {
@@ -378,6 +422,50 @@ a, a:hover, a:link {
   background-color: $fun-pink-dark;
   color: $white;
   text-decoration: none;
+}
+
+.hover-fun-black:hover {
+  color: $fun-black;
+}
+
+.color-fun-pink {
+  color: $fun-pink;
+}
+
+.color-fun-orange {
+  color: $fun-orange;
+}
+
+.color-fun-cherry {
+  color: $fun-cherry;
+}
+
+.color-fun-purple {
+  color: $fun-purple;
+}
+
+.color-fun-green {
+  color: $fun-green;
+}
+
+.before-fun-pink:before {
+  background-color: $fun-pink;
+}
+
+.before-fun-orange:before {
+  background-color: $fun-orange;
+}
+
+.before-fun-cherry:before {
+  background-color: $fun-cherry;
+}
+
+.before-fun-purple:before {
+  background-color: $fun-purple;
+}
+
+.before-fun-green:before {
+  background-color: $fun-green;
 }
 
 .eurostile-regular {
@@ -431,6 +519,26 @@ a, a:hover, a:link {
   color: $white;
 }
 
+.hover-girls-nude-dark:hover {
+  color: $girls-nude-dark;
+}
+
+.hover-girls-black:hover {
+  color: $girls-black;
+}
+
+.color-girls-nude-dark {
+  color: $girls-nude-dark;
+}
+
+.color-girls-black {
+  color: $girls-black;
+}
+
+.before-girls-nude:before {
+  background-color: $girls-nude;
+}
+
 .bg-girls-grey {
   background-color: $girls-grey;
   color: $white;
@@ -438,6 +546,11 @@ a, a:hover, a:link {
 
 .raleway-regular {
   font-family: $raleway-regular;
+  -webkit-font-smoothing: antialiased;
+}
+
+.raleway-bold {
+  font-family: $raleway-bold;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -521,7 +634,6 @@ a, a:hover, a:link {
   border: 0;
   outline: 0;
   background-image: none;
-  font-family: $lato-regular;
 }
 
 .uppercase {
@@ -568,7 +680,6 @@ a, a:hover, a:link {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: $lato-regular;
 }
 
 .btn-grey:before {
@@ -590,7 +701,6 @@ a, a:hover, a:link {
   padding: .25rem .625rem;
   font-size: 0.875rem;
   border-radius: 1.5625rem;
-  font-family: $lato-regular;
 }
 
 /*.timeline-notifier-rtl {
@@ -733,4 +843,31 @@ a, a:hover, a:link {
 
 .btn-search .sbt-input .no-ff{
   display:none;
+}
+
+/* article */
+
+.item-list {
+  display: block;
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  font-size: .9325rem;
+  display: block;
+  position: relative;
+  vertical-align: top;
+  padding: 0 0 0 1.25rem;
+  margin-bottom: .75rem;
+}
+
+.item:before {
+  position: absolute;
+  top: .1875rem;
+  left: 0;
+  width: .625rem;
+  height: .625rem;
+  content: "";
 }
