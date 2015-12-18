@@ -1,9 +1,9 @@
 
-@import '../assets/scss/_colors.scss';
-@import '../assets/scss/_colors-rtl.scss';
-@import '../assets/scss/_colors-rtl2.scss';
-@import '../assets/scss/_colors-funradio.scss';
-@import '../assets/scss/_colors-girls.scss';
+@import '../assets/scss/partial/color/colors';
+@import '../assets/scss/partial/color/colors-rtl';
+@import '../assets/scss/partial/color/colors-rtl2';
+@import '../assets/scss/partial/color/colors-funradio';
+@import '../assets/scss/partial/color/_colors-girls.scss';
 
 ul {
   margin: 0;

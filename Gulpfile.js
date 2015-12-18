@@ -39,28 +39,28 @@ gulp.task('img', function () {
 });
 
 
-gulp.task('fonts', function () {
-    return gulp.src(['assets/fonts/*.*'])
-        .pipe(gulp.dest('build/fonts'))
+gulp.task('font', function () {
+    return gulp.src(['assets/font/*.*'])
+        .pipe(gulp.dest('build/font'))
 });
 
 gulp.task('iconfont', function () {
     return gulp.src([
-            'assets/icons/common/astro/*.svg',
-            'assets/icons/common/meteo/*.svg',
-            'assets/icons/common/astro/*.svg',
-            'assets/icons/common/others/*.svg',
-            'assets/icons/common/social/facebook/*.svg',
-            'assets/icons/common/social/googleplus/*.svg',
-            'assets/icons/common/social/instagram/*.svg',
-            'assets/icons/common/social/linkedin/*.svg',
-            'assets/icons/common/social/pinterest/*.svg',
-            'assets/icons/common/social/twitter/*.svg',
-            'assets/icons/common/social/youtube/*.svg',
-            'assets/icons/funradio/*.svg',
-            'assets/icons/girls/*.svg',
-            'assets/icons/rtl/*.svg',
-            'assets/icons/rtl2/*.svg'
+            'assets/icon/common/astro/*.svg',
+            'assets/icon/common/meteo/*.svg',
+            'assets/icon/common/astro/*.svg',
+            'assets/icon/common/others/*.svg',
+            'assets/icon/common/social/facebook/*.svg',
+            'assets/icon/common/social/googleplus/*.svg',
+            'assets/icon/common/social/instagram/*.svg',
+            'assets/icon/common/social/linkedin/*.svg',
+            'assets/icon/common/social/pinterest/*.svg',
+            'assets/icon/common/social/twitter/*.svg',
+            'assets/icon/common/social/youtube/*.svg',
+            'assets/icon/funradio/*.svg',
+            'assets/icon/girls/*.svg',
+            'assets/icon/rtl/*.svg',
+            'assets/icon/rtl2/*.svg'
         ])
         .pipe(iconfont({
             fontName: 'Kawabunga-Icon',
@@ -69,17 +69,17 @@ gulp.task('iconfont', function () {
 
         }))
         .on('glyphs', function (glyphs, options) {
-            gulp.src('assets/icons/_fonticon.scss.template')
+            gulp.src('assets/icon/_fonticon.scss.template')
                 .pipe(consolidate('lodash', {
                     glyphs: glyphs,
                     fontName: 'Kawabunga-Icon',
-                    fontPath: '../fonts/',
+                    fontPath: '../font/',
                     className: 'icon'
                 }))
                 .pipe(rename('_fonticon.scss'))
                 .pipe(gulp.dest('assets/scss/'));
         })
-        .pipe(gulp.dest('assets/fonts/'))
+        .pipe(gulp.dest('assets/font/'))
 });
 
 gulp.task('clean', function (cb) {
@@ -87,7 +87,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('build', function (cb) {
-    runSequence('clean', ['img', 'css', 'html'], cb);
+    runSequence('clean', ['img', 'css', 'html', 'font', 'iconfont'], cb);
 });
 
 gulp.task('watch', function () {
@@ -107,4 +107,4 @@ gulp.task('webserver', function () {
         }))
 });
 
-gulp.task('work', ['img', 'css', 'html', 'fonts', 'webserver', 'watch']);
+gulp.task('work', ['img', 'css', 'html', 'font', 'iconfont', 'webserver', 'watch']);

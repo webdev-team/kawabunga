@@ -1,0 +1,122 @@
+/*
+---
+name: Old IE Condition
+description: useful to push some CSS for IE8- only
+...
+*/
+
+@mixin old-ie {
+	@if ($old-ie == true){
+		@content;
+	}
+}
+
+/*
+---
+name: MediaQueries Mixin
+description: useful to manage media queries and keep it maintainable
+...
+*/
+
+@mixin mq($size:null, $media:all, $feature:max-width, $orientation:null) {
+
+	@if ($media-queries){
+
+		$mediaQuery: null;
+		$remValue: null;
+		$bp:getBreakPoint($size);
+		
+		@if ($feature == 'min-width'){
+			$remValue: parseInt( ($bp + 1px) / $pixelBase ) + 'em';
+		}@else {
+			$remValue: parseInt($bp / $pixelBase) + 'em';
+		}
+		
+		@if ($orientation != null){
+			$mediaQuery: '#{$media} and (#{$feature}: #{$remValue}) and (orientation: #{$orientation})';
+		}@else {
+			$mediaQuery: '#{$media} and (#{$feature}: #{$remValue})';
+		}
+
+		@media #{$mediaQuery} {
+			@content;
+		}
+
+	}
+
+}
+
+@mixin target-mq($size1:null, $size2:null){
+	
+	@if ($media-queries){
+
+		$bp1:getBreakPoint($size1);
+		$bp2:getBreakPoint($size2);
+
+		$remValue1: parseInt( ($bp1 + 1px) / $pixelBase ) + 'em';
+		$remValue2: parseInt(  $bp2 / $pixelBase ) + 'em';
+
+		$mediaQuery: 'all and (min-width: #{$remValue1}) and (max-width: #{$remValue2})';
+
+		@media #{$mediaQuery} {
+			@content;
+		}
+
+	}
+
+}
+
+/*
+---
+name: Main Roller Mixin
+description: Main roller mixin 3 items displayed
+...
+*/
+@mixin main-roller-3-items {
+	.main-roller-container .item{
+		width:33.3333%;
+		//font-size:u(0.75rem);
+		padding:0 1% 0 2%;
+	}
+	.main-roller-container .replay{
+		width:33.3333%;
+	}
+	.main-roller-arrow{
+		width:10%;
+	}
+	.main-roller-container{
+		width:80%;
+	}
+	/*
+	.main-roller-content .when{
+		font-size:u(2rem);
+	}
+	*/
+}
+
+/*
+---
+name: Main Roller Mixin
+description: Main roller mixin 1 item displayed
+...
+*/
+@mixin main-roller-1-item {
+	.main-roller-container .item,
+	.main-roller-container .replay{
+		width:100%;
+	}
+	.main-roller-container .item{
+		padding:0 1% 0 3%;
+	}
+	/*
+	.main-roller-content .when{
+		font-size:u(2rem);
+	}
+	*/
+	.main-roller-arrow{
+		width:10%;
+	}
+	.main-roller-container{
+		width:80%;
+	}
+}

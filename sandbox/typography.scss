@@ -1,10 +1,10 @@
 
-@import '../assets/scss/_typography.scss';
-@import '../assets/scss/_typography-lato.scss';
-@import '../assets/scss/_typography-eurostile.scss';
-@import '../assets/scss/_typography-oswald.scss';
-@import '../assets/scss/_typography-raleway.scss';
-@import '../assets/scss/_typography-roboto.scss';
+@import '../assets/scss/partial/typography/typography';
+@import '../assets/scss/partial/typography/typography-lato';
+@import '../assets/scss/partial/typography/typography-eurostile';
+@import '../assets/scss/partial/typography/typography-oswald';
+@import '../assets/scss/partial/typography/typography-raleway';
+@import '../assets/scss/partial/typography/typography-roboto';
 
 .arial {
   font-family: $arial;
@@ -37,6 +37,7 @@
 .oswald {
   font-family: $oswald-regular;
   font-size: 16px;
+  @include font-smoothing;
 }
 
 .oswald.light {
@@ -46,6 +47,7 @@
 .raleway {
   font-family: $raleway-regular;
   font-size: 16px;
+  @include font-smoothing;
 }
 
 .raleway.bold {

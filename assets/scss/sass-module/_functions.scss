@@ -1,0 +1,90 @@
+/*
+---
+name: getBreakPoint
+description: returns a breakpoint value from a string
+...
+*/
+@function getBreakPoint($size) {
+	
+	$bp:null;
+
+	// if no size is passed, throw a warning
+	@if ($size == null) {
+		@warn "mq(): Breakpoint size is null";
+	}
+
+	@if ($size == small) {
+		$bp: $mq-small-bp;
+	}
+	@else if ($size == medium) {
+		$bp: $mq-medium-bp;
+	}
+	@else if ($size == large) {
+		$bp: $mq-large-bp;
+	}
+	@else {
+		// if no BP is found, throw a warning
+		@warn "mq(): Breakpoint "#{$size}" does not exist";
+	}
+
+	@return $bp;
+
+}
+
+/*
+---
+name: parseInt
+description: returns a number from a string
+source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+...
+*/
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+
+/*
+---
+name: u ("u" is for unit)
+description: convert rem values into px values for a specific stylesheet
+source: http://davidwalsh.name/rem-px-browser-function-sass
+return a list of converted values
+...
+*/
+@function u($values){
+
+	$list: ();
+
+	@each $value in $values {
+		
+		@if (type-of($value) == "number") and ($value != 0) {
+
+			$unit : unit($value);     // returns unit only
+			$val  : parseInt($value); // returns number only
+
+			@if ($px-only) and ($unit == 'rem') {
+				$list: append($list, ($val * $pixelBase) + px);
+			}
+
+			@else if($unit == 'px') or ($unit == 'rem'){
+				$list: append($list, $value);
+			}
+
+			@else {
+				@warn 'There is no unit conversion for "#{$unit}"';
+			}
+
+		}@else {
+			$list: append($list, $value);
+		}
+
+	}
+
+	@return $list();
+
+}
+
+@function upx($sizeInPixels: 0px){
+    $rem : (parseInt($sizeInPixels) / $pixelBase) * 1rem;
+    @return u($rem);
+}

@@ -20,16 +20,16 @@
                  }
 
 .<%= className %>-lg {
-                     font-size: 2.3333333333333333em;
-                     line-height: 0.75em;
+                     font-size: 2.3333333333333333rem;
+                     line-height: 0.75rem;
                      vertical-align: -15%;
                  }
-.<%= className %>-2x { font-size: 2em; }
-.<%= className %>-3x { font-size: 3em; }
-.<%= className %>-4x { font-size: 4em; }
-.<%= className %>-5x { font-size: 5em; }
+.<%= className %>-2x { font-size: 2rem; }
+.<%= className %>-3x { font-size: 3rem; }
+.<%= className %>-4x { font-size: 4rem; }
+.<%= className %>-5x { font-size: 5rem; }
 .<%= className %>-fw {
-                     width: 1.2857142857142858em;
+                     width: 1.2857142857142858rem;
                      text-align: center;
                  }
 

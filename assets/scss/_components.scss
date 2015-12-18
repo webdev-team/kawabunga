@@ -1,44 +1,31 @@
-@import '_colors-rtl.scss';
-@import '_colors-rtl2.scss';
-@import '_colors-funradio.scss';
-@import '_colors-girls.scss';
-@import '_colors.scss';
-@import '_typography.scss';
-@import '_typography-lato.scss';
-@import '_typography-oswald.scss';
-@import '_typography-eurostile.scss';
-@import '_typography-raleway.scss';
 
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font-size: 100%;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
+// sass modules: functions, mixins, includes
+@import "sass-module/_import.scss";
+
+// partials: colors, typos, reset, tricks
+@import "partial/_import.scss";
 
 body {
-  font-size: 16px;
   font-family: $arial;
-  line-height: normal;
+  /*line-height: normal;*/
 }
 
-img {
-  border: 0;
-}
-
-h1 {
+.kawa h1 {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid $grey-light;
 }
 
-p {
+.kawa h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.kawa p {
   margin: 0 0 10px;
 }
 
-pre code {
+.kawa pre code {
   white-space: nowrap;
 }
 
@@ -145,6 +132,10 @@ a, a:hover, a:link {
   margin-top: 7px;
   margin-bottom: 7px;
   cursor: pointer;
+}
+
+.code-example .flag-fix {
+  max-width: 62%;
 }
 
 .code-example:after {
@@ -338,10 +329,6 @@ a, a:hover, a:link {
   border-color: $rtl-red;
 }
 
-.bo-rtl-blue-dark {
-  border-color: $rtl-blue-dark;
-}
-
 .hover-rtl:hover {
   background-color: $rtl-red-light;
   color: $white;
@@ -378,14 +365,6 @@ a, a:hover, a:link {
 
 .icon-color-rtl-grey .icon:before {
   color: $grey-dark;
-}
-
-.lato-light {
-  font-family: $lato-light;
-}
-
-.lato-regular {
-  font-family: $lato-regular;
 }
 
 // RTL2
@@ -466,11 +445,6 @@ a, a:hover, a:link {
 
 .icon-color-rtl2-grey .icon:before {
   color: $rtl2-grey;
-}
-
-.oswald-regular {
-  font-family: $oswald-regular;
-  -webkit-font-smoothing: antialiased;
 }
 
 // Funradio
@@ -582,10 +556,6 @@ a, a:hover, a:link {
   color: $fun-grey-darker;
 }
 
-.eurostile-regular {
-  font-family: $eurostile-regular;
-}
-
 // Girls
 .bg-girls-nude {
   background-color: $girls-nude;
@@ -676,16 +646,6 @@ a, a:hover, a:link {
 
 .icon-color-girls-grey .icon:before {
   color: $girls-grey;
-}
-
-.raleway-regular {
-  font-family: $raleway-regular;
-  -webkit-font-smoothing: antialiased;
-}
-
-.raleway-bold {
-  font-family: $raleway-bold;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* -- MODULE -- */
@@ -931,12 +891,7 @@ a, a:hover, a:link {
   background: url(http://static.rtl.fr/versions/www/3.0.344/img/loader.gif) center center no-repeat;
 }
 
-.cf:after, .cf:before {
-  content: "";
-  display: table;
-}
-
-.cf:after, .g-row, .g-row:after {
+.g-row, .g-row:after {
   clear: both;
 }
 
@@ -1052,7 +1007,6 @@ a, a:hover, a:link {
   line-height: 2.9375rem;
   letter-spacing: 1px;
   padding: 0 .3125rem 0 .625rem;
-  text-transform: uppercase;
   border-right: .3125rem solid;
 }
 
@@ -1081,17 +1035,164 @@ a, a:hover, a:link {
   border-left: .5rem solid transparent;
 }
 
-.flag-fix .flag {
+/* RTL */
+.flag-fix .bo-rtl-blue {
   border-color: $rtl-blue-dark;
 }
 
-.flag-fix .flag:before {
+.flag-fix .bo-rtl-blue:before {
   background-color: $rtl-blue-darker;
 }
 
-.flag-fix .flag:after {
+.flag-fix .bo-rtl-blue:after {
   border-top-color: $rtl-blue;
   border-bottom-color: $rtl-blue;
+}
+
+.flag-fix .bo-rtl-green {
+  border-color: $rtl-green-dark;
+}
+
+.flag-fix .bo-rtl-green:before {
+  background-color: $rtl-green-darker;
+}
+
+.flag-fix .bo-rtl-green:after {
+  border-top-color: $rtl-green;
+  border-bottom-color: $rtl-green;
+}
+
+.flag-fix .bo-rtl-red {
+  border-color: $rtl-red;
+}
+
+.flag-fix .bo-rtl-red:before {
+  background-color: $rtl-red-dark;
+}
+
+.flag-fix .bo-rtl-red:after {
+  border-top-color: $rtl-red;
+  border-bottom-color: $rtl-red;
+}
+
+.flag-fix .bo-rtl-grey {
+  border-color: $rtl-grey;
+}
+
+.flag-fix .bo-rtl-grey:before {
+  background-color: $rtl-grey-matt;
+}
+
+.flag-fix .bo-rtl-grey:after {
+  border-top-color: $rtl-grey;
+  border-bottom-color: $rtl-grey;
+}
+
+/* RTL2 */
+.flag-fix .bo-rtl2-gold {
+  border-color: $rtl2-gold;
+}
+
+.flag-fix .bo-rtl2-gold:before {
+  background-color: $rtl2-gold-dark;
+}
+
+.flag-fix .bo-rtl2-gold:after {
+  border-top-color: $rtl2-gold;
+  border-bottom-color: $rtl2-gold;
+}
+
+.flag-fix .bo-rtl2-red {
+  border-color: $rtl2-red;
+}
+
+.flag-fix .bo-rtl2-red:before {
+  background-color: $rtl2-red-dark;
+}
+
+.flag-fix .bo-rtl2-red:after {
+  border-top-color: $rtl2-red;
+  border-bottom-color: $rtl2-red;
+}
+
+/* Funradio */
+.flag-fix .bo-fun-pink {
+  border-color: $fun-pink;
+}
+
+.flag-fix .bo-fun-pink:before {
+  background-color: $fun-pink-dark;
+}
+
+.flag-fix .bo-fun-pink:after {
+  border-top-color: $fun-pink;
+  border-bottom-color: $fun-pink;
+}
+
+.flag-fix .bo-fun-blue {
+  border-color: $fun-blue;
+}
+
+.flag-fix .bo-fun-blue:before {
+  background-color: $fun-blue-dark;
+}
+
+.flag-fix .bo-fun-blue:after {
+  border-top-color: $fun-blue;
+  border-bottom-color: $fun-blue;
+}
+
+/* Girls */
+.flag-fix .bo-girls-nude {
+  border-color: $girls-nude;
+}
+
+.flag-fix .bo-girls-nude:before {
+  background-color: $girls-nude-dark;
+}
+
+.flag-fix .bo-girls-nude:after {
+  border-top-color: $girls-nude;
+  border-bottom-color: $girls-nude;
+}
+
+.flag-fix .bo-girls-brown {
+  border-color: $girls-brown;
+}
+
+.flag-fix .bo-girls-brown:before {
+  background-color: $girls-brown-darker;
+}
+
+.flag-fix .bo-girls-brown:after {
+  border-top-color: $girls-brown;
+  border-bottom-color: $girls-brown;
+}
+
+.flag-fix .bo-girls-blue {
+  border-color: $girls-blue;
+}
+
+.flag-fix .bo-girls-blue:before {
+  background-color: $girls-blue-dark;
+}
+
+.flag-fix .bo-girls-blue:after {
+  border-top-color: $girls-blue;
+  border-bottom-color: $girls-blue;
+}
+
+.flag-fix .bo-girls-green {
+  border-color: $girls-green;
+}
+
+.flag-fix .bo-girls-green:before {
+  background-color: $girls-green-dark;
+}
+
+.flag-fix .bo-girls-green:after {
+  border-top-color: $girls-green;
+  border-bottom-color: $girls-green;
 }
 
 .flag-fix .align {
