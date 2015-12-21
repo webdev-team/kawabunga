@@ -7,139 +7,209 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="colors.css">
   </head>
-  <body>
-    <div class="container">
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container kawa">
       {% include '_navbar.html' with {active: 'colors'} %}
 
-      <h2>Common</h2>
-
       <div class="row">
-        <div class="col-md-3 col-xs-12">
-          <h3>Base</h3>
-          <ul>
-            <li class="color white">white</li>
-            <li class="color dark black">black</li>
-            <li class="color dark black-light">black-light</li>
-            <li class="color dark black-lighter">black-lighter</li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-xs-12">
-          <h3>Validation</h3>
-          <ul>
-            <li class="color dark validation-green">validation-green</li>
-            <li class="color dark validation-green-dark">validation-green-dark</li>
-            <li class="color dark validation-red">validation-red</li>
-            <li class="color dark validation-red-dark">validation-red-dark</li>
-            <li class="color dark validation-red-light">validation-red-light</li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-xs-12">
-          <h3>Social</h3>
-          <ul>
-            <li class="color dark twitter-cyan">twitter-cyan</li>
-            <li class="color dark twitter-cyan-light">twitter-cyan-light</li>
-            <li class="color dark fb-blue">fb-blue</li>
-            <li class="color dark fb-blue-dark">fb-blue-dark</li>
-            <li class="color dark fb-blue-light">fb-blue-light</li>
-            <li class="color dark instagram-blue">instagram-blue</li>
-            <li class="color dark instagram-blue-light">instagram-blue-light</li>
-            <li class="color dark googleplus-red">googleplus-red</li>
-            <li class="color dark googleplus-red-light">googleplus-red-light</li>
-            <li class="color dark youtube-red">youtube-red</li>
-            <li class="color dark linkedin-blue">linkedin-blue</li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-xs-12">
+        <!--Main Content -->
+        <div class="col-md-9">
+          <section id="particular" class="group col-md-12">
+            <h1>Particular</h1>
+            <div id="website" class="subgroup col-md-12">
+              <h2>Website</h2>
+              <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#rtl-color">RTL</a></li>
+                <li><a data-toggle="tab" href="#rtl2-color">RTL2</a></li>
+                <li><a data-toggle="tab" href="#funradio-color">Funradio</a></li>
+                <li><a data-toggle="tab" href="#girls-color">Girls</a></li>
+              </ul>
+              <div class="tab-content">
+                <!-- RTL -->
+                <div id="rtl-color" class="tab-pane fade in active">
+                  <div class="kawa-colors">
+                    <ul class="kawa-colors-list">
+                      <li class="dark rtl-grey"><span>rtl-grey</span></li>
+                      <li class="dark rtl-grey-dark"><span>rtl-grey-dark</span></li>
+                      <li class="dark rtl-grey-matt"><span>rtl-grey-matt</span></li>
+                      <li class="dark rtl-grey-light"><span>rtl-grey-light</span></li>
+                      <li class="rtl-cream"><span>rtl-cream</span></li>
+                      <li class="rtl-cream-dark"><span>rtl-cream-dark</span></li>
+                      <li class="rtl-cream-light"><span>rtl-cream-light</span></li>
+                      <li class="dark rtl-red"><span>rtl-red</span></li>
+                      <li class="dark rtl-red-dark"><span>rtl-red-dark</span></li>
+                      <li class="dark rtl-red-light"><span>rtl-red-light</span></li>
+                      <li class="dark rtl-red-lighter"><span>rtl-red-lighter</span></li>
+                      <li class="dark rtl-blue"><span>rtl-blue</span></li>
+                      <li class="dark rtl-blue-dark"><span>rtl-blue-dark</span></li>
+                      <li class="dark rtl-blue-darker"><span>rtl-blue-darker</span></li>
+                      <li class="dark rtl-blue-light"><span>rtl-blue-light</span></li>
+                      <li class="dark rtl-green"><span>rtl-green</span></li>
+                      <li class="dark rtl-green-dark"><span>rtl-green-dark</span></li>
+                      <li class="dark rtl-green-darker"><span>rtl-green-darker</span></li>
+                      <li class="dark rtl-purple"><span>rtl-purple</span></li>
+                      <li class="dark rtl-burgundy"><span>rtl-burgundy</span></li>
+                    </ul>
+                  </div>
+                </div>
 
-        </div>
-      </div>
+                <!-- RTL2 -->
+                <div id="rtl2-color" class="tab-pane fade">
+                  <div class="kawa-colors">
+                    <ul class="kawa-colors-list">
+                      <li class="color dark rtl2-black"><span>rtl2-black</span></li>
+                      <li class="color dark rtl2-grey"><span>rtl2-grey</span></li>
+                      <li class="color dark rtl2-grey-dark"><span>rtl2-grey-dark</span></li>
+                      <li class="color dark rtl2-grey-darker"><span>rtl2-grey-darker</span></li>
+                      <li class="color rtl2-cream"><span>rtl2-cream</span></li>
+                      <li class="color rtl2-cream-dark"><span>rtl2-cream-dark</span></li>
+                      <li class="color rtl2-cream-light"><span>rtl2-cream-light</span></li>
+                      <li class="color dark rtl2-gold"><span>rtl2-gold</span></li>
+                      <li class="color dark rtl2-gold-dark"><span>rtl2-gold-dark</span></li>
+                      <li class="color dark rtl2-gold-light"><span>rtl2-gold-light</span></li>
+                      <li class="color dark rtl2-red"><span>rtl2-red</span></li>
+                      <li class="color dark rtl2-red-dark"><span>rtl2-red-dark</span></li>
+                      <li class="color dark rtl2-pink"><span>rtl2-pink</span></li>
+                      <li class="color dark rtl2-pink-dark"><span>rtl2-pink-dark</span></li>
+                      <li class="color dark rtl2-purple"><span>rtl2-purple</span></li>
+                      <li class="color dark rtl2-burgundy"><span>rtl2-burgundy</span></li>
+                    </ul>
+                  </div>
+                </div>
 
-      <h2>Domaines</h2>
+                <!-- Funradio -->
+                <div id="funradio-color" class="tab-pane fade">
+                  <div class="kawa-colors">
+                    <ul class="kawa-colors-list">
+                      <li class="color dark fun-black"><span>fun-black</span></li>
+                      <li class="color dark fun-grey"><span>fun-grey</span></li>
+                      <li class="color fun-grey-light"><span>fun-grey-light</li>
+                      <li class="color dark fun-grey-darker"><span>fun-grey-darker</span></li>
+                      <li class="color fun-cream"><span>fun-cream</span></li>
+                      <li class="color fun-cream-dark"><span>fun-cream-dark</span></li>
+                      <li class="color fun-cream-light"><span>fun-cream-light</span></li>
+                      <li class="color dark fun-blue"><span>fun-blue</span></li>
+                      <li class="color dark fun-blue-dark"><span>fun-blue-dark</span></li>
+                      <li class="color dark fun-blue-light"><span>fun-blue-light</span></li>
+                      <li class="color dark fun-pink"><span>fun-pink</span></li>
+                      <li class="color dark fun-pink-dark"><span>fun-pink-dark</span></li>
+                      <li class="color dark fun-pink-light"><span>fun-pink-light</span></li>
+                      <li class="color dark fun-yellow"><span>fun-yellow</span></li>
+                      <li class="color dark fun-cherry"><span>fun-cherry</span></li>
+                      <li class="color dark fun-cherry-dark"><span>fun-cherry-dark</span></li>
+                      <li class="color dark fun-cherry-darker"><span>fun-cherry-darker</span></li>
+                      <li class="color dark fun-purple"><span>fun-purple</span></li>
+                      <li class="color dark fun-purple-light"><span>fun-purple-light</span></li>
+                      <li class="color dark fun-purple-dark"><span>fun-purple-dark</span></li>
+                      <li class="color dark fun-green"><span>fun-green</span></li>
+                      <li class="color dark fun-green-light"><span>fun-green-light</span></li>
+                      <li class="color dark fun-green-lighter"><span>fun-green-lighter</span></li>
+                    </ul>
+                  </div>
+                </div>
 
-      <div class="row">
-        <div class="col-md-3 col-xs-12">
-          <h3>RTL.fr</h3>
-          <ul>
-            <li class="color dark rtl-grey">rtl-grey</li>
-            <li class="color dark rtl-grey-dark">rtl-grey-dark</li>
-            <li class="color rtl-grey-light">rtl-grey-light</li>
-            <li class="color rtl-cream">rtl-cream</li>
-            <li class="color rtl-cream-dark">rtl-cream-dark</li>
-            <li class="color rtl-cream-light">rtl-cream-light</li>
-            <li class="color dark rtl-red">rtl-red</li>
-            <li class="color dark rtl-red-dark">rtl-red-dark</li>
-            <li class="color dark rtl-red-light">rtl-red-light</li>
-            <li class="color dark rtl-red-lighter">rtl-red-lighter</li>
-            <li class="color dark rtl-blue">rtl-blue</li>
-            <li class="color dark rtl-blue-dark">rtl-blue-dark</li>
-            <li class="color dark rtl-blue-light">rtl-blue-light</li>
-            <li class="color dark rtl-green">rtl-green</li>
-            <li class="color dark rtl-green-dark">rtl-green-dark</li>
-            <li class="color dark rtl-purple">rtl-purple</li>
-            <li class="color dark rtl-burgundy">rtl-burgundy</li>
-          </ul>
+                <!-- Girls -->
+                <div id="girls-color" class="tab-pane fade">
+                  <div class="kawa-colors">
+                    <ul class="kawa-colors-list">
+                      <li class="color dark girls-black"><span>girls-black</span></li>
+                      <li class="color dark girls-grey"><span>girls-grey</span></li>
+                      <li class="color girls-cream"><span>girls-cream</span></li>
+                      <li class="color girls-cream-dark"><span>girls-cream-dark</span></li>
+                      <li class="color girls-cream-darker"><span>girls-cream-darker</span></li>
+                      <li class="color girls-cream-light"><span>girls-cream-light</span></li>
+                      <li class="color dark girls-nude"><span>girls-nude</span></li>
+                      <li class="color dark girls-nude-dark"><span>girls-nude-dark</span></li>
+                      <li class="color dark girls-nude-light"><span>girls-nude-light</span></li>
+                      <li class="color dark girls-purple"><span>girls-purple</span></li>
+                      <li class="color dark girls-purple-dark"><span>girls-purple-dark</span></li>
+                      <li class="color dark girls-green"><span>girls-green</span></li>
+                      <li class="color dark girls-green-dark"><span>girls-green-dark</span></li>
+                      <li class="color dark girls-blue"><span>girls-blue</span></li>
+                      <li class="color dark girls-blue-dark"><span>girls-blue-dark</span></li>
+                      <li class="color dark girls-brown"><span>girls-brown</span></li>
+                      <li class="color dark girls-brown-darker"><span>girls-brown-darker</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="common" class="group col-md-12">
+            <h1>Common</h1>
+            <div id="base" class="subgroup col-md-12">
+              <h2>Base</h2>
+              <div class="kawa-colors">
+                <ul class="kawa-colors-list">
+                  <li class="color white"><span>white</span></li>
+                  <li class="color dark black"><span>black</span></li>
+                  <li class="color dark black-light"><span>black-light</span></li>
+                  <li class="color dark black-lighter"><span>black-lighter</span></li>
+                  <li class="color dark grey"><span>grey</span></li>
+                  <li class="color dark grey-dark"><span>grey-dark</span></li>
+                  <li class="color dark grey-darker"><span>grey-darker</span></li>
+                  <li class="color grey-light"><span>grey-light</span></li>
+                  <li class="color grey-lighter"><span>grey-lighter</span></li>
+                  <li class="color grey-light"><span>grey-lighter</span></li>
+                </ul>
+              </div>
+            </div>
+            <div id="validation" class="subgroup col-md-12">
+              <h2>Validation</h2>
+              <div class="kawa-colors">
+                <ul class="kawa-colors-list">
+                  <li class="color dark validation-green"><span>validation-green</span></li>
+                  <li class="color dark validation-green-dark"><span>validation-green-dark</span></li>
+                  <li class="color dark validation-red"><span>validation-red</span></li>
+                  <li class="color dark validation-red-dark"><span>validation-red-dark</span></li>
+                  <li class="color dark validation-red-light"><span>validation-red-light</span></li>
+                </ul>
+              </div>
+            </div>
+            <div id="social" class="subgroup col-md-12">
+              <h2>Social</h2>
+              <div class="kawa-colors">
+                <ul class="kawa-colors-list">
+                  <li class="color dark twitter-cyan"><span>twitter-cyan</span></li>
+                  <li class="color dark twitter-cyan-light"><span>twitter-cyan-light</span></li>
+                  <li class="color dark fb-blue"><span>fb-blue</span></li>
+                  <li class="color dark fb-blue-dark"><span>fb-blue-dark</span></li>
+                  <li class="color dark fb-blue-light"><span>fb-blue-light</span></li>
+                  <li class="color dark instagram-blue"><span>instagram-blue</span></li>
+                  <li class="color dark instagram-blue-light"><span>instagram-blue-light</span></li>
+                  <li class="color dark googleplus-red"><span>googleplus-red</span></li>
+                  <li class="color dark googleplus-red-light"><span>googleplus-red-light</span></li>
+                  <li class="color dark youtube-red"><span>youtube-red</span></li>
+                  <li class="color dark linkedin-blue"><span>linkedin-blue</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="col-md-3 col-xs-12">
-          <h3>RTL2.fr</h3>
-          <ul>
-            <li class="color dark rtl2-black">rtl2-black</li>
-            <li class="color dark rtl2-grey">rtl2-grey</li>
-            <li class="color dark rtl2-grey-dark">rtl2-grey-dark</li>
-            <li class="color dark rtl2-grey-darker">rtl2-grey-darker</li>
-            <li class="color rtl2-cream">rtl2-cream</li>
-            <li class="color rtl2-cream-dark">rtl2-cream-dark</li>
-            <li class="color rtl2-cream-light">rtl2-cream-light</li>
-            <li class="color dark rtl2-gold">rtl2-gold</li>
-            <li class="color dark rtl2-gold-dark">rtl2-gold-dark</li>
-            <li class="color dark rtl2-gold-light">rtl2-gold-light</li>
-            <li class="color dark rtl2-red">rtl2-red</li>
-            <li class="color dark rtl2-red-dark">rtl2-red-dark</li>
-            <li class="color dark rtl2-green">rtl2-green</li>
-            <li class="color dark rtl2-green-dark">rtl2-green-dark</li>
-            <li class="color dark rtl2-purple">rtl2-purple</li>
-            <li class="color dark rtl2-burgundy">rtl2-burgundy</li>
+
+        <!--Nav Bar -->
+        <nav class="col-md-3 scroll-sidebar navbar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li>
+              <a href="#particular">Particular</a>
+              <ul class="nav nav-stacked">
+                <li><a href="#website">Website</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#common">Common</a>
+              <ul class="nav nav-stacked">
+                <li><a href="#base">Base</a></li>
+                <li><a href="#validation">Validation</a></li>
+                <li><a href="#social">Social</a></li>
+              </ul>
+            </li>
           </ul>
-        </div>
-        <div class="col-md-3 col-xs-12">
-          <h3>Funradio.fr</h3>
-          <ul>
-            <li class="color dark fun-grey">fun-grey</li>
-            <li class="color fun-grey-light">fun-grey-light</li>
-            <li class="color dark fun-grey-darker">fun-grey-darker</li>
-            <li class="color fun-cream">fun-cream</li>
-            <li class="color fun-cream-dark">fun-cream-dark</li>
-            <li class="color fun-cream-light">fun-cream-light</li>
-            <li class="color dark fun-blue">fun-blue</li>
-            <li class="color dark fun-blue-dark">fun-blue-dark</li>
-            <li class="color dark fun-blue-light">fun-blue-light</li>
-            <li class="color dark fun-pink">fun-pink</li>
-            <li class="color dark fun-pink-dark">fun-pink-dark</li>
-            <li class="color dark fun-pink-light">fun-pink-light</li>
-            <li class="color dark fun-yellow">fun-yellow</li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-xs-12">
-          <h3>Girls.fr</h3>
-          <ul>
-            <li class="color girls-cream">girls-cream</li>
-            <li class="color girls-cream-dark">girls-cream-dark</li>
-            <li class="color girls-cream-light">girls-cream-light</li>
-            <li class="color dark girls-nude">girls-nude</li>
-            <li class="color dark girls-nude-dark">girls-nude-dark</li>
-            <li class="color dark girls-nude-light">girls-nude-light</li>
-            <li class="color dark girls-purple">girls-purple</li>
-            <li class="color dark girls-purple-dark">girls-purple-dark</li>
-            <li class="color dark girls-green">girls-green</li>
-            <li class="color dark girls-green-dark">girls-green-dark</li>
-            <li class="color dark girls-blue">girls-blue</li>
-            <li class="color dark girls-blue-dark">girls-blue-dark</li>
-            <li class="color dark girls-brown">girls-brown</li>
-            <li class="color dark girls-brown-darker">girls-brown-darker</li>
-          </ul>
-        </div>
+        </nav>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
