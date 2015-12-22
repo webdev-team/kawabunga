@@ -11,6 +11,8 @@ var consolidate = require("gulp-consolidate");
 var rename = require('gulp-rename');
 var base64 = require('gulp-base64');
 var imagemin = require('gulp-imagemin');
+var spritesmith = require('gulp.spritesmith');
+var gulpif = require('gulp-if');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
@@ -32,17 +34,57 @@ gulp.task('html', function () {
         .pipe(gulp.dest('build/sandbox'))
 });
 
+/*
+ * Sprites & Img
+ *
+ * Sprite TODO : test and go in single config via spriteRetina possibility with spritesmith... more convenient for building
+ * Maybe a little awkward in img for the handle. To be tested.
+ */
+
+gulp.task('sprite:x1', function () {
+    return gulp.src('assets/img/sprite-partners/*.png')
+        .pipe(spritesmith({
+            imgName     : 'sprite-partners.png',
+            cssName     : 'sprite-partners.scss',
+            padding     : 2,
+            cssFormat   : 'scss',
+            algorithm   : 'left-right',
+            imgPath     : '../img/sprite-partners.png',
+            cssSpritesheetName : 'sprite-partners'
+        }))
+        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
+});
+gulp.task('sprite:x2', function () {
+    return gulp.src('assets/img/sprite-retina-partners/*.png')
+        .pipe(spritesmith({
+            imgName     : 'sprite-retina-partners.png',
+            cssName     : 'sprite-retina-partners.scss',
+            padding     : 4,
+            cssFormat   : 'scss',
+            algorithm   : 'left-right',
+            imgPath     : '../img/sprite-retina-partners.png',
+            cssSpritesheetName : 'sprite-retina-partners'
+        }))
+        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
+});
 gulp.task('img', function () {
-    return gulp.src(['assets/img/**'])
+    return gulp.src(['assets/img/**', '!assets/img/sprite-partners/**', '!assets/img/sprite-retina-partners/**', '!assets/img/**/init.gif'])
         .pipe(imagemin())
         .pipe(gulp.dest('build/img/'))
 });
 
+/*
+ * Fonts
+ */
 
 gulp.task('font', function () {
     return gulp.src(['assets/font/*.*'])
         .pipe(gulp.dest('build/font'))
 });
+
+/*
+ * IconFonts
+ */
 
 gulp.task('iconfont', function () {
     return gulp.src([
@@ -82,19 +124,19 @@ gulp.task('iconfont', function () {
         .pipe(gulp.dest('assets/font/'))
 });
 
-gulp.task('clean', function (cb) {
-    del(['build'], cb);
-});
-
-gulp.task('build', function (cb) {
-    runSequence('clean', ['img', 'css', 'html', 'font', 'iconfont'], cb);
-});
+/*
+ * WatchTask
+ */
 
 gulp.task('watch', function () {
     gulp.watch('sandbox/**/*.html', ['html']);
     gulp.watch('sandbox/img/**', ['img']);
     gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
 });
+
+/*
+ * WebServer
+ */
 
 gulp.task('webserver', function () {
     return gulp.src('./')
@@ -107,4 +149,14 @@ gulp.task('webserver', function () {
         }))
 });
 
-gulp.task('work', ['img', 'css', 'html', 'font', 'iconfont', 'webserver', 'watch']);
+// CUSTOM TASKS :
+
+gulp.task('clean', function (cb) {
+    del(['build'], cb);
+});
+
+gulp.task('build', function (cb) {
+    runSequence('clean', 'sprite:x1', 'sprite:x2', ['img', 'iconfont', 'css', 'font'], ['html'], cb);
+});
+
+gulp.task('work', ['img', 'iconfont', 'css', 'font', 'html', 'webserver', 'watch']);

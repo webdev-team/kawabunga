@@ -182,8 +182,8 @@
 }
 
 @media (max-width: 61.25em){
-  .search-field .sbt-label{
-    display:none;
+  .btn-search .sbt-label{
+    display: none!important;
   }
 }
 
@@ -411,28 +411,28 @@
 }
 
 .sbt-input{
-  border:0;
-  padding:0 1rem;
-  font-size:0.75rem;
-  min-height:2.1875rem;
-  text-align:center;
+  border: 0;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  min-height: 2.1875rem;
+  text-align: center;
 }
 
 .btn-search .sbt-label,
 .btn-search .sbt-input{
-  display:table;
-  float:left;
-  text-align:center;
-  vertical-align:middle;
-  border:0;
-  padding:0 0.625rem;
-  width:3.75rem;
-  height:3.75rem;
-  cursor:pointer;
+  display: table;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  padding: 0 0.625rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  cursor: pointer;
 }
 .btn-search .sbt-input{
-  overflow:hidden;
-  line-height:3.75rem;
+  overflow: hidden;
+  line-height: 3.75rem;
 }
 
 .btn-search .sbt-input .icon-ff:before{
@@ -442,13 +442,13 @@
 }
 
 .btn-search .sbt-label{
-  font-size:0.875rem;
-  width:8.75rem;
-  line-height:3.75rem;
+  font-size: 0.875rem;
+  width: 8.75rem;
+  line-height: 3.75rem;
 }
 
 .btn-search .sbt-input .no-ff{
-  display:none;
+  display: none;
 }
 
 /* -- ARTICLE -- */
