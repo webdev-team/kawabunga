@@ -30,10 +30,10 @@
                                 <div id="rtl-button-classic" class="tab-pane fade in active">
                                     <form class="code-example col-md-12">
                                         <div class="col-md-2">
-                                            <div class="btn-action hover-rtl-red-light uppercase rtl-red dark lato">Voter</div>
+                                            <div class="btn-action hover-rtl-red-light-white uppercase rtl-red dark lato">Voter</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="btn-action hover-rtl-red-light rtl-red dark lato">Inscrivez-vous</div>
+                                            <div class="btn-action hover-rtl-red-light-white rtl-red dark lato">Inscrivez-vous</div>
                                         </div>
                                     </form>
                                     <ul class="nav nav-tabs nav-child">
@@ -46,9 +46,9 @@
                                                 <pre>
                                                     <code class="language-html">
                                                         <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light uppercase rtl-red dark lato"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light-white uppercase rtl-red dark lato"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
                                                         <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light rtl-red dark lato"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light-white rtl-red dark lato"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
                                                     </code>
                                                 </pre>
                                             </figure>
@@ -57,11 +57,42 @@
                                             <figure class="highlighted col-md-12">
                                                 <pre>
                                                     <code class="language-html">
-                                                        <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light uppercase rtl-red dark lato"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
-                                                        <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl-red-light rtl-red dark lato"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
-                                                    </code>
+                                                        <span class="element">.btn-action</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>inline-block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">.375rem</span>
+                                                        <span class="value">1.25rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.8125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">letter-spacing:</span><span class="value">1px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">-webkit-appearance:</span>none;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">outline:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-image:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.uppercase</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>uppercase;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.hover-rtl-red-light-white:hover</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl-red-light</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-decoration:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.rtl-red</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl-red</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.lato</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$lato-regular</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">16px</span>;
+                                                        <br/>}<br/><br/>
+                                                   </code>
                                                 </pre>
                                             </figure>
                                         </div>
@@ -99,10 +130,43 @@
                                             <figure class="highlighted col-md-12">
                                                 <pre>
                                                     <code class="language-html">
-                                                        <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl2-grey-dark-white uppercase dark rtl2-black oswald"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
-                                                        <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-rtl2-grey-dark-white dark rtl2-black oswald"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
+                                                        <span class="element">.btn-action</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>inline-block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">.375rem</span>
+                                                        <span class="value">1.25rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.8125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">letter-spacing:</span><span class="value">1px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">-webkit-appearance:</span>none;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">outline:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-image:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.uppercase</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>uppercase;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.hover-rtl2-grey-dark-white:hover</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl2-grey-dark</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-decoration:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.rtl2-black</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl2-black</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.oswald</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$oswald-regular</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">16px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">@include</span>
+                                                        font-smoothing;
+                                                        <br/>}<br/><br/>
                                                     </code>
                                                 </pre>
                                             </figure>
@@ -114,10 +178,10 @@
                                 <div id="funradio-button-classic" class="tab-pane fade">
                                     <form class="code-example col-md-12">
                                         <div class="col-md-2">
-                                            <div class="btn-action hover-fun-pink-dark uppercase dark fun-pink eurostile">Voter</div>
+                                            <div class="btn-action hover-fun-pink-dark-white uppercase dark fun-pink eurostile">Voter</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="btn-action hover-fun-pink-dark dark fun-pink eurostile">Inscrivez-vous</div>
+                                            <div class="btn-action hover-fun-pink-dark-white dark fun-pink eurostile">Inscrivez-vous</div>
                                         </div>
                                     </form>
                                     <ul class="nav nav-tabs nav-child">
@@ -130,9 +194,9 @@
                                                 <pre>
                                                     <code class="language-html">
                                                         <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark uppercase dark fun-pink eurostile"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark-white uppercase dark fun-pink eurostile"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
                                                         <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark dark fun-pink eurostile"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark-white dark fun-pink eurostile"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
                                                     </code>
                                                 </pre>
                                             </figure>
@@ -141,10 +205,41 @@
                                             <figure class="highlighted col-md-12">
                                                 <pre>
                                                     <code class="language-html">
-                                                        <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark uppercase dark fun-pink eurostile"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
-                                                        <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-fun-pink-dark dark fun-pink eurostile"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
+                                                        <span class="element">.btn-action</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>inline-block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">.375rem</span>
+                                                        <span class="value">1.25rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.8125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">letter-spacing:</span><span class="value">1px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">-webkit-appearance:</span>none;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">outline:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-image:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.uppercase</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>uppercase;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.hover-fun-pink-dark-white:hover</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$fun-pink-dark</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-decoration:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.fun-pink</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$fun-pink</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.eurostile</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$eurostile-regular</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">16px</span>;
+                                                        <br/>}<br/><br/>
                                                     </code>
                                                 </pre>
                                             </figure>
@@ -183,16 +278,52 @@
                                             <figure class="highlighted col-md-12">
                                                 <pre>
                                                     <code class="language-html">
-                                                        <span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-girls-nude-dark-white uppercase dark girls-nude raleway bold"</span><span class="element">&gt;</span>Voter<span class="element">&lt;/div&gt;</span>
-                                                        <br/><span class="element">&lt;div</span>
-                                                        <span class="attribute">class=</span><span class="value">"btn-action hover-girls-nude-dark-white dark girls-nude raleway bold"</span><span class="element">&gt;</span>Inscrivez-vous<span class="element">&lt;/div&gt;</span>
+                                                        <span class="element">.btn-action</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>inline-block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">.375rem</span>
+                                                        <span class="value">1.25rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.8125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">letter-spacing:</span><span class="value">1px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">-webkit-appearance:</span>none;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">outline:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-image:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.uppercase</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>uppercase;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.hover-girls-nude-dark-white:hover</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$girls-nude-dark</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-decoration:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.girls-nude</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$girls-nude</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.raleway</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$raleway-regular</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">16px</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">@include</span>
+                                                        font-smoothing;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.raleway.bold</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$raleway-bold</span>;
+                                                        <br/>}<br/><br/>
                                                     </code>
                                                 </pre>
                                             </figure>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -209,11 +340,11 @@
                                 <div id="rtl-button-particular" class="tab-pane fade in active">
                                     <form class="code-example col-md-12">
                                         <div class="col-md-4">
-                                            <div class="btn-link hover-rtl-red-light rtl-red dark icon icon-chevron-left-bis lato">Aller vers l'&eacute;mission</div>
+                                            <div class="btn-link hover-rtl-red-light-white rtl-red dark icon icon-chevron-left-bis lato">Aller vers l'&eacute;mission</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="timeline-refresh lato float-none">
-                                                <button class="btn-grey hover-rtl-red-light dark rtl-grey-dark uppercase icon icon-refresh">Rafra&icirc;chir</button>
+                                                <button class="btn-grey hover-rtl-red-light-white dark rtl-grey-dark uppercase icon icon-refresh">Rafra&icirc;chir</button>
                                                 <span class="timeline-notifier rtl-red dark highlight">1</span>
                                             </div>
                                         </div>
@@ -256,90 +387,203 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <div class="zero-clipboard col-md-12">
-                                        <span class="btn-clipboard">Copy</span>
+                                    <ul class="nav nav-tabs nav-child">
+                                        <li class="active"><a data-toggle="tab" href="#rtl-particular-html">HTML</a></li>
+                                        <li><a data-toggle="tab" href="#rtl-particular-css">CSS</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="rtl-particular-html" class="tab-pane fade in active">
+                                            <figure class="highlighted col-md-12">
+                                                <pre>
+                                                    <code class="language-html">
+                                                        <span class="element">&lt;div</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-link hover-rtl-red-light-white rtl-red dark icon icon-chevron-left-bis lato"</span><span class="element">&gt;</span>Aller vers l'&eacute;mission<span class="element">&lt;/div&gt;</span>
+                                                        <br/><br/><span class="element">&lt;div</span>
+                                                        <span class="attribute">class=</span><span class="value">"timeline-refresh lato"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;button</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-grey hover-rtl-red-light-white dark rtl-grey-dark uppercase icon icon-refresh"</span><span class="element">&gt;</span>Rafra&icirc;chir<span class="element">&lt;/button&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"timeline-notifier rtl-red dark highlight"</span><span class="element">&gt;</span>1<span class="element">&lt;/span&gt;</span>
+                                                        <br/><span class="element">&lt;/div&gt;</span>
+                                                        <br/><br/><span class="element">&lt;div</span>
+                                                        <span class="attribute">class=</span><span class="value">"song-tool rtl-grey-light"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;a</span>
+                                                        <span class="attribute">href=</span><span class="value">"#"</span>
+                                                        <span class="attribute">class=</span><span class="value">"song-partner rtl-grey-light"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
+                                                        <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
+                                                        <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
+                                                        <span class="attribute">width=</span><span class="value">"40"</span>
+                                                        <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;a</span>
+                                                        <span class="attribute">href=</span><span class="value">"#"</span>
+                                                        <span class="attribute">class=</span><span class="value">"song-partner"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
+                                                        <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
+                                                        <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
+                                                        <span class="attribute">width=</span><span class="value">"40"</span>
+                                                        <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;a</span>
+                                                        <span class="attribute">href=</span><span class="value">"#"</span>
+                                                        <span class="attribute">class=</span><span class="value">"song-partner"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
+                                                        <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
+                                                        <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
+                                                        <span class="attribute">width=</span><span class="value">"40"</span>
+                                                        <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"toggler dark rtl-grey-dark icon icon-buy-music"</span><span class="element">&gt;</span>Acheter<span class="element">&lt;br/&gt;</span>ce morceau<span class="element">&lt;/span&gt;</span>
+                                                        <br/><span class="element">&lt;/div&gt;</span>
+                                                        <br/><br/><span class="element">&lt;div</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-search cf"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;label</span>
+                                                        <span class="attribute">for=</span><span class="value">"search-submit"</span>
+                                                        <span class="attribute">class=</span><span class="value">"sbt-label rtl-red dark uppercase"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"align"</span><span class="element">&gt;</span>Rechercher<span class="element">&lt;/span&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/label&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;button</span>
+                                                        <span class="attribute">id=</span><span class="value">"search-submit"</span>
+                                                        <span class="attribute">class=</span><span class="value">"sbt-input dark rtl-red-dark uppercase"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;i</span>
+                                                        <span class="attribute">class=</span><span class="value">"icon icon-ff icon-loupe"</span><span class="element">&gt;</span><span class="element">&lt;/i&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"no-ff"</span><span class="element">&gt;</span>OK<span class="element">&lt;/span&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/button&gt;</span>
+                                                        <br/><span class="element">&lt;/div&gt;</span>
+                                                        <br/><br/><span class="element">&lt;div</span>
+                                                        <span class="attribute">class=</span><span class="value">"btn-search cf"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;button</span>
+                                                        <span class="attribute">id=</span><span class="value">"search-submit"</span>
+                                                        <span class="attribute">class=</span><span class="value">"sbt-input dark rtl-red-dark uppercase"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;i</span>
+                                                        <span class="attribute">class=</span><span class="value">"icon icon-ff icon-loupe"</span><span class="element">&gt;</span><span class="element">&lt;/i&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"no-ff"</span><span class="element">&gt;</span>OK<span class="element">&lt;/span&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/button&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;label</span>
+                                                        <span class="attribute">for=</span><span class="value">"search-submit"</span>
+                                                        <span class="attribute">class=</span><span class="value">"sbt-label rtl-red dark uppercase"</span><span class="element">&gt;</span>
+                                                        <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
+                                                        <span class="attribute">class=</span><span class="value">"align"</span><span class="element">&gt;</span>Rechercher<span class="element">&lt;/span&gt;</span>
+                                                        <br/>&nbsp;<span class="element">&lt;/label&gt;</span>
+                                                        <br/><span class="element">&lt;/div&gt;</span>
+                                                    </code>
+                                                </pre>
+                                            </figure>
+                                        </div>
+                                        <div id="rtl-particular-css" class="tab-pane fade">
+                                            <figure class="highlighted col-md-12">
+                                                <pre>
+                                                    <code class="language-html">
+                                                        <span class="element">.btn-link</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">0</span>
+                                                        <span class="value">.625rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">line-height:</span><span class="value">2.1875rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.8125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">position:</span>relative;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-align:</span>center;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.btn-link.icon-chevron-left-bis:before</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">1.6875rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">line-height:</span>inherit;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.btn-link.icon:before</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">vertical-align:</span>top;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">margin:</span><span class="value">0</span>
+                                                        <span class="value">.375rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-variant:</span>normal;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.hover-rtl-red-light-white:hover</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl-red-light</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-decoration:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.rtl-red</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl-red</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">color:</span><span class="variable">$white</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.lato</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-family:</span><span class="variable">$lato-regular</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">16px</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.timeline-refresh</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">position:</span>relative;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">float:</span>left;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.btn-grey</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">display:</span>inline-block;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">0</span>
+                                                        <span class="value">.3125rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-weight:</span><span class="value">700</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">.875rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">line-height:</span><span class="value">1.75rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">outline:</span><span class="value">0</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-image:</span>none;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">width:</span><span class="value">8.75rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-align:</span>left;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-overflow:</span>ellipsis;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">white-space:</span>nowrap;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">overflow:</span>hidden;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.btn-grey:before</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">line-height:</span>inherit!important;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">1.3125rem</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.btn-grey.icon:before</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">vertical-align:</span>top;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">margin:</span><span class="value">0</span>
+                                                        <span class="value">.375rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-variant:</span>normal;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">text-transform:</span>none;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.rtl-grey-dark</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">background-color:</span><span class="variable">$rtl-grey-dark</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.timeline-notifier</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">position:</span>absolute;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">padding:</span><span class="value">.25rem</span>
+                                                        <span class="value">.625rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">top:</span><span class="value">-.9375rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">left:</span><span class="value">7.875rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">font-size:</span><span class="value">0.875rem</span>;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">border-radius:</span><span class="value">1.5625rem</span>;
+                                                        <br/>}<br/><br/>
+                                                        <span class="element">.timeline-notifier.highlight</span>
+                                                        {
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">-webkit-animation:</span>notif-highlight
+                                                        <span class="value">2.3s</span>
+                                                        infinite;
+                                                        <br/>&nbsp;&nbsp;<span class="attribute">animation:</span>notif-highlight
+                                                        <span class="value">2.3s</span>
+                                                        infinite;
+                                                        <br/>}<br/><br/>
+                                                    </code>
+                                                </pre>
+                                            </figure>
+                                        </div>
                                     </div>
-                                    <figure class="highlighted col-md-12">
-                                    <pre>
-                                        <code class="language-html">
-                                            <span class="element">&lt;div</span>
-                                            <span class="attribute">class=</span><span class="value">"btn-link hover-rtl-red-light rtl-red dark icon icon-chevron-left-bis lato"</span><span class="element">&gt;</span>Aller vers l'&eacute;mission<span class="element">&lt;/div&gt;</span>
-                                            <br/><br/><span class="element">&lt;div</span>
-                                            <span class="attribute">class=</span><span class="value">"timeline-refresh lato"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;button</span>
-                                            <span class="attribute">class=</span><span class="value">"btn-grey hover-rtl-red-light dark rtl-grey-dark uppercase icon icon-refresh"</span><span class="element">&gt;</span>Rafra&icirc;chir<span class="element">&lt;/button&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"timeline-notifier rtl-red dark highlight"</span><span class="element">&gt;</span>1<span class="element">&lt;/span&gt;</span>
-                                            <br/><span class="element">&lt;/div&gt;</span>
-                                            <br/><br/><span class="element">&lt;div</span>
-                                            <span class="attribute">class=</span><span class="value">"song-tool rtl-grey-light"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;a</span>
-                                            <span class="attribute">href=</span><span class="value">"#"</span>
-                                            <span class="attribute">class=</span><span class="value">"song-partner rtl-grey-light"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
-                                            <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
-                                            <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
-                                            <span class="attribute">width=</span><span class="value">"40"</span>
-                                            <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;a</span>
-                                            <span class="attribute">href=</span><span class="value">"#"</span>
-                                            <span class="attribute">class=</span><span class="value">"song-partner"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
-                                            <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
-                                            <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
-                                            <span class="attribute">width=</span><span class="value">"40"</span>
-                                            <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;a</span>
-                                            <span class="attribute">href=</span><span class="value">"#"</span>
-                                            <span class="attribute">class=</span><span class="value">"song-partner"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;img</span>
-                                            <span class="attribute">class=</span><span class="value">"partner-pic img-echo"</span>
-                                            <span class="attribute">src=</span><span class="value">"/build/img/40x40-partner.gif"</span>
-                                            <span class="attribute">width=</span><span class="value">"40"</span>
-                                            <span class="attribute">height=</span><span class="value">"40"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/a&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"toggler dark rtl-grey-dark icon icon-buy-music"</span><span class="element">&gt;</span>Acheter<span class="element">&lt;br/&gt;</span>ce morceau<span class="element">&lt;/span&gt;</span>
-                                            <br/><span class="element">&lt;/div&gt;</span>
-                                            <br/><br/><span class="element">&lt;div</span>
-                                            <span class="attribute">class=</span><span class="value">"btn-search cf"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;label</span>
-                                            <span class="attribute">for=</span><span class="value">"search-submit"</span>
-                                            <span class="attribute">class=</span><span class="value">"sbt-label rtl-red dark uppercase"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"align"</span><span class="element">&gt;</span>Rechercher<span class="element">&lt;/span&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/label&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;button</span>
-                                            <span class="attribute">id=</span><span class="value">"search-submit"</span>
-                                            <span class="attribute">class=</span><span class="value">"sbt-input dark rtl-red-dark uppercase"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;i</span>
-                                            <span class="attribute">class=</span><span class="value">"icon icon-ff icon-loupe"</span><span class="element">&gt;</span><span class="element">&lt;/i&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"no-ff"</span><span class="element">&gt;</span>OK<span class="element">&lt;/span&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/button&gt;</span>
-                                            <br/><span class="element">&lt;/div&gt;</span>
-                                            <br/><br/><span class="element">&lt;div</span>
-                                            <span class="attribute">class=</span><span class="value">"btn-search cf"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;button</span>
-                                            <span class="attribute">id=</span><span class="value">"search-submit"</span>
-                                            <span class="attribute">class=</span><span class="value">"sbt-input dark rtl-red-dark uppercase"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;i</span>
-                                            <span class="attribute">class=</span><span class="value">"icon icon-ff icon-loupe"</span><span class="element">&gt;</span><span class="element">&lt;/i&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"no-ff"</span><span class="element">&gt;</span>OK<span class="element">&lt;/span&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/button&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;label</span>
-                                            <span class="attribute">for=</span><span class="value">"search-submit"</span>
-                                            <span class="attribute">class=</span><span class="value">"sbt-label rtl-red dark uppercase"</span><span class="element">&gt;</span>
-                                            <br/>&nbsp;&nbsp;<span class="element">&lt;span</span>
-                                            <span class="attribute">class=</span><span class="value">"align"</span><span class="element">&gt;</span>Rechercher<span class="element">&lt;/span&gt;</span>
-                                            <br/>&nbsp;<span class="element">&lt;/label&gt;</span>
-                                            <br/><span class="element">&lt;/div&gt;</span>
-                                        </code>
-                                    </pre>
-                                    </figure>
                                 </div>
 
                                 <!-- RTL2 -->
@@ -481,11 +725,11 @@
                                 <div id="funradio-button-particular" class="tab-pane fade">
                                     <form class="code-example col-md-12">
                                         <div class="col-md-4">
-                                            <div class="btn-link hover-fun-pink-dark dark fun-pink icon icon-chevron-left-bis eurostile">Aller vers l'&eacute;mission</div>
+                                            <div class="btn-link hover-fun-pink-dark-white dark fun-pink icon icon-chevron-left-bis eurostile">Aller vers l'&eacute;mission</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="timeline-refresh eurostile float-none">
-                                                <button class="btn-grey hover-fun-pink-dark dark fun-grey-darker uppercase icon icon-refresh">Rafra&icirc;chir</button>
+                                                <button class="btn-grey hover-fun-pink-dark-white dark fun-grey-darker uppercase icon icon-refresh">Rafra&icirc;chir</button>
                                                 <span class="timeline-notifier dark fun-pink highlight">3</span>
                                             </div>
                                         </div>
@@ -539,7 +783,7 @@
                                            <br/><br/><span class="element">&lt;div</span>
                                            <span class="attribute">class=</span><span class="value">"timeline-refresh eurostile"</span><span class="element">&gt;</span>
                                            <br/>&nbsp;<span class="element">&lt;button</span>
-                                           <span class="attribute">class=</span><span class="value">"btn-grey hover-fun-pink-dark dark fun-grey-darker uppercase icon icon-refresh"</span><span class="element">&gt;</span>Rafra&icirc;chir<span class="element">&lt;/button&gt;</span>
+                                           <span class="attribute">class=</span><span class="value">"btn-grey hover-fun-pink-dark-white dark fun-grey-darker uppercase icon icon-refresh"</span><span class="element">&gt;</span>Rafra&icirc;chir<span class="element">&lt;/button&gt;</span>
                                            <br/>&nbsp;<span class="element">&lt;span</span>
                                            <span class="attribute">class=</span><span class="value">"timeline-notifier dark fun-pink highlight"</span><span class="element">&gt;</span>3<span class="element">&lt;/span&gt;</span>
                                            <br/><span class="element">&lt;/div&gt;</span>

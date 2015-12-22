@@ -121,7 +121,7 @@
 .color-rtl-red { color: $rtl-red; }
 .bo-rtl-red { border-color: $rtl-red; }
 .hover-rtl-red:hover { color: $rtl-red; }
-.hover-rtl-red-light:hover { background-color: $rtl-red-light; color: $white; text-decoration: none; }
+.hover-rtl-red-light-white:hover { background-color: $rtl-red-light; color: $white; text-decoration: none; }
 .before-rtl-red:before { background-color: $rtl-red; }
 
 /* Blue */
@@ -224,7 +224,7 @@
 .fun-pink-light { background-color: $fun-pink-light; }
 .color-fun-pink { color: $fun-pink; }
 .bo-fun-pink { border-color: $fun-pink; }
-.hover-fun-pink-dark:hover { background-color: $fun-pink-dark; color: $white; text-decoration: none; }
+.hover-fun-pink-dark-white:hover { background-color: $fun-pink-dark; color: $white; text-decoration: none; }
 .before-fun-pink:before { background-color: $fun-pink; }
 
 /* Yellow */
