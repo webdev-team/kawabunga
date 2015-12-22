@@ -1,0 +1,146 @@
+/* Sprites
+----------------------------------------- */
+
+
+//with grunt : @import "sprite-retina.scss";
+//with grunt : @import "sprite.scss";
+
+@import "../spritesmith/sprite-retina-partners.scss";
+@import "../spritesmith/sprite-partners.scss";
+
+.sp {
+	display:inline-block;
+	text-indent:-312rem;
+	font-size:0;
+	background:url(#{$sprite-partners-image}) no-repeat 0 0 transparent;
+}
+
+// Retina Sprite
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.3),
+only screen and (   min--moz-device-pixel-ratio: 1.3),
+only screen and (     -o-min-device-pixel-ratio: 13/10),
+only screen and (        min-device-pixel-ratio: 1.3),
+only screen and (                min-resolution: 120dpi), // Surface Pro 2
+only screen and (                min-resolution: 1.3dppx) {
+	.sp {
+		background:url(#{$sprite-retina-partners-image}) no-repeat 0 0 transparent;
+		background-size: (ceil($sprite-retina-partners-width / 2) auto);
+	}
+}
+
+
+// Sprite Mixin see sprite scss and spritesmith
+@mixin sp($sprite) {
+	@include sprite-position($sprite);
+	@include sprite-width($sprite);
+	@include sprite-height($sprite);
+}
+
+// Logos
+.sp-logo-devices {
+	@include sp($logo-devices);
+}
+.sp-logo-explorimmo{
+	@include sp($logo-explorimmo);
+}
+.sp-logo-leguide{
+	@include sp($logo-leguide);
+}
+.sp-logo-easyflirt {
+	@include sp($logo-easyflirt);
+}
+.sp-logo-soonight {
+	@include sp($logo-soonight);
+}
+.sp-logo-pmu{
+	@include sp($logo-pmu);
+}
+.sp-logo-teleloisirs{
+	@include sp($logo-teleloisirs);
+}
+.sp-logo-justice{
+	@include sp($logo-justice);
+}
+.sp-logo-keljob{
+	@include sp($logo-keljob);
+}
+.sp-logo-kelformation{
+	@include sp($logo-kelformation);
+}
+.sp-logo-pme{
+	@include sp($logo-pme);
+}
+.sp-logo-paru-vendu{
+	@include sp($logo-paru-vendu);
+}
+.sp-logo-instagram{
+	@include sp($logo-instagram);
+}
+
+// Buttons
+.sp-btn-android {
+	@include sp($btn-android-app);
+}
+.sp-btn-apple {
+	@include sp($btn-apple-app);
+}
+%sp-btn-man-checked {
+	@include sp($btn-homme-checked);
+}
+%sp-btn-man {
+	@include sp($btn-homme);
+}
+%sp-btn-woman-checked {
+	@include sp($btn-femme-checked);
+}
+%sp-btn-woman {
+	@include sp($btn-femme);
+}
+.sp-timeline-end {
+	@include sp($timeline-end);
+}
+
+// Icon Partner
+.sp-icon-immo{
+	@include sp($icon-immo);
+}
+.sp-icon-shopping{
+	@include sp($icon-shopping);
+}
+.sp-icon-paris-sportifs{
+	@include sp($icon-paris-sportifs);
+}
+.sp-icon-paris-hippiques{
+	@include sp($icon-paris-hippiques);
+}
+.sp-icon-astro{
+	@include sp($icon-astro);
+}
+.sp-icon-tv{
+	@include sp($icon-tv);
+}
+.sp-icon-justice{
+	@include sp($icon-justice);
+}
+.sp-icon-keljob{
+	@include sp($icon-keljob);
+}
+.sp-icon-kelformation{
+	@include sp($icon-kelformation);
+}
+.sp-icon-pme{
+	@include sp($icon-pme);
+}
+.sp-icon-paru-vendu{
+	@include sp($icon-paru-vendu);
+}
+.sp-icon-instagram{
+	@include sp($icon-instagram);
+}
+.sp-icon-heart {
+	@include sp($icon-heart);
+}
+.sp-icon-dj {
+	@include sp($icon-dj);
+}
