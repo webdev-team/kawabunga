@@ -168,7 +168,7 @@
 .rtl2-cream { background-color: $rtl2-cream; }
 .rtl2-cream-dark { background-color: $rtl2-cream-dark; }
 .rtl2-cream-light { background-color: $rtl2-cream-light; }
-.bo-rtl2-cream-dark { border-color: $rtl2-cream-dark; }
+.bo-rtl2-cream-dark { border-color: $rtl2-cream-dark!important; }
 
 /* Gold */
 .rtl2-gold { background-color: $rtl2-gold; }
@@ -214,7 +214,7 @@
 .fun-cream { background-color: $fun-cream; }
 .fun-cream-dark { background-color: $fun-cream-dark; }
 .fun-cream-light { background-color: $fun-cream-light; }
-.bo-fun-cream-dark { border-color: $fun-cream-dark; }
+.bo-fun-cream-dark { border-color: $fun-cream-dark!important; }
 
 /* Blue */
 .fun-blue { background-color: $fun-blue; }
@@ -284,7 +284,7 @@
 .girls-cream-dark { background-color: $girls-cream-dark; }
 .girls-cream-darker { background-color: $girls-cream-darker; }
 .girls-cream-light { background-color: $girls-cream-light; }
-.bo-girls-cream-darker { border-color: $girls-cream-darker; }
+.bo-girls-cream-darker { border-color: $girls-cream-darker!important; }
 
 /* Nude : Mode & Beaute */
 .girls-nude { background-color: $girls-nude; }
