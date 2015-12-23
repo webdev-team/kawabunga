@@ -90,6 +90,9 @@
 .instagram-blue-light { background-color: $instagram-blue-light; }
 .googleplus-red { background-color: $googleplus-red; }
 .googleplus-red-light { background-color: $googleplus-red-light; }
+.pinterest-red { background-color: $pinterest-red; }
+.pinterest-red-light { background-color: $pinterest-red-light; }
+.pinterest-red-dark { background-color: $pinterest-red-dark; }
 .youtube-red { background-color: $youtube-red; }
 .linkedin-blue { background-color: $linkedin-blue; }
 
@@ -104,7 +107,7 @@
 .rtl-grey-light { background-color: $rtl-grey-light; }
 .color-rtl-grey { color: $rtl-grey; }
 .color-rtl-grey-matt { color: $rtl-grey-matt; }
-.bo-rtl-grey-light { border-color: $rtl-grey-light; }
+.bo-rtl-grey-light { border-color: $rtl-grey-light!important; }
 .before-rtl-grey-matt:before { background-color: $rtl-grey-matt; }
 .icon-color-rtl-grey .icon:before { color: $grey-dark; }
 
@@ -112,6 +115,7 @@
 .rtl-cream { background-color: $rtl-cream; }
 .rtl-cream-dark { background-color: $rtl-cream-dark; }
 .rtl-cream-light { background-color: $rtl-cream-light; }
+.color-rtl-cream { color: $rtl-cream; }
 
 /* Red */
 .rtl-red { background-color: $rtl-red; }
