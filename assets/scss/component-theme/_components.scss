@@ -1,0 +1,87 @@
+/* Component page Theme
+----------------------------------------- */
+
+/* Page Imports */
+@import "_article.scss";
+@import "_button.scss";
+@import "_flag-fix.scss";
+@import "_footer-section.scss";
+@import "_header-main.scss";
+@import "_module.scss";
+@import "_post-preview.scss";
+@import "_social-tool.scss";
+@import "_tag-topic.scss";
+@import "_widget-feature.scss";
+@import "_widget-partners.scss";
+@import "_widget-weather.scss";
+@import "_widget-astro.scss";
+
+
+.nav-child>li.active>a,
+.nav-child>li.active>a:hover,
+.nav-child>li.active>a:link {
+  background-color: $grey-lighter;
+}
+
+.code-example {
+  -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border: 1px solid $grey-light;
+  border-top-style: none;
+}
+
+// For Header
+.code-example .main-nav-sub .onair:hover {
+  color: $white;
+}
+
+.code-example .slide-nav .nav-item:hover {
+  .show-dropdown {
+    background-color:$white;
+    color:$rtl-red;
+  }
+}
+
+.code-example:after {
+  font-size: 12px;
+  font-weight: bold;
+  color: $grey-login-1col;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlighted {
+  background-color: $grey-lighter;
+  border: 1px solid $grey-light;
+  border-top: none;
+}
+
+.element {
+  color: $fb-blue-light;
+}
+
+.attribute {
+  color: $twitter-cyan;
+}
+
+.value {
+  color: $googleplus-red;
+}
+
+.variable {
+  color: $validation-green-dark;
+}
+
+.mention {
+  color: $validation-red-dark;
+}
+
+@media only screen and (min-width: 768px) {
+  .code-example {
+    background-color: $white;
+    border-color: $grey-light;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-top: none;
+  }
+}

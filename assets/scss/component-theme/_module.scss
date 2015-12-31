@@ -1,0 +1,22 @@
+/* Module Theme
+----------------------------------------- */
+
+// head
+.mdl-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: $white;
+}
+
+// more, right column & foot
+.mdl-link {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  line-height:u(1.1875rem);
+}
+
+.mdl-link.icon-chevron-right-bis:before,
+.mdl-link.icon-chevron-bas:before {
+  font-size: 1.5rem;
+  line-height: inherit;
+}

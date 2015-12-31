@@ -130,7 +130,7 @@ gulp.task('iconfont', function () {
                     className: 'icon'
                 }))
                 .pipe(rename('_fonticon.scss'))
-                .pipe(gulp.dest('assets/scss/'));
+                .pipe(gulp.dest('assets/scss/partial/'));
         })
         .pipe(gulp.dest('assets/font/'))
 });

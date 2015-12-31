@@ -1,14 +1,7 @@
+/* Icon page
+----------------------------------------- */
 
-// sass modules: functions, mixins, includes
-@import "sass-module/_import.scss";
-
-// partials: colors, typos, reset, tricks
-@import "partial/_import.scss";
-
-/* --------- */
-/*   ICONS   */
-/* --------- */
-
+/* Icons */
 .kawa-icons {
   margin: 15px -10px 20px;
   overflow: hidden;
@@ -73,10 +66,7 @@
   }
 }
 
-/* --------- */
-/*  SPRITES  */
-/* --------- */
-
+/* Sprites */
 .kawa-sprites {
   margin: 15px -10px 20px;
   overflow: hidden;

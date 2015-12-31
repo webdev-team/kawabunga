@@ -1,0 +1,67 @@
+/* Default browsers pixel base
+----------------------------------------- */
+$pixelBase : 16;
+
+
+/* Liquid responsive mode
+----------------------------------------- */
+$responsive-liquid:false;
+
+
+/* Liquid responsive mode 1 col only
+----------------------------------------- */
+$responsive-liquid-1col:true;
+
+
+/* Website dimensions
+----------------------------------------- */
+$website-4cols-size : 80rem; // 1280px = 1260 + 20 gutters
+$website-3cols-size : 60rem; // 960px  = 940  + 20 gutters
+$website-2cols-size : 40rem; // 640px  = 620  + 20 gutters
+$website-1col-size  : 20rem; // 300px  = 280  + 20 gutters
+
+@if($responsive-liquid-1col == true){
+  $website-1col-size  : 32.1875rem; // 515px
+}
+
+/* Website Gutters - Left:10px - Between Modules:20px - Right:10px
+----------------------------------------- */
+$website-horizontal-gutters: 0.625rem;
+
+
+/* Modules Bottom Gutters
+----------------------------------------- */
+$module-bottom-margin: 1.25rem; // 20px
+@if ($old-ie == true){
+  $responsive-liquid-1col:false; /* Keep it disabled on IE8- */
+}
+
+
+/* MediaQueries Aggressive Breakpoints (next converted into EM units)
+----------------------------------------- */
+$mq-small-bp   : 660px;  // 640px  2cols size + 20px scrollbar size
+$mq-medium-bp  : 980px;  // 960px  3cols size + 20px scrollbar size
+$mq-large-bp   : 1300px; // 1280px 4cols size + 20px scrollbar size
+
+
+/* MediaQueries Liquid Breakpoints (next converted into EM units)
+----------------------------------------- */
+@if ($responsive-liquid == true) {
+  $mq-small-bp   : 499px;    // below 499px:  smartphones, small devices
+  $mq-medium-bp  : 799px;    // below 799px:  big smartphones, small tablets
+  $mq-large-bp   : 1023px;   // below 1023px: tablets, small screens
+}
+
+
+/* Main Header heights
+----------------------------------------- */
+$main-nav-height:4.125rem;
+$main-mq-small-nav-height:3rem;
+$main-subnav-height:2.375rem;
+$main-mq-small-subnav-height:1.875rem;
+$main-uppernav-height:2.125rem;
+
+/* News Alert
+----------------------------------------- */
+$news-alert-height:u(3.125rem);
+$news-alert-height-mq-small:u(2.5rem);

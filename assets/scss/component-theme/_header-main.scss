@@ -1,0 +1,326 @@
+/* Header Main Theme
+----------------------------------------- */
+
+.main-header * {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* header-upper-nav */
+.header-upper-nav{
+	background: $rtl-cream-light;
+	border-bottom:u(0.3125rem) solid $rtl-red-dark;
+}
+.upper-nav-list{
+	//@extend %CustomFont2;
+}
+.upper-nav-item{
+	color: $black;
+	font-size:u(0.75rem);
+	line-height:u(1.8125rem);
+	text-transform:uppercase;
+}
+.upper-nav-item:hover,
+.header-upper-nav .current{
+	color:$rtl-red;
+}
+.newsletter-item{
+	background:$rtl-cream;
+}
+.main-header .header-upper-nav .icon-enveloppe:before{
+	font-size:u(0.9375rem);
+}
+
+/*Icons*/
+.main-header .icon-play:before,
+.main-header .icon-home:before,
+.main-header .icon-loupe:before,
+.main-header .icon-club-rtl:before,
+.main-header .icon-menuhamburger:before {
+	font-size:u(2rem);
+}
+
+.main-header .icon-flechemenu:before {
+	font-size:u(0.4375rem);
+}
+
+.main-header .icon-logo-rtl:before {
+	font-size:u(4.375rem);
+}
+.main-header .icon-chevron-right-bis {
+	line-height:u(1.125rem);
+}
+
+/* for club font-icon */
+.main-header .icon-club-rtl:before{
+	font-size:u(3.5rem);
+	text-shadow: 0 1px 0 rgba(237, 107, 122, 0.9);
+	-webkit-shadow: 0 1px 0 rgba(237, 107, 122, 0.9);
+}
+
+/* Main Nav */
+.main-nav {
+	border-right:1px solid;
+}
+.main-nav .nav-item {
+	border-right:1px solid;
+}
+.main-nav .nav-item.nav-item-right {
+	border-right:0;
+	border-left:1px solid;
+}
+.main-nav .nav-text {
+	line-height:u($main-nav-height);
+	color:inherit;
+	text-align:center;
+	font-size:u(1.125rem);
+}
+
+/* Main nav verticales */
+.universe-header .icon-club-rtl:before{
+	text-shadow: initial;
+}
+
+
+/* Main nav sub */
+.main-nav-sub .nav-item {
+	line-height:u($main-subnav-height);
+	font-size:u(0.875rem);
+}
+.main-nav-sub .small {
+	font-size:u(0.75rem);
+}
+.main-nav-sub .notif {
+	text-align:center;
+	line-height:u(0.9375rem);
+	font-size:u(0.625rem);
+}
+
+/* Main nav hover base */
+%hover-base {
+	background-color:$white;
+	background-color:rgba($white, 0.95);
+}
+%hover-base .item {
+	border-top:1px solid;
+	font-size:u(0.875rem);
+	text-align:left;
+}
+%hover-base .title {
+	font-size:u(1.125rem);
+}
+%hover-base .mdl-link {
+	font-size:u(0.875rem);
+}
+
+/* Show Dropdown (small arrow down) */
+.main-nav .show-dropdown {
+	border-top:1px solid;
+	line-height:u(0.5625rem);
+}
+.main-nav .show-dropdown .text {
+	text-align:center;
+	font-size:u(0.5625rem);	
+}
+
+/* Main nav hover */
+.main-nav-hover {
+	@extend %hover-base;
+}
+.main-nav-hover .list:first-child {
+	border-right:1px solid;
+}
+
+/* Logout */
+.main-nav-hover-logout {
+	@extend %hover-base;
+}
+.main-logout {
+	border:1px solid $rtl-cream-dark;
+}
+.main-logout .icon-logo-rtl:before,
+.main-logout .icon-logo_club-rtl:before {
+	color:$rtl-red;
+}
+.main-logout .icon-logo_club-rtl:before{
+	font-size:u(6.25rem);
+}
+.main-logout .item .btn-action {
+	color:$white;
+}
+.main-logout .logo{
+	border-top:0;
+}
+/*Breadcrumb*/
+.main-breadcrumb .nav-item:before {
+	font-size:u(0.625rem);
+}
+
+
+/* Active and :hover states */
+.main-nav .active .nav-text {
+	background-color:$rtl-red-light;
+}
+@mixin header-main-hover {
+	.no-touch .main-nav .nav-item:hover .show-dropdown,
+	.main-nav .active .show-dropdown {
+		background-color:$white;
+		color:$rtl-red;
+	}
+	.no-touch .main-nav .nav-item:hover .icon-flechemenu:before,
+	.main-nav .active .icon-flechemenu:before {
+		opacity:1;
+	}
+}
+@if ($old-ie == true){
+	@include header-main-hover;
+}@else {
+	@include mq('medium', 'all', 'min-width'){
+		@include header-main-hover;
+	}
+}
+
+%hover-base .item .btn-action:hover {
+	color:$white;
+}
+
+/* Active and :hover states */
+.touch .main-nav .nav-text:hover {
+	background-color:inherit;
+}
+
+/* Increase height size of show-sub-nav togglers in touch device when responsive nav isn't triggered */
+@include mq('medium', 'all', 'min-width'){
+	.touch .main-nav .show-dropdown {
+		height:u(1.25rem);
+		line-height:u(1.25rem);
+	}
+
+	/* for club font-icon */
+	.touch .main-header .icon-club-rtl:before{
+		font-size:u(2rem);
+	}
+}
+
+/* MQ Medium State */
+@include mq('medium'){
+
+	/* Slide Nav & Logout */
+	.slide-nav,
+	.slide-logout {
+		background-color:$rtl-cream;
+		border-right:1px solid $rtl-grey-light !important;
+	}
+	.slide-logout {
+		background-color:$white;
+	}
+	.main-header-overlay {
+		background: rgba(0, 0, 0, 0.75);
+	}
+	.slide-nav .nav-item {
+		border:0;
+		border-bottom:1px solid $rtl-grey-light !important;
+		color:$black-lighter;
+		background-color:$rtl-cream;
+	}
+	.slide-nav .nav-text {
+		text-align:left;
+		line-height:u(2.5rem) !important;
+		text-transform:uppercase;
+		font-family:$default-font-family;
+	}
+	.slide-nav .show-dropdown {
+		color:$black-lighter;
+		background-color:transparent;
+		border:0;
+		border-left:1px solid $rtl-grey-light !important;
+		line-height:u(1.75rem);
+	}
+	.slide-nav .show-dropdown .text {
+		font-size:u(1rem);
+	}
+
+	.main-nav-hover .list {
+		border:0;
+	}
+	.main-nav-hover .list:first-child,
+	.main-nav-hover.small li:first-child .mdl-link {
+		border:0;
+	}
+	.main-nav-hover .mdl-link {
+		background-color:$white;
+	}
+	
+	/*Icons*/
+	.slide-nav .icon-home:before {
+		font-size:u(1.125rem);
+	}
+
+	/* Active and :hover states */
+	.slide-nav .nav-text:hover {
+		background-color:inherit;
+		color:$rtl-red;
+	}
+	.slide-nav .active .nav-text {
+		background-color:inherit;
+		color:$rtl-red;
+	}
+	.no-touch .slide-nav .show-dropdown:hover,
+	.slide-nav .active .show-dropdown {
+		background-color:$white;
+	}
+	.no-touch .slide-nav .show-dropdown:hover .icon:before,
+	.slide-nav .active .show-dropdown .icon:before {
+		color:$rtl-red;
+	}
+
+	/* Logout */
+	.main-nav-hover-logout {
+		background-color:transparent;
+	}
+	.main-logout .logout-toggler {
+		color:$black-lighter;
+		line-height:u(2.5rem);
+		font-size:u(1.125rem);
+		text-transform:uppercase;
+		cursor:pointer;
+	}
+	.main-logout .logout-toggler:hover {
+		color:$rtl-red;
+	}
+	.main-logout .logo{
+		border-top:1px solid $rtl-grey-light;
+	}
+
+	.main-nav-hover .list .item .ss-list,
+	.main-nav-hover .list .ss-item.active .show-dropdown,
+	.main-nav-hover .list .ss-item .show-dropdown:hover {
+		background-color: $rtl-cream;
+	}
+
+}
+
+/* MQ Small State */
+@include mq('small'){
+
+	.main-header .icon-logo-rtl:before {
+		font-size:u(2.9375rem);
+	}
+    
+    .main-nav .logo{
+        width:auto;
+        border-right:0;
+    }
+
+	.main-nav .nav-text {
+		line-height:u($main-mq-small-nav-height);
+	}
+
+	.main-nav-sub .nav-item {
+		font-size:u(0.75rem);
+		line-height:u($main-mq-small-subnav-height);
+	}
+
+	.main-header .icon-play:before {
+		font-size:u(1.5625rem);
+	}
+}

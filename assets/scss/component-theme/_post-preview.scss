@@ -1,0 +1,101 @@
+/* Post Preview Theme
+----------------------------------------- */
+
+.post-fig .btn-replay {
+	text-shadow: 0 1px 1px $black-lighter;
+}
+.post-title {
+	font-weight:bold;
+	font-size:u(2rem);
+	line-height:u(2.25rem);
+}
+.post-texts.text-small .post-title {
+	font-size:u(1.25rem);
+	line-height:u(1.5rem);
+}
+.post-hat {
+	font-size:u(0.875rem);
+	line-height:u(1.5rem);
+}
+.post-texts .up {
+	text-transform:uppercase;
+}
+.post-list .list-item {
+	font-weight:bold;
+	font-size:u(0.875rem);
+	line-height:u(1.0625rem);
+}
+
+/* XS Layout */
+.post-preview.xs-layout .social-tool {
+	border-top: 1px solid $grey-light;
+}
+.post-preview.xs-layout .post-title {
+	font-size:u(1rem);
+	line-height:u(1.5rem);
+}
+
+/* Row Layout */
+.post-preview.row-layout .post-title {
+	font-size:u(1rem);
+	line-height:u(1.5rem);
+}
+
+/* MQ Large State */
+@include target-mq('medium', 'large'){
+	.post-preview.mql-xs-layout .social-tool {
+		border-top: 1px solid $grey-light;
+	}
+
+	/*XS layout*/
+	.post-preview.mql-xs-layout .post-title {
+		font-size:u(1rem);
+		line-height:u(1.5rem);
+	}
+
+	/*Row layout*/
+	.post-preview.mql-row-layout .post-title {
+		font-size:u(1rem);
+		line-height:u(1.5rem);
+	}
+}
+
+/* MQ Medium State */
+@include target-mq('small', 'medium'){
+	.post-preview.mqm-xs-layout .social-tool {
+		border-top: 1px solid $grey-light;
+	}
+	
+	/*XS layout*/	
+	.post-preview.mqm-xs-layout .post-title {
+		font-size:u(1rem);
+		line-height:u(1.5rem);
+	}
+	
+	/*Row Layout*/
+	.post-preview.mqm-row-layout .post-title {
+		font-size:u(1rem);
+		line-height:u(1.5rem);
+	}
+
+}
+
+/* MQ Small State */
+@include mq('small'){
+	
+	/*Row Layout*/
+	.post-title,
+	.post-preview.row-layout .post-title {
+		font-size:u(1.25rem);
+		line-height:u(1.5rem);
+	}
+
+	/* XS layout */
+	.post-preview.mqs-xs-layout .social-tool {
+		border-top: 1px solid $grey-light;
+	}
+	.post-preview.mqs-xs-layout .post-title {
+		font-size:u(1rem);
+		line-height:u(1.5rem);
+	}
+}

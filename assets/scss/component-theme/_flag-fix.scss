@@ -1,0 +1,176 @@
+/* Flag Fix Theme
+----------------------------------------- */
+
+.flag-fix .flag {
+	$u_flagfix_br:u(0.3125rem);
+	border-right:$u_flagfix_br solid;
+}
+
+.flag-fix .flag:after {
+	$u_flagfix_bt:u(1.5625rem);
+	$u_flagfix_bb:u(1.5625rem);
+	$u_flagfix_bl:u(0.5rem);
+	border-top:$u_flagfix_bt solid;
+	border-bottom:$u_flagfix_bb solid;
+	border-left:$u_flagfix_bl solid transparent;
+}
+
+/* RTL */
+.flag-fix .bo-rtl-blue {
+	border-color: $rtl-blue-dark;
+}
+
+.flag-fix .bo-rtl-blue:before {
+	background-color: $rtl-blue-darker;
+}
+
+.flag-fix .bo-rtl-blue:after {
+	border-top-color: $rtl-blue;
+	border-bottom-color: $rtl-blue;
+}
+
+.flag-fix .bo-rtl-green {
+	border-color: $rtl-green-dark;
+}
+
+.flag-fix .bo-rtl-green:before {
+	background-color: $rtl-green-darker;
+}
+
+.flag-fix .bo-rtl-green:after {
+	border-top-color: $rtl-green;
+	border-bottom-color: $rtl-green;
+}
+
+.flag-fix .bo-rtl-red {
+	border-color: $rtl-red;
+}
+
+.flag-fix .bo-rtl-red:before {
+	background-color: $rtl-red-dark;
+}
+
+.flag-fix .bo-rtl-red:after {
+	border-top-color: $rtl-red;
+	border-bottom-color: $rtl-red;
+}
+
+.flag-fix .bo-rtl-grey {
+	border-color: $rtl-grey;
+}
+
+.flag-fix .bo-rtl-grey:before {
+	background-color: $rtl-grey-matt;
+}
+
+.flag-fix .bo-rtl-grey:after {
+	border-top-color: $rtl-grey;
+	border-bottom-color: $rtl-grey;
+}
+
+/* RTL2 */
+.flag-fix .bo-rtl2-gold {
+	border-color: $rtl2-gold;
+}
+
+.flag-fix .bo-rtl2-gold:before {
+	background-color: $rtl2-gold-dark;
+}
+
+.flag-fix .bo-rtl2-gold:after {
+	border-top-color: $rtl2-gold;
+	border-bottom-color: $rtl2-gold;
+}
+
+.flag-fix .bo-rtl2-red {
+	border-color: $rtl2-red;
+}
+
+.flag-fix .bo-rtl2-red:before {
+	background-color: $rtl2-red-dark;
+}
+
+.flag-fix .bo-rtl2-red:after {
+	border-top-color: $rtl2-red;
+	border-bottom-color: $rtl2-red;
+}
+
+/* Funradio */
+.flag-fix .bo-fun-pink {
+	border-color: $fun-pink;
+}
+
+.flag-fix .bo-fun-pink:before {
+	background-color: $fun-pink-dark;
+}
+
+.flag-fix .bo-fun-pink:after {
+	border-top-color: $fun-pink;
+	border-bottom-color: $fun-pink;
+}
+
+.flag-fix .bo-fun-blue {
+	border-color: $fun-blue;
+}
+
+.flag-fix .bo-fun-blue:before {
+	background-color: $fun-blue-dark;
+}
+
+.flag-fix .bo-fun-blue:after {
+	border-top-color: $fun-blue;
+	border-bottom-color: $fun-blue;
+}
+
+/* Girls */
+.flag-fix .bo-girls-nude {
+	border-color: $girls-nude;
+}
+
+.flag-fix .bo-girls-nude:before {
+	background-color: $girls-nude-dark;
+}
+
+.flag-fix .bo-girls-nude:after {
+	border-top-color: $girls-nude;
+	border-bottom-color: $girls-nude;
+}
+
+.flag-fix .bo-girls-brown {
+	border-color: $girls-brown;
+}
+
+.flag-fix .bo-girls-brown:before {
+	background-color: $girls-brown-darker;
+}
+
+.flag-fix .bo-girls-brown:after {
+	border-top-color: $girls-brown;
+	border-bottom-color: $girls-brown;
+}
+
+.flag-fix .bo-girls-blue {
+	border-color: $girls-blue;
+}
+
+.flag-fix .bo-girls-blue:before {
+	background-color: $girls-blue-dark;
+}
+
+.flag-fix .bo-girls-blue:after {
+	border-top-color: $girls-blue;
+	border-bottom-color: $girls-blue;
+}
+
+.flag-fix .bo-girls-green {
+	border-color: $girls-green;
+}
+
+.flag-fix .bo-girls-green:before {
+	background-color: $girls-green-dark;
+}
+
+.flag-fix .bo-girls-green:after {
+	border-top-color: $girls-green;
+	border-bottom-color: $girls-green;
+}

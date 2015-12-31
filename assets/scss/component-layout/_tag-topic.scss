@@ -1,0 +1,17 @@
+/* Tag Topic
+----------------------------------------- */
+.tag-topic {
+	position:absolute;
+	display:block;
+	top:u(0.625rem);
+	left:u(0.625rem);
+	max-width:60%;
+	padding:u(0.125rem 0.25rem);
+}
+.tag-topic .tag {
+	display:block;
+	min-height:u(1.125rem);
+	font-size:u(0.825rem);
+	//max-height:u(2rem);
+	//line-height:u(0.625rem);
+}

@@ -1,0 +1,43 @@
+/* Color page
+----------------------------------------- */
+
+.kawa-colors {
+  margin: 15px -10px 20px;
+  overflow: hidden;
+}
+
+.kawa-colors-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.kawa-colors li {
+  float: left;
+  width: 25%;
+  height: 115px;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  border: 1px solid $white;
+}
+
+.kawa-colors li>span {
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  padding-top: 36px;
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  .kawa-colors {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .kawa-colors li {
+    width: 20%;
+    font-size: 12px;
+  }
+}

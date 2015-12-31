@@ -1,0 +1,110 @@
+/* Widget Weather
+----------------------------------------- */
+.header-weather {
+	$u_header-weather_bb:u(0.25rem);
+	padding:u(0.75rem 0.625rem 0.625rem 1.1875rem);
+	border-radius:u(0 0 0 0.25rem);
+}
+.header-weather .info {
+	display:block;
+	overflow:hidden;
+}
+.header-weather .main-icon {
+	position:relative;
+	float:right;
+	margin:u(0 0 0.25rem 0.25rem);
+	width:u(5rem);
+	height:u(5rem);
+	line-height:u(5rem);
+}
+.header-weather .main-icon:before {
+	margin:0;
+}
+.header-weather .forecast{
+	position:absolute;
+	top:0;
+	left:0;
+	visibility:hidden;
+	line-height:1.2;
+}
+.header-weather .text {
+	display:block;
+}
+.header-weather .wind {
+	position:relative;
+	float:right;
+}
+.weather-list {
+	padding:0;
+	list-style-type:none;
+}
+.weather-list .item {
+	overflow:hidden;
+	padding:u(1.25rem 0.8125rem);
+}
+.weather-list .item:first-child {
+	border-top:0;
+}
+.weather-list .text,
+.weather-list .icon {
+	float:left;
+	line-height:u(1.875rem);
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.weather-list .text {
+	width:40%;
+}
+.weather-list .icon {
+	width:20%;
+	height:u(2rem);
+	line-height:u(2rem);
+	text-align:center;
+}
+
+/* Icons */
+.weather-list .icon:before {
+	margin:0;
+}
+
+@mixin mdl-fix-weather {
+	/* Height Fix */
+	.mdl-fix .header-weather {
+		height:u(7.4375rem);
+		overflow:hidden;
+	}
+	.mdl-fix .weather .date {
+		max-height:u(6.25rem);
+	}
+	.mdl-fix .weather-list {
+		height:u(18.1875rem);
+	}
+	.header-weather .text {
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+	.mdl-fix .weather-list .text {
+		overflow:hidden;
+		height:u(1.875rem);
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+}
+@include mq('small'){
+	.weather-list{
+		display:none;
+	}
+}
+/*
+ * If we choose to apply a liquid effect on the last breakpoint,
+ * apply all the fixed stuff above this breakpoint.
+ */
+
+@if($responsive-liquid-1col == true){
+	@include mq('small', 'all', 'min-width'){
+		@include mdl-fix-weather;
+	}
+}@else {
+	@include mdl-fix-weather;
+}

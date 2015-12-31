@@ -1,4 +1,23 @@
-@import 'typography.scss';
-@import 'colors.scss';
-@import '../assets/scss/_components.scss';
-@import '../assets/scss/_fonticon.scss';
+$old-ie: false;
+$px-only: false;
+$media-queries: true;
+
+// sass modules: functions, mixins, includes
+@import "../assets/scss/sass-module/_import.scss";
+
+// partials: website config, colors, typos, reset, tricks
+@import "../assets/scss/partial/_import.scss";
+
+// website layout: grid
+@import "../assets/scss/layout-layout/_import.scss";
+
+// website components
+@import "../assets/scss/colors";
+@import "../assets/scss/icons";
+@import "../assets/scss/component-layout/_components.scss";
+
+// website modules
+//@import "module-layout/_import-all.scss";
+
+// website theme (must be placed at the very bottom css file in order to allow background and colors override)
+@import "../assets/scss/component-theme/_components.scss";

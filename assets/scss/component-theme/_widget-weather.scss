@@ -1,0 +1,52 @@
+/* Widget Weather Theme
+----------------------------------------- */
+.header-weather {
+	$u_header-weather_bb:u(0.25rem);
+	border-bottom:$u_header-weather_bb solid;
+}
+.header-weather .main-icon:before {
+	line-height:inherit;
+	font-size:u(5rem);
+}
+.header-weather .text {
+	font-size:u(1.0625rem);
+}
+.header-weather .text.big {
+	font-size:u(4.125rem);
+	line-height:u(3.5rem);
+}
+.header-weather .text.small {
+	font-size:u(0.9375rem);
+}
+.header-weather .wind {
+	font-size:u(1rem);
+	line-height:u(1rem);
+}
+.header-weather .wind:before {
+	font-size:u(1.5rem);
+	line-height:inherit;
+}
+.weather-list .item {
+	border-top:1px solid $rtl-cream-dark;
+}
+.weather-list .item {
+}
+.weather-list .text {
+	font-weight:bold;
+	font-size:u(0.9375rem);
+}
+.weather-list .right {
+	font-size:u(1.125rem);
+	font-weight:normal;
+	text-align:right;
+}
+.weather-list .big {
+	font-size:u(1.5rem);
+}
+
+/* Icons */
+.weather-list .icon:before {
+	color:$grey-dark;
+	font-size:u(2rem);
+	line-height:inherit;
+}

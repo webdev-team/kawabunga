@@ -1,0 +1,22 @@
+/* Footer Section Theme
+----------------------------------------- */
+.footer-section {
+	line-height:u(1.5625rem);
+	font-size:u(0.9375rem);
+	text-align:center;
+}
+.footer-section .link {
+	color:inherit;
+	font-weight:bold;
+}
+
+/* Icons */
+.footer-section .link:after,
+.footer-section .link:before {
+	line-height:inherit;
+	font-size:u(2rem);
+}
+.link.icon:before {
+	font-variant: normal;
+	line-height: inherit;
+}
