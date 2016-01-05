@@ -12,6 +12,7 @@
 /* White */
 .white { background-color: $white; }
 .dark { color: $white; }
+.hover-white:hover { background-color: $white; }
 .before-white:before { color: $white; }
 
 /* Black */
@@ -124,7 +125,7 @@
 .rtl2-grey-darker { background-color: $rtl2-grey-darker; }
 .color-rtl2-grey { color: $rtl2-grey; }
 .color-rtl2-grey-darker { color: $rtl2-grey-darker; }
-.hover-rtl2-grey-dark:hover { color: $rtl2-grey-dark; }
+.hover-rtl2-grey-dark:hover { color: $rtl2-grey-dark!important; }
 .hover-rtl2-grey-dark-white:hover { background-color: $rtl2-grey-dark; color: $white; text-decoration: none; }
 .icon-color-rtl2-grey .icon:before { color: $rtl2-grey; }
 
@@ -132,7 +133,9 @@
 .rtl2-cream { background-color: $rtl2-cream; }
 .rtl2-cream-dark { background-color: $rtl2-cream-dark; }
 .rtl2-cream-light { background-color: $rtl2-cream-light; }
+.bo-rtl2-cream-light { border-color: $rtl2-cream-light!important; }
 .bo-rtl2-cream-dark { border-color: $rtl2-cream-dark!important; }
+.hover-rtl2-cream-dark:hover { color: $rtl2-cream-dark!important; }
 
 /* Gold */
 .rtl2-gold { background-color: $rtl2-gold; }
@@ -146,6 +149,7 @@
 .rtl2-red { background-color: $rtl2-red; }
 .rtl2-red-dark { background-color: $rtl2-red-dark; }
 .color-rtl2-red { color: $rtl2-red; }
+.hover-rtl2-red:hover { background-color: $rtl2-red; }
 .before-rtl2-red:before { background-color: $rtl2-red; }
 
 /* Pink */

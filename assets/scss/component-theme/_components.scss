@@ -34,11 +34,16 @@
 .code-example .main-nav-sub .onair:hover {
   color: $white;
 }
-
-.code-example .slide-nav .nav-item:hover {
+.code-example .main-header-rtl .slide-nav .nav-item:hover {
   .show-dropdown {
     background-color:$white;
     color:$rtl-red;
+  }
+}
+.code-example .main-header-rtl2 .slide-nav .nav-item:hover {
+  .show-dropdown {
+    background-color:$white;
+    color:$rtl2-black;
   }
 }
 

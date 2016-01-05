@@ -299,12 +299,14 @@ $u_slides_width:20rem;
 	padding:u(0 1.25rem);
 	border-top:0;
 }
-.main-logout .icon-logo_club-rtl {
+.main-logout .icon-logo_club-rtl,
+.main-logout .icon-rtl2-logo {
 	display:block;
 	max-height:u(4.375rem);
 	overflow:hidden;
 }
-.main-logout .icon-logo_club-rtl:before {
+.main-logout .icon-logo_club-rtl:before,
+.main-logout .icon-rtl2-logo:before {
 	position: relative;
 	top:u(-0.9375rem);
 }
@@ -623,7 +625,8 @@ $u_slides_width:20rem;
 
     /* VERTICAL DEPENDENCIES */
     .universe-header {
-        .icon-club-rtl:before {
+        .icon-club-rtl:before,
+		.icon-user:before{
             text-shadow:none;
         }
 
@@ -652,7 +655,8 @@ $u_slides_width:20rem;
                     text-transform:uppercase;
                     padding-left:10px;
 
-                    .icon-logo-rtl {
+                    .icon-logo-rtl,
+					.icon-logo-rtl2{
                         display:none;
 
                         *:before {
