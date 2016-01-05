@@ -312,6 +312,25 @@
 .main-header-rtl2 .main-nav-hover-logout .item a{
 	line-height:1.2;
 }
+  //-- FUNRADIO
+.main-header-fun .main-logout {
+	border:1px solid $fun-cream-dark;
+}
+.main-header-fun .main-logout .logo{
+	border:0;
+}
+.main-logout .icon-logo-fun_radio:before,
+.main-logout .icon-logo_club-fun-radio:before {
+	color: $fun-black;
+	top:0;
+	font-size:u(3rem);
+	//padding:u(0.5rem 0);
+	margin:u(0.5rem 0);
+}
+.main-header-fun .main-nav-hover .item a,
+.main-header-fun .main-nav-hover-logout .item a{
+	line-height:1.2;
+}
 
 
 /*Breadcrumb*/
@@ -339,13 +358,13 @@
 }
   //-- RTL
 .main-header-rtl .main-nav .active .nav-text {
-	background-color:$rtl-red-light;
+	background-color: $rtl-red-light;
 }
 @mixin header-main-hover {
 	.main-header-rtl .no-touch .main-nav .nav-item:hover .show-dropdown,
 	.main-header-rtl .main-nav .active .show-dropdown {
-		background-color:$white;
-		color:$rtl-red;
+		background-color: $white;
+		color: $rtl-red;
 	}
 }
   //-- RTL2
@@ -355,8 +374,19 @@
 @mixin header-main-hover {
 	.main-header-rtl2 .no-touch .main-nav .nav-item:hover .show-dropdown,
 	.main-header-rtl2 .main-nav .active .show-dropdown {
-		background-color:$white;
-		color:$rtl2-black;
+		background-color: $white;
+		color: $rtl2-black;
+	}
+}
+  //-- FUNRADIO
+.main-nav .active .nav-text {
+	background-color: $fun-blue-dark;
+}
+@mixin header-main-hover {
+	.no-touch .main-nav .nav-item:hover .show-dropdown,
+	.main-nav .active .show-dropdown {
+		background-color: $white;
+		color: $fun-blue;
 	}
 }
 

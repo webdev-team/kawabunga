@@ -46,6 +46,12 @@
     color:$rtl2-black;
   }
 }
+.code-example .main-header-fun .slide-nav .nav-item:hover {
+  .show-dropdown {
+    background-color:$white;
+    color:$fun-blue;
+  }
+}
 
 .code-example:after {
   font-size: 12px;
