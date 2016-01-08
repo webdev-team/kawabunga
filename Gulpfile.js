@@ -52,17 +52,6 @@ gulp.task('sprite:x1', function () {
             imgPath     : '../img/sprite-partners.png',
             cssSpritesheetName : 'sprite-partners'
         }))
-        /*.on('glyphs', function (glyphs, options) {
-            gulp.src('assets/img/sprite-partners/_sprite-partners.scss.template')
-                .pipe(consolidate('lodash', {
-                    glyphs: glyphs,
-                    fontName: 'test',
-                    fontPath: '../img/sprite-partners/',
-                    className: 'sp'
-                }))
-                .pipe(rename('_sprite-partners.scss'))
-                .pipe(gulp.dest('assets/scss/partial/'));
-        })*/
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
 });
 gulp.task('sprite:x2', function () {
@@ -101,7 +90,6 @@ gulp.task('iconfont', function () {
     return gulp.src([
             'assets/icon/common/astro/*.svg',
             'assets/icon/common/meteo/*.svg',
-            'assets/icon/common/astro/*.svg',
             'assets/icon/common/others/*.svg',
             'assets/icon/common/social/facebook/*.svg',
             'assets/icon/common/social/googleplus/*.svg',

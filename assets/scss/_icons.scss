@@ -12,18 +12,6 @@
   list-style: none;
 }
 
-/* particular case for the pastille icon: transparency reverse */
-.kawa-icons li .icon-pastille {
-  color: $grey-lighter;
-  background-color: $black;
-}
-
-.kawa-icons li:hover .icon-pastille {
-  color: #563d7c;
-  background-color: $white;
-}
-/* end */
-
 .kawa-icons li {
   float: left;
   width: 25%;
