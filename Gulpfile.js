@@ -167,7 +167,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('build', function (cb) {
-    runSequence('clean', 'sprite:x1', 'sprite:x2', ['img', 'iconfont', 'css', 'font'], ['html'], cb);
+    runSequence('clean', 'sprite:x1', 'sprite:x2', ['img', 'css', 'font'], ['html'], cb);
 });
 
-gulp.task('work', ['img', 'iconfont', 'css', 'font', 'html', 'webserver', 'watch']);
+gulp.task('work', ['img', 'css', 'font', 'html', 'webserver', 'watch']);
