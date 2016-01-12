@@ -1,0 +1,14 @@
+
+@import "../../../themes/default/theme";
+@import "../../../functions";
+
+/* Article Text Link
+----------------------------------------- */
+.article-text-link {
+  cursor:pointer;
+  color: $article-text-link-color;
+}
+
+.article-text-link:hover {
+  color: $article-text-link-color_hover;
+}

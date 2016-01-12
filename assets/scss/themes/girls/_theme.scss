@@ -1,0 +1,47 @@
+
+//@import "../default/colors";
+@import "colors";
+@import "font";
+
+.module-header.life-bg-color,
+.module-footer.life-bg-color {
+  background-color: $girls-green;
+}
+.module-header.sexo-bg-color,
+.module-footer.sexo-bg-color  {
+  background-color: $girls-blue;
+}
+.module-header.confession-bg-color,
+.module-footer.confession-bg-color {
+  background-color: $girls-brown;
+}
+
+$font-design: $raleway-bold-font-family;
+
+// Button
+$btn-bg-color: $girls-nude;
+$btn-bg-color_hover: $girls-nude-dark;
+
+$btn-hover-bg-color: $girls-cream-light;
+$btn-hover-frontside-bg-color_hover: $girls-nude-dark;
+
+$btn-link-bg-color: $girls-nude-dark;
+$btn-link-bg-color_hover: $girls-nude;
+
+$btn-search-label-bg-color: $girls-nude;
+$btn-search-input-bg-color: $girls-nude-dark;
+
+// Module
+$module-header-font-family: $raleway-regular-font-family;
+$module-header-bg-color: $girls-nude;
+
+$module-border-border-color: $girls-cream-darker;
+
+$module-link-bg-color: $girls-cream;
+$module-link-color: $girls-black;
+
+$module-footer-bg-color: $girls-nude;
+
+// Article
+$article-text-link-color: $girls-nude-dark;
+$article-text-link-color_hover: $girls-black;

@@ -1,0 +1,266 @@
+/* Common Layout
+----------------------------------------- */
+
+@import "../../assets/scss/themes/default/font";
+@import "../../assets/scss/config";
+
+/* Remove the 300ms delay on Widows phones - source: http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away */
+html {
+  -ms-touch-action: manipulation; /* IE10  */
+  touch-action: manipulation; /* IE11+  */
+}
+body {
+  font-family: $arial;
+  line-height: normal;
+  /*font-size: inherit;*/
+}
+a, a:hover, a:link {
+  text-decoration: none;
+}
+
+/* For Kawabunga */
+.kawa h1 {
+  border-bottom: 1px solid #D8D8D8;
+}
+.kawa .kawa-h1 {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+}
+.kawa .kawa-h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.kawa p {
+  margin: 0 0 10px;
+}
+.kawa pre code {
+  white-space: nowrap;
+}
+
+
+
+
+.float-none {
+  float: none!important;
+}
+@media (min-width: $media-queries-medium) {
+  .width-47 {
+    width: 47% !important;
+  }
+}
+
+@media (min-width: $media-queries-small) {
+  .width-42 {
+    width: 42%!important;
+  }
+}
+
+.position-static>span{
+  position: static;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:link,
+.nav-child>li.active>a,
+.nav-child>li.active>a:hover,
+.nav-child>li.active>a:link{
+  outline: none;
+}
+
+.nav-child {
+  margin-left: 31px;
+}
+
+pre.lang-css{
+  white-space: pre-wrap!important;
+}
+
+.code-example {
+  position: relative;
+  padding: 45px 15px 60px;
+  margin: 0 0 -42px;
+}
+
+.code-example div[class*='col-md'], .code-example div[class^='col-md'] {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  //cursor: pointer;
+}
+
+// For Flag-fix
+.code-example .flag-fix {
+  max-width: 62%;
+}
+
+// For Footer article
+.code-example .footer-section {
+  padding:0;
+}
+
+// For Header
+.code-example .main-header {
+  position: static;
+  height: auto;
+}
+.code-example .main-nav-hover,
+.code-example .slide-logout{
+  display: none;
+}
+.code-example .slide-nav .nav-item:hover{
+  .main-nav-hover {
+    display: block;
+  }
+}
+.code-example #main-logout:hover {
+  .slide-logout {
+    display: block;
+  }
+}
+
+
+.code-example:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  content: "Example";
+}
+
+.highlighted {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.code-example+.highlighted {
+  margin: -15px 0 15px;
+  border-width: 0 1px 1px;
+  border-radius: 0;
+}
+
+.highlighted pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-break: normal;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.highlighted pre code {
+  display: inline-block;
+  padding-right: 45px;
+}
+
+@media only screen and (min-width: 768px) {
+  .code-example {
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+  }
+
+  .code-example+.highlighted {
+    margin-top: -16px;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+
+
+
+
+
+
+.page-wrap,
+.page-wrap-fluid {
+  margin:0 auto;
+}
+.page-top-padding {
+  padding-top: 20px;
+}
+.skin-link {
+  display:none; // avoid a skin-link displayed without skin.css injected
+}
+
+/* Echo Images */
+.img-echo {
+  background:url('../img/loader.gif') center center no-repeat transparent;
+}
+
+/*@if ($responsive-liquid == false) {
+
+   Agressive responsive mode
+  .page-wrap {
+    max-width:u($website-4cols-size);
+  }
+  @include mq('large'){
+    .page-wrap {
+      max-width:u($website-3cols-size);
+    }
+  }
+  @include mq('medium'){
+    .page-wrap {
+      max-width:u($website-2cols-size);
+    }
+  }
+  @include mq('small'){
+    .page-wrap {
+      max-width:u($website-1col-size);
+    }
+  }
+
+}@else {
+
+   Liquid responsive mode
+  .page-wrap {
+    max-width:u($website-4cols-size);
+  }
+
+}*/
+
+/* If media-queries are disabled, set the page width equal to the largest col */
+/*@if ($media-queries == false) {
+  .page-wrap {
+    width:u($website-4cols-size);
+  }
+}*/
+
+/* Page wrap fluid isn't related to page wrap and all reponsive stuff */
+/*.page-wrap-fluid {
+  max-width:u($website-4cols-size);
+}
+@include old-ie {
+  .page-wrap-fluid {
+    width:u($website-4cols-size);
+  }
+}*/
+
+/* MQ Large State */
+@include mq('large'){
+  .mql-hide {
+    display:none;
+  }
+}
+
+/* MQ Medium State */
+@include mq('medium'){
+  .mqm-hide {
+    display:none;
+  }
+}
+
+/* MQ Small State */
+@include mq('small'){
+  .mqs-hide {
+    display:none;
+  }
+  .page-top-padding {
+    padding-top:u(0.625rem);
+  }
+}

@@ -1,0 +1,42 @@
+
+@import "../default/colors";
+@import "colors";
+@import "font";
+
+.module-header.culture-bg-color,
+.module-footer.culture-bg-color {
+  background-color: $rtl2-gold;
+}
+.article-text-link.culture-color {
+  color: $rtl2-gold;
+}
+
+$font-design: $oswald-regular-font-family;
+
+// Button
+$btn-bg-color: $rtl2-black;
+$btn-bg-color_hover: $rtl2-grey-dark;
+
+$btn-hover-bg-color: $rtl2-cream-light;
+$btn-hover-frontside-bg-color_hover: $rtl2-red;
+
+$btn-link-bg-color: $rtl2-red;
+$btn-link-bg-color_hover: $rtl2-grey-dark;
+
+$btn-search-label-bg-color: $rtl2-black;
+$btn-search-input-bg-color: $black;
+
+// Module
+$module-header-font-family: $font-design;
+$module-header-bg-color: $rtl2-black;
+
+$module-border-border-color: $rtl2-cream-dark;
+
+$module-link-bg-color: $rtl2-cream;
+$module-link-color: $rtl2-grey-darker;
+
+$module-footer-bg-color: $rtl2-black;
+
+// Article
+$article-text-link-color: $rtl2-red;
+$article-text-link-color_hover: $rtl2-black;

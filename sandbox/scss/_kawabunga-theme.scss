@@ -1,21 +1,11 @@
 /* Component page Theme
 ----------------------------------------- */
 
-/* Page Imports */
-//@import "_article.scss";
-//@import "_button.scss";
-//@import "_flag-fix.scss";
-//@import "_footer-section.scss";
-//@import "_header-main.scss";
-//@import "_module.scss";
-//@import "_post-preview.scss";
-//@import "_social-tool.scss";
-//@import "_tag-topic.scss";
-//@import "_widget-feature.scss";
-//@import "_widget-partners.scss";
-//@import "_widget-weather.scss";
-//@import "_widget-astro.scss";
-
+@import "../../assets/scss/themes/default/colors";
+@import "../../assets/scss/themes/rtl/colors";
+@import "../../assets/scss/themes/rtl2/colors";
+@import "../../assets/scss/themes/funradio/colors";
+@import "../../assets/scss/themes/girls/colors";
 
 .nav-child>li.active>a,
 .nav-child>li.active>a:hover,
@@ -27,12 +17,6 @@
   -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
   box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
   border: 1px solid $grey-light;
-  border-top-style: none;
-}
-.code-example-site {
-  -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
-  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
-  border: 1px solid $grey-light !important;
 }
 
 // For button text
@@ -84,12 +68,12 @@
 .code-example .main-header-girls .main-nav .hover-girls-nude-dark-white{
   color: $white;
 }
-.code-example-site .btn-link:focus, .btn-link:hover,
-.code-example-site .btn.focus, .btn:focus, .btn:hover {
+.code-example .btn-link:focus, .btn-link:hover,
+.code-example .btn.focus, .btn:focus, .btn:hover {
   color: $white;
   text-decoration: none;
 }
-.code-example-site .btn {
+.code-example .btn {
   line-height: normal;
   border-radius: 0;
 }
@@ -107,26 +91,6 @@
   background-color: $grey-lighter;
   border: 1px solid $grey-light;
   border-top: none;
-}
-
-.element {
-  color: $fb-blue-light;
-}
-
-.attribute {
-  color: $twitter-cyan;
-}
-
-.value {
-  color: $googleplus-red;
-}
-
-.variable {
-  color: $validation-green-dark;
-}
-
-.mention {
-  color: $validation-red-dark;
 }
 
 /* desert scheme ported from vim to google prettify */
@@ -163,19 +127,10 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
   pre .atv, code .atv { color: #060 }
 }
 
-
-
 @media only screen and (min-width: 768px) {
   .code-example {
     background-color: $white;
     border-color: $grey-light;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-top: none;
-  }
-  .code-example-site {
-    background-color: $white;
-    border-color: $grey-light !important;
     -webkit-box-shadow: none;
     box-shadow: none;
   }

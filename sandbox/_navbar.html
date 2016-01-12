@@ -17,7 +17,16 @@
         <li class="{% if active == 'typography' %}active{% endif %}"><a href="typography.html">Typographie <span class="sr-only">(current)</span></a></li>
         <li class="{% if active == 'colors' %}active{% endif %}"><a href="colors.html">Colors <span class="sr-only">(current)</span></a></li>
         <li class="{% if active == 'icons' %}active{% endif %}"><a href="icons.html">Icons <span class="sr-only">(current)</span></a></li>
-        <li class="{% if active == 'components' %}active{% endif %}"><a href="components.html">Components <span class="sr-only">(current)</span></a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Components <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="{% if active == 'components' %}active{% endif %}"><a href="components.html">Default <span class="sr-only">(current)</span></a></li>
+            <li class="{% if active == 'components-rtl' %}active{% endif %}"><a href="components-rtl.html">RTL <span class="sr-only">(current)</span></a></li>
+            <li class="{% if active == 'components-rtl2' %}active{% endif %}"><a href="components-rtl2.html">RTL2 <span class="sr-only">(current)</span></a></li>
+            <li class="{% if active == 'components-funradio' %}active{% endif %}"><a href="components-funradio.html">Fun Radio <span class="sr-only">(current)</span></a></li>
+            <li class="{% if active == 'components-girls' %}active{% endif %}"><a href="components-girls.html">Girls <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

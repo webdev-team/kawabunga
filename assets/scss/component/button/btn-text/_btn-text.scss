@@ -1,0 +1,25 @@
+
+@import "../../../themes/default/theme";
+@import "../../../functions";
+
+/* Button Text
+----------------------------------------- */
+.btn-text {
+  display: inline-block;
+  vertical-align: top;
+  cursor:pointer;
+}
+
+.btn-text .text {
+  display: block;
+  font-size: px-to-rem(14px);
+  color: $white;
+}
+
+.btn-text:before {
+  display: block;
+  text-align: center;
+  font-size: px-to-rem(40px);
+  margin: 0;
+  color: $white;
+}

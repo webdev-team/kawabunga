@@ -1,21 +1,6 @@
 /* Component page
 ----------------------------------------- */
 
-/* Page Imports */
-//@import "_article.scss";
-//@import "_button.scss";
-//@import "_flag-fix.scss";
-//@import "_footer-section.scss";
-//@import "_header-main.scss";
-//@import "_module.scss";
-//@import "_post-preview.scss";
-//@import "_social-tool.scss";
-//@import "_tag-topic.scss";
-//@import "_widget-feature.scss";
-//@import "_widget-partners.scss";
-//@import "_widget-weather.scss";
-//@import "_widget-astro.scss";
-
 
 .float-none {
   float: none!important;
@@ -47,6 +32,10 @@
 
 .nav-child {
   margin-left: 31px;
+}
+
+pre.lang-css{
+  white-space: pre-wrap!important;
 }
 
 .code-example {

@@ -1,0 +1,57 @@
+
+@import "../../../themes/default/theme";
+@import "../../../functions";
+
+/* Button Hover
+----------------------------------------- */
+.btn-hover {
+  position: relative;
+  min-width: px-to-rem(152px);
+  height: px-to-rem(54px);
+  padding: px-to-rem(0) px-to-rem(9px) px-to-rem(0) px-to-rem(4px);
+  cursor:pointer;
+  background-color: $btn-hover-bg-color;
+  color: $white;
+}
+
+.btn-hover:hover .btn-hover-frontside{
+  display: none;
+}
+
+.btn-hover-item {
+  display: block;
+  float: left;
+  line-height: px-to-rem(54px);
+  padding-left: px-to-rem(6px);
+}
+
+.btn-hover-img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-hover-frontside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: px-to-rem(10px) px-to-rem(13px);
+  font-weight: bold;
+  font-size: px-to-rem(14px);
+  text-align: right;
+  color: $white;
+  background-color: $btn-hover-frontside-bg-color_hover;
+}
+
+.btn-hover-frontside:before {
+  float: left;
+  color: $white;
+  font-size: px-to-rem(32px);
+}
+
+.btn-hover-frontside.icon:before {
+  margin: px-to-rem(0) px-to-rem(6px);
+  font-variant: normal;
+  text-transform: none;
+}

@@ -1,0 +1,71 @@
+@import "../../assets/scss/themes/default/_font";
+@import "../../assets/scss/themes/rtl/_font";
+@import "../../assets/scss/themes/rtl2/_font";
+@import "../../assets/scss/themes/funradio/_font";
+@import "../../assets/scss/themes/girls/_font";
+@import "../../assets/scss/partial/typography/typography-roboto";
+
+.arial {
+  font-family: $arial;
+  font-size: 16px;
+}
+
+.helvetica {
+  font-family: $helvetica;
+  font-size: 16px;
+}
+
+.lato {
+  font-family: $lato-regular-font-family;
+  font-size: 16px;
+}
+
+.lato.light {
+  font-family: $lato-light-font-family;
+}
+
+.eurostile {
+  font-family: $eurostile-regular-font-family;
+  font-size: 16px;
+}
+
+.eurostile.bold {
+  font-family: $eurostile-bold-font-family;
+}
+
+.oswald {
+  font-family: $oswald-regular-font-family;
+  font-size: 16px;
+  @include font-smoothing-mixin;
+}
+
+.oswald.light {
+  font-family: $oswald-light-font-family;
+}
+
+.raleway {
+  font-family: $raleway-regular-font-family;
+  font-size: 16px;
+  @include font-smoothing-mixin;
+}
+
+.raleway.bold {
+  font-family: $raleway-bold-font-family;
+}
+
+.roboto {
+  font-family: $roboto-regular-font-family;
+  font-size: 16px;
+}
+
+.roboto.light {
+  font-family: $roboto-light-font-family;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}

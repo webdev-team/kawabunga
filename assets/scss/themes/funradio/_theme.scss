@@ -1,0 +1,70 @@
+
+@import "../default/colors";
+@import "colors";
+@import "font";
+
+.module-header.actu-bg-color,
+.module-footer.actu-bg-color {
+  background-color: $fun-pink;
+}
+.article-text-link.actu-color {
+  color: $fun-pink;
+}
+.module-header.buzz-bg-color,
+.module-footer.buzz-bg-color {
+  background-color: $fun-orange;
+}
+.article-text-link.buzz-color {
+  color: $fun-orange;
+}
+.module-header.super-bg-color,
+.module-footer.super-bg-color {
+  background-color: $fun-cherry;
+}
+.article-text-link.super-color {
+  color: $fun-cherry;
+}
+.module-header.night-bg-color,
+.module-footer.night-bg-color {
+  background-color: $fun-purple;
+}
+.article-text-link.night-color {
+  color: $fun-purple;
+}
+.module-header.fit-bg-color,
+.module-footer.fit-bg-color {
+  background-color: $fun-green;
+}
+.article-text-link.fit-color {
+  color: $fun-green;
+}
+
+$font-design: $eurostile-regular-font-family;
+
+// Button
+$btn-bg-color: $fun-pink;
+$btn-bg-color_hover: $fun-pink-dark;
+
+$btn-hover-bg-color: $fun-cream-light;
+$btn-hover-frontside-bg-color_hover: $fun-grey-darker;
+
+$btn-link-bg-color: $fun-pink;
+$btn-link-bg-color_hover: $fun-pink-dark;
+
+$btn-search-label-bg-color: $fun-pink;
+$btn-search-input-bg-color: $fun-pink-dark;
+
+// Module
+$module-header-font-family: $font-design;
+$module-header-bg-color: $fun-blue;
+
+$module-border-border-color: $fun-cream-dark;
+
+$module-link-bg-color: $fun-cream;
+$module-link-color: $black-light;
+
+$module-footer-bg-color: $fun-blue;
+
+// Article
+$article-text-link-color: $fun-blue;
+$article-text-link-color_hover: $fun-black;

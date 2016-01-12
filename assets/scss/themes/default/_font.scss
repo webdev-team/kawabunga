@@ -1,0 +1,12 @@
+
+$arial: Arial, Verdana, sans-serif;
+$helvetica: Helvetica, Arial, Verdana, sans-serif;
+
+$default-font-family: $arial;
+
+$font-smoothing: false !default;
+
+@mixin font-smoothing-mixin {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

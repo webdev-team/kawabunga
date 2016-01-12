@@ -1,0 +1,46 @@
+
+@import 'const';
+@import 'sass-module/common-mixins.scss';
+
+/*
+description: returns a breakpoint value from a string
+*/
+@function getBreakPoint($size) {
+
+	$bp:null;
+
+	// if no size is passed, throw a warning
+	@if ($size == null) {
+		@warn "mq(): Breakpoint size is null";
+	}
+
+	@if ($size == small) {
+		$bp: $media-queries-small;
+	}
+	@else if ($size == medium) {
+		$bp: $media-queries-medium;
+	}
+	@else if ($size == large) {
+		$bp: $media-queries-large;
+	}
+	@else {
+		// if no BP is found, throw a warning
+		@warn "mq(): Breakpoint "#{$size}" does not exist";
+	}
+
+	@return $bp;
+
+}
+
+/*
+description: returns a number from a string
+source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+*/
+
+@function parse-int($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+@function px-to-rem($size-in-pixels: 0px){
+	@return (parse-int($size-in-pixels) / parse-int($pixel-base)) * 1rem;
+}

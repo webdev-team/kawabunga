@@ -1,0 +1,65 @@
+
+@import "../../assets/scss/config";
+
+.group, .group .subgroup {
+  background: #FFFFFF;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/* sidebar */
+.scroll-sidebar {
+  padding-left: px-to-rem(20px);
+  margin-top: px-to-rem(20px);
+  margin-bottom: px-to-rem(20px);
+}
+
+/* all links */
+.scroll-sidebar .nav>li>a {
+  color: #7D7D7D;
+  border-left: px-to-rem(2px) solid transparent;
+  padding: px-to-rem(4px) px-to-rem(20px);
+  font-size: px-to-rem(13px);
+  font-weight: 400;
+}
+
+/* nested links */
+.scroll-sidebar .nav .nav>li>a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: px-to-rem(30px);
+  font-size: px-to-rem(12px);
+}
+
+/* active & hover links */
+.scroll-sidebar .nav>.active>a,
+.scroll-sidebar .nav>li>a:hover,
+.scroll-sidebar .nav>li>a:focus {
+  color: #563d7c;
+  text-decoration: none;
+  background-color: transparent;
+  border-left-color: #563d7c;
+}
+/* all active links */
+.scroll-sidebar .nav>.active>a,
+.scroll-sidebar .nav>.active:hover>a,
+.scroll-sidebar .nav>.active:focus>a {
+  font-weight: 700;
+}
+/* nested active links */
+.scroll-sidebar .nav .nav>.active>a,
+.scroll-sidebar .nav .nav>.active:hover>a,
+.scroll-sidebar .nav .nav>.active:focus>a {
+  font-weight: 500;
+}
+
+/* hide inactive nested list */
+.scroll-sidebar .nav ul.nav {
+  display: none;
+}
+/* show active nested list */
+.scroll-sidebar .nav>.active>ul.nav {
+  display: block;
+}

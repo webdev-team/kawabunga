@@ -1,0 +1,56 @@
+
+@import "../default/colors";
+@import "colors";
+@import "font";
+
+.module-header.actu-bg-color,
+.module-footer.actu-bg-color {
+  background-color: $rtl-red;
+}
+.article-text-link.actu-color {
+  color: $rtl-red;
+}
+.module-header.sport-bg-color,
+.module-footer.sport-bg-color {
+  background-color: $rtl-green;
+}
+.article-text-link.sport-color {
+  color: $rtl-green;
+}
+.module-header.culture-bg-color,
+.module-footer.culture-bg-color {
+  background-color: $rtl-blue;
+}
+.article-text-link.culture-color {
+  color: $rtl-blue;
+}
+
+$font-design: $lato-regular-font-family;
+
+// Button
+$btn-bg-color: $rtl-red;
+$btn-bg-color_hover: $rtl-red-light;
+
+$btn-hover-bg-color: $rtl-grey-light;
+$btn-hover-frontside-bg-color_hover: $rtl-grey-dark;
+
+$btn-link-bg-color: $rtl-red;
+$btn-link-bg-color_hover: $rtl-red-light;
+
+$btn-search-label-bg-color: $rtl-red;
+$btn-search-input-bg-color: $rtl-red-dark;
+
+// Module
+$module-header-font-family: $lato-light-font-family;
+$module-header-bg-color: $rtl-grey;
+
+$module-border-border-color: $rtl-grey-light;
+
+$module-link-bg-color: $rtl-cream;
+$module-link-color: $rtl-black;
+
+$module-footer-bg-color: $rtl-grey;
+
+// Article
+$article-text-link-color: $rtl-grey;
+$article-text-link-color_hover: $black;

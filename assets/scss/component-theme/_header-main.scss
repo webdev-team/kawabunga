@@ -83,6 +83,27 @@
 	text-transform:uppercase;
 	//@extend %CustomFont1;
 }
+  //-- GIRLS
+.main-header-girls .header-upper-nav{
+	background: $white;
+	border-bottom:u(0.3125rem) solid $girls-nude-dark;
+}
+.main-header-girls .upper-nav-item{
+	color: $girls-grey;
+	font-size:u(0.875rem);
+	line-height:u(1.8125rem);
+}
+.main-header-girls .upper-nav-item:hover,
+.main-header-girls .header-upper-nav .current{
+	color: $girls-nude;
+}
+.main-header-girls .newsletter-item{
+	color: $girls-nude;
+	text-transform:uppercase;
+}
+.main-header-girls .newsletter-item:hover{
+	color: $girls-nude-dark;
+}
 
 
 /*Icons*/
@@ -96,15 +117,13 @@
 .main-header .icon-flechemenu:before {
 	font-size:u(0.4375rem);
 }
-.main-header .icon-logo-rtl:before,
-.main-header .icon-logo-fun:before,
-.main-header .icon-logo-girls:before {
-	font-size:u(4.375rem);
-}
 .main-header .icon-chevron-right-bis {
 	line-height:u(1.125rem);
 }
   //-- RTL
+.main-header .icon-logo-rtl:before {
+	font-size:u(4.375rem);
+}
 .main-header .icon-club-rtl:before{
 	font-size:u(3.5rem);
 	text-shadow: 0 1px 0 rgba(237, 107, 122, 0.9);
@@ -121,9 +140,13 @@
 .main-header .icon-logo-fun_radio:before {
 	font-size:u(3.4375rem);
 }
+  //-- GIRLS
+.main-header .icon-logo-girls:before {
+	font-size:u(2rem);
+}
 
 
-/* Main Nav */
+	/* Main Nav */
 .main-nav {
 	border-right:1px solid;
 }
@@ -136,7 +159,7 @@
 }
 .main-nav .nav-text {
 	line-height:u($main-nav-height);
-	color:inherit;
+	//color:inherit;
 	text-align:center;
 	font-size:u(1.125rem);
 }
@@ -145,14 +168,12 @@
 	border:0;
 }
 .main-header-rtl2 .main-nav .logo .nav-text{
-	color:$rtl2-red;
 	padding:0;
 }
 .main-nav .logo .icon-rtl2-logo:before,
 .main-nav .logo .icon-logo-rtl2:before{
 	background:$white;
 	color:$rtl2-red;
-	//border:1px solid $white;
 	border-left: 1px solid $white;
 	max-height:u(4.125rem);
 }
@@ -162,7 +183,6 @@
 }
 .main-header-fun .main-nav .nav-text {
 	padding:0 u(1.25rem);
-	//@extend %CustomFont1;
 }
 .main-header-fun .main-nav .logo .nav-text{
 	background:transparent;
@@ -184,6 +204,34 @@
 	max-height:u(4.125rem);
 	padding:0 u(0.625rem);
 }
+  //-- GIRLS
+.main-header-girls .main-nav .nav-item {
+	width:auto;
+}
+.main-header-girls .main-nav .nav-text {
+	padding:u(0 0.625rem);
+	//@extend %CustomFont2;
+}
+.main-header-girls .main-nav .logo{
+	width:auto;
+}
+.main-header-girls .main-nav .logo .nav-text{
+	padding:u(0 0.5rem);
+}
+@mixin main-nav-fix-item{
+	.main-header-girls .main-nav .nav-toggler{
+		width:u(4.0625rem);
+	}
+	.main-header-girls .main-nav .logo{
+		width:auto;
+	}
+	.main-header-girls .main-nav .home,
+	.main-header-girls .main-nav .profile,
+	.main-header-girls .main-nav .search{
+		width:u(5rem);
+	}
+}
+@include main-nav-fix-item;
 
 
 
@@ -231,19 +279,26 @@
 	font-size:u(0.875rem);
 	text-align:left;
 }
-%hover-base .title {
-	font-size:u(1.125rem);
-}
 %hover-base .mdl-link {
 	font-size:u(0.875rem);
 }
+  //-- RTL
+%hover-base-rtl .title {
+	font-size:u(1.125rem);
+}
   //-- RTL2
 %hover-base-rtl2 .title {
+	font-size:u(1.125rem);
 	font-weight: bold;
 }
-//-- FUNRADIO
+  //-- FUNRADIO
 %hover-base-fun .title {
+	font-size:u(1.125rem);
 	font-weight: bold;
+}
+  //-- GIRLS
+%hover-base-girls .title {
+	font-size:u(1rem);
 }
 
 
@@ -265,13 +320,21 @@
 .main-nav-hover .list:first-child {
 	border-right:1px solid;
 }
+  //-- RTL
+.main-header-rtl .main-nav-hover {
+	@extend %hover-base-rtl;
+}
   //-- RTL2
 .main-header-rtl2 .main-nav-hover {
 	@extend %hover-base-rtl2;
 }
-//-- FUNRADIO
+  //-- FUNRADIO
 .main-header-fun .main-nav-hover {
 	@extend %hover-base-fun;
+}
+  //-- GIRLS
+.main-header-girls .main-nav-hover {
+	@extend %hover-base-girls;
 }
 
 
@@ -297,6 +360,9 @@
 	color:$rtl-red;
 }
   //-- RTL2
+.main-header-rtl2 .main-nav-hover-logout {
+	@extend %hover-base-rtl2;
+}
 .main-header-rtl2 .main-logout {
 	border:1px solid $rtl2-cream-dark;
 }
@@ -313,6 +379,9 @@
 	line-height:1.2;
 }
   //-- FUNRADIO
+.main-header-fun .main-nav-hover-logout {
+	@extend %hover-base-fun;
+}
 .main-header-fun .main-logout {
 	border:1px solid $fun-cream-dark;
 }
@@ -329,6 +398,19 @@
 }
 .main-header-fun .main-nav-hover .item a,
 .main-header-fun .main-nav-hover-logout .item a{
+	line-height:1.2;
+}
+  //-- GIRLS
+.main-logout .icon-logo-girls:before,
+.main-logout .icon-brand-logo-club:before {
+	color: $girls-nude;
+	top:0;
+	font-size:u(3.5rem);
+	//padding:u(0.5rem 0);
+	margin:u(0.5rem 0);
+}
+.main-header-girls .main-nav-hover .item a,
+.main-header-girls .main-nav-hover-logout .item a{
 	line-height:1.2;
 }
 
@@ -354,7 +436,7 @@
 	}
 }
 %hover-base .item .btn-action:hover {
-	color:$white;
+	color:$white !important;
 }
   //-- RTL
 .main-header-rtl .main-nav .active .nav-text {
@@ -379,15 +461,38 @@
 	}
 }
   //-- FUNRADIO
-.main-nav .active .nav-text {
+.main-header-fun .main-nav .active .nav-text {
 	background-color: $fun-blue-dark;
+}
+@mixin header-main-hover {
+	.main-header-fun .no-touch .main-nav .nav-item:hover .show-dropdown,
+	.main-header-fun .main-nav .active .show-dropdown {
+		background-color: $white;
+		color: $fun-blue;
+	}
+}
+.main-header-fun .main-nav-sub .link:hover {
+	color: $fun-blue;
+}
+%hover-base-fun .item a:hover {
+	color: $fun-blue;
+}
+  //-- GIRLS
+.main-header-girls .main-nav .active .nav-text {
+	background-color: $girls-nude-dark;
 }
 @mixin header-main-hover {
 	.no-touch .main-nav .nav-item:hover .show-dropdown,
 	.main-nav .active .show-dropdown {
 		background-color: $white;
-		color: $fun-blue;
+		color: $girls-nude;
 	}
+}
+.main-header-girls .main-nav-sub .link:hover {
+	color: $girls-cream-dark;
+}
+%hover-base-girls .item a:hover {
+	color: $girls-grey;
 }
 
 
@@ -408,8 +513,34 @@
 	}
 }
 
+
+/* MQ Large State */
+  //-- GIRLS
+@include mq('large'){
+	.main-header-girls .main-nav .nav-text{
+		font-size:u(1rem);
+	}
+	.main-header-girls .main-nav .nav-item {
+		//width:u(8rem);
+	}
+	.main-header-girls .main-nav-hover{
+		width:u(34.375rem);
+	}
+	@include main-nav-fix-item;
+
+	.main-header-girls .main-header .icon-brand-logo-club:before{
+		//	font-size:u(4rem);
+	}
+}
+
+
 /* MQ Medium State */
 @include mq('medium'){
+  //-- FUNRADIO
+	.main-header-fun .main-header {
+		height:u(6.5rem);
+	}
+
 
 	/* Slide Nav & Logout */
 	.slide-logout {
@@ -446,8 +577,10 @@
 	.main-header-rtl .slide-nav .nav-item {
 		border:0;
 		border-bottom:1px solid $rtl-grey-light !important;
-		color:$black-lighter;
 		background-color:$rtl-cream;
+	}
+	.main-header-rtl .slide-nav .nav-text {
+		color:$black-lighter;
 	}
 	.main-header-rtl .slide-nav .show-dropdown {
 		color:$black-lighter;
@@ -465,15 +598,64 @@
 	.main-header-rtl2 .slide-nav .nav-item {
 		border:0;
 		border-bottom:1px solid $rtl2-cream-light !important;
-		color:$rtl2-black;
 		background-color:$rtl2-cream;
+	}
+	.main-header-rtl2 .slide-nav .nav-text {
+		color:$rtl2-black;
 	}
 	.main-header-rtl2 .slide-nav .show-dropdown {
 		color:$rtl2-black;
 		background-color:transparent;
 		border:0;
-		border-left:1px solid $rtl2-cream-light;
+		border-left:1px solid $rtl2-cream-light!important;
 		line-height:u(1.75rem);
+	}
+	  //-- FUNRADIO
+	.main-header-fun .slide-nav,
+	.main-header-fun .slide-logout {
+		background-color:$fun-cream;
+		border-right:1px solid $fun-cream-light !important;
+	}
+	.main-header-fun .slide-nav .nav-item {
+		border:0;
+		border-bottom:1px solid $fun-cream-light !important;
+		background-color: $fun-cream;
+	}
+	.main-header-fun .slide-nav .nav-text {
+		color: $fun-black;
+	}
+	.main-header-fun .slide-nav .show-dropdown {
+		color: $fun-black;
+		background-color:transparent;
+		border:0;
+		border-left:1px solid $fun-cream-light !important;
+		line-height:u(1.75rem);
+	}
+	  //-- GIRLS
+	.main-header-girls .slide-nav,
+	.main-header-girls .slide-logout {
+		background-color: $girls-cream;
+		border-right:1px solid $girls-cream-light !important;
+	}
+	.main-header-girls .slide-nav .nav-item {
+		width:auto;
+		border:0;
+		border-bottom:1px solid $girls-cream-darker !important;
+		color: $girls-black;
+		background-color: $girls-cream;
+	}
+	.main-header-girls .slide-nav .nav-text {
+		color: $girls-black;
+	}
+	.main-header-girls .slide-nav .show-dropdown {
+		color: $girls-black;
+		background-color:transparent;
+		border:0;
+		border-left:1px solid $girls-cream !important;
+		line-height:u(1.75rem);
+	}
+	.main-header-girls .main-nav-hover{
+		width:auto;
 	}
 
 	
@@ -514,6 +696,32 @@
 	.main-header-rtl2 .slide-nav .active .show-dropdown .icon:before {
 		color:$rtl2-black;
 	}
+	  //-- FUNRADIO
+	.main-header-fun .slide-nav .nav-text:hover {
+		background-color:inherit;
+		color: $fun-black;
+	}
+	.main-header-fun .slide-nav .active .nav-text {
+		background-color:inherit;
+		color: $fun-black;
+	}
+	.main-header-fun .no-touch .slide-nav .show-dropdown:hover .icon:before,
+	.main-header-fun .slide-nav .active .show-dropdown .icon:before {
+		color: $fun-black;
+	}
+	  //-- GIRLS
+	.main-header-girls .slide-nav .nav-text:hover {
+		background-color:inherit;
+		color: $girls-black;
+	}
+	.main-header-girls .slide-nav .active .nav-text {
+		background-color:inherit;
+		color: $girls-black;
+	}
+	.main-header-girls .no-touch .slide-nav .show-dropdown:hover .icon:before,
+	.main-header-girls .slide-nav .active .show-dropdown .icon:before {
+		color: $girls-black;
+	}
 
 
 	/* Logout */
@@ -536,9 +744,9 @@
 	.main-header-rtl .main-logout .logo{
 		border-top:1px solid $rtl-grey-light;
 	}
-	.main-nav-hover .list .item .ss-list,
-	.main-nav-hover .list .ss-item.active .show-dropdown,
-	.main-nav-hover .list .ss-item .show-dropdown:hover {
+	.main-header-rtl .main-nav-hover .list .item .ss-list,
+	.main-header-rtl .main-nav-hover .list .ss-item.active .show-dropdown,
+	.main-header-rtl .main-nav-hover .list .ss-item .show-dropdown:hover {
 		background-color: $rtl-cream;
 	}
 	  //-- RTL2
@@ -549,6 +757,26 @@
 	.main-header-rtl2 .main-logout .logo{
 		border-top:1px solid $rtl2-cream-dark;
 	}
+	  //-- FUNRADIO
+	.main-header-fun .main-logout .logout-toggler,
+	.main-header-fun .main-logout .logout-toggler:hover {
+		color: $fun-black;
+	}
+	.main-header-fun .main-logout .logo{
+		border-top:1px solid $fun-cream-dark;
+	}
+	.main-header-fun .main-nav-hover .list .item .ss-list,
+	.main-header-fun .main-nav-hover .list .ss-item.active .show-dropdown,
+	.main-header-fun .main-nav-hover .list .ss-item .show-dropdown:hover {
+		background-color: $fun-cream;
+	}
+	  //-- GIRLS
+	.main-logout .logout-toggler:hover {
+		color: $girls-black;
+	}
+	.main-logout .logo{
+		border-top:1px solid $girls-cream-dark;
+	}
 }
 
 
@@ -556,8 +784,7 @@
 @include mq('small'){
 
 	.main-header .icon-logo-rtl:before,
-	.main-header .icon-logo-fun:before,
-	.main-header .icon-logo-girls:before {
+	.main-header .icon-logo-fun_radio:before {
 		font-size:u(2.9375rem);
 	}
 	.main-nav .nav-text {
@@ -582,5 +809,35 @@
 	.main-header .icon-logo-rtl2:before {
 		font-size:u(2.9375rem);
 		max-height:u(3rem);
+	}
+	 //-- FUNRADIO
+	.main-header-fun .main-header {
+		height:u(4.875rem);
+	}
+	.main-nav .logo .icon-logo-fun_radio:before{
+		max-height:u(3rem);
+		border-right:0;
+		padding-right:0;
+		padding-left:u(0.5rem);
+	}
+	.main-header-fun .main-nav .logo{
+		width:auto;
+		border-right:0;
+	}
+	.main-header-fun .slide-nav .logo .nav-text {
+		padding-left:u(0.625rem);
+	}
+	.main-header-fun .main-nav .nav-text {
+		padding: u(0) u(0.625rem);
+	}
+	  //-- GIRLS
+	.main-nav .logo .icon-logo-girls:before{
+		//font-size:u(2.9375rem);
+		font-size:u(1.5rem);
+		max-height:u(3rem);
+	}
+	.main-header-girls .main-nav .logo,
+	.main-header-girls .main-nav .nav-item{
+		width:auto;
 	}
 }

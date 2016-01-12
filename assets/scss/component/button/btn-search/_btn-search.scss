@@ -1,0 +1,51 @@
+
+@import "../../../themes/default/theme";
+@import "../../../functions";
+
+/* Button Search
+----------------------------------------- */
+.btn-search-label,
+.btn-search-input{
+  display: table;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  padding: px-to-rem(0) px-to-rem(10px);
+  width: px-to-rem(60px);
+  height: px-to-rem(60px);
+  cursor:pointer;
+  color: $white;
+}
+
+.btn-search-input{
+  overflow: hidden;
+  line-height: px-to-rem(60px);
+  font-size: px-to-rem(12px);
+  min-height: px-to-rem(35px);
+  background-color: $btn-search-input-bg-color;
+
+}
+
+.btn-search-input .icon-ff:before{
+  font-size: px-to-rem(32px);
+  line-height: inherit;
+  margin: 0;
+}
+
+.btn-search-input .no-ff{
+  display: none;
+}
+
+.btn-search-label{
+  font-size: px-to-rem(14px);
+  width: px-to-rem(140px);
+  line-height: px-to-rem(60px);
+  background-color: $btn-search-label-bg-color;
+}
+
+@media (max-width: $media-queries-medium){
+  .btn-search-label{
+    display: none;
+  }
+}

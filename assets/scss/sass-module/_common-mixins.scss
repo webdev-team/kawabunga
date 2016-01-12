@@ -27,9 +27,9 @@ description: useful to manage media queries and keep it maintainable
 		$bp:getBreakPoint($size);
 		
 		@if ($feature == 'min-width'){
-			$remValue: parseInt( ($bp + 1px) / $pixelBase ) + 'em';
+			$remValue: parse-int( ($bp + 1px) / $pixel-base ) + 'em';
 		}@else {
-			$remValue: parseInt($bp / $pixelBase) + 'em';
+			$remValue: parse-int($bp / $pixel-base) + 'em';
 		}
 		
 		@if ($orientation != null){
@@ -53,8 +53,8 @@ description: useful to manage media queries and keep it maintainable
 		$bp1:getBreakPoint($size1);
 		$bp2:getBreakPoint($size2);
 
-		$remValue1: parseInt( ($bp1 + 1px) / $pixelBase ) + 'em';
-		$remValue2: parseInt(  $bp2 / $pixelBase ) + 'em';
+		$remValue1: parse-int( ($bp1 + 1px) / $pixel-base ) + 'em';
+		$remValue2: parse-int(  $bp2 / $pixel-base ) + 'em';
 
 		$mediaQuery: 'all and (min-width: #{$remValue1}) and (max-width: #{$remValue2})';
 

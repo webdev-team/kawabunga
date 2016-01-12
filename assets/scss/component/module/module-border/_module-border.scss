@@ -1,0 +1,22 @@
+
+@import "../../../themes/default/theme";
+@import "../../../config";
+
+/* Module Border
+----------------------------------------- */
+.module-border-heavy {
+  border-width: px-to-rem(1px) px-to-rem(4px) px-to-rem(4px) px-to-rem(1px);
+  border-style: solid;
+  border-radius: 0 px-to-rem(4px) 0 px-to-rem(4px);
+  border-color: $module-border-border-color;
+}
+
+.module-border {
+  border: 1px solid $module-border-border-color;
+}
+
+.module-border-top {
+  border-width: px-to-rem(1px) 0 0;
+  border-style: solid;
+  border-color: $module-border-border-color;
+}

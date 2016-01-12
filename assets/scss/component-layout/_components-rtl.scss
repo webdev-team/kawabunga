@@ -3,11 +3,26 @@
 
 /* Page Imports */
 //@import "_article.scss";
-//@import "_button.scss";
+// button action
+//@import "../component/buttons/btn/_btn.scss";
+// button link
+//@import "../component/buttons/btn-link/_btn-link.scss";
+// button text
+//@import "../component/buttons/btn-text/_btn-text.scss";
+// button hover
+//@import "../component/buttons/btn-hover/_btn-hover.scss";
+// button search
+//@import "../component/buttons/btn-search/_btn-search.scss";
 //@import "_flag-fix.scss";
 //@import "_footer-section.scss";
 //@import "_header-main.scss";
 //@import "_module.scss";
+// module head
+//@import "../component/module/module-head/_module-head.scss";
+//@import "../component/module/module-head/_module-head-rtl.scss";
+// module link
+//@import "../component/module/module-link/_module-link.scss";
+//@import "../component/module/module-link/_module-link-rtl.scss";
 //@import "_post-preview.scss";
 //@import "_social-tool.scss";
 //@import "_tag-topic.scss";
@@ -47,6 +62,10 @@
 
 .nav-child {
   margin-left: 31px;
+}
+
+pre.lang-css{
+  white-space: pre-wrap!important;
 }
 
 .code-example {

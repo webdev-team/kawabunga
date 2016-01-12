@@ -1,0 +1,36 @@
+
+@import "colors";
+@import "font";
+
+.uppercase { text-transform: uppercase; }
+
+$font-design: $helvetica !default;
+
+// Button
+$btn-bg-color: $grey-dark !default;
+$btn-bg-color_hover: $black !default;
+
+$btn-hover-bg-color: $grey-dark !default;
+$btn-hover-frontside-bg-color_hover: $black !default;
+
+$btn-link-bg-color: $grey-dark !default;
+$btn-link-bg-color_hover: $black !default;
+
+$btn-search-label-bg-color: $grey-dark !default;
+$btn-search-input-bg-color: $black !default;
+
+// Module
+$module-header-font-family: $font-design !default;
+$module-header-bg-color: $black !default;
+
+$module-border-border-color: $black !default;
+
+$module-link-bg-color: $grey !default;
+$module-link-color: $black !default;
+
+$module-footer-bg-color: $grey !default;
+$module-footer-color: $black !default;
+
+// Article
+$article-text-link-color: $black !default;
+$article-text-link-color_hover: $grey !default;
