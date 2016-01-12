@@ -13,6 +13,12 @@ var base64 = require('gulp-base64');
 var imagemin = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
 var gulpif = require('gulp-if');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var glob = require('glob');
+var eventStream = require('event-stream');
+var watchify = require('watchify');
+var mocha = require('gulp-mocha');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
@@ -21,7 +27,7 @@ gulp.task('css', function () {
             baseDir: 'assets/scss',
             extensions: ['woff'],
             maxImageSize: 500000,
-            debug: true
+            debug: false
         }))
         .pipe(autoprefixer())
         .pipe(pixrem())
@@ -33,6 +39,38 @@ gulp.task('html', function () {
         .pipe(swig({defaults: {cache: false}}))
         .pipe(gulp.dest('build/sandbox'))
 });
+
+gulp.task('js', function(done) {
+    glob('assets/js/*.js', function(err, files) {
+        if (err) {
+            done(err);
+        }
+
+        var tasks = files.map(function(entry) {
+            return browserifyFile(entry)
+                .bundle()
+                .on('error', function(err) {
+                    gutil.log(err);
+                    this.emit('end'); // end this stream
+                })
+                .pipe(source(entry))
+                .pipe(flatten())
+                .pipe(gulp.dest('build/sandbox/js'));
+        });
+
+        eventStream.merge(tasks).on('end', done);
+    })
+});
+
+var browserifyFile = function(file) {
+    var customOpts = {
+        entries: [file]
+    };
+
+    var opts = _.assign({}, watchify.args, customOpts);
+
+    return browserify(opts)
+};
 
 /*
  * Sprites & Img
@@ -54,6 +92,7 @@ gulp.task('sprite:x1', function () {
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
 });
+
 gulp.task('sprite:x2', function () {
     return gulp.src('assets/img/sprite-retina-partners/*.png')
         .pipe(spritesmith({
@@ -67,6 +106,7 @@ gulp.task('sprite:x2', function () {
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
 });
+
 gulp.task('img', function () {
     return gulp.src(['assets/img/**', '!assets/img/sprite-partners/**', '!assets/img/sprite-retina-partners/**', '!assets/img/**/init.gif'])
         .pipe(imagemin())
@@ -148,14 +188,28 @@ gulp.task('webserver', function () {
         }))
 });
 
+/*
+ * Tests
+ */
+
+gulp.task('test', function () {
+    return gulp.src('test/**/*-test.js')
+        .pipe(mocha())
+        .once('end', function () {
+            process.exit();
+        });
+});
+
 // CUSTOM TASKS :
 
 gulp.task('clean', function (cb) {
     del(['build'], cb);
 });
 
-gulp.task('build', function (cb) {
-    runSequence('clean', 'sprite:x1', 'sprite:x2', ['img', 'css', 'font'], ['html'], cb);
+gulp.task('compile', ['sprite:x1', 'sprite:x2', 'img', 'css', 'font', 'js', 'html']);
+
+gulp.task('build', function(cb) {
+    runSequence('clean', 'compile', cb);
 });
 
-gulp.task('work', ['img', 'css', 'font', 'html', 'webserver', 'watch']);
+gulp.task('work', ['compile', 'webserver', 'watch']);
