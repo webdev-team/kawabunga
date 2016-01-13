@@ -1,13 +1,5 @@
 
-@import "../../assets/scss/config";
-
-.group, .group .subgroup {
-  background: #FFFFFF;
-}
-
-.fixed {
-  position: fixed;
-}
+@import "../../assets/scss/functions";
 
 /* sidebar */
 .scroll-sidebar {
@@ -27,8 +19,8 @@
 
 /* nested links */
 .scroll-sidebar .nav .nav>li>a {
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: px-to-rem(1px);
+  padding-bottom: px-to-rem(1px);
   padding-left: px-to-rem(30px);
   font-size: px-to-rem(12px);
 }

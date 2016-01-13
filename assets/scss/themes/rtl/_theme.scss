@@ -4,25 +4,67 @@
 @import "font";
 
 .module-header.actu-bg-color,
-.module-footer.actu-bg-color {
+.module-footer.actu-bg-color,
+.article-text-list .item.actu-bg-color_before:before,
+.article-tag.actu-bg-color,
+.article-flag-fix.actu-bg-color {
   background-color: $rtl-red;
 }
-.article-text-link.actu-color {
+.article-text-link.actu-color,
+.article-text-list .item .text.actu-color {
   color: $rtl-red;
 }
+.article-flag-fix .flag.actu-bg-color_before:before {
+  background-color: $rtl-red-dark;
+}
+.article-flag-fix .flag.actu-border-color_after:after {
+  border-top-color: $rtl-red;
+  border-bottom-color: $rtl-red;
+}
+.article-flag-fix .flag.actu-border-color {
+  border-color: $rtl-red;
+}
 .module-header.sport-bg-color,
-.module-footer.sport-bg-color {
+.module-footer.sport-bg-color,
+.article-text-list .item.sport-bg-color_before:before,
+.article-tag.sport-bg-color,
+.article-flag-fix.sport-bg-color {
   background-color: $rtl-green;
 }
-.article-text-link.sport-color {
+.article-text-link.sport-color,
+.article-text-list .item .text.sport-color {
   color: $rtl-green;
 }
+.article-flag-fix .flag.sport-bg-color_before:before {
+  background-color: $rtl-green-darker;
+}
+.article-flag-fix .flag.sport-border-color_after:after {
+  border-top-color: $rtl-green;
+  border-bottom-color: $rtl-green;
+}
+.article-flag-fix .flag.sport-border-color {
+  border-color: $rtl-green-dark;
+}
 .module-header.culture-bg-color,
-.module-footer.culture-bg-color {
+.module-footer.culture-bg-color,
+.article-text-list .item.culture-bg-color_before:before,
+.article-tag.culture-bg-color,
+.article-flag-fix.culture-bg-color {
   background-color: $rtl-blue;
 }
-.article-text-link.culture-color {
+.article-text-link.culture-color,
+.article-text-list .item .text.culture-color {
   color: $rtl-blue;
+}
+.article-flag-fix .flag.culture-bg-color_before:before {
+  background-color: $rtl-blue-darker;
+}
+.article-flag-fix .flag.culture-border-color_after:after {
+  border-top-color: $rtl-blue;
+  border-bottom-color: $rtl-blue;
+}
+.article-flag-fix .flag.culture-border-color {
+  border-color: $rtl-blue-dark;
 }
 
 $font-design: $lato-regular-font-family;
@@ -54,3 +96,23 @@ $module-footer-bg-color: $rtl-grey;
 // Article
 $article-text-link-color: $rtl-grey;
 $article-text-link-color_hover: $black;
+
+$article-text-list-color: $rtl-grey;
+$article-text-list-color_hover: $black;
+$article-text-list-item-bg-color_before: $rtl-grey;
+
+$article-footer-color: $rtl-black;
+
+$article-preview-fig-border-color: $rtl-red;
+$article-preview-link-color: $black;
+$article-preview-link-color_hover: $rtl-red;
+$article-preview-social-tool-color: $rtl-grey;
+$article-preview-social-tool-icon-play-color_before: $rtl-grey-dark;
+
+$article-tag-font-family: $lato-light-font-family;
+$article-tag-bg-color: $rtl-grey;
+
+$article-flag-fix-bg-color: $rtl-grey;
+$article-flag-fix-border-color: $rtl-grey;
+$article-flag-fix-bg-color_before: $rtl-grey-matt;
+$article-flag-fix-border-color_after: $rtl-grey;

@@ -83,28 +83,28 @@ gulp.task('sprite:x1', function () {
     return gulp.src('assets/img/sprite-partners/*.png')
         .pipe(spritesmith({
             imgName     : 'sprite-partners.png',
-            cssName     : 'sprite-partners.scss',
+            cssName     : '_sprite-partners.scss',
             padding     : 2,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
             imgPath     : '../img/sprite-partners.png',
             cssSpritesheetName : 'sprite-partners'
         }))
-        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
+        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
 });
 
 gulp.task('sprite:x2', function () {
     return gulp.src('assets/img/sprite-retina-partners/*.png')
         .pipe(spritesmith({
             imgName     : 'sprite-retina-partners.png',
-            cssName     : 'sprite-retina-partners.scss',
+            cssName     : '_sprite-retina-partners.scss',
             padding     : 4,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
             imgPath     : '../img/sprite-retina-partners.png',
             cssSpritesheetName : 'sprite-retina-partners'
         }))
-        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/spritesmith/')))
+        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
 });
 
 gulp.task('img', function () {

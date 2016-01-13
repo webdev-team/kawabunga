@@ -1,0 +1,24 @@
+
+@import "../../../functions";
+@import "../../../themes/default/theme";
+
+/* Article Tag
+----------------------------------------- */
+.article-tag {
+  position: absolute;
+  display: block;
+  top: px-to-rem(10px);
+  left: px-to-rem(10px);
+  max-width: 60%;
+  padding: px-to-rem(2px) px-to-rem(4px);
+  color: $white;
+  background-color: $article-tag-bg-color;
+}
+
+.article-tag .tag {
+  color: inherit;
+  display: block;
+  min-height: px-to-rem(18px);
+  font-size: px-to-rem(13px);
+  font-family: $article-tag-font-family;
+}

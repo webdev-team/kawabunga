@@ -1,11 +1,9 @@
 
 @import "../assets/scss/themes/funradio/theme";
 
-@import "../assets/scss/kawabunga";
+@import "../assets/scss/kawabunga-all";
 
-@import "../assets/scss/component/all";
+@import "../sandbox/scss/side-nav";
 
-@import "../sandbox/scss/side-nav.scss";
-
-@import "../sandbox/scss/kawabunga-layout.scss";
-@import "../sandbox/scss/kawabunga-theme.scss";
+@import "../sandbox/scss/kawabunga-layout";
+@import "../sandbox/scss/kawabunga-theme";

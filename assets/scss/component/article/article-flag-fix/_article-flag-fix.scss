@@ -1,0 +1,80 @@
+
+@import "../../../config";
+@import "../../../functions";
+@import "../../../themes/default/theme";
+
+/* Article Flag Fix
+----------------------------------------- */
+.article-flag-fix {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: px-to-rem(10px);
+  right: px-to-rem(-3px);
+  max-width: 35%;
+  color: $white;
+  background-color: $article-flag-fix-bg-color;
+  font-family: $font-design;
+
+  @if ($font-smoothing) {
+    @include font-smoothing-mixin;
+  }
+}
+
+.article-flag-fix .bold {
+  display: block;
+  font-weight: bold;
+}
+
+.article-flag-fix .flag {
+  position: relative;
+  display: block;
+  height: px-to-rem(50px);
+  line-height: px-to-rem(47px);
+  letter-spacing: px-to-rem(1px);
+  padding: 0 px-to-rem(5px) 0 px-to-rem(10px);
+  border-right: px-to-rem(5px) solid;
+  border-color: $article-flag-fix-border-color;
+}
+
+.article-flag-fix .align {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: px-to-rem(17px);
+  max-height: px-to-rem(50px);
+  overflow: hidden;
+  width: 100%;
+  margin-top: px-to-rem(-4px);
+}
+
+.article-flag-fix .flag:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: px-to-rem(-3px);
+  right: px-to-rem(-5px);
+  bottom: px-to-rem(-3px);
+  width: px-to-rem(3px);
+  border-radius: 0 px-to-rem(3px) px-to-rem(3px) 0;
+  background-color: $article-flag-fix-bg-color_before;
+
+  @if ($lower-than-or-equals-ie8) {
+    display: none;
+  }
+}
+
+.article-flag-fix .flag:after {
+  position: absolute;
+  left: px-to-rem(-7px);
+  top: 0;
+  bottom: 0;
+  content: "";
+  -webkit-transform: rotate(-0.1deg);
+  -moz-transform: rotate(-0.1deg);
+  -ms-transform: rotate(-0.1deg);
+  -o-transform: rotate(-0.1deg);
+  transform: rotate(-0.1deg);
+  border-top: px-to-rem(25px) solid $article-flag-fix-border-color_after;
+  border-bottom: px-to-rem(25px) solid $article-flag-fix-border-color_after;
+  border-left: px-to-rem(8px) solid transparent;
+}

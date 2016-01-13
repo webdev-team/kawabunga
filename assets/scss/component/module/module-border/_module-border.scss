@@ -12,7 +12,7 @@
 }
 
 .module-border {
-  border: 1px solid $module-border-border-color;
+  border: px-to-rem(1px) solid $module-border-border-color;
 }
 
 .module-border-top {

@@ -1,7 +1,7 @@
 
-@import "../../../themes/default/theme";
-//@import "../../../themes/rtl/theme";
 @import "../../../config";
+@import "../../../functions";
+@import "../../../themes/default/theme";
 
 /* Module Header
 ----------------------------------------- */
@@ -20,6 +20,7 @@
 }
 
 @mixin mdl-fix-mdl-common {
+
   /* Height Fix */
   .module-header {
     overflow: hidden;

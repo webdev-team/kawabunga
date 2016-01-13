@@ -1,6 +1,7 @@
 
-@import "../../../themes/default/theme";
 @import "../../../config";
+@import "../../../functions";
+@import "../../../themes/default/theme";
 
 /* Module Footer
 ----------------------------------------- */
@@ -38,7 +39,7 @@
 }
 
 @if ($media-queries) {
-  @media (min-width: $media-queries-small) {
+  @media all and (min-width: $media-queries-small) {
     @include mdl-fix-mdl-common;
   }
 } @else {

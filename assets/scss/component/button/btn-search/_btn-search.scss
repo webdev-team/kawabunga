@@ -1,6 +1,7 @@
 
-@import "../../../themes/default/theme";
+@import "../../../config";
 @import "../../../functions";
+@import "../../../themes/default/theme";
 
 /* Button Search
 ----------------------------------------- */
@@ -11,7 +12,7 @@
   text-align: center;
   vertical-align: middle;
   border: 0;
-  padding: px-to-rem(0) px-to-rem(10px);
+  padding: 0 px-to-rem(10px);
   width: px-to-rem(60px);
   height: px-to-rem(60px);
   cursor:pointer;

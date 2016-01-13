@@ -1,8 +1,9 @@
 /* Common Layout
 ----------------------------------------- */
 
-@import "../../assets/scss/themes/default/font";
 @import "../../assets/scss/config";
+@import "../../assets/scss/functions";
+@import "../../assets/scss/themes/default/font";
 
 /* Remove the 300ms delay on Widows phones - source: http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away */
 html {
@@ -38,11 +39,18 @@ a, a:hover, a:link {
 }
 
 
-
+.fixed {
+  position: fixed;
+}
 
 .float-none {
   float: none!important;
 }
+
+.max-width-100>span {
+  max-width: 100%!important;
+}
+
 @media (min-width: $media-queries-medium) {
   .width-47 {
     width: 47% !important;
@@ -89,7 +97,7 @@ pre.lang-css{
 }
 
 // For Flag-fix
-.code-example .flag-fix {
+.code-example .article-flag-fix {
   max-width: 62%;
 }
 
@@ -179,18 +187,18 @@ pre.lang-css{
 
 .page-wrap,
 .page-wrap-fluid {
-  margin:0 auto;
+  margin: 0 auto;
 }
 .page-top-padding {
   padding-top: 20px;
 }
 .skin-link {
-  display:none; // avoid a skin-link displayed without skin.css injected
+  display: none; // avoid a skin-link displayed without skin.css injected
 }
 
 /* Echo Images */
 .img-echo {
-  background:url('../img/loader.gif') center center no-repeat transparent;
+  background: url('../img/loader.gif') center center no-repeat transparent;
 }
 
 /*@if ($responsive-liquid == false) {
@@ -241,26 +249,23 @@ pre.lang-css{
   }
 }*/
 
-/* MQ Large State */
-@include mq('large'){
+@media (max-width: $media-queries-large) {
   .mql-hide {
-    display:none;
+    display: none;
   }
 }
 
-/* MQ Medium State */
-@include mq('medium'){
+@media (max-width: $media-queries-medium) {
   .mqm-hide {
-    display:none;
+    display: none;
   }
 }
 
-/* MQ Small State */
-@include mq('small'){
+@media (max-width: $media-queries-small) {
   .mqs-hide {
-    display:none;
+    display: none;
   }
   .page-top-padding {
-    padding-top:u(0.625rem);
+    padding-top: px-to-rem(10px);
   }
 }

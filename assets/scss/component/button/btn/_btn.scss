@@ -1,6 +1,6 @@
 
-@import "../../../themes/default/theme";
 @import "../../../functions";
+@import "../../../themes/default/theme";
 
 /* Button
 ----------------------------------------- */
@@ -10,7 +10,7 @@
   display: inline-block;
   padding: px-to-rem(6px)  px-to-rem(20px);
   font-size: px-to-rem(13x);
-  letter-spacing: 1px;
+  letter-spacing: px-to-rem(1px);
   -webkit-appearance: none;
   cursor:pointer;
   font-family: $font-design;

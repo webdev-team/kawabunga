@@ -1,6 +1,6 @@
 
-@import "../../../themes/default/theme";
 @import "../../../functions";
+@import "../../../themes/default/theme";
 
 /* Button Link
 ----------------------------------------- */
@@ -32,7 +32,7 @@
 
 .btn-link.icon:before {
   vertical-align: top;
-  margin: px-to-rem(0) px-to-rem(6px);
+  margin: 0 px-to-rem(6px);
   font-variant: normal;
   text-transform: none;
 }

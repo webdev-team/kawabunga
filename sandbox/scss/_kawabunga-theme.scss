@@ -19,6 +19,29 @@
   border: 1px solid $grey-light;
 }
 
+.code-example:after {
+  font-size: 12px;
+  font-weight: bold;
+  color: $grey-login-1col;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlighted {
+  background-color: $grey-lighter;
+  border: 1px solid $grey-light;
+  border-top: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .code-example {
+    background-color: $white;
+    border-color: $grey-light;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
 // For button text
 .code-example .example-set-color .btn-text .text,
 .code-example .example-set-color .btn-text:before{
@@ -79,20 +102,6 @@
 }
 
 
-.code-example:after {
-  font-size: 12px;
-  font-weight: bold;
-  color: $grey-login-1col;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.highlighted {
-  background-color: $grey-lighter;
-  border: 1px solid $grey-light;
-  border-top: none;
-}
-
 /* desert scheme ported from vim to google prettify */
 pre.prettyprint { display: block; background-color: #333; padding: 4px 12px; }
 pre .str { color: #ffa0a0 } /* string  - pink */
@@ -125,13 +134,4 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
   pre .tag, code .tag { color: #006; font-weight: bold }
   pre .atn, code .atn { color: #404 }
   pre .atv, code .atv { color: #060 }
-}
-
-@media only screen and (min-width: 768px) {
-  .code-example {
-    background-color: $white;
-    border-color: $grey-light;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
 }
