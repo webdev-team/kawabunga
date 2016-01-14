@@ -1,9 +1,15 @@
-@import "../../assets/scss/themes/default/_font";
-@import "../../assets/scss/themes/rtl/_font";
-@import "../../assets/scss/themes/rtl2/_font";
-@import "../../assets/scss/themes/funradio/_font";
-@import "../../assets/scss/themes/girls/_font";
-@import "../../assets/scss/themes/compte/_font";
+
+// import themes
+@import "../../../assets/scss/themes/default/_font";
+@import "../../../assets/scss/themes/rtl/_font";
+@import "../../../assets/scss/themes/rtl2/_font";
+@import "../../../assets/scss/themes/funradio/_font";
+@import "../../../assets/scss/themes/girls/_font";
+@import "../../../assets/scss/themes/compte/_font";
+
+
+/* Typography page
+----------------------------------------- */
 
 .arial {
   font-family: $arial;

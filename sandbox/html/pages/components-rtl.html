@@ -6,19 +6,19 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-        <link rel="stylesheet" href="components-rtl.css">
+        <link rel="stylesheet" href="../../scss/pages/components-rtl.css">
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="container kawa">
-            {% include '_navbar.html' with {active: 'components-rtl'} %}
+            {% include '../_navbar.html' with {active: 'components-rtl'} %}
 
             <div class="row">
                 <!--Main Content -->
                 <div class="col-md-9">
 
-                    <section id="button" class="group col-md-12">
+                    <section id="button" class="col-md-12">
                         <h1 class="kawa-h1">Buttons</h1>
-                        <div id="classic" class="subgroup col-md-12">
+                        <div id="classic" class="col-md-12">
                             <h2 class="kawa-h2">Classic</h2>
                             <p>Le texte est en majuscule lorqu'il y a un seul mot sinon en minuscule.</p>
                             <!-- RTL -->
@@ -46,13 +46,13 @@
                                 <div id="rtl-classic-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/button/btn/_btn.scss" %}
+                                            {% include "../../../assets/scss/component/button/btn/_btn.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
-                        <div id="particular" class="subgroup col-md-12">
+                        <div id="particular" class="col-md-12">
                             <h2 class="kawa-h2">Particular</h2>
                             <!-- RTL -->
                             <form class="site code-example col-md-12">
@@ -146,19 +146,19 @@
                                 <div id="rtl-particular-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/button/btn-link/_btn-link.scss" %}
-                                            {% include "../assets/scss/component/button/btn-hover/_btn-hover.scss" %}
-                                            {% include "../assets/scss/component/button/btn-search/_btn-search.scss" %}
-                                            {% include "../assets/scss/component/button/btn-text/_btn-text.scss" %}
+                                            {% include "../../../assets/scss/component/button/btn-link/_btn-link.scss" %}
+                                            {% include "../../../assets/scss/component/button/btn-hover/_btn-hover.scss" %}
+                                            {% include "../../../assets/scss/component/button/btn-search/_btn-search.scss" %}
+                                            {% include "../../../assets/scss/component/button/btn-text/_btn-text.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section id="module" class="group col-md-12">
+                    <section id="module" class="col-md-12">
                         <h1 class="kawa-h1">Module</h1>
-                        <div id="moduleHeader" class="subgroup col-md-12">
+                        <div id="moduleHeader" class="col-md-12">
                             <h2 class="kawa-h2">Header</h2>
                             <!-- RTL -->
                             <form class="code-example col-md-12">
@@ -193,14 +193,14 @@
                                 <div id="rtl-module-header-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/module/module-header/_module-header.scss" %}
+                                            {% include "../../../assets/scss/component/module/module-header/_module-header.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="moduleLink" class="subgroup col-md-12">
+                        <div id="moduleLink" class="col-md-12">
                             <h2 class="kawa-h2">Link</h2>
                             <!-- RTL -->
                             <form class="code-example col-md-12">
@@ -227,14 +227,14 @@
                                 <div id="rtl-link-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/module/module-link/_module-link.scss" %}
+                                            {% include "../../../assets/scss/component/module/module-link/_module-link.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="moduleBorder" class="subgroup col-md-12">
+                        <div id="moduleBorder" class="col-md-12">
                             <h2 class="kawa-h2">Border</h2>
                             <!-- RTL -->
                             <form class="code-example col-md-12">
@@ -265,14 +265,14 @@
                                 <div id="rtl-border-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/module/module-border/_module-border.scss" %}
+                                            {% include "../../../assets/scss/component/module/module-border/_module-border.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="moduleFooter" class="subgroup col-md-12">
+                        <div id="moduleFooter" class="col-md-12">
                             <h2 class="kawa-h2">Footer</h2>
                             <p>Boutons en pied de module. Cas particuliers:
                                 <br/>- Pied de module au couleur des thématiques (ex: Parcourir tous les replays).
@@ -312,28 +312,31 @@
                                 <div id="rtl-module-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/module/module-footer/_module-footer.scss" %}
+                                            {% include "../../../assets/scss/component/module/module-footer/_module-footer.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
+                        <div id="moduleFollowUs" class="col-md-12">
+                            {% include "../../../assets/sample/_follow-us.html" %}
+                        </div>
                     </section>
-                    <section id="widget" class="group col-md-12">
+                    <section id="widget" class="col-md-12">
                         <h1 class="kawa-h1">Widget</h1>
                         <div id="widgetPartner" class="col-md-12">
-                            {% include "../assets/sample/_widget-partners.html" %}
+                            {% include "../../../assets/sample/_widget-partners.html" %}
                         </div>
                         <div id="widgetWeather" class="col-md-12">
-                            {% include "../assets/sample/_widget-weather.html" %}
+                            {% include "../../../assets/sample/_widget-weather.html" %}
                         </div>
                         <div id="widgetAstro" class="col-md-12">
-                            {% include "../assets/sample/_widget-astro.html" %}
+                            {% include "../../../assets/sample/_widget-astro.html" %}
                         </div>
                     </section>
-                    <section id="article" class="group col-md-12">
+                    <section id="article" class="col-md-12">
                         <h1 class="kawa-h1">Article</h1>
-                        <div id="articleBody" class="subgroup col-md-12">
+                        <div id="articleBody" class="col-md-12">
                             <h2 class="kawa-h2">Body</h2>
                             <!-- RTL -->
                             <form class="code-example col-md-12">
@@ -382,14 +385,14 @@
                                 <div id="rtl-article-body-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/article/article-text-link/_article-text-link.scss" %}
-                                            {% include "../assets/scss/component/article/article-text-list/_article-text-list.scss" %}
+                                            {% include "../../../assets/scss/component/article/article-text-link/_article-text-link.scss" %}
+                                            {% include "../../../assets/scss/component/article/article-text-list/_article-text-list.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
-                        <div id="articleFooter" class="subgroup col-md-12">
+                        <div id="articleFooter" class="col-md-12">
                             <h2 class="kawa-h2">Footer</h2>
                             <!-- RTL -->
                             <form class="code-example col-md-12">
@@ -412,7 +415,7 @@
                                 <div id="rtl-article-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/article/article-footer/_article-footer.scss" %}
+                                            {% include "../../../assets/scss/component/article/article-footer/_article-footer.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
@@ -517,15 +520,15 @@
                                 <div id="rtl-article-tag-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../assets/scss/component/article/article-tag/_article-tag.scss" %}
-                                            {% include "../assets/scss/component/article/article-flag-fix/_article-flag-fix.scss" %}
+                                            {% include "../../../assets/scss/component/article/article-tag/_article-tag.scss" %}
+                                            {% include "../../../assets/scss/component/article/article-flag-fix/_article-flag-fix.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
                         <div id="post-preview" class="col-md-12">
-                            {% include "../assets/sample/_article-post-preview.html" %}
+                            {% include "../../../assets/sample/_article-post-preview.html" %}
                         </div>
                     </section>
                 </div>
@@ -554,6 +557,7 @@
                                 <li><a href="#moduleLink">Link</a></li>
                                 <li><a href="#moduleBorder">Border</a></li>
                                 <li><a href="#moduleFooter">Footer</a></li>
+                                <li><a href="#moduleFollowUs">Follow us</a></li>
                             </ul>
                         </li>
                         <li>

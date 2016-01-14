@@ -87,7 +87,7 @@ gulp.task('sprite:x1', function () {
             padding     : 2,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
-            imgPath     : '../img/sprite-partners.png',
+            imgPath     : '../../../img/sprite-partners.png',
             cssSpritesheetName : 'sprite-partners'
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
@@ -101,7 +101,7 @@ gulp.task('sprite:x2', function () {
             padding     : 4,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
-            imgPath     : '../img/sprite-retina-partners.png',
+            imgPath     : '../../../img/sprite-retina-partners.png',
             cssSpritesheetName : 'sprite-retina-partners'
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))

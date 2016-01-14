@@ -1,9 +1,14 @@
 
-@import "../assets/scss/kawabunga-base";
-@import "../sandbox/scss/kawabunga-layout";
-@import "scss/side-nav";
-@import "../assets/scss/fonticon";
-@import "../assets/scss/sprites-partners";
+// import config, template
+@import "../../../assets/scss/kawabunga-base";
+@import "../kawabunga-layout";
+
+// import tool
+@import "../side-nav";
+
+// import fonticons
+@import "../../../assets/scss/fonticon";
+
 
 /* Icon page
 ----------------------------------------- */

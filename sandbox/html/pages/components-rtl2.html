@@ -6,22 +6,22 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <link rel="stylesheet" href="components-girls.css">
+    <link rel="stylesheet" href="../../scss/pages/components-rtl2.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 <div class="container kawa">
-    {% include '_navbar.html' with {active: 'components-girls'} %}
+    {% include '../_navbar.html' with {active: 'components-rtl2'} %}
 
     <div class="row">
         <!--Main Content -->
         <div class="col-md-9">
 
-            <section id="button" class="group col-md-12">
+            <section id="button" class="col-md-12">
                 <h1 class="kawa-h1">Buttons</h1>
-                <div id="classic" class="subgroup col-md-12">
+                <div id="classic" class="col-md-12">
                     <h2 class="kawa-h2">Classic</h2>
                     <p>Le texte est en majuscule lorqu'il y a un seul mot sinon en minuscule.</p>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-2">
                             <div class="btn uppercase">Voter</div>
@@ -31,11 +31,11 @@
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-classic-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-classic-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-classic-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-classic-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-classic-html" class="tab-pane fade in active">
+                        <div id="rtl2-classic-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;div class="btn uppercase"&gt;Voter&lt;/div&gt;<br/>
@@ -43,18 +43,18 @@
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-classic-css" class="tab-pane fade">
+                        <div id="rtl2-classic-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/button/btn/_btn.scss" %}
+                                    {% include "../../../assets/scss/component/button/btn/_btn.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
-                <div id="particular" class="subgroup col-md-12">
+                <div id="particular" class="col-md-12">
                     <h2 class="kawa-h2">Particular</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-4">
                             <div class="btn-link icon icon-chevron-left-bis">Aller vers l'&eacute;mission</div>
@@ -106,11 +106,11 @@
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-particular-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-particular-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-particular-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-particular-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-particular-html" class="tab-pane fade in active">
+                        <div id="rtl2-particular-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;div class="btn-link icon icon-chevron-left-bis"&gt;Aller vers l'&eacute;mission&lt;/div&gt;<br/><br/>
@@ -143,66 +143,58 @@
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-particular-css" class="tab-pane fade">
+                        <div id="rtl2-particular-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/button/btn-link/_btn-link.scss" %}
-                                    {% include "../assets/scss/component/button/btn-hover/_btn-hover.scss" %}
-                                    {% include "../assets/scss/component/button/btn-search/_btn-search.scss" %}
-                                    {% include "../assets/scss/component/button/btn-text/_btn-text.scss" %}
+                                    {% include "../../../assets/scss/component/button/btn-link/_btn-link.scss" %}
+                                    {% include "../../../assets/scss/component/button/btn-hover/_btn-hover.scss" %}
+                                    {% include "../../../assets/scss/component/button/btn-search/_btn-search.scss" %}
+                                    {% include "../../../assets/scss/component/button/btn-text/_btn-text.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="module" class="group col-md-12">
+            <section id="module" class="col-md-12">
                 <h1 class="kawa-h1">Module</h1>
-                <div id="moduleHeader" class="subgroup col-md-12">
+                <div id="moduleHeader" class="col-md-12">
                     <h2 class="kawa-h2">Header</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-5">
                             <div class="module-header">La question du jour</div>
                         </div>
                         <div class="col-md-5">
-                            <div class="module-header life-bg-color">La question du jour</div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="module-header sexo-bg-color">La question du jour</div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="module-header confession-bg-color">La question du jour</div>
+                            <div class="module-header culture-bg-color">La question du jour</div>
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-module-header-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-module-header-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-module-header-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-module-header-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-module-header-html" class="tab-pane fade in active">
+                        <div id="rtl2-module-header-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;div class="module-header"&gt;La question du jour&lt;/div&gt;<br/>
-                                    &lt;div class="module-header life-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
-                                    &lt;div class="module-header sexo-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
-                                    &lt;div class="module-header confession-bg-color"&gt;La question du jour&lt;/div&gt;
+                                    &lt;div class="module-header culture-bg-color"&gt;La question du jour&lt;/div&gt;
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-module-header-css" class="tab-pane fade">
+                        <div id="rtl2-module-header-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/module/module-header/_module-header.scss" %}
+                                    {% include "../../../assets/scss/component/module/module-header/_module-header.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
 
-                <div id="moduleLink" class="subgroup col-md-12">
+                <div id="moduleLink" class="col-md-12">
                     <h2 class="kawa-h2">Link</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-5">
                             <div class="module-link module-border icon icon-chevron-bas">Voir plus de commentaires</div>
@@ -212,11 +204,11 @@
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-link-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-link-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-link-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-link-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-link-html" class="tab-pane fade in active">
+                        <div id="rtl2-link-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;div class="module-link module-border icon icon-chevron-bas"&gt;La question du jour&lt;/div&gt;<br/>
@@ -224,19 +216,19 @@
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-link-css" class="tab-pane fade">
+                        <div id="rtl2-link-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/module/module-link/_module-link.scss" %}
+                                    {% include "../../../assets/scss/component/module/module-link/_module-link.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
 
-                <div id="moduleBorder" class="subgroup col-md-12">
+                <div id="moduleBorder" class="col-md-12">
                     <h2 class="kawa-h2">Border</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-4">
                             <div class="module-border"><p>Module avec bordure fine</p></div>
@@ -249,11 +241,11 @@
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-border-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-border-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-border-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-border-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-border-html" class="tab-pane fade in active">
+                        <div id="rtl2-border-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;div class="module-border"&gt;&lt;p&gt;Module avec bordure fine&lt;/p&gt;&lt;/div&gt;<br/>
@@ -262,165 +254,148 @@
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-border-css" class="tab-pane fade">
+                        <div id="rtl2-border-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/module/module-border/_module-border.scss" %}
+                                    {% include "../../../assets/scss/component/module/module-border/_module-border.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
 
-                <div id="moduleFooter" class="subgroup col-md-12">
+                <div id="moduleFooter" class="col-md-12">
                     <h2 class="kawa-h2">Footer</h2>
                     <p>Boutons en pied de module. Cas particuliers:
                         <br/>- Pied de module au couleur des thématiques (ex: Parcourir tous les replays).
                         <br/>Les textes et chevrons passent en #ffffff
                         <br/>- Pied de module "r&eacute;servez vos places" avec pointill&eacute;s.
                     </p>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-5">
                             <span class="module-footer icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
                         </div>
                         <div class="col-md-5">
-                            <span class="module-footer life-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
-                        </div>
-                        <div class="col-md-5">
-                            <span class="module-footer sexo-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
-                        </div>
-                        <div class="col-md-5">
-                            <span class="module-footer confession-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                            <span class="module-footer culture-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-module-footer-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-module-footer-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-module-footer-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-module-footer-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-module-footer-html" class="tab-pane fade in active">
+                        <div id="rtl2-module-footer-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                    &lt;span class="module-footer life-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                    &lt;span class="module-footer sexo-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                    &lt;span class="module-footer confession-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
+                                    &lt;span class="module-footer culture-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-module-footer-css" class="tab-pane fade">
+                        <div id="rtl2-module-footer-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/module/module-footer/_module-footer.scss" %}
+                                    {% include "../../../assets/scss/component/module/module-footer/_module-footer.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
+                <div id="moduleFollowUs" class="col-md-12">
+                    {% include "../../../assets/sample/_follow-us.html" %}
+                </div>
             </section>
-            <section id="widget" class="group col-md-12">
+            <section id="widget" class="col-md-12">
                 <h1 class="kawa-h1">Widget</h1>
                 <div id="widgetPartner" class="col-md-12">
-                    {% include "../assets/sample/_widget-partners.html" %}
+                    {% include "../../../assets/sample/_widget-partners.html" %}
                 </div>
                 <div id="widgetWeather" class="col-md-12">
-                    {% include "../assets/sample/_widget-weather.html" %}
+                    {% include "../../../assets/sample/_widget-weather.html" %}
                 </div>
                 <div id="widgetAstro" class="col-md-12">
-                    {% include "../assets/sample/_widget-astro.html" %}
+                    {% include "../../../assets/sample/_widget-astro.html" %}
                 </div>
             </section>
-            <section id="article" class="group col-md-12">
+            <section id="article" class="col-md-12">
                 <h1 class="kawa-h1">Article</h1>
-                <div id="articleBody" class="subgroup col-md-12">
+                <div id="articleBody" class="col-md-12">
                     <h2 class="kawa-h2">Body</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-3">
                             <a class="article-text-link">Lien texte article</a>
                         </div>
                         <div class="col-md-3">
-                            <a class="article-text-link life-color">Lien texte article</a>
-                        </div>
-                        <div class="col-md-3">
-                            <a class="article-text-link sexo-color">Lien texte article</a>
-                        </div>
-                        <div class="col-md-3">
-                            <a class="article-text-link confession-color">Lien texte article</a>
+                            <a class="article-text-link culture-color">Lien texte article</a>
                         </div>
                         <div class="col-md-10">
                             <ul class="article-text-list">
                                 <li class="item"><a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                <li class="item life-bg-color_before"><a href="#" class="text life-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                <li class="item sexo-bg-color_before"><a href="#" class="text sexo-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                <li class="item confession-bg-color_before"><a href="#" class="text confession-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
+                                <li class="item culture-bg-color_before"><a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
                             </ul>
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-article-body-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-article-body-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-article-body-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-article-body-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-article-body-html" class="tab-pane fade in active">
+                        <div id="rtl2-article-body-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                             <pre class="prettyprint lang-html">
                                 &lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;<br/>
-                                &lt;a class="article-text-link life-color"&gt;Lien texte article&lt;/a&gt;<br/>
-                                &lt;a class="article-text-link sexo-color"&gt;Lien texte article&lt;/a&gt;<br/>
-                                &lt;a class="article-text-link confession-color"&gt;Lien texte article&lt;/a&gt;<br/><br/>
+                                &lt;a class="article-text-link culture-color"&gt;Lien texte article&lt;/a&gt;<br/><br/>
                                 &lt;ul class="article-text-list"&gt;<br/>
                                 &nbsp;&lt;li class="item"&gt;&lt;a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                &nbsp;&lt;li class="item life-bg-color_before"&gt;&lt;a href="#" class="text life-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                &nbsp;&lt;li class="item sexo-bg-color_before"&gt;&lt;a href="#" class="text sexo-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                &nbsp;&lt;li class="item confession-bg-color_before"&gt;&lt;a href="#" class="text confession-color_hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
+                                &nbsp;&lt;li class="item culture-bg-color_before"&gt;&lt;a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
                                 &lt;/ul&gt;
                             </pre>
                             </figure>
                         </div>
-                        <div id="girls-article-body-css" class="tab-pane fade">
+                        <div id="rtl2-article-body-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/article/article-text-link/_article-text-link.scss" %}
-                                    {% include "../assets/scss/component/article/article-text-list/_article-text-list.scss" %}
+                                    {% include "../../../assets/scss/component/article/article-text-link/_article-text-link.scss" %}
+                                    {% include "../../../assets/scss/component/article/article-text-list/_article-text-list.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
-                <div id="articleFooter" class="subgroup col-md-12">
+                <div id="articleFooter" class="col-md-12">
                     <h2 class="kawa-h2">Footer</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-5">
                             <span class="article-footer icon icon-chevron-right-bis">Découvrir plus de videos</span>
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-article-footer-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-article-footer-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-article-footer-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-article-footer-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-article-footer-html" class="tab-pane fade in active">
+                        <div id="rtl2-article-footer-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;span class="article-footer icon icon-chevron-right-bis"&gt;Découvrir plus de videos&lt;/span&gt;<br/>
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-article-footer-css" class="tab-pane fade">
+                        <div id="rtl2-article-footer-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/article/article-footer/_article-footer.scss" %}
+                                    {% include "../../../assets/scss/component/article/article-footer/_article-footer.scss" %}
                                 </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
-                <div id="tag" class="subgroup col-md-12">
+                <div id="tag" class="col-md-12">
                     <h2 class="kawa-h2">Tag</h2>
-                    <!-- GIRLS -->
+                    <!-- RTL2 -->
                     <form class="code-example col-md-12">
                         <div class="col-md-3 position-static">
                             <span class="article-tag">
@@ -428,17 +403,7 @@
                             </span>
                         </div>
                         <div class="col-md-3 position-static">
-                            <span class="article-tag life-bg-color">
-                                <a href="#" class="tag">Le Saviez-Vous</a>
-                            </span>
-                        </div>
-                        <div class="col-md-3 position-static">
-                            <span class="article-tag sexo-bg-color">
-                                <a href="#" class="tag">Le Saviez-Vous</a>
-                            </span>
-                        </div>
-                        <div class="col-md-3 position-static">
-                            <span class="article-tag confession-bg-color">
+                            <span class="article-tag culture-bg-color">
                                 <a href="#" class="tag">Le Saviez-Vous</a>
                             </span>
                         </div>
@@ -450,45 +415,25 @@
                             </span>
                         </div>
                         <div class="col-md-3 position-static">
-                            <span class="article-flag-fix life-bg-color">
-                                <span class="uppercase flag life-border-color life-bg-color_before life-border-color_after">
-                                    <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="col-md-3 position-static">
-                            <span class="article-flag-fix sexo-bg-color">
-                                <span class="uppercase flag sexo-border-color sexo-bg-color_before sexo-border-color_after">
-                                    <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="col-md-3 position-static">
-                            <span class="article-flag-fix confession-bg-color">
-                                <span class="uppercase flag confession-border-color confession-bg-color_before confession-border-color_after">
+                            <span class="article-flag-fix culture-bg-color">
+                                <span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after">
                                     <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
                                 </span>
                             </span>
                         </div>
                     </form>
                     <ul class="nav nav-tabs nav-child">
-                        <li class="active"><a data-toggle="tab" href="#girls-article-tag-html">HTML</a></li>
-                        <li><a data-toggle="tab" href="#girls-article-tag-css">CSS</a></li>
+                        <li class="active"><a data-toggle="tab" href="#rtl2-article-tag-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#rtl2-article-tag-css">CSS</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div id="girls-article-tag-html" class="tab-pane fade in active">
+                        <div id="rtl2-article-tag-html" class="tab-pane fade in active">
                             <figure class="highlighted col-md-12">
                                 <pre class="prettyprint lang-html">
                                     &lt;span class="article-tag"&gt;<br/>
                                     &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
                                     &lt;/span&gt;<br/>
-                                    &lt;span class="article-tag life-bg-color"&gt;<br/>
-                                    &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                    &lt;/span&gt;<br/>
-                                    &lt;span class="article-tag sexo-bg-color"&gt;<br/>
-                                    &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                    &lt;/span&gt;<br/>
-                                    &lt;span class="article-tag confession-bg-color"&gt;<br/>
+                                    &lt;span class="article-tag culture-bg-color"&gt;<br/>
                                     &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
                                     &lt;/span&gt;<br/><br/>
                                     &lt;span class="article-flag-fix"&gt;<br/>
@@ -496,36 +441,26 @@
                                     &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
                                     &nbsp;&lt;/span&gt;<br/>
                                     &lt;/span&gt;<br/>
-                                    &lt;span class="article-flag-fix life-bg-color"&gt;<br/>
-                                    &nbsp;&lt;span class="uppercase flag life-border-color life-bg-color_before life-border-color_after"&gt;<br/>
-                                    &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                    &nbsp;&lt;/span&gt;<br/>
-                                    &lt;/span&gt;<br/>
-                                    &lt;span class="article-flag-fix sexo-bg-color"&gt;<br/>
-                                    &nbsp;&lt;span class="uppercase flag sexo-border-color sexo-bg-color_before sexo-border-color_after"&gt;<br/>
-                                    &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                    &nbsp;&lt;/span&gt;<br/>
-                                    &lt;/span&gt;<br/>
-                                    &lt;span class="article-flag-fix confession-bg-color"&gt;<br/>
-                                    &nbsp;&lt;span class="uppercase flag confession-border-color confession-bg-color_before confession-border-color_after"&gt;<br/>
+                                    &lt;span class="article-flag-fix culture-bg-color"&gt;<br/>
+                                    &nbsp;&lt;span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after"&gt;<br/>
                                     &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
                                     &nbsp;&lt;/span&gt;<br/>
                                     &lt;/span&gt;
                                 </pre>
                             </figure>
                         </div>
-                        <div id="girls-article-tag-css" class="tab-pane fade">
+                        <div id="rtl2-article-tag-css" class="tab-pane fade">
                             <figure class="highlighted col-md-12">
-                                <pre class="prettyprint lang-css">
-                                    {% include "../assets/scss/component/article/article-tag/_article-tag.scss" %}
-                                    {% include "../assets/scss/component/article/article-flag-fix/_article-flag-fix.scss" %}
-                                </pre>
+                                    <pre class="prettyprint lang-css">
+                                        {% include "../../../assets/scss/component/article/article-tag/_article-tag.scss" %}
+                                        {% include "../../../assets/scss/component/article/article-flag-fix/_article-flag-fix.scss" %}
+                                    </pre>
                             </figure>
                         </div>
                     </div>
                 </div>
                 <div id="post-preview" class="col-md-12">
-                    {% include "../assets/sample/_article-post-preview.html" %}
+                    {% include "../../../assets/sample/_article-post-preview.html" %}
                 </div>
             </section>
         </div>

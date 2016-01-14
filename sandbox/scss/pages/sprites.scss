@@ -1,0 +1,76 @@
+
+// import config, template
+@import "../../../assets/scss/kawabunga-base";
+@import "../kawabunga-layout";
+
+// import tool
+@import "../side-nav";
+
+// import sprites
+@import "../../../assets/scss/sprites-partners";
+
+
+/* Sprite page
+----------------------------------------- */
+
+/* Sprites */
+.kawa-sprites {
+  margin: 15px -10px 20px;
+  overflow: hidden;
+}
+
+.kawa-sprites-list {
+  padding-left: 0;
+  list-style: none;
+}
+/* particular case for the logo: logo-devices */
+.kawa-sprites .last-li li:last-child {
+  width: 40%;
+  height: 207px;
+}
+
+@media (min-width: 768px) {
+  .kawa-sprites .last-li li:last-child {
+    width: 40%;
+    font-size: 12px;
+  }
+}
+/* end */
+
+.kawa-sprites li {
+  float: left;
+  width: 33.3%;
+  height: 120px;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: #ACACAC;
+  border: 1px solid #FFFFFF;
+}
+
+.kawa-sprites .sprite {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.kawa-sprites .sprite-class {
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+  color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .kawa-sprites {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .kawa-sprites li {
+    width: 33.3%;
+    font-size: 12px;
+  }
+}
