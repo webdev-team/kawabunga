@@ -1,0 +1,57 @@
+
+@import "../default/colors";
+@import "colors";
+@import "font";
+
+$font-design: $lato-regular-font-family;
+
+// Button
+$btn-bg-color: $rtl-red;
+$btn-bg-color_hover: $rtl-red-light;
+
+$btn-hover-bg-color: $rtl-grey-light;
+$btn-hover-frontside-bg-color_hover: $rtl-grey-dark;
+
+$btn-link-bg-color: $rtl-red;
+$btn-link-bg-color_hover: $rtl-red-light;
+
+$btn-search-label-bg-color: $rtl-red;
+$btn-search-input-bg-color: $rtl-red-dark;
+
+// Module
+$module-header-font-family: $lato-light-font-family;
+$module-header-bg-color: $rtl-grey;
+
+$module-border-border-color: $rtl-grey-light;
+
+$module-link-bg-color: $rtl-cream;
+$module-link-color: $rtl-black;
+
+$module-footer-bg-color: $rtl-grey;
+
+$module-follow-us-font-family: $lato-light-font-family;
+$module-follow-us-icon-newsletter-color_before: $rtl-black;
+
+// Article
+$article-text-link-color: $rtl-grey;
+$article-text-link-color_hover: $black;
+
+$article-text-list-color: $rtl-grey;
+$article-text-list-color_hover: $black;
+$article-text-list-item-bg-color_before: $rtl-grey;
+
+$article-footer-color: $rtl-black;
+
+$article-preview-fig-border-color: $rtl-red;
+$article-preview-link-color: $black;
+$article-preview-link-color_hover: $rtl-red;
+$article-preview-social-tool-color: $rtl-grey;
+$article-preview-social-tool-icon-play-color_before: $rtl-grey-dark;
+
+$article-tag-font-family: $lato-light-font-family;
+$article-tag-bg-color: $rtl-grey;
+
+$article-flag-fix-bg-color: $rtl-grey;
+$article-flag-fix-border-color: $rtl-grey;
+$article-flag-fix-bg-color_before: $rtl-grey-matt;
+$article-flag-fix-border-color_after: $rtl-grey;

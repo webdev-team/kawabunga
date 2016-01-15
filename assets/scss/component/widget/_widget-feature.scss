@@ -1,0 +1,93 @@
+
+//@import "../../themes/default/theme";
+//@import "../../config";
+
+/* Widget Feature
+----------------------------------------- */
+
+.widget-feature-header{
+  position: relative;
+  height: px-to-rem(121px);
+  padding: px-to-rem(15px);
+  border-radius: 0 0 0 px-to-rem(4px);
+  border-bottom: px-to-rem(4px) solid;
+}
+
+.widget-feature-header .link{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: px-to-rem(15px);
+  color: inherit;
+}
+
+.widget-feature-header .main-icon,
+.widget-feature-header .main-logo{
+  display: block;
+  position: absolute;
+  bottom: px-to-rem(15px);
+}
+
+.widget-feature-header .main-icon{
+  left: px-to-rem(15px);
+}
+
+.widget-feature-header .main-logo{
+  right: px-to-rem(15px);
+}
+
+.widget-feature-content{
+  overflow: hidden;
+}
+
+
+/* widget partner img */
+.widget-feature-figure{
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.widget-feature-img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.widget-feature-iframe{
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+}
+
+
+/* Fixed layout */
+@mixin mdl-fix-widget-feature {
+  .mdl-fix .widget-feature-header{
+    height: px-to-rem(119px);
+    overflow: hidden;
+  }
+
+  .mdl-fix .widget-feature-content{
+    height: px-to-rem(291px);
+  }
+
+  .mdl-fix .partner-mdl .widget-feature-content{
+    height: px-to-rem(294px);
+  }
+}
+
+@if ($media-queries) {
+  @media all and (min-width: $media-queries-small) {
+    @include mdl-fix-widget-feature;
+  }
+} @else {
+  @include mdl-fix-widget-feature;
+}

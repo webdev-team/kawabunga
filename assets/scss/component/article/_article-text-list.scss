@@ -1,0 +1,39 @@
+
+@import "../../functions";
+@import "../../themes/default/variables";
+
+/* Article Text List
+----------------------------------------- */
+.article-text-list {
+  display: block;
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.article-text-list .item {
+  display: block;
+  position: relative;
+  vertical-align: top;
+  padding: 0 0 0 px-to-rem(20px);
+  margin-bottom: px-to-rem(12px);
+  font-size: px-to-rem(15px);
+}
+
+.article-text-list .item:before {
+  content: "";
+  position: absolute;
+  top: px-to-rem(3px);
+  left: 0;
+  width: px-to-rem(10px);
+  height: px-to-rem(10px);
+  background-color: $article-text-list-item-bg-color_before;
+}
+
+.article-text-list .item .text {
+  color: $article-text-list-color;
+}
+
+.article-text-list .item .text:hover {
+  color: $article-text-list-color_hover;
+}

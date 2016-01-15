@@ -1,0 +1,48 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
+
+/* Module Footer
+----------------------------------------- */
+.module-footer {
+  display: block;
+  overflow: hidden;
+  padding: px-to-rem(17px) px-to-rem(20px);
+  outline: none;
+  font-size: px-to-rem(15px);
+  font-weight: bold;
+  line-height: px-to-rem(19px);
+  cursor:pointer;
+  color: $white;
+  background-color: $module-footer-bg-color;
+}
+
+.module-footer.icon-chevron-right-bis:before {
+  float: right;
+  margin: 0 0 0 px-to-rem(8px);
+  font-size: px-to-rem(24px);
+  line-height: inherit;
+}
+
+@mixin mdl-fix-mdl-common {
+
+  /* Height Fix */
+  .module-footer {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .module-footer {
+    height: px-to-rem(55px);
+  }
+}
+
+@if ($media-queries) {
+  @media all and (min-width: $media-queries-small) {
+    @include mdl-fix-mdl-common;
+  }
+} @else {
+  @include mdl-fix-mdl-common;
+}

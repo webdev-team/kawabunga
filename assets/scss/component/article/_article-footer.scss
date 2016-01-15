@@ -1,0 +1,33 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/variables";
+
+/* Article Footer
+----------------------------------------- */
+.article-footer {
+  display: block;
+  line-height: px-to-rem(25px);
+  font-size: px-to-rem(15px);
+  font-weight: bold;
+  text-align: center;
+  padding: px-to-rem(25px);
+  cursor:pointer;
+  color: $article-footer-color;
+}
+
+.article-footer.icon:before {
+  float: right;
+  vertical-align: top;
+  margin: 0 px-to-rem(6px);
+  text-transform: none;
+  font-variant: normal;
+  line-height: inherit;
+  font-size: px-to-rem(32px);
+}
+
+@media (max-width: $media-queries-medium) {
+  .article-footer{
+    padding: px-to-rem(6px) px-to-rem(25px);
+  }
+}

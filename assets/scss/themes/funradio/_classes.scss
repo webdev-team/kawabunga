@@ -1,0 +1,108 @@
+
+@import "colors";
+
+.module-header.actu-bg-color,
+.module-footer.actu-bg-color,
+.article-text-list .item.actu-bg-color_before:before,
+.article-tag.actu-bg-color,
+.article-flag-fix.actu-bg-color {
+  background-color: $fun-pink;
+}
+.article-text-link.actu-color,
+.article-text-list .item .text.actu-color {
+  color: $fun-pink;
+}
+.article-flag-fix .flag.actu-bg-color_before:before {
+  background-color: $fun-pink-dark;
+}
+.article-flag-fix .flag.actu-border-color_after:after {
+  border-top-color: $fun-pink;
+  border-bottom-color: $fun-pink;
+}
+.article-flag-fix .flag.actu-border-color {
+  border-color: $fun-pink;
+}
+.module-header.buzz-bg-color,
+.module-footer.buzz-bg-color,
+.article-text-list .item.buzz-bg-color_before:before,
+.article-tag.buzz-bg-color,
+.article-flag-fix.buzz-bg-color {
+  background-color: $fun-orange;
+}
+.article-text-link.buzz-color,
+.article-text-list .item .text.buzz-color {
+  color: $fun-orange;
+}
+.article-flag-fix .flag.buzz-bg-color_before:before {
+  background-color: $fun-orange-darker;
+}
+.article-flag-fix .flag.buzz-border-color_after:after {
+  border-top-color: $fun-orange;
+  border-bottom-color: $fun-orange;
+}
+.article-flag-fix .flag.buzz-border-color {
+  border-color: $fun-orange-dark;
+}
+.module-header.super-bg-color,
+.module-footer.super-bg-color,
+.article-text-list .item.super-bg-color_before:before,
+.article-tag.super-bg-color,
+.article-flag-fix.super-bg-color {
+  background-color: $fun-cherry;
+}
+.article-text-link.super-color,
+.article-text-list .item .text.super-color {
+  color: $fun-cherry;
+}
+.article-flag-fix .flag.super-bg-color_before:before {
+  background-color: $fun-cherry-darker;
+}
+.article-flag-fix .flag.super-border-color_after:after {
+  border-top-color: $fun-cherry;
+  border-bottom-color: $fun-cherry;
+}
+.article-flag-fix .flag.super-border-color {
+  border-color: $fun-cherry-dark;
+}
+.module-header.night-bg-color,
+.module-footer.night-bg-color,
+.article-text-list .item.night-bg-color_before:before,
+.article-tag.night-bg-color,
+.article-flag-fix.night-bg-color {
+  background-color: $fun-purple;
+}
+.article-text-link.night-color,
+.article-text-list .item .text.night-color {
+  color: $fun-purple;
+}
+.article-flag-fix .flag.night-bg-color_before:before {
+  background-color: $fun-purple-dark;
+}
+.article-flag-fix .flag.night-border-color_after:after {
+  border-top-color: $fun-purple;
+  border-bottom-color: $fun-purple;
+}
+.article-flag-fix .flag.night-border-color {
+  border-color: $fun-purple;
+}
+.module-header.fit-bg-color,
+.module-footer.fit-bg-color,
+.article-text-list .item.fit-bg-color_before:before,
+.article-tag.fit-bg-color,
+.article-flag-fix.fit-bg-color {
+  background-color: $fun-green;
+}
+.article-text-link.fit-color,
+.article-text-list .item .text.fit-color {
+  color: $fun-green;
+}
+.article-flag-fix .flag.fit-bg-color_before:before {
+  background-color: $fun-green;
+}
+.article-flag-fix .flag.fit-border-color_after:after {
+  border-top-color: $fun-green;
+  border-bottom-color: $fun-green;
+}
+.article-flag-fix .flag.fit-border-color {
+  border-color: $fun-green-light;
+}

@@ -1,0 +1,57 @@
+
+@import "colors";
+@import "font";
+
+$font-design: $helvetica !default;
+
+// Button
+$btn-bg-color: $grey-dark !default;
+$btn-bg-color_hover: $black !default;
+
+$btn-hover-bg-color: $grey-dark !default;
+$btn-hover-frontside-bg-color_hover: $black !default;
+
+$btn-link-bg-color: $grey-dark !default;
+$btn-link-bg-color_hover: $black !default;
+
+$btn-search-label-bg-color: $grey-dark !default;
+$btn-search-input-bg-color: $black !default;
+
+// Module
+$module-header-font-family: $font-design !default;
+$module-header-bg-color: $black !default;
+
+$module-border-border-color: $black !default;
+
+$module-link-bg-color: $grey !default;
+$module-link-color: $black !default;
+
+$module-footer-bg-color: $grey !default;
+$module-footer-color: $black !default;
+
+$module-follow-us-font-family: $font-design !default;
+$module-follow-us-icon-newsletter-color_before: $grey !default;
+
+// Article
+$article-text-link-color: $black !default;
+$article-text-link-color_hover: $grey !default;
+
+$article-text-list-color: $black !default;
+$article-text-list-color_hover: $grey !default;
+$article-text-list-item-bg-color_before: $black !default;
+
+$article-footer-color: $black !default;
+
+$article-preview-fig-border-color: $black !default;
+$article-preview-link-color: $black !default;
+$article-preview-link-color_hover: $grey !default;
+$article-preview-social-tool-color: $grey !default;
+$article-preview-social-tool-icon-play-color_before: $grey-dark !default;
+
+$article-tag-font-family: $font-design !default;
+$article-tag-bg-color: $black !default;
+
+$article-flag-fix-bg-color: $black !default;
+$article-flag-fix-border-color: $black !default;
+$article-flag-fix-bg-color_before: $black !default;
+$article-flag-fix-border-color_after: $black !default;

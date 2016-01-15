@@ -1,0 +1,56 @@
+
+@import "colors";
+@import "font";
+
+$font-design: $raleway-bold-font-family;
+
+// Button
+$btn-bg-color: $girls-nude;
+$btn-bg-color_hover: $girls-nude-dark;
+
+$btn-hover-bg-color: $girls-cream-light;
+$btn-hover-frontside-bg-color_hover: $girls-nude-dark;
+
+$btn-link-bg-color: $girls-nude-dark;
+$btn-link-bg-color_hover: $girls-nude;
+
+$btn-search-label-bg-color: $girls-nude;
+$btn-search-input-bg-color: $girls-nude-dark;
+
+// Module
+$module-header-font-family: $raleway-regular-font-family;
+$module-header-bg-color: $girls-nude;
+
+$module-border-border-color: $girls-cream-darker;
+
+$module-link-bg-color: $girls-cream;
+$module-link-color: $girls-black;
+
+$module-footer-bg-color: $girls-nude;
+
+$module-follow-us-font-family: $raleway-regular-font-family;
+$module-follow-us-icon-newsletter-color_before: $girls-grey;
+
+// Article
+$article-text-link-color: $girls-nude-dark;
+$article-text-link-color_hover: $girls-black;
+
+$article-text-list-color: $girls-black;
+$article-text-list-color_hover: $girls-nude-dark;
+$article-text-list-item-bg-color_before: $girls-nude-dark;
+
+$article-footer-color: $girls-black;
+
+$article-preview-fig-border-color: $girls-nude;
+$article-preview-link-color: $girls-black;
+$article-preview-link-color_hover: $girls-nude-dark;
+$article-preview-social-tool-color: $girls-grey;
+$article-preview-social-tool-icon-play-color_before: $girls-grey;
+
+$article-tag-font-family: $font-design;
+$article-tag-bg-color: $girls-nude;
+
+$article-flag-fix-bg-color: $girls-nude;
+$article-flag-fix-border-color: $girls-nude;
+$article-flag-fix-bg-color_before: $girls-nude-dark;
+$article-flag-fix-border-color_after: $girls-nude;

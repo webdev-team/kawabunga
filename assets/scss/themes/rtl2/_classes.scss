@@ -1,0 +1,24 @@
+
+@import "colors";
+
+.module-header.culture-bg-color,
+.module-footer.culture-bg-color,
+.article-text-list .item.culture-bg-color_before:before,
+.article-tag.culture-bg-color,
+.article-flag-fix.culture-bg-color {
+  background-color: $rtl2-gold;
+}
+.article-text-link.culture-color,
+.article-text-list .item .text.culture-color {
+  color: $rtl2-gold;
+}
+.article-flag-fix .flag.culture-bg-color_before:before {
+  background-color: $rtl2-gold-dark;
+}
+.article-flag-fix .flag.culture-border-color_after:after {
+  border-top-color: $rtl2-gold;
+  border-bottom-color: $rtl2-gold;
+}
+.article-flag-fix .flag.culture-border-color {
+  border-color: $rtl2-gold;
+}
