@@ -7,26 +7,26 @@
 /* Article Post Preview
 ----------------------------------------- */
 .article-preview,
-.link,
-.pic,
-.title,
-.hat,
-.list,
-.list:after,
-.list.red-chip .list-item:after {
+.article-preview .link,
+.article-preview .pic,
+.article-preview .title,
+.article-preview .hat,
+.article-preview .list,
+.article-preview .list:after,
+.article-preview .list.red-chip .list-item:after {
   display: block;
 }
 .article-preview {
   position: relative;
 }
-.fig {
+.article-preview .fig {
   position: relative;
   min-height: px-to-rem(63px);
   border-style: solid;
   border-width: 0 0 px-to-rem(8px) 0;
   border-color: $article-preview-fig-border-color;
 }
-.fig .btn-replay {
+.article-preview .fig .btn-replay {
   position: absolute;
   max-width: 45%;
   overflow: hidden;
@@ -39,43 +39,43 @@
 .article-preview .texts .icon-play2 {
   display: none;
 }
-.pic {
+.article-preview .pic {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
 }
 @if ($lower-than-or-equal-ie7) {
-  .pic {
+  .article-preview .pic {
     width: 100%;
   }
 }
-.texts {
+.article-preview .texts {
   overflow: hidden;
   padding-top: px-to-rem(20px);
   padding-left: px-to-rem(12px);
   padding-right: px-to-rem(12px);
 }
-.title {
+.article-preview .title {
   margin-bottom: px-to-rem(16px);
   font-weight: bold;
   font-size: px-to-rem(32px);
   line-height: px-to-rem(36px);
 }
-.texts.text-small .title {
+.article-preview .texts.text-small .title {
   margin-bottom: px-to-rem(16px);
   font-size: px-to-rem(20px);
   line-height: px-to-rem(24px);
 }
-.hat {
+.article-preview .hat {
   margin-bottom: px-to-rem(16px);
   font-size: px-to-rem(14px);
   line-height: px-to-rem(24px);
 }
-.list {
+.article-preview .list {
   position: relative;
   padding: px-to-rem(15px) 0;
 }
-.list:after {
+.article-preview .list:after {
   position: absolute;
   top: 0;
   bottom: px-to-rem(15px);
@@ -84,13 +84,13 @@
   content: "";
   width: px-to-rem(1px);
 }
-.texts.text-small .list {
+.article-preview .texts.text-small .list {
   padding-top: 0;
 }
-.texts.text-small .list:after {
+.article-preview .texts.text-small .list:after {
   display: none;
 }
-.list .list-item {
+.article-preview .list .list-item {
   width: 49%;
   display: inline-block;
   vertical-align: top;
@@ -101,29 +101,29 @@
   font-size: px-to-rem(14px);
   line-height: px-to-rem(17px);
 }
-.texts.text-small .list-item {
+.article-preview .texts.text-small .list-item {
   width: auto;
   display: none;
 }
-.texts.text-small .list-item:nth-child(-n+2) { /* hide all expect first two items */
+.article-preview .texts.text-small .list-item:nth-child(-n+2) { /* hide all expect first two items */
   display: block;
 }
 @if ($lower-than-or-equals-ie8) {
-  .texts.text-small .list-item:first-child,
-  .texts.text-small .list-item:first-child + .list-item {
+  .article-preview .texts.text-small .list-item:first-child,
+  .article-preview .texts.text-small .list-item:first-child + .list-item {
     display: block;
   }
 }
-.texts.text-small .list-item:nth-child(2) { /* remove margin on last item */
+.article-preview .texts.text-small .list-item:nth-child(2) { /* remove margin on last item */
   margin-bottom: 0;
 }
-.list a {
+.article-preview .list a {
   color: inherit;
 }
-.list.red-chip .list-item {
+.article-preview .list.red-chip .list-item {
   position: relative;
 }
-.list.red-chip .list-item:before {
+.article-preview .list.red-chip .list-item:before {
   position: absolute;
   top: px-to-rem(3px);
   left: px-to-rem(20px);
@@ -131,12 +131,12 @@
   width: px-to-rem(10px);
   height: px-to-rem(10px);
 }
-.link {
+.article-preview .link {
   overflow: hidden; /* useful to crop image on module resize */
   text-decoration: none;
   color: $article-preview-link-color;
 }
-.link:hover {
+.article-preview .link:hover {
   color: $article-preview-link-color_hover;
 }
 
@@ -421,7 +421,7 @@
   .article-preview.mql-xs-layout .social-tool {
     left: 0;
     right: 0;
-    border-top:  px-to-rem(1px) solid $grey-light;
+    border-top: px-to-rem(1px) solid $grey-light;
   }
   .article-preview.mql-xs-layout .texts .icon-play,
   .article-preview.mql-xs-layout .texts .icon-play2 {
@@ -691,7 +691,7 @@
     width: 100%;
     margin: 0;
   }
-  .title,
+  .article-preview .title,
   .article-preview.row-layout .title {
     margin-bottom: px-to-rem(16px);
     font-size: px-to-rem(20px);
@@ -706,24 +706,24 @@
   }
 
   /* Display 2 items in list */
-  .list,
+  .article-preview .list,
   .article-preview.row-layout .list {
     padding-top: 0;
   }
-  .list:after {
+  .article-preview .list:after {
     display: none;
   }
-  .list .list-item,
+  .article-preview .list .list-item,
   .article-preview.row-layout .list .list-item {
     width: auto;
     display: none;
     margin-bottom: px-to-rem(12px);
   }
-  .list .list-item:nth-child(-n+2),
+  .article-preview .list .list-item:nth-child(-n+2),
   .article-preview.row-layout .list-item:nth-child(-n+2) { /* hide all expect first two items */
     display: block;
   }
-  .list .list-item:nth-child(2),
+  .article-preview .list .list-item:nth-child(2),
   .article-preview.row-layout .list-item:nth-child(2) { /* remove margin on last item */
     display: block;
     margin-bottom: 0;
