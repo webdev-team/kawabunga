@@ -23,7 +23,6 @@
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.0.0",
     "jsdom": "^7.2.2",
-    "lodash": "^3.10.1",
     "mocha": "^2.3.4",
     "proxyquire": "^1.7.3",
     "run-sequence": "^1.1.0",
@@ -36,5 +35,8 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
+    "js-polyfills": "^0.1.12",
+    "lodash": "^3.10.1",
+    "promise": "^7.1.1"
   }
 }

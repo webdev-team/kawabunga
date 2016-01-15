@@ -21,7 +21,7 @@ describe('estat-marker.js', function () {
             apiCallback();
         };
 
-        statsEstat = proxyquire('../../..../../../assets/js/tracking/estat-marker', {
+        statsEstat = proxyquire('../../../assets/js/tracking/estat-marker', {
             './estat-script': estatScript
         })
     });
