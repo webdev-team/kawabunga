@@ -1,2 +1,5 @@
 
+@import "functions";
+
 .uppercase { text-transform: uppercase; }
+.margin-top { margin-top: px-to-rem(20px); }
