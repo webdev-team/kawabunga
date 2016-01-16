@@ -34,7 +34,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
     "js-polyfills": "^0.1.12",
     "lodash": "^3.10.1",
     "promise": "^7.1.1"
