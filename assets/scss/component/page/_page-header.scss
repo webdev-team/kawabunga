@@ -7,7 +7,7 @@
 ----------------------------------------- */
 .page-header {
   position: relative;
-  padding-top: px-to-rem(30px);
+  padding-bottom: px-to-rem(8px);
   border-bottom: px-to-rem(3px) solid $page-header-border-color;
   font-family: $page-header-font-family;
 
@@ -17,16 +17,14 @@
 }
 
 .page-header .main-text {
-  display: block;
-  padding-bottom: px-to-rem(8px);
-  font-size: 2.625rem;
+  font-size: px-to-rem(42px);
   font-weight: 400;
   color: $page-header-main-texte-color;
 }
 
 .page-header .right-text {
-  font-size: .875rem;
-  line-height: 1rem;
+  font-size: px-to-rem(14px);
+  line-height: px-to-rem(16px);
   position: absolute;
   bottom: px-to-rem(-14px);
   right: 0;
@@ -47,6 +45,6 @@
 
 @media (max-width: $media-queries-medium) {
   .page-header .main-text {
-    font-size: 1.875rem;
+    font-size: px-to-rem(30px);
   }
 }
