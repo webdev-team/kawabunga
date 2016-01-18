@@ -86,6 +86,8 @@ var browserifyFile = function(file) {
  * Maybe a little awkward in img for the handle. To be tested.
  */
 
+gulp.task('sprite', ['sprite:x1', 'sprite:x2']);
+
 gulp.task('sprite:x1', function () {
     return gulp.src('assets/img/sprite-partners/*.png')
         .pipe(spritesmith({
@@ -214,7 +216,7 @@ gulp.task('clean', function (cb) {
     del(['build'], cb);
 });
 
-gulp.task('compile', ['sprite:x1', 'sprite:x2', 'img', 'css', 'font', 'js', 'html']);
+gulp.task('compile', ['sprite', 'img', 'css', 'font', 'js', 'html']);
 
 gulp.task('build', function(cb) {
     runSequence('clean', 'compile', cb);

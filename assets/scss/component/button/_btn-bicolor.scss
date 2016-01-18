@@ -1,0 +1,98 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
+
+/* Button Bicolor
+----------------------------------------- */
+
+.btn-bicolor {
+  display: inline-block;
+}
+
+.btn-bicolor .btn-bicolor-label,
+.btn-bicolor .btn-bicolor-input {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  cursor:pointer;
+  border: 0;
+  padding: 0 px-to-rem(10px);
+  height: px-to-rem(40px);
+  color: $white;
+}
+
+.btn-bicolor .btn-bicolor-label {
+  font-size: px-to-rem(14px);
+  min-width: px-to-rem(140px);
+  line-height: px-to-rem(40px);
+  background-color: $btn-bicolor-label-bg-color;
+}
+
+.btn-bicolor .btn-bicolor-input {
+  width: px-to-rem(45px);
+  background-color: $btn-bicolor-input-bg-color;
+}
+
+.btn-bicolor-input .icon-ff:before {
+  font-size: px-to-rem(24px);
+  line-height: inherit;
+  margin: 0;
+}
+
+.btn-bicolor-input .icon-crayon:before {
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+
+.btn-bicolor-input .no-ff {
+  display: none;
+}
+
+@media (max-width: $media-queries-medium){
+  .btn-bicolor .btn-bicolor-label{
+    display: none;
+  }
+}
+
+.btn-bicolor-large {
+  .btn-bicolor-label,
+  .btn-bicolor-input {
+    height: px-to-rem(60px);
+  }
+
+  .btn-bicolor-label {
+    line-height: px-to-rem(60px);
+  }
+
+  .btn-bicolor-input {
+    width: px-to-rem(60px);
+  }
+
+  .btn-bicolor-input .icon-ff:before {
+    font-size: px-to-rem(32px);
+  }
+}
+
+.btn-bicolor-small {
+  .btn-bicolor-label,
+  .btn-bicolor-input {
+    height: px-to-rem(30px);
+  }
+
+  .btn-bicolor-label {
+    min-width: px-to-rem(70px);
+    line-height: px-to-rem(30px);
+  }
+
+  .btn-bicolor-input {
+    width: px-to-rem(35px);
+  }
+
+  .btn-bicolor-input .icon-ff:before {
+    font-size: px-to-rem(16px);
+  }
+}

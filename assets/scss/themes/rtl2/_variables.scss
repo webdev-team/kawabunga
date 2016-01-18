@@ -15,14 +15,21 @@ $btn-hover-frontside-bg-color_hover: $rtl2-red;
 $btn-link-bg-color: $rtl2-red;
 $btn-link-bg-color_hover: $rtl2-grey-dark;
 
-$btn-search-label-bg-color: $rtl2-black;
-$btn-search-input-bg-color: $black;
+$btn-bicolor-label-bg-color: $rtl2-black;
+$btn-bicolor-input-bg-color: $black;
+
+// Input
+$input-text-input-border-color: $rtl2-cream-dark;
 
 // Module
 $module-header-font-family: $font-design;
 $module-header-bg-color: $rtl2-black;
 
 $module-border-border-color: $rtl2-cream-dark;
+
+$module-comment-border-color: $rtl2-cream-dark;
+$module-comment-color: $rtl2-black;
+$module-comment-bg-color: $rtl2-cream;
 
 $module-link-bg-color: $rtl2-cream;
 $module-link-color: $rtl2-grey-darker;
@@ -55,3 +62,10 @@ $article-flag-fix-bg-color: $rtl2-red;
 $article-flag-fix-border-color: $rtl2-red;
 $article-flag-fix-bg-color_before: $rtl2-red-dark;
 $article-flag-fix-border-color_after: $rtl2-red;
+
+// Page
+$page-header-font-family: $font-design;
+$page-header-border-color: $rtl2-black;
+$page-header-main-texte-color: $rtl2-black;
+$page-header-right-text-bg-color: $rtl2-cream-light;
+$page-header-right-text-color: $rtl2-black;

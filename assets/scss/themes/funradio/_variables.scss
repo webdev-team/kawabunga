@@ -15,14 +15,21 @@ $btn-hover-frontside-bg-color_hover: $fun-grey-darker;
 $btn-link-bg-color: $fun-pink;
 $btn-link-bg-color_hover: $fun-pink-dark;
 
-$btn-search-label-bg-color: $fun-pink;
-$btn-search-input-bg-color: $fun-pink-dark;
+$btn-bicolor-label-bg-color: $fun-pink;
+$btn-bicolor-input-bg-color: $fun-pink-dark;
+
+// Input
+$input-text-input-border-color: $fun-cream-dark;
 
 // Module
 $module-header-font-family: $font-design;
 $module-header-bg-color: $fun-blue;
 
 $module-border-border-color: $fun-cream-dark;
+
+$module-comment-border-color: $fun-cream-dark;
+$module-comment-color: $fun-black;
+$module-comment-bg-color: $fun-cream;
 
 $module-link-bg-color: $fun-cream;
 $module-link-color: $black-light;
@@ -55,3 +62,10 @@ $article-flag-fix-bg-color: $fun-blue;
 $article-flag-fix-border-color: $fun-blue;
 $article-flag-fix-bg-color_before: $fun-blue-dark;
 $article-flag-fix-border-color_after: $fun-blue;
+
+// Page
+$page-header-font-family: $font-design;
+$page-header-border-color: $fun-pink;
+$page-header-main-texte-color: $fun-black;
+$page-header-right-text-bg-color: $fun-cream-light;
+$page-header-right-text-color: $fun-black;

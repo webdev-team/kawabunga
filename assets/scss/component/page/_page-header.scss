@@ -1,0 +1,52 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/variables";
+
+/* Page Header
+----------------------------------------- */
+.page-header {
+  position: relative;
+  padding-top: px-to-rem(30px);
+  border-bottom: px-to-rem(3px) solid $page-header-border-color;
+  font-family: $page-header-font-family;
+
+  @if ($font-smoothing) {
+    @include font-smoothing-mixin;
+  }
+}
+
+.page-header .main-text {
+  display: block;
+  padding-bottom: px-to-rem(8px);
+  font-size: 2.625rem;
+  font-weight: 400;
+  color: $page-header-main-texte-color;
+}
+
+.page-header .right-text {
+  font-size: .875rem;
+  line-height: 1rem;
+  position: absolute;
+  bottom: px-to-rem(-14px);
+  right: 0;
+  padding: px-to-rem(5px) 0 px-to-rem(5px) px-to-rem(5px);
+  background-color: $page-header-right-text-bg-color;
+  color: $page-header-right-text-color;
+}
+
+@media (max-width: $media-queries-small) {
+  .page-header {
+    padding-top: px-to-rem(15px);
+  }
+
+  .page-header .main-text {
+    font-size: px-to-rem(23px);
+  }
+}
+
+@media (max-width: $media-queries-medium) {
+  .page-header .main-text {
+    font-size: 1.875rem;
+  }
+}

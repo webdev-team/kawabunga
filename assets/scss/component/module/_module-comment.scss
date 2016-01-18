@@ -1,0 +1,64 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/variables";
+
+/* Module Comment
+----------------------------------------- */
+.module-comment {
+  background-color: $module-comment-bg-color;
+  color: $module-comment-color;
+  border: 1px solid $module-comment-border-color;
+  padding: .625rem;
+}
+
+.module-comment-field,
+.module-comment-counter {
+  display: block;
+}
+
+.module-comment-field {
+  width: 100%;
+  padding: px-to-rem(5px);
+  margin-bottom: px-to-rem(10px);
+  resize: vertical;
+  outline: none;
+  border: px-to-rem(1px) solid transparent;
+  background-color: transparent;
+  -webkit-box-sizing:  border-box;
+  -moz-box-sizing:  border-box;
+  box-sizing:  border-box;
+  font-size: px-to-rem(16px);
+  line-height: 1.5;
+}
+
+.module-comment-submit {
+  float: right;
+  margin-left: px-to-rem(5px);
+}
+
+.module-comment-submit[disabled] {
+  opacity: .1;
+}
+
+.module-comment-counter {
+  padding-top: px-to-rem(6px);
+  font-size: px-to-rem(14px);
+}
+
+/* Log */
+.module-comment-log {
+  display: none;
+}
+
+@if ($media-queries-small) {
+  .module-comment-field{
+    font-size: px-to-rem(14px);
+  }
+}
+
+@if ($lower-than-or-equals-ie8) {
+  .module-comment-field {
+    border:  1px solid $module-comment-border-color;
+  }
+}

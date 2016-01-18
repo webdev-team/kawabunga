@@ -76,25 +76,36 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="btn-search cf">
-                                        <label for="search-submit" class="btn-search-label uppercase">
+                                    <div class="btn-bicolor btn-bicolor-large cf">
+                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
+                                            <i class="icon icon-ff icon-loupe"></i>
+                                            <span class="no-ff">OK</span>
+                                        </button>
+                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
                                             <span class="align">Rechercher</span>
                                         </label>
-                                        <button id="search-submit" class="btn-search-input uppercase">
-                                            <i class="icon icon-ff icon-loupe"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="btn-bicolor">
+                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
+                                            <span class="align">Répondre</span>
+                                        </label>
+                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
+                                            <i class="icon icon-ff icon-crayon"></i>
                                             <span class="no-ff">OK</span>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="btn-search cf">
-                                        <button id="search-submit" class="btn-search-input uppercase">
-                                            <i class="icon icon-ff icon-loupe"></i>
+                                <div class="col-md-3">
+                                    <div class="btn-bicolor btn-bicolor-small">
+                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
+                                            <span class="align">Répondre</span>
+                                        </label>
+                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
+                                            <i class="icon icon-ff icon-crayon"></i>
                                             <span class="no-ff">OK</span>
                                         </button>
-                                        <label for="search-submit" class="btn-search-label uppercase">
-                                            <span class="align">Rechercher</span>
-                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -128,12 +139,30 @@
                                             &nbsp;&nbsp;Acheter&lt;br/&gt;ce morceau<br/>
                                             &nbsp;&lt;/span&gt;<br/>
                                             &lt;/div&gt;<br/><br/>
-                                            &lt;div class="btn-search cf"&gt;<br/>
-                                            &nbsp;&lt;label for="search-submit" class="btn-search-label uppercase"&gt;<br/>
+                                            &lt;div class="btn-bicolor btn-bicolor-large cf"&gt;<br/>
+                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
                                             &nbsp;&nbsp;&lt;span class="align"&gt;Rechercher&lt;/span&gt;<br/>
                                             &nbsp;&lt;/label&gt;<br/>
-                                            &nbsp;&lt;button id="search-submit" class="btn-search-input uppercase"&gt;<br/>
+                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
                                             &nbsp;&nbsp;&lt;i class="icon icon-ff icon-loupe"&gt;&lt;/i&gt;<br/>
+                                            &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/button&gt;<br/>
+                                            &lt;/div&gt;<br/><br/>
+                                            &lt;div class="btn-bicolor cf"&gt;<br/>
+                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/label&gt;<br/>
+                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;<br/>
+                                            &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/button&gt;<br/>
+                                            &lt;/div&gt;<br/><br/>
+                                            &lt;div class="btn-bicolor btn-bicolor-small cf"&gt;<br/>
+                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/label&gt;<br/>
+                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;<br/>
                                             &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
                                             &nbsp;&lt;/button&gt;<br/>
                                             &lt;/div&gt;<br/><br/>
@@ -148,7 +177,7 @@
                                         <pre class="prettyprint lang-css">
                                             {% include "../../../assets/scss/component/button/_btn-link.scss" %}
                                             {% include "../../../assets/scss/component/button/_btn-hover.scss" %}
-                                            {% include "../../../assets/scss/component/button/_btn-search.scss" %}
+                                            {% include "../../../assets/scss/component/button/_btn-bicolor.scss" %}
                                             {% include "../../../assets/scss/component/button/_btn-text.scss" %}
                                         </pre>
                                     </figure>
@@ -156,6 +185,103 @@
                             </div>
                         </div>
                     </section>
+
+                    <section id="input" class="col-md-12">
+                        <h1 class="kawa-h1">Input</h1>
+                        <div id="inputText" class="col-md-12">
+                            <h2 class="kawa-h2">Text</h2>
+                            <!-- DEFAULT -->
+                            <form class="code-example col-md-12">
+                                <div class="col-md-3">
+                                    <div class="input-text">
+                                        <input class="input uppercase" type="text" placeholder="Rechercher" name="" />
+                                    </div>
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#default-input-text-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#default-input-text-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#default-input-text-swig">SWIG</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="default-input-text-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+                                            &lt;div class="input-text"&gt;<br/>
+                                            &nbsp;&lt;input class="input uppercase" type="text" placeholder="Rechercher" name="" /&gt;<br/>
+                                            &lt;/div&gt;
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="default-input-text-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">
+                                            {% include "../../../assets/scss/component/input/_input-text.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="default-input-text-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="page" class="col-md-12">
+                        <h1 class="kawa-h1">Page</h1>
+                        <div id="pageHeader" class="col-md-12">
+                            <h2 class="kawa-h2">Header</h2>
+                            <!-- DEFAULT -->
+                            <form class="code-example col-md-12">
+                                <div class="col-md-12">
+                                    <div class="page-header">
+                                        <span class="main-text uppercase">Commentaires</span>
+                                        <span class="right-text icon icon-clock">
+                                            Mise à jour à <time datetime="2012-02-11 16:24:02">9h20</time>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#default-page-header-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#default-page-header-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#default-page-header-swig">SWIG</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="default-page-header-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+                                            &lt;div class="page-header"&gt;<br/>
+                                            &nbsp;&lt;span class="main-text uppercase"&gt;Commentaires&lt;/span&gt;<br/>
+                                            &nbsp;&lt;span class="right-text icon icon-clock"&gt;<br/>
+                                            &nbsp;&nbsp;Mise à jour à &lt;time datetime="2012-02-11 16:24:02"&gt;9h20&lt;/time&gt;<br/>
+                                            &nbsp;&lt;/span&gt;<br/>
+                                            &lt;/div&gt;
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="default-page-header-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">
+                                            {% include "../../../assets/scss/component/page/_page-header.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="default-page-header-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <section id="module" class="col-md-12">
                         <h1 class="kawa-h1">Module</h1>
                         <div id="moduleHeader" class="col-md-12">
@@ -296,6 +422,51 @@
                         </div>
                         <div id="moduleFollowUs" class="col-md-12">
                             {% include "../../../assets/sample/_follow-us.html" %}
+                        </div>
+                        <div id="moduleComment" class="col-md-12">
+                            <h2 class="kawa-h2">Comment</h2>
+                            <!-- DEFAULT -->
+                            <form class="code-example col-md-12">
+                                <div class="col-md-8">
+                                    <div class="module-comment">
+                                        <form>
+                                            <fieldset class="js-field-limiter js-field-policy">
+                                                <textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"></textarea>
+                                                <input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer">
+                                                <em class="module-comment-counter"><b class="js-counter-listener">500</b> caractères restants</em>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#default-module-comment-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#default-module-comment-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="default-module-comment-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+                                            &lt;div class="module-comment"&gt;<br/>
+                                            &nbsp;&lt;form&gt;<br/>
+                                            &nbsp;&nbsp;&lt;fieldset class="js-field-limiter js-field-policy"&gt;<br/>
+                                            &nbsp;&nbsp;&nbsp;&lt;textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"&gt;&lt;/textarea&gt;<br/>
+                                            &nbsp;&nbsp;&nbsp;&lt;input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer"&gt;<br/>
+                                            &nbsp;&nbsp;&nbsp;&lt;em class="module-comment-counter"&gt;&lt;b class="js-counter-listener"&gt;500&lt;/b&gt; caractères restants&lt;/em&gt;<br/>
+                                            &nbsp;&nbsp;&lt;/fieldset&gt;<br/>
+                                            &nbsp;&lt;/form&gt;<br/>
+                                            &lt;/div&gt;
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="default-module-comment-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">
+                                            {% include "../../../assets/scss/component/module/_module-comment.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section id="widget" class="col-md-12">
@@ -449,6 +620,18 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#input">Input</a>
+                            <ul class="nav nav-stacked">
+                                <li><a href="#inputText">Text</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#page">Page</a>
+                            <ul class="nav nav-stacked">
+                                <li><a href="#pageHeader">Header</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#module">Module</a>
                             <ul class="nav nav-stacked">
                                 <li><a href="#moduleHeader">Header</a></li>
@@ -456,6 +639,7 @@
                                 <li><a href="#moduleBorder">Border</a></li>
                                 <li><a href="#moduleFooter">Footer</a></li>
                                 <li><a href="#moduleFollowUs">Follow us</a></li>
+                                <li><a href="#moduleComment">Comment</a></li>
                             </ul>
                         </li>
                         <li>

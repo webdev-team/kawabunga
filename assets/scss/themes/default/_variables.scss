@@ -7,6 +7,7 @@ $font-design: $helvetica !default;
 // Button
 $btn-bg-color: $grey-dark !default;
 $btn-bg-color_hover: $black !default;
+$btn-disabled-bg-color: $white !default;
 
 $btn-hover-bg-color: $grey-dark !default;
 $btn-hover-frontside-bg-color_hover: $black !default;
@@ -14,14 +15,21 @@ $btn-hover-frontside-bg-color_hover: $black !default;
 $btn-link-bg-color: $grey-dark !default;
 $btn-link-bg-color_hover: $black !default;
 
-$btn-search-label-bg-color: $grey-dark !default;
-$btn-search-input-bg-color: $black !default;
+$btn-bicolor-label-bg-color: $grey-dark !default;
+$btn-bicolor-input-bg-color: $black !default;
+
+// Input
+$input-text-input-border-color: $black !default;
 
 // Module
 $module-header-font-family: $font-design !default;
 $module-header-bg-color: $black !default;
 
 $module-border-border-color: $black !default;
+
+$module-comment-border-color: $grey !default;
+$module-comment-color: $grey !default;
+$module-comment-bg-color: $white !default;
 
 $module-link-bg-color: $grey !default;
 $module-link-color: $black !default;
@@ -55,3 +63,10 @@ $article-flag-fix-bg-color: $black !default;
 $article-flag-fix-border-color: $black !default;
 $article-flag-fix-bg-color_before: $black !default;
 $article-flag-fix-border-color_after: $black !default;
+
+// Page
+$page-header-font-family: $font-design !default;
+$page-header-border-color: $grey !default;
+$page-header-main-texte-color: $black !default;
+$page-header-right-text-bg-color: $white !default;
+$page-header-right-text-color: $black !default;

@@ -15,14 +15,21 @@ $btn-hover-frontside-bg-color_hover: $rtl-grey-dark;
 $btn-link-bg-color: $rtl-red;
 $btn-link-bg-color_hover: $rtl-red-light;
 
-$btn-search-label-bg-color: $rtl-red;
-$btn-search-input-bg-color: $rtl-red-dark;
+$btn-bicolor-label-bg-color: $rtl-red;
+$btn-bicolor-input-bg-color: $rtl-red-dark;
+
+// Input
+$input-text-input-border-color: $rtl-grey-light;
 
 // Module
 $module-header-font-family: $lato-light-font-family;
 $module-header-bg-color: $rtl-grey;
 
 $module-border-border-color: $rtl-grey-light;
+
+$module-comment-border-color: $rtl-grey-light;
+$module-comment-color: $rtl-black;
+$module-comment-bg-color: $rtl-cream;
 
 $module-link-bg-color: $rtl-cream;
 $module-link-color: $rtl-black;
@@ -55,3 +62,10 @@ $article-flag-fix-bg-color: $rtl-grey;
 $article-flag-fix-border-color: $rtl-grey;
 $article-flag-fix-bg-color_before: $rtl-grey-matt;
 $article-flag-fix-border-color_after: $rtl-grey;
+
+// Page
+$page-header-font-family: $lato-light-font-family;
+$page-header-border-color: $rtl-red;
+$page-header-main-texte-color: $rtl-black;
+$page-header-right-text-bg-color: $rtl-cream-light;
+$page-header-right-text-color: $rtl-black;
