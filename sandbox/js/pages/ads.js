@@ -1,2 +1,2 @@
 
-require('../../../assets/js/ads/ftv-ads').init();
+require('../../../assets/js/advertising/ftv-ads').init();

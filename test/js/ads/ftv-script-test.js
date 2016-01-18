@@ -3,7 +3,7 @@ var expect = chai.expect;
 
 var env = require('../test-env');
 
-var ftvScript = require('../../../assets/js/ads/ftv-script');
+var ftvScript = require('../.././ftv-script');
 
 var scriptLoader = require('../../../assets/js/utils/script-loader');
 

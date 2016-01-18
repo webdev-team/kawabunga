@@ -25,6 +25,8 @@
 
             <p>Le javascript recherche la classe .js-ftv afin d'injecter les pubs</p>
 
+            <pre class="prettyprint lang-js">{% filter escape %}{% include '../../js/pages/ads.js' %}{% endfilter %}</pre>
+
             <p>Pour fonctionner, le javascript a besoin de la config suivante dans la page (avant chargement du js)</p>
 
             <pre class="prettyprint lang-js">{% filter escape %}{% include 'ads-ftv-config.html' %}{% endfilter %}</pre>
@@ -35,7 +37,7 @@
         <div class="col-md-12">
             <h2>Bannière</h2>
             <form class="code-example col-md-12">
-                {% include "../../../assets/sample/ads/ads-ftv-banner.html" %}
+                {% include "../../../assets/sample/advertising/ads-ftv-banner.html" %}
             </form>
             <div>
                 <ul class="nav nav-tabs nav-child">
@@ -45,12 +47,12 @@
                 <div class="tab-content">
                     <div id="ads-banner-html" class="tab-pane fade in active">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/ads/ads-ftv-banner.html" %}{% endfilter %}</pre>
+                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/advertising/ads-ftv-banner.html" %}{% endfilter %}</pre>
                         </figure>
                     </div>
                     <div id="ads-banner-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/ads/_ads.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
@@ -62,7 +64,7 @@
         <div class="col-md-12">
             <h2>Pavé</h2>
             <form class="code-example col-md-12">
-                {% include "../../../assets/sample/ads/ads-ftv-pave.html" %}
+                {% include "../../../assets/sample/advertising/ads-ftv-pave.html" %}
             </form>
             <div>
                 <ul class="nav nav-tabs nav-child">
@@ -72,12 +74,12 @@
                 <div class="tab-content">
                     <div id="ads-pave-html" class="tab-pane fade in active">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/ads/ads-ftv-pave.html" %}{% endfilter %}</pre>
+                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/advertising/ads-ftv-pave.html" %}{% endfilter %}</pre>
                         </figure>
                     </div>
                     <div id="ads-pave-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/ads/_ads.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
@@ -93,7 +95,7 @@
                     Un sumo permet juste au conteneur de pub de croitre au délà de 300px de haut.<br>
                     Il faut que la régie ensuite positionne des sumos à ces endroits (data-position).
                 </div>
-                {% include "../../../assets/sample/ads/ads-ftv-sumo.html" %}
+                {% include "../../../assets/sample/advertising/ads-ftv-sumo.html" %}
             </form>
             <div>
                 <ul class="nav nav-tabs nav-child">
@@ -103,12 +105,12 @@
                 <div class="tab-content">
                     <div id="ads-sumo-html" class="tab-pane fade in active">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/ads/ads-ftv-sumo.html" %}{% endfilter %}</pre>
+                            <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/advertising/ads-ftv-sumo.html" %}{% endfilter %}</pre>
                         </figure>
                     </div>
                     <div id="ads-sumo-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/ads/_ads.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
