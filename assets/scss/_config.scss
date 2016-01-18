@@ -3,8 +3,12 @@
 
 /* Old ie support
 ----------------------------------------- */
-$lower-than-or-equal-ie7: false !default;
+$lower-than-or-equals-ie7: false !default;
 $lower-than-or-equals-ie8: false !default;
+
+/* Global
+----------------------------------------- */
+$scroll-bar-width: px-to-rem(20px);
 
 /* MediaQueries
 ----------------------------------------- */

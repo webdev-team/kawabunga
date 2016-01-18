@@ -44,7 +44,7 @@
   height: auto;
   margin: 0 auto;
 }
-@if ($lower-than-or-equal-ie7) {
+@if ($lower-than-or-equals-ie7) {
   .article-preview .pic {
     width: 100%;
   }

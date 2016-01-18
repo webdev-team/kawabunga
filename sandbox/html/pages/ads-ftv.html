@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ads sandbox</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="../../scss/pages/ads.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<div class="container kawa">
+    {% include '../_navbar.html' with {active: 'ads-ftv'} %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">Attention, afin de voir les publicités il faut être sur un sous domaine de rtl.fr</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                Pour fonctionner, le javascript a besoin de la config suivante dans la page (avant chargement du js)<br><br>
+                <pre class="prettyprint lang-js">{% filter escape %}{% include 'ads-ftv-config.html' %}{% endfilter %}</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Banner</h2>
+            <form class="code-example col-md-12">
+                {% include "./ads-ftv-banner.html" %}
+            </form>
+            <div>
+                <ul class="nav nav-tabs nav-child">
+                    <li class="active"><a data-toggle="tab" href="#ads-banner-html">HTML</a></li>
+                    <li><a data-toggle="tab" href="#ads-banner-css">CSS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="ads-banner-html" class="tab-pane fade in active">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-html">{% filter escape %}{% include "./ads-ftv-banner.html" %}{% endfilter %}</pre>
+                        </figure>
+                    </div>
+                    <div id="ads-banner-css" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/ads/_ads.scss" %}</pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Banner</h2>
+            <form class="code-example col-md-12">
+                {% include "./ads-ftv-pave.html" %}
+            </form>
+            <div>
+                <ul class="nav nav-tabs nav-child">
+                    <li class="active"><a data-toggle="tab" href="#ads-pave-html">HTML</a></li>
+                    <li><a data-toggle="tab" href="#ads-pave-css">CSS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="ads-pave-html" class="tab-pane fade in active">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-html">{% filter escape %}{% include "./ads-ftv-pave.html" %}{% endfilter %}</pre>
+                        </figure>
+                    </div>
+                    <div id="ads-pave-css" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/ads/_ads.scss" %}</pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'ads-ftv-config.html' %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../../js/pages/ads.js"></script>
+</body>
+</html>

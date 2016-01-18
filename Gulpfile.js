@@ -19,6 +19,8 @@ var glob = require('glob');
 var eventStream = require('event-stream');
 var watchify = require('watchify');
 var mocha = require('gulp-mocha');
+var _ = require('lodash');
+var flatten = require('gulp-flatten');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
@@ -41,7 +43,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function(done) {
-    glob('assets/js/*.js', function(err, files) {
+    glob('sandbox/js/pages/*.js', function(err, files) {
         if (err) {
             done(err);
         }
@@ -55,7 +57,7 @@ gulp.task('js', function(done) {
                 })
                 .pipe(source(entry))
                 .pipe(flatten())
-                .pipe(gulp.dest('build/sandbox/js'));
+                .pipe(gulp.dest('build/sandbox/js/pages'));
         });
 
         eventStream.merge(tasks).on('end', done);
@@ -170,6 +172,7 @@ gulp.task('iconfont', function () {
 gulp.task('watch', function () {
     gulp.watch('sandbox/**/*.html', ['html']);
     gulp.watch('sandbox/img/**', ['img']);
+    gulp.watch(['sandbox/js/**/*.js', 'assets/**/*.js'], ['js']);
     gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
 });
 

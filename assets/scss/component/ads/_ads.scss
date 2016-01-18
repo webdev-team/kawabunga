@@ -1,0 +1,122 @@
+@import "../../config";
+@import "../../functions";
+
+$ad-pave-width: px-to-rem(300px);
+
+/* Base */
+.dfp {
+  display: block;
+}
+
+.dfp-slot {
+  min-height: 1px; // avoid offsets width and height 0x0 (invisible slots are not generated)
+}
+
+/* Banner */
+.dfp-banner {
+  text-align: center;
+}
+
+.dfp-center {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+// force paint on IE8 (layout issue after ad rendering)
+@if ($lower-than-or-equals-ie8) {
+  .dfp-center {
+    min-width: 728px;
+    min-height: 90px;
+  }
+}
+
+/* Pave & sumos */
+.dfp-pave {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mdl-fix .dfp-pave {
+  height: 250px;
+  overflow: hidden;
+}
+
+.dfp-sumo-pushdown {
+  overflow: hidden;
+  width: 300px; // this force to render at 300px and avoid a 299.N px value when grid nested
+  max-height: u(46.25rem);
+}
+
+.dfp-sumo-pushdown .dfp-pave {
+  overflow: hidden;
+  height: auto;
+  min-height: 250px;
+  max-height: 600px;
+}
+
+/* Skin */
+.dfp-skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Overlay */
+.dfp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*Intersticiel*/
+.dfp-interstitiel {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Adsense */
+.adsense {
+  display: block;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: u(2.125rem);
+}
+
+.adsense .adsbygoogle {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+}
+
+.mdl-fix .adsense {
+  height: 250px;
+  overflow: hidden;
+}
+
+@media (max-width: $media-queries-medium) {
+  .ads-ligatus-right,
+  .dfp-interstitiel,
+  .dfp-banner {
+    display: none;
+  }
+}
+
+@media (max-width: $media-queries-small) {
+  .dfp-sumo-pushdown {
+    width: auto;
+    max-height: none;
+  }
+}
+
+@if ($media-queries) {
+  @media all and (max-width: $ad-pave-width + 2 * $grid-gutter + $scroll-bar-width) {
+    .dfp {
+      width: auto;
+      overflow: hidden;
+    }
+  }
+}
