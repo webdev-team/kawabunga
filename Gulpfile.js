@@ -170,7 +170,7 @@ gulp.task('iconfont', function () {
  */
 
 gulp.task('watch', function () {
-    gulp.watch('sandbox/**/*.html', ['html']);
+    gulp.watch(['sandbox/**/*.html', 'assets/**/*.html'], ['html']);
     gulp.watch('sandbox/img/**', ['img']);
     gulp.watch(['sandbox/js/**/*.js', 'assets/**/*.js'], ['js']);
     gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
