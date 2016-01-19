@@ -48,7 +48,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function(done) {
-    glob('sandbox/js/pages/*.js', function(err, files) {
+    glob('sandbox/js/*.js', function(err, files) {
         if (err) {
             done(err);
         }
@@ -62,7 +62,7 @@ gulp.task('js', function(done) {
                 })
                 .pipe(source(entry))
                 .pipe(flatten())
-                .pipe(gulp.dest('build/sandbox/js/pages'));
+                .pipe(gulp.dest('build/sandbox/js'));
         });
 
         eventStream.merge(tasks).on('end', done);
