@@ -493,7 +493,28 @@
                             </div>
                         </div>
                         <div id="moduleFollowUs" class="col-md-12">
-                            {% include "../../../assets/sample/_follow-us.html" %}
+                            <h2 class="kawa-h2">Follow us</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-12">
+                                    {% include "../../../assets/sample/module/_module-follow-us.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-module-follow-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-follow-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-module-follow-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/module/_module-follow-us.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-follow-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/module/_module-follow-us.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="moduleComment" class="col-md-12">
                             <h2 class="kawa-h2">Comment</h2>
@@ -544,13 +565,78 @@
                     <section id="widget" class="col-md-12">
                         <h1 class="kawa-h1">Widget</h1>
                         <div id="widgetPartner" class="col-md-12">
-                            {% include "../../../assets/sample/_widget-partner.html" %}
+                            <h2 class="kawa-h2">Partner</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../../assets/sample/widget/_widget-partner.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-partners-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-partners-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-partners-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/widget/_widget-partner.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-partners-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/widget/_widget-partner.scss" %}
+                                            {% include "../../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="widgetWeather" class="col-md-12">
-                            {% include "../../../assets/sample/_widget-weather.html" %}
+                            <h2 class="kawa-h2">Astro</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../../assets/sample/widget/_widget-weather.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-weather-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-weather-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-weather-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/widget/_widget-weather.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-weather-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/widget/_widget-weather.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="widgetAstro" class="col-md-12">
-                            {% include "../../../assets/sample/_widget-astro.html" %}
+                            <h2 class="kawa-h2">Astro</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../../assets/sample/widget/_widget-astro.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-astro-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-astro-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-astro-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/widget/_widget-astro.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-astro-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/widget/_widget-astro.scss" %}
+                                            {% include "../../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section id="article" class="col-md-12">
@@ -771,7 +857,28 @@
                             </div>
                         </div>
                         <div id="post-preview" class="col-md-12">
-                            {% include "../../../assets/sample/_article-post-preview.html" %}
+                            <h2 class="kawa-h2">Post preview</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../../assets/sample/article/_article-post-preview.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-article-preview-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-preview-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-article-preview-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/article/_article-post-preview.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-preview-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/article/_article-post-preview.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>

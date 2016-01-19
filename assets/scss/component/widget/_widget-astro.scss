@@ -1,0 +1,65 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
+
+
+/* Widget Astro
+----------------------------------------- */
+.widget-astro-header .main-logo{
+  width: px-to-rem(104px);
+  height: px-to-rem(112px);
+  line-height: px-to-rem(144px);
+}
+
+.widget-astro-header .main-logo:before{
+  margin: 0;
+  line-height: inherit;
+  font-size: px-to-rem(112px);
+}
+
+.widget-astro-header .astro-sign{
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.widget-astro-content{
+  padding: px-to-rem(15px);
+}
+
+.widget-astro-content .sign,
+.widget-astro-content .date{
+  display: block;
+  margin-bottom: px-to-rem(15px);
+  line-height: 1;
+  font-family: $font-design;
+}
+
+.widget-astro-content .sign{
+  font-size: px-to-rem(46px);
+  color: $widget-astro-astro-content-sign-color;
+}
+
+.widget-astro-content .date{
+  color: $widget-astro-astro-content-date-color;
+}
+
+.widget-astro-content .date,
+.widget-astro-content .text{
+  font-size: px-to-rem(14px);
+}
+
+.widget-astro-content .text{
+  line-height: 1.5;
+  color: $widget-astro-astro-content-text-color;
+}
+
+/*MQ Small State*/
+@media (max-width: $media-queries-small){
+  .widget-astro-content{
+    display: none;
+  }
+}

@@ -1,0 +1,167 @@
+
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
+
+
+/* Widget Weather
+----------------------------------------- */
+.widget-weather-header {
+  padding: px-to-rem(12px) px-to-rem(10px) px-to-rem(10px) px-to-rem(19px);
+  border-radius: 0 0 0 px-to-rem(4px);
+  border-bottom: px-to-rem(4px) solid $widget-weather-weather-header-border-color;
+  background-color: $widget-weather-weather-header-bg-color;
+  font-family: $font-design;
+}
+
+.widget-weather-header .info {
+  display: block;
+  overflow: hidden;
+}
+
+.widget-weather-header .main-icon {
+  position: relative;
+  float: right;
+  margin: 0 0 px-to-rem(4px) px-to-rem(4px);
+  width: px-to-rem(80px);
+  height: px-to-rem(80px);
+  line-height: px-to-rem(80px);
+  color: $white;
+}
+
+.widget-weather-header .main-icon:before {
+  margin: 0;
+  line-height: inherit;
+  font-size: px-to-rem(80px);
+}
+
+.widget-weather-header .forecast{
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  line-height: 1.2;
+}
+
+.widget-weather-header .text {
+  display: block;
+  font-size: px-to-rem(17px);
+  color: $white;
+}
+
+.widget-weather-header .text.big {
+  font-size: px-to-rem(66px);
+  line-height: px-to-rem(56px);
+}
+
+.widget-weather-header .text.small {
+  font-size: px-to-rem(15px);
+}
+
+.widget-weather-header .wind {
+  position: relative;
+  float: right;
+  font-size: px-to-rem(16px);
+  line-height: px-to-rem(16px);
+}
+
+.widget-weather-header .wind:before {
+  font-size: px-to-rem(24px);
+  line-height: inherit;
+}
+
+.widget-weather-list {
+  padding: 0;
+  list-style-type: none;
+  background-color: $white;
+  font-family: $font-design;
+}
+
+.widget-weather-list .item {
+  overflow: hidden;
+  padding: px-to-rem(20px) px-to-rem(13px);
+  border-top: 1px solid $widget-wheather-weather-list-item-border-color;
+}
+
+.widget-weather-list .item:first-child {
+  border-top: 0;
+}
+
+.widget-weather-list .text,
+.widget-weather-list .icon {
+  float: left;
+  line-height: px-to-rem(30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.widget-weather-list .text {
+  width: 40%;
+  font-weight: bold;
+  font-size: px-to-rem(15px);
+  color: $widget-weather-weather-list-text-color;
+}
+
+.widget-weather-list .icon {
+  width: 20%;
+  height: px-to-rem(32px);
+  line-height: px-to-rem(32px);
+  text-align: center;
+}
+
+.widget-weather-list .right {
+  font-size: px-to-rem(18px);
+  font-weight: normal;
+  text-align: right;
+  font-family: $font-design;
+}
+
+.widget-weather-list .big {
+  font-size: px-to-rem(24px);
+}
+
+/* Icons */
+.widget-weather-list .icon:before {
+  margin: 0;
+  color: $grey-dark;
+  font-size: px-to-rem(32px);
+  line-height: inherit;
+}
+
+
+@mixin mdl-fix-weather {
+  /* Height Fix */
+  .widget-weather-header {
+    height: px-to-rem(119px);
+    overflow: hidden;
+  }
+  
+  .widget-widget-weather .date {
+    max-height: px-to-rem(100px);
+  }
+  
+  .widget-weather-list {
+    height: px-to-rem(291px);
+  }
+  
+  .widget-weather-header .text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: $media-queries-small){
+  .widget-weather-list{
+    display: none;
+  }
+}
+
+@if ($media-queries) {
+  @media all and (min-width: $media-queries-small) {
+    @include mdl-fix-weather;
+  }
+} @else {
+  @include mdl-fix-weather;
+}

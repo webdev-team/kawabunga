@@ -1,6 +1,8 @@
 
-//@import "../../themes/default/theme";
-//@import "../../config";
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
 
 /* Widget Feature
 ----------------------------------------- */
@@ -10,7 +12,14 @@
   height: px-to-rem(121px);
   padding: px-to-rem(15px);
   border-radius: 0 0 0 px-to-rem(4px);
-  border-bottom: px-to-rem(4px) solid;
+  border-bottom: px-to-rem(4px) solid $widget-feature-border-color;
+  color: $white;
+  background-color: $widget-feature-header-bg-color;
+  font-family: $font-design;
+}
+
+.widget-feature-header .text {
+  color: $white;
 }
 
 .widget-feature-header .link{
@@ -29,6 +38,7 @@
   display: block;
   position: absolute;
   bottom: px-to-rem(15px);
+  color: $white;
 }
 
 .widget-feature-header .main-icon{
@@ -41,6 +51,7 @@
 
 .widget-feature-content{
   overflow: hidden;
+  background-color: $white;
 }
 
 
@@ -70,16 +81,16 @@
 
 /* Fixed layout */
 @mixin mdl-fix-widget-feature {
-  .mdl-fix .widget-feature-header{
+  .widget-feature-header{
     height: px-to-rem(119px);
     overflow: hidden;
   }
 
-  .mdl-fix .widget-feature-content{
+  .widget-feature-content{
     height: px-to-rem(291px);
   }
 
-  .mdl-fix .partner-mdl .widget-feature-content{
+  .widget-partner .widget-feature-content{
     height: px-to-rem(294px);
   }
 }

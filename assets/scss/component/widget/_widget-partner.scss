@@ -1,13 +1,16 @@
 
-//@import "widget-feature";
-//@import "../../../themes/default/theme";
-//@import "../../config";
+@import "../../config";
+@import "../../functions";
+@import "../../themes/default/colors";
+@import "../../themes/default/variables";
+
 
 /* Widget Partners
 ----------------------------------------- */
 .widget-partner {
   position: relative;
-  margin-bottom: 1.25rem;
+  margin-bottom: px-to-rem(20px);
+  background-color: $white;
 }
 
 
@@ -15,62 +18,62 @@
 
 /* Explorimo */
 .explorimmo-figcaption{
-  position:absolute;
-  right:0;
-  bottom:0;
-  padding:u(0.3125rem 0.625rem);
-  //background:$color-03;
-  //color:$color-01;
-  font-size:u(1.5625rem);
-  //text-transform:uppercase;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: px-to-rem(5px) px-to-rem(10px);
+  //background: $color-03;
+  //color: $color-01;
+  font-size: px-to-rem(25px);
+  //text-transform: uppercase;
 }
 .explorimmo-info{
-  padding:u(0.625rem);
-  text-align:left;
+  padding: px-to-rem(10px);
+  text-align: left;
 
-  //color:$color-03;
+  //color: $color-03;
 }
 .explorimmo-info .what,
 .explorimmo-info .where{
-  display:block;
-  margin-bottom:u(0.3125rem);
+  display: block;
+  margin-bottom: px-to-rem(5px);
 }
 .explorimmo-info .what{
-  //text-transform:uppercase;
+  //text-transform: uppercase;
 }
 .explorimmo-info .where{
-  font-weight:bold;
+  font-weight: bold;
 }
 .explorimmo-info .details{
-  font-size:u(0.875rem);
+  font-size: px-to-rem(14px);
 }
 
 
 /* TV show (teleloisir) */
 .tv-show-figcaption,
 .tv-show-figcation{
-  position:absolute;
-  bottom:u(0.3125rem);
-  right:u(0.625rem);
+  position: absolute;
+  bottom: px-to-rem(5px);
+  right: px-to-rem(10px);
 }
 .tv-show-figcation .btn-text{
-  //text-shadow: 0 1px 1px $color-02-l-l;
+  //text-shadow:  0 1px 1px $color-02-l-l;
 }
 .tv-show-info{
-  padding:u(0.9375rem 0.625rem);
-  text-align:left;
+  padding: px-to-rem(15px) px-to-rem(10px);
+  text-align: left;
 
-  //color:$color-03;
+  //color: $color-03;
 }
 .tv-show-info .show{
-  //color:$color-02-l-l;
-  font-size:u(1.25rem);
+  //color: $color-02-l-l;
+  font-size: px-to-rem(20px);
 }
 .tv-show-info .channel,
 .tv-show-info .time,
 .tv-show-info .show,
 .tv-show-info .episode{
-  display:block;
+  display: block;
 }
 .tv-show-info .time,
 .tv-show-info .show,
@@ -78,16 +81,16 @@
   //@extend %CustomFont2;
 }
 .tv-show-info .channel{
-  float:left;
-  margin-right:8px;
+  float: left;
+  margin-right: px-to-rem(8px);
 }
 
 
 /* Le Guide */
 .leguide-iframe {
-  max-width:u(17.5rem);
-  height:u(15.625rem);
-  margin-top:u(0.3125rem);
+  max-width: px-to-rem(280px);
+  height: px-to-rem(250px);
+  margin-top: px-to-rem(5px);
 }
 
 
@@ -95,316 +98,323 @@
 .ps-date,
 .ps-time,
 .ps-team {
-  display:block;
-  text-align:center;
+  display: block;
+  text-align: center;
 }
 .ps-date {
-  margin:u(1.25rem 0 1.25rem);
+  margin: px-to-rem(20px) 0 px-to-rem(20px);
 
-  //color:$color-03;
-  font-size:u(0.875rem);
-  font-weight:bold;
+  //color: $color-03;
+  font-size: px-to-rem(14px);
+  font-weight: bold;
 }
 .ps-time {
-  //color:$color-02;
-  font-size:u(2rem);
+  //color: $color-02;
+  font-size: px-to-rem(32px);
 }
 .ps-team {
-  margin-bottom:u(1.25rem);
+  margin-bottom: px-to-rem(20px);
 
-  //color:$color-02;
-  font-size:u(1.25rem);
-  font-weight:bold;
+  //color: $color-02;
+  font-size: px-to-rem(20px);
+  font-weight: bold;
 }
 .ps-item {
-  position:relative;
-  display:inline-block;
-  width:32%;
+  position: relative;
+  display: inline-block;
+  width: 32%;
 
-  font-size:u(2rem);
-  line-height:u(4rem);
-  //text-transform:uppercase;
+  font-size: px-to-rem(32px);
+  line-height: px-to-rem(64px);
+  //text-transform: uppercase;
 
   //@extend %CustomFont2;
 }
 .ps-prono {
-  padding:u(0 0.9375rem 1.25rem);
+  padding: 0 px-to-rem(15px) px-to-rem(20px);
 
-  //color:$color-02;
+  //color: $color-02;
 }
 .ps-position,
 .ps-value {
-  text-align:center;
-  overflow:hidden;
+  text-align: center;
+  overflow: hidden;
 }
 .ps-position {
-  //background:$color-04-l;
+  //background: $color-04-l;
 }
 .ps-value {
-  //background:$color-04;
+  //background: $color-04;
 }
 .ps-null {
-  //border-left:4px solid $color-01;
-  //border-right:4px solid $color-01;
+  //border-left: 4px solid $color-01;
+  //border-right: 4px solid $color-01;
 }
 
 
 /* Paris Hippique */ //Example in Kawabunga
 .ph-figcaption {
-  display:block;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  text-align:center;
-  padding-top:u(0.75rem);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: px-to-rem(12px);
 }
 .ph-date,
 .ph-time {
-  display:block;
+  display: block;
 }
 .ph-date {
-  font-size:u(0.875rem);
-  font-weight:bold;
+  font-size: px-to-rem(14px);
+  font-weight: bold;
+  color: $widget-partner-ph-date-color;
 }
 .ph-info {
-  display:block;
-  overflow:hidden;
-  width:100%;
-  height:u(5.8125rem);
-  text-align:center;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: px-to-rem(93px);
+  text-align: center;
 }
 .ph-time {
-  font-size:u(2rem);
+  font-size: px-to-rem(32px);
+  color: $widget-partner-ph-time-color;
 }
 .ph-info .what,
 .ph-info .where {
-  display:block;
+  display: block;
 }
 .ph-info .what {
-  margin-bottom:u(0.3125rem);
-  font-size:u(1.25rem);
-  font-weight:bold;
+  margin-bottom: px-to-rem(5px);
+  font-size: px-to-rem(20px);
+  font-weight: bold;
+  color: $widget-partner-ph-info-what-color;
+}
+
+.ph-info .where {
+  color: $widget-partner-ph-info-where-color;
 }
 .ph-table {
-  display:table;
-  width:100%;
-  height:100%;
+  display: table;
+  width: 100%;
+  height: 100%;
 }
 .ph-cell {
-  display:table-cell;
-  vertical-align:middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 
 /* Keljob */
 .job-list{
-  padding:0;
+  padding: 0;
   list-style: none;
 }
 .job-item{
-  position:relative;
-  min-height:u(6.125rem);
+  position: relative;
+  min-height: px-to-rem(98px);
 
-  //border-top:1px solid $color-03-l;
-  //background:$color-04-l;
+  //border-top: 1px solid $color-03-l;
+  //background: $color-04-l;
 }
 .job-item:first-child{
-  border-top:0;
+  border-top: 0;
 }
 .job-item:before{
-  content:"";
-  display:block;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:1px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: px-to-rem(1px);
 
-  //background:$color-01;
+  //background: $color-01;
 }
 .job-link{
-  display:block;
-  padding:u(0.875rem);
+  display: block;
+  padding: px-to-rem(14px);
 
-  //background:$color-04-l;
+  //background: $color-04-l;
 }
 .job-link:hover{
-  //background:$color-01;
+  //background: $color-01;
 }
 .job-title,
 .job-compagny{
-  white-space: nowrap;
-  -ms-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow:hidden;
+  white-space:  nowrap;
+  -ms-text-overflow:  ellipsis;
+  text-overflow:  ellipsis;
+  overflow: hidden;
 }
 .job-title{
-  margin-bottom:u(0.125rem);
+  margin-bottom: px-to-rem(2px);
 
-  //color:$color-02-l-l;
-  font-weight:bold;
+  //color: $color-02-l-l;
+  font-weight: bold;
 }
 .job-compagny{
-  margin-bottom:u(0.9375rem);
+  margin-bottom: px-to-rem(15px);
 
-  //color:$color-02-l-l;
-  font-style:italic;
+  //color: $color-02-l-l;
+  font-style: italic;
 }
 .job-info{
-  width:100%;
-  height:u(1rem);
-  overflow:hidden;
+  width: 100%;
+  height: px-to-rem(16px);
+  overflow: hidden;
 
-  //color:$color-03;
-  font-size:u(0.875rem);
+  //color: $color-03;
+  font-size: px-to-rem(14px);
 }
 .job-contract,
 .job-location,
 .job-date{
-  float:left;
+  float: left;
 }
 .job-location,
 .job-date{
-  padding:u(0 0.625rem);
+  padding: 0 px-to-rem(10px);
 
-  //border-left:1px solid $color-03-l;
+  //border-left: 1px solid $color-03-l;
 }
 .job-contract{
-  margin-right:u(0.625rem);
+  margin-right: px-to-rem(10px);
 
-  font-weight:bold;
-  //text-transform:uppercase;
+  font-weight: bold;
+  //text-transform: uppercase;
 }
 
 
 /* keljob / kelformation search */
 .keljob .kel-info{
-  margin-bottom:u(0.3125rem);
+  margin-bottom: px-to-rem(5px);
 }
 .kel-info{
-  display:block;
-  padding:u(0.625rem);
-  padding-bottom:0;
+  display: block;
+  padding: px-to-rem(10px);
+  padding-bottom: 0;
 
-  line-height:1.3;
-  font-size:u(1.25rem);
-  //color:$color-02-l-l;
-  text-align:center;
+  line-height: 1.3;
+  font-size: px-to-rem(20px);
+  //color: $color-02-l-l;
+  text-align: center;
 }
 .kel-number{
-  display:block;
+  display: block;
 
-  font-size:u(1.875rem);
+  font-size: px-to-rem(30px);
 }
 .kel-form{
-  padding:u(1rem);
+  padding: px-to-rem(16px);
 }
 .kel-field{
-  margin-bottom:u(1rem);
-  position:relative;
-  overflow:hidden;
+  margin-bottom: px-to-rem(16px);
+  position: relative;
+  overflow: hidden;
 
-  //border:1px solid $color-03-l;
+  //border: 1px solid $color-03-l;
 }
 .kelformation .kel-field{
-  margin:u(3rem 0);
+  margin: px-to-rem(48px) 0;
 }
 .kel-label,
 .kel-input,
 .kel-select{
-  display:block;
-  width:100%;
-  height:u(2.5rem);
-  padding:0;
-  margin:0;
-  border:0;
-  border-radius:0;
+  display: block;
+  width: 100%;
+  height: px-to-rem(40px);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
 
-  font-weight: normal;
-  line-height:u(2.5rem);
-  background:transparent;
-  text-indent:u(0.625rem);
+  font-weight:  normal;
+  line-height: px-to-rem(40px);
+  background: transparent;
+  text-indent: px-to-rem(10px);
 }
 .kel-label{
-  position:absolute;
-  top:0;
-  left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  //color:$color-03;
-  font-style:italic;
+  //color: $color-03;
+  font-style: italic;
 }
 .kel-search{
-  position:relative;
+  position: relative;
 
-  text-align:center;
+  text-align: center;
 }
 .kel-search:before{
-  content:"";
-  display:block;
-  position:absolute;
-  width:100%;
-  height:1px;
-  top:50%;
-  left:0;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: px-to-rem(1px);
+  top: 50%;
+  left: 0;
 }
 .kel-select{
-  text-indent:u(0.3125rem);
+  text-indent: px-to-rem(5px);
 }
 .kel-search:before{
-  //background:$color-03-l;
+  //background: $color-03-l;
 }
 .kel-submit{
-  display:inline-block;
-  position:relative;
-  padding:u(0 0.625rem);
-  border:0;
-  border-radius:0;
-  margin:0 auto;
+  display: inline-block;
+  position: relative;
+  padding: 0 px-to-rem(10px);
+  border: 0;
+  border-radius: 0;
+  margin: 0 auto;
 
-  text-align:center;
-  line-height:u(1.875rem);
-  font-size:u(0.875rem);
-  //color:$color-01;
-  //background:$color-03;
-  //text-transform:uppercase;
+  text-align: center;
+  line-height: px-to-rem(30px);
+  font-size: px-to-rem(14px);
+  //color: $color-01;
+  //background: $color-03;
+  //text-transform: uppercase;
 
 }
 
 /*paru vendu*/
 .paru-vendu-iframe{
-  max-width:u(17.5rem);
-  margin:u(0.3125rem) auto;
+  max-width: px-to-rem(280px);
+  margin: px-to-rem(5px) auto;
 }
 .paru-vendu .widget-feature-content{
-  //background: $color-04-l;
+  //background:  $color-04-l;
 }
 
 /*easyflirt*/
 .easyflirt-row {
-  position: relative;
-  margin:u(0.625rem) auto;
-  width:u(16.75rem);
+  position:  relative;
+  margin: px-to-rem(10px) auto;
+  width: px-to-rem(268px);
 }
 .easyflirt-span {
-  display:block;
-  margin-bottom:u(0.625rem);
+  display: block;
+  margin-bottom: px-to-rem(10px);
 
-  font-size:u(1.375rem);
+  font-size: px-to-rem(22px);
 }
 .easyflirt-iam,
 .easyflirt-search {
-  //display:none;
-  position:absolute;
-  top:u(3.125rem);
-  visibility:hidden;
+  //display: none;
+  position: absolute;
+  top: px-to-rem(50px);
+  visibility: hidden;
 }
 .easyflirt-iam + label,
 .easyflirt-search + label {
-  float:left;
-  cursor:pointer;
+  float: left;
+  cursor: pointer;
 
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
 .easyflirt-iam-man + label,
 .easyflirt-search-man + label {
@@ -423,111 +433,111 @@
   @extend %sp-btn-woman-checked;
 }
 .easyflirt-input {
-  width:u(16.75rem);
-  height:u(2.625rem);
+  width: px-to-rem(268px);
+  height: px-to-rem(42px);
 
-  //border:1px solid $color-03-l;
-  text-indent:u(0.625rem);
+  //border: 1px solid $color-03-l;
+  text-indent: px-to-rem(10px);
 }
 .easyflirt .mdl-link {
-  width:100%;
-  text-align:left;
+  width: 100%;
+  text-align: left;
 }
-@include old-ie {
+@if ($lower-than-or-equals-ie8) {
   .easyflirt-iam,
   .easyflirt-search {
-    display:inline-block;
-    margin-right:u(0.3125rem);
+    display: inline-block;
+    margin-right: px-to-rem(5px);
   }
   .easyflirt-iam + label,
   .easyflirt-search + label {
-    float:none;
-    display:inline-block;
-    width:auto;
+    float: none;
+    display: inline-block;
+    width: auto;
   }
   .easyflirt-iam-man + label,
   .easyflirt-search-man + label {
-    margin-right:u(1.875rem);
+    margin-right: px-to-rem(30px);
   }
   .easyflirt .easyflirt-row .sp {
-    text-indent:0;
-    font-size:u(1.125rem);
-    background-image:none;
+    text-indent: 0;
+    font-size: px-to-rem(18px);
+    background-image: none;
   }
 }
 
 /* soonlight */
 .soon-txt-content {
-  //background-color:$color-02;
-  padding:u(0.3125rem);
-  width:100%;
-  height:u(5.4375rem);
+  //background-color: $color-02;
+  padding: px-to-rem(5px);
+  width: 100%;
+  height: px-to-rem(87px);
 }
 
 .soon-txt-content .soon-txt {
-  display:block;
-  width:100%;
-  height:100%;
-  //color:$color-01;
-  text-align:center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  //color: $color-01;
+  text-align: center;
 
-  //border-top:2px dashed $color-03-l;
-  //border-bottom:2px dashed $color-03-l;
-  padding:15px 0;
+  //border-top: 2px dashed $color-03-l;
+  //border-bottom: 2px dashed $color-03-l;
+  padding: px-to-rem(15px) 0;
 }
 
 .soon-txt-content .soon-txt .soon-title {
-  font-size:u(1.375rem);
-  line-height:u(1.625rem);
-  display:block;
+  font-size: px-to-rem(22px);
+  line-height: px-to-rem(26px);
+  display: block;
   text-transform: uppercase;
 
   //@extend %CustomFont2;
 }
 
 .soon-txt-content .soon-txt .soon-subtitle {
-  font-size:u(1.0625rem);
-  display:block;
+  font-size: px-to-rem(17px);
+  display: block;
 
   //@extend %CustomFont1;
 }
 
 
 /* MQ Medium State Only */
-@include target-mq('small', 'medium'){
+@media all and (min-width:  $media-queries-small) and (max-width:  $media-queries-medium) {
   .tv-show .widget-feature-content,
   .explorimmo .widget-feature-content {
-    text-align:center;
+    text-align: center;
   }
   .tv-show .widget-feature-figure,
   .explorimmo .widget-feature-figure{
-    display:inline-block;
-    width:auto;
+    display: inline-block;
+    width: auto;
   }
 }
 
 /* MQ Medium State Only */
-@include mq('small'){
+@media (max-width:  $media-queries-small) {
   .widget-feature-img{
-    width:100%;
+    width: 100%;
   }
 }
 
 /* MQ above Small */
-@include mq('small', 'all', 'min-width'){
+@media all and (min-width:  $media-queries-small) {
   /* Fixed layout */
-  .mdl-fix .leguide-iframe,
-  .mdl-fix .paru-vendu-iframe{
-    margin-top:u(1rem);
+  .leguide-iframe,
+  .paru-vendu-iframe{
+    margin-top: px-to-rem(16px);
   }
-  .mdl-fix .tv-show-info {
-    padding:u(1.0625rem 0.625rem);
+  .tv-show-info {
+    padding: px-to-rem(17px) px-to-rem(10px);
   }
-  .mdl-fix .explorimmo .widget-feature-figure{
-    max-height:u(12.3125rem);
-    overflow:hidden;
+  .explorimmo .widget-feature-figure{
+    max-height: px-to-rem(197px);
+    overflow: hidden;
   }
-  .mdl-fix .explorimmo .widget-feature-img{
-    margin-top:u(-1rem);
+  .explorimmo .widget-feature-img{
+    margin-top: px-to-rem(-16px);
   }
 }

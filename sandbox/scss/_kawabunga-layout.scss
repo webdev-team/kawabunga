@@ -34,10 +34,6 @@ a, a:hover, a:link {
 .kawa p {
   margin: 0 0 10px;
 }
-.kawa pre code {
-  white-space: nowrap;
-}
-
 
 .fixed {
   position: fixed;
@@ -80,10 +76,6 @@ a, a:hover, a:link {
   margin-left: 31px;
 }
 
-pre.lang-css{
-  white-space: pre-wrap!important;
-}
-
 .code-example {
   position: relative;
   padding: 45px 15px 60px;
@@ -93,7 +85,6 @@ pre.lang-css{
 .code-example div[class*='col-md'], .code-example div[class^='col-md'] {
   margin-top: 7px;
   margin-bottom: 7px;
-  //cursor: pointer;
 }
 
 // For Flag-fix
