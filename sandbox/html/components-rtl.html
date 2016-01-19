@@ -33,22 +33,17 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-classic-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-classic-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-classic-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-classic-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-classic-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-                                            &lt;div class="btn uppercase"&gt;Voter&lt;/div&gt;<br/>
-                                            &lt;div class="btn"&gt;Inscrivez-vous&lt;/div&gt;
-                                        </pre>
+                                        <pre class="prettyprint lang-html">&lt;div class="btn uppercase"&gt;Voter&lt;/div&gt;<br/>&lt;div class="btn"&gt;Inscrivez-vous&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-classic-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/button/_btn.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/button/_btn.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-classic-swig" class="tab-pane fade">
@@ -127,68 +122,65 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-particular-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-particular-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-particular-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-particular-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-particular-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;div class="btn-link icon icon-chevron-left-bis"&gt;Aller vers l'&eacute;mission&lt;/div&gt;<br/><br/>
-                                            &lt;div class="btn-hover"&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="btn-hover-item"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;<br/>
-                                            &nbsp;&lt;/a&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="btn-hover-item"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;<br/>
-                                            &nbsp;&lt;/a&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="btn-hover-item"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;<br/>
-                                            &nbsp;&lt;/a&gt;<br/>
-                                            &nbsp;&lt;span class="btn-hover-frontside icon icon-buy-music"&gt;<br/>
-                                            &nbsp;&nbsp;Acheter&lt;br/&gt;ce morceau<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/div&gt;<br/><br/>
-                                            &lt;div class="btn-bicolor btn-bicolor-large cf"&gt;<br/>
-                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align"&gt;Rechercher&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/label&gt;<br/>
-                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;i class="icon icon-ff icon-loupe"&gt;&lt;/i&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/button&gt;<br/>
-                                            &lt;/div&gt;<br/><br/>
-                                            &lt;div class="btn-bicolor cf"&gt;<br/>
-                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/label&gt;<br/>
-                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/button&gt;<br/>
-                                            &lt;/div&gt;<br/><br/>
-                                            &lt;div class="btn-bicolor btn-bicolor-small cf"&gt;<br/>
-                                            &nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/label&gt;<br/>
-                                            &nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/button&gt;<br/>
-                                            &lt;/div&gt;<br/><br/>
-                                            &lt;span class="btn-text icon icon-play"&gt;<br/>
-                                            &nbsp;&lt;span class="text uppercase"&gt;Replay&lt;/span&gt;<br/>
-                                            &lt;/span&gt;
-                                        </pre>
+&lt;div class="btn-link icon icon-chevron-left-bis"&gt;Aller vers l'&eacute;mission&lt;/div&gt;<br/>
+&lt;div class="btn-hover"&gt;
+&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
+&nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
+&nbsp;&lt;/a&gt;
+&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
+&nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
+&nbsp;&lt;/a&gt;
+&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
+&nbsp;&nbsp;&lt;img class="btn-hover-img img-echo" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
+&nbsp;&lt;/a&gt;
+&nbsp;&lt;span class="btn-hover-frontside icon icon-buy-music"&gt;
+&nbsp;&nbsp;Acheter&lt;br/&gt;ce morceau
+&nbsp;&lt;/span&gt;
+&lt;/div&gt;<br/>
+&lt;div class="btn-bicolor btn-bicolor-large cf"&gt;
+&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
+&nbsp;&nbsp;&lt;span class="align"&gt;Rechercher&lt;/span&gt;
+&nbsp;&lt;/label&gt;
+&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
+&nbsp;&nbsp;&lt;i class="icon icon-ff icon-loupe"&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
+&nbsp;&lt;/button&gt;
+&lt;/div&gt;<br/>
+&lt;div class="btn-bicolor cf"&gt;
+&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
+&nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;
+&nbsp;&lt;/label&gt;
+&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
+&nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
+&nbsp;&lt;/button&gt;
+&lt;/div&gt;<br/>
+&lt;div class="btn-bicolor btn-bicolor-small cf"&gt;
+&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
+&nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;
+&nbsp;&lt;/label&gt;
+&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
+&nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
+&nbsp;&lt;/button&gt;
+&lt;/div&gt;<br/>
+&lt;span class="btn-text icon icon-play"&gt;
+&nbsp;&lt;span class="text uppercase"&gt;Replay&lt;/span&gt;
+&lt;/span&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-particular-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/button/_btn-link.scss" %}
-                                            {% include "../../assets/scss/component/button/_btn-hover.scss" %}
-                                            {% include "../../assets/scss/component/button/_btn-bicolor.scss" %}
-                                            {% include "../../assets/scss/component/button/_btn-text.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/button/_btn-link.scss") %>
+                                            <%- include("../../assets/scss/component/button/_btn-hover.scss") %>
+                                            <%- include("../../assets/scss/component/button/_btn-bicolor.scss") %>
+                                            <%- include("../../assets/scss/component/button/_btn-text.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-particular-swig" class="tab-pane fade">
@@ -217,23 +209,17 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-input-text-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-input-text-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-input-text-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-input-text-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-input-text-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-                                            &lt;div class="input-text"&gt;<br/>
-                                            &nbsp;&lt;input class="input uppercase" type="text" placeholder="Rechercher" name="" /&gt;<br/>
-                                            &lt;/div&gt;
-                                        </pre>
+                                        <pre class="prettyprint lang-html">&lt;div class="input-text"&gt;<br/>&nbsp;&lt;input class="input uppercase" type="text" placeholder="Rechercher" name="" /&gt;<br/>&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-input-text-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/input/_input-text.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/input/_input-text.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-input-text-swig" class="tab-pane fade">
@@ -260,7 +246,7 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-page-header-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-page-header-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-page-header-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-page-header-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-page-header-html" class="tab-pane fade in active">
@@ -306,24 +292,21 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-module-header-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-module-header-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-module-header-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-header-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-module-header-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;div class="module-header"&gt;La question du jour&lt;/div&gt;<br/>
-                                            &lt;div class="module-header actu-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
-                                            &lt;div class="module-header sport-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
-                                            &lt;div class="module-header culture-bg-color"&gt;La question du jour&lt;/div&gt;
-                                        </pre>
+&lt;div class="module-header"&gt;La question du jour&lt;/div&gt;
+&lt;div class="module-header actu-bg-color"&gt;La question du jour&lt;/div&gt;
+&lt;div class="module-header sport-bg-color"&gt;La question du jour&lt;/div&gt;
+&lt;div class="module-header culture-bg-color"&gt;La question du jour&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-header-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/module/_module-header.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/module/_module-header.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-header-swig" class="tab-pane fade">
@@ -350,22 +333,17 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-link-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-link-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-link-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-link-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-link-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-                                            &lt;div class="module-link module-border icon icon-chevron-bas"&gt;La question du jour&lt;/div&gt;<br/>
-                                            &lt;div class="module-link module-border-top icon icon-chevron-right-bis"&gt;Voir le dossier&lt;/div&gt;
-                                        </pre>
+                                        <pre class="prettyprint lang-html">&lt;div class="module-link module-border icon icon-chevron-bas"&gt;La question du jour&lt;/div&gt;<br/>&lt;div class="module-link module-border-top icon icon-chevron-right-bis"&gt;Voir le dossier&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-link-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/module/_module-link.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/module/_module-link.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-link-swig" class="tab-pane fade">
@@ -395,23 +373,20 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-border-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-border-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-border-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-border-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-border-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;div class="module-border"&gt;&lt;p&gt;Module avec bordure fine&lt;/p&gt;&lt;/div&gt;<br/>
-                                            &lt;div class="module-border-heavy"&gt;&lt;p&gt;Module avec bordure &eacute;paisse&lt;/p&gt;&lt;/div&gt;<br/>
-                                            &lt;div class="module-border-top"&gt;&lt;p&gt;Module avec bordure haute&lt;/p&gt;&lt;/div&gt;
-                                        </pre>
+&lt;div class="module-border"&gt;&lt;p&gt;Module avec bordure fine&lt;/p&gt;&lt;/div&gt;
+&lt;div class="module-border-heavy"&gt;&lt;p&gt;Module avec bordure &eacute;paisse&lt;/p&gt;&lt;/div&gt;
+&lt;div class="module-border-top"&gt;&lt;p&gt;Module avec bordure haute&lt;/p&gt;&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-border-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/module/_module-border.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/module/_module-border.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-border-swig" class="tab-pane fade">
@@ -449,24 +424,21 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-module-footer-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-module-footer-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-module-footer-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-footer-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-module-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                            &lt;span class="module-footer actu-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                            &lt;span class="module-footer sport-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
-                                            &lt;span class="module-footer culture-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
-                                        </pre>
+&lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
+&lt;span class="module-footer actu-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
+&lt;span class="module-footer sport-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
+&lt;span class="module-footer culture-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/module/_module-footer.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/module/_module-footer.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-footer-swig" class="tab-pane fade">
@@ -489,6 +461,7 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-module-follow-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-module-follow-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-follow-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-module-follow-html" class="tab-pane fade in active">
@@ -499,6 +472,13 @@
                                 <div id="rtl-module-follow-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css"><%= include('../../assets/scss/component/module/_module-follow-us.scss') %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-follow-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
                                     </figure>
                                 </div>
                             </div>
@@ -522,27 +502,32 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-module-comment-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-module-comment-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-comment-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-module-comment-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;div class="module-comment"&gt;<br/>
-                                            &nbsp;&lt;form&gt;<br/>
-                                            &nbsp;&nbsp;&lt;fieldset class="js-field-limiter js-field-policy"&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"&gt;&lt;/textarea&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer"&gt;<br/>
-                                            &nbsp;&nbsp;&nbsp;&lt;em class="module-comment-counter"&gt;&lt;b class="js-counter-listener"&gt;500&lt;/b&gt; caractères restants&lt;/em&gt;<br/>
-                                            &nbsp;&nbsp;&lt;/fieldset&gt;<br/>
-                                            &nbsp;&lt;/form&gt;<br/>
-                                            &lt;/div&gt;
-                                        </pre>
+&lt;div class="module-comment"&gt;
+&nbsp;&lt;form&gt;
+&nbsp;&nbsp;&lt;fieldset class="js-field-limiter js-field-policy"&gt;
+&nbsp;&nbsp;&nbsp;&lt;textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"&gt;&lt;/textarea&gt;
+&nbsp;&nbsp;&nbsp;&lt;input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer"&gt;
+&nbsp;&nbsp;&nbsp;&lt;em class="module-comment-counter"&gt;&lt;b class="js-counter-listener"&gt;500&lt;/b&gt; caractères restants&lt;/em&gt;
+&nbsp;&nbsp;&lt;/fieldset&gt;
+&nbsp;&lt;/form&gt;
+&lt;/div&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-comment-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/module/_module-comment.scss" %}
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/module/_module-comment.scss") %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-comment-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -555,47 +540,62 @@
                             <h2 class="kawa-h2">Partner</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    <%- include('../../assets/sample/widget/_widget-partner.html', {partner: 'pmu', title: 'Paris hippiques', spriteIcon: 'paris-hippiques', btnTitle: 'Je me connecte sur PMU.fr'}) %>
+                                    <%- include('../../assets/sample/widget/_widget-partner.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-widget-partners-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-widget-partners-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-partners-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-widget-partners-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-partner.html" %}{% endfilter %}</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/widget/_widget-partner.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-widget-partners-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-partner.scss" %}
-                                            {% include "../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/widget/_widget-partner.scss") %><%- include("../../assets/scss/component/widget/_widget-feature.scss") %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-partners-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
                         <div id="widgetWeather" class="col-md-12">
-                            <h2 class="kawa-h2">Astro</h2>
+                            <h2 class="kawa-h2">Weather</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    {% include "../../assets/sample/widget/_widget-weather.html" %}
+                                    <%- include('../../assets/sample/widget/_widget-weather.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-widget-weather-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-widget-weather-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-weather-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-widget-weather-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-weather.html" %}{% endfilter %}</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/widget/_widget-weather.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-widget-weather-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-weather.scss" %}</pre>
+                                        <pre class="prettyprint lang-css"><%= include("../../assets/scss/component/widget/_widget-weather.scss") %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-weather-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
                                     </figure>
                                 </div>
                             </div>
@@ -604,23 +604,30 @@
                             <h2 class="kawa-h2">Astro</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    {% include "../../assets/sample/widget/_widget-astro.html" %}
+                                    <%- include('../../assets/sample/widget/_widget-astro.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-widget-astro-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-widget-astro-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-astro-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-widget-astro-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-astro.html" %}{% endfilter %}</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/widget/_widget-astro.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-widget-astro-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-astro.scss" %}
-                                            {% include "../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                        <pre class="prettyprint lang-css"><%= include("../../assets/scss/component/widget/_widget-astro.scss") %><%= include("../../assets/scss/component/widget/_widget-feature.scss") %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-astro-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
                                     </figure>
                                 </div>
                             </div>
@@ -656,31 +663,28 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-article-body-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-article-body-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-article-body-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-body-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-article-body-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;<br/>
-                                            &lt;a class="article-text-link actu-color"&gt;Lien texte article&lt;/a&gt;<br/>
-                                            &lt;a class="article-text-link sport-color"&gt;Lien texte article&lt;/a&gt;<br/>
-                                            &lt;a class="article-text-link culture-color"&gt;Lien texte article&lt;/a&gt;<br/><br/>
-                                            &lt;ul class="article-text-list"&gt;<br/>
-                                            &nbsp;&lt;li class="item"&gt;&lt;a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                            &nbsp;&lt;li class="item actu-bg-color_before"&gt;&lt;a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                            &nbsp;&lt;li class="item sport-bg-color_before"&gt;&lt;a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                            &nbsp;&lt;li class="item culture-bg-color_before"&gt;&lt;a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
-                                            &lt;/ul&gt;
-                                        </pre>
+&lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;
+&lt;a class="article-text-link actu-color"&gt;Lien texte article&lt;/a&gt;
+&lt;a class="article-text-link sport-color"&gt;Lien texte article&lt;/a&gt;
+&lt;a class="article-text-link culture-color"&gt;Lien texte article&lt;/a&gt;<br/>
+&lt;ul class="article-text-list"&gt;
+&nbsp;&lt;li class="item"&gt;&lt;a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
+&nbsp;&lt;li class="item actu-bg-color_before"&gt;&lt;a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
+&nbsp;&lt;li class="item sport-bg-color_before"&gt;&lt;a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
+&nbsp;&lt;li class="item culture-bg-color_before"&gt;&lt;a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-body-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/article/_article-text-link.scss" %}
-                                            {% include "../../assets/scss/component/article/_article-text-list.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/article/_article-text-link.scss") %>
+                                            <%- include("../../assets/scss/component/article/_article-text-list.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-body-swig" class="tab-pane fade">
@@ -703,21 +707,17 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-article-footer-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-article-footer-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-article-footer-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-footer-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-article-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-                                            &lt;span class="article-footer icon icon-chevron-right-bis"&gt;Découvrir plus de videos&lt;/span&gt;<br/>
-                                        </pre>
+                                        <pre class="prettyprint lang-html">&lt;span class="article-footer icon icon-chevron-right-bis"&gt;Découvrir plus de videos&lt;/span&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/article/_article-footer.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/article/_article-footer.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-footer-swig" class="tab-pane fade">
@@ -785,53 +785,50 @@
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-article-tag-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-article-tag-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#rtl-article-tag-swig">SWIG</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-tag-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-article-tag-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;span class="article-tag"&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-tag actu-bg-color"&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-tag sport-bg-color"&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-tag culture-bg-color"&gt;<br/>
-                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
-                                            &lt;/span&gt;<br/><br/>
-                                            &lt;span class="article-flag-fix"&gt;<br/>
-                                            &nbsp;&lt;span class="uppercase flag"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-flag-fix actu-bg-color"&gt;<br/>
-                                            &nbsp;&lt;span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-flag-fix sport-bg-color"&gt;<br/>
-                                            &nbsp;&lt;span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/span&gt;<br/>
-                                            &lt;span class="article-flag-fix culture-bg-color"&gt;<br/>
-                                            &nbsp;&lt;span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after"&gt;<br/>
-                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/span&gt;
-                                        </pre>
+&lt;span class="article-tag"&gt;
+&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class="article-tag actu-bg-color"&gt;
+&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class="article-tag sport-bg-color"&gt;
+&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class="article-tag culture-bg-color"&gt;
+&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
+&lt;/span&gt;<br/>
+&lt;span class="article-flag-fix"&gt;
+&nbsp;&lt;span class="uppercase flag"&gt;
+&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
+&nbsp;&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class="article-flag-fix actu-bg-color"&gt;
+&nbsp;&lt;span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after"&gt;
+&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
+&nbsp;&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class="article-flag-fix sport-bg-color"&gt;
+&nbsp;&lt;span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after"&gt;
+&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
+&nbsp;&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class="article-flag-fix culture-bg-color"&gt;
+&nbsp;&lt;span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after"&gt;
+&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
+&nbsp;&lt;/span&gt;
+&lt;/span&gt;</pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-tag-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/article/_article-tag.scss" %}
-                                            {% include "../../assets/scss/component/article/_article-flag-fix.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/article/_article-tag.scss") %>
+                                            <%- include("../../assets/scss/component/article/_article-flag-fix.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-tag-swig" class="tab-pane fade">
@@ -847,22 +844,30 @@
                             <h2 class="kawa-h2">Post preview</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    {% include "../../assets/sample/article/_article-post-preview.html" %}
+                                    <%- include('../../assets/sample/article/_article-post-preview.html', {tagTitle: 'Le Saviez-Vous', flagTopTitle: 'dossier', flagBottomTitle: 'spécial'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
                                 <li class="active"><a data-toggle="tab" href="#rtl-article-preview-html">HTML</a></li>
                                 <li><a data-toggle="tab" href="#rtl-article-preview-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-preview-swig">EJS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="rtl-article-preview-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/article/_article-post-preview.html" %}{% endfilter %}</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/article/_article-post-preview.html', {tagTitle: 'Le Saviez-Vous', flagTopTitle: 'dossier', flagBottomTitle: 'spécial'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-preview-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/article/_article-post-preview.scss" %}</pre>
+                                        <pre class="prettyprint lang-css"><%= include("../../assets/scss/component/article/_article-post-preview.scss") %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-preview-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
+                                        </pre>
                                     </figure>
                                 </div>
                             </div>

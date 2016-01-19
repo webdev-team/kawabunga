@@ -10,8 +10,8 @@
 .widget-weather-header {
   padding: px-to-rem(12px) px-to-rem(10px) px-to-rem(10px) px-to-rem(19px);
   border-radius: 0 0 0 px-to-rem(4px);
-  border-bottom: px-to-rem(4px) solid $widget-weather-weather-header-border-color;
-  background-color: $widget-weather-weather-header-bg-color;
+  border-bottom: px-to-rem(4px) solid $widget-weather-header-border-color;
+  background-color: $widget-weather-header-bg-color;
   font-family: $font-design;
 }
 
@@ -81,7 +81,7 @@
 .widget-weather-list .item {
   overflow: hidden;
   padding: px-to-rem(20px) px-to-rem(13px);
-  border-top: 1px solid $widget-wheather-weather-list-item-border-color;
+  border-top: 1px solid $widget-weather-list-item-border-color;
 }
 
 .widget-weather-list .item:first-child {
@@ -100,7 +100,7 @@
   width: 40%;
   font-weight: bold;
   font-size: px-to-rem(15px);
-  color: $widget-weather-weather-list-text-color;
+  color: $widget-weather-list-text-color;
 }
 
 .widget-weather-list .icon {

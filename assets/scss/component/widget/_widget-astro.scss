@@ -7,6 +7,10 @@
 
 /* Widget Astro
 ----------------------------------------- */
+.widget-astro-header {
+  background-color: $widget-astro-header-bg-color;
+}
+
 .widget-astro-header .main-logo{
   width: px-to-rem(104px);
   height: px-to-rem(112px);
@@ -40,11 +44,11 @@
 
 .widget-astro-content .sign{
   font-size: px-to-rem(46px);
-  color: $widget-astro-astro-content-sign-color;
+  color: $widget-astro-content-sign-color;
 }
 
 .widget-astro-content .date{
-  color: $widget-astro-astro-content-date-color;
+  color: $widget-astro-content-date-color;
 }
 
 .widget-astro-content .date,
@@ -54,7 +58,7 @@
 
 .widget-astro-content .text{
   line-height: 1.5;
-  color: $widget-astro-astro-content-text-color;
+  color: $widget-astro-content-text-color;
 }
 
 /*MQ Small State*/

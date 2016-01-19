@@ -1,33 +1,12 @@
 <div class="widget-partner module-border widget-feature cf">
-    <header class="widget-feature-header cf">
+    <header class="widget-feature-header widget-partner-header cf">
         <a class="link" href="#" target="_blank">
-            <span class="text"><%= locals.title ? title : '' %></span>
-            <span class="main-icon sp sp-icon-<%= locals.spriteIcon ? spriteIcon : '' %>"></span>
-            <span class="main-logo sp sp-logo-<%= locals.partner ? partner : '' %>"></span>
+            <span class="text">Paris hippiques</span>
+            <span class="main-icon sp sp-icon-paris-hippiques"></span>
+            <span class="main-logo sp sp-logo-pmu"></span>
         </a>
     </header>
     <div class="widget-feature-content cf">
-        <a href="#" target="_blank">
-            <figure class="widget-feature-figure">
-                <img class="widget-feature-img img-echo" src="http://placehold.it/298x197" width="298" height="197" alt="">
-                <% if (locals.partner == 'pmu') { %>
-                <figcaption class="ph-figcaption">
-                    <span class="ph-date">mercredi 23/12/2015</span>
-                    <span class="ph-time">13h50</span>
-                </figcaption>
-                <% } %>
-            </figure>
-            <% if (locals.partner == 'pmu') { %>
-            <div class="ph-info">
-                <div class="ph-table">
-                    <div class="ph-cell">
-                        <span class="what">PRIX DE LONDRES</span>
-                        <span class="where">HIPPODROME DE CAGNES-SUR-MER</span>
-                    </div>
-                </div>
-            </div>
-            <% } %>
-        </a>
     </div>
-    <a class="module-link module-border-top icon icon-chevron-right-bis" href="#" target="_blank"><%= locals.btnTitle ? btnTitle : '' %></a>
+    <a class="module-link module-border-top icon icon-chevron-right-bis" href="#" target="_blank">Je me connecte sur PMU.fr</a>
 </div>

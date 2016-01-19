@@ -7,10 +7,8 @@
 
 /* Widget Partners
 ----------------------------------------- */
-.widget-partner {
-  position: relative;
-  margin-bottom: px-to-rem(20px);
-  background-color: $white;
+.widget-partner-header {
+  background-color: $widget-partner-header-bg-color;
 }
 
 
@@ -169,7 +167,6 @@
 .ph-date {
   font-size: px-to-rem(14px);
   font-weight: bold;
-  color: $widget-partner-ph-date-color;
 }
 .ph-info {
   display: block;
@@ -180,7 +177,6 @@
 }
 .ph-time {
   font-size: px-to-rem(32px);
-  color: $widget-partner-ph-time-color;
 }
 .ph-info .what,
 .ph-info .where {
@@ -190,12 +186,11 @@
   margin-bottom: px-to-rem(5px);
   font-size: px-to-rem(20px);
   font-weight: bold;
-  color: $widget-partner-ph-info-what-color;
 }
 
 .ph-info .where {
-  color: $widget-partner-ph-info-where-color;
 }
+
 .ph-table {
   display: table;
   width: 100%;

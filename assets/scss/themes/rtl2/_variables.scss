@@ -66,6 +66,19 @@ $article-flag-fix-border-color_after: $rtl2-red;
 // Page
 $page-header-font-family: $font-design;
 $page-header-border-color: $rtl2-black;
-$page-header-main-texte-color: $rtl2-black;
+$page-header-main-text-color: $rtl2-black;
 $page-header-right-text-bg-color: $rtl2-cream-light;
 $page-header-right-text-color: $rtl2-black;
+
+// Widget
+$widget-feature-border-color: $rtl2-cream-dark;
+
+$widget-astro-header-bg-color: $rtl2-grey;
+$widget-astro-content-sign-color: $rtl2-grey;
+$widget-astro-content-date-color: $rtl2-grey;
+$widget-astro-content-text-color: $rtl2-grey;
+
+$widget-weather-header-border-color: $rtl2-cream-dark;
+$widget-weather-header-bg-color: $rtl2-grey;
+$widget-weather-list-item-border-color: $rtl2-cream-dark;
+$widget-weather-list-text-color: $rtl2-grey;

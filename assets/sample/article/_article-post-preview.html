@@ -8,11 +8,11 @@
         </a>
         <span class="article-flag-fix culture-bg-color">
             <span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after">
-                <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
+                <span class="align"><%= locals.flagTopTitle ? flagTopTitle : '' %><b class="bold"><%= locals.flagBottomTitle ? flagBottomTitle : '' %></b></span>
             </span>
         </span>
         <span class="article-tag culture-bg-color">
-            <a href="#" class="tag">Le Saviez-Vous</a>
+            <a href="#" class="tag"><%= locals.tagTitle ? tagTitle : '' %></a>
         </span>
     </div>
     <div class="texts text-small bottom-tool-fix">

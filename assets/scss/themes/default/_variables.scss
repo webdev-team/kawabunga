@@ -7,7 +7,6 @@ $font-design: $helvetica !default;
 // Button
 $btn-bg-color: $grey-dark !default;
 $btn-bg-color_hover: $black !default;
-$btn-disabled-bg-color: $white !default;
 
 $btn-hover-bg-color: $grey-dark !default;
 $btn-hover-frontside-bg-color_hover: $black !default;
@@ -35,7 +34,6 @@ $module-link-bg-color: $grey !default;
 $module-link-color: $black !default;
 
 $module-footer-bg-color: $grey !default;
-$module-footer-color: $black !default;
 
 $module-follow-us-font-family: $font-design !default;
 $module-follow-us-icon-newsletter-color_before: $grey !default;
@@ -67,24 +65,21 @@ $article-flag-fix-border-color_after: $black !default;
 // Page
 $page-header-font-family: $font-design !default;
 $page-header-border-color: $grey !default;
-$page-header-main-texte-color: $black !default;
+$page-header-main-text-color: $black !default;
 $page-header-right-text-bg-color: $white !default;
 $page-header-right-text-color: $black !default;
 
 // Widget
 $widget-feature-border-color: $grey !default;
-$widget-feature-header-bg-color: $black !default;
 
-$widget-partner-ph-date-color: $grey !default;
-$widget-partner-ph-time-color: $grey !default;
-$widget-partner-ph-info-what-color: $black !default;
-$widget-partner-ph-info-where-color: $grey !default;
+$widget-partner-header-bg-color: $grey-darker !default;
 
-$widget-astro-astro-content-sign-color: $black !default;
-$widget-astro-astro-content-date-color: $black !default;
-$widget-astro-astro-content-text-color: $black !default;
+$widget-astro-header-bg-color: $black !default;
+$widget-astro-content-sign-color: $black !default;
+$widget-astro-content-date-color: $black !default;
+$widget-astro-content-text-color: $black !default;
 
-$widget-weather-weather-header-border-color: $grey !default;
-$widget-weather-weather-header-bg-color: $black !default;
-$widget-wheather-weather-list-item-border-color: $grey !default;
-$widget-weather-weather-list-text-color: $grey !default;
+$widget-weather-header-border-color: $grey !default;
+$widget-weather-header-bg-color: $black !default;
+$widget-weather-list-item-border-color: $grey !default;
+$widget-weather-list-text-color: $grey !default;
