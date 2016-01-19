@@ -20,7 +20,6 @@
     "gulp-pixrem": "^0.2.3",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "gulp-swig": "^0.7.4",
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.0.0",
     "jsdom": "^7.2.2",
