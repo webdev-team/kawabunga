@@ -6,11 +6,11 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-        <link rel="stylesheet" href="../../scss/pages/components-default.css">
+        <link rel="stylesheet" href="../css/components-rtl.css">
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="container kawa">
-            <%- include('../_navbar.html', {active: 'components-default'}) %>
+            <%- include('_navbar.html', {active: 'components-rtl'}) %>
 
             <div class="row">
                 <!--Main Content -->
@@ -21,7 +21,7 @@
                         <div id="classic" class="col-md-12">
                             <h2 class="kawa-h2">Classic</h2>
                             <p>Le texte est en majuscule lorqu'il y a un seul mot sinon en minuscule.</p>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-2">
                                     <div class="btn uppercase">Voter</div>
@@ -31,11 +31,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-classic-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-classic-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-classic-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-classic-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-classic-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-classic-html" class="tab-pane fade in active">
+                                <div id="rtl-classic-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="btn uppercase"&gt;Voter&lt;/div&gt;<br/>
@@ -43,10 +44,17 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-classic-css" class="tab-pane fade">
+                                <div id="rtl-classic-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/button/_btn.scss" %}
+                                            {% include "../../assets/scss/component/button/_btn.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-classic-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -54,7 +62,7 @@
                         </div>
                         <div id="particular" class="col-md-12">
                             <h2 class="kawa-h2">Particular</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="site code-example col-md-12">
                                 <div class="col-md-4">
                                     <div class="btn-link icon icon-chevron-left-bis">Aller vers l'&eacute;mission</div>
@@ -117,11 +125,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-particular-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-particular-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-particular-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-particular-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-particular-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-particular-html" class="tab-pane fade in active">
+                                <div id="rtl-particular-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="btn-link icon icon-chevron-left-bis"&gt;Aller vers l'&eacute;mission&lt;/div&gt;<br/><br/>
@@ -172,13 +181,20 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-particular-css" class="tab-pane fade">
+                                <div id="rtl-particular-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/button/_btn-link.scss" %}
-                                            {% include "../../../assets/scss/component/button/_btn-hover.scss" %}
-                                            {% include "../../../assets/scss/component/button/_btn-bicolor.scss" %}
-                                            {% include "../../../assets/scss/component/button/_btn-text.scss" %}
+                                            {% include "../../assets/scss/component/button/_btn-link.scss" %}
+                                            {% include "../../assets/scss/component/button/_btn-hover.scss" %}
+                                            {% include "../../assets/scss/component/button/_btn-bicolor.scss" %}
+                                            {% include "../../assets/scss/component/button/_btn-text.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-particular-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -190,7 +206,7 @@
                         <h1 class="kawa-h1">Input</h1>
                         <div id="inputText" class="col-md-12">
                             <h2 class="kawa-h2">Text</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3">
                                     <div class="input-text">
@@ -199,12 +215,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-input-text-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-input-text-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#default-input-text-swig">SWIG</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-input-text-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-input-text-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-input-text-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-input-text-html" class="tab-pane fade in active">
+                                <div id="rtl-input-text-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="input-text"&gt;<br/>
@@ -213,14 +229,14 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-input-text-css" class="tab-pane fade">
+                                <div id="rtl-input-text-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/input/_input-text.scss" %}
+                                            {% include "../../assets/scss/component/input/_input-text.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-input-text-swig" class="tab-pane fade">
+                                <div id="rtl-input-text-swig" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
 
@@ -235,7 +251,7 @@
                         <h1 class="kawa-h1">Page</h1>
                         <div id="pageHeader" class="col-md-12">
                             <h2 class="kawa-h2">Header</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-12">
                                     <div class="page-header">
@@ -247,12 +263,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-page-header-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-page-header-css">CSS</a></li>
-                                <li><a data-toggle="tab" href="#default-page-header-swig">SWIG</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-page-header-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-page-header-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-page-header-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-page-header-html" class="tab-pane fade in active">
+                                <div id="rtl-page-header-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="page-header"&gt;<br/>
@@ -264,14 +280,14 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-page-header-css" class="tab-pane fade">
+                                <div id="rtl-page-header-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/page/_page-header.scss" %}
+                                            {% include "../../assets/scss/component/page/_page-header.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-page-header-swig" class="tab-pane fade">
+                                <div id="rtl-page-header-swig" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
 
@@ -286,28 +302,48 @@
                         <h1 class="kawa-h1">Module</h1>
                         <div id="moduleHeader" class="col-md-12">
                             <h2 class="kawa-h2">Header</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
                                     <div class="module-header">La question du jour</div>
                                 </div>
+                                <div class="col-md-5">
+                                    <div class="module-header actu-bg-color">La question du jour</div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="module-header sport-bg-color">La question du jour</div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="module-header culture-bg-color">La question du jour</div>
+                                </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-module-header-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-module-header-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-module-header-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-header-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-header-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-module-header-html" class="tab-pane fade in active">
+                                <div id="rtl-module-header-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;div class="module-header"&gt;La question du jour&lt;/div&gt;
+                                            &lt;div class="module-header"&gt;La question du jour&lt;/div&gt;<br/>
+                                            &lt;div class="module-header actu-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
+                                            &lt;div class="module-header sport-bg-color"&gt;La question du jour&lt;/div&gt;<br/>
+                                            &lt;div class="module-header culture-bg-color"&gt;La question du jour&lt;/div&gt;
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-module-header-css" class="tab-pane fade">
+                                <div id="rtl-module-header-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/module/_module-header.scss" %}
+                                            {% include "../../assets/scss/component/module/_module-header.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-header-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -316,7 +352,7 @@
 
                         <div id="moduleLink" class="col-md-12">
                             <h2 class="kawa-h2">Link</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
                                     <div class="module-link module-border icon icon-chevron-bas">Voir plus de commentaires</div>
@@ -326,11 +362,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-link-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-link-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-link-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-link-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-link-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-link-html" class="tab-pane fade in active">
+                                <div id="rtl-link-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="module-link module-border icon icon-chevron-bas"&gt;La question du jour&lt;/div&gt;<br/>
@@ -338,10 +375,17 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-link-css" class="tab-pane fade">
+                                <div id="rtl-link-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/module/_module-link.scss" %}
+                                            {% include "../../assets/scss/component/module/_module-link.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-link-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -350,7 +394,7 @@
 
                         <div id="moduleBorder" class="col-md-12">
                             <h2 class="kawa-h2">Border</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
                                     <div class="module-border"><p>Module avec bordure fine</p></div>
@@ -363,11 +407,12 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-border-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-border-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-border-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-border-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-border-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-border-html" class="tab-pane fade in active">
+                                <div id="rtl-border-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="module-border"&gt;&lt;p&gt;Module avec bordure fine&lt;/p&gt;&lt;/div&gt;<br/>
@@ -376,10 +421,17 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-border-css" class="tab-pane fade">
+                                <div id="rtl-border-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/module/_module-border.scss" %}
+                                            {% include "../../assets/scss/component/module/_module-border.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-border-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -393,39 +445,80 @@
                                 <br/>Les textes et chevrons passent en #ffffff
                                 <br/>- Pied de module "r&eacute;servez vos places" avec pointill&eacute;s.
                             </p>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
                                     <span class="module-footer icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
                                 </div>
+                                <div class="col-md-5">
+                                    <span class="module-footer actu-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                </div>
+                                <div class="col-md-5">
+                                    <span class="module-footer sport-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                </div>
+                                <div class="col-md-5">
+                                    <span class="module-footer culture-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-module-footer-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-module-footer-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-module-footer-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-footer-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-footer-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-module-footer-html" class="tab-pane fade in active">
+                                <div id="rtl-module-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
+                                            &lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
+                                            &lt;span class="module-footer actu-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
+                                            &lt;span class="module-footer sport-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;<br/>
+                                            &lt;span class="module-footer culture-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-module-footer-css" class="tab-pane fade">
+                                <div id="rtl-module-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/module/_module-footer.scss" %}
+                                            {% include "../../assets/scss/component/module/_module-footer.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-footer-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
                         <div id="moduleFollowUs" class="col-md-12">
-                            {% include "../../../assets/sample/module/_module-follow-us.html" %}
+                            <h2 class="kawa-h2">Follow us</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-12">
+                                    <%- include('../../assets/sample/module/_module-follow-us.html') %>
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-module-follow-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-follow-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-module-follow-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-follow-us.html') %></pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-module-follow-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css"><%= include('../../assets/scss/component/module/_module-follow-us.scss') %></pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="moduleComment" class="col-md-12">
                             <h2 class="kawa-h2">Comment</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-8">
                                     <div class="module-comment">
@@ -440,11 +533,11 @@
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-module-comment-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-module-comment-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-module-comment-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-module-comment-css">CSS</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-module-comment-html" class="tab-pane fade in active">
+                                <div id="rtl-module-comment-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;div class="module-comment"&gt;<br/>
@@ -459,10 +552,10 @@
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-module-comment-css" class="tab-pane fade">
+                                <div id="rtl-module-comment-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/module/_module-comment.scss" %}
+                                            {% include "../../assets/scss/component/module/_module-comment.scss" %}
                                         </pre>
                                     </figure>
                                 </div>
@@ -472,50 +565,141 @@
                     <section id="widget" class="col-md-12">
                         <h1 class="kawa-h1">Widget</h1>
                         <div id="widgetPartner" class="col-md-12">
-                            {% include "../../../assets/sample/widget/_widget-partner.html" %}
+                            <h2 class="kawa-h2">Partner</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../assets/sample/widget/_widget-partner.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-partners-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-partners-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-partners-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-partner.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-partners-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-partner.scss" %}
+                                            {% include "../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="widgetWeather" class="col-md-12">
-                            {% include "../../../assets/sample/widget/_widget-weather.html" %}
+                            <h2 class="kawa-h2">Astro</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../assets/sample/widget/_widget-weather.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-weather-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-weather-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-weather-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-weather.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-weather-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-weather.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                         <div id="widgetAstro" class="col-md-12">
-                            {% include "../../../assets/sample/widget/_widget-astro.html" %}
+                            <h2 class="kawa-h2">Astro</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../assets/sample/widget/_widget-astro.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-widget-astro-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-widget-astro-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-widget-astro-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/widget/_widget-astro.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-widget-astro-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/widget/_widget-astro.scss" %}
+                                            {% include "../../assets/scss/component/widget/_widget-feature.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section id="article" class="col-md-12">
                         <h1 class="kawa-h1">Article</h1>
                         <div id="articleBody" class="col-md-12">
                             <h2 class="kawa-h2">Body</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3">
                                     <a class="article-text-link">Lien texte article</a>
                                 </div>
+                                <div class="col-md-3">
+                                    <a class="article-text-link actu-color">Lien texte article</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="article-text-link sport-color">Lien texte article</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="article-text-link culture-color">Lien texte article</a>
+                                </div>
                                 <div class="col-md-10">
                                     <ul class="article-text-list">
                                         <li class="item"><a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
+                                        <li class="item actu-bg-color_before"><a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
+                                        <li class="item sport-bg-color_before"><a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
+                                        <li class="item culture-bg-color_before"><a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
                                     </ul>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-article-body-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-article-body-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-article-body-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-body-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-body-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-article-body-html" class="tab-pane fade in active">
+                                <div id="rtl-article-body-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
-                                            &lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;<br/><br/>
+                                            &lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;<br/>
+                                            &lt;a class="article-text-link actu-color"&gt;Lien texte article&lt;/a&gt;<br/>
+                                            &lt;a class="article-text-link sport-color"&gt;Lien texte article&lt;/a&gt;<br/>
+                                            &lt;a class="article-text-link culture-color"&gt;Lien texte article&lt;/a&gt;<br/><br/>
                                             &lt;ul class="article-text-list"&gt;<br/>
                                             &nbsp;&lt;li class="item"&gt;&lt;a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
+                                            &nbsp;&lt;li class="item actu-bg-color_before"&gt;&lt;a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
+                                            &nbsp;&lt;li class="item sport-bg-color_before"&gt;&lt;a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
+                                            &nbsp;&lt;li class="item culture-bg-color_before"&gt;&lt;a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;<br/>
                                             &lt;/ul&gt;
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-article-body-css" class="tab-pane fade">
+                                <div id="rtl-article-body-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/article/_article-text-link.scss" %}
-                                            {% include "../../../assets/scss/component/article/_article-text-list.scss" %}
+                                            {% include "../../assets/scss/component/article/_article-text-link.scss" %}
+                                            {% include "../../assets/scss/component/article/_article-text-list.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-body-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -523,28 +707,36 @@
                         </div>
                         <div id="articleFooter" class="col-md-12">
                             <h2 class="kawa-h2">Footer</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
                                     <span class="article-footer icon icon-chevron-right-bis">Découvrir plus de videos</span>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-article-footer-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-article-footer-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-article-footer-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-footer-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-footer-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-article-footer-html" class="tab-pane fade in active">
+                                <div id="rtl-article-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;span class="article-footer icon icon-chevron-right-bis"&gt;Découvrir plus de videos&lt;/span&gt;<br/>
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-article-footer-css" class="tab-pane fade">
+                                <div id="rtl-article-footer-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/article/_article-footer.scss" %}
+                                            {% include "../../assets/scss/component/article/_article-footer.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-footer-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
@@ -552,10 +744,25 @@
                         </div>
                         <div id="tag" class="col-md-12">
                             <h2 class="kawa-h2">Tag</h2>
-                            <!-- DEFAULT -->
+                            <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3 position-static">
                                     <span class="article-tag">
+                                        <a href="#" class="tag">Le Saviez-Vous</a>
+                                    </span>
+                                </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-tag actu-bg-color">
+                                        <a href="#" class="tag">Le Saviez-Vous</a>
+                                    </span>
+                                </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-tag sport-bg-color">
+                                        <a href="#" class="tag">Le Saviez-Vous</a>
+                                    </span>
+                                </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-tag culture-bg-color">
                                         <a href="#" class="tag">Le Saviez-Vous</a>
                                     </span>
                                 </div>
@@ -566,38 +773,112 @@
                                         </span>
                                     </span>
                                 </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-flag-fix actu-bg-color">
+                                        <span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after">
+                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-flag-fix sport-bg-color">
+                                        <span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after">
+                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="col-md-3 position-static">
+                                    <span class="article-flag-fix culture-bg-color">
+                                        <span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after">
+                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
+                                        </span>
+                                    </span>
+                                </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
-                                <li class="active"><a data-toggle="tab" href="#default-article-tag-html">HTML</a></li>
-                                <li><a data-toggle="tab" href="#default-article-tag-css">CSS</a></li>
+                                <li class="active"><a data-toggle="tab" href="#rtl-article-tag-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-tag-css">CSS</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-tag-swig">SWIG</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="default-article-tag-html" class="tab-pane fade in active">
+                                <div id="rtl-article-tag-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-html">
                                             &lt;span class="article-tag"&gt;<br/>
+                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-tag actu-bg-color"&gt;<br/>
+                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-tag sport-bg-color"&gt;<br/>
+                                            &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-tag culture-bg-color"&gt;<br/>
                                             &nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;<br/>
                                             &lt;/span&gt;<br/><br/>
                                             &lt;span class="article-flag-fix"&gt;<br/>
                                             &nbsp;&lt;span class="uppercase flag"&gt;<br/>
                                             &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
                                             &nbsp;&lt;/span&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-flag-fix actu-bg-color"&gt;<br/>
+                                            &nbsp;&lt;span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/span&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-flag-fix sport-bg-color"&gt;<br/>
+                                            &nbsp;&lt;span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/span&gt;<br/>
+                                            &lt;/span&gt;<br/>
+                                            &lt;span class="article-flag-fix culture-bg-color"&gt;<br/>
+                                            &nbsp;&lt;span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after"&gt;<br/>
+                                            &nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;<br/>
+                                            &nbsp;&lt;/span&gt;<br/>
                                             &lt;/span&gt;
                                         </pre>
                                     </figure>
                                 </div>
-                                <div id="default-article-tag-css" class="tab-pane fade">
+                                <div id="rtl-article-tag-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
                                         <pre class="prettyprint lang-css">
-                                            {% include "../../../assets/scss/component/article/_article-tag.scss" %}
-                                            {% include "../../../assets/scss/component/article/_article-flag-fix.scss" %}
+                                            {% include "../../assets/scss/component/article/_article-tag.scss" %}
+                                            {% include "../../assets/scss/component/article/_article-flag-fix.scss" %}
+                                        </pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-tag-swig" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">
+
                                         </pre>
                                     </figure>
                                 </div>
                             </div>
                         </div>
                         <div id="post-preview" class="col-md-12">
-                            {% include "../../../assets/sample/article/_article-post-preview.html" %}
+                            <h2 class="kawa-h2">Post preview</h2>
+                            <form class="code-example col-md-12">
+                                <div class="col-md-4">
+                                    {% include "../../assets/sample/article/_article-post-preview.html" %}
+                                </div>
+                            </form>
+                            <ul class="nav nav-tabs nav-child">
+                                <li class="active"><a data-toggle="tab" href="#rtl-article-preview-html">HTML</a></li>
+                                <li><a data-toggle="tab" href="#rtl-article-preview-css">CSS</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="rtl-article-preview-html" class="tab-pane fade in active">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../assets/sample/article/_article-post-preview.html" %}{% endfilter %}</pre>
+                                    </figure>
+                                </div>
+                                <div id="rtl-article-preview-css" class="tab-pane fade">
+                                    <figure class="highlighted col-md-12">
+                                        <pre class="prettyprint lang-css">{% include "../../assets/scss/component/article/_article-post-preview.scss" %}</pre>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>

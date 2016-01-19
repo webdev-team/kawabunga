@@ -1,15 +1,15 @@
 
 // import themes
-@import "../../../assets/scss/themes/default/_font";
-@import "../../../assets/scss/themes/rtl/_font";
-@import "../../../assets/scss/themes/rtl2/_font";
-@import "../../../assets/scss/themes/funradio/_font";
-@import "../../../assets/scss/themes/girls/_font";
-@import "../../../assets/scss/themes/compte/_font";
+@import "../../assets/scss/themes/default/_font";
+@import "../../assets/scss/themes/rtl/_font";
+@import "../../assets/scss/themes/rtl2/_font";
+@import "../../assets/scss/themes/funradio/_font";
+@import "../../assets/scss/themes/girls/_font";
+@import "../../assets/scss/themes/compte/_font";
 
 // import config, template
-@import "../../../assets/scss/kawabunga-base";
-@import "../kawabunga-layout";
+@import "../../assets/scss/kawabunga-base";
+@import "common/kawabunga-layout";
 
 /* Typography page
 ----------------------------------------- */

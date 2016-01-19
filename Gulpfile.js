@@ -24,7 +24,7 @@ var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 
 gulp.task('css', function () {
-    return gulp.src('sandbox/**/*.scss')
+    return gulp.src('sandbox/scss/*.scss')
         .pipe(sass())
         .pipe(base64({
             baseDir: 'assets/scss',
@@ -34,7 +34,7 @@ gulp.task('css', function () {
         }))
         .pipe(autoprefixer())
         .pipe(pixrem())
-        .pipe(gulp.dest('build/sandbox'))
+        .pipe(gulp.dest('build/sandbox/css'))
 });
 
 gulp.task('html', function () {
@@ -96,7 +96,7 @@ gulp.task('sprite:x1', function () {
             padding     : 2,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
-            imgPath     : '../../../img/sprite-partners.png',
+            imgPath     : '../img/sprite-partners.png',
             cssSpritesheetName : 'sprite-partners'
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
@@ -110,7 +110,7 @@ gulp.task('sprite:x2', function () {
             padding     : 4,
             cssFormat   : 'scss',
             algorithm   : 'left-right',
-            imgPath     : '../../../img/sprite-retina-partners.png',
+            imgPath     : '../img/sprite-retina-partners.png',
             cssSpritesheetName : 'sprite-retina-partners'
         }))
         .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
@@ -119,7 +119,7 @@ gulp.task('sprite:x2', function () {
 gulp.task('img', function () {
     return gulp.src(['assets/img/**', '!assets/img/sprite-partners/**', '!assets/img/sprite-retina-partners/**', '!assets/img/**/init.gif'])
         .pipe(imagemin())
-        .pipe(gulp.dest('build/img/'))
+        .pipe(gulp.dest('build/sandbox/img/'))
 });
 
 /*
@@ -128,7 +128,7 @@ gulp.task('img', function () {
 
 gulp.task('font', function () {
     return gulp.src(['assets/font/*.*'])
-        .pipe(gulp.dest('build/font'))
+        .pipe(gulp.dest('build/sandbox/font/'))
 });
 
 /*
