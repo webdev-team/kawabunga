@@ -10,7 +10,7 @@
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="container kawa">
-            {% include '../_navbar.html' with {active: 'components-rtl'} %}
+            <%- include('../_navbar.html', {active: 'components-rtl'}) %>
 
             <div class="row">
                 <!--Main Content -->
@@ -496,7 +496,7 @@
                             <h2 class="kawa-h2">Follow us</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-12">
-                                    {% include "../../../assets/sample/module/_module-follow-us.html" %}
+                                    <%- include('../../../assets/sample/module/_module-follow-us.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -506,12 +506,12 @@
                             <div class="tab-content">
                                 <div id="rtl-module-follow-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">{% filter escape %}{% include "../../../assets/sample/module/_module-follow-us.html" %}{% endfilter %}</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../../assets/sample/module/_module-follow-us.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-follow-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/module/_module-follow-us.scss" %}</pre>
+                                        <pre class="prettyprint lang-css"><%= include('../../../assets/scss/component/module/_module-follow-us.scss') %></pre>
                                     </figure>
                                 </div>
                             </div>

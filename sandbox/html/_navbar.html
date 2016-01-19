@@ -13,25 +13,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="{% if active == 'index' %}active{% endif %}"><a href="index.html">Home</a></li>
-        <li class="{% if active == 'typography' %}active{% endif %}"><a href="typography.html">Typographie</a></li>
-        <li class="{% if active == 'colors' %}active{% endif %}"><a href="colors.html">Colors</a></li>
-        <li class="{% if active == 'icons' %}active{% endif %}"><a href="icons.html">Icons</a></li>
-        <li class="{% if active == 'sprites' %}active{% endif %}"><a href="sprites.html">Sprites</a></li>
+
+        <li class="<%= active == 'index' ? 'active' : '' %>"><a href="index.html">Home</a></li>
+        <li class="<%= active == 'typography' ? 'active' : '' %>"><a href="typography.html">Typographie</a></li>
+        <li class="<%= active == 'colors' ? 'active' : '' %>"><a href="colors.html">Colors</a></li>
+        <li class="<%= active == 'icons' ? 'active' : '' %>"><a href="icons.html">Icons</a></li>
+        <li class="<%= active == 'sprites' ? 'active' : '' %>"><a href="sprites.html">Sprites</a></li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Components <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="{% if active == 'components-default' %}active{% endif %}"><a href="components-default.html">Default</a></li>
-            <li class="{% if active == 'components-rtl' %}active{% endif %}"><a href="components-rtl.html">RTL</a></li>
-            <li class="{% if active == 'components-rtl2' %}active{% endif %}"><a href="components-rtl2.html">RTL2</a></li>
-            <li class="{% if active == 'components-funradio' %}active{% endif %}"><a href="components-funradio.html">Fun Radio</a></li>
-            <li class="{% if active == 'components-girls' %}active{% endif %}"><a href="components-girls.html">Girls</a></li>
+            <li class="<%= active == 'components-default' ? 'active' : '' %>"><a href="components-default.html">Default</a></li>
+            <li class="<%= active == 'components-rtl' ? 'active' : '' %>"><a href="components-rtl.html">RTL</a></li>
+            <li class="<%= active == 'components-rtl2' ? 'active' : '' %>"><a href="components-rtl2.html">RTL2</a></li>
+            <li class="<%= active == 'components-funradio' ? 'active' : '' %>"><a href="components-funradio.html">Fun Radio</a></li>
+            <li class="<%= active == 'components-girls' ? 'active' : '' %>"><a href="components-girls.html">Girls</a></li>
           </ul>
         </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ads <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="{% if active == 'ads-ftv' %}active{% endif %}"><a href="ads-ftv.html">FTV</a></li>
+            <li class="<%= active == 'ads-ftv' ? 'active' : '' %>"><a href="ads-ftv.html">FTV</a></li>
           </ul>
         </li>
       </ul>

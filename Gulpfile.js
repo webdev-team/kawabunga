@@ -3,7 +3,6 @@ var sass = require('gulp-sass');
 var webserver = require('gulp-webserver');
 var pixrem = require('gulp-pixrem');
 var autoprefixer = require('gulp-autoprefixer');
-var swig = require('gulp-swig');
 var runSequence = require('run-sequence');
 var del = require('del');
 var iconfont = require('gulp-iconfont');
@@ -22,6 +21,7 @@ var mocha = require('gulp-mocha');
 var _ = require('lodash');
 var flatten = require('gulp-flatten');
 var gutil = require('gulp-util');
+var ejs = require('gulp-ejs');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/**/*.scss')
@@ -38,8 +38,8 @@ gulp.task('css', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src(['sandbox/**/*.html'])
-        .pipe(swig({defaults: {cache: false}}))
+    return gulp.src(['sandbox/**/*.html', '!sandbox/**/_*.html'])
+        .pipe(ejs({}))
         .on('error', function(err) {
             gutil.log(err);
             this.emit('end'); // end this stream
