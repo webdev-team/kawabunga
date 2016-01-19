@@ -254,12 +254,7 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-12">
-                                    <div class="page-header">
-                                        <span class="main-text uppercase">Commentaires</span>
-                                        <span class="right-text icon icon-clock">
-                                            Mise à jour à <time datetime="2012-02-11 16:24:02">9h20</time>
-                                        </span>
-                                    </div>
+                                    <%- include('../../../assets/sample/page/_page-header.html', {uppercase: 'uppercase', title: 'Commentaires', dateTime: 'true'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -270,21 +265,12 @@
                             <div class="tab-content">
                                 <div id="rtl-page-header-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-                                            &lt;div class="page-header"&gt;<br/>
-                                            &nbsp;&lt;span class="main-text uppercase"&gt;Commentaires&lt;/span&gt;<br/>
-                                            &nbsp;&lt;span class="right-text icon icon-clock"&gt;<br/>
-                                            &nbsp;&nbsp;Mise à jour à &lt;time datetime="2012-02-11 16:24:02"&gt;9h20&lt;/time&gt;<br/>
-                                            &nbsp;&lt;/span&gt;<br/>
-                                            &lt;/div&gt;
-                                        </pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../../assets/sample/page/_page-header.html', {uppercase: 'uppercase', title: 'Commentaires', dateTime: 'true'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-page-header-css" class="tab-pane fade">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-css">
-                                            {% include "../../assets/scss/component/page/_page-header.scss" %}
-                                        </pre>
+                                        <pre class="prettyprint lang-css"><%= include("../../../assets/scss/component/page/_page-header.scss") %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-page-header-swig" class="tab-pane fade">
@@ -496,7 +482,8 @@
                             <h2 class="kawa-h2">Follow us</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-12">
-                                    <%- include('../../assets/sample/module/_module-follow-us.html') %>
+                                    <%- include('../../../assets/sample/module/_module-follow-us.html', {domain: 'RTL', uppercase: '', moduleSize: 'small', headerSize: 'section-header-s', headerTextSize: 'text'}) %>
+                                    <%- include('../../../assets/sample/module/_module-follow-us.html', {domain: 'RTL', uppercase: '', moduleSize: '', headerSize: '', headerTextSize: ''}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -506,7 +493,7 @@
                             <div class="tab-content">
                                 <div id="rtl-module-follow-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-follow-us.html') %></pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../../assets/sample/module/_module-follow-us.html', {domain: 'RTL', uppercase: '', moduleSize: 'small', headerSize: 'section-header-s', headerTextSize: 'text'}) %><%= include('../../../assets/sample/module/_module-follow-us.html', {domain: 'RTL', uppercase: '', moduleSize: '', headerSize: '', headerTextSize: ''}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-follow-css" class="tab-pane fade">
@@ -568,7 +555,7 @@
                             <h2 class="kawa-h2">Partner</h2>
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    {% include "../../assets/sample/widget/_widget-partner.html" %}
+                                    <%- include('../../../assets/sample/widget/_widget-partner.html', {partner: 'pmu', title: 'Paris hippiques', spriteIcon: 'paris-hippiques', btnTitle: 'Je me connecte sur PMU.fr'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">

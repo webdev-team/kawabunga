@@ -1,7 +1,7 @@
 <div class="fontface">
-    <div class="module-follow-us small">
-        <header class="section-header-s">
-            <span class="text uppercase">Nous rejoindre</span>
+    <div class="module-follow-us <%= locals.moduleSize ? moduleSize : '' %>">
+        <header class="<%= locals.headerSize ? headerSize : 'section-header' %>">
+            <span class="<%= locals.headerTextSize ? headerTextSize : 'main-text' %> <%= locals.uppercase ? uppercase : '' %>">Nous rejoindre</span>
         </header>
         <a href="#" class="item">
             <i class="icon icon-ff icon-facebook"></i>
@@ -19,14 +19,18 @@
             <i class="icon icon-ff icon-instagram"></i>
             <span class="no-ff">Instagram</span>
         </a>
+        <% if (locals.domain && domain == 'GIRLS') { %>
         <a href="#" class="item">
             <i class="icon icon-ff icon-pinterest"></i>
             <span class="no-ff">pinterest</span>
         </a>
+        <% } %>
+        <% if (locals.domain && domain == 'FUN_RADIO') { %>
         <a href="#" class="item">
             <i class="icon icon-ff icon-youtube"></i>
             <span class="no-ff">youtube</span>
         </a>
+        <% } %>
         <a href="#" class="item">
             <i class="icon icon-ff icon-newsletter"></i>
             <span class="no-ff">Mail</span>

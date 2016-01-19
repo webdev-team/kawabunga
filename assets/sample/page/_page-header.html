@@ -1,0 +1,8 @@
+<div class="page-header">
+    <span class="main-text <%= locals.uppercase ? uppercase : '' %>"><%= locals.title ? title : '' %></span>
+    <% if (locals.dateTime == 'true') { %>
+    <span class="right-text icon icon-clock">
+        Mise à jour à <time datetime="2012-02-11 16:24:02">9h20</time>
+    </span>
+    <% } %>
+</div>
