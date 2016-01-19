@@ -25,7 +25,7 @@ describe('ftv-ads.js', function () {
             }
         };
 
-        ftvAds = proxyquire('../../../assets/js/ads/ftv-ads', {
+        ftvAds = proxyquire('../../../assets/js/advertising/ftv-ad', {
             './ftv-script': ftvScript
         });
 
@@ -51,8 +51,8 @@ describe('ftv-ads.js', function () {
     describe('setupAds', function () {
         it('should find all js-ftv element and create Ad objects', function () {
             env.initWithHtml('' +
-                '<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>' +
-                '<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle2" data-width="300" data-height="250"></div>');
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle2" data-width="300" data-height="250"></div>');
 
             var count = 0;
 
@@ -66,7 +66,7 @@ describe('ftv-ads.js', function () {
         });
 
         it('should not createAd for invisible spots', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" style="display:none;"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" style="display:none;"></div>');
 
             var count = 0;
 
@@ -82,7 +82,7 @@ describe('ftv-ads.js', function () {
 
     describe('setupAd', function () {
         it('should parse element and create Ad object', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
 
             var ad = ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
@@ -97,7 +97,7 @@ describe('ftv-ads.js', function () {
         });
 
         it('should add Ad object in registry', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
 
             ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
@@ -106,17 +106,17 @@ describe('ftv-ads.js', function () {
         });
 
         it('should create ad and insert iframe', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
 
             ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
-            expect(document.body.innerHTML).to.equal('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250">' +
+            expect(document.body.innerHTML).to.equal('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250">' +
                 '<iframe id="frame_Middle" marginwidth="0" marginheight="0" style="border: 0px; display: block; width: 300px; height: 250px;" scrolling="no" frameborder="0" height="250" width="300"></iframe>' +
                 '</div>');
         });
 
         it('should set iframe content', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
             global.staticRoot = 'http://static.rtl.fr';
 
             ftvAds.setupAd(document.getElementById('pave-300x250-top'));
@@ -128,7 +128,7 @@ describe('ftv-ads.js', function () {
         });
 
         it('should refresh ad if refresh data attribute is set', function (done) {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" data-refresh="true"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" data-refresh="true"></div>');
 
             ftvAds.REFRESH_INTERVAL = 10;
 
@@ -146,7 +146,7 @@ describe('ftv-ads.js', function () {
 
     describe('destroy', function () {
         it('should remove completly dom node', function () {
-            env.initWithHtml('<div class="parent"><div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div></div>');
+            env.initWithHtml('<div class="parent"><div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div></div>');
 
             var ad = ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
@@ -156,7 +156,7 @@ describe('ftv-ads.js', function () {
         });
 
         it('should remove ad from registry', function () {
-            env.initWithHtml('<div class="parent"><div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div></div>');
+            env.initWithHtml('<div class="parent"><div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div></div>');
 
             var ad = ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
@@ -168,17 +168,17 @@ describe('ftv-ads.js', function () {
 
     describe('removeIframe', function () {
         it('should remove iframe', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
 
             var ad = ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
             ad.removeIframe();
 
-            expect(document.body.innerHTML).to.equal('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            expect(document.body.innerHTML).to.equal('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
         });
 
         it('should also remove timer', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" data-refresh="true"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250" data-refresh="true"></div>');
 
             var ad = ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 
@@ -190,7 +190,7 @@ describe('ftv-ads.js', function () {
 
     describe('getById', function () {
         it('should return Ad object', function () {
-            env.initWithHtml('<div class="dfp-slot js-ftv" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
+            env.initWithHtml('<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>');
 
             ftvAds.setupAd(document.getElementById('pave-300x250-top'));
 

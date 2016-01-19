@@ -1,21 +1,21 @@
 @import "../../config";
 @import "../../functions";
 
-$ad-pave-width: px-to-rem(300px);
+$ftv-ad-pave-width: px-to-rem(300px);
 
-.ad-base {
+.ftv-ad-base {
   display: block;
   overflow: hidden;
 
   @if ($media-queries) {
-    @media all and (max-width: $ad-pave-width + 2 * $grid-gutter + $scroll-bar-width) {
+    @media all and (max-width: $ftv-ad-pave-width + 2 * $grid-gutter + $scroll-bar-width) {
       width: auto;
       overflow: hidden;
     }
   }
 }
 
-.ad-banner-center {
+.ftv-ad-banner-center {
   display: inline-block;
   vertical-align: top;
   text-align: left;
@@ -27,8 +27,8 @@ $ad-pave-width: px-to-rem(300px);
   }
 }
 
-.ad-banner {
-  @extend .ad-base;
+.ftv-ad-banner {
+  @extend .ftv-ad-base;
 
   text-align: center;
 
@@ -37,8 +37,8 @@ $ad-pave-width: px-to-rem(300px);
   }
 }
 
-.ad-pave {
-  @extend .ad-base;
+.ftv-ad-pave {
+  @extend .ftv-ad-base;
 
   width: 300px;
   height: 250px;
@@ -47,14 +47,14 @@ $ad-pave-width: px-to-rem(300px);
 
 }
 
-.ad-sumo {
-  @extend .ad-pave;
+.ftv-ad-sumo {
+  @extend .ftv-ad-pave;
 
   height: auto;
   min-height: 250px;
   max-height: 600px;
 }
 
-.ad-slot {
+.ftv-ad-slot {
   min-height: 1px; // avoid offsets width and height 0x0 (invisible slots are not generated)
 }

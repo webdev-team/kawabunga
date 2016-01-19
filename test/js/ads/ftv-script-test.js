@@ -3,7 +3,7 @@ var expect = chai.expect;
 
 var env = require('../test-env');
 
-var ftvScript = require('../.././ftv-script');
+var ftvScript = require('../../../assets/js/advertising/ftv-script');
 
 var scriptLoader = require('../../../assets/js/utils/script-loader');
 
@@ -14,6 +14,7 @@ describe('ftv-script.js', function () {
         delete global.OAS_query;
         delete global.OAS_sitepage;
 
+        env.initWithEmptyHtml();
     });
 
     describe('getRandomToken', function () {
@@ -47,6 +48,42 @@ describe('ftv-script.js', function () {
             global.OAS_sitepage = 'www.ftv-publicite.fr/accueil';
 
             expect(ftvScript.getScriptSrc()).to.match(/^http:\/\/pub.ftv-publicite.fr\/4\/www.ftv-publicite.fr\/accueil\/1[0-9]+@Top,Middle\?$/)
+        });
+
+        it('should find used positions in page', function () {
+            env.initWithHtml('' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle2" data-width="300" data-height="250"></div>');
+
+            global.OAS_sitepage = 'www.ftv-publicite.fr/accueil';
+
+            expect(ftvScript.getScriptSrc()).to.match(/^http:\/\/pub.ftv-publicite.fr\/4\/www.ftv-publicite.fr\/accueil\/1[0-9]+@Middle,Middle2\?$/)
+        });
+    });
+
+    describe('getPositions', function () {
+        it('should find used positions in page', function () {
+            env.initWithHtml('' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle2" data-width="300" data-height="250"></div>');
+
+            expect(ftvScript.getPositions()).to.equal('Middle,Middle2');
+        });
+
+        it('should prefer global.OAS_listpos id present', function () {
+            env.initWithHtml('' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle" data-width="300" data-height="250"></div>' +
+                '<div class="js-ftv-ad" id="pave-300x250-top" data-position="Middle2" data-width="300" data-height="250"></div>');
+
+            global.OAS_listpos = 'Top';
+
+            expect(ftvScript.getPositions()).to.equal('Top');
+        });
+
+        it('should not fail if noting found', function () {
+            env.initWithEmptyHtml();
+
+            expect(ftvScript.getPositions()).to.equal('');
         });
     });
 

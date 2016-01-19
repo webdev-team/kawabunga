@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <link rel="stylesheet" href="../../scss/pages/ads.css">
+    <link rel="stylesheet" href="../../scss/pages/ads-ftv.css">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -25,11 +25,11 @@
 
             <p>Le javascript recherche la classe .js-ftv afin d'injecter les pubs</p>
 
-            <pre class="prettyprint lang-js">{% filter escape %}{% include '../../js/pages/ads.js' %}{% endfilter %}</pre>
+            <pre class="prettyprint lang-js">{% filter escape %}{% include '../../js/pages/ads-ftv.js' %}{% endfilter %}</pre>
 
             <p>Pour fonctionner, le javascript a besoin de la config suivante dans la page (avant chargement du js)</p>
 
-            <pre class="prettyprint lang-js">{% filter escape %}{% include 'ads-ftv-config.html' %}{% endfilter %}</pre>
+            <pre class="prettyprint lang-js">{% filter escape %}{% include '../../../assets/sample/advertising/ads-ftv-config.html' %}{% endfilter %}</pre>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
                     </div>
                     <div id="ads-banner-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_ftv-ad.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     </div>
                     <div id="ads-pave-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_ftv-ad.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                     </div>
                     <div id="ads-sumo-css" class="tab-pane fade">
                         <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_display.scss" %}</pre>
+                            <pre class="prettyprint lang-css">{% include "../../../assets/scss/component/advertising/_ftv-ad.scss" %}</pre>
                         </figure>
                     </div>
                 </div>
@@ -118,9 +118,9 @@
         </div>
     </div>
 </div>
-{% include 'ads-ftv-config.html' %}
+{% include '../../../assets/sample/advertising/ads-ftv-config.html' %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="../../js/pages/ads.js"></script>
+<script src="../../js/pages/ads-ftv.js"></script>
 </body>
 </html>

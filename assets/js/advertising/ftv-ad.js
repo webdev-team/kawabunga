@@ -33,7 +33,7 @@ exports.init = function () {
 };
 
 exports.setupAds = function () {
-    _.each(document.getElementsByClassName('js-ftv'), function (element) {
+    _.each(document.getElementsByClassName('js-ftv-ad'), function (element) {
         if (utils.isVisible(element)) {
             exports.setupAd(element);
         }
