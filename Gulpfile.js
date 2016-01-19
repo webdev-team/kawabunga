@@ -44,7 +44,7 @@ gulp.task('html', function () {
             gutil.log(err);
             this.emit('end'); // end this stream
         })
-        .pipe(gulp.dest('build/sandbox'))
+        .pipe(gulp.dest('build/sandbox'));
 });
 
 gulp.task('js', function(done) {
