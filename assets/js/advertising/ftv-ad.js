@@ -1,5 +1,5 @@
 
-require('../../../node_modules/js-polyfills/dom');
+require('js-polyfills/dom');
 
 var _ = require('lodash');
 
