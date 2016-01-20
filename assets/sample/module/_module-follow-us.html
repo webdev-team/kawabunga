@@ -1,8 +1,23 @@
 <div class="fontface">
-    <div class="module-follow-us <%= locals.moduleSize ? moduleSize : '' %>">
-        <header class="<%= locals.headerSize ? headerSize : 'section-header' %>">
-            <span class="<%= locals.headerTextSize ? headerTextSize : 'main-text' %> <%= locals.uppercase ? uppercase : '' %>">Nous rejoindre</span>
+    <% if (locals.size == 'small') { %>
+    <div class="module-follow-us small">
+        <header class="section-header-s">
+            <% if (locals.domain && domain == 'GIRLS') { %>
+            <span class="text">Nous rejoindre</span>
+            <% } else { %>
+            <span class="text uppercase">Nous rejoindre</span>
+            <% } %>
         </header>
+    <% } else { %>
+    <div class="module-follow-us">
+        <header class="section-header">
+            <% if (locals.domain && domain == 'GIRLS') { %>
+            <span class="main-text">Nous rejoindre</span>
+            <% } else { %>
+            <span class="main-text uppercase">Nous rejoindre</span>
+            <% } %>
+        </header>
+    <% } %>
         <a href="#" class="item">
             <i class="icon icon-ff icon-facebook"></i>
             <span class="no-ff">Facebook</span>
