@@ -24,10 +24,10 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-2">
-                                    <div class="btn uppercase">Voter</div>
+                                    <%- include('../../assets/sample/button/_btn.html', {textBtn: 'Voter'}) %>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="btn">Inscrivez-vous</div>
+                                    <%- include('../../assets/sample/button/_btn.html', {textBtn: 'Inscrivez-vous'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -38,7 +38,7 @@
                             <div class="tab-content">
                                 <div id="rtl-classic-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">&lt;div class="btn uppercase"&gt;Voter&lt;/div&gt;<br/>&lt;div class="btn"&gt;Inscrivez-vous&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/button/_btn.html', {textBtn: 'Voter'}) %><%= include('../../assets/sample/button/_btn.html', {textBtn: 'Inscrivez-vous'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-classic-css" class="tab-pane fade">
@@ -60,62 +60,23 @@
                             <!-- RTL -->
                             <form class="site code-example col-md-12">
                                 <div class="col-md-4">
-                                    <div class="btn-link icon icon-chevron-left-bis">Aller vers l'&eacute;mission</div>
+                                    <%- include('../../assets/sample/button/_btn-link.html', {textBtn: 'Aller vers l&apos;émission'}) %>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="btn-hover">
-                                        <a href="#" class="btn-hover-item">
-                                            <img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt>
-                                        </a>
-                                        <a href="#" class="btn-hover-item">
-                                            <img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt>
-                                        </a>
-                                        <a href="#" class="btn-hover-item">
-                                            <img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt>
-                                        </a>
-                                        <span class="btn-hover-frontside icon icon-buy-music">
-                                            Acheter<br/>ce morceau
-                                        </span>
-                                    </div>
+                                    <%- include('../../assets/sample/button/_btn-hover.html') %>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="btn-bicolor btn-bicolor-large cf">
-                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
-                                            <i class="icon icon-ff icon-loupe"></i>
-                                            <span class="no-ff">OK</span>
-                                        </button>
-                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
-                                            <span class="align">Rechercher</span>
-                                        </label>
-                                    </div>
+                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-large', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="btn-bicolor">
-                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
-                                            <span class="align">Répondre</span>
-                                        </label>
-                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
-                                            <i class="icon icon-ff icon-crayon"></i>
-                                            <span class="no-ff">OK</span>
-                                        </button>
-                                    </div>
+                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="btn-bicolor btn-bicolor-small">
-                                        <label for="btn-bicolor-submit" class="btn-bicolor-label uppercase">
-                                            <span class="align">Répondre</span>
-                                        </label>
-                                        <button id="btn-bicolor-submit" class="btn-bicolor-input uppercase">
-                                            <i class="icon icon-ff icon-crayon"></i>
-                                            <span class="no-ff">OK</span>
-                                        </button>
-                                    </div>
+                                <div class="col-md-4">
+                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-small', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
                                 <div class="col-md-2">
-                                    <div class="example-set-color max-width-100 position-static">
-                                        <span class="btn-text icon icon-play">
-                                            <span class="text uppercase">Replay</span>
-                                        </span>
+                                    <div class="example-set-color position-static">
+                                        <%- include('../../assets/sample/button/_btn-text.html') %>
                                     </div>
                                 </div>
                             </form>
@@ -127,52 +88,12 @@
                             <div class="tab-content">
                                 <div id="rtl-particular-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;div class="btn-link icon icon-chevron-left-bis"&gt;Aller vers l'&eacute;mission&lt;/div&gt;<br/>
-&lt;div class="btn-hover"&gt;
-&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
-&nbsp;&nbsp;&lt;img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
-&nbsp;&lt;/a&gt;
-&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
-&nbsp;&nbsp;&lt;img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
-&nbsp;&lt;/a&gt;
-&nbsp;&lt;a href="#" class="btn-hover-item"&gt;
-&nbsp;&nbsp;&lt;img class="btn-hover-img" src="http://placehold.it/40x40" width="40" height="40" alt&gt;
-&nbsp;&lt;/a&gt;
-&nbsp;&lt;span class="btn-hover-frontside icon icon-buy-music"&gt;
-&nbsp;&nbsp;Acheter&lt;br/&gt;ce morceau
-&nbsp;&lt;/span&gt;
-&lt;/div&gt;<br/>
-&lt;div class="btn-bicolor btn-bicolor-large cf"&gt;
-&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
-&nbsp;&nbsp;&lt;span class="align"&gt;Rechercher&lt;/span&gt;
-&nbsp;&lt;/label&gt;
-&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
-&nbsp;&nbsp;&lt;i class="icon icon-ff icon-loupe"&gt;&lt;/i&gt;
-&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
-&nbsp;&lt;/button&gt;
-&lt;/div&gt;<br/>
-&lt;div class="btn-bicolor cf"&gt;
-&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
-&nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;
-&nbsp;&lt;/label&gt;
-&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
-&nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;
-&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
-&nbsp;&lt;/button&gt;
-&lt;/div&gt;<br/>
-&lt;div class="btn-bicolor btn-bicolor-small cf"&gt;
-&nbsp;&lt;label for="btn-bicolor-submit" class="btn-bicolor-label uppercase"&gt;
-&nbsp;&nbsp;&lt;span class="align"&gt;Répondre&lt;/span&gt;
-&nbsp;&lt;/label&gt;
-&nbsp;&lt;button id="btn-bicolor-submit" class="btn-bicolor-input uppercase"&gt;
-&nbsp;&nbsp;&lt;i class="icon icon-ff icon-crayon"&gt;&lt;/i&gt;
-&nbsp;&nbsp;&nbsp;&lt;span class="no-ff"&gt;OK&lt;/span&gt;
-&nbsp;&lt;/button&gt;
-&lt;/div&gt;<br/>
-&lt;span class="btn-text icon icon-play"&gt;
-&nbsp;&lt;span class="text uppercase"&gt;Replay&lt;/span&gt;
-&lt;/span&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/button/_btn-link.html', {textBtn: 'Aller vers l&apos;émission'}) %><br/>
+<%= include('../../assets/sample/button/_btn-hover.html') %><br/>
+<%= include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-large', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %><br/>
+<%= include('../../assets/sample/button/_btn-bicolor.html', {textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %><br/>
+<%= include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-small', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %><br/>
+<%= include('../../assets/sample/button/_btn-text.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-particular-css" class="tab-pane fade">
@@ -201,9 +122,7 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3">
-                                    <div class="input-text">
-                                        <input class="input uppercase" type="text" placeholder="Rechercher" name="" />
-                                    </div>
+                                    <%- include('../../assets/sample/input/_input-text.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -214,7 +133,7 @@
                             <div class="tab-content">
                                 <div id="rtl-input-text-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">&lt;div class="input-text"&gt;<br/>&nbsp;&lt;input class="input uppercase" type="text" placeholder="Rechercher" name="" /&gt;<br/>&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/input/_input-text.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-input-text-css" class="tab-pane fade">
@@ -277,16 +196,16 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
-                                    <div class="module-header">La question du jour</div>
+                                    <%- include('../../assets/sample/module/_module-header.html', {text: 'La question du jour'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="module-header actu-bg-color">La question du jour</div>
+                                    <%- include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'actu-bg-color'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="module-header sport-bg-color">La question du jour</div>
+                                    <%- include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'sport-bg-color'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="module-header culture-bg-color">La question du jour</div>
+                                    <%- include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'culture-bg-color'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -297,11 +216,10 @@
                             <div class="tab-content">
                                 <div id="rtl-module-header-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;div class="module-header"&gt;La question du jour&lt;/div&gt;
-&lt;div class="module-header actu-bg-color"&gt;La question du jour&lt;/div&gt;
-&lt;div class="module-header sport-bg-color"&gt;La question du jour&lt;/div&gt;
-&lt;div class="module-header culture-bg-color"&gt;La question du jour&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-header.html', {text: 'La question du jour'}) %><br/>
+<%= include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'actu-bg-color'}) %><br/>
+<%= include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'sport-bg-color'}) %><br/>
+<%= include('../../assets/sample/module/_module-header.html', {text: 'La question du jour', category: 'culture-bg-color'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-header-css" class="tab-pane fade">
@@ -324,10 +242,10 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
-                                    <div class="module-link module-border icon icon-chevron-bas">Voir plus de commentaires</div>
+                                    <%- include('../../assets/sample/module/_module-link.html', {text: 'Voir plus de commentaires', border: 'border'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="module-link module-border-top icon icon-chevron-right-bis">Voir le dossier</div>
+                                    <%- include('../../assets/sample/module/_module-link.html', {text: 'Voir le dossier', border: 'border-top'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -338,7 +256,8 @@
                             <div class="tab-content">
                                 <div id="rtl-link-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">&lt;div class="module-link module-border icon icon-chevron-bas"&gt;La question du jour&lt;/div&gt;<br/>&lt;div class="module-link module-border-top icon icon-chevron-right-bis"&gt;Voir le dossier&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-link.html', {text: 'Voir plus de commentaires', border: 'border'}) %><br/>
+<%= include('../../assets/sample/module/_module-link.html', {text: 'Voir le dossier', border: 'border-top'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-link-css" class="tab-pane fade">

@@ -1,0 +1,10 @@
+
+<div class="btn-bicolor <%= locals.sizeBtn ? sizeBtn : '' %> margin-bottom">
+    <label for="search-submit" class="btn-bicolor-label uppercase">
+        <span class="align"><%= locals.textBtn ? textBtn : 'BUTTON' %></span>
+    </label>
+    <button id="search-submit" class="btn-bicolor-input uppercase">
+        <i class="icon icon-ff <%= locals.classIcon ? classIcon : 'icon-search' %>"></i>
+        <span class="no-ff"><%= locals.textBtn ? textBtn : 'BUTTON' %></span>
+    </button>
+</div>
