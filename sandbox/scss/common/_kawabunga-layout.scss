@@ -186,11 +186,6 @@ a, a:hover, a:link {
   display: none; // avoid a skin-link displayed without skin.css injected
 }
 
-/* Echo Images */
-.img-echo {
-  background: url('../img/loader.gif') center center no-repeat transparent;
-}
-
 /*@if ($responsive-liquid == false) {
 
    Agressive responsive mode

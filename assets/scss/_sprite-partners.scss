@@ -1,0 +1,345 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.sprite-partner-android-appstore {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3472px 0px;
+  width: 207px;
+  height: 67px;
+}
+.sprite-partner-apple-appstore {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3265px 0px;
+  width: 207px;
+  height: 67px;
+}
+.sprite-partner-btn-femme-checked {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -960px 0px;
+  width: 134px;
+  height: 43px;
+}
+.sprite-partner-btn-femme {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1362px 0px;
+  width: 134px;
+  height: 43px;
+}
+.sprite-partner-btn-homme-checked {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1228px 0px;
+  width: 134px;
+  height: 43px;
+}
+.sprite-partner-btn-homme {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1094px 0px;
+  width: 134px;
+  height: 43px;
+}
+.sprite-partner-icon-astro {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1634px 0px;
+  width: 140px;
+  height: 40px;
+}
+.sprite-partner-icon-dj {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -104px 0px;
+  width: 52px;
+  height: 52px;
+}
+.sprite-partner-icon-heart {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -316px 0px;
+  width: 56px;
+  height: 52px;
+}
+.sprite-partner-icon-immo {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -612px 0px;
+  width: 80px;
+  height: 52px;
+}
+.sprite-partner-icon-instagram {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -208px 0px;
+  width: 52px;
+  height: 52px;
+}
+.sprite-partner-icon-justice {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -428px 0px;
+  width: 60px;
+  height: 52px;
+}
+.sprite-partner-icon-kelformation {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -372px 0px;
+  width: 56px;
+  height: 52px;
+}
+.sprite-partner-icon-keljob {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -156px 0px;
+  width: 52px;
+  height: 52px;
+}
+.sprite-partner-icon-paris-hippiques {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -692px 0px;
+  width: 84px;
+  height: 53px;
+}
+.sprite-partner-icon-paris-sportifs {
+  background-image: url(../img/sprite-partners.png);
+  background-position: 0px 0px;
+  width: 52px;
+  height: 52px;
+}
+.sprite-partner-icon-paru-vendu {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -488px 0px;
+  width: 60px;
+  height: 46px;
+}
+.sprite-partner-icon-pme {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -260px 0px;
+  width: 56px;
+  height: 33px;
+}
+.sprite-partner-icon-shopping {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -52px 0px;
+  width: 52px;
+  height: 52px;
+}
+.sprite-partner-icon-tv {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -548px 0px;
+  width: 64px;
+  height: 52px;
+}
+.sprite-partner-logo-devices {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3679px 0px;
+  width: 269px;
+  height: 148px;
+}
+.sprite-partner-logo-easyflirt {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -860px 0px;
+  width: 100px;
+  height: 30px;
+}
+.sprite-partner-logo-explorimmo {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2372px 0px;
+  width: 159px;
+  height: 30px;
+}
+.sprite-partner-logo-instagram {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1774px 0px;
+  width: 140px;
+  height: 40px;
+}
+.sprite-partner-logo-justice {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2214px 0px;
+  width: 158px;
+  height: 50px;
+}
+.sprite-partner-logo-kelformation {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2709px 0px;
+  width: 185px;
+  height: 19px;
+}
+.sprite-partner-logo-keljob {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2064px 0px;
+  width: 150px;
+  height: 30px;
+}
+.sprite-partner-logo-leguide {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3079px 0px;
+  width: 186px;
+  height: 32px;
+}
+.sprite-partner-logo-paru-vendu {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1914px 0px;
+  width: 150px;
+  height: 30px;
+}
+.sprite-partner-logo-pme {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2894px 0px;
+  width: 185px;
+  height: 15px;
+}
+.sprite-partner-logo-pmu {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -1496px 0px;
+  width: 138px;
+  height: 32px;
+}
+.sprite-partner-logo-soonight {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -776px 0px;
+  width: 84px;
+  height: 52px;
+}
+.sprite-partner-logo-teleloisirs {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -2531px 0px;
+  width: 178px;
+  height: 36px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  .sprite-partner-android-appstore {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-apple-appstore {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-btn-femme-checked {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-btn-femme {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-btn-homme-checked {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-btn-homme {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-astro {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-dj {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-heart {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-immo {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-instagram {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-justice {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-kelformation {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-keljob {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-paris-hippiques {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-paris-sportifs {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-paru-vendu {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-pme {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-shopping {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-icon-tv {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-devices {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-easyflirt {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-explorimmo {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-instagram {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-justice {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-kelformation {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-keljob {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-leguide {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-paru-vendu {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-pme {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-pmu {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-soonight {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+  .sprite-partner-logo-teleloisirs {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 3948px 148px;
+  }
+}

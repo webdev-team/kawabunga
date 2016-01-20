@@ -11,7 +11,6 @@ var rename = require('gulp-rename');
 var base64 = require('gulp-base64');
 var imagemin = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
-var gulpif = require('gulp-if');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var glob = require('glob');
@@ -22,6 +21,7 @@ var _ = require('lodash');
 var flatten = require('gulp-flatten');
 var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
+var replace = require('gulp-replace');
 
 gulp.task('css', function () {
     return gulp.src('sandbox/scss/*.scss')
@@ -81,43 +81,30 @@ var browserifyFile = function(file) {
 
 /*
  * Sprites & Img
- *
- * Sprite TODO : test and go in single config via spriteRetina possibility with spritesmith... more convenient for building
- * Maybe a little awkward in img for the handle. To be tested.
  */
 
-gulp.task('sprite', ['sprite:x1', 'sprite:x2']);
-
-gulp.task('sprite:x1', function () {
-    return gulp.src('assets/img/sprite-partners/*.png')
+gulp.task('sprite', function () {
+    var spriteData = gulp.src('assets/sprite/partners/*.png')
         .pipe(spritesmith({
-            imgName     : 'sprite-partners.png',
-            cssName     : '_sprite-partners.scss',
-            padding     : 2,
-            cssFormat   : 'scss',
-            algorithm   : 'left-right',
-            imgPath     : '../img/sprite-partners.png',
-            cssSpritesheetName : 'sprite-partners'
-        }))
-        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
-});
+            cssName: '_sprite-partners.scss',
+            cssFormat: 'css_retina',
+            algorithm: 'left-right',
+            imgName: 'sprite-partners.png',
+            imgPath: '../img/sprite-partners.png',
+            retinaSrcFilter: '**/*@2x.png',
+            retinaImgName: 'sprite-partners@2x.png',
+            retinaImgPath: '../img/sprite-partners@2x.png'
+        }));
 
-gulp.task('sprite:x2', function () {
-    return gulp.src('assets/img/sprite-retina-partners/*.png')
-        .pipe(spritesmith({
-            imgName     : 'sprite-retina-partners.png',
-            cssName     : '_sprite-retina-partners.scss',
-            padding     : 4,
-            cssFormat   : 'scss',
-            algorithm   : 'left-right',
-            imgPath     : '../img/sprite-retina-partners.png',
-            cssSpritesheetName : 'sprite-retina-partners'
-        }))
-        .pipe(gulpif('*.png', gulp.dest('assets/img'), gulp.dest('assets/scss/sprites')))
+    spriteData.img.pipe(gulp.dest('assets/img'));
+
+    spriteData.css
+        .pipe(replace('.icon-', '.sprite-partner-'))
+        .pipe(gulp.dest('assets/scss'));
 });
 
 gulp.task('img', function () {
-    return gulp.src(['assets/img/**', '!assets/img/sprite-partners/**', '!assets/img/sprite-retina-partners/**', '!assets/img/**/init.gif'])
+    return gulp.src('assets/img/**')
         .pipe(imagemin())
         .pipe(gulp.dest('build/sandbox/img/'))
 });
@@ -216,7 +203,7 @@ gulp.task('clean', function (cb) {
     del(['build'], cb);
 });
 
-gulp.task('compile', ['sprite', 'img', 'css', 'font', 'js', 'html']);
+gulp.task('compile', ['img', 'css', 'font', 'js', 'html']);
 
 gulp.task('build', function(cb) {
     runSequence('clean', 'compile', cb);
