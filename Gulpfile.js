@@ -113,20 +113,20 @@ gulp.task('font', function () {
 
 gulp.task('iconfont', function () {
     return gulp.src([
-            'assets/icon/common/astro/*.svg',
-            'assets/icon/common/meteo/*.svg',
-            'assets/icon/common/others/*.svg',
-            'assets/icon/common/social/facebook/*.svg',
-            'assets/icon/common/social/googleplus/*.svg',
-            'assets/icon/common/social/instagram/*.svg',
-            'assets/icon/common/social/linkedin/*.svg',
-            'assets/icon/common/social/pinterest/*.svg',
-            'assets/icon/common/social/twitter/*.svg',
-            'assets/icon/common/social/youtube/*.svg',
-            'assets/icon/funradio/*.svg',
-            'assets/icon/girls/*.svg',
-            'assets/icon/rtl/*.svg',
-            'assets/icon/rtl2/*.svg'
+            'assets/svg/common/astro/*.svg',
+            'assets/svg/common/meteofrance/*.svg',
+            'assets/svg/common/others/*.svg',
+            'assets/svg/common/social/facebook/*.svg',
+            'assets/svg/common/social/googleplus/*.svg',
+            'assets/svg/common/social/instagram/*.svg',
+            'assets/svg/common/social/linkedin/*.svg',
+            'assets/svg/common/social/pinterest/*.svg',
+            'assets/svg/common/social/twitter/*.svg',
+            'assets/svg/common/social/youtube/*.svg',
+            'assets/svg/funradio/*.svg',
+            'assets/svg/girls/*.svg',
+            'assets/svg/rtl/*.svg',
+            'assets/svg/rtl2/*.svg'
         ])
         .pipe(iconfont({
             fontName: 'Kawabunga-Icon',
@@ -135,7 +135,7 @@ gulp.task('iconfont', function () {
 
         }))
         .on('glyphs', function (glyphs, options) {
-            gulp.src('assets/icon/_fonticon.scss.template')
+            gulp.src('assets/svg/_fonticon.scss.template')
                 .pipe(consolidate('lodash', {
                     glyphs: glyphs,
                     fontName: 'Kawabunga-Icon',
