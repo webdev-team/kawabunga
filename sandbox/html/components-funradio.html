@@ -16,6 +16,42 @@
         <!--Main Content -->
         <div class="col-md-9">
 
+            <section id="general" class="col-md-12">
+                <h1 class="kawa-h1">General</h1>
+                <div id="mainFooter" class="col-md-12">
+                    <h2 class="kawa-h2">Main footer</h2>
+                    <!-- RTL -->
+                    <form class="code-example col-md-12">
+                        <div class="col-md-12">
+                            <%- include('../../assets/sample/page/_main-footer.html', {logo: 'fun_radio'}) %>
+                        </div>
+                    </form>
+                    <ul class="nav nav-tabs nav-child">
+                        <li class="active"><a data-toggle="tab" href="#girls-main-footer-html">HTML</a></li>
+                        <li><a data-toggle="tab" href="#girls-main-footer-css">CSS</a></li>
+                        <li><a data-toggle="tab" href="#girls-main-footer-ejs">EJS</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="girls-main-footer-html" class="tab-pane fade in active">
+                            <figure class="highlighted col-md-12">
+                                <pre class="prettyprint lang-html"><%= include('../../assets/sample/page/_main-footer.html', {logo: 'fun_radio'}) %></pre>
+                            </figure>
+                        </div>
+                        <div id="girls-main-footer-css" class="tab-pane fade">
+                            <figure class="highlighted col-md-12">
+                                <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/page/_main-footer.scss") %></pre>
+                            </figure>
+                        </div>
+                        <div id="girls-main-footer-ejs" class="tab-pane fade">
+                            <figure class="highlighted col-md-12">
+                                <pre class="prettyprint lang-html">
+
+                                </pre>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="button" class="col-md-12">
                 <h1 class="kawa-h1">Buttons</h1>
                 <div id="classic" class="col-md-12">
@@ -778,8 +814,7 @@
                 <li>
                     <a href="#general">General</a>
                     <ul class="nav nav-stacked">
-                        <li><a href="#header">Header</a></li>
-                        <li><a href="#footer">Footer</a></li>
+                        <li><a href="#mainFooter">Main footer</a></li>
                     </ul>
                 </li>
                 <li>

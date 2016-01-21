@@ -5,6 +5,13 @@
 
 $font-design: $eurostile-regular-font-family;
 
+// Main footer
+$footer-main-font-family: $font-design;
+$footer-main-text-color: $fun-grey;
+$footer-main-list-bg-color: $fun-blue;
+$footer-main-list-item-border-color: $fun-blue-light;
+$footer-main-list-link-bg-color_hover: $fun-blue-dark;
+
 // Button
 $btn-bg-color: $fun-pink;
 $btn-bg-color_hover: $fun-pink-dark;

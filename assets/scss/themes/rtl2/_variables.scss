@@ -5,6 +5,13 @@
 
 $font-design: $oswald-regular-font-family;
 
+// Main footer
+$footer-main-font-family: $font-design;
+$footer-main-text-color: $rtl2-grey;
+$footer-main-list-bg-color: $rtl2-black;
+$footer-main-list-item-border-color: $rtl2-grey-darker;
+$footer-main-list-link-bg-color_hover: $rtl2-grey-darker;
+
 // Button
 $btn-bg-color: $rtl2-black;
 $btn-bg-color_hover: $rtl2-grey-dark;

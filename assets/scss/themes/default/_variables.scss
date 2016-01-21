@@ -4,6 +4,13 @@
 
 $font-design: $helvetica !default;
 
+// Main footer
+$footer-main-font-family: $font-design !default;
+$footer-main-text-color: $grey !default;
+$footer-main-list-bg-color: $black !default;
+$footer-main-list-item-border-color: $white !default;
+$footer-main-list-link-bg-color_hover: $grey-dark !default;
+
 // Button
 $btn-bg-color: $grey-dark !default;
 $btn-bg-color_hover: $black !default;

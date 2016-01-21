@@ -192,7 +192,7 @@ gulp.task('clean', function (cb) {
     del(['build'], cb);
 });
 
-gulp.task('compile', ['img', 'css', 'font', 'js', 'html']);
+gulp.task('compile', ['img', 'css', 'font', 'sprite', 'js', 'html']);
 
 gulp.task('build', function(cb) {
     runSequence('clean', 'compile', cb);

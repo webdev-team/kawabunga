@@ -5,6 +5,13 @@
 
 $font-design: $lato-regular-font-family;
 
+// Main footer
+$footer-main-font-family: $font-design;
+$footer-main-text-color: $rtl-grey;
+$footer-main-list-bg-color: $rtl-red;
+$footer-main-list-item-border-color: $rtl-red-lightest-light;
+$footer-main-list-link-bg-color_hover: $rtl-red-light;
+
 // Button
 $btn-bg-color: $rtl-red;
 $btn-bg-color_hover: $rtl-red-light;
