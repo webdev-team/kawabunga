@@ -79,10 +79,6 @@ var browserifyFile = function(file) {
     return browserify(opts)
 };
 
-/*
- * Sprites & Img
- */
-
 gulp.task('sprite', function () {
     var spriteData = gulp.src('assets/sprite/partners/*.png')
         .pipe(spritesmith({
@@ -96,11 +92,12 @@ gulp.task('sprite', function () {
             retinaImgPath: '../img/sprite-partners@2x.png'
         }));
 
-    spriteData.img.pipe(gulp.dest('assets/img'));
-
-    spriteData.css
-        .pipe(replace('.icon-', '.sprite-partner-'))
-        .pipe(gulp.dest('assets/scss'));
+    return eventStream.merge(
+        spriteData.img.pipe(gulp.dest('assets/img')),
+        spriteData.css
+            .pipe(replace('.icon-', '.sprite-partner-'))
+            .pipe(gulp.dest('assets/scss'))
+    );
 });
 
 gulp.task('img', function () {
@@ -109,18 +106,10 @@ gulp.task('img', function () {
         .pipe(gulp.dest('build/sandbox/img/'))
 });
 
-/*
- * Fonts
- */
-
 gulp.task('font', function () {
     return gulp.src(['assets/font/*.*'])
         .pipe(gulp.dest('build/sandbox/font/'))
 });
-
-/*
- * IconFonts
- */
 
 gulp.task('iconfont', function () {
     return gulp.src([
