@@ -2,6 +2,7 @@
 @import "../default/colors";
 @import "colors";
 @import "font";
+@import "../../config";
 
 $font-design: $eurostile-regular-font-family;
 
@@ -11,6 +12,12 @@ $footer-main-text-color: $fun-grey;
 $footer-main-list-bg-color: $fun-blue;
 $footer-main-list-item-border-color: $fun-blue-light;
 $footer-main-list-link-bg-color_hover: $fun-blue-dark;
+
+$footer-main-list-item-logo-line-height: normal;
+$footer-main-list-item-icon_before-font-size: px-to-rem(72px);
+$footer-main-list-item-icon_before-position: relative;
+$footer-main-list-item-icon_before-z-index: 1;
+$footer-main-list-link-padding: px-to-rem(12px) px-to-rem(10px) px-to-rem(12px) px-to-rem(25px);
 
 // Button
 $btn-bg-color: $fun-pink;

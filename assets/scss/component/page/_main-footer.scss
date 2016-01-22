@@ -1,8 +1,8 @@
 
 @import "../../config";
 @import "../../functions";
-@import "../../themes/default/colors";
 @import "../../themes/rtl2/colors";
+@import "../../themes/default/colors";
 @import "../../themes/default/variables";
 
 /* Main Footer
@@ -31,7 +31,7 @@
       .text {
         display:inline-block;
         vertical-align:middle;
-        padding:px-to-rem(60px);
+        padding: 0 px-to-rem(60px);
         color: $footer-main-text-color;
         font-size:px-to-rem(26px);
 
@@ -62,7 +62,7 @@
   .list {
     overflow:auto;
     max-width:px-to-rem(300px);
-    padding:px-to-rem(48px) 0;
+    padding: $footer-main-list-padding;
     list-style-type:none;
     width:100%;
     background-color: $footer-main-list-bg-color;
@@ -82,15 +82,27 @@
       &.logo {
         position: relative;
         border:0;
-        line-height:px-to-rem(52px);
+        line-height: $footer-main-list-item-logo-line-height;
         padding:0 px-to-rem(10px) px-to-rem(9px) px-to-rem(25px);
       }
 
       &.icon:before {
+        font-size: $footer-main-list-item-icon_before-font-size;
         display:block;
         color:$white;
-        font-size:px-to-rem(80px);
         line-height:inherit;
+        position: $footer-main-list-item-icon_before-position;
+        z-index: $footer-main-list-item-icon_before-z-index;
+      }
+
+      &.icon-logo-fun_radio:after {
+        content:"";
+        display:block;
+        position:absolute;
+        top:0;
+        width: px-to-rem(84px);
+        height: px-to-rem(85px);
+        z-index:0;
       }
 
       &.icon-logo-rtl2:after {
@@ -108,7 +120,7 @@
 
       .list-link {
         display:block;
-        padding:px-to-rem(10px) px-to-rem(10px) px-to-rem(10px) px-to-rem(25px);
+        padding: $footer-main-list-link-padding;
         color:$white;
 
         &:hover {
@@ -154,6 +166,7 @@
     .list {
       position:relative;
       width:auto;
+      padding: $footer-main-list_media-small-padding;
 
       .logo {
         display:none;

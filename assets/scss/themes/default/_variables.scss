@@ -1,6 +1,7 @@
 
 @import "colors";
 @import "font";
+@import "../../config";
 
 $font-design: $helvetica !default;
 
@@ -10,6 +11,14 @@ $footer-main-text-color: $grey !default;
 $footer-main-list-bg-color: $black !default;
 $footer-main-list-item-border-color: $white !default;
 $footer-main-list-link-bg-color_hover: $grey-dark !default;
+
+$footer-main-list-padding: px-to-rem(48px) 0 !default;
+$footer-main-list_media-small-padding: px-to-rem(48px) 0 !default;
+$footer-main-list-item-logo-line-height: px-to-rem(52px) !default;
+$footer-main-list-item-icon_before-font-size: px-to-rem(80px) !default;
+$footer-main-list-item-icon_before-position: static !default;
+$footer-main-list-item-icon_before-z-index: auto !default;
+$footer-main-list-link-padding: px-to-rem(10px) px-to-rem(10px) px-to-rem(10px) px-to-rem(25px) !default;
 
 // Button
 $btn-bg-color: $grey-dark !default;

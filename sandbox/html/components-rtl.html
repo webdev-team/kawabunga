@@ -318,13 +318,13 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-4">
-                                    <div class="module-border"><p>Module avec bordure fine</p></div>
+                                    <%- include('../../assets/sample/module/_module-border.html', {text: 'Module avec bordure fine'}) %>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="module-border-heavy"><p>Module avec bordure &eacute;paisse</p></div>
+                                    <%- include('../../assets/sample/module/_module-border.html', {border: '-heavy', text: 'Module avec bordure épaisse'}) %>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="module-border-top"><p>Module avec bordure haute</p></div>
+                                    <%- include('../../assets/sample/module/_module-border.html', {border: '-top', text: 'Module avec bordure haute'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -335,10 +335,9 @@
                             <div class="tab-content">
                                 <div id="rtl-border-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;div class="module-border"&gt;&lt;p&gt;Module avec bordure fine&lt;/p&gt;&lt;/div&gt;
-&lt;div class="module-border-heavy"&gt;&lt;p&gt;Module avec bordure &eacute;paisse&lt;/p&gt;&lt;/div&gt;
-&lt;div class="module-border-top"&gt;&lt;p&gt;Module avec bordure haute&lt;/p&gt;&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-border.html', {text: 'Module avec bordure fine'}) %><br/>
+<%= include('../../assets/sample/module/_module-border.html', {border: '-heavy', text: 'Module avec bordure épaisse'}) %><br/>
+<%= include('../../assets/sample/module/_module-border.html', {border: '-top', text: 'Module avec bordure haute'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-border-css" class="tab-pane fade">
@@ -366,16 +365,16 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
-                                    <span class="module-footer icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                    <%- include('../../assets/sample/module/_module-footer.html') %>
                                 </div>
                                 <div class="col-md-5">
-                                    <span class="module-footer actu-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                    <%- include('../../assets/sample/module/_module-footer.html', {category: 'actu-bg-color'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <span class="module-footer sport-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                    <%- include('../../assets/sample/module/_module-footer.html', {category: 'sport-bg-color'}) %>
                                 </div>
                                 <div class="col-md-5">
-                                    <span class="module-footer culture-bg-color icon icon-chevron-right-bis">La page de l'&eacute;mission</span>
+                                    <%- include('../../assets/sample/module/_module-footer.html', {category: 'culture-bg-color'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -386,11 +385,10 @@
                             <div class="tab-content">
                                 <div id="rtl-module-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;span class="module-footer icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
-&lt;span class="module-footer actu-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
-&lt;span class="module-footer sport-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;
-&lt;span class="module-footer culture-bg-color icon icon-chevron-right-bis"&gt;La page de l'&eacute;mission&lt;/span&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-footer.html') %><br/>
+<%= include('../../assets/sample/module/_module-footer.html', {category: 'actu-bg-color'}) %><br/>
+<%= include('../../assets/sample/module/_module-footer.html', {category: 'sport-bg-color'}) %><br/>
+<%= include('../../assets/sample/module/_module-footer.html', {category: 'culture-bg-color'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-footer-css" class="tab-pane fade">
@@ -445,15 +443,7 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-8">
-                                    <div class="module-comment">
-                                        <form>
-                                            <fieldset class="js-field-limiter js-field-policy">
-                                                <textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"></textarea>
-                                                <input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer">
-                                                <em class="module-comment-counter"><b class="js-counter-listener">500</b> caractères restants</em>
-                                            </fieldset>
-                                        </form>
-                                    </div>
+                                    <%- include('../../assets/sample/module/_module-comment.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -464,16 +454,7 @@
                             <div class="tab-content">
                                 <div id="rtl-module-comment-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;div class="module-comment"&gt;
-&nbsp;&lt;form&gt;
-&nbsp;&nbsp;&lt;fieldset class="js-field-limiter js-field-policy"&gt;
-&nbsp;&nbsp;&nbsp;&lt;textarea rows="5" cols="50" class="module-comment-field js-field-listener js-textarea-policy js-textarea-request" placeholder="Commenter" name="text"&gt;&lt;/textarea&gt;
-&nbsp;&nbsp;&nbsp;&lt;input class="btn uppercase module-comment-submit js-submit-listener js-submit-policy js-submit-request" type="submit" value="Envoyer"&gt;
-&nbsp;&nbsp;&nbsp;&lt;em class="module-comment-counter"&gt;&lt;b class="js-counter-listener"&gt;500&lt;/b&gt; caractères restants&lt;/em&gt;
-&nbsp;&nbsp;&lt;/fieldset&gt;
-&nbsp;&lt;/form&gt;
-&lt;/div&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/module/_module-comment.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-module-comment-css" class="tab-pane fade">
@@ -597,23 +578,23 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3">
-                                    <a class="article-text-link">Lien texte article</a>
+                                    <%- include('../../assets/sample/article/_article-text-link.html') %>
                                 </div>
                                 <div class="col-md-3">
-                                    <a class="article-text-link actu-color">Lien texte article</a>
+                                    <%- include('../../assets/sample/article/_article-text-link.html', {category: 'actu-color'}) %>
                                 </div>
                                 <div class="col-md-3">
-                                    <a class="article-text-link sport-color">Lien texte article</a>
+                                    <%- include('../../assets/sample/article/_article-text-link.html', {category: 'sport-color'}) %>
                                 </div>
                                 <div class="col-md-3">
-                                    <a class="article-text-link culture-color">Lien texte article</a>
+                                    <%- include('../../assets/sample/article/_article-text-link.html', {category: 'culture-color'}) %>
                                 </div>
                                 <div class="col-md-10">
                                     <ul class="article-text-list">
-                                        <li class="item"><a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                        <li class="item actu-bg-color_before"><a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                        <li class="item sport-bg-color_before"><a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
-                                        <li class="item culture-bg-color_before"><a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
+                                        <%- include('../../assets/sample/article/_article-text-list.html') %>
+                                        <%- include('../../assets/sample/article/_article-text-list.html', {category: 'actu-color', category_before: 'actu-bg-color_before'}) %>
+                                        <%- include('../../assets/sample/article/_article-text-list.html', {category: 'sport-color', category_before: 'sport-bg-color_before'}) %>
+                                        <%- include('../../assets/sample/article/_article-text-list.html', {category: 'culture-color', category_before: 'culture-bg-color_before'}) %>
                                     </ul>
                                 </div>
                             </form>
@@ -625,17 +606,14 @@
                             <div class="tab-content">
                                 <div id="rtl-article-body-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;a class="article-text-link"&gt;Lien texte article&lt;/a&gt;
-&lt;a class="article-text-link actu-color"&gt;Lien texte article&lt;/a&gt;
-&lt;a class="article-text-link sport-color"&gt;Lien texte article&lt;/a&gt;
-&lt;a class="article-text-link culture-color"&gt;Lien texte article&lt;/a&gt;<br/>
-&lt;ul class="article-text-list"&gt;
-&nbsp;&lt;li class="item"&gt;&lt;a href="#" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
-&nbsp;&lt;li class="item actu-bg-color_before"&gt;&lt;a href="#" class="text actu-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
-&nbsp;&lt;li class="item sport-bg-color_before"&gt;&lt;a href="#" class="text sport-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
-&nbsp;&lt;li class="item culture-bg-color_before"&gt;&lt;a href="#" class="text culture-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/article/_article-text-link.html') %>
+<%= include('../../assets/sample/article/_article-text-link.html', {category: 'actu-color'}) %>
+<%= include('../../assets/sample/article/_article-text-link.html', {category: 'sport-color'}) %>
+<%= include('../../assets/sample/article/_article-text-link.html', {category: 'culture-color'}) %><br/>
+<%= include('../../assets/sample/article/_article-text-list.html') %>
+<%= include('../../assets/sample/article/_article-text-list.html', {category: 'actu-color', category_before: 'actu-bg-color_before'}) %>
+<%= include('../../assets/sample/article/_article-text-list.html', {category: 'sport-color', category_before: 'sport-bg-color_before'}) %>
+<%= include('../../assets/sample/article/_article-text-list.html', {category: 'culture-color', category_before: 'culture-bg-color_before'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-body-css" class="tab-pane fade">
@@ -658,7 +636,7 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-5">
-                                    <span class="article-footer icon icon-chevron-right-bis">Découvrir plus de videos</span>
+                                    <%- include('../../assets/sample/article/_article-footer.html') %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -669,7 +647,7 @@
                             <div class="tab-content">
                                 <div id="rtl-article-footer-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">&lt;span class="article-footer icon icon-chevron-right-bis"&gt;Découvrir plus de videos&lt;/span&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/article/_article-footer.html') %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-footer-css" class="tab-pane fade">
@@ -691,52 +669,28 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3 position-static">
-                                    <span class="article-tag">
-                                        <a href="#" class="tag">Le Saviez-Vous</a>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-tag.html') %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-tag actu-bg-color">
-                                        <a href="#" class="tag">Le Saviez-Vous</a>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-tag.html', {category: 'actu-bg-color'}) %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-tag sport-bg-color">
-                                        <a href="#" class="tag">Le Saviez-Vous</a>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-tag.html', {category: 'sport-bg-color'}) %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-tag culture-bg-color">
-                                        <a href="#" class="tag">Le Saviez-Vous</a>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-tag.html', {category: 'culture-bg-color'}) %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-flag-fix">
-                                        <span class="uppercase flag">
-                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                        </span>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-flag-fix.html') %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-flag-fix actu-bg-color">
-                                        <span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after">
-                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                        </span>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-flag-fix.html', {category: 'actu-bg-color', category_border: 'actu-border-color', category_before: 'actu-bg-color_before', category_after: 'actu-border-color_after'}) %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-flag-fix sport-bg-color">
-                                        <span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after">
-                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                        </span>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-flag-fix.html', {category: 'sport-bg-color', category_border: 'sport-border-color', category_before: 'sport-bg-color_before', category_after: 'sport-border-color_after'}) %>
                                 </div>
                                 <div class="col-md-3 position-static">
-                                    <span class="article-flag-fix culture-bg-color">
-                                        <span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after">
-                                            <span class="align">dossier<b class="bold">sp&eacute;cial</b></span>
-                                        </span>
-                                    </span>
+                                    <%- include('../../assets/sample/article/_article-flag-fix.html', {category: 'culture-bg-color', category_border: 'culture-border-color', category_before: 'culture-bg-color_before', category_after: 'culture-border-color_after'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -747,39 +701,14 @@
                             <div class="tab-content">
                                 <div id="rtl-article-tag-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html">
-&lt;span class="article-tag"&gt;
-&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class="article-tag actu-bg-color"&gt;
-&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class="article-tag sport-bg-color"&gt;
-&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class="article-tag culture-bg-color"&gt;
-&nbsp;&lt;a href="#" class="tag">Le Saviez-Vous&lt;/a&gt;
-&lt;/span&gt;<br/>
-&lt;span class="article-flag-fix"&gt;
-&nbsp;&lt;span class="uppercase flag"&gt;
-&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
-&nbsp;&lt;/span&gt;
-&lt;/span&gt;
-&lt;span class="article-flag-fix actu-bg-color"&gt;
-&nbsp;&lt;span class="uppercase flag actu-border-color actu-bg-color_before actu-border-color_after"&gt;
-&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
-&nbsp;&lt;/span&gt;
-&lt;/span&gt;
-&lt;span class="article-flag-fix sport-bg-color"&gt;
-&nbsp;&lt;span class="uppercase flag sport-border-color sport-bg-color_before sport-border-color_after"&gt;
-&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
-&nbsp;&lt;/span&gt;
-&lt;/span&gt;
-&lt;span class="article-flag-fix culture-bg-color"&gt;
-&nbsp;&lt;span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after"&gt;
-&nbsp;&nbsp;&lt;span class="align">dossier&lt;b class="bold">sp&eacute;cial&lt;/b&gt;&lt;/span&gt;
-&nbsp;&lt;/span&gt;
-&lt;/span&gt;</pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/article/_article-tag.html') %>
+<%= include('../../assets/sample/article/_article-tag.html', {category: 'actu-bg-color'}) %>
+<%= include('../../assets/sample/article/_article-tag.html', {category: 'sport-bg-color'}) %>
+<%= include('../../assets/sample/article/_article-tag.html', {category: 'culture-bg-color'}) %><br/>
+<%= include('../../assets/sample/article/_article-flag-fix.html') %>
+<%= include('../../assets/sample/article/_article-flag-fix.html', {category: 'actu-bg-color', category_border: 'actu-border-color', category_before: 'actu-bg-color_before', category_after: 'actu-border-color_after'}) %>
+<%= include('../../assets/sample/article/_article-flag-fix.html', {category: 'sport-bg-color', category_border: 'sport-border-color', category_before: 'sport-bg-color_before', category_after: 'sport-border-color_after'}) %>
+<%= include('../../assets/sample/article/_article-flag-fix.html', {category: 'culture-bg-color', category_border: 'culture-border-color', category_before: 'culture-bg-color_before', category_after: 'culture-border-color_after'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-article-tag-css" class="tab-pane fade">

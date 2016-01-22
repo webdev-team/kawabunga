@@ -1,6 +1,7 @@
 
 @import "colors";
 @import "font";
+@import "../../config";
 
 $font-design: $raleway-bold-font-family;
 
@@ -10,6 +11,10 @@ $footer-main-text-color: $girls-black;
 $footer-main-list-bg-color: $girls-nude;
 $footer-main-list-item-border-color: $girls-nude-light;
 $footer-main-list-link-bg-color_hover: $girls-nude-dark;
+
+$footer-main-list-padding: px-to-rem(40px) 0 px-to-rem(18px);
+$footer-main-list_media-small-padding: px-to-rem(18px) 0;
+$footer-main-list-item-logo-line-height: 1;
 
 // Button
 $btn-bg-color: $girls-nude;

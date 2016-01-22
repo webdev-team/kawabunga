@@ -2,6 +2,7 @@
 @import "../default/colors";
 @import "colors";
 @import "font";
+@import "../../config";
 
 $font-design: $oswald-regular-font-family;
 
@@ -11,6 +12,11 @@ $footer-main-text-color: $rtl2-grey;
 $footer-main-list-bg-color: $rtl2-black;
 $footer-main-list-item-border-color: $rtl2-grey-darker;
 $footer-main-list-link-bg-color_hover: $rtl2-grey-darker;
+
+$footer-main-list-item-logo-line-height: 1;
+$footer-main-list-item-icon_before-font-size: px-to-rem(85px);
+$footer-main-list-item-icon_before-position: relative;
+$footer-main-list-item-icon_before-z-index: 1;
 
 // Button
 $btn-bg-color: $rtl2-black;
