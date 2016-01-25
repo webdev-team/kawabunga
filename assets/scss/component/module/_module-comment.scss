@@ -8,15 +8,18 @@
 ----------------------------------------- */
 .module-comment {
   background-color: $module-comment-bg-color;
-  color: $black;
-  padding:px-to-rem(10px) px-to-rem(20px);
+  padding: px-to-rem(10px) px-to-rem(20px);
 }
 
 .module-comment-title {
   font-size: px-to-rem(24px);
-  text-transform: uppercase;
-  font-family: $default-font-family;
   margin-bottom: px-to-rem(10px);
+  color: $black;
+  font-family: $module-comment-title-font-family;
+
+  @if ($font-smoothing) {
+    @include font-smoothing-mixin;
+  }
 }
 
 .module-comment-form {
