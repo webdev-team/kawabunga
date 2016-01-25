@@ -62,11 +62,13 @@
   .list {
     position: absolute;
     right: 0;
+    top: 0;
+    bottom: 0;
     overflow:auto;
     max-width:px-to-rem(300px);
     padding: $footer-main-list-padding;
     list-style-type:none;
-    width:100%;
+    width:25%;
     background-color: $footer-main-list-bg-color;
     color:$white;
 
@@ -154,6 +156,7 @@
     }
 
     .list {
+      width:50%;
       max-width:none;
     }
   }
