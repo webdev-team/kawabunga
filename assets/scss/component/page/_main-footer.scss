@@ -63,7 +63,6 @@
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0;
     overflow:auto;
     max-width:px-to-rem(300px);
     padding: $footer-main-list-padding;
@@ -158,6 +157,7 @@
     .list {
       width:50%;
       max-width:none;
+      bottom: 0;
     }
   }
 }
