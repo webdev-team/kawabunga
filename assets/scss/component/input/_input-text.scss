@@ -5,16 +5,25 @@
 
 /* Input Text
 ----------------------------------------- */
+
 .input-text {
   display: inline-block;
-}
+  .input {
+    border: 1px solid $input-text-input-border-color;
+    background-color: $white;
+    width: auto;
+    height: px-to-rem(40px);
+    line-height: px-to-rem(40px);
+    padding: 0 px-to-rem(10px);
+    font-size: px-to-rem(14px);
 
-.input-text .input {
-  border: 1px solid $input-text-input-border-color;
-  background-color: $white;
-  width: auto;
-  height: px-to-rem(40px);
-  line-height: px-to-rem(40px);
-  padding: 0 px-to-rem(10px);
-  font-size: px-to-rem(14px);
+    &.small {
+      height: px-to-rem(30px);
+      line-height: px-to-rem(30px);
+    }
+    &.large {
+      height: px-to-rem(60px);
+      line-height: px-to-rem(60px);
+    }
+  }
 }

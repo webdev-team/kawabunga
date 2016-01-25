@@ -52,47 +52,51 @@
   display: none;
 }
 
+.btn-bicolor {
+  &.large {
+    .btn-bicolor-label,
+    .btn-bicolor-input {
+      height: px-to-rem(60px);
+    }
+
+    .btn-bicolor-label {
+      line-height: px-to-rem(60px);
+    }
+
+    .btn-bicolor-input {
+      width: px-to-rem(60px);
+    }
+
+    .btn-bicolor-input .icon-ff:before {
+      font-size: px-to-rem(32px);
+    }
+  }
+}
+
+.btn-bicolor {
+  &.small {
+    .btn-bicolor-label,
+    .btn-bicolor-input {
+      height: px-to-rem(30px);
+    }
+
+    .btn-bicolor-label {
+      min-width: px-to-rem(70px);
+      line-height: px-to-rem(30px);
+    }
+
+    .btn-bicolor-input {
+      width: px-to-rem(35px);
+    }
+
+    .btn-bicolor-input .icon-ff:before {
+      font-size: px-to-rem(16px);
+    }
+  }
+}
+
 @media (max-width: $media-queries-medium){
   .btn-bicolor .btn-bicolor-label{
     display: none;
-  }
-}
-
-.btn-bicolor-large {
-  .btn-bicolor-label,
-  .btn-bicolor-input {
-    height: px-to-rem(60px);
-  }
-
-  .btn-bicolor-label {
-    line-height: px-to-rem(60px);
-  }
-
-  .btn-bicolor-input {
-    width: px-to-rem(60px);
-  }
-
-  .btn-bicolor-input .icon-ff:before {
-    font-size: px-to-rem(32px);
-  }
-}
-
-.btn-bicolor-small {
-  .btn-bicolor-label,
-  .btn-bicolor-input {
-    height: px-to-rem(30px);
-  }
-
-  .btn-bicolor-label {
-    min-width: px-to-rem(70px);
-    line-height: px-to-rem(30px);
-  }
-
-  .btn-bicolor-input {
-    width: px-to-rem(35px);
-  }
-
-  .btn-bicolor-input .icon-ff:before {
-    font-size: px-to-rem(16px);
   }
 }

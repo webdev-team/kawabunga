@@ -104,13 +104,13 @@
                                     <%- include('../../assets/sample/button/_btn-hover.html') %>
                                 </div>
                                 <div class="col-md-4">
-                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-large', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
+                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'large', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
                                 <div class="col-md-4">
                                     <%- include('../../assets/sample/button/_btn-bicolor.html', {textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
                                 <div class="col-md-4">
-                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'btn-bicolor-small', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
+                                    <%- include('../../assets/sample/button/_btn-bicolor.html', {sizeBtn: 'small', textBtn: 'Nouvelle discussion', classIcon: 'icon-crayon'}) %>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="example-set-color position-static">
@@ -160,7 +160,13 @@
                             <!-- RTL -->
                             <form class="code-example col-md-12">
                                 <div class="col-md-3">
+                                    <%- include('../../assets/sample/input/_input-text.html', {sizeInput: 'small'}) %>
+                                </div>
+                                <div class="col-md-3">
                                     <%- include('../../assets/sample/input/_input-text.html') %>
+                                </div>
+                                <div class="col-md-3">
+                                    <%- include('../../assets/sample/input/_input-text.html', {sizeInput: 'large'}) %>
                                 </div>
                             </form>
                             <ul class="nav nav-tabs nav-child">
@@ -171,7 +177,9 @@
                             <div class="tab-content">
                                 <div id="rtl-input-text-html" class="tab-pane fade in active">
                                     <figure class="highlighted col-md-12">
-                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/input/_input-text.html') %></pre>
+                                        <pre class="prettyprint lang-html"><%= include('../../assets/sample/input/_input-text.html', {sizeInput: 'small'}) %><br/>
+<%= include('../../assets/sample/input/_input-text.html') %><br/>
+<%= include('../../assets/sample/input/_input-text.html', {sizeInput: 'large'}) %></pre>
                                     </figure>
                                 </div>
                                 <div id="rtl-input-text-css" class="tab-pane fade">
