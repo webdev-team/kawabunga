@@ -60,6 +60,8 @@
   }
 
   .list {
+    position: absolute;
+    right: 0;
     overflow:auto;
     max-width:px-to-rem(300px);
     padding: $footer-main-list-padding;
