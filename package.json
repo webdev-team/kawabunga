@@ -30,7 +30,8 @@
     "run-sequence": "^1.1.0",
     "sinon": "^1.17.2",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "gulp-rtl-publish": "git+ssh://git@github.com/webdev-team/gulp-rtl-publish.git#0.0.7"
   },
   "engines": {
     "node": ">=0.8.0"

@@ -23,6 +23,8 @@ var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
 
+require('gulp-rtl-publish')(gulp, package);
+
 gulp.task('css', function () {
     return gulp.src('sandbox/scss/*.scss')
         .pipe(sass())
