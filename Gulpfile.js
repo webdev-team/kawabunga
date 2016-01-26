@@ -23,6 +23,7 @@ var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
 
+var package = require('./package.json');
 require('gulp-rtl-publish')(gulp, package);
 
 gulp.task('css', function () {
