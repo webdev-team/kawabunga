@@ -135,6 +135,8 @@ gulp.task('fonticon', function () {
 
 gulp.task('fonticon-amp', function () {
     return buildFontIcon('Kawabunga-Amp-Icon', '_fonticon-amp.scss', [
+        'assets/svg/common/others/search.svg',
+        'assets/svg/common/others/user.svg',
         'assets/svg/common/social/facebook/fb.svg', 'assets/svg/common/social/facebook/fb-square.svg',
         'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-square.svg',
         'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-square.svg',
