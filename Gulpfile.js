@@ -149,7 +149,6 @@ var buildFontIcon = function(name, scssFile, src) {
             fontName: name,
             normalize: true,
             svg: true
-
         }))
         .on('glyphs', function (glyphs, options) {
             gulp.src('assets/svg/_fonticon.scss.template')

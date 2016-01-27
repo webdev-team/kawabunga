@@ -6,7 +6,7 @@ $default-font-family: $arial;
 
 $font-smoothing: false !default;
 
-@mixin font-smoothing-mixin {
+@mixin font-smoothing {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

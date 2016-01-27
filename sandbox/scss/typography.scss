@@ -45,7 +45,7 @@
 .oswald {
   font-family: $oswald-regular-font-family;
   font-size: 16px;
-  @include font-smoothing-mixin;
+  @include font-smoothing;
 }
 
 .oswald.light {
@@ -55,7 +55,7 @@
 .raleway {
   font-family: $raleway-regular-font-family;
   font-size: 16px;
-  @include font-smoothing-mixin;
+  @include font-smoothing;
 }
 
 .raleway.bold {

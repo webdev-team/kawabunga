@@ -18,7 +18,7 @@
   background-color: $btn-link-bg-color;
 
   @if ($font-smoothing) {
-    @include font-smoothing-mixin;
+    @include font-smoothing;
   }
 }
 
