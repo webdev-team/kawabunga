@@ -114,8 +114,8 @@ gulp.task('font', function () {
         .pipe(gulp.dest('build/sandbox/font/'))
 });
 
-gulp.task('iconfont', function () {
-    return gulp.src([
+gulp.task('fonticon', function () {
+    return buildFontIcon('Kawabunga-Icon', '_fonticon.scss', [
             'assets/svg/common/astro/*.svg',
             'assets/svg/common/meteofrance/*.svg',
             'assets/svg/common/others/*.svg',
@@ -126,13 +126,27 @@ gulp.task('iconfont', function () {
             'assets/svg/common/social/pinterest/*.svg',
             'assets/svg/common/social/twitter/*.svg',
             'assets/svg/common/social/youtube/*.svg',
-            'assets/svg/funradio/*.svg',
-            'assets/svg/girls/*.svg',
-            'assets/svg/rtl/*.svg',
-            'assets/svg/rtl2/*.svg'
-        ])
+            'assets/svg/brand/funradio/*.svg',
+            'assets/svg/brand/girls/*.svg',
+            'assets/svg/brand/rtl/*.svg',
+            'assets/svg/brand/rtl2/*.svg'
+        ]);
+});
+
+gulp.task('fonticon-amp', function () {
+    return buildFontIcon('Kawabunga-Amp-Icon', '_fonticon-amp.scss', [
+        'assets/svg/common/social/facebook/fb.svg', 'assets/svg/common/social/facebook/fb-square.svg',
+        'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-square.svg',
+        'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-square.svg',
+        'assets/svg/common/social/twitter/twitter.svg', 'assets/svg/common/social/twitter/twitter-square.svg',
+        'assets/svg/brand/rtl/rtl.svg'
+    ]);
+});
+
+var buildFontIcon = function(name, scssFile, src) {
+    return gulp.src(src)
         .pipe(iconfont({
-            fontName: 'Kawabunga-Icon',
+            fontName: name,
             normalize: true,
             svg: true
 
@@ -141,15 +155,15 @@ gulp.task('iconfont', function () {
             gulp.src('assets/svg/_fonticon.scss.template')
                 .pipe(consolidate('lodash', {
                     glyphs: glyphs,
-                    fontName: 'Kawabunga-Icon',
+                    fontName: name,
                     fontPath: '../font/',
                     className: 'icon'
                 }))
-                .pipe(rename('_fonticon.scss'))
+                .pipe(rename(scssFile))
                 .pipe(gulp.dest('assets/scss/'));
         })
         .pipe(gulp.dest('assets/font/'))
-});
+};
 
 /*
  * WatchTask

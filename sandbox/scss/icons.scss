@@ -13,6 +13,10 @@
 /* Icon page
 ----------------------------------------- */
 
+.clearfix {
+  clear: both;
+}
+
 /* Icons */
 .kawa-icons {
   margin: 15px -10px 20px;
@@ -45,7 +49,6 @@
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 10px;
-  font-size: 24px;
 }
 
 .kawa-icons .icon-class {

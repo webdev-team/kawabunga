@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Kawabunga-Amp-Icon";
+    src: url('../font/Kawabunga-Amp-Icon.eot');
+    src: url('../font/Kawabunga-Amp-Icon.eot?#iefix') format('eot'),
+    url('../font/Kawabunga-Amp-Icon.woff') format('woff'),
+    url('../font/Kawabunga-Amp-Icon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before {
+                     display: inline-block;
+                     font-family: "Kawabunga-Amp-Icon";
+                     font-style: normal;
+                     font-weight: normal;
+                     line-height: 1;
+                     vertical-align: top;
+                     -webkit-font-smoothing: antialiased;
+                     -moz-osx-font-smoothing: grayscale;
+                 }
+
+.icon-lg {
+                     font-size: 2.3333333333333333rem;
+                     line-height: 0.75rem;
+                     vertical-align: -15%;
+                 }
+.icon-2x { font-size: 2rem; }
+.icon-3x { font-size: 3rem; }
+.icon-4x { font-size: 4rem; }
+.icon-5x { font-size: 5rem; }
+.icon-fw {
+                     width: 1.2857142857142858rem;
+                     text-align: center;
+                 }
+
+.icon-rtl:before { content: "\EA01" }
+.icon-googleplus-square:before { content: "\EA02" }
+.icon-googleplus:before { content: "\EA03" }
+.icon-linkedin-square:before { content: "\EA04" }
+.icon-linkedin:before { content: "\EA05" }
+.icon-twitter-square:before { content: "\EA06" }
+.icon-twitter:before { content: "\EA07" }
