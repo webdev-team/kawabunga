@@ -115,7 +115,7 @@ gulp.task('font', function () {
 });
 
 gulp.task('fonticon', function () {
-    return buildFontIcon('Kawabunga-Icon', '_fonticon.scss', [
+    return buildFontIcon({name: 'Kawabunga-Icon', scssFile: '_fonticon.scss'}, [
             'assets/svg/common/astro/*.svg',
             'assets/svg/common/meteofrance/*.svg',
             'assets/svg/common/others/*.svg',
@@ -134,33 +134,33 @@ gulp.task('fonticon', function () {
 });
 
 gulp.task('fonticon-amp', function () {
-    return buildFontIcon('Kawabunga-Amp-Icon', '_fonticon-amp.scss', [
+    return buildFontIcon({name: 'Kawabunga-Amp-Icon', scssFile: '_fonticon-amp.scss', className: 'icon-amp'}, [
         'assets/svg/common/others/search.svg',
         'assets/svg/common/others/user.svg',
-        'assets/svg/common/social/facebook/fb.svg', 'assets/svg/common/social/facebook/fb-square.svg',
+        'assets/svg/common/social/facebook/facebook.svg', 'assets/svg/common/social/facebook/facebook-square.svg',
         'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-square.svg',
         'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-square.svg',
         'assets/svg/common/social/twitter/twitter.svg', 'assets/svg/common/social/twitter/twitter-square.svg',
-        'assets/svg/brand/rtl/rtl.svg'
+        'assets/svg/brand/rtl/rtl-logo.svg'
     ]);
 });
 
-var buildFontIcon = function(name, scssFile, src) {
+var buildFontIcon = function(options, src) {
     return gulp.src(src)
         .pipe(iconfont({
-            fontName: name,
+            fontName: options.name,
             normalize: true,
             svg: true
         }))
-        .on('glyphs', function (glyphs, options) {
+        .on('glyphs', function (glyphs) {
             gulp.src('assets/svg/_fonticon.scss.template')
                 .pipe(consolidate('lodash', {
                     glyphs: glyphs,
-                    fontName: name,
+                    fontName: options.name,
                     fontPath: '../font/',
-                    className: 'icon'
+                    className: options.className || 'icon'
                 }))
-                .pipe(rename(scssFile))
+                .pipe(rename(options.scssFile))
                 .pipe(gulp.dest('assets/scss/'));
         })
         .pipe(gulp.dest('assets/font/'))

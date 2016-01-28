@@ -8,7 +8,7 @@
     font-style: normal;
 }
 
-.icon:before {
+.icon-amp:before {
                      display: inline-block;
                      font-family: "Kawabunga-Amp-Icon";
                      font-style: normal;
@@ -19,26 +19,28 @@
                      -moz-osx-font-smoothing: grayscale;
                  }
 
-.icon-lg {
+.icon-amp-lg {
                      font-size: 2.3333333333333333rem;
                      line-height: 0.75rem;
                      vertical-align: -15%;
                  }
-.icon-2x { font-size: 2rem; }
-.icon-3x { font-size: 3rem; }
-.icon-4x { font-size: 4rem; }
-.icon-5x { font-size: 5rem; }
-.icon-fw {
+.icon-amp-2x { font-size: 2rem; }
+.icon-amp-3x { font-size: 3rem; }
+.icon-amp-4x { font-size: 4rem; }
+.icon-amp-5x { font-size: 5rem; }
+.icon-amp-fw {
                      width: 1.2857142857142858rem;
                      text-align: center;
                  }
 
-.icon-rtl:before { content: "\EA01" }
-.icon-search:before { content: "\EA02" }
-.icon-user:before { content: "\EA03" }
-.icon-googleplus-square:before { content: "\EA04" }
-.icon-googleplus:before { content: "\EA05" }
-.icon-linkedin-square:before { content: "\EA06" }
-.icon-linkedin:before { content: "\EA07" }
-.icon-twitter-square:before { content: "\EA08" }
-.icon-twitter:before { content: "\EA09" }
+.icon-amp-rtl-logo:before { content: "\EA01" }
+.icon-amp-search:before { content: "\EA02" }
+.icon-amp-user:before { content: "\EA03" }
+.icon-amp-facebook-square:before { content: "\EA04" }
+.icon-amp-facebook:before { content: "\EA05" }
+.icon-amp-googleplus-square:before { content: "\EA06" }
+.icon-amp-googleplus:before { content: "\EA07" }
+.icon-amp-linkedin-square:before { content: "\EA08" }
+.icon-amp-linkedin:before { content: "\EA09" }
+.icon-amp-twitter-square:before { content: "\EA0A" }
+.icon-amp-twitter:before { content: "\EA0B" }
