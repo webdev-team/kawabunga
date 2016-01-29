@@ -137,10 +137,11 @@ gulp.task('fonticon-amp', function () {
     return buildFontIcon({name: 'Kawabunga-Amp-Icon', scssFile: '_fonticon-amp.scss', className: 'icon-amp'}, [
         'assets/svg/common/others/search.svg',
         'assets/svg/common/others/user.svg',
-        'assets/svg/common/social/facebook/facebook.svg', 'assets/svg/common/social/facebook/facebook-square.svg',
-        'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-square.svg',
-        'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-square.svg',
-        'assets/svg/common/social/twitter/twitter.svg', 'assets/svg/common/social/twitter/twitter-square.svg',
+        'assets/svg/common/others/quote-end.svg', 'assets/svg/common/others/quote-start.svg',
+        'assets/svg/common/social/facebook/facebook.svg', 'assets/svg/common/social/facebook/facebook-sign.svg',
+        'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-sign.svg',
+        'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-sign.svg',
+        'assets/svg/common/social/twitter/twitter.svg', 'assets/svg/common/social/twitter/twitter-sign.svg',
         'assets/svg/brand/rtl/rtl-logo.svg'
     ]);
 });
