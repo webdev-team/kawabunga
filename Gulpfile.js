@@ -137,12 +137,16 @@ gulp.task('fonticon-amp', function () {
     return buildFontIcon({name: 'Kawabunga-Amp-Icon', scssFile: '_fonticon-amp.scss', className: 'icon-amp'}, [
         'assets/svg/common/others/search.svg',
         'assets/svg/common/others/user.svg',
-        'assets/svg/common/others/quote-end.svg', 'assets/svg/common/others/quote-start.svg',
-        'assets/svg/common/social/facebook/facebook.svg', 'assets/svg/common/social/facebook/facebook-sign.svg',
-        'assets/svg/common/social/googleplus/googleplus.svg', 'assets/svg/common/social/googleplus/googleplus-sign.svg',
-        'assets/svg/common/social/linkedin/linkedin.svg', 'assets/svg/common/social/linkedin/linkedin-sign.svg',
-        'assets/svg/common/social/twitter/twitter.svg', 'assets/svg/common/social/twitter/twitter-sign.svg',
-        'assets/svg/brand/rtl/rtl-logo.svg'
+        'assets/svg/common/others/quote-end.svg',
+        'assets/svg/common/others/quote-start.svg',
+        'assets/svg/common/social/facebook/*.svg',
+        'assets/svg/common/social/googleplus/*.svg',
+        'assets/svg/common/social/instagram/*.svg',
+        'assets/svg/common/social/linkedin/*.svg',
+        'assets/svg/common/social/pinterest/*.svg',
+        'assets/svg/common/social/twitter/*.svg',
+        'assets/svg/common/social/youtube/*.svg',
+        'assets/svg/brand/rtl/*.svg'
     ]);
 });
 
@@ -151,7 +155,7 @@ var buildFontIcon = function(options, src) {
         .pipe(iconfont({
             fontName: options.name,
             normalize: true,
-            svg: true
+            formats: ['ttf', 'eot', 'woff', 'woff2']
         }))
         .on('glyphs', function (glyphs) {
             gulp.src('assets/svg/_fonticon.scss.template')
