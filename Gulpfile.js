@@ -126,6 +126,7 @@ gulp.task('fonticon', function () {
             'assets/svg/common/social/pinterest/*.svg',
             'assets/svg/common/social/twitter/*.svg',
             'assets/svg/common/social/youtube/*.svg',
+            'assets/svg/common/social/sms/*.svg',
             'assets/svg/brand/funradio/*.svg',
             'assets/svg/brand/girls/*.svg',
             'assets/svg/brand/rtl/*.svg',
@@ -146,6 +147,7 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/common/social/pinterest/*.svg',
         'assets/svg/common/social/twitter/*.svg',
         'assets/svg/common/social/youtube/*.svg',
+        'assets/svg/common/social/sms/*.svg',
         'assets/svg/brand/rtl/*.svg'
     ]);
 });
