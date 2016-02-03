@@ -2,17 +2,17 @@
     <div class="fig">
         <a href="#" class="link">
             <img class="pic img-echo" src="http://placehold.it/330x220" width="330" height="220" alt>
-            <span class="btn-text icon icon-play">
+            <span class="btn-text icon icon-play-circle">
                 <span class="text uppercase">Replay</span>
             </span>
         </a>
-        <span class="article-flag-fix culture-bg-color">
-            <span class="uppercase flag culture-border-color culture-bg-color_before culture-border-color_after">
-                <span class="align"><%= locals.flagTopTitle ? flagTopTitle : '' %><b class="bold"><%= locals.flagBottomTitle ? flagBottomTitle : '' %></b></span>
+        <span class="article-flag-fix <%= locals.category ? category : '' %>">
+            <span class="uppercase flag <%= locals.category_border ? category_border : '' %> <%= locals.category_before ? category_before : '' %> <%= locals.category_after ? category_after : '' %>">
+                <span class="align">dossier<b class="bold">spécial</b></span>
             </span>
         </span>
-        <span class="article-tag culture-bg-color">
-            <a href="#" class="tag"><%= locals.tagTitle ? tagTitle : '' %></a>
+        <span class="article-tag <%= locals.category ? category : '' %>">
+            <a href="#" class="tag">Le Saviez-Vous</a>
         </span>
     </div>
     <div class="texts text-small bottom-tool-fix">
@@ -30,7 +30,7 @@
                     <b class="num icon icon-comment"></b>
                     <span class="text">Commenter</span>
                 </span>
-                <span class="item icon icon-play"></span>
+                <span class="item icon icon-play-circle"></span>
             </div>
         </a>
     </div>

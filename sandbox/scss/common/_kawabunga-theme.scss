@@ -48,49 +48,7 @@
   color: $black;
 }
 
-// For Header
-.code-example .main-header-rtl .slide-nav .nav-item:hover,
-.code-example .main-header-rtl #main-logout:hover {
-  .show-dropdown {
-    background-color:$white;
-    color:$rtl-red;
-  }
-}
-.code-example .main-header-rtl2 .slide-nav .nav-item:hover,
-.code-example .main-header-rtl2 #main-logout:hover  {
-  .show-dropdown {
-    background-color:$white;
-    color:$rtl2-black;
-  }
-}
-.code-example .main-header-fun .slide-nav .nav-item:hover,
-.code-example .main-header-fun #main-logout:hover  {
-  .show-dropdown {
-    background-color:$white;
-    color:$fun-blue;
-  }
-}
-.code-example .main-header-girls .slide-nav .nav-item:hover,
-.code-example .main-header-girls #main-logout:hover  {
-  .show-dropdown {
-    background-color: $white;
-    color: $girls-nude;
-  }
-}
-
-
 /* against bootstrap */
-.code-example .main-nav-sub .onair:hover {
-  color: $white;
-}
-.code-example .main-header-rtl2 .main-nav .hover-white {
-  color: $rtl2-black;
-}
-.code-example .main-header-rtl .main-nav .hover-rtl-red-light-white,
-.code-example .main-header-fun .main-nav .hover-fun-blue-dark,
-.code-example .main-header-girls .main-nav .hover-girls-nude-dark-white{
-  color: $white;
-}
 .code-example .btn-link:focus, .btn-link:hover,
 .code-example .btn.focus, .btn:focus, .btn:hover {
   color: $white;

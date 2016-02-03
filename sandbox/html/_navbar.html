@@ -10,6 +10,19 @@
       </button>
     </div>
 
+    <%
+      var sites = [];
+
+      sites = [
+        {title: 'Default', link: 'components-default'},
+        {title: 'RTL', link: 'components-rtl'},
+        {title: 'RTL2', link: 'components-rtl2'},
+        {title: 'Girls', link: 'components-girls'},
+        {title: 'Fun Radio', link: 'components-funradio'}
+    ];
+
+    %>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -22,11 +35,9 @@
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Components <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="<%= active == 'components-default' ? 'active' : '' %>"><a href="components-default.html">Default</a></li>
-            <li class="<%= active == 'components-rtl' ? 'active' : '' %>"><a href="components-rtl.html">RTL</a></li>
-            <li class="<%= active == 'components-rtl2' ? 'active' : '' %>"><a href="components-rtl2.html">RTL2</a></li>
-            <li class="<%= active == 'components-funradio' ? 'active' : '' %>"><a href="components-funradio.html">Fun Radio</a></li>
-            <li class="<%= active == 'components-girls' ? 'active' : '' %>"><a href="components-girls.html">Girls</a></li>
+            <% sites.forEach(function(site) { %>
+            <li class="<%= active == site.link ? 'active' : '' %>"><a href="<%= site.link %>.html"><%= site.title %></a></li>
+            <% }); %>
           </ul>
         </li>
         <li role="presentation" class="dropdown">

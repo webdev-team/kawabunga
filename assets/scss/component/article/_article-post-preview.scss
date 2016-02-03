@@ -35,8 +35,8 @@
   bottom: px-to-rem(5px);
   text-shadow: 0 px-to-rem(1px) px-to-rem(1px) $black-lighter;
 }
-.article-preview .texts .icon-play,
-.article-preview .texts .icon-play2 {
+.article-preview .texts .icon-play-circle,
+.article-preview .texts .icon-play-circle-leaning {
   display: none;
 }
 .article-preview .pic {
@@ -188,16 +188,16 @@
 .social-tool .icon {
   padding-top: 0;
 }
-.social-tool .icon-play,
-.social-tool .icon-play2 {
+.social-tool .icon-play-circle,
+.social-tool .icon-play-circle-leaning {
   float: none;
   overflow: hidden;
   line-height: px-to-rem(51px);
   background-color: transparent;
   color: $article-preview-social-tool-icon-play-color_before;
 }
-.social-tool .icon-play:before,
-.social-tool .icon-play2:before {
+.social-tool .icon-play-circle:before,
+.social-tool .icon-play-circle-leaning:before {
   font-size: px-to-rem(48px);
   line-height: inherit;
 }
@@ -244,8 +244,8 @@
 .article-preview.xs-layout .tag-partner {
   display: none;
 }
-.article-preview.xs-layout .texts .icon-play,
-.article-preview.xs-layout .texts .icon-play2 {
+.article-preview.xs-layout .texts .icon-play-circle,
+.article-preview.xs-layout .texts .icon-play-circle-leaning {
   display: block;
 }
 
@@ -423,8 +423,8 @@
     right: 0;
     border-top: px-to-rem(1px) solid $grey-light;
   }
-  .article-preview.mql-xs-layout .texts .icon-play,
-  .article-preview.mql-xs-layout .texts .icon-play2 {
+  .article-preview.mql-xs-layout .texts .icon-play-circle,
+  .article-preview.mql-xs-layout .texts .icon-play-circle-leaning {
     display: block;
   }
 
@@ -560,8 +560,8 @@
     right: 0;
     border-top:  px-to-rem(1px) solid $grey-light;
   }
-  .article-preview.mqm-xs-layout .texts .icon-play,
-  .article-preview.mqm-xs-layout .texts .icon-play2 {
+  .article-preview.mqm-xs-layout .texts .icon-play-circle,
+  .article-preview.mqm-xs-layout .texts .icon-play-circle-leaning {
     display: block;
   }
 
@@ -755,8 +755,8 @@
   .article-preview.mqs-xs-layout .tag-partner {
     display: none;
   }
-  .article-preview.mqs-xs-layout .texts .icon-play,
-  .article-preview.mqs-xs-layout .texts .icon-play2 {
+  .article-preview.mqs-xs-layout .texts .icon-play-circle,
+  .article-preview.mqs-xs-layout .texts .icon-play-circle-leaning {
     display: block;
   }
 
