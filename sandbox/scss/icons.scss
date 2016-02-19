@@ -22,52 +22,57 @@
 .kawa-icons {
   margin: 15px -10px 20px;
   overflow: hidden;
-}
 
-.kawa-icons-list {
-  padding-left: 0;
-  list-style: none;
-}
+  .kawa-icons-list {
+    padding-left: 0;
+    list-style: none;
 
-.kawa-icons li {
-  float: left;
-  width: 25%;
-  height: 115px;
-  padding: 10px;
-  font-size: 10px;
-  line-height: 1.4;
-  text-align: center;
-  background-color: #F4F4F4;
-  border: 1px solid #FFFFFF;
-}
+    li {
+      float: left;
+      width: 25%;
+      height: 115px;
+      padding: 10px;
+      font-size: 10px;
+      line-height: 1.4;
+      text-align: center;
+      background-color: #F4F4F4;
+      border: 1px solid #FFFFFF;
 
-.kawa-icons li:hover {
-  color: #FFFFFF;
-  background-color: #563d7c;
-}
+      &:hover {
+        color: #FFFFFF;
+        background-color: #563d7c;
+      }
 
-.kawa-icons .icon {
-  display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
+      &.item-lg {
+        width:25%;
+      }
 
-.kawa-icons .icon-class {
-  display: block;
-  text-align: center;
-  word-wrap: break-word;
+      .icon {
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      .icon-class {
+        display: block;
+        text-align: center;
+        word-wrap: break-word;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
   .kawa-icons {
     margin-right: 0;
     margin-left: 0;
+
+    .kawa-icons-list li {
+      width: 12.5%;
+      font-size: 12px;
+    }
   }
 
-  .kawa-icons li {
-    width: 12.5%;
-    font-size: 12px;
-  }
 }
 
 /* Sprites */
