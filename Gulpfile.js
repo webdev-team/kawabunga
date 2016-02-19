@@ -151,7 +151,14 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/common/social/twitter/*.svg',
         'assets/svg/common/social/youtube/*.svg',
         'assets/svg/common/social/sms/*.svg',
-        'assets/svg/brand/rtl/*.svg'
+        'assets/svg/brand/rtl/rtl-logo.svg',
+        'assets/svg/brand/rtl/rtl-square.svg',
+        'assets/svg/brand/rtl2/rtl-logo.svg',
+        'assets/svg/brand/rtl2/rtl-logo-alt.svg',
+        'assets/svg/brand/funradio/funradio-logo.svg',
+        'assets/svg/brand/funradio/funradio-square.svg',
+        'assets/svg/brand/girls/girls-logo.svg',
+        'assets/svg/brand/girls/girls-square.svg'
     ]);
 });
 
