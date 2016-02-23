@@ -1,0 +1,45 @@
+
+@import "colors";
+
+.module-header.actu-bg-color,
+.module-footer.actu-bg-color,
+.article-text-list .item.actu-bg-color_before:before,
+.article-tag.actu-bg-color,
+.article-flag-fix.actu-bg-color {
+  background-color: $ORLC-green;
+}
+.article-text-link.actu-color,
+.article-text-list .item .text.actu-color {
+  color: $ORLC-green;
+}
+.article-flag-fix .flag.actu-bg-color_before:before {
+  background-color: $ORLC-green-dark;
+}
+.article-flag-fix .flag.actu-border-color_after:after {
+  border-top-color: $ORLC-green;
+  border-bottom-color: $ORLC-green;
+}
+.article-flag-fix .flag.actu-border-color {
+  border-color: $ORLC-green;
+}
+.module-header.prognosis-bg-color,
+.module-footer.prognosis-bg-color,
+.article-text-list .item.prognosis-bg-color_before:before,
+.article-tag.prognosis-bg-color,
+.article-flag-fix.prognosis-bg-color {
+  background-color: $ORLC-green-fir;
+}
+.article-text-link.prognosis-color,
+.article-text-list .item .text.prognosis-color {
+  color: $ORLC-green-fir;
+}
+.article-flag-fix .flag.prognosis-bg-color_before:before {
+  background-color: $ORLC-green-fir-dark;
+}
+.article-flag-fix .flag.prognosis-border-color_after:after {
+  border-top-color: $ORLC-green-fir;
+  border-bottom-color: $ORLC-green-fir;
+}
+.article-flag-fix .flag.prognosis-border-color {
+  border-color: $ORLC-green-fir-dark;
+}

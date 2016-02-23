@@ -9,7 +9,7 @@ $font-design: $lato-regular-font-family;
 $footer-main-font-family: $font-design;
 $footer-main-text-color: $ORLC-grey;
 $footer-main-list-bg-color: $ORLC-green;
-$footer-main-list-item-border-color: $ORLC-green-lightest-light;
+$footer-main-list-item-border-color: $ORLC-green-light;
 $footer-main-list-link-bg-color_hover: $ORLC-green-light;
 
 // Button
@@ -30,7 +30,7 @@ $input-text-input-border-color: $ORLC-grey-light;
 
 // Module
 $module-header-font-family: $lato-light-font-family;
-$module-header-bg-color: $ORLC-green;
+$module-header-bg-color: $ORLC-grey;
 
 $module-border-border-color: $ORLC-grey-light;
 
@@ -43,18 +43,18 @@ $module-comment-title-font-family: $font-design;
 $module-link-bg-color: $ORLC-cream;
 $module-link-color: $ORLC-black;
 
-$module-footer-bg-color: $ORLC-green;
+$module-footer-bg-color: $ORLC-grey;
 
 $module-follow-us-font-family: $lato-light-font-family;
 $module-follow-us-icon-newsletter-color_before: $ORLC-black;
 
 // Article
-$article-text-link-color: $ORLC-green;
+$article-text-link-color: $ORLC-grey;
 $article-text-link-color_hover: $black;
 
-$article-text-list-color: $ORLC-green;
+$article-text-list-color: $ORLC-grey;
 $article-text-list-color_hover: $black;
-$article-text-list-item-bg-color_before: $ORLC-green;
+$article-text-list-item-bg-color_before: $ORLC-grey;
 
 $article-footer-color: $ORLC-black;
 
@@ -65,12 +65,12 @@ $article-preview-social-tool-color: $ORLC-grey;
 $article-preview-social-tool-icon-play-color_before: $ORLC-grey-dark;
 
 $article-tag-font-family: $lato-light-font-family;
-$article-tag-bg-color: $ORLC-green;
+$article-tag-bg-color: $ORLC-grey;
 
-$article-flag-fix-bg-color: $ORLC-green;
-$article-flag-fix-border-color: $ORLC-green-dark;
-$article-flag-fix-bg-color_before: $ORLC-green-darker;
-$article-flag-fix-border-color_after: $ORLC-green;
+$article-flag-fix-bg-color: $ORLC-grey;
+$article-flag-fix-border-color: $ORLC-grey;
+$article-flag-fix-bg-color_before: $ORLC-grey-matt;
+$article-flag-fix-border-color_after: $ORLC-grey;
 
 // Page
 $page-header-font-family: $lato-light-font-family;
