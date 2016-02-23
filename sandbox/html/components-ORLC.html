@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Components sandbox</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        <link rel="stylesheet" href="../css/components-ORLC.css">
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="container kawa">
+            <%- include('_navbar.html', {active: 'components-ORLC'}) %>
+            <%- include('_components.html', {domain: 'ORLC', logo: 'rtl-logo'}) %>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
+</html>

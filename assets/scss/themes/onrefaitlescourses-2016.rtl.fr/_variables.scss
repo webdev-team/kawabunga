@@ -1,0 +1,93 @@
+
+@import "../default/colors";
+@import "colors";
+@import "../rtl/font";
+
+$font-design: $lato-regular-font-family;
+
+// Main footer
+$footer-main-font-family: $font-design;
+$footer-main-text-color: $ORLC-grey;
+$footer-main-list-bg-color: $ORLC-green;
+$footer-main-list-item-border-color: $ORLC-green-lightest-light;
+$footer-main-list-link-bg-color_hover: $ORLC-green-light;
+
+// Button
+$btn-bg-color: $ORLC-green;
+$btn-bg-color_hover: $ORLC-green-light;
+
+$btn-hover-bg-color: $ORLC-grey-light;
+$btn-hover-frontside-bg-color_hover: $ORLC-grey-dark;
+
+$btn-link-bg-color: $ORLC-green;
+$btn-link-bg-color_hover: $ORLC-green-light;
+
+$btn-bicolor-label-bg-color: $ORLC-green;
+$btn-bicolor-input-bg-color: $ORLC-green-dark;
+
+// Input
+$input-text-input-border-color: $ORLC-grey-light;
+
+// Module
+$module-header-font-family: $lato-light-font-family;
+$module-header-bg-color: $ORLC-green;
+
+$module-border-border-color: $ORLC-grey-light;
+
+$module-comment-border-color: $ORLC-grey-light;
+$module-comment-color: $ORLC-black;
+$module-comment-form-bg-color: $ORLC-cream;
+$module-comment-bg-color: $ORLC-cream-dark;
+$module-comment-title-font-family: $font-design;
+
+$module-link-bg-color: $ORLC-cream;
+$module-link-color: $ORLC-black;
+
+$module-footer-bg-color: $ORLC-green;
+
+$module-follow-us-font-family: $lato-light-font-family;
+$module-follow-us-icon-newsletter-color_before: $ORLC-black;
+
+// Article
+$article-text-link-color: $ORLC-green;
+$article-text-link-color_hover: $black;
+
+$article-text-list-color: $ORLC-green;
+$article-text-list-color_hover: $black;
+$article-text-list-item-bg-color_before: $ORLC-green;
+
+$article-footer-color: $ORLC-black;
+
+$article-preview-fig-border-color: $ORLC-green;
+$article-preview-link-color: $black;
+$article-preview-link-color_hover: $ORLC-green;
+$article-preview-social-tool-color: $ORLC-grey;
+$article-preview-social-tool-icon-play-color_before: $ORLC-grey-dark;
+
+$article-tag-font-family: $lato-light-font-family;
+$article-tag-bg-color: $ORLC-green;
+
+$article-flag-fix-bg-color: $ORLC-green;
+$article-flag-fix-border-color: $ORLC-green-dark;
+$article-flag-fix-bg-color_before: $ORLC-green-darker;
+$article-flag-fix-border-color_after: $ORLC-green;
+
+// Page
+$page-header-font-family: $lato-light-font-family;
+$page-header-border-color: $ORLC-green;
+$page-header-main-text-color: $ORLC-black;
+$page-header-right-text-bg-color: $ORLC-cream-light;
+$page-header-right-text-color: $ORLC-black;
+
+// Widget
+$widget-feature-border-color: $ORLC-grey;
+
+$widget-astro-header-bg-color: $ORLC-blue-dark;
+$widget-astro-content-sign-color: $ORLC-blue-dark;
+$widget-astro-content-date-color: $ORLC-grey;
+$widget-astro-content-text-color: $ORLC-grey;
+
+$widget-weather-header-border-color: $ORLC-grey-light;
+$widget-weather-header-bg-color: $ORLC-blue-dark;
+$widget-weather-list-item-border-color: $ORLC-cream-dark;
+$widget-weather-list-text-color: $ORLC-grey;
