@@ -1,152 +1,159 @@
 /* Common Layout
 ----------------------------------------- */
-
 @import "../../../assets/scss/config";
 @import "../../../assets/scss/functions";
 @import "../../../assets/scss/themes/default/font";
 
 /* Remove the 300ms delay on Widows phones - source: http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away */
 html {
-  -ms-touch-action: manipulation; /* IE10  */
-  touch-action: manipulation; /* IE11+  */
+    -ms-touch-action: manipulation; /* IE10  */
+    touch-action: manipulation; /* IE11+  */
 }
+
 body {
-  font-family: $arial;
-  line-height: normal;
-  /*font-size: inherit;*/
+    font-family: $arial;
+    line-height: normal;
+    /*font-size: inherit;*/
 }
+
 a, a:hover, a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* For Kawabunga */
 .kawa h1 {
-  border-bottom: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
 }
+
 .kawa .kawa-h1 {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
 }
+
 .kawa .kawa-h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
+
+.kawa .kawa-h3 {
+    margin: 10px 0 10px 0;
+    font-style:italic;
+    font-size: 1em;
+}
+
 .kawa p {
-  margin: 0 0 10px;
+    margin: 0 0 10px;
 }
 
 .fixed {
-  position: fixed;
+    position: fixed;
 }
 
-.position-static>span{
-  position: static;
+.position-static > span {
+    position: static;
 }
 
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:hover,
-.nav-tabs>li.active>a:link,
-.nav-child>li.active>a,
-.nav-child>li.active>a:hover,
-.nav-child>li.active>a:link{
-  outline: none;
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:link,
+.nav-child > li.active > a,
+.nav-child > li.active > a:hover,
+.nav-child > li.active > a:link {
+    outline: none;
 }
 
 .nav-child {
-  margin-left: 31px;
+    margin-left: 31px;
 }
 
 .code-example {
-  position: relative;
-  padding: 45px 15px 60px;
-  margin: 0 0 -42px;
+    position: relative;
+    padding: 45px 15px 60px;
+    margin: 0 0 -42px;
 }
 
 .code-example div[class*='col-md'], .code-example div[class^='col-md'] {
-  margin-top: 7px;
-  margin-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 // For Flag-fix
 .code-example .article-flag-fix {
-  max-width: 62%;
+    max-width: 62%;
 }
 
 // For button text
 .code-example .icon-play-circle:before {
-  display: block;
+    display: block;
 }
+
 // For Footer article
 .code-example .footer-section {
-  padding:0;
+    padding: 0;
 }
 
 .code-example:after {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  content: "Example";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    content: "Example";
 }
 
 .highlighted {
-  padding: 9px 14px;
-  margin-bottom: 14px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
-.code-example+.highlighted {
-  margin: -15px 0 15px;
-  border-width: 0 1px 1px;
-  border-radius: 0;
+.code-example + .highlighted {
+    margin: -15px 0 15px;
+    border-width: 0 1px 1px;
+    border-radius: 0;
 }
 
 .highlighted pre {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  word-break: normal;
-  background-color: transparent;
-  border: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-break: normal;
+    background-color: transparent;
+    border: 0;
 }
 
 .highlighted pre code {
-  display: inline-block;
-  padding-right: 45px;
+    display: inline-block;
+    padding-right: 45px;
 }
 
 @media only screen and (min-width: 768px) {
-  .code-example {
-    margin-right: 0;
-    margin-left: 0;
-    border-width: 1px;
-  }
+    .code-example {
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+    }
 
-  .code-example+.highlighted {
-    margin-top: -16px;
-    margin-right: 0;
-    margin-left: 0;
-    border-width: 1px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-  }
+    .code-example + .highlighted {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
 }
-
-
-
-
-
-
 
 .page-wrap,
 .page-wrap-fluid {
-  margin: 0 auto;
+    margin: 0 auto;
 }
+
 .page-top-padding {
-  padding-top: 20px;
+    padding-top: 20px;
 }
+
 .skin-link {
-  display: none; // avoid a skin-link displayed without skin.css injected
+    display: none; // avoid a skin-link displayed without skin.css injected
 }
 
 /*@if ($responsive-liquid == false) {
@@ -198,22 +205,22 @@ a, a:hover, a:link {
 }*/
 
 @media (max-width: $media-queries-large) {
-  .mql-hide {
-    display: none;
-  }
+    .mql-hide {
+        display: none;
+    }
 }
 
 @media (max-width: $media-queries-medium) {
-  .mqm-hide {
-    display: none;
-  }
+    .mqm-hide {
+        display: none;
+    }
 }
 
 @media (max-width: $media-queries-small) {
-  .mqs-hide {
-    display: none;
-  }
-  .page-top-padding {
-    padding-top: px-to-rem(10px);
-  }
+    .mqs-hide {
+        display: none;
+    }
+    .page-top-padding {
+        padding-top: px-to-rem(10px);
+    }
 }

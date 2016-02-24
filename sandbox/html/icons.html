@@ -5,8 +5,49 @@
         <title>Icons sandbox</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <link rel="stylesheet" href="../css/icons.css">
     </head>
+
+    <%
+        var sections = [
+            {id: 'brand', title: 'Marques', notes: '', groups : [
+                {id:'logo', title: 'Logos', icons: ['rtl-logo', 'rtl2-logo', 'rtl2-logo-alt', 'funradio-logo', 'funradio-logo-alt', 'girls-logo', 'girls-logo-alt', 'girls-logo-new']},
+                {id:'square', title: 'Carrés', icons: ['rtl-square', 'funradio-square', 'girls-square']},
+                {id:'club', title: 'Club', icons: ['rtl-club', 'rtl-club-alt', 'funradio-club', 'funradio-club-alt']}
+            ]},
+            {id: 'common', title: 'Communes', groups : [
+                {id:'various', title: 'Divers', icons: ['buy-music', 'calendar', 'check', 'clock', 'cup', 'dices', 'download', 'envelope', 'flechemenu', 'folder', 'fullscreen', 'info-circle', 'lock', 'onair', 'out', 'pen', 'pin', 'print', 'print-square', 'pub', 'question', 'quote-start', 'quote-end', 'refresh', 'screen', 'seat', 'send', 'share', 'sheet', 'sound', 'star-empty', 'star', 'video', 'warning', 'world', 'zoom-sign', 'pastille']},
+                {id:'arrow', title: 'Flèches', iconPrefix: '-arrow', icons: ['left', 'right', 'left-circle', 'up-circle', 'right-circle', 'down-circle', 'left-sign', 'right-sign']},
+                {id:'media', title: 'Média', icons: ['play-circle-leaning', 'play-circle', 'stop']},
+                {id:'nav', title: 'Navigation', icons: ['close-sign', 'home', 'menu-hamburger', 'menu', 'search', 'user']},
+                {id:'social', title: 'Social', icons: ['answer', 'comment', 'comment-plus', 'comment-square', 'like', 'newsletter-sign', 'retweet', 'tweet-star', 'rss']},
+            ]},
+            {id: 'astro', title: 'Astrologie', text: 'Le format du nom des classes css est utile afin d\'être aligné avec les services webs de météo france.', groups : [
+                {id:'signs', title: 'Signes', iconPrefix: '-astro', icons: ['balance', 'belier', 'cancer', 'capricorne', 'gemeaux', 'lion', 'poisson', 'sagittaire', 'scorpion', 'tauraux', 'verso', 'vierge']}
+            ]},
+            {id: 'weather', title: 'Météo France', text: 'Le format du nom des classes css est utile afin d\'être aligné avec les services webs de météo france.', groups : [
+                {id:'day', title: 'Jour', icons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(function(index) { return 'meteo-p' + index })},
+                {id:'night', title: 'Nuit', icons: [1, 2, 3, 4, 5, 7, 11, 13].map(function(index) { return 'meteo-p' + index + 'n' })},
+                {id:'various', title: 'Divers', icons: ['meteo-wind', 'meteo-p0']}
+            ]},
+            {id: 'social', title: 'Social', groups : [
+                {id:'networks', title: 'Networks', icons: ['facebook', 'twitter', 'googleplus', 'instagram', 'linkedin', 'sms']},
+                {id:'squares', title: 'Carrés', icons: ['facebook-square', 'twitter-square', 'googleplus-square', 'instagram-square', 'linkedin-square']},
+                {id:'signs', title: 'Signes', icons: ['facebook-sign', 'twitter-sign', 'googleplus-sign', 'instagram-sign', 'linkedin-sign', 'pinterest-sign', 'youtube-sign']},
+                {id:'act', title: 'Agir', icons: ['facebook-message', 'facebook-share', 'facebook-like', 'instagram-like']},
+                {id:'deprecated', title: 'Deprecated ?', icons: ['facebook-square-alt']}
+            ]},
+            {id: 'amp', title: 'Projet AMP', groups : [
+                {id:'brand', title: 'Marques', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['rtl-logo', 'rtl2-logo', 'rtl2-logo-alt', 'funradio-logo', 'girls-logo']},
+                {id:'brand-square', title: 'Marques carrées', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['rtl-square', 'funradio-square', 'girls-square']},
+                {id:'social', title: 'Social', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['facebook', 'twitter', 'googleplus', 'linkedin', 'sms']},
+                {id:'social-square', title: 'Social carrés', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['facebook-square', 'twitter-square', 'googleplus-square', 'linkedin-square']},
+                {id:'social-sign', title: 'Social signes', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['facebook-sign', 'twitter-sign', 'linkedin-sign']},
+                {id:'various', title: 'Divers', iconClass: 'icon-amp', iconPrefix: '-amp', icons: ['search', 'user', 'play-circle', 'play-circle-leaning']}
+            ]}
+        ];
+    %>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="container kawa">
@@ -15,802 +56,85 @@
             <div class="row">
                 <!--Main Content -->
                 <div class="col-md-9">
-                    <section id="particular-icon" class="group col-md-12">
-                        <h1 class="kawa-h1">Brand icons</h1>
-                        <div id="website" class="subgroup col-md-12">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#rtl-icon">RTL</a></li>
-                                <li><a data-toggle="tab" href="#rtl2-icon">RTL2</a></li>
-                                <li><a data-toggle="tab" href="#funradio-icon">Funradio</a></li>
-                                <li><a data-toggle="tab" href="#girls-icon">Girls</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <!-- RTL -->
-                                <div id="rtl-icon" class="tab-pane fade in active">
-                                    <div class="kawa-icons">
-                                        <ul class="kawa-icons-list">
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl-logo"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl-logo</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl-square"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl-square</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl-club"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl-club</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl-club-alt"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl-club-alt</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <div class="alert alert-info" role="alert">
+                        Règles de construction des svg pour les fonts :
+                        <ul>
+                            <li>La taille de base est 1024x1024</li>
+                            <li>Le contenu est bord à bord en hauteur ou en largeur</li>
+                            <li>Les logos des marques sont en 1024 de haut et largeur variable</li>
+                        </ul>
+                        La nomenclature :
+                        <ul>
+                            <li>-square : le carré plein avec les bords arrondis</li>
+                            <li>-sign : le cercle plein</li>
+                            <li>-circle : le cercle</li>
+                        </ul>
+                    </div>
 
-                                <!-- RTL2 -->
-                                <div id="rtl2-icon" class="tab-pane fade">
-                                    <div class="kawa-icons">
-                                        <ul class="kawa-icons-list">
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl2-logo"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl2-logo</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-rtl2-logo-alt"></span>
-                                                <span class="icon-class">icon icon-lg icon-rtl2-logo-alt</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <div class="alert alert-warning" role="alert">
+                        <p>La pastille <%- include("../../assets/svg/raw/pastille.svg") %> est une exception, il faut inclure le code svg directement dans la page.</p>
 
-                                <!-- Funradio -->
-                                <div id="funradio-icon" class="tab-pane fade">
-                                    <div class="kawa-icons">
-                                        <ul class="kawa-icons-list">
-                                            <li>
-                                                <span class="icon icon-lg icon-funradio-logo"></span>
-                                                <span class="icon-class">icon icon-lg icon-funradio-logo</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-funradio-logo-alt"></span>
-                                                <span class="icon-class">icon icon-lg icon-funradio-logo-alt</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-funradio-square"></span>
-                                                <span class="icon-class">icon icon-lg icon-funradio-square</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-funradio-club"></span>
-                                                <span class="icon-class">icon icon-funradio-club</span>
-                                            </li>
-                                            <li class="item-lg">
-                                                <span class="icon icon-lg icon-funradio-club-alt"></span>
-                                                <span class="icon-class">icon icon-funradio-club-alt</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                        <pre class="prettyprint"><%= include("../../assets/svg/raw/pastille.svg") %></pre>
+                    </div>
 
-                                <!-- Girls -->
-                                <div id="girls-icon" class="tab-pane fade">
-                                    <div class="kawa-icons">
-                                        <ul class="kawa-icons-list">
-                                            <li>
-                                                <span class="icon icon-lg icon-girls-logo"></span>
-                                                <span class="icon-class">icon icon-lg icon-girls-logo</span>
-                                            </li>
-                                            <li class="item-lg">
-                                                <span class="icon icon-lg icon-girls-logo-new"></span>
-                                                <span class="icon-class">icon icon-lg icon-girls-logo-new</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-girls-logo-alt"></span>
-                                                <span class="icon-class">icon icon-lg icon-girls-logo-alt</span>
-                                            </li>
-                                            <li>
-                                                <span class="icon icon-lg icon-girls-square"></span>
-                                                <span class="icon-class">icon icon-lg icon-girls-square</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <div class="alert alert-info" role="alert">Il est possible de jouer sur la tailler de l'icône avec <b>icon-lg</b> et <b>icon-2x</b> à <b>icon-5x</b></div>
+
                     <section id="common-icon" class="group col-md-12">
-                        <h1 class="kawa-h1">Common icons</h1>
-                        <div id="general" class="subgroup col-md-12">
-                            <h2 class="kawa-h2">General</h2>
-                            <div class="kawa-icons">
-                                <ul class="kawa-icons-list">
-                                    <li>
-                                        <span class="icon icon-lg icon-pastille">
-                                            <svg class="icon-pastille-fill" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                        viewBox="1047 682 6 36" enable-background="new 1047 682 6 36" xml:space="preserve" width="6" height="36">
-                                                <image display="none" overflow="visible" enable-background="new    " width="6" height="36" xlink:href="7009042B0E36D994.jpeg"  transform="matrix(40 0 0 40 -7370.02 -562.296)">
-                                                </image>
-                                                <g>
-                                                    <path d="M3766.2,0h-1376h-12v12v1376v12h12h1376h12v-12V12V0H3766.2L3766.2,0z M3738.2,504c0,4,0,8,0,12v28l-4,28c-4,32-8,56-16,80
-                                                        c-4,24-12,48-24,80l-4,8c-4,12-8,20-12,32c0,4-4,4-4,8c-4,4-4,8-8,12l-8,20c-4,8-4,12-8,16l-4,4c0,4-4,4-4,8c-4,4-4,8-8,12
-                                                        s-4,8-8,12c-4,8-12,20-16,28c-16,28-36,52-52,76c-16,20-40,48-64,72c-8,12-20,20-32,32l-4,4c-8,8-16,12-24,20c-4,4-8,8-12,12
-                                                        c-48,40-100,80-152,108c-24,12-52,28-84,44c-8,4-20,8-28,12c-4,4-8,4-12,4c-4,4-8,4-12,4s-4,4-8,4h-4c-4,4-12,4-16,8
-                                                        c-56,20-112,32-168,36c-24,4-48,4-76,4l0,0h-4h-28l-28-4c-4,0-8,0-12,0s-4,0-8,0c-20-4-40-8-68-12c-12-4-20-8-32-8c-4,0-8-4-8-4
-                                                        c-8-4-12-4-20-8c-32-16-64-32-88-52c-4-4-8-4-12-8l-4-4l-4-4c-4-4-8-4-8-8c-4-4-4-4-8-8s-8-8-12-12l-16-16l0,0l0,0l-4-28
-                                                        c-4-4-8-8-8-12c-4-4-4-4-8-8s-4-8-8-8l-4-4c0-4-4-4-4-4c-4-4-4-8-8-12c-16-24-28-60-36-92c0-8,0-16-4-24c0-4,0-8-4-12
-                                                        c-4-8-4-20-4-32c-4-24-4-48-4-68v-8c0-4,0-8,0-12v-28l4-28c4-32,8-56,16-80c4-24,12-48,24-80l4-8c4-12,8-20,12-32c0-4,4-4,4-8
-                                                        c4-4,4-8,8-12l8-20c4-4,4-12,8-16l4,4c0-4,4-4,4-8c4-4,4-8,8-12s4-8,8-12c4-8,12-20,16-28c16-28,36-52,52-76c16-20,40-48,64-72
-                                                        c8-8,20-20,28-28l4-4c8-8,16-12,24-20c4-4,8-8,12-12c48-40,100-80,152-108c24-12,52-28,84-44c8-4,20-8,28-12c4-4,8-4,12-4
-                                                        c4-4,8-4,12-4l12-8c4-4,12-4,16-8c56-20,112-32,168-36c24-4,48-4,76-4h4h28l28,4c4,0,8,0,12,0s4,0,8,0c20,4,40,8,68,12
-                                                        c12,4,20,8,32,8c4,0,8,4,8,4c8,4,12,4,16,8c32,16,64,32,88,52c4,8,8,12,8,16l4,4l4,4c4,4,8,4,8,8c4,4,4,4,8,8c4,4,8,8,12,12l16,16
-                                                        l0,0l0,0l16,16c4,4,8,8,8,12c4,4,8,8,8,8c4,4,4,8,8,8l4,4c0,4,4,4,4,4c4,4,4,8,8,12c16,24,28,60,36,92c4,8,4,12,4,20c0,4,0,8,4,12
-                                                        c4,8,4,20,4,32c4,24,4,48,4,68L3738.2,504z"/>
-                                                    <path d="M3674.2,284c-4-4-4-8-4-12s-4-4-4-4l-4-4c-4-4-4-8-8-12c-4-4-4-8-8-8c-4-4-8-8-8-12l-12-16l-16-16c-4-4-8-8-12-12s-4-4-8-8
-                                                        s-4-4-8-8l-4-4l-4-4c-4-4-8-4-12-8c-24-16-52-32-84-44c-36-12-76-24-120-28c-4,0-4,0-8,0s-8,0-12,0h-36h-20c-24,0-52,4-76,4
-                                                        c-52,8-104,20-160,40c-52,16-104,44-160,76c-52,28-100,60-148,104c-4,0-8,8-12,8c-8,8-16,16-20,20l-4,4c-12,8-20,20-32,28
-                                                        c-12,16-28,32-44,56c0,0,0,0-4,4h144c108,0,124,64,112,148s-108,124-108,124c24,12,52,56,72,84c20,28,52,96,56,112h-96
-                                                        c0-8-16-44-48-92s-64-68-84-68l4-56c80-12,108-64,112-104s-16-84-32-84h-76l-60,404h-88l68-436c0,4-4,4-4,8c-32,40-56,80-76,120
-                                                        c-28,52-48,104-60,152c-8,24-12,52-16,76l-4,28l-4,28c0,4,0,8,0,12c0,4,0,4,0,8c0,44,4,88,12,124c8,32,20,64,32,92c4,4,4,8,4,12
-                                                        s4,4,4,4l4,4c4,4,4,8,4,8s4,4,4,8c4,4,8,8,8,12l12,16l20,16c4,4,8,8,12,12s4,4,8,8s4,4,8,8l4,4l4,4c4,4,8,4,8,8c24,16,52,32,84,44
-                                                        c36,12,76,24,120,28c4,0,4,0,8,0s8,0,12,0h28h28c24,0,52-4,76-4c52-8,104-20,160-40c52-16,104-44,160-76c52-32,100-68,148-108
-                                                        c4-4,8-8,12-12c8-8,16-12,20-20l4-4c8-8,20-20,28-28c24-24,44-48,60-68c12-16,24-32,36-48c0,0,0-4,4-4h-192c0,0,108-160,136-216
-                                                        s40-80,36-120s-32-100-168-24l8-64c0,0,56-40,116-52c60-12,116-4,132,52c16,60,4,132-44,212c-48,80-64,100-68,108c-4,8-16,20,8,20
-                                                        c16,0,64,0,92,0c0-4,4-4,4-4c4-4,4-12,8-16c28-52,48-104,60-152c8-24,12-52,16-76l4-36v-16c0-4,0-8,0-12s0-4,0-8c0-44-4-88-12-124
-                                                        C3698.2,340,3686.2,308,3674.2,284z M3070.2,564c-4,32-52,332-52,332h-96c0,0,60-396,60-400c0-8-4-12-12-12h-80l8-60h280l-8,60
-                                                        C3078.2,484,3078.2,520,3070.2,564z M3362.2,896h-228l72-468h88c0,0-48,324-52,336c-4,28-8,64,36,64c20,0,88,0,88,0L3362.2,896z"/>
-                                                </g>
-                                                <g id="LAtmJy.tif">
-                                                    <image overflow="visible" width="6" height="36" id="Layer_0_4_" xlink:href="7009042B0E36D994.png"  transform="matrix(1 0 0 1 1213.5018 -403.4494)"></image>
-                                                </g>
-                                                <circle cx="1050" cy="685" r="3"/>
-                                                <circle opacity="0.3" cx="1050" cy="695" r="3"/>
-                                                <circle opacity="0.1" cx="1050" cy="705" r="3"/>
-                                                <circle opacity="5.000000e-02" cx="1050" cy="715" r="3"/>
-                                            </svg>
-                                        </span>
-                                        <span class="icon-class">copy svg in code source</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-info-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-info-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-warning"></span>
-                                        <span class="icon-class">icon icon-lg icon-warning</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-question"></span>
-                                        <span class="icon-class">icon icon-lg icon-question</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-answer"></span>
-                                        <span class="icon-class">icon icon-lg icon-answer</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-seat"></span>
-                                        <span class="icon-class">icon icon-lg icon-seat</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-buy-music"></span>
-                                        <span class="icon-class">icon icon-lg icon-buy-music</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-calendar"></span>
-                                        <span class="icon-class">icon icon-lg icon-calendar</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-check"></span>
-                                        <span class="icon-class">icon icon-lg icon-check</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-left"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-left</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-right"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-right</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-left-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-left-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-right-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-right-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-left-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-left-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-right-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-right-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-down-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-down-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-arrow-up-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-arrow-up-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-clock"></span>
-                                        <span class="icon-class">icon icon-lg icon-clock</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-close-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-close-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-comment"></span>
-                                        <span class="icon-class">icon icon-lg icon-comment</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-comment-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-comment-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-comment-plus"></span>
-                                        <span class="icon-class">icon icon-lg icon-comment-plus</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-cup"></span>
-                                        <span class="icon-class">icon icon-lg icon-cup</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-dices"></span>
-                                        <span class="icon-class">icon icon-lg icon-dices</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-envelope"></span>
-                                        <span class="icon-class">icon icon-lg icon-envelope</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-flechemenu"></span>
-                                        <span class="icon-class">icon icon-lg icon-flechemenu</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-fullscreen"></span>
-                                        <span class="icon-class">icon icon-lg icon-fullscreen</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-home"></span>
-                                        <span class="icon-class">icon icon-lg icon-home</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-search"></span>
-                                        <span class="icon-class">icon icon-lg icon-search</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-menu-hamburger"></span>
-                                        <span class="icon-class">icon icon-lg icon-menu-hamburger</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-menu"></span>
-                                        <span class="icon-class">icon icon-lg icon-menu</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-zoom-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-zoom-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-newsletter-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-newsletter-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-like"></span>
-                                        <span class="icon-class">icon icon-lg icon-like</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-onair"></span>
-                                        <span class="icon-class">icon icon-lg icon-onair</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-out"></span>
-                                        <span class="icon-class">icon icon-lg icon-out</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-play-circle"></span>
-                                        <span class="icon-class">icon icon-lg icon-play-circle</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-play-circle-leaning"></span>
-                                        <span class="icon-class">icon icon-lg icon-play-circle-leaning</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-print"></span>
-                                        <span class="icon-class">icon icon-lg icon-print</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-print-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-print-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-pub"></span>
-                                        <span class="icon-class">icon icon-lg icon-pub</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-quote-start"></span>
-                                        <span class="icon-class">icon icon-lg icon-quote-start</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-quote-end"></span>
-                                        <span class="icon-class">icon icon-lg icon-quote-end</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-refresh"></span>
-                                        <span class="icon-class">icon icon-lg icon-refresh</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-retweet"></span>
-                                        <span class="icon-class">icon icon-lg icon-retweet</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-rss"></span>
-                                        <span class="icon-class">icon icon-lg icon-rss</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-screen"></span>
-                                        <span class="icon-class">icon icon-lg icon-screen</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-send"></span>
-                                        <span class="icon-class">icon icon-lg icon-send</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-share"></span>
-                                        <span class="icon-class">icon icon-lg icon-share</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-sound"></span>
-                                        <span class="icon-class">icon icon-lg icon-sound</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-star"></span>
-                                        <span class="icon-class">icon icon-lg icon-star</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-star-empty"></span>
-                                        <span class="icon-class">icon icon-lg icon-star-empty</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-stop"></span>
-                                        <span class="icon-class">icon icon-lg icon-stop</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-download"></span>
-                                        <span class="icon-class">icon icon-lg icon-download</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-tweet-star"></span>
-                                        <span class="icon-class">icon icon-lg icon-tweet-star</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-user"></span>
-                                        <span class="icon-class">icon icon-lg icon-user</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-video"></span>
-                                        <span class="icon-class">icon icon-lg icon-video</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-world"></span>
-                                        <span class="icon-class">icon icon-lg icon-world</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-lock"></span>
-                                        <span class="icon-class">icon icon-lg icon-lock</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-pen"></span>
-                                        <span class="icon-class">icon icon-lg icon-pen</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-folder"></span>
-                                        <span class="icon-class">icon icon-lg icon-folder</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-pin"></span>
-                                        <span class="icon-class">icon icon-lg icon-pin</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-sheet"></span>
-                                        <span class="icon-class">icon icon-lg icon-sheet</span>
-                                    </li>
-                                </ul>
+                        <%
+                            sections.forEach(function(section) {
+                        %>
+                            <div id="<%= section.id %>" class="subgroup col-md-12">
+                                <% if (section.title) { %><h1 class="kawa-h1"><%= section.title %></h1><% } %>
+                                <% if (section.text) { %><p><%= section.text %></p><% } %>
+                                <%
+                                    section.groups.forEach(function(group) {
+                                %>
+                                <div class="kawa-icons">
+                                    <h2 class="kawa-h2" id="<%= section.id %>-<%= group.id %>" class="kawa-h3"><%= group.title %></h2>
+                                    <ul class="kawa-icons-list">
+                                        <%
+                                            group.icons.forEach(function(icon) {
+                                        %>
+                                            <li>
+                                                <span class="<%= group.iconClass ? group.iconClass : 'icon' %> icon<%= group.iconPrefix %>-<%=icon%>"></span>
+                                                <span class="icon-class"><%= group.iconClass ? group.iconClass : 'icon' %> icon<%= group.iconPrefix %>-<%=icon%></span>
+                                            </li>
+                                        <%
+                                            });
+                                        %>
+                                    </ul>
+                                </div>
+                                <%
+                                    });
+                                %>
                             </div>
-                        </div>
-                        <div id="astro" class="subgroup col-md-12">
-                            <h2 class="kawa-h2">Astrology</h2>
-                            <div class="kawa-icons">
-                                <ul class="kawa-icons-list">
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-balance"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-balance</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-belier"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-belier</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-cancer"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-cancer</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-capricorne"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-capricorne</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-gemeaux"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-gemeaux</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-lion"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-lion</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-poisson"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-poisson</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-sagittaire"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-sagittaire</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-scorpion"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-scorpion</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-tauraux"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-tauraux</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-verso"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-verso</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-astro-vierge"></span>
-                                        <span class="icon-class">icon icon-lg icon-astro-vierge</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="meteo" class="subgroup col-md-12">
-                            <h2 class="kawa-h2">Meteo France</h2>
-                            <p>Le format du nom des classes css est utile afin d'être aligné avec les services webs de météo france.</p>
-                            <div class="kawa-icons">
-                                <ul class="kawa-icons-list">
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-wind"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-wind</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p0"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p0</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p1"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p1</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p2"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p2</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p3"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p3</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p4"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p4</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p5"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p5</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p6"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p6</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p7"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p7</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p8"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p8</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p9"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p9</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p10"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p10</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p11"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p11</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p12"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p12</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p13"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p13</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p14"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p14</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p15"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p15</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p16"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p16</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p17"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p17</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p1n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p1n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p2n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p2n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p3n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p3n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p4n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p4n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p5n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p5n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p7n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p7n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p11n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p11n</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-meteo-p13n"></span>
-                                        <span class="icon-class">icon icon-lg icon-meteo-p13n</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="social" class="subgroup col-md-12">
-                            <h2 class="kawa-h2">Social</h2>
-                            <div class="kawa-icons">
-                                <ul class="kawa-icons-list">
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-square-alt"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-square-alt</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-message"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-message</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-share"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-share</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-facebook-like"></span>
-                                        <span class="icon-class">icon icon-lg icon-facebook-like</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-twitter"></span>
-                                        <span class="icon-class">icon icon-lg icon-twitter</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-twitter-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-twitter-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-twitter-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-twitter-sign</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-googleplus"></span>
-                                        <span class="icon-class">icon icon-lg icon-googleplus</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-googleplus-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-googleplus-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-googleplus-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-googleplus-sign</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-instagram"></span>
-                                        <span class="icon-class">icon icon-lg icon-instagram</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-instagram-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-instagram-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-instagram-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-instagram-sign</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-instagram-like"></span>
-                                        <span class="icon-class">icon icon-lg icon-instagram-like</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-linkedin"></span>
-                                        <span class="icon-class">icon icon-lg icon-linkedin</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-linkedin-square"></span>
-                                        <span class="icon-class">icon icon-lg icon-linkedin-square</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon icon-lg icon-linkedin-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-linkedin-sign</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-pinterest-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-pinterest-sign</span>
-                                    </li>
-                                    <li class="clearfix">
-                                        <span class="icon icon-lg icon-youtube-sign"></span>
-                                        <span class="icon-class">icon icon-lg icon-youtube-sign</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="amp-icon" class="group col-md-12">
-                        <h1 class="kawa-h1">Amp icons</h1>
-                        <div class="kawa-icons">
-                            <ul class="kawa-icons-list">
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-rtl-logo"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-rtl-logo</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-rtl-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-rtl-square</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-rtl2-logo"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-rtl2-logo</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-rtl2-logo-alt"></span>
-                                    <span class="icon-amp-class">icon-amp icon-amp-lg icon-amp-rtl2-logo-alt</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-funradio-logo"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-funradio-logo</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-funradio-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-funradio-square</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-girls-logo"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-girls-logo</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-girls-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-girls-square</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-search"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-search</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-user"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-user</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-play-circle"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-play-circle</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-play-circle-leaning"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-play-circle-leaning</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-facebook"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-facebook</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-facebook-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-facebook-square</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-facebook-sign"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-facebook-sign</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-googleplus"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-googleplus</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-googleplus-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-googleplus-square</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-linkedin"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-linkedin</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-linkedin-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-linkedin-square</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-linkedin-sign"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-linkedin-sign</span>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="icon-amp icon-amp-lg icon-amp-twitter"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-twitter</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-twitter-square"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-twitter-square</span>
-                                </li>
-                                <li>
-                                    <span class="icon-amp icon-amp-lg icon-amp-twitter-sign"></span>
-                                    <span class="icon-class">icon-amp icon-amp-lg icon-amp-twitter-sign</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <%
+                            });
+                        %>
                     </section>
                 </div>
 
                 <!--Nav Bar -->
                 <nav class="col-md-3 scroll-sidebar navbar">
                     <ul id="sidebar" class="nav nav-stacked fixed">
-                        <li>
-                            <a href="#particular-icon">Particular Icons</a>
-                            <ul class="nav nav-stacked">
-                                <li><a href="#website">Website</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#common-icon">Common Icons</a>
-                            <ul class="nav nav-stacked">
-                                <li><a href="#general">General</a></li>
-                                <li><a href="#astro">Astro</a></li>
-                                <li><a href="#meteo">Meteo</a></li>
-                                <li><a href="#social">Social</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#amp-icon">Amp Icons</a>
-                        </li>
+                        <%
+                            sections.forEach(function(section) {
+                        %>
+                            <li>
+                                <a href="#<%= section.id %>"><%= section.title %></a>
+                                <ul class="nav nav-stacked">
+                                    <%
+                                        section.groups.forEach(function(group) {
+                                    %>
+                                        <li><a href="#<%= section.id %>-<%= group.id %>"><%= group.title %></a></li>
+                                    <%
+                                        });
+                                    %>
+                                </ul>
+                            </li>
+                        <%
+                            });
+                        %>
                     </ul>
                 </nav>
             </div>

@@ -1,7 +1,8 @@
-
 // import config, template
 @import "../../assets/scss/kawabunga-base";
+
 @import "common/kawabunga-layout";
+@import "common/kawabunga-theme";
 
 // import tool
 @import "common/side-nav";
@@ -10,129 +11,136 @@
 @import "../../assets/scss/fonticon";
 @import "../../assets/scss/fonticon-amp";
 
-
 /* Icon page
 ----------------------------------------- */
 
 .clearfix {
-  clear: both;
+    clear: both;
 }
 
 /* Icons */
 .kawa-icons {
-  margin: 15px -10px 20px;
-  overflow: hidden;
+    margin: 15px -10px 20px;
+    overflow: hidden;
 
-  .kawa-icons-list {
-    padding-left: 0;
-    list-style: none;
+    .kawa-icons-list {
+        padding-left: 0;
+        list-style: none;
 
-    li {
-      float: left;
-      width: 25%;
-      height: 115px;
-      padding: 10px;
-      font-size: 10px;
-      line-height: 1.4;
-      text-align: center;
-      background-color: #F4F4F4;
-      border: 1px solid #FFFFFF;
+        li {
+            float: left;
+            width: 25%;
+            height: 115px;
+            padding: 10px;
+            font-size: 10px;
+            line-height: 1.4;
+            text-align: center;
+            background-color: #F4F4F4;
+            border: 1px solid #FFFFFF;
 
-      &:hover {
-        color: #FFFFFF;
-        background-color: #563d7c;
-      }
+            &:hover {
+                color: #FFFFFF;
+                background-color: #563d7c;
+            }
 
-      &.item-lg {
-        width:25%;
-      }
+            &.item-lg {
+                width: 25%;
+            }
 
-      .icon {
-        display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 10px;
-      }
+            .icon, .icon-amp {
+                display: inline-block;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                font-size: 30px;
+                line-height: 30px;
+            }
 
-      .icon-class {
-        display: block;
-        text-align: center;
-        word-wrap: break-word;
-      }
+            .icon-class {
+                display: block;
+                text-align: center;
+                word-wrap: break-word;
+            }
+        }
     }
-  }
+}
+
+svg {
+    height: 30px;
 }
 
 @media (min-width: 768px) {
-  .kawa-icons {
-    margin-right: 0;
-    margin-left: 0;
+    .kawa-icons {
+        margin-right: 0;
+        margin-left: 0;
 
-    .kawa-icons-list li {
-      width: 12.5%;
-      font-size: 12px;
+        .kawa-icons-list li {
+            width: 12.5%;
+            font-size: 12px;
+        }
     }
-  }
 
 }
 
 /* Sprites */
 .kawa-sprites {
-  margin: 15px -10px 20px;
-  overflow: hidden;
+    margin: 15px -10px 20px;
+    overflow: hidden;
 }
 
 .kawa-sprites-list {
-  padding-left: 0;
-  list-style: none;
+    padding-left: 0;
+    list-style: none;
 }
+
 /* particular case for the logo: logo-devices */
 .kawa-sprites .last-li li:last-child {
-  width: 40%;
-  height: 207px;
+    width: 40%;
+    height: 207px;
 }
 
 @media (min-width: 768px) {
-  .kawa-sprites .last-li li:last-child {
-    width: 40%;
-    font-size: 12px;
-  }
+    .kawa-sprites .last-li li:last-child {
+        width: 40%;
+        font-size: 12px;
+    }
 }
+
 /* end */
 
 .kawa-sprites li {
-  float: left;
-  width: 33.3%;
-  height: 120px;
-  padding: 10px;
-  font-size: 10px;
-  line-height: 1.4;
-  text-align: center;
-  background-color: #ACACAC;
-  border: 1px solid #FFFFFF;
+    float: left;
+    width: 33.3%;
+    height: 120px;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    background-color: #ACACAC;
+    border: 1px solid #FFFFFF;
 }
 
 .kawa-sprites .sprite {
-  display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 24px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .kawa-sprites .sprite-class {
-  display: block;
-  text-align: center;
-  word-wrap: break-word;
-  color: #FFFFFF;
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+    color: #FFFFFF;
 }
 
 @media (min-width: 768px) {
-  .kawa-sprites {
-    margin-right: 0;
-    margin-left: 0;
-  }
+    .kawa-sprites {
+        margin-right: 0;
+        margin-left: 0;
+    }
 
-  .kawa-sprites li {
-    width: 33.3%;
-    font-size: 12px;
-  }
+    .kawa-sprites li {
+        width: 33.3%;
+        font-size: 12px;
+    }
 }

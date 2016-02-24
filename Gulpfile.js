@@ -114,7 +114,9 @@ gulp.task('font', function () {
         .pipe(gulp.dest('build/sandbox/font/'))
 });
 
-gulp.task('fonticon', function () {
+gulp.task('fonticon', ['fonticon-standard', 'fonticon-amp']);
+
+gulp.task('fonticon-standard', function () {
     return buildFontIcon({name: 'Kawabunga-Icon', scssFile: '_fonticon.scss'}, [
             'assets/svg/common/astro/*.svg',
             'assets/svg/common/meteofrance/*.svg',
