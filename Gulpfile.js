@@ -160,6 +160,7 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/brand/funradio/funradio-logo.svg',
         'assets/svg/brand/funradio/funradio-square.svg',
         'assets/svg/brand/girls/girls-logo.svg',
+        'assets/svg/brand/girls/girls-logo-new.svg',
         'assets/svg/brand/girls/girls-square.svg'
     ]);
 });
@@ -207,7 +208,7 @@ gulp.task('webserver', function () {
             directoryListing: true,
             port: 8282,
             host: '0.0.0.0',
-            open: true
+            open: '/build/sandbox/html'
         }))
 });
 
