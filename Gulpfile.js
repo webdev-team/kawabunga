@@ -132,7 +132,9 @@ gulp.task('fonticon-standard', function () {
             'assets/svg/brand/funradio/*.svg',
             'assets/svg/brand/girls/*.svg',
             'assets/svg/brand/rtl/*.svg',
-            'assets/svg/brand/rtl2/*.svg'
+            'assets/svg/brand/rtl2/*.svg',
+            'assets/svg/brand/ipfrance/*.svg',
+            'assets/svg/brand/mediapanel/*.svg'
         ]);
 });
 
