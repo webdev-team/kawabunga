@@ -133,6 +133,7 @@ gulp.task('fonticon-standard', function () {
             'assets/svg/brand/girls/*.svg',
             'assets/svg/brand/rtl/*.svg',
             'assets/svg/brand/rtl2/*.svg',
+            'assets/svg/brand/orlc/*.svg',
             'assets/svg/brand/ipfrance/*.svg',
             'assets/svg/brand/mediapanel/*.svg'
         ]);
@@ -163,7 +164,8 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/brand/funradio/funradio-square.svg',
         'assets/svg/brand/girls/girls-logo.svg',
         'assets/svg/brand/girls/girls-logo-new.svg',
-        'assets/svg/brand/girls/girls-square.svg'
+        'assets/svg/brand/girls/girls-square.svg',
+        'assets/svg/brand/orlc/orlc-logo.svg'
     ]);
 });
 
