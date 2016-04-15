@@ -36,3 +36,9 @@
 
 <% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" }
 <% }); %>
+
+/*
+ * mixins
+ */
+<% _.each(glyphs, function(glyph) { %>@mixin <%= className %>-<%= glyph.name %>() { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" }
+<% }); %>

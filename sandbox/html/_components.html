@@ -39,9 +39,9 @@
     <div class="col-md-9">
 
         <section id="general" class="col-md-12">
-            <h1 class="kawa-h1">General</h1>
+            <div class="kawa-h1">General</div>
             <div id="mainFooter" class="col-md-12">
-                <h2 class="kawa-h2">Main footer</h2>
+                <div class="kawa-h2">Main footer</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-12">
                         <%- include('../../assets/sample/page/_main-footer.html', {logo: locals.logo}) %>
@@ -76,9 +76,9 @@
 
 
         <section id="button" class="col-md-12">
-            <h1 class="kawa-h1">Buttons</h1>
+            <div class="kawa-h1">Buttons</div>
             <div id="classic" class="col-md-12">
-                <h2 class="kawa-h2">Classic</h2>
+                <div class="kawa-h2">Classic</div>
                 <p>Le texte est en majuscule lorqu'il y a un seul mot sinon en minuscule.</p>
                 <form class="code-example col-md-12">
                     <div class="col-md-2">
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div id="particular" class="col-md-12">
-                <h2 class="kawa-h2">Particular</h2>
+                <div class="kawa-h2">Particular</div>
                 <form class="site code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/button/_btn-link.html', {textBtn: 'Aller vers l&apos;émission'}) %>
@@ -172,54 +172,18 @@
             </div>
         </section>
 
-        <section id="input" class="col-md-12">
-            <h1 class="kawa-h1">Input</h1>
-            <div id="inputText" class="col-md-12">
-                <h2 class="kawa-h2">Text</h2>
-                <form class="code-example col-md-12">
-                    <div class="col-md-3">
-                        <%- include('../../assets/sample/input/_input-text.html', {sizeInput: 'small', placeholder: 'Rechercher'}) %>
-                    </div>
-                    <div class="col-md-3">
-                        <%- include('../../assets/sample/input/_input-text.html', {placeholder: 'Rechercher'}) %>
-                    </div>
-                    <div class="col-md-3">
-                        <%- include('../../assets/sample/input/_input-text.html', {sizeInput: 'large', placeholder: 'Rechercher'}) %>
-                    </div>
-                </form>
-                <ul class="nav nav-tabs nav-child">
-                    <li class="active"><a data-toggle="tab" href="#rtl-input-text-html">HTML</a></li>
-                    <li><a data-toggle="tab" href="#rtl-input-text-css">CSS</a></li>
-                    <li><a data-toggle="tab" href="#rtl-input-text-ejs">EJS</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="rtl-input-text-html" class="tab-pane fade in active">
-                        <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-html"><%= include('../../assets/sample/input/_input-text.html', {sizeInput: 'small'}) %><br/>
-<%= include('../../assets/sample/input/_input-text.html') %><br/>
-<%= include('../../assets/sample/input/_input-text.html', {sizeInput: 'large'}) %></pre>
-                        </figure>
-                    </div>
-                    <div id="rtl-input-text-css" class="tab-pane fade">
-                        <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-css"><%- include("../../assets/scss/component/input/_input-text.scss") %></pre>
-                        </figure>
-                    </div>
-                    <div id="rtl-input-text-ejs" class="tab-pane fade">
-                        <figure class="highlighted col-md-12">
-                            <pre class="prettyprint lang-html">
-
-                            </pre>
-                        </figure>
-                    </div>
-                </div>
-            </div>
+        <section id="form" class="col-md-12">
+            <div class="kawa-h1">Form</div>
+            <%- include('form/_input-text.html') %>
+            <%- include('form/_input-checkbox.html') %>
+            <%- include('form/_input-radio.html') %>
+            <%- include('form/_dropdown.html') %>
         </section>
 
         <section id="page" class="col-md-12">
-            <h1 class="kawa-h1">Page</h1>
+            <div class="kawa-h1">Page</div>
             <div id="pageHeader" class="col-md-12">
-                <h2 class="kawa-h2">Header</h2>
+                <div class="kawa-h2">Header</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-12">
                         <%- include('../../assets/sample/page/_page-header.html', {uppercase: 'uppercase', title: 'Commentaires', dateTime: 'true'}) %>
@@ -253,9 +217,9 @@
         </section>
 
         <section id="module" class="col-md-12">
-            <h1 class="kawa-h1">Module</h1>
+            <div class="kawa-h1">Module</div>
             <div id="moduleHeader" class="col-md-12">
-                <h2 class="kawa-h2">Header</h2>
+                <div class="kawa-h2">Header</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-5">
                         <%- include('../../assets/sample/module/_module-header.html', {text: 'La question du jour'}) %>
@@ -296,7 +260,7 @@
             </div>
 
             <div id="moduleLink" class="col-md-12">
-                <h2 class="kawa-h2">Link</h2>
+                <div class="kawa-h2">Link</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-5">
                         <%- include('../../assets/sample/module/_module-link.html', {text: 'Voir plus de commentaires', border: 'border'}) %>
@@ -333,7 +297,7 @@
             </div>
 
             <div id="moduleBorder" class="col-md-12">
-                <h2 class="kawa-h2">Border</h2>
+                <div class="kawa-h2">Border</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/module/_module-border.html', {text: 'Module avec bordure fine'}) %>
@@ -374,7 +338,7 @@
             </div>
 
             <div id="moduleFooter" class="col-md-12">
-                <h2 class="kawa-h2">Footer</h2>
+                <div class="kawa-h2">Footer</div>
                 <p>Boutons en pied de module. Cas particuliers:
                     <br/>- Pied de module au couleur des thématiques (ex: Parcourir tous les replays).
                     <br/>Les textes et chevrons passent en #ffffff
@@ -419,7 +383,7 @@
                 </div>
             </div>
             <div id="moduleFollowUs" class="col-md-12">
-                <h2 class="kawa-h2">Follow us</h2>
+                <div class="kawa-h2">Follow us</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-12">
                         <%- include('../../assets/sample/module/_module-follow-us.html', {domain: 'RTL'}) %>
@@ -452,7 +416,7 @@
                 </div>
             </div>
             <div id="moduleComment" class="col-md-12">
-                <h2 class="kawa-h2">Comment</h2>
+                <div class="kawa-h2">Comment</div>
                 <div class="code-example col-md-12">
                     <div class="col-md-8">
                         <%- include('../../assets/sample/module/_module-comment.html') %>
@@ -485,9 +449,9 @@
             </div>
         </section>
         <section id="widget" class="col-md-12">
-            <h1 class="kawa-h1">Widget</h1>
+            <div class="kawa-h1">Widget</div>
             <div id="widgetPartner" class="col-md-12">
-                <h2 class="kawa-h2">Partner</h2>
+                <div class="kawa-h2">Partner</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/widget/_widget-partner.html') %>
@@ -519,7 +483,7 @@
                 </div>
             </div>
             <div id="widgetWeather" class="col-md-12">
-                <h2 class="kawa-h2">Weather</h2>
+                <div class="kawa-h2">Weather</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/widget/_widget-weather.html') %>
@@ -551,7 +515,7 @@
                 </div>
             </div>
             <div id="widgetAstro" class="col-md-12">
-                <h2 class="kawa-h2">Astro</h2>
+                <div class="kawa-h2">Astro</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/widget/_widget-astro.html') %>
@@ -584,9 +548,9 @@
             </div>
         </section>
         <section id="article" class="col-md-12">
-            <h1 class="kawa-h1">Article</h1>
+            <div class="kawa-h1">Article</div>
             <div id="articleBody" class="col-md-12">
-                <h2 class="kawa-h2">Body</h2>
+                <div class="kawa-h2">Body</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-3">
                         <%- include('../../assets/sample/article/_article-text-link.html') %>
@@ -639,7 +603,7 @@
                 </div>
             </div>
             <div id="articleFooter" class="col-md-12">
-                <h2 class="kawa-h2">Footer</h2>
+                <div class="kawa-h2">Footer</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-5">
                         <%- include('../../assets/sample/article/_article-footer.html') %>
@@ -671,7 +635,7 @@
                 </div>
             </div>
             <div id="tag" class="col-md-12">
-                <h2 class="kawa-h2">Tag</h2>
+                <div class="kawa-h2">Tag</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-3 position-static">
                         <%- include('../../assets/sample/article/_article-tag.html') %>
@@ -724,7 +688,7 @@
                 </div>
             </div>
             <div id="post-preview" class="col-md-12">
-                <h2 class="kawa-h2">Post preview</h2>
+                <div class="kawa-h2">Post preview</div>
                 <form class="code-example col-md-12">
                     <div class="col-md-4">
                         <%- include('../../assets/sample/article/_article-post-preview.html', {category: 'culture-bg-color', category_border: 'culture-border-color', category_before: 'culture-bg-color_before', category_after: 'culture-border-color_after'}) %>

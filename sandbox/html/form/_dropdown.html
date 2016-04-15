@@ -1,0 +1,34 @@
+<div id="dropdown" class="col-md-12">
+    <div class="kawa-h2">Dropdown</div>
+
+    <form class="code-example col-md-12">
+        <div class="col-md-9">
+            <%- include('../../../assets/sample/form/_dropdown.html') %>
+        </div>
+    </form>
+
+    <ul class="nav nav-tabs nav-child">
+        <li class="active"><a data-toggle="tab" href="#rtl-dropdown-html">HTML</a></li>
+        <li><a data-toggle="tab" href="#rtl-dropdown-css">CSS</a></li>
+        <li><a data-toggle="tab" href="#rtl-dropdown-ejs">EJS</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="rtl-dropdown-html" class="tab-pane fade in active">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html"><%= include('../../../assets/sample/form/_dropdown.html') %></pre>
+            </figure>
+        </div>
+        <div id="rtl-dropdown-css" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-css"><%- include("../../../assets/scss/component/form/_dropdown.scss") %></pre>
+            </figure>
+        </div>
+        <div id="rtl-dropdown-ejs" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html">
+
+                </pre>
+            </figure>
+        </div>
+    </div>
+</div>

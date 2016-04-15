@@ -1,0 +1,44 @@
+.input-radio {
+    position:relative;
+
+    .input {
+        position:absolute;
+        top:0; left:0;
+        visibility:hidden;
+
+        &:checked + .label-text:after {
+            background-color:$black;
+        }
+    }
+
+    .label-text {
+        position:relative;
+        padding-left:25px;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top:0; left:0;
+            width: px-to-rem(16px);
+            height: px-to-rem(16px);
+            line-height: px-to-rem(15px);
+            border-radius:50%;
+            vertical-align: middle;
+            margin: 0 px-to-rem(10px) 0 0;
+            border: 1px solid $black;
+            background-color: $white;
+        }
+
+        &:after {
+            content:"";
+            position:absolute;
+            left:3px; top:3px;
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            overflow:hidden;
+            transition:all 0.2s;
+        }
+    }
+}

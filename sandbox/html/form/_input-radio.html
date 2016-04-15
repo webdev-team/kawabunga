@@ -1,0 +1,35 @@
+<div id="radio-button" class="col-md-12">
+    <div class="kawa-h2">Radio Button</div>
+
+    <form class="code-example col-md-12">
+        <div class="col-md-3">
+            <%- include('../../../assets/sample/form/_input-radio.html', {sizeInput: 'small', labelText: 'Oui', idFor: 'input-radio-yes'}) %>
+            <%- include('../../../assets/sample/form/_input-radio.html', {sizeInput: 'small', labelText: 'Non', idFor: 'input-radio-no'}) %>
+        </div>
+    </form>
+
+    <ul class="nav nav-tabs nav-child">
+        <li class="active"><a data-toggle="tab" href="#rtl-input-radio-html">HTML</a></li>
+        <li><a data-toggle="tab" href="#rtl-input-radio-css">CSS</a></li>
+        <li><a data-toggle="tab" href="#rtl-input-radio-ejs">EJS</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="rtl-input-radio-html" class="tab-pane fade in active">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html"><%= include('../../../assets/sample/form/_input-radio.html', {sizeInput: 'small'}) %></pre>
+            </figure>
+        </div>
+        <div id="rtl-input-radio-css" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-css"><%- include("../../../assets/scss/component/form/_input-radio.scss") %></pre>
+            </figure>
+        </div>
+        <div id="rtl-input-radio-ejs" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html">
+
+                </pre>
+            </figure>
+        </div>
+    </div>
+</div>

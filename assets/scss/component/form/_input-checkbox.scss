@@ -1,0 +1,39 @@
+@import "../../../../assets/scss/fonticon";
+
+.input-checkbox {
+    position:relative;
+
+    .input {
+        position:absolute;
+        top:0; left:0;
+        visibility:hidden;
+
+        &:checked + .label-text:before {
+            font-family: 'Kawabunga-Icon';
+            @include icon-check;
+            text-indent: px-to-rem(5px);
+            vertical-align: middle;
+            color: $black;
+            font-size: px-to-rem(24px);
+            line-height: px-to-rem(16px);
+            padding-top: px-to-rem(2px);
+            transition:all 0.2s;
+        }
+    }
+
+    .label-text {
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: px-to-rem(25px);
+            height: px-to-rem(25px);
+            line-height: px-to-rem(25px);
+            vertical-align: middle;
+            margin: 0 px-to-rem(10px) 0 0;
+            border: 1px solid $black;
+            background-color: $white;
+        }
+    }
+}

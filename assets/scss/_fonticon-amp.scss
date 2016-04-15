@@ -76,3 +76,50 @@
 .icon-amp-twitter-square:before { content: "\EA28" }
 .icon-amp-twitter:before { content: "\EA29" }
 .icon-amp-youtube-sign:before { content: "\EA2A" }
+
+
+/*
+ * mixins
+ */
+@mixin icon-amp-funradio-logo() { content: "\EA01" }
+@mixin icon-amp-funradio-square() { content: "\EA02" }
+@mixin icon-amp-girls-logo-new() { content: "\EA03" }
+@mixin icon-amp-girls-logo() { content: "\EA04" }
+@mixin icon-amp-girls-square() { content: "\EA05" }
+@mixin icon-amp-orlc-logo() { content: "\EA06" }
+@mixin icon-amp-rtl-logo() { content: "\EA07" }
+@mixin icon-amp-rtl-square() { content: "\EA08" }
+@mixin icon-amp-rtl2-logo-alt() { content: "\EA09" }
+@mixin icon-amp-rtl2-logo() { content: "\EA0A" }
+@mixin icon-amp-clock() { content: "\EA0B" }
+@mixin icon-amp-play-circle-leaning() { content: "\EA0C" }
+@mixin icon-amp-play-circle() { content: "\EA0D" }
+@mixin icon-amp-quote-end() { content: "\EA0E" }
+@mixin icon-amp-quote-start() { content: "\EA0F" }
+@mixin icon-amp-search() { content: "\EA10" }
+@mixin icon-amp-user() { content: "\EA11" }
+@mixin icon-amp-facebook-like() { content: "\EA12" }
+@mixin icon-amp-facebook-message() { content: "\EA13" }
+@mixin icon-amp-facebook-share() { content: "\EA14" }
+@mixin icon-amp-facebook-sign() { content: "\EA15" }
+@mixin icon-amp-facebook-square-alt() { content: "\EA16" }
+@mixin icon-amp-facebook-square() { content: "\EA17" }
+@mixin icon-amp-facebook() { content: "\EA18" }
+@mixin icon-amp-googleplus-sign() { content: "\EA19" }
+@mixin icon-amp-googleplus-square() { content: "\EA1A" }
+@mixin icon-amp-googleplus() { content: "\EA1B" }
+@mixin icon-amp-instagram-like() { content: "\EA1C" }
+@mixin icon-amp-instagram-sign() { content: "\EA1D" }
+@mixin icon-amp-instagram-square() { content: "\EA1E" }
+@mixin icon-amp-instagram() { content: "\EA1F" }
+@mixin icon-amp-linkedin-sign() { content: "\EA20" }
+@mixin icon-amp-linkedin-square() { content: "\EA21" }
+@mixin icon-amp-linkedin() { content: "\EA22" }
+@mixin icon-amp-pinterest-sign() { content: "\EA23" }
+@mixin icon-amp-pinterest-square() { content: "\EA24" }
+@mixin icon-amp-pinterest() { content: "\EA25" }
+@mixin icon-amp-sms() { content: "\EA26" }
+@mixin icon-amp-twitter-sign() { content: "\EA27" }
+@mixin icon-amp-twitter-square() { content: "\EA28" }
+@mixin icon-amp-twitter() { content: "\EA29" }
+@mixin icon-amp-youtube-sign() { content: "\EA2A" }

@@ -21,28 +21,30 @@ a, a:hover, a:link {
 }
 
 /* For Kawabunga */
-.kawa h1 {
-    border-bottom: 1px solid #D8D8D8;
-}
 
-.kawa .kawa-h1 {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
-}
+.kawa {
+    .kawa-h1 {
+        border-bottom: 1px solid #D8D8D8;
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        font-size:36px;
+    }
 
-.kawa .kawa-h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+    .kawa-h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size:30px;
+    }
 
-.kawa .kawa-h3 {
-    margin: 10px 0 10px 0;
-    font-style:italic;
-    font-size: 1em;
-}
+    .kawa-h3 {
+        margin: 10px 0 10px 0;
+        font-style:italic;
+        font-size: 1em;
+    }
 
-.kawa p {
-    margin: 0 0 10px;
+    p {
+        margin: 0 0 10px;
+    }
 }
 
 .fixed {
@@ -70,33 +72,37 @@ a, a:hover, a:link {
     position: relative;
     padding: 45px 15px 60px;
     margin: 0 0 -42px;
-}
 
-.code-example div[class*='col-md'], .code-example div[class^='col-md'] {
-    margin-top: 7px;
-    margin-bottom: 7px;
-}
+    div[class*='col-md'],
+    div[class^='col-md'] {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
 
-// For Flag-fix
-.code-example .article-flag-fix {
-    max-width: 62%;
-}
+    .article-flag-fix {
+        max-width: 62%;
+    }
 
-// For button text
-.code-example .icon-play-circle:before {
-    display: block;
-}
+    .icon-play-circle:before {
+        display: block;
+    }
 
-// For Footer article
-.code-example .footer-section {
-    padding: 0;
-}
+    &:after {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        content: "Example";
+    }
 
-.code-example:after {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    content: "Example";
+    .footer-section {
+        padding: 0;
+    }
+
+    & + .highlighted {
+        margin: -15px 0 15px;
+        border-width: 0 1px 1px;
+        border-radius: 0;
+    }
 }
 
 .highlighted {
@@ -104,26 +110,20 @@ a, a:hover, a:link {
     margin-bottom: 14px;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-}
 
-.code-example + .highlighted {
-    margin: -15px 0 15px;
-    border-width: 0 1px 1px;
-    border-radius: 0;
-}
+    pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        word-break: normal;
+        background-color: transparent;
+        border: 0;
 
-.highlighted pre {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    word-break: normal;
-    background-color: transparent;
-    border: 0;
-}
-
-.highlighted pre code {
-    display: inline-block;
-    padding-right: 45px;
+        code {
+            display: inline-block;
+            padding-right: 45px;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -155,54 +155,6 @@ a, a:hover, a:link {
 .skin-link {
     display: none; // avoid a skin-link displayed without skin.css injected
 }
-
-/*@if ($responsive-liquid == false) {
-
-   Agressive responsive mode
-  .page-wrap {
-    max-width:u($website-4cols-size);
-  }
-  @include mq('large'){
-    .page-wrap {
-      max-width:u($website-3cols-size);
-    }
-  }
-  @include mq('medium'){
-    .page-wrap {
-      max-width:u($website-2cols-size);
-    }
-  }
-  @include mq('small'){
-    .page-wrap {
-      max-width:u($website-1col-size);
-    }
-  }
-
-}@else {
-
-   Liquid responsive mode
-  .page-wrap {
-    max-width:u($website-4cols-size);
-  }
-
-}*/
-
-/* If media-queries are disabled, set the page width equal to the largest col */
-/*@if ($media-queries == false) {
-  .page-wrap {
-    width:u($website-4cols-size);
-  }
-}*/
-
-/* Page wrap fluid isn't related to page wrap and all reponsive stuff */
-/*.page-wrap-fluid {
-  max-width:u($website-4cols-size);
-}
-@include old-ie {
-  .page-wrap-fluid {
-    width:u($website-4cols-size);
-  }
-}*/
 
 @media (max-width: $media-queries-large) {
     .mql-hide {

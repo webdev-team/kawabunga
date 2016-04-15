@@ -1,0 +1,34 @@
+<div id="checkbox" class="col-md-12">
+    <div class="kawa-h2">Checkbox</div>
+
+    <form class="code-example col-md-12">
+        <div class="col-md-9">
+            <%- include('../../../assets/sample/form/_input-checkbox.html', {sizeInput: 'small'}) %>
+        </div>
+    </form>
+
+    <ul class="nav nav-tabs nav-child">
+        <li class="active"><a data-toggle="tab" href="#rtl-input-checkbox-html">HTML</a></li>
+        <li><a data-toggle="tab" href="#rtl-input-checkbox-css">CSS</a></li>
+        <li><a data-toggle="tab" href="#rtl-input-checkbox-ejs">EJS</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="rtl-input-checkbox-html" class="tab-pane fade in active">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html"><%= include('../../../assets/sample/form/_input-checkbox.html', {sizeInput: 'small'}) %></pre>
+            </figure>
+        </div>
+        <div id="rtl-input-checkbox-css" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-css"><%- include("../../../assets/scss/component/form/_input-checkbox.scss") %></pre>
+            </figure>
+        </div>
+        <div id="rtl-input-checkbox-ejs" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html">
+
+                </pre>
+            </figure>
+        </div>
+    </div>
+</div>
