@@ -1,6 +1,6 @@
 {
   "name": "kawabunga",
-  "version": "0.0.53",
+  "version": "0.0.54",
   "private": false,
   "devDependencies": {
     "browserify": "^13.0.0",
