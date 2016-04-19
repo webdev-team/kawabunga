@@ -1,4 +1,4 @@
 <div class="input-checkbox">
-    <input id="<%= locals.idFor ? idFor : '' %>" class="input <%= locals.sizeInput ? sizeInput : '' %> uppercase" type="checkbox" checked="<%= locals.checked ? 'checked' : '' %>" name="" />
+    <input id="<%= locals.idFor ? idFor : '' %>" class="input <%= locals.sizeInput ? sizeInput : '' %> uppercase" type="checkbox" <% if (locals.checked) { %>checked<% } %> name="" />
     <label for="<%= locals.idFor ? idFor : '' %>" class="label-text"><%= locals.labelText ? labelText : '' %></label>
 </div>
