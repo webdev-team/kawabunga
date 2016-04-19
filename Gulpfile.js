@@ -241,3 +241,4 @@ gulp.task('build', function(cb) {
 });
 
 gulp.task('work', ['compile', 'webserver', 'watch']);
+gulp.task('default', ['work']);
