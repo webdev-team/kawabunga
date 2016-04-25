@@ -1,0 +1,32 @@
+<div id="textareaText" class="col-md-12">
+    <div class="kawa-h2">Textarea</div>
+    <form class="code-example col-md-12">
+        <div class="">
+            <%- include('../../../assets/sample/form/_textarea.html') %>
+        </div>
+    </form>
+    <ul class="nav nav-tabs nav-child">
+        <li class="active"><a data-toggle="tab" href="#rtl-textarea-html">HTML</a></li>
+        <li><a data-toggle="tab" href="#rtl-textarea-css">CSS</a></li>
+        <li><a data-toggle="tab" href="#rtl-textarea-ejs">EJS</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="rtl-textarea-html" class="tab-pane fade in active">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html"><%= include('../../../assets/sample/form/_textarea.html') %></pre>
+            </figure>
+        </div>
+        <div id="rtl-textarea-css" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-css"><%- include("../../../assets/scss/component/form/_textarea.scss") %></pre>
+            </figure>
+        </div>
+        <div id="rtl-textarea-ejs" class="tab-pane fade">
+            <figure class="highlighted col-md-12">
+                <pre class="prettyprint lang-html">
+
+                </pre>
+            </figure>
+        </div>
+    </div>
+</div>
