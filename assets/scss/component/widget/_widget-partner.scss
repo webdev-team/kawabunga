@@ -413,19 +413,19 @@
 }
 .easyflirt-iam-man + label,
 .easyflirt-search-man + label {
-  @extend %sp-btn-man;
+  @extend .sprite-partner-btn-homme;
 }
 .easyflirt-iam-man:checked + label,
 .easyflirt-search-man:checked + label {
-  @extend %sp-btn-man-checked;
+  @extend .sprite-partner-btn-homme-checked;
 }
 .easyflirt-iam-woman + label,
 .easyflirt-search-woman + label {
-  @extend %sp-btn-woman;
+  @extend .sprite-partner-btn-femme;
 }
 .easyflirt-iam-woman:checked + label,
 .easyflirt-search-woman:checked + label {
-  @extend %sp-btn-woman-checked;
+  @extend .sprite-partner-btn-femme-checked;
 }
 .easyflirt-input {
   width: px-to-rem(268px);
