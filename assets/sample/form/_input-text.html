@@ -1,3 +1,3 @@
 <div class="input-text">
-    <input class="input <%= locals.sizeInput ? sizeInput : '' %> uppercase" type="text" placeholder="<%= locals.placeholder ? placeholder : '' %>" name="" <% if (locals.disabled) { %>disabled<% } %> />
+    <input class="input <%= locals.sizeInput ? sizeInput : '' %> uppercase" type="text" placeholder="<%= locals.placeholder ? placeholder : '' %>" name="<%= locals.inputName ? inputName : '' %>" <% if (locals.disabled) { %>disabled<% } %> />
 </div>
