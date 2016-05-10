@@ -1,9 +1,9 @@
 
 <div class="btn-bicolor <%= locals.sizeBtn ? sizeBtn : '' %>">
-    <label for="search-submit" class="btn-bicolor-label uppercase">
+    <label for="<%= locals.id ? id : '' %>" class="btn-bicolor-label uppercase">
         <span class="align"><%= locals.textBtn ? textBtn : 'BUTTON' %></span>
     </label>
-    <button id="search-submit" class="btn-bicolor-input uppercase" <%= locals.attributes ? locals.attributes : '' %>>
+    <button id="<%= locals.id ? id : '' %>" class="btn-bicolor-input uppercase" <%= locals.attributes ? attributes : '' %>>
         <i class="icon icon-ff <%= locals.classIcon ? classIcon : 'icon-search' %>"></i>
         <span class="no-ff"><%= locals.textBtn ? textBtn : 'BUTTON' %></span>
     </button>
