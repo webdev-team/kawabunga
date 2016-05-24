@@ -1,9 +1,22 @@
+<%
+    var options = [
+        {value:1, text: "Atteinte à la vie privée"},
+        {value:2, text: "Violence"},
+        {value:3, text: "Diffamation"},
+        {value:4, text: "Pornographie"},
+        {value:5, text: "Incitation à la haine raciale"},
+        {value:6, text: "Caractère révisionniste"},
+        {value:7, text: "Autres"}
+    ];
+%>
+
 <div id="dropdown" class="col-md-12">
     <div class="kawa-h2">Dropdown</div>
 
     <form class="code-example col-md-12">
         <div class="col-md-9">
             <%- include('../../../assets/sample/form/_dropdown.html') %>
+            <%- include('../../../assets/sample/form/_dropdown.html', {selectOptions: options}) %>
         </div>
     </form>
 

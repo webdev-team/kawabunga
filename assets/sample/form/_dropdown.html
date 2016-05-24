@@ -1,5 +1,11 @@
-<select class="dropdown" name="<%= locals.selectName ? selectName : '' %>" id="<%= locals.selectId ? selectId : '' %>">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
+<select class="dropdown <%= locals.selectClass ? selectClass : '' %>" name="<%= locals.selectName ? selectName : '' %>" id="<%= locals.selectId ? selectId : '' %>">
+    <% if (locals.selectOptions) { %>
+        <% selectOptions.forEach(function (option) { %>
+            <option value="<%= option.value %>"><%= option.text %></option>
+        <% }); %>
+    <% } else { %>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    <% } %>
 </select>
