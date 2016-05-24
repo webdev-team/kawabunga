@@ -1,0 +1,6 @@
+<button id="<%= locals.id ? id : '' %>" type="<%= locals.type ? type : '' %>" class="btn uppercase <%= locals.btnClass ? btnClass : '' %>" <%= locals.attributes ? attributes : '' %>>
+<% if (locals.classIcon) { %>
+<i class="icon icon-ff <%= classIcon %>"></i>
+<% } %>
+<span class="no-ff"><%= locals.textBtn ? textBtn : 'BUTTON' %></span>
+</button>
