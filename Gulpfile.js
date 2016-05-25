@@ -212,7 +212,7 @@ gulp.task('webserver', function () {
             directoryListing: true,
             port: 8282,
             host: '0.0.0.0',
-            open: '/build/sandbox/html'
+            open: '/build/sandbox/html/index.html'
         }))
 });
 

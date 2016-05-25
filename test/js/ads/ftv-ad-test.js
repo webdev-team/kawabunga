@@ -7,7 +7,7 @@ var _ = require('lodash');
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-describe('ftv-ads.js', function () {
+describe('ftv-ad.js', function () {
     var ftvAds = null;
     var ftvScript = null;
     var scriptLoaded = false;

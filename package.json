@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
-    "js-polyfills": "^0.1.12",
-    "lodash": "^3.10.1",
+    "js-polyfills": "^0.1.19",
+    "lodash": "^4.13.1",
     "promise": "^7.1.1"
   }
 }
