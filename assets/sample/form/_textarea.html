@@ -1,3 +1,6 @@
-<div class="textarea-text">
-    <textarea name="<%= locals.name ? locals.name : '' %>" id="<%= locals.id ? locals.id : '' %>" class="textarea <%= locals.class ? locals.class : '' %>"></textarea>
+<div class="textarea-text <%= locals.parentTextareaClass ? parentTextareaClass : '' %>">
+    <textarea name="<%= locals.textareaName ? textareaName : '' %>" id="<%= locals.textareaId ? textareaId : '' %>" class="textarea <%= locals.textareaClass ? textareaClass : '' %>" placeholder="<%= locals.placeholder ? placeholder : '' %>"></textarea>
+    <% if (locals.limitCharacter) { %>
+    <em class="form-counter"><b class="js-counter-listener"><%= limitCharacter %></b> caractères restants</em>
+    <% } %>
 </div>
