@@ -41,7 +41,7 @@ var Ad = function (element) {
 };
 
 Ad.prototype.load = function () {
-    if (oas_tag && oas_tag.loadAd && oas_tag.reloadAds) {
+    if (global.oas_tag && global.oas_tag.loadAd && global.oas_tag.reloadAds) {
         if (!this.loaded) {
             this.element.id = this.id;
             oas_tag.loadAd(this.position);
