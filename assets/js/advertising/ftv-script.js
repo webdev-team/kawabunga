@@ -26,7 +26,7 @@ exports.getPositions = function () {
 };
 
 var collectPosition = function () {
-    return _.collect(document.getElementsByClassName('js-ftv-ad'), function (element) {
+    return _.map(document.getElementsByClassName('js-ftv-ad'), function (element) {
         return element.getAttribute('data-position');
     }).join(',');
 };
