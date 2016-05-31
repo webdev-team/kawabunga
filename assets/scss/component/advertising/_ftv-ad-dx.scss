@@ -34,11 +34,6 @@
 .ftv-ad-sumo {
     @include ftv-ad-base;
     width: 300px;
-    height: 600px;
-}
-
-.ftv-ad-pave.ftv-ad-sumo {
-    width: 300px;
     height: auto;
     min-height: 250px;
     max-height: 600px;
