@@ -2,6 +2,8 @@ var forEach = require('lodash/forEach');
 var ftvScript = require('./ftv-script-dx');
 var scriptLoader = require('../utils/script-loader');
 
+exports.REFRESH_ON_HOLD = false;
+
 exports.registry = {};
 
 exports.init = function () {
@@ -26,6 +28,10 @@ exports.createAd = function (element) {
     return new Ad(element);
 };
 
+exports.holdRefresh = function (hold) {
+    exports.REFRESH_ON_HOLD = hold;
+};
+
 var Ad = function (element) {
     this.element = element;
     this.position = element.getAttribute('data-position');
@@ -48,7 +54,9 @@ Ad.prototype.load = function () {
             if (this.refresh > 0) {
                 var that = this;
                 window.setInterval(function () {
-                    that.load();
+                    if (!exports.REFRESH_ON_HOLD) {
+                        that.load();
+                    }
                 }, this.refresh);
             }
             this.loaded = true;
