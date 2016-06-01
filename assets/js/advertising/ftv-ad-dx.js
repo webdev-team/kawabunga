@@ -1,6 +1,6 @@
+var forEach = require('lodash/forEach');
 var ftvScript = require('./ftv-script-dx');
 var scriptLoader = require('../utils/script-loader');
-var _ = require('lodash');
 
 exports.registry = {};
 
@@ -11,7 +11,7 @@ exports.init = function () {
 };
 
 exports.setupAds = function () {
-    _(document.getElementsByClassName(ftvScript.JS_FTV_CLASS)).forEach(function (element) {
+    forEach(document.getElementsByClassName(ftvScript.JS_FTV_CLASS), function (element) {
         exports.setupAd(element)
     });
 };

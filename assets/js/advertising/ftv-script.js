@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var map = require('lodash/map');
 
 var scriptLoader = require('../utils/script-loader');
 
@@ -26,7 +26,7 @@ exports.getPositions = function () {
 };
 
 var collectPosition = function () {
-    return _.map(document.getElementsByClassName('js-ftv-ad'), function (element) {
+    return map(document.getElementsByClassName('js-ftv-ad'), function (element) {
         return element.getAttribute('data-position');
     }).join(',');
 };

@@ -50,36 +50,51 @@ gulp.task('html', function () {
         .pipe(gulp.dest('build/sandbox'));
 });
 
-gulp.task('js', function(done) {
-    glob('sandbox/js/*.js', function(err, files) {
-        if (err) {
-            done(err);
-        }
-
-        var tasks = files.map(function(entry) {
-            return browserifyFile(entry)
-                .bundle()
-                .on('error', function(err) {
-                    gutil.log(err);
-                    this.emit('end'); // end this stream
-                })
-                .pipe(source(entry))
-                .pipe(flatten())
-                .pipe(gulp.dest('build/sandbox/js'));
-        });
-
-        eventStream.merge(tasks).on('end', done);
-    })
+gulp.task('js', function (done) {
+    bundleAllJsFile(done, {watchify: false});
 });
 
-var browserifyFile = function(file) {
+gulp.task('js-watchify', function (done) {
+    bundleAllJsFile(done, {watchify: true});
+});
+
+var bundleAllJsFile = function(done, options) {
+    var files = glob.sync('sandbox/js/*.js');
+
+    var tasks = _.map(files, function(file) {
+        return bundleJsFile(file, options)
+    });
+
+    eventStream.merge(tasks).on('end', done);
+};
+
+var bundleJsFile = function(file, options) {
     var customOpts = {
         entries: [file]
     };
 
     var opts = _.assign({}, watchify.args, customOpts);
+    var bundler = browserify(opts);
 
-    return browserify(opts)
+    if (options.watchify) {
+        bundler = watchify(bundler);
+    }
+
+    bundler.on('update', bundle);
+    bundler.on('log', gutil.log);
+
+    function bundle() {
+        gutil.log('building js file ' + file);
+
+        var task = bundler.bundle()
+            .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+            .pipe(source(file))
+            .pipe(flatten());
+
+        return task.pipe(gulp.dest('build/sandbox/js'));
+    }
+
+    return bundle();
 };
 
 gulp.task('sprite', function () {
@@ -197,7 +212,6 @@ var buildFontIcon = function(options, src) {
 gulp.task('watch', function () {
     gulp.watch(['sandbox/**/*.html', 'assets/**/*.html'], ['html']);
     gulp.watch('sandbox/img/**', ['img']);
-    gulp.watch(['sandbox/js/**/*.js', 'assets/**/*.js'], ['js']);
     gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
 });
 
@@ -240,5 +254,5 @@ gulp.task('build', function(cb) {
     runSequence('clean', 'compile', cb);
 });
 
-gulp.task('work', ['compile', 'webserver', 'watch']);
+gulp.task('work', ['img', 'css', 'font', 'sprite', 'js-watchify', 'html', 'webserver', 'watch']);
 gulp.task('default', ['work']);

@@ -1,7 +1,8 @@
 
 require('js-polyfills/dom');
 
-var _ = require('lodash');
+var forEach = require('lodash/forEach');
+var find = require('lodash/find');
 
 var ftvScript = require('./ftv-script');
 var utils = require('../utils/utils');
@@ -33,7 +34,7 @@ exports.init = function () {
 };
 
 exports.setupAds = function () {
-    _.each(document.getElementsByClassName('js-ftv-ad'), function (element) {
+    forEach(document.getElementsByClassName('js-ftv-ad'), function (element) {
         if (utils.isVisible(element)) {
             exports.setupAd(element);
         }
@@ -162,7 +163,7 @@ Ad.prototype.writeIframeContent = function () {
 Ad.prototype.fixSumoHeight = function () {
     var sumoElligiblePositions = ['Middle', 'Middle2', 'Middle3', 'Bottom1', 'Bottom2'];
 
-    var position = _.find(sumoElligiblePositions);
+    var position = find(sumoElligiblePositions);
     var iframe = this.iframe;
 
     if (position) {

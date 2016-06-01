@@ -1,11 +1,13 @@
 
-var _ = require('lodash');
+var filter = require('lodash/filter');
+var forEach = require('lodash/forEach');
+var find = require('lodash/find');
 var Promise = require('promise');
 
 var loadingQueues = {};
 
 exports.getScriptsBySrc = function (src) {
-    return _.filter(document.getElementsByTagName('script'), function (script) {
+    return filter(document.getElementsByTagName('script'), function (script) {
         return script.src == src;
     });
 };
@@ -17,7 +19,7 @@ exports.ensureLoaded = function (src) {
         if (scripts.length == 0) {
             insertScript(src).then(function () {
                 if (loadingQueues[src]) {
-                    _.forEach(loadingQueues[src], function (item) {
+                    forEach(loadingQueues[src], function (item) {
                         item();
                     });
 
@@ -26,7 +28,7 @@ exports.ensureLoaded = function (src) {
 
                 resolve();
             });
-        } else if (_.find(scripts, isLoaded)) {
+        } else if (find(scripts, isLoaded)) {
             resolve();
         } else {
             if (!loadingQueues[src]) {
