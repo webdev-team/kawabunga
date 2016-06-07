@@ -19,7 +19,7 @@ export default class {
 
         this.injectElement()
 
-        setTimeout(() => this.hide(), 2000)
+        setTimeout(() => this.hide(), 3000)
     }
 
     hide() {
