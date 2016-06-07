@@ -72,6 +72,7 @@ var bundleAllJsFile = function(done, options) {
 var bundleJsFile = function(file, options) {
     var customOpts = {
         entries: [file],
+        debug: true,
         extensions: ['.js', '.es6']
     };
 
@@ -85,6 +86,7 @@ var bundleJsFile = function(file, options) {
     bundler.on('update', bundle);
     bundler.on('log', gutil.log);
 
+    // https://www.npmjs.com/package/babelify
     bundler = bundler.transform(babelify, {presets: ["es2015"], extensions: [".es6"]});
 
     function bundle() {
