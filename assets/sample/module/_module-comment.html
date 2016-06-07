@@ -1,14 +1,14 @@
 <div class="module-comment">
     <div class="module-comment-title">Réponse rapide</div>
-    <div action="" class="module-comment-form">
-        <fieldset>
-            <textarea rows="5" cols="50" class="module-comment-field" placeholder="Commenter" name="text">Votre contribution ne doit pas :
-            - Être insultante, à caractère raciste ou discriminatoire
-            - Contraire à l'ordre public et aux bonnes moeurs
-            - Dévoiler des coordonnées personnelles
-            </textarea>
-            <input class="btn uppercase module-comment-submit" type="submit" value="Envoyer">
-            <em class="module-comment-counter"><b>500</b> caractères restants</em>
+    <form action="" class="module-comment-form">
+        <fieldset class="module-comment-fieldset">
+            <div class="module-comment-overlay">Votre contribution ne doit pas :<br />
+                - Être insultante, à caractère raciste ou discriminatoire<br />
+                - Contraire à l'ordre public et aux bonnes moeurs<br />
+                - Dévoiler des coordonnées personnelles
+            </div>
+            <%- include('../form/_textarea.html', {limitCharacter: '500', placeholder:'Commenter', textareaClass:'js-textarea-limiter', textareaName: 'text'}) %>
+            <%- include('../button/_btn-input.html', {textBtn: 'Envoyer', type: 'submit', btnClass: 'btn-action'}) %>
         </fieldset>
-    </div>
+    </form>
 </div>

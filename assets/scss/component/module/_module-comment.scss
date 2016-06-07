@@ -1,37 +1,47 @@
-
-@import "../../config";
-@import "../../functions";
-@import "../../themes/default/colors";
-@import "../../themes/default/variables";
-
 /* Module Comment
 ----------------------------------------- */
 .module-comment {
   background-color: $module-comment-bg-color;
   padding: px-to-rem(10px) px-to-rem(20px);
-}
 
-.module-comment-title {
-  font-size: px-to-rem(24px);
-  margin-bottom: px-to-rem(10px);
-  color: $black;
-  font-family: $module-comment-title-font-family;
+  .module-comment-title {
+    font-size: px-to-rem(24px);
+    margin-bottom: px-to-rem(10px);
+    color: $black;
+    font-family: $module-comment-title-font-family;
 
-  @if ($font-smoothing) {
-    @include font-smoothing;
+    @if ($font-smoothing) {
+      @include font-smoothing;
+    }
   }
-}
 
-.module-comment-form {
-  background-color: $module-comment-form-bg-color;
-  color: $module-comment-color;
-  border: 1px solid $module-comment-border-color;
-  padding: .625rem;
-}
+  .module-comment-form {
+    background-color: $module-comment-form-bg-color;
+    color: $module-comment-color;
+    border: 1px solid $module-comment-border-color;
+    padding: .625rem;
 
-.module-comment-field,
-.module-comment-counter {
-  display: block;
+    .module-comment-fieldset {
+      position:relative;
+
+      .module-comment-overlay {
+        position:absolute;
+        top:1px;
+        left:1px;
+        width:98%;
+        height:200px;
+        overflow:hidden;
+        background-color:$white;
+        padding:10px 20px;
+        font-size:16px;
+        line-height:24px;
+      }
+
+      .btn-action {
+        margin-top:10px;
+      }
+    }
+  }
 }
 
 .module-comment-field {
