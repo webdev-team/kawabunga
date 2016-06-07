@@ -1,0 +1,46 @@
+
+@keyframes toaster-show {
+    0% {
+        bottom: -10px;
+        opacity: 0.2;
+    }
+    100% {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes toaster-hide {
+    0% {
+        bottom: 20px;
+        opacity: 1;
+    }
+    100% {
+        bottom: -10px;
+        opacity: 0.2;
+    }
+}
+
+.toaster {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    background-color: #323232;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    color: #FAFAFA;
+    cursor: default;
+    padding: 20px;
+
+    &.toaster-show {
+        animation-name: toaster-show;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in-out;
+    }
+
+    &.toaster-hide {
+        animation-name: toaster-hide;
+        animation-duration: 200ms;
+        animation-timing-function: ease-in-out;
+    }
+}

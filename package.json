@@ -3,6 +3,7 @@
   "version": "0.0.72",
   "private": false,
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "browserify": "^13.0.0",
     "chai": "^3.4.1",
     "del": "^1.1.1",
@@ -21,6 +22,7 @@
     "gulp-pixrem": "^0.2.3",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
+    "gulp-rtl-publish": "git+ssh://git@github.com/webdev-team/gulp-rtl-publish.git#0.0.7",
     "gulp-sass": "^2.0.4",
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.0.0",
@@ -30,8 +32,7 @@
     "run-sequence": "^1.1.0",
     "sinon": "^1.17.2",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0",
-    "gulp-rtl-publish": "git+ssh://git@github.com/webdev-team/gulp-rtl-publish.git#0.0.7"
+    "watchify": "^3.7.0"
   },
   "engines": {
     "node": ">=0.8.0"

@@ -22,6 +22,7 @@ var flatten = require('gulp-flatten');
 var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
+var babelify = require('babelify');
 
 var package = require('./package.json');
 require('gulp-rtl-publish')(gulp, package);
@@ -70,7 +71,8 @@ var bundleAllJsFile = function(done, options) {
 
 var bundleJsFile = function(file, options) {
     var customOpts = {
-        entries: [file]
+        entries: [file],
+        extensions: ['.js', '.es6']
     };
 
     var opts = _.assign({}, watchify.args, customOpts);
@@ -82,6 +84,8 @@ var bundleJsFile = function(file, options) {
 
     bundler.on('update', bundle);
     bundler.on('log', gutil.log);
+
+    bundler = bundler.transform(babelify, {presets: ["es2015"], extensions: [".es6"]});
 
     function bundle() {
         gutil.log('building js file ' + file);

@@ -550,6 +550,38 @@
                     </div>
                 </div>
             </div>
+            <div id="toaster" class="col-md-12">
+                <div class="kawa-h2">Toaster</div>
+                <div class="code-example col-md-12">
+                    <div class="col-md-4">
+                        <button id="toaster-show-button" class="btn">Pop</button> a toaster
+                    </div>
+                </div>
+                <ul class="nav nav-tabs nav-child">
+                    <li class="active"><a data-toggle="tab" href="#rtl-toaster-html">HTML</a></li>
+                    <li><a data-toggle="tab" href="#rtl-toaster-css">CSS</a></li>
+                    <li><a data-toggle="tab" href="#rtl-toaster-ejs">EJS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="rtl-toaster-html" class="tab-pane fade in active">
+                        <figure class="highlighted col-md-12">
+                            &lt;!-- no html --&gt;
+                        </figure>
+                    </div>
+                    <div id="rtl-toaster-css" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-css"><%= include("../../assets/scss/component/widget/_toaster.scss") %></pre>
+                        </figure>
+                    </div>
+                    <div id="rtl-toaster-ejs" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-html">
+                                &lt;!-- no html --&gt;
+                            </pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="article" class="col-md-12">
             <div class="kawa-h1">Article</div>
@@ -771,6 +803,7 @@
                     <li><a href="#widgetPartner">Partner</a></li>
                     <li><a href="#widgetWeather">Weather</a></li>
                     <li><a href="#widgetAstro">Astro</a></li>
+                    <li><a href="#toaster">Toaster</a></li>
                 </ul>
             </li>
             <li>
