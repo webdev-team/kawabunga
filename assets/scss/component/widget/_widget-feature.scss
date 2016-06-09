@@ -1,11 +1,9 @@
-
-@import "../../config";
-@import "../../functions";
-@import "../../themes/default/colors";
-@import "../../themes/default/variables";
-
 /* Widget Feature
 ----------------------------------------- */
+
+.widget-feature {
+  max-width:px-to-rem(300px);
+}
 
 .widget-feature-header{
   position: relative;
@@ -15,37 +13,37 @@
   border-bottom: px-to-rem(4px) solid $widget-feature-border-color;
   color: $white;
   font-family: $font-design;
-}
 
-.widget-feature-header .text {
-  color: $white;
-}
+  .link{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: px-to-rem(15px);
+    color: inherit;
 
-.widget-feature-header .link{
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: px-to-rem(15px);
-  color: inherit;
-}
+    .text {
+      color: $white;
+    }
 
-.widget-feature-header .main-icon,
-.widget-feature-header .main-logo{
-  display: block;
-  position: absolute;
-  bottom: px-to-rem(15px);
-  color: $white;
-}
+    .main-icon,
+    .main-logo{
+      display: block;
+      position: absolute;
+      bottom: px-to-rem(15px);
+      color: $white;
+    }
 
-.widget-feature-header .main-icon{
-  left: px-to-rem(15px);
-}
+    .main-icon{
+      left: px-to-rem(15px);
+    }
 
-.widget-feature-header .main-logo{
-  right: px-to-rem(15px);
+    .main-logo{
+      right: px-to-rem(15px);
+    }
+  }
 }
 
 .widget-feature-content{
