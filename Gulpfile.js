@@ -23,6 +23,7 @@ var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
 var babelify = require('babelify');
+var babelRegister = require('babel-register');
 
 var package = require('./package.json');
 require('gulp-rtl-publish')(gulp, package);
@@ -241,8 +242,10 @@ gulp.task('webserver', function () {
  */
 
 gulp.task('test', function () {
-    return gulp.src('test/**/*-test.js')
-        .pipe(mocha())
+    return gulp.src(['test/**/*-test.js', 'test/**/*-test.es6'])
+        .pipe(mocha({compilers: {
+            js: babelRegister
+        }}))
         .once('end', function () {
             process.exit();
         });

@@ -7,7 +7,6 @@ var initHTML = function(html, options) {
     global.window = global.document.defaultView;
     global.navigator = global.window.navigator;
     global.history = global.window.history;
-    global.console = global.window.console;
     global.XMLHttpRequest = global.window.XMLHttpRequest;
 };
 

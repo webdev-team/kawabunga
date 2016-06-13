@@ -1,5 +1,6 @@
 var forEach = require('lodash/forEach');
 var scriptLoader = require('../utils/script-loader');
+var Promise = require('promise');
 
 /**
  * No script version to inject in page
@@ -9,31 +10,35 @@ var scriptLoader = require('../utils/script-loader');
 var SCRIPT = '//prof.estat.com/js/mu-5.1.js';
 var SCRIPT_INTEGRATION = '//prof.estat.com/js/mu-integration-5.1.js';
 
-var contentTag = null;
-
-exports.init = function() {
-    var tag = document.querySelector('[data-role="estat"]');
-
-    if (tag) {
+exports.ensureLoaded = function() {
+    return new Promise(function(resolve) {
         scriptLoader.ensureLoaded(SCRIPT).then(function() {
-            contentTag = new eStatTag({
-                serial: tag.getAttribute('data-serial'),
-                measure:"page"
-            });
-
-            exports.post({
-                level_1: tag.getAttribute('data-level1'),
-                level_2: tag.getAttribute('data-level2'),
-                level_3: tag.getAttribute('data-level3'),
-                level_4: tag.getAttribute('data-level4')
-            });
-        });
-    }
+            resolve(exports)
+        })
+    })
 };
 
-exports.post = function(levels) {
-    if (contentTag) {
-        contentTag.set({levels: levels});
-        contentTag.post();
-    }
+/**
+ * estat should be loaded before calling this function
+ */
+exports.readPageTag = function() {
+    var tag = document.querySelector('[data-role="estat"]');
+
+    return new global.eStatTag({
+        serial: tag.getAttribute('data-serial'),
+        measure:"page",
+        levels: {
+            level_1: tag.getAttribute('data-level1'),
+            level_2: tag.getAttribute('data-level2'),
+            level_3: tag.getAttribute('data-level3'),
+            level_4: tag.getAttribute('data-level4')
+        }
+    });
+};
+
+/**
+ * estat should be loaded before calling this function
+ */
+exports.createStreamTag = function(config) {
+    return new global.eStatTag(config);
 };
