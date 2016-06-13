@@ -10,35 +10,32 @@ var Promise = require('promise');
 var SCRIPT = '//prof.estat.com/js/mu-5.1.js';
 var SCRIPT_INTEGRATION = '//prof.estat.com/js/mu-integration-5.1.js';
 
-exports.ensureLoaded = function() {
-    return new Promise(function(resolve) {
-        scriptLoader.ensureLoaded(SCRIPT).then(function() {
+exports.ensureLoaded = function () {
+    return new Promise(function (resolve) {
+        scriptLoader.ensureLoaded(SCRIPT).then(function () {
             resolve(exports)
         })
     })
 };
 
-/**
- * estat should be loaded before calling this function
- */
-exports.readPageTag = function() {
+exports.readPageConfig = function () {
     var tag = document.querySelector('[data-role="estat"]');
 
-    return new global.eStatTag({
+    return {
         serial: tag.getAttribute('data-serial'),
-        measure:"page",
+        measure: 'page',
         levels: {
             level_1: tag.getAttribute('data-level1'),
             level_2: tag.getAttribute('data-level2'),
             level_3: tag.getAttribute('data-level3'),
             level_4: tag.getAttribute('data-level4')
         }
-    });
-};
+    }
+}
 
 /**
  * estat should be loaded before calling this function
  */
-exports.createStreamTag = function(config) {
+exports.createEstatTag = function (config) {
     return new global.eStatTag(config);
 };
