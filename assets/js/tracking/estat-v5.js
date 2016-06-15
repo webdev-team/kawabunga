@@ -21,6 +21,10 @@ exports.ensureLoaded = function () {
 exports.readPageConfig = function () {
     var tag = document.querySelector('[data-role="estat"]');
 
+    if (!tag) {
+        return {error: 'no tag found in page'};
+    }
+    
     return {
         serial: tag.getAttribute('data-serial'),
         measure: 'page',
@@ -31,7 +35,7 @@ exports.readPageConfig = function () {
             level_4: tag.getAttribute('data-level4')
         }
     }
-}
+};
 
 /**
  * estat should be loaded before calling this function
