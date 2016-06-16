@@ -62,6 +62,8 @@
     list-style-type: none;
     background-color: $footer-main-list-bg-color;
     color: $white;
+    margin-right:-10px;
+    margin-left:-10px;
 
     .list-item {
         display: block;
