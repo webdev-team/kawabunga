@@ -59,14 +59,10 @@
     }
 
     .list {
-        position: absolute;
-        right: 0;
-        top: 0;
         overflow: auto;
         max-width: px-to-rem(300px);
         padding: $footer-main-list-padding;
         list-style-type: none;
-        width: 25%;
         background-color: $footer-main-list-bg-color;
         color: $white;
 
@@ -151,12 +147,6 @@
                 }
             }
         }
-
-        .list {
-            width: 50%;
-            max-width: none;
-            bottom: 0;
-        }
     }
 }
 
@@ -167,9 +157,8 @@
         }
 
         .list {
-            position: relative;
-            width: auto;
             padding: $footer-main-list_media-small-padding;
+            max-width:100%;
 
             .logo {
                 display: none;
