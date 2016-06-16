@@ -62,8 +62,6 @@
     list-style-type: none;
     background-color: $footer-main-list-bg-color;
     color: $white;
-    margin-right:-10px;
-    margin-left:-10px;
 
     .list-item {
         display: block;
@@ -150,7 +148,7 @@
 
         .list {
             padding: $footer-main-list_media-small-padding;
-            max-width:100%;
+            max-width:none;
 
             .logo {
                 display: none;
