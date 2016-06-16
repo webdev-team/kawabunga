@@ -9,7 +9,6 @@
 
 .main-footer {
     position: relative;
-    padding-bottom: px-to-rem(50px);
 
     .devices {
         padding: px-to-rem(45px) 0;
@@ -144,7 +143,6 @@
 
 @media (max-width: $media-queries-small) {
     .main-footer {
-        padding-bottom: 0;
 
         .list {
             padding: $footer-main-list_media-small-padding;
