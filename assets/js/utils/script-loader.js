@@ -40,6 +40,12 @@ exports.ensureLoaded = function (src) {
     });
 };
 
+exports.isLoaded = function (src) {
+    var script = exports.getScriptsBySrc(src);
+
+    return script && isLoaded(script);
+};
+
 var isLoaded = function (script) {
     return script.getAttribute('data-loaded') != null;
 };
