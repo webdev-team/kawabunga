@@ -3,11 +3,12 @@ var filter = require('lodash/filter');
 var forEach = require('lodash/forEach');
 var find = require('lodash/find');
 var Promise = require('promise');
+var dom = require('./dom');
 
 var loadingQueues = {};
 
 exports.getScriptsBySrc = function (src) {
-    return filter(document.getElementsByTagName('script'), function (script) {
+    return dom.$find('script').filter(function (script) {
         return script.src == src;
     });
 };
@@ -45,6 +46,12 @@ exports.isLoaded = function (src) {
 
     return script && isLoaded(script);
 };
+
+exports.getScriptsToLoad = function() {
+    return dom.$find('[data-role="load-script"]').map(function (item) {
+        return item.getAttribute('data-src');
+    });
+}
 
 var isLoaded = function (script) {
     return script.getAttribute('data-loaded') != null;

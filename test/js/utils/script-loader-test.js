@@ -88,4 +88,22 @@ describe('script-loader.js', function () {
             expect(global.window.loaded).to.be.true;
         });
     });
+
+    describe('getScriptsToLoad', function () {
+        it('should find all scripts from html', function () {
+            env.initWithHtml('<div data-role="load-script" data-src="http://my-script"></div>');
+
+            var scriptUrls = scriptLoader.getScriptsToLoad();
+
+            expect(scriptUrls).to.deep.equal(['http://my-script']);
+        });
+
+        it('should give an empty array ', function () {
+            env.initWithHtml('<div></div>');
+
+            var scriptUrls = scriptLoader.getScriptsToLoad();
+
+            expect(scriptUrls).to.deep.equal([]);
+        });
+    });
 });
