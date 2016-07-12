@@ -8,7 +8,7 @@ var dom = require('./dom');
 var loadingQueues = {};
 
 exports.getScriptsBySrc = function (src) {
-    return dom.$find('script').filter(function (script) {
+    return dom.select('script').filter(function (script) {
         return script.src == src;
     });
 };
@@ -48,7 +48,7 @@ exports.isLoaded = function (src) {
 };
 
 exports.getScriptsToLoad = function() {
-    return dom.$find('[data-role="load-script"]').map(function (item) {
+    return dom.select('[data-role="load-script"]').map(function (item) {
         return item.getAttribute('data-src');
     });
 }
