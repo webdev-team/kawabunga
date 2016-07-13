@@ -4,7 +4,7 @@
  */
 var ftvKrux = require('./ftv-krux');
 
-var forEach = require('lodash/forEach');
+var dom = require('../utils/dom');
 
 exports.JS_FTV_CLASS = 'js-ftv-ad-dx';
 
@@ -41,7 +41,7 @@ var getOasKeyValues = function() {
 };
 
 var definePositions = function () {
-    forEach(document.getElementsByClassName(exports.JS_FTV_CLASS), function (element) {
+    dom.selectByClass(exports.JS_FTV_CLASS).forEach(function(element) {
         oas_tag.definePos(element.getAttribute('data-position'), [1,1]);
     });
 };

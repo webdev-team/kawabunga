@@ -1,6 +1,4 @@
 
-var filter = require('lodash/filter');
-var forEach = require('lodash/forEach');
 var find = require('lodash/find');
 var Promise = require('promise');
 var dom = require('./dom');
@@ -8,7 +6,7 @@ var dom = require('./dom');
 var loadingQueues = {};
 
 exports.getScriptsBySrc = function (src) {
-    return dom.select('script').filter(function (script) {
+    return dom('script').filter(function (script) {
         return script.src == src;
     });
 };
@@ -20,9 +18,9 @@ exports.ensureLoaded = function (src) {
         if (scripts.length == 0) {
             insertScript(src).then(function () {
                 if (loadingQueues[src]) {
-                    forEach(loadingQueues[src], function (item) {
+                    loadingQueues[src].forEach(function(item) {
                         item();
-                    });
+                    })
 
                     delete loadingQueues[src];
                 }
@@ -48,7 +46,7 @@ exports.isLoaded = function (src) {
 };
 
 exports.getScriptsToLoad = function() {
-    return dom.select('[data-role="load-script"]').map(function (item) {
+    return dom('[data-role="load-script"]').map(function (item) {
         return item.getAttribute('data-src');
     });
 }

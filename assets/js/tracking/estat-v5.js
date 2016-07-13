@@ -1,6 +1,7 @@
-var forEach = require('lodash/forEach');
-var scriptLoader = require('../utils/script-loader');
+
 var Promise = require('promise');
+var scriptLoader = require('../utils/script-loader');
+var dom = require('../utils/dom')
 
 /**
  * No script version to inject in page
@@ -19,20 +20,20 @@ exports.ensureLoaded = function () {
 };
 
 exports.readPageConfig = function () {
-    var tag = document.querySelector('[data-role="estat"]');
+    var $estat = dom('[data-role="estat"]');
 
-    if (!tag) {
+    if ($estat.isEmpty()) {
         return {error: 'no tag found in page'};
     }
     
     return {
-        serial: tag.getAttribute('data-serial'),
+        serial: $estat.data('serial'),
         measure: 'page',
         levels: {
-            level_1: tag.getAttribute('data-level1'),
-            level_2: tag.getAttribute('data-level2'),
-            level_3: tag.getAttribute('data-level3'),
-            level_4: tag.getAttribute('data-level4')
+            level_1: $estat.data('level1'),
+            level_2: $estat.data('level2'),
+            level_3: $estat.data('level3'),
+            level_4: $estat.data('level4')
         }
     }
 };

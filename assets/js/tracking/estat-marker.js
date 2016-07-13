@@ -4,8 +4,6 @@
  ...
  */
 
-var _ = require('lodash');
-
 var estatScript = require('./estat-script');
 
 exports.loaded = false;
@@ -46,7 +44,7 @@ exports.getLevels = function (lastLevelHash) {
 exports.post = function (lastLevelHash) {
     global.eStat_id.serial(exports.serial);
 
-    _.forEach(exports.getLevels(lastLevelHash), function (item, index) {
+    exports.getLevels(lastLevelHash).forEach(function (item, index) {
         global.eStat_id.niveau(index + 1, item);
     });
 
