@@ -2,6 +2,7 @@ var chai = require('chai');
 var expect = chai.expect;
 
 var env = require('../test-env');
+var testUtils = require('../test-utils');
 
 var dom = require('../../../assets/js/utils/dom');
 
@@ -31,6 +32,14 @@ describe('dom.js', () => {
 
                 expect(dom.select('.a').select('.b').select('.c')).to.have.length(1)
             })
+        })
+    })
+
+    describe('module.exports', () => {
+        it('should make find function available at root', () => {
+            env.initWithHtml('<div class="a"></div><div class="b"></div>')
+
+            expect(dom('.a')).to.have.length(1)
         })
     })
 
@@ -70,11 +79,13 @@ describe('dom.js', () => {
         })
     })
 
-    describe('module.exports', () => {
-        it('should make find function available at root', () => {
-            env.initWithHtml('<div class="a"></div><div class="b"></div>')
+    describe('on', () => {
+        it('should listen to click event', (done) => {
+            env.initWithHtml('<div id="a"></div>')
 
-            expect(dom('.a')).to.have.length(1)
+            dom.select('#a').on('click', e => done())
+
+            testUtils.click(document.getElementById('a'))
         })
     })
-})
+});

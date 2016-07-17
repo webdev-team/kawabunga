@@ -66,5 +66,11 @@ function augmentArray(array) {
         return this[0].getAttribute('data-' + name);
     }
 
+    array.on = function(type, callback, capture) {
+        this.forEach(function(element) {
+            element.addEventListener(type, callback, capture || false);
+        });
+    }
+
     return array;
 }
