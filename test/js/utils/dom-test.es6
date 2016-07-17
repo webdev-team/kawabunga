@@ -87,5 +87,17 @@ describe('dom.js', () => {
 
             testUtils.click(document.getElementById('a'))
         })
+
+        it('should provide element as second parameter', (done) => {
+            env.initWithHtml('<div id="a"></div>')
+
+            dom.select('#a').on('click', (e, div) => {
+                expect(div.id).to.equal('a')
+
+                done()
+            })
+
+            testUtils.click(document.getElementById('a'))
+        })
     })
 });

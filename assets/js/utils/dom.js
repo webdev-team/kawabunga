@@ -68,7 +68,9 @@ function augmentArray(array) {
 
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
-            element.addEventListener(type, callback, capture || false);
+            element.addEventListener(type, function(e) {
+                callback(e, element)
+            }, capture || false);
         });
     }
 
