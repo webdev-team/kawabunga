@@ -9,6 +9,12 @@ exports.isVisible = function(elem){
     return (w == 0 && h == 0) ? false : (w > 0 && h > 0) ? true : elem.style.display != 'none';
 };
 
+/**
+ * ie8+ compatible
+ * See http://toddmotto.com/a-comprehensive-dive-into-nodelists-arrays-converting-nodelists-and-understanding-the-dom/
+ */
 exports.toArray = function(nodeList) {
-    return Array.prototype.slice.call(nodeList);
+    var array = [];
+    for (var i = nodeList.length; i--; array.unshift(nodeList[i]));
+    return array;
 }

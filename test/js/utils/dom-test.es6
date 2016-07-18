@@ -79,6 +79,14 @@ describe('dom.js', () => {
         })
     })
 
+    describe('text', () => {
+        it('should give data attribute value of first found element', () => {
+            env.initWithHtml('<div class="a" data-test="value">some text</div>')
+
+            expect(dom.select('.a').text()).to.equal('some text')
+        })
+    })
+
     describe('on', () => {
         it('should listen to click event', (done) => {
             env.initWithHtml('<div id="a"></div>')
@@ -100,4 +108,4 @@ describe('dom.js', () => {
             testUtils.click(document.getElementById('a'))
         })
     })
-});
+})

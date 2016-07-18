@@ -29,6 +29,7 @@ function select(context, selector) {
 
 /**
  * selecting by class (getElementsByClassName) is a bit easier and faster than querySelectorAll
+ * but doesn't work on ie <= i8 (http://caniuse.com/#search=getElementsByClassName)
  * http://stackoverflow.com/questions/30473141/difference-between-getelementsbyclassname-and-queryselectorall
  */
 function selectByClass(context, clazz) {
@@ -59,11 +60,15 @@ function augmentArray(array) {
     }
 
     array.data = function(name) {
-        if (this.isEmpty()) {
-            return null;
-        }
+        return this.isEmpty() ? null : this[0].getAttribute('data-' + name);
+    }
 
-        return this[0].getAttribute('data-' + name);
+    /**
+     * Using textContent if defined, innerText otherwise
+     * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
+     */
+    array.text = function() {
+        return this.isEmpty() ? '' : this[0].textContent || this[0].innerText;
     }
 
     array.on = function(type, callback, capture) {
