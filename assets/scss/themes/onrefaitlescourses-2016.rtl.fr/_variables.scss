@@ -7,87 +7,87 @@ $font-design: $lato-regular-font-family;
 
 // Main footer
 $footer-main-font-family: $font-design;
-$footer-main-text-color: $ORLC-grey;
-$footer-main-list-bg-color: $ORLC-green;
-$footer-main-list-item-border-color: $ORLC-green-light;
-$footer-main-list-link-bg-color_hover: $ORLC-green-light;
+$footer-main-text-color: $orlc-grey;
+$footer-main-list-bg-color: $orlc-green;
+$footer-main-list-item-border-color: $orlc-green-light;
+$footer-main-list-link-bg-color_hover: $orlc-green-light;
 
 // Button
-$btn-bg-color: $ORLC-green;
-$btn-bg-color_hover: $ORLC-green-light;
+$btn-bg-color: $orlc-green;
+$btn-bg-color_hover: $orlc-green-light;
 
-$btn-hover-bg-color: $ORLC-grey-light;
-$btn-hover-frontside-bg-color_hover: $ORLC-grey-dark;
+$btn-hover-bg-color: $orlc-grey-light;
+$btn-hover-frontside-bg-color_hover: $orlc-grey-dark;
 
-$btn-link-bg-color: $ORLC-green;
-$btn-link-bg-color_hover: $ORLC-green-light;
+$btn-link-bg-color: $orlc-green;
+$btn-link-bg-color_hover: $orlc-green-light;
 
-$btn-bicolor-label-bg-color: $ORLC-green;
-$btn-bicolor-input-bg-color: $ORLC-green-dark;
+$btn-bicolor-label-bg-color: $orlc-green;
+$btn-bicolor-input-bg-color: $orlc-green-dark;
 
 // Input
-$input-text-input-border-color: $ORLC-grey-light;
+$input-text-input-border-color: $orlc-grey-light;
 
 // Module
 $module-header-font-family: $lato-light-font-family;
-$module-header-bg-color: $ORLC-grey;
+$module-header-bg-color: $orlc-grey;
 
-$module-border-border-color: $ORLC-grey-light;
+$module-border-border-color: $orlc-grey-light;
 
-$module-comment-border-color: $ORLC-grey-light;
-$module-comment-color: $ORLC-black;
-$module-comment-form-bg-color: $ORLC-cream;
-$module-comment-bg-color: $ORLC-cream-dark;
+$module-comment-border-color: $orlc-grey-light;
+$module-comment-color: $orlc-black;
+$module-comment-form-bg-color: $orlc-cream;
+$module-comment-bg-color: $orlc-cream-dark;
 $module-comment-title-font-family: $font-design;
 
-$module-link-bg-color: $ORLC-cream;
-$module-link-color: $ORLC-black;
+$module-link-bg-color: $orlc-cream;
+$module-link-color: $orlc-black;
 
-$module-footer-bg-color: $ORLC-grey;
+$module-footer-bg-color: $orlc-grey;
 
 $module-follow-us-font-family: $lato-light-font-family;
-$module-follow-us-icon-newsletter-color_before: $ORLC-black;
+$module-follow-us-icon-newsletter-color_before: $orlc-black;
 
 // Article
-$article-text-link-color: $ORLC-grey;
+$article-text-link-color: $orlc-grey;
 $article-text-link-color_hover: $black;
 
-$article-text-list-color: $ORLC-grey;
+$article-text-list-color: $orlc-grey;
 $article-text-list-color_hover: $black;
-$article-text-list-item-bg-color_before: $ORLC-grey;
+$article-text-list-item-bg-color_before: $orlc-grey;
 
-$article-footer-color: $ORLC-black;
+$article-footer-color: $orlc-black;
 
-$article-preview-fig-border-color: $ORLC-green;
+$article-preview-fig-border-color: $orlc-green;
 $article-preview-link-color: $black;
-$article-preview-link-color_hover: $ORLC-green;
-$article-preview-social-tool-color: $ORLC-grey;
-$article-preview-social-tool-icon-play-color_before: $ORLC-grey-dark;
+$article-preview-link-color_hover: $orlc-green;
+$article-preview-social-tool-color: $orlc-grey;
+$article-preview-social-tool-icon-play-color_before: $orlc-grey-dark;
 
 $article-tag-font-family: $lato-light-font-family;
-$article-tag-bg-color: $ORLC-grey;
+$article-tag-bg-color: $orlc-grey;
 
-$article-flag-fix-bg-color: $ORLC-grey;
-$article-flag-fix-border-color: $ORLC-grey;
-$article-flag-fix-bg-color_before: $ORLC-grey-matt;
-$article-flag-fix-border-color_after: $ORLC-grey;
+$article-flag-fix-bg-color: $orlc-grey;
+$article-flag-fix-border-color: $orlc-grey;
+$article-flag-fix-bg-color_before: $orlc-grey-matt;
+$article-flag-fix-border-color_after: $orlc-grey;
 
 // Page
 $page-header-font-family: $lato-light-font-family;
-$page-header-border-color: $ORLC-green;
-$page-header-main-text-color: $ORLC-black;
-$page-header-right-text-bg-color: $ORLC-cream-light;
-$page-header-right-text-color: $ORLC-black;
+$page-header-border-color: $orlc-green;
+$page-header-main-text-color: $orlc-black;
+$page-header-right-text-bg-color: $orlc-cream-light;
+$page-header-right-text-color: $orlc-black;
 
 // Widget
-$widget-feature-border-color: $ORLC-grey;
+$widget-feature-border-color: $orlc-grey;
 
-$widget-astro-header-bg-color: $ORLC-blue-dark;
-$widget-astro-content-sign-color: $ORLC-blue-dark;
-$widget-astro-content-date-color: $ORLC-grey;
-$widget-astro-content-text-color: $ORLC-grey;
+$widget-astro-header-bg-color: $orlc-blue-dark;
+$widget-astro-content-sign-color: $orlc-blue-dark;
+$widget-astro-content-date-color: $orlc-grey;
+$widget-astro-content-text-color: $orlc-grey;
 
-$widget-weather-header-border-color: $ORLC-grey-light;
-$widget-weather-header-bg-color: $ORLC-blue-dark;
-$widget-weather-list-item-border-color: $ORLC-cream-dark;
-$widget-weather-list-text-color: $ORLC-grey;
+$widget-weather-header-border-color: $orlc-grey-light;
+$widget-weather-header-bg-color: $orlc-blue-dark;
+$widget-weather-list-item-border-color: $orlc-cream-dark;
+$widget-weather-list-text-color: $orlc-grey;

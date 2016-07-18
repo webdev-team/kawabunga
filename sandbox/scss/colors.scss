@@ -5,6 +5,7 @@
 @import "../../assets/scss/themes/rtl2/colors";
 @import "../../assets/scss/themes/funradio/colors";
 @import "../../assets/scss/themes/girls/colors";
+@import "../../assets/scss/themes/onrefaitlescourses-2016.rtl.fr/colors";
 
 // import config, template
 @import "../../assets/scss/kawabunga-base";
@@ -305,3 +306,47 @@
 /* Brown : Confessions*/
 .girls-brown { background-color: $girls-brown; }
 .girls-brown-darker { background-color: $girls-brown-darker; }
+
+
+/*------------*/
+/*    ORLC    */
+/*------------*/
+
+/* Black */
+.orlc-black { background-color: $orlc-black; }
+
+/* Grey */
+.orlc-grey { background-color: $orlc-grey; }
+.orlc-grey-dark { background-color: $orlc-grey-dark; }
+.orlc-grey-matt { background-color: $orlc-grey-matt; }
+.orlc-grey-light { background-color: $orlc-grey-light; }
+
+/* Cream */
+.orlc-cream { background-color: $orlc-cream; }
+.orlc-cream-dark { background-color: $orlc-cream-dark; }
+.orlc-cream-light { background-color: $orlc-cream-light; }
+
+/* Blue */
+.orlc-blue {background-color: $orlc-blue;}
+.orlc-blue-dark {background-color: $orlc-blue-dark;}
+
+/* Green */
+.orlc-green {background-color: $orlc-green;}
+.orlc-green-dark {background-color: $orlc-green-dark;}
+.orlc-green-light {background-color: $orlc-green-light;}
+
+/* Green Linden */
+.orlc-green-linden {background-color: $orlc-green-linden;}
+.orlc-green-linden-light {background-color: $orlc-green-linden-light;}
+
+/* Green Fir */
+.orlc-green-fir {background-color: $orlc-green-fir;}
+.orlc-green-fir-dark {background-color: $orlc-green-fir-dark;}
+.orlc-green-fir-light {background-color: $orlc-green-fir-light;}
+
+/* Yellow */
+.orlc-yellow {background-color: $orlc-yellow;}
+
+/* Brown */
+.orlc-brown {background-color: $orlc-brown;}
+.orlc-brown-light {background-color: $orlc-brown-light;}
