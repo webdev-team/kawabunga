@@ -49,33 +49,34 @@
 .icon-amp-play-circle:before { content: "\EA0D" }
 .icon-amp-quote-end:before { content: "\EA0E" }
 .icon-amp-quote-start:before { content: "\EA0F" }
-.icon-amp-search:before { content: "\EA10" }
-.icon-amp-user:before { content: "\EA11" }
-.icon-amp-facebook-like:before { content: "\EA12" }
-.icon-amp-facebook-message:before { content: "\EA13" }
-.icon-amp-facebook-share:before { content: "\EA14" }
-.icon-amp-facebook-sign:before { content: "\EA15" }
-.icon-amp-facebook-square-alt:before { content: "\EA16" }
-.icon-amp-facebook-square:before { content: "\EA17" }
-.icon-amp-facebook:before { content: "\EA18" }
-.icon-amp-googleplus-sign:before { content: "\EA19" }
-.icon-amp-googleplus-square:before { content: "\EA1A" }
-.icon-amp-googleplus:before { content: "\EA1B" }
-.icon-amp-instagram-like:before { content: "\EA1C" }
-.icon-amp-instagram-sign:before { content: "\EA1D" }
-.icon-amp-instagram-square:before { content: "\EA1E" }
-.icon-amp-instagram:before { content: "\EA1F" }
-.icon-amp-linkedin-sign:before { content: "\EA20" }
-.icon-amp-linkedin-square:before { content: "\EA21" }
-.icon-amp-linkedin:before { content: "\EA22" }
-.icon-amp-pinterest-sign:before { content: "\EA23" }
-.icon-amp-pinterest-square:before { content: "\EA24" }
-.icon-amp-pinterest:before { content: "\EA25" }
-.icon-amp-sms:before { content: "\EA26" }
-.icon-amp-twitter-sign:before { content: "\EA27" }
-.icon-amp-twitter-square:before { content: "\EA28" }
-.icon-amp-twitter:before { content: "\EA29" }
-.icon-amp-youtube-sign:before { content: "\EA2A" }
+.icon-amp-quote-v2:before { content: "\EA10" }
+.icon-amp-search:before { content: "\EA11" }
+.icon-amp-user:before { content: "\EA12" }
+.icon-amp-facebook-like:before { content: "\EA13" }
+.icon-amp-facebook-message:before { content: "\EA14" }
+.icon-amp-facebook-share:before { content: "\EA15" }
+.icon-amp-facebook-sign:before { content: "\EA16" }
+.icon-amp-facebook-square-alt:before { content: "\EA17" }
+.icon-amp-facebook-square:before { content: "\EA18" }
+.icon-amp-facebook:before { content: "\EA19" }
+.icon-amp-googleplus-sign:before { content: "\EA1A" }
+.icon-amp-googleplus-square:before { content: "\EA1B" }
+.icon-amp-googleplus:before { content: "\EA1C" }
+.icon-amp-instagram-like:before { content: "\EA1D" }
+.icon-amp-instagram-sign:before { content: "\EA1E" }
+.icon-amp-instagram-square:before { content: "\EA1F" }
+.icon-amp-instagram:before { content: "\EA20" }
+.icon-amp-linkedin-sign:before { content: "\EA21" }
+.icon-amp-linkedin-square:before { content: "\EA22" }
+.icon-amp-linkedin:before { content: "\EA23" }
+.icon-amp-pinterest-sign:before { content: "\EA24" }
+.icon-amp-pinterest-square:before { content: "\EA25" }
+.icon-amp-pinterest:before { content: "\EA26" }
+.icon-amp-sms:before { content: "\EA27" }
+.icon-amp-twitter-sign:before { content: "\EA28" }
+.icon-amp-twitter-square:before { content: "\EA29" }
+.icon-amp-twitter:before { content: "\EA2A" }
+.icon-amp-youtube-sign:before { content: "\EA2B" }
 
 
 /*
@@ -96,30 +97,31 @@
 @mixin icon-amp-play-circle() { content: "\EA0D" }
 @mixin icon-amp-quote-end() { content: "\EA0E" }
 @mixin icon-amp-quote-start() { content: "\EA0F" }
-@mixin icon-amp-search() { content: "\EA10" }
-@mixin icon-amp-user() { content: "\EA11" }
-@mixin icon-amp-facebook-like() { content: "\EA12" }
-@mixin icon-amp-facebook-message() { content: "\EA13" }
-@mixin icon-amp-facebook-share() { content: "\EA14" }
-@mixin icon-amp-facebook-sign() { content: "\EA15" }
-@mixin icon-amp-facebook-square-alt() { content: "\EA16" }
-@mixin icon-amp-facebook-square() { content: "\EA17" }
-@mixin icon-amp-facebook() { content: "\EA18" }
-@mixin icon-amp-googleplus-sign() { content: "\EA19" }
-@mixin icon-amp-googleplus-square() { content: "\EA1A" }
-@mixin icon-amp-googleplus() { content: "\EA1B" }
-@mixin icon-amp-instagram-like() { content: "\EA1C" }
-@mixin icon-amp-instagram-sign() { content: "\EA1D" }
-@mixin icon-amp-instagram-square() { content: "\EA1E" }
-@mixin icon-amp-instagram() { content: "\EA1F" }
-@mixin icon-amp-linkedin-sign() { content: "\EA20" }
-@mixin icon-amp-linkedin-square() { content: "\EA21" }
-@mixin icon-amp-linkedin() { content: "\EA22" }
-@mixin icon-amp-pinterest-sign() { content: "\EA23" }
-@mixin icon-amp-pinterest-square() { content: "\EA24" }
-@mixin icon-amp-pinterest() { content: "\EA25" }
-@mixin icon-amp-sms() { content: "\EA26" }
-@mixin icon-amp-twitter-sign() { content: "\EA27" }
-@mixin icon-amp-twitter-square() { content: "\EA28" }
-@mixin icon-amp-twitter() { content: "\EA29" }
-@mixin icon-amp-youtube-sign() { content: "\EA2A" }
+@mixin icon-amp-quote-v2() { content: "\EA10" }
+@mixin icon-amp-search() { content: "\EA11" }
+@mixin icon-amp-user() { content: "\EA12" }
+@mixin icon-amp-facebook-like() { content: "\EA13" }
+@mixin icon-amp-facebook-message() { content: "\EA14" }
+@mixin icon-amp-facebook-share() { content: "\EA15" }
+@mixin icon-amp-facebook-sign() { content: "\EA16" }
+@mixin icon-amp-facebook-square-alt() { content: "\EA17" }
+@mixin icon-amp-facebook-square() { content: "\EA18" }
+@mixin icon-amp-facebook() { content: "\EA19" }
+@mixin icon-amp-googleplus-sign() { content: "\EA1A" }
+@mixin icon-amp-googleplus-square() { content: "\EA1B" }
+@mixin icon-amp-googleplus() { content: "\EA1C" }
+@mixin icon-amp-instagram-like() { content: "\EA1D" }
+@mixin icon-amp-instagram-sign() { content: "\EA1E" }
+@mixin icon-amp-instagram-square() { content: "\EA1F" }
+@mixin icon-amp-instagram() { content: "\EA20" }
+@mixin icon-amp-linkedin-sign() { content: "\EA21" }
+@mixin icon-amp-linkedin-square() { content: "\EA22" }
+@mixin icon-amp-linkedin() { content: "\EA23" }
+@mixin icon-amp-pinterest-sign() { content: "\EA24" }
+@mixin icon-amp-pinterest-square() { content: "\EA25" }
+@mixin icon-amp-pinterest() { content: "\EA26" }
+@mixin icon-amp-sms() { content: "\EA27" }
+@mixin icon-amp-twitter-sign() { content: "\EA28" }
+@mixin icon-amp-twitter-square() { content: "\EA29" }
+@mixin icon-amp-twitter() { content: "\EA2A" }
+@mixin icon-amp-youtube-sign() { content: "\EA2B" }
