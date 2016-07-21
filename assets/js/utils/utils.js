@@ -17,4 +17,29 @@ exports.toArray = function(nodeList) {
     var array = [];
     for (var i = nodeList.length; i--; array.unshift(nodeList[i]));
     return array;
+};
+
+var elementObjects = typeof HTMLElement === 'object';
+
+exports.isElement = function (obj) {
+    return elementObjects ? obj instanceof HTMLElement : isElementObject(obj);
+}
+
+function isElementObject (obj) {
+    return obj &&
+        typeof obj === 'object' &&
+        typeof obj.nodeName === 'string' &&
+        obj.nodeType === 1;
+}
+
+exports.hyphenToCamel = function (hyphens) {
+    var part = /-([a-z])/g;
+    return hyphens.replace(part, function (g, m) {
+        return m.toUpperCase();
+    });
+}
+
+exports.hyphenate = function (text) {
+    var camel = /([a-z])([A-Z])/g;
+    return text.replace(camel, '$1-$2').toLowerCase();
 }

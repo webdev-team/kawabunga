@@ -20,6 +20,14 @@ describe('dom.js', () => {
             expect(dom.select('#a')).to.have.length(1)
         })
 
+        it('should accept HTMLElement', () => {
+            env.initWithHtml('<div id="a" data-test="toto"></div>')
+            var id = document.getElementById('a')
+
+            expect(dom.select(id)).to.have.length(1)
+            expect(dom.select(id).data('test')).to.equal("toto")
+        })
+
         describe('sub select', () => {
             it('should find matched nodes', () => {
                 env.initWithHtml('<div class="a"><div class="b"></div></div>')
@@ -106,6 +114,15 @@ describe('dom.js', () => {
             })
 
             testUtils.click(document.getElementById('a'))
+        })
+    })
+
+    describe('css', () => {
+        it('should property change', () => {
+            env.initWithHtml('<div id="a"></div>')
+
+            dom.select('#a').css('margin-top', 10);
+            expect(dom.select('#a').css('margin-top')).to.equal(10);
         })
     })
 })

@@ -1,5 +1,6 @@
 
 var utils = require('./utils');
+var domCss = require('./dom/css');
 
 /**
  * Work in progress, added features as needed. Inspired by :
@@ -12,7 +13,11 @@ var utils = require('./utils');
 
 // default method is select at document level
 module.exports = function (selector) {
-    return augmentArray(select(document, selector));
+    if (utils.isElement(selector)) {
+        return augmentArray([selector]);
+    } else {
+        return augmentArray(select(document, selector));
+    }
 }
 
 /**
@@ -71,12 +76,33 @@ function augmentArray(array) {
         return this.isEmpty() ? '' : this[0].textContent || this[0].innerText;
     }
 
+    array.html = function() {
+        return this.isEmpty() ? '' : this[0].innerHTML;
+    }
+
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
             element.addEventListener(type, function(e) {
                 callback(e, element)
             }, capture || false);
         });
+    }
+
+    array.css = function (name, value) {
+        var props;
+        var many = name && typeof name === 'object';
+        var getter = !many && !value;
+        if (getter) {
+            return this.length ? domCss.getCss(this[0], name) : null;
+        }
+        if (many) {
+            props = name;
+        } else {
+            props = {};
+            props[name] = value;
+        }
+        this.forEach(domCss.setCss(props));
+        return this;
     }
 
     return array;
