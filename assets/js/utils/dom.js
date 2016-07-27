@@ -1,6 +1,7 @@
 
 var utils = require('./utils');
 var domCss = require('./dom/css');
+var classes = require('./dom/classes');
 
 /**
  * Work in progress, added features as needed. Inspired by :
@@ -60,6 +61,10 @@ function augmentArray(array) {
         return this.selectByMatcher(selector, selectByClass);
     }
 
+    array.find = function(selector, clazz) {
+        return this.selectByMatcher(clazz, selector);
+    }
+
     array.isEmpty = function() {
         return this.length == 0
     }
@@ -91,7 +96,7 @@ function augmentArray(array) {
     array.css = function (name, value) {
         var props;
         var many = name && typeof name === 'object';
-        var getter = !many && !value;
+        var getter = !many && typeof value === 'undefined';
         if (getter) {
             return this.length ? domCss.getCss(this[0], name) : null;
         }
@@ -104,6 +109,25 @@ function augmentArray(array) {
         this.forEach(domCss.setCss(props));
         return this;
     }
+
+    var funcClasses = [['addClass', classes.add],
+        ['removeClass', classes.remove]];
+    funcClasses.forEach(mapMethods);
+
+    function mapMethods (data) {
+        array[data[0]] = function (value) {
+            this.forEach(function (elem) {
+                data[1](elem, value);
+            });
+            return this;
+        };
+    }
+
+    array.hasClass = function (value) {
+        return this.some(function (elem) {
+            return classes.contains(elem, value);
+        });
+    };
 
     return array;
 }

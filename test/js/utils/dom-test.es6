@@ -125,4 +125,29 @@ describe('dom.js', () => {
             expect(dom.select('#a').css('margin-top')).to.equal(10);
         })
     })
+
+    describe('classes', () => {
+        describe('addClass', () => {
+            it('should add class in element', () => {
+                env.initWithHtml('<div id="a"></div>')
+
+                dom.select('#a').addClass('test');
+                expect(document.getElementById('a').classList.contains('test')).to.be.true;
+            })
+        })
+        describe('removeClass', () => {
+            it('should remove class in element', () => {
+                env.initWithHtml('<div id="a" class="test"></div>')
+
+                dom.select('#a').removeClass('test');
+                expect(document.getElementById('a').classList.contains('test')).to.be.false;
+            })
+        })
+        describe('hasClass', () => {
+            it('should element has class', () => {
+                env.initWithHtml('<div id="a" class="test"></div>')
+                expect(dom.select('#a').hasClass('test')).to.be.true;
+            })
+        })
+    })
 })
