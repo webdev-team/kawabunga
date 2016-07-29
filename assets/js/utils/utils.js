@@ -25,6 +25,14 @@ exports.isElement = function (obj) {
     return elementObjects ? obj instanceof HTMLElement : isElementObject(obj);
 }
 
+exports.isArray = function (array) {
+    return Object.prototype.toString.call(array) === '[object Array]';
+}
+
+exports.isCheckable = function (elem) {
+    return 'checked' in elem && elem.type === 'radio' || elem.type === 'checkbox';
+}
+
 function isElementObject (obj) {
     return obj &&
         typeof obj === 'object' &&

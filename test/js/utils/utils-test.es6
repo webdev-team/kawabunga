@@ -19,4 +19,14 @@ describe('utils.js', () => {
             expect(utils.hyphenate('myCamelCase')).to.equal('my-camel-case')
         })
     })
+
+    describe('isArray', () => {
+        it('should parameter is array', () => {
+            expect(utils.isArray(['red', 'blue', 'green'])).to.be.true
+        })
+
+        it('should parameter is not array', () => {
+            expect(utils.isArray('String')).to.be.false
+        })
+    })
 })

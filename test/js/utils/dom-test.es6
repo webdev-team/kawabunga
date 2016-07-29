@@ -95,6 +95,16 @@ describe('dom.js', () => {
         })
     })
 
+    describe('clear', () => {
+        it('should clear an element', () => {
+            env.initWithHtml('<div id="a">some text</div>')
+
+            dom.select('#a').clear()
+            console.log(dom.select('#a').text('toto'))
+            expect(dom.select('#a').text()).to.equal('')
+        })
+    })
+
     describe('on', () => {
         it('should listen to click event', (done) => {
             env.initWithHtml('<div id="a"></div>')

@@ -2,6 +2,7 @@
 var utils = require('./utils');
 var domCss = require('./dom/css');
 var classes = require('./dom/classes');
+var api = require('./dom/api');
 
 /**
  * Work in progress, added features as needed. Inspired by :
@@ -77,18 +78,64 @@ function augmentArray(array) {
      * Using textContent if defined, innerText otherwise
      * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
      */
-    array.text = function() {
-        return this.isEmpty() ? '' : this[0].textContent || this[0].innerText;
-    }
 
-    array.html = function() {
-        return this.isEmpty() ? '' : this[0].innerHTML;
-    }
+    array.html = function (elem, html) {
+        var getter = arguments.length < 2;
+        if (getter) {
+            return elem.innerHTML;
+        } else {
+            elem.innerHTML = html;
+        }
+    };
+
+    array.text = function (elem, text) {
+        var checkable = utils.isCheckable(elem);
+        var getter = arguments.length < 2;
+        if (getter) {
+            return checkable ? elem.value : elem.innerText || elem.textContent;
+        } else if (checkable) {
+            elem.value = text;
+        } else {
+            elem.innerText = elem.textContent = text;
+        }
+    };
+
+    array.value = function (el, value) {
+        var checkable = utils.isCheckable(el);
+        var getter = arguments.length < 2;
+        if (getter) {
+            return checkable ? el.checked : el.value;
+        } else if (checkable) {
+            el.checked = value;
+        } else {
+            el.value = value;
+        }
+    };
 
     array.clear = function () {
         this[0].innerHTML = "";
         return this[0];
     }
+
+    /*array.appendTag = function(tag, options) {
+        options = options || {};
+
+        var child = global.document.createElement(tag);
+
+        var childWrap = this.select(child);
+
+        if (options.classes) {
+            childWrap.addClass(options.classes);
+        }
+
+        if (options.text) {
+            childWrap.text(options.text);
+        }
+
+        this.element.appendChild(child);
+
+        return childWrap;
+    };*/
 
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
