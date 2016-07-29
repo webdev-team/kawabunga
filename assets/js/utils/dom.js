@@ -2,7 +2,6 @@
 var utils = require('./utils');
 var domCss = require('./dom/css');
 var classes = require('./dom/classes');
-var api = require('./dom/api');
 
 /**
  * Work in progress, added features as needed. Inspired by :
