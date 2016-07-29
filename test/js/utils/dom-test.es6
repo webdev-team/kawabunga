@@ -100,7 +100,6 @@ describe('dom.js', () => {
             env.initWithHtml('<div id="a">some text</div>')
 
             dom.select('#a').clear()
-            console.log(dom.select('#a').text('toto'))
             expect(dom.select('#a').text()).to.equal('')
         })
     })
