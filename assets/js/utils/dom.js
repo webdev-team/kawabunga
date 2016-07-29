@@ -85,6 +85,11 @@ function augmentArray(array) {
         return this.isEmpty() ? '' : this[0].innerHTML;
     }
 
+    array.clear = function () {
+        this[0].innerHTML = "";
+        return this[0];
+    }
+
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
             element.addEventListener(type, function(e) {
