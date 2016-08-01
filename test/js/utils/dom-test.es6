@@ -95,6 +95,32 @@ describe('dom.js', () => {
         })
     })
 
+    describe('appendTag', () => {
+        it('should append tag to parent', () => {
+            env.initWithHtml('<div id="append"><span></span></div>')
+
+            dom.select('#append').appendTag('p')
+
+            expect(document.body.innerHTML).to.equal('<div id="append"><span></span><p></p></div>')
+        })
+
+        it('should append tag with classes', () => {
+            env.initWithHtml('<div id="append"><span></span></div>')
+
+            dom.select('#append').appendTag('p', {classes: 'myClass'})
+
+            expect(document.body.innerHTML).to.equal('<div id="append"><span></span><p class="myClass"></p></div>')
+        })
+
+        it('should be chainable', () => {
+            env.initWithHtml('<div id="append"><span></span></div>')
+
+            dom.select('#append').appendTag('p').appendTag('p')
+
+            expect(document.body.innerHTML).to.equal('<div id="append"><span></span><p><p></p></p></div>')
+        })
+    })
+
     describe('clear', () => {
         it('should clear an element', () => {
             env.initWithHtml('<div id="a">some text</div>')
@@ -140,7 +166,7 @@ describe('dom.js', () => {
             it('should add class in element', () => {
                 env.initWithHtml('<div id="a"></div>')
 
-                dom.select('#a').addClass('test');
+                dom.select('#a').addClass('test ratata');
                 expect(document.getElementById('a').classList.contains('test')).to.be.true;
             })
         })

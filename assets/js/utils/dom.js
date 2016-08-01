@@ -25,10 +25,10 @@ module.exports = function (selector) {
 /**
  * method called 'select' not to get confused with Array.find method
  */
-module.exports.select = module.exports
+module.exports.select = module.exports;
 module.exports.selectByClass = function (clazz) {
     return augmentArray(selectByClass(document, clazz));
-}
+};
 
 function select(context, selector) {
     return utils.toArray(context.querySelectorAll(selector));
@@ -50,7 +50,6 @@ function augmentArray(array) {
         this.forEach(function(element) {
             result = result.concat(matcher(element, selector));
         });
-
         return augmentArray(result);
     }
 
@@ -106,6 +105,24 @@ function augmentArray(array) {
         this[0].innerHTML = "";
         return this[0];
     }
+
+    array.appendTag = function(tag, options) {
+        options = options || {};
+
+        var child = global.document.createElement(tag);
+        var childWrapper = module.exports.select(child);
+
+        if (options.classes) {
+            childWrapper.addClass(options.classes);
+        }
+
+        if (options.text) {
+            childWrapper.text(options.text);
+        }
+
+        this[0].appendChild(child);
+        return childWrapper;
+    };
 
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
