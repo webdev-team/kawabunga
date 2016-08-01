@@ -73,11 +73,6 @@ function augmentArray(array) {
         return this.isEmpty() ? null : this[0].getAttribute('data-' + name);
     }
 
-    /**
-     * Using textContent if defined, innerText otherwise
-     * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
-     */
-
     function keyValue (key, value) {
         var getter = arguments.length < 2;
         if (getter) {
