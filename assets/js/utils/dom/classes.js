@@ -1,5 +1,5 @@
 var trim = /^\s+|\s+$/g;
-var whitespace = /\s+/g;
+var whitespace = /\s+/;
 var utils = require('../utils');
 
 function interpret (input) {
@@ -8,7 +8,7 @@ function interpret (input) {
 
 function classes (el) {
     if (utils.isElement(el)) {
-        return el.className === "" ? [] : el.className.replace(trim, '').split(whitespace);
+        return el.className ? el.className.replace(trim, '').split(whitespace) : [];
     }
     return [];
 }
