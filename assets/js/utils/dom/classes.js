@@ -8,11 +8,7 @@ function interpret (input) {
 
 function classes (el) {
     if (utils.isElement(el)) {
-        if (el.className === "") {
-            return [];
-        } else {
-            return el.className.replace(trim, '').split(whitespace);
-        }
+        return el.className === "" ? [] : el.className.replace(trim, '').split(whitespace);
     }
     return [];
 }
