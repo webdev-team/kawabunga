@@ -32,3 +32,36 @@ exports.value = function (el, value) {
         el.value = value;
     }
 };
+
+
+exports.attr = function (el, name, value) {
+    if (!utils.isElement(el)) {
+        return;
+    }
+    if (value === null || value === void 0) {
+        el.removeAttribute(name); return;
+    }
+    var camel = utils.hyphenToCamel(name);
+    if (camel in el) {
+        el[camel] = value;
+    } else {
+        var hyphenate = utils.hyphenate(name);
+        el.setAttribute(hyphenate, value);
+    }
+};
+
+exports.getAttr = function (el, name) {
+    var camel = utils.hyphenToCamel(name);
+    if (camel in el) {
+        return el[camel];
+    } else if (el.getAttribute) {
+        return el.getAttribute(name);
+    }
+    return null;
+};
+
+exports.manyAttr = function (elem, attrs) {
+    Object.keys(attrs).forEach(function (attr) {
+        exports.attr(elem, attr, attrs[attr]);
+    });
+};

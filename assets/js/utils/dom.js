@@ -124,6 +124,24 @@ function augmentArray(array) {
         return childWrapper;
     };
 
+    array.attr = function (name, value) {
+        var hash = name && typeof name === 'object';
+        var set = hash ? setMany : setSingle;
+        var setter = hash || arguments.length > 1;
+        if (setter) {
+            this.forEach(set);
+            return this;
+        } else {
+            return this.length ? api.getAttr(this[0], name) : null;
+        }
+        function setMany (elem) {
+            api.manyAttr(elem, name);
+        }
+        function setSingle (elem) {
+            api.attr(elem, name, value);
+        }
+    };
+
     array.on = function(type, callback, capture) {
         this.forEach(function(element) {
             element.addEventListener(type, function(e) {

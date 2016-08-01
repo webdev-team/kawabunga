@@ -121,6 +121,30 @@ describe('dom.js', () => {
         })
     })
 
+    describe('attr', () => {
+        it('should set attribute for an element', () => {
+            env.initWithHtml('<div id="append"></div>')
+
+            dom.select('#append').attr('data-test', 'toto')
+
+            expect(document.body.innerHTML).to.equal('<div id="append" data-test="toto"></div>');
+        })
+
+        it('should get attribute for an element', () => {
+            env.initWithHtml('<div id="append" data-test="toto"></div>')
+
+            expect(dom.select('#append').attr('data-test')).to.equal('toto');
+        })
+
+        it('should set many attributes for an element', () => {
+            env.initWithHtml('<div id="append"></div>')
+
+            dom.select('#append').attr({dataTest: 'toto', class: 'myClass'})
+
+            expect(document.body.innerHTML).to.equal('<div id="append" data-test="toto" class="myClass"></div>');
+        })
+    })
+
     describe('clear', () => {
         it('should clear an element', () => {
             env.initWithHtml('<div id="a">some text</div>')
