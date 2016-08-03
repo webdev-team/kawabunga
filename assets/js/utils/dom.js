@@ -137,10 +137,37 @@ function augmentArray(array) {
         }
     };
 
-    array.on = function(type, callback, capture) {
+    array.on = function(type, delegateSelector, callback, capture) {
+        var useDelegate = false;
+
+        if (arguments.length == 2) {
+            callback = delegateSelector;
+        } else if (arguments.length == 3) {
+            if (typeof delegateSelector == 'function') {
+                capture = callback;
+                callback = delegateSelector;
+            } else {
+                useDelegate = true;
+            }
+        } else if (arguments.length == 4) {
+            useDelegate = true;
+        }
+
         this.forEach(function(element) {
             element.addEventListener(type, function(e) {
-                callback(e, element)
+                if (useDelegate) {
+                    var target = e.target;
+
+                    while (target && target != element) {
+                        if (target.matches(delegateSelector)) {
+                            callback(e, target);
+                            break;
+                        }
+                        target = target.parentNode;
+                    }
+                } else {
+                    callback(e, element)
+                }
             }, capture || false);
         });
     }

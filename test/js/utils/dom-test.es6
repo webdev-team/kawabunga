@@ -150,6 +150,7 @@ describe('dom.js', () => {
             env.initWithHtml('<div id="a">some text</div>')
 
             dom.select('#a').clear()
+
             expect(dom.select('#a').text()).to.equal('')
         })
     })
@@ -173,6 +174,48 @@ describe('dom.js', () => {
             })
 
             testUtils.click(document.getElementById('a'))
+        })
+
+        it('should accept a delegateSelector', (done) => {
+            env.initWithHtml('<div id="a"><div id="b1" class="b1"></div><div id="b2" class="b2"></div></div>')
+
+            dom.select('#a').on('click', '.b1', (e, div) => {
+                expect(div.id).to.equal('b1')
+
+                done()
+            })
+
+            testUtils.click(document.getElementById('b1'))
+        })
+
+        it('should accept a more complex delegateSelector', (done) => {
+            env.initWithHtml('<div id="a"><div id="b1" class="b1"></div><div id="b2" class="b2"></div></div>')
+
+            dom.select('#a').on('click', '#b1.b1', (e, div) => {
+                expect(div.id).to.equal('b1')
+
+                done()
+            })
+
+            testUtils.click(document.getElementById('b1'))
+        })
+
+        it('should not fire if delegateSelector doesn\'t match', (done) => {
+            env.initWithHtml('<div id="a"><div id="b1" class="b1"></div><div id="b2" class="b2"></div></div>')
+
+            let called = false
+
+            dom.select('#a').on('click', '.b1', (e, div) => {
+                called = true
+            })
+
+            testUtils.click(document.getElementById('b2'))
+
+            setTimeout(() => {
+                expect(called).to.be.false
+
+                done()
+            }, 100)
         })
     })
 
