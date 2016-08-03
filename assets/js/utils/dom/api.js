@@ -10,14 +10,14 @@ exports.html = function (elem, html) {
 };
 
 /**
- * Using textContent if defined, innerText otherwise
+ * Using innerText if defined, textContent otherwise
  * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
  */
 exports.text = function (elem, text) {
     var checkable = utils.isCheckable(elem);
     var getter = arguments.length < 2;
     if (getter) {
-        return checkable ? elem.value : elem.textContent || elem.innerText;
+        return checkable ? elem.value : elem.innerText || elem.textContent;
     } else if (checkable) {
         elem.value = text;
     } else {
