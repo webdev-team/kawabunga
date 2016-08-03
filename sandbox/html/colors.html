@@ -9,8 +9,10 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <%- include('widgets/_navbar.html', {active: 'colors'}) %>
+
     <div class="container kawa">
-      <%- include('_navbar.html', {active: 'colors'}) %>
+
 
       <div class="row">
         <!--Main Content -->

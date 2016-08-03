@@ -9,12 +9,13 @@
         <link rel="stylesheet" href="../css/components-rtl2.css">
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="container kawa">
-        <%- include('_navbar.html', {active: 'components-rtl2'}) %>
-        <%- include('_components.html', {domain: 'RTL2', logo: 'rtl2-logo-alt'}) %>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="../js/components.js"></script>
+        <%- include('widgets/_navbar.html', {active: 'components-rtl2'}) %>
+
+        <div class="container kawa">
+            <%- include('_components.html', {domain: 'RTL2', logo: 'rtl2-logo-alt'}) %>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="../js/components.js"></script>
     </body>
 </html>

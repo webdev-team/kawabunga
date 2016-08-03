@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="../css/components-girls.css">
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <%- include('widgets/_navbar.html', {active: 'components-girls'}) %>
+
         <div class="container kawa">
-            <%- include('_navbar.html', {active: 'components-girls'}) %>
             <%- include('_components.html', {domain: 'GIRLS', logo: 'girls-logo'}) %>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <%
+      var sites = [];
+
+      sites = [
+        {title: 'Default', link: 'components-default'},
+        {title: 'RTL', link: 'components-rtl'},
+        {title: 'RTL2', link: 'components-rtl2'},
+        {title: 'Girls', link: 'components-girls'},
+        {title: 'Fun Radio', link: 'components-funradio'},
+        {title: 'On Refait Les Courses', link: 'components-ORLC'}
+    ];
+
+    %>
+
+    <ul class="nav navbar-nav">
+
+      <li class="<%= active == 'index' ? 'active' : '' %>"><a href="index.html">Home</a></li>
+      <li class="<%= active == 'typography' ? 'active' : '' %>"><a href="typography.html">Typographie</a></li>
+      <li class="<%= active == 'colors' ? 'active' : '' %>"><a href="colors.html">Colors</a></li>
+      <li class="<%= active == 'icons' ? 'active' : '' %>"><a href="icons.html">Icons</a></li>
+      <li class="<%= active == 'sprites' ? 'active' : '' %>"><a href="sprites.html">Sprites</a></li>
+      <li role="presentation">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Components <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <% sites.forEach(function(site) { %>
+          <li class="<%= active == site.link ? 'active' : '' %>"><a href="<%= site.link %>.html"><%= site.title %></a></li>
+          <% }); %>
+        </ul>
+      </li>
+      <li role="presentation">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ads <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="<%= active == 'ads-ftv-dx' ? 'active' : '' %>"><a href="ads-ftv-dx.html">FTV DX</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
