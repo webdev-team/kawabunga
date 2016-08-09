@@ -85,6 +85,15 @@ function augmentArray(array) {
         return this.isEmpty() ? null : module.exports.select(this[0].parentNode);
     }
 
+    function insertAdjacentHTML (prop) {
+        array[prop] = function (element) {
+            var adjacent = (prop == "after") ? this[0].nextSibling : this[0];
+            return this.isEmpty() ? null : this[0].parentNode.insertBefore(element, adjacent);
+        }
+    }
+
+    ['after', 'before'].forEach(insertAdjacentHTML);
+
     /**
      * Using textContent if defined, innerText otherwise
      * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
