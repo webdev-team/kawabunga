@@ -73,6 +73,23 @@ function augmentArray(array) {
         return this.isEmpty() ? null : this[0].getAttribute('data-' + name);
     }
 
+    array.parent = function (selector) {
+        if (selector) {
+            var element = this.isEmpty() ? null : this[0];
+            if (element) {
+                while ((element = element.parentElement) && !((element.matches || element.matchesSelector).call(element, selector)));
+                return module.exports.select(element);
+            }
+            return [];
+        }
+        return this.isEmpty() ? null : module.exports.select(this[0].parentNode);
+    }
+
+    /**
+     * Using textContent if defined, innerText otherwise
+     * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
+     */
+
     function keyValue (key, value) {
         var getter = arguments.length < 2;
         if (getter) {

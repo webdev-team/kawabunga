@@ -87,6 +87,20 @@ describe('dom.js', () => {
         })
     })
 
+    describe('parent', () => {
+        it('should get parent', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div></div>')
+
+            expect(dom.select('.child').parent().hasClass('parent')).to.be.true
+        })
+
+        it('should get parent two', () => {
+            env.initWithHtml('<div class="other-parent toto"><div class="parent"><div class="child"></div></div></div>')
+
+            expect(dom.select('.child').parent('.other-parent').hasClass('toto')).to.be.true
+        })
+    })
+
     describe('text', () => {
         it('should give data attribute value of first found element', () => {
             env.initWithHtml('<div class="a" data-test="value">some text</div>')
