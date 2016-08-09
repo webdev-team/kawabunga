@@ -101,6 +101,28 @@ describe('dom.js', () => {
         })
     })
 
+    describe('after and before', () => {
+        it('should add after element', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div></div>')
+
+            var newChild = document.createElement('div')
+            dom.select(newChild).addClass('myNewChild')
+            dom.select('.child').after(newChild)
+
+            expect(document.body.innerHTML).to.equal('<div class="parent"><div class="child"></div><div class="myNewChild"></div></div>')
+        })
+
+        it('should add before element', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div></div>')
+
+            var newChild = document.createElement('div')
+            dom.select(newChild).addClass('myNewChild')
+            dom.select('.child').before(newChild)
+
+            expect(document.body.innerHTML).to.equal('<div class="parent"><div class="myNewChild"></div><div class="child"></div></div>')
+        })
+    })
+
     describe('text', () => {
         it('should give data attribute value of first found element', () => {
             env.initWithHtml('<div class="a" data-test="value">some text</div>')
@@ -217,7 +239,7 @@ describe('dom.js', () => {
         it('should not fire if delegateSelector doesn\'t match', (done) => {
             env.initWithHtml('<div id="a"><div id="b1" class="b1"></div><div id="b2" class="b2"></div></div>')
 
-            let called = false
+            var called = false
 
             dom.select('#a').on('click', '.b1', (e, div) => {
                 called = true

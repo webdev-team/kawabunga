@@ -88,7 +88,7 @@ function augmentArray(array) {
     function insertAdjacentHTML (prop) {
         array[prop] = function (element) {
             var adjacent = (prop == "after") ? this[0].nextSibling : this[0];
-            return this.isEmpty() ? null : this[0].parentNode.insertBefore(element, adjacent);
+            return this.isEmpty() ? null : module.exports.select(this[0].parentNode.insertBefore(element, adjacent));
         }
     }
 
