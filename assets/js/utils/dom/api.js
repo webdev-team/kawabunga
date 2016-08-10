@@ -74,4 +74,3 @@ exports.manyAttr = function (elem, attrs) {
 exports.matches = function (el, selector) {
     return utils.isElement(el) && sektor.matchesSelector(el, selector);
 };
-

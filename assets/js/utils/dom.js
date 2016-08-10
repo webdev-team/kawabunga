@@ -85,15 +85,6 @@ function augmentArray(array) {
         return this.isEmpty() ? null : module.exports.select(this[0].parentNode);
     }
 
-    function insertAdjacentHTML (prop) {
-        array[prop] = function (element) {
-            var adjacent = (prop == "after") ? this[0].nextSibling : this[0];
-            return this.isEmpty() ? null : module.exports.select(this[0].parentNode.insertBefore(element, adjacent));
-        }
-    }
-
-    ['after', 'before'].forEach(insertAdjacentHTML);
-
     /**
      * Using textContent if defined, innerText otherwise
      * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
@@ -223,6 +214,24 @@ function augmentArray(array) {
         array[data[0]] = function (value) {
             this.forEach(function (elem) {
                 data[1](elem, value);
+            });
+            return this;
+        };
+    }
+
+    var funcInsert = [['before', 'beforebegin'],
+        ['prepend', 'afterbegin'],
+        ['append', 'beforeend'],
+        ['after', 'afterend']];
+    funcInsert.forEach(insertMethods);
+
+    function insertMethods (data) {
+        array[data[0]] = function (html) {
+            this.forEach(function (el) {
+                if (utils.isElement(el)) {
+                    console.log(el);
+                    el.insertAdjacentHTML(data[1], html);
+                }
             });
             return this;
         };
