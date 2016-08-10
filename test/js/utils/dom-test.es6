@@ -177,6 +177,16 @@ describe('dom.js', () => {
         })
     })
 
+    describe('removeAttr', () => {
+        it('should remove attribute for element', () => {
+            env.initWithHtml('<div id="append" data-test="toto"></div>')
+
+            dom.select('#append').removeAttr('data-test')
+
+            expect(document.body.innerHTML).to.equal('<div id="append"></div>')
+        })
+    })
+
     describe('clear', () => {
         it('should clear an element', () => {
             env.initWithHtml('<div id="a">some text</div>')

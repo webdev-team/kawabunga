@@ -154,6 +154,14 @@ function augmentArray(array) {
         }
     };
 
+    array.removeAttr = function (name) {
+        if (!this.isEmpty()) {
+            this.forEach(function (el) {
+                el.removeAttribute(name);
+            })
+        }
+    }
+
     array.on = function(type, delegateSelector, callback, capture) {
         var useDelegate = false;
 
