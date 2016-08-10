@@ -101,7 +101,7 @@ describe('dom.js', () => {
         })
     })
 
-    /*describe('after, before, prepend, append', () => {
+    describe('after, before, prepend, append', () => {
         it('should add after element', () => {
             env.initWithHtml('<div class="parent"><div class="child"></div></div>')
 
@@ -117,7 +117,7 @@ describe('dom.js', () => {
 
             expect(document.body.innerHTML).to.equal('<div class="parent"><div class="myNewChild"></div><div class="child"></div></div>')
         })
-    })*/
+    })
 
     describe('text', () => {
         it('should give data attribute value of first found element', () => {

@@ -6,6 +6,7 @@ var initHTML = function(html, options) {
     global.document = jsdom.jsdom(html, options);
     global.window = global.document.defaultView;
     global.navigator = global.window.navigator;
+    global.Element = global.window.Element;
     global.history = global.window.history;
     global.XMLHttpRequest = global.window.XMLHttpRequest;
 };

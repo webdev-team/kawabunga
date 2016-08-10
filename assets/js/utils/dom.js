@@ -229,7 +229,6 @@ function augmentArray(array) {
         array[data[0]] = function (html) {
             this.forEach(function (el) {
                 if (utils.isElement(el)) {
-                    console.log(el);
                     el.insertAdjacentHTML(data[1], html);
                 }
             });
