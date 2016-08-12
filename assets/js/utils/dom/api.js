@@ -27,13 +27,10 @@ exports.text = function (elem, text) {
 };
 
 exports.value = function (el, value) {
-    var checkable = utils.isCheckable(el);
     var getter = arguments.length < 2;
     if (getter) {
-        return checkable ? el.checked : el.value;
-    } else if (checkable) {
-        el.checked = value;
-    } else {
+        return el.value;
+    }  else {
         el.value = value;
     }
 };
