@@ -1,0 +1,14 @@
+
+@import "config";
+
+$breakpoints: (
+        '1col': $media-queries-small,
+        '2cols': $media-queries-medium,
+        '3cols': $media-queries-large
+);
+
+$im-media-support: $media-queries;
+$im-no-media-breakpoint: '3cols';
+
+@import '../../node_modules/include-media/dist/include-media';
+

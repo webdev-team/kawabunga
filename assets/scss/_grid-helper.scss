@@ -1,0 +1,33 @@
+.grid-helper {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.8);
+    color: #FFFFFF;
+    text-align: center;
+
+    &:before {
+        content: '4 cols';
+    }
+
+    @include media('<=3cols') {
+        &:before {
+            content: '3 cols';
+        }
+    }
+    @include media('<=2cols') {
+        &:before {
+            content: '2 cols';
+        }
+    }
+    @include media('<=1col') {
+        &:before {
+            content: '1 cols';
+        }
+    }
+
+}

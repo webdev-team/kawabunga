@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var webserver = require('gulp-webserver');
-var pixrem = require('gulp-pixrem');
 var autoprefixer = require('gulp-autoprefixer');
 var runSequence = require('run-sequence');
 var del = require('del');
@@ -38,7 +37,6 @@ gulp.task('css', function () {
             debug: false
         }))
         .pipe(autoprefixer())
-        .pipe(pixrem())
         .pipe(gulp.dest('build/sandbox/css'))
 });
 

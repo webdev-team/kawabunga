@@ -1,5 +1,4 @@
 var utils = require('../utils');
-var sektor = require('sektor');
 
 exports.html = function (elem, html) {
     var getter = arguments.length < 2;
@@ -66,8 +65,4 @@ exports.manyAttr = function (elem, attrs) {
     Object.keys(attrs).forEach(function (attr) {
         exports.attr(elem, attr, attrs[attr]);
     });
-};
-
-exports.matches = function (el, selector) {
-    return utils.isElement(el) && sektor.matchesSelector(el, selector);
 };

@@ -157,6 +157,20 @@ describe('dom.js', () => {
         })
     })
 
+    describe('value', () => {
+        it('should give value to input text', () => {
+            env.initWithHtml('<input type="text" class="a" value="toto" />')
+
+            expect(dom.select('.a').value()).to.equal('toto')
+        })
+
+        it('should give value to input radio', () => {
+            env.initWithHtml('<input type="radio" class="a" value="toto" />')
+
+            expect(dom.select('.a').value()).to.equal('toto')
+        })
+    })
+
     describe('appendTag', () => {
         it('should append tag to parent', () => {
             env.initWithHtml('<div id="append"><span></span></div>')
@@ -284,7 +298,7 @@ describe('dom.js', () => {
         it('should not fire if delegateSelector doesn\'t match', (done) => {
             env.initWithHtml('<div id="a"><div id="b1" class="b1"></div><div id="b2" class="b2"></div></div>')
 
-            var called = false
+            let called = false
 
             dom.select('#a').on('click', '.b1', (e, div) => {
                 called = true

@@ -65,10 +65,10 @@ function augmentArray(array) {
     array.removeClass = array_classes_call.bind(array, classes.remove);
     array.hasClass = array_hasClass;
 
-    array.before = array_insertAdjacentHTML.bind(array, 'beforebegin')
-    array.prepend = array_insertAdjacentHTML.bind(array, 'afterbegin')
-    array.append = array_insertAdjacentHTML.bind(array, 'beforeend')
-    array.after = array_insertAdjacentHTML.bind(array, 'afterend')
+    array.before = array_insertAdjacentHTML.bind(array, 'beforebegin');
+    array.prepend = array_insertAdjacentHTML.bind(array, 'afterbegin');
+    array.append = array_insertAdjacentHTML.bind(array, 'beforeend');
+    array.after = array_insertAdjacentHTML.bind(array, 'afterend');
     // migrated from renaissance dom api. This is akward here since it only happend on first selected node
     array.appendTag = array_append_tag;
 
@@ -227,7 +227,7 @@ var array_insertAdjacentHTML = function(where, html) {
         }
     });
     return this;
-}
+};
 
 var array_on = function(type, delegateSelector, callback, capture) {
     var useDelegate = false;
@@ -262,4 +262,4 @@ var array_on = function(type, delegateSelector, callback, capture) {
             }
         }, capture || false);
     });
-}
+};
