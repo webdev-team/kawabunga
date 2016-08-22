@@ -99,6 +99,12 @@ describe('dom.js', () => {
 
             expect(dom.select('.child').parent('.other-parent').hasClass('toto')).to.be.true
         })
+
+        it('should not fail if array is empty', () => {
+            env.initWithHtml('<div class="other-parent toto"><div class="parent"><div class="child"></div></div></div>')
+
+            expect(dom.select('.not-here').parent()).to.has.length(0)
+        })
     })
 
     describe('after, before, prepend, append', () => {
@@ -120,10 +126,34 @@ describe('dom.js', () => {
     })
 
     describe('text', () => {
-        it('should give data attribute value of first found element', () => {
-            env.initWithHtml('<div class="a" data-test="value">some text</div>')
+        it('should return text content of first found element', () => {
+            env.initWithHtml('<div id="a" data-test="value">some text</div>')
 
-            expect(dom.select('.a').text()).to.equal('some text')
+            expect(dom.select('#a').text()).to.equal('some text')
+        })
+
+        it('should set text content of elements', () => {
+            env.initWithHtml('<div id="a" data-test="value">some text</div>')
+
+            dom.select('#a').text('some other text')
+
+            expect(document.getElementById('a').textContent).to.equal('some other text')
+        })
+    })
+
+    describe('html', () => {
+        it('should return html content of first found element', () => {
+            env.initWithHtml('<div id="a" data-test="value">some <br>text</div>')
+
+            expect(dom.select('#a').html()).to.equal('some <br>text')
+        })
+
+        it('should set text content of elements', () => {
+            env.initWithHtml('<div id="a" data-test="value">some text</div>')
+
+            dom.select('#a').html('some other <br>text')
+
+            expect(document.getElementById('a').innerHTML).to.equal('some other <br>text')
         })
     })
 
@@ -193,7 +223,16 @@ describe('dom.js', () => {
 
             dom.select('#a').clear()
 
-            expect(dom.select('#a').text()).to.equal('')
+            expect(document.getElementById('a').textContent).to.equal('')
+        })
+
+        it('should clear all elements', () => {
+            env.initWithHtml('<div id="a">some text</div><div id="b">some text</div>')
+
+            dom.select('div').clear()
+
+            expect(document.getElementById('a').textContent).to.equal('')
+            expect(document.getElementById('b').textContent).to.equal('')
         })
     })
 

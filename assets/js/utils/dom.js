@@ -44,211 +44,222 @@ function selectByClass(context, clazz) {
 }
 
 function augmentArray(array) {
-    array.selectByMatcher = function(selector, matcher) {
-        var result = [];
+    array.selectByMatcher = array_selectByMatcher;
+    array.select = array_select;
+    array.selectByClass = array_selectByClass;
+    array.parent = array_parent;
 
-        this.forEach(function(element) {
-            result = result.concat(matcher(element, selector));
-        });
-        return augmentArray(result);
-    }
+    array.isEmpty = array_isEmpty;
+    array.clear = array_clear;
 
-    array.select = function(selector) {
-        return this.selectByMatcher(selector, select);
-    }
+    array.text = array_api_call.bind(array, api.text);
+    array.html = array_api_call.bind(array, api.html);
+    array.value = array_api_call.bind(array, api.value);
 
-    array.selectByClass = function(selector) {
-        return this.selectByMatcher(selector, selectByClass);
-    }
+    array.data = array_data;
+    array.attr = array_attr;
+    array.removeAttr = array_removeAttr;
 
-    array.find = function(selector, clazz) {
-        return this.selectByMatcher(clazz, selector);
-    }
+    array.css = array_css;
+    array.addClass = array_classes_call.bind(array, classes.add);
+    array.removeClass = array_classes_call.bind(array, classes.remove);
+    array.hasClass = array_hasClass;
 
-    array.isEmpty = function() {
-        return this.length == 0
-    }
+    array.before = array_insertAdjacentHTML.bind(array, 'beforebegin')
+    array.prepend = array_insertAdjacentHTML.bind(array, 'afterbegin')
+    array.append = array_insertAdjacentHTML.bind(array, 'beforeend')
+    array.after = array_insertAdjacentHTML.bind(array, 'afterend')
+    // migrated from renaissance dom api. This is akward here since it only happend on first selected node
+    array.appendTag = array_append_tag;
 
-    array.data = function(name) {
-        return this.isEmpty() ? null : this[0].getAttribute('data-' + name);
-    }
-
-    array.parent = function (selector) {
-        if (selector) {
-            var element = this.isEmpty() ? null : this[0];
-            if (element) {
-                while ((element = element.parentElement) && !((element.matches || element.matchesSelector).call(element, selector)));
-                return module.exports.select(element);
-            }
-            return [];
-        }
-        return this.isEmpty() ? null : module.exports.select(this[0].parentNode);
-    }
-
-    /**
-     * Using textContent if defined, innerText otherwise
-     * Beware of http://perfectionkills.com/the-poor-misunderstood-innerText/
-     */
-
-    function keyValue (key, value) {
-        var getter = arguments.length < 2;
-        if (getter) {
-            return this.length ? api[key](this[0]) : '';
-        }
-        this.forEach(function (elem) {
-            api[key](elem, value);
-        });
-        return this;
-    }
-
-    function keyValueProperty (prop) {
-        array[prop] = function accessor (value) {
-            var getter = arguments.length < 1;
-            if (getter) {
-                return keyValue.call(this, prop);
-            }
-            return keyValue.call(this, prop, value);
-        };
-    }
-    ['html', 'text', 'value'].forEach(keyValueProperty);
-
-
-    array.clear = function () {
-        this[0].innerHTML = "";
-        return this[0];
-    }
-
-    array.appendTag = function(tag, options) {
-        options = options || {};
-
-        var child = global.document.createElement(tag);
-        var childWrapper = module.exports.select(child);
-
-        if (options.classes) {
-            childWrapper.addClass(options.classes);
-        }
-
-        if (options.text) {
-            childWrapper.text(options.text);
-        }
-
-        this[0].appendChild(child);
-        return childWrapper;
-    };
-
-    array.attr = function (name, value) {
-        var hash = name && typeof name === 'object';
-        var set = hash ? setMany : setSingle;
-        var setter = hash || arguments.length > 1;
-        if (setter) {
-            this.forEach(set);
-            return this;
-        } else {
-            return this.length ? api.getAttr(this[0], name) : null;
-        }
-        function setMany (elem) {
-            api.manyAttr(elem, name);
-        }
-        function setSingle (elem) {
-            api.attr(elem, name, value);
-        }
-    };
-
-    array.removeAttr = function (name) {
-        if (!this.isEmpty()) {
-            this.forEach(function (el) {
-                el.removeAttribute(name);
-            })
-        }
-    }
-
-    array.on = function(type, delegateSelector, callback, capture) {
-        var useDelegate = false;
-
-        if (arguments.length == 2) {
-            callback = delegateSelector;
-        } else if (arguments.length == 3) {
-            if (typeof delegateSelector == 'function') {
-                capture = callback;
-                callback = delegateSelector;
-            } else {
-                useDelegate = true;
-            }
-        } else if (arguments.length == 4) {
-            useDelegate = true;
-        }
-
-        this.forEach(function(element) {
-            element.addEventListener(type, function(e) {
-                if (useDelegate) {
-                    var target = e.target;
-
-                    while (target && target != element) {
-                        if (target.matches(delegateSelector)) {
-                            callback(e, target);
-                            break;
-                        }
-                        target = target.parentNode;
-                    }
-                } else {
-                    callback(e, element)
-                }
-            }, capture || false);
-        });
-    }
-
-    array.css = function (name, value) {
-        var props;
-        var many = name && typeof name === 'object';
-        var getter = !many && typeof value === 'undefined';
-        if (getter) {
-            return this.length ? domCss.getCss(this[0], name) : null;
-        }
-        if (many) {
-            props = name;
-        } else {
-            props = {};
-            props[name] = value;
-        }
-        this.forEach(domCss.setCss(props));
-        return this;
-    }
-
-    var funcClasses = [['addClass', classes.add],
-        ['removeClass', classes.remove]];
-    funcClasses.forEach(mapMethods);
-
-    function mapMethods (data) {
-        array[data[0]] = function (value) {
-            this.forEach(function (elem) {
-                data[1](elem, value);
-            });
-            return this;
-        };
-    }
-
-    var funcInsert = [['before', 'beforebegin'],
-        ['prepend', 'afterbegin'],
-        ['append', 'beforeend'],
-        ['after', 'afterend']];
-    funcInsert.forEach(insertMethods);
-
-    function insertMethods (data) {
-        array[data[0]] = function (html) {
-            this.forEach(function (el) {
-                if (utils.isElement(el)) {
-                    el.insertAdjacentHTML(data[1], html);
-                }
-            });
-            return this;
-        };
-    }
-
-    array.hasClass = function (value) {
-        return this.some(function (elem) {
-            return classes.contains(elem, value);
-        });
-    };
+    array.on = array_on;
 
     return array;
+}
+
+/**
+ * Augmented array methods
+ */
+
+var array_selectByMatcher = function(selector, matcher) {
+    var result = [];
+
+    this.forEach(function(element) {
+        result = result.concat(matcher(element, selector));
+    });
+
+    return augmentArray(result);
+}
+
+var array_select = function(selector) {
+    return this.selectByMatcher(selector, select);
+}
+
+var array_selectByClass = function(selector) {
+    return this.selectByMatcher(selector, selectByClass);
+}
+
+var array_isEmpty = function() {
+    return this.length == 0
+}
+
+var array_clear = function() {
+    this.forEach(function(element) {
+        element.innerHTML = "";
+    });
+}
+
+var array_data = function(name) {
+    return this.isEmpty() ? null : this[0].getAttribute('data-' + name);
+}
+
+var array_parent = function (selector) {
+    if (this.isEmpty()) {
+        return augmentArray([]);
+    }
+
+    var element = this[0];
+
+    if (selector) {
+        while (!element.matches(selector)) {
+            element = element.parentNode;
+
+            if (!element) {
+                return augmentArray([]);
+            }
+        }
+
+        return augmentArray([element]);
+    } else {
+        return element.parentNode ? augmentArray([element.parentNode]) : augmentArray([]);
+    }
+}
+
+var array_api_call = function(api, value) {
+    var getter = arguments.length < 2;
+
+    if (getter) {
+        return this.length ? api(this[0]) : '';
+    } else {
+        this.forEach(function (element) {
+            api(element, value);
+        });
+        return this;
+    }
+}
+
+var array_attr = function (name, value) {
+    var hash = name && typeof name === 'object';
+    var set = hash ? setMany : setSingle;
+    var setter = hash || arguments.length > 1;
+    if (setter) {
+        this.forEach(set);
+        return this;
+    } else {
+        return this.length ? api.getAttr(this[0], name) : null;
+    }
+    function setMany (element) {
+        api.manyAttr(element, name);
+    }
+    function setSingle (element) {
+        api.attr(element, name, value);
+    }
+};
+
+var array_removeAttr = function (name) {
+    this.forEach(function (element) {
+        element.removeAttribute(name);
+    });
+}
+
+var array_css = function (name, value) {
+    var props;
+    var many = name && typeof name === 'object';
+    var getter = !many && typeof value === 'undefined';
+    if (getter) {
+        return this.length ? domCss.getCss(this[0], name) : null;
+    }
+    if (many) {
+        props = name;
+    } else {
+        props = {};
+        props[name] = value;
+    }
+    this.forEach(domCss.setCss(props));
+    return this;
+}
+
+var array_classes_call = function (api, value) {
+    this.forEach(function (element) {
+        api(element, value);
+    });
+    return this;
+}
+
+var array_hasClass = function (value) {
+    return this.some(function (element) {
+        return classes.contains(element, value);
+    });
+}
+
+var array_append_tag = function(tag, options) {
+    options = options || {};
+
+    var child = global.document.createElement(tag);
+    var childWrapper = module.exports.select(child);
+
+    if (options.classes) {
+        childWrapper.addClass(options.classes);
+    }
+
+    if (options.text) {
+        childWrapper.text(options.text);
+    }
+
+    this[0].appendChild(child);
+    return childWrapper;
+};
+
+var array_insertAdjacentHTML = function(where, html) {
+    this.forEach(function (element) {
+        if (utils.isElement(element)) {
+            element.insertAdjacentHTML(where, html);
+        }
+    });
+    return this;
+}
+
+var array_on = function(type, delegateSelector, callback, capture) {
+    var useDelegate = false;
+
+    if (arguments.length == 2) {
+        callback = delegateSelector;
+    } else if (arguments.length == 3) {
+        if (typeof delegateSelector == 'function') {
+            capture = callback;
+            callback = delegateSelector;
+        } else {
+            useDelegate = true;
+        }
+    } else if (arguments.length == 4) {
+        useDelegate = true;
+    }
+
+    this.forEach(function(element) {
+        element.addEventListener(type, function(e) {
+            if (useDelegate) {
+                var target = e.target;
+
+                while (target && target != element) {
+                    if (target.matches(delegateSelector)) {
+                        callback(e, target);
+                        break;
+                    }
+                    target = target.parentNode;
+                }
+            } else {
+                callback(e, element)
+            }
+        }, capture || false);
+    });
 }
