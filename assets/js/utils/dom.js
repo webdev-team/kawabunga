@@ -61,6 +61,7 @@ function augmentArray(array) {
     array.removeAttr = array_removeAttr;
 
     array.css = array_css;
+    array.bounds = array_bounds;
     array.addClass = array_classes_call.bind(array, classes.add);
     array.removeClass = array_classes_call.bind(array, classes.remove);
     array.hasClass = array_hasClass;
@@ -187,6 +188,13 @@ var array_css = function (name, value) {
     }
     this.forEach(domCss.setCss(props));
     return this;
+}
+
+var EMPTY_BOUNDS = {x: 0, y: 0, left: 0, right: 0, top: 0, bottom: 0, width: 0, height: 0};
+Object.freeze(EMPTY_BOUNDS)
+
+var array_bounds = function () {
+    return this.length ? this[0].getBoundingClientRect() : EMPTY_BOUNDS;
 }
 
 var array_classes_call = function (api, value) {

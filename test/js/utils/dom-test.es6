@@ -323,6 +323,31 @@ describe('dom.js', () => {
         })
     })
 
+    describe('bounds', () => {
+        it('should give bounding client rect', () => {
+            env.initWithHtml('<div class="a" data-test="value">aaa</div>')
+
+            // jsdom doesn't layout components so they have empty bounds :/
+            expect(dom.select('.b').bounds().width).to.be.equal(0)
+            expect(dom.select('.b').bounds().height).to.be.equal(0)
+            expect(dom.select('.b').bounds().top).to.be.equal(0)
+            expect(dom.select('.b').bounds().left).to.be.equal(0)
+            expect(dom.select('.b').bounds().bottom).to.be.equal(0)
+            expect(dom.select('.b').bounds().right).to.be.equal(0)
+        })
+
+        it('should give empty bounding client rect if no matching element', () => {
+            env.initWithHtml('<div class="a" data-test="value"></div>')
+
+            expect(dom.select('.b').bounds().width).to.be.equal(0)
+            expect(dom.select('.b').bounds().height).to.be.equal(0)
+            expect(dom.select('.b').bounds().top).to.be.equal(0)
+            expect(dom.select('.b').bounds().left).to.be.equal(0)
+            expect(dom.select('.b').bounds().bottom).to.be.equal(0)
+            expect(dom.select('.b').bounds().right).to.be.equal(0)
+        })
+    })
+
     describe('classes', () => {
         describe('addClass', () => {
             it('should add class in element', () => {
