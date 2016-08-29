@@ -122,7 +122,7 @@
 .icon-envelope:before { content: "\EA56" }
 .icon-folder:before { content: "\EA57" }
 .icon-fullscreen:before { content: "\EA58" }
-.icon-galery:before { content: "\EA59" }
+.icon-gallery:before { content: "\EA59" }
 .icon-home:before { content: "\EA5A" }
 .icon-info-circle:before { content: "\EA5B" }
 .icon-like:before { content: "\EA5C" }
@@ -280,7 +280,7 @@
 @mixin icon-envelope() { content: "\EA56" }
 @mixin icon-folder() { content: "\EA57" }
 @mixin icon-fullscreen() { content: "\EA58" }
-@mixin icon-galery() { content: "\EA59" }
+@mixin icon-gallery() { content: "\EA59" }
 @mixin icon-home() { content: "\EA5A" }
 @mixin icon-info-circle() { content: "\EA5B" }
 @mixin icon-like() { content: "\EA5C" }
