@@ -4,6 +4,8 @@ var scriptLoader = require('../utils/script-loader');
 var dom = require('../utils/dom')
 
 /**
+ * Doc available on https://portail-marqueurs.mediametrie.fr
+ *
  * No script version to inject in page
  * <noscript><img src="https://prof.estat.com/m/web/{SERIAL}?c={LEVEL1}&p={LEVEL2}&l3={LEVEL3}&l4={LEVEL4}&st=0&sjs=0" border="0" width="1" height="1"/></noscript>
  */
@@ -34,7 +36,8 @@ exports.readPageConfig = function () {
             level_2: $estat.data('level2'),
             level_3: $estat.data('level3'),
             level_4: $estat.data('level4')
-        }
+        },
+        crmID: $estat.data('crmID')
     }
 };
 
