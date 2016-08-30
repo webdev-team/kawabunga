@@ -57,6 +57,22 @@ describe('estat-v5.js', () => {
                 }
             })
         })
+
+        it('should read page tag with crmID from html', () => {
+            env.initWithHtml('<div data-role="estat" data-serial="123" data-level1="level1" data-level2="level2" data-level3="level3" data-level4="level4" data-crmID="idxxx"></div>');
+
+            expect(estatV5.readPageConfig()).to.deep.equal({
+                serial: '123',
+                measure: 'page',
+                levels: {
+                    level_1: 'level1',
+                    level_2: 'level2',
+                    level_3: 'level3',
+                    level_4: 'level4'
+                },
+                crmID: 'idxxx'
+            })
+        })
     })
 
     describe('createEstatTag', () => {

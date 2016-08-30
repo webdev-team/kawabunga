@@ -28,7 +28,7 @@ exports.readPageConfig = function () {
         return {error: 'no tag found in page'};
     }
     
-    return {
+    var config = {
         serial: $estat.data('serial'),
         measure: 'page',
         levels: {
@@ -36,9 +36,14 @@ exports.readPageConfig = function () {
             level_2: $estat.data('level2'),
             level_3: $estat.data('level3'),
             level_4: $estat.data('level4')
-        },
-        crmID: $estat.data('crmID')
+        }
     }
+
+    if ($estat.data('crmID')) {
+        config.crmID = $estat.data('crmID');
+    }
+
+    return config;
 };
 
 /**
