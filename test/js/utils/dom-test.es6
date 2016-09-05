@@ -107,6 +107,14 @@ describe('dom.js', () => {
         })
     })
 
+    describe('firstChild', () => {
+        it('should get first child', () => {
+            env.initWithHtml('<div class="parent"><div class="child first"></div><div class="child"></div><div class="child"></div></div>')
+
+            expect(dom.select('.parent').firstChild('child').hasClass('first')).to.be.true
+        })
+    })
+
     describe('after, before, prepend, append', () => {
         it('should add after element', () => {
             env.initWithHtml('<div class="parent"><div class="child"></div></div>')

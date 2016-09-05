@@ -48,6 +48,7 @@ function augmentArray(array) {
     array.select = array_select;
     array.selectByClass = array_selectByClass;
     array.parent = array_parent;
+    array.firstChild = array_firstChild;
 
     array.isEmpty = array_isEmpty;
     array.clear = array_clear;
@@ -120,7 +121,6 @@ var array_parent = function (selector) {
     }
 
     var element = this[0];
-
     if (selector) {
         while (!element.matches(selector)) {
             element = element.parentNode;
@@ -133,6 +133,17 @@ var array_parent = function (selector) {
         return augmentArray([element]);
     } else {
         return element.parentNode ? augmentArray([element.parentNode]) : augmentArray([]);
+    }
+}
+
+var array_firstChild = function (selector) {
+    if (this.isEmpty()) {
+        return augmentArray([]);
+    }
+
+    var element = this[0];
+    if (selector) {
+        return augmentArray([element.getElementsByClassName(selector)[0]])
     }
 }
 
