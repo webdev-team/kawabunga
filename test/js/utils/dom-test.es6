@@ -115,6 +115,14 @@ describe('dom.js', () => {
         })
     })
 
+    describe('index', () => {
+        it('should get indexOf element', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div><div class="child active"></div><div class="child"></div></div>')
+
+            expect(dom.select('.parent .child').index('active')).to.equal(1)
+        })
+    })
+
     describe('after, before, prepend, append', () => {
         it('should add after element', () => {
             env.initWithHtml('<div class="parent"><div class="child"></div></div>')

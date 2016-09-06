@@ -50,6 +50,8 @@ function augmentArray(array) {
     array.parent = array_parent;
     array.firstChild = array_firstChild;
 
+    array.index = array_index;
+
     array.isEmpty = array_isEmpty;
     array.clear = array_clear;
 
@@ -145,6 +147,16 @@ var array_firstChild = function (selector) {
     if (selector) {
         return augmentArray([element.getElementsByClassName(selector)[0]])
     }
+}
+
+var array_index = function (selector) {
+    for (var index = 0; index < this.length; index++) {
+        if (classes.contains(this[index], selector)) {
+            return index;
+        }
+    }
+
+    return -1;
 }
 
 var array_api_call = function(api, value) {
