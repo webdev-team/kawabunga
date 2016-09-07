@@ -49,6 +49,7 @@ function augmentArray(array) {
     array.selectByClass = array_selectByClass;
     array.parent = array_parent;
     array.firstChild = array_firstChild;
+    array.children = array_children;
 
     array.index = array_index;
 
@@ -146,6 +147,19 @@ var array_firstChild = function (selector) {
     var element = this[0];
     if (selector) {
         return augmentArray([element.getElementsByClassName(selector)[0]])
+    }
+}
+
+var array_children = function (selector) {
+    if (this.isEmpty()) {
+        return augmentArray([]);
+    }
+
+    var element = this[0];
+    if (selector) {
+        return augmentArray([].slice.call(element.getElementsByClassName(selector)));
+    } else {
+        return element.children ? augmentArray(element.children) : augmentArray([]);
     }
 }
 

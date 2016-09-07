@@ -115,6 +115,20 @@ describe('dom.js', () => {
         })
     })
 
+    describe('children', () => {
+        it('should get children', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div><div class="child"></div><div class="child"></div></div>')
+
+            expect(dom.select('.parent').children()).to.has.length(3)
+        })
+
+        it('should get children with test class', () => {
+            env.initWithHtml('<div class="parent"><div class="child"></div><div class="child test"></div><div class="child test"></div></div>')
+
+            expect(dom.select('.parent').children('test')).to.has.length(2)
+        })
+    })
+
     describe('index', () => {
         it('should get indexOf element', () => {
             env.initWithHtml('<div class="parent"><div class="child"></div><div class="child active"></div><div class="child"></div></div>')
