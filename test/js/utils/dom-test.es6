@@ -125,7 +125,7 @@ describe('dom.js', () => {
         it('should get children with test class', () => {
             env.initWithHtml('<div class="parent"><div class="child"></div><div class="child test"></div><div class="child test"></div></div>')
 
-            expect(dom.select('.parent').children('test')).to.has.length(2)
+            expect(dom.select('.parent').children('.test')).to.has.length(2)
         })
     })
 

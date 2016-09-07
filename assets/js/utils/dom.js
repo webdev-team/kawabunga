@@ -157,7 +157,7 @@ var array_children = function (selector) {
 
     var element = this[0];
     if (selector) {
-        return augmentArray([].slice.call(element.getElementsByClassName(selector)));
+        return augmentArray(element.querySelectorAll(selector));
     } else {
         return element.children ? augmentArray(element.children) : augmentArray([]);
     }
