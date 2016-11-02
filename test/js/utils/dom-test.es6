@@ -40,6 +40,12 @@ describe('dom.js', () => {
 
                 expect(dom.select('.a').select('.b').select('.c')).to.have.length(1)
             })
+
+            it('should be callable recursively 4 levels', () => {
+                env.initWithHtml('<div id="a"><div class="b"><div class="c"></div></div><div class="d"><div class="e"></div></div></div>')
+
+                expect(dom.select('#a').select('.e')).to.have.length(1)
+            })
         })
     })
 
