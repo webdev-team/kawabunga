@@ -190,10 +190,13 @@
 .icon-pinterest-square:before { content: "\EA9A" }
 .icon-pinterest:before { content: "\EA9B" }
 .icon-sms:before { content: "\EA9C" }
-.icon-twitter-sign:before { content: "\EA9D" }
-.icon-twitter-square:before { content: "\EA9E" }
-.icon-twitter:before { content: "\EA9F" }
-.icon-youtube-sign:before { content: "\EAA0" }
+.icon-snapchat-sign:before { content: "\EA9D" }
+.icon-snapchat-square:before { content: "\EA9E" }
+.icon-snapchat:before { content: "\EA9F" }
+.icon-twitter-sign:before { content: "\EAA0" }
+.icon-twitter-square:before { content: "\EAA1" }
+.icon-twitter:before { content: "\EAA2" }
+.icon-youtube-sign:before { content: "\EAA3" }
 
 
 /*
@@ -355,7 +358,10 @@
 @mixin icon-pinterest-square() { content: "\EA9A" }
 @mixin icon-pinterest() { content: "\EA9B" }
 @mixin icon-sms() { content: "\EA9C" }
-@mixin icon-twitter-sign() { content: "\EA9D" }
-@mixin icon-twitter-square() { content: "\EA9E" }
-@mixin icon-twitter() { content: "\EA9F" }
-@mixin icon-youtube-sign() { content: "\EAA0" }
+@mixin icon-snapchat-sign() { content: "\EA9D" }
+@mixin icon-snapchat-square() { content: "\EA9E" }
+@mixin icon-snapchat() { content: "\EA9F" }
+@mixin icon-twitter-sign() { content: "\EAA0" }
+@mixin icon-twitter-square() { content: "\EAA1" }
+@mixin icon-twitter() { content: "\EAA2" }
+@mixin icon-youtube-sign() { content: "\EAA3" }
