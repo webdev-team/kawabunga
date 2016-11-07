@@ -16,39 +16,51 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
+.sprite-partner-android-appstore-modal {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3125px 0px;
+  width: 179px;
+  height: 62px;
+}
 .sprite-partner-android-appstore {
   background-image: url(../img/sprite-partners.png);
-  background-position: -3888px 0px;
+  background-position: -4045px 0px;
   width: 207px;
   height: 67px;
 }
+.sprite-partner-apple-appstore-modal {
+  background-image: url(../img/sprite-partners.png);
+  background-position: -3674px 0px;
+  width: 185px;
+  height: 62px;
+}
 .sprite-partner-apple-appstore {
   background-image: url(../img/sprite-partners.png);
-  background-position: -3681px 0px;
+  background-position: -4252px 0px;
   width: 207px;
   height: 67px;
 }
 .sprite-partner-btn-femme-checked {
   background-image: url(../img/sprite-partners.png);
-  background-position: -1348px 0px;
+  background-position: -1482px 0px;
   width: 134px;
   height: 43px;
 }
 .sprite-partner-btn-femme {
   background-image: url(../img/sprite-partners.png);
-  background-position: -1080px 0px;
+  background-position: -1348px 0px;
   width: 134px;
   height: 43px;
 }
 .sprite-partner-btn-homme-checked {
   background-image: url(../img/sprite-partners.png);
-  background-position: -1482px 0px;
+  background-position: -1214px 0px;
   width: 134px;
   height: 43px;
 }
 .sprite-partner-btn-homme {
   background-image: url(../img/sprite-partners.png);
-  background-position: -1214px 0px;
+  background-position: -1080px 0px;
   width: 134px;
   height: 43px;
 }
@@ -60,7 +72,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-icon-dj {
   background-image: url(../img/sprite-partners.png);
-  background-position: -208px 0px;
+  background-position: -156px 0px;
   width: 52px;
   height: 52px;
 }
@@ -78,13 +90,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-icon-instagram {
   background-image: url(../img/sprite-partners.png);
-  background-position: -156px 0px;
+  background-position: -208px 0px;
   width: 52px;
   height: 52px;
 }
 .sprite-partner-icon-justice {
   background-image: url(../img/sprite-partners.png);
-  background-position: -428px 0px;
+  background-position: -548px 0px;
   width: 60px;
   height: 52px;
 }
@@ -102,25 +114,25 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-icon-laurier {
   background-image: url(../img/sprite-partners.png);
-  background-position: -488px 0px;
+  background-position: -428px 0px;
   width: 60px;
   height: 52px;
 }
 .sprite-partner-icon-paris-hippiques {
   background-image: url(../img/sprite-partners.png);
-  background-position: -812px 0px;
+  background-position: -896px 0px;
   width: 84px;
   height: 53px;
 }
 .sprite-partner-icon-paris-sportifs {
   background-image: url(../img/sprite-partners.png);
-  background-position: 0px 0px;
+  background-position: -52px 0px;
   width: 52px;
   height: 52px;
 }
 .sprite-partner-icon-paru-vendu {
   background-image: url(../img/sprite-partners.png);
-  background-position: -548px 0px;
+  background-position: -608px 0px;
   width: 60px;
   height: 46px;
 }
@@ -132,13 +144,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-icon-shopping-new {
   background-image: url(../img/sprite-partners.png);
-  background-position: -608px 0px;
+  background-position: -488px 0px;
   width: 60px;
   height: 46px;
 }
 .sprite-partner-icon-shopping {
   background-image: url(../img/sprite-partners.png);
-  background-position: -52px 0px;
+  background-position: 0px 0px;
   width: 52px;
   height: 52px;
 }
@@ -156,7 +168,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-logo-devices {
   background-image: url(../img/sprite-partners.png);
-  background-position: -4095px 0px;
+  background-position: -4459px 0px;
   width: 269px;
   height: 148px;
 }
@@ -186,7 +198,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-logo-kelformation {
   background-image: url(../img/sprite-partners.png);
-  background-position: -3125px 0px;
+  background-position: -3304px 0px;
   width: 185px;
   height: 19px;
 }
@@ -198,7 +210,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-logo-leguide {
   background-image: url(../img/sprite-partners.png);
-  background-position: -3495px 0px;
+  background-position: -3859px 0px;
   width: 186px;
   height: 32px;
 }
@@ -216,7 +228,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-logo-pme {
   background-image: url(../img/sprite-partners.png);
-  background-position: -3310px 0px;
+  background-position: -3489px 0px;
   width: 185px;
   height: 15px;
 }
@@ -228,7 +240,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-partner-logo-soonight {
   background-image: url(../img/sprite-partners.png);
-  background-position: -896px 0px;
+  background-position: -812px 0px;
   width: 84px;
   height: 52px;
 }
@@ -241,152 +253,160 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 @media (-webkit-min-device-pixel-ratio: 2),
        (min-resolution: 192dpi) {
+  .sprite-partner-android-appstore-modal {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 4728px 148px;
+  }
   .sprite-partner-android-appstore {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
+  }
+  .sprite-partner-apple-appstore-modal {
+    background-image: url(../img/sprite-partners@2x.png);
+    background-size: 4728px 148px;
   }
   .sprite-partner-apple-appstore {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-btn-femme-checked {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-btn-femme {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-btn-homme-checked {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-btn-homme {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-astro {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-dj {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-heart {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-immo {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-instagram {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-justice {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-kelformation {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-keljob {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-laurier {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-paris-hippiques {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-paris-sportifs {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-paru-vendu {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-pme {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-shopping-new {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-shopping {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-icon-tv {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-bacbrevet {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-devices {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-easyflirt {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-explorimmo {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-instagram {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-justice {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-kelformation {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-keljob {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-leguide {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-mareduc {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-paru-vendu {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-pme {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-pmu {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-soonight {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
   .sprite-partner-logo-teleloisirs {
     background-image: url(../img/sprite-partners@2x.png);
-    background-size: 4364px 148px;
+    background-size: 4728px 148px;
   }
 }
