@@ -12,7 +12,7 @@ exports.getDxScriptSrc = function () {
     global.oas_tag = global.oas_tag || {};
     var oas_tag = global.oas_tag;
 
-    var oasKeyValues = getOasKeyValues();
+    var oasKeyValues = exports.getOasKeyValues();
 
     // oas_tag.site_page = 'abc' => must be set in host page 
     oas_tag.url = 'pub.ftv-publicite.fr';
@@ -26,7 +26,7 @@ exports.getDxScriptSrc = function () {
     return protocol + oas_tag.url + '/om/' + oas_tag.version + '.js';
 };
 
-var getOasKeyValues = function() {
+exports.getOasKeyValues = function() {
     var user = ftvKrux.retrieve('user');
     var segs = ftvKrux.retrieve('segs');
 
