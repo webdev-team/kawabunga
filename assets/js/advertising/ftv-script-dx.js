@@ -37,7 +37,7 @@ var getOasKeyValues = function() {
     if (segs) {
         oasParams.push('ksg=' + segs.split(','));
     }
-    return oasParams.length ? oasParams.join(';') + ';' : '';
+    return oasParams.length ? oasParams.join('&') : '';
 };
 
 var definePositions = function () {
