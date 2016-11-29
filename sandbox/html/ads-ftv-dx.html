@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
     <title>Ads sandbox</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -88,14 +89,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
             <h2>Pavé sumo</h2>
-            <form class="code-example col-md-12">
+            <form class="">
                 <div class="alert alert-warning" role="alert">
                     Un sumo permet juste au conteneur de pub de croitre au délà de 300px de haut.<br>
                     Il faut que la régie ensuite positionne des sumos à ces endroits (data-position).
                 </div>
-                <%- include('../../assets/sample/advertising/ads-ftv-dx-sumo.html')%>
+                <div class="mdl ftv-ad-sumo">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=16&bg=3498db&txtclr=ffffff&txt=300x50&w=300&h=50" width="300" height="50" alt="" />
+                </div>
+                <% include('../../assets/sample/advertising/ads-ftv-dx-sumo.html')%>
             </form>
             <div>
                 <ul class="nav nav-tabs nav-child">
@@ -115,7 +118,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
