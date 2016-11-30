@@ -46,9 +46,11 @@ $youtube-red         : #cd201f;
 
 /* Linkedin blue */
 $linkedin-blue:        #007BB6;
+$linkedin-blue-dark:   darken($linkedin-blue, 10%);
 
 /* Pinterest red */
 $pinterest-red      :  #BD081C;
+$pinterest-red-dark :  darken($pinterest-red, 10%);
 $pinterest-red-light:  #d50c22;
 
 /* Snapchat yellow */
