@@ -98,9 +98,11 @@
 .googleplus-red { background-color: $googleplus-red; }
 .googleplus-red-light { background-color: $googleplus-red-light; }
 .pinterest-red { background-color: $pinterest-red; }
+.pinterest-red-dark { background-color: darken($pinterest-red, 10%); }
 .pinterest-red-light { background-color: $pinterest-red-light; }
 .youtube-red { background-color: $youtube-red; }
 .linkedin-blue { background-color: $linkedin-blue; }
+.linkedin-blue-dark { background-color: darken($linkedin-blue, 10%); }
 .snapchat-yellow { background-color:$snapchat-yellow; }
 
 /* Partners article-v2 */
