@@ -29,7 +29,7 @@ require('gulp-rtl-publish')(gulp, package);
 
 gulp.task('css', function () {
     return gulp.src('sandbox/scss/*.scss')
-        .pipe(sass())
+        .pipe(sass({includePaths: ['./']}))
         .pipe(base64({
             baseDir: 'assets/scss',
             extensions: ['woff'],

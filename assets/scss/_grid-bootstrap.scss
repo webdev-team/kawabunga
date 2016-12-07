@@ -9,11 +9,11 @@ $container-sm: 640px;
 $container-md: 960px;
 $container-lg: 1280px;
 
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/responsive-visibility";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/responsive-visibility";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";

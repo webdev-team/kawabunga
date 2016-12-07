@@ -10,5 +10,4 @@ $breakpoints: (
 $im-media-support: $media-queries;
 $im-no-media-breakpoint: '3cols';
 
-@import '../../node_modules/include-media/dist/include-media';
-
+@import 'node_modules/include-media/dist/include-media';
