@@ -61,6 +61,7 @@
     "jsdom": "^9.4.2",
     "lodash": "^4.13.1",
     "promise": "^7.1.1",
-    "babelify": "^7.3.0"
+    "babelify": "^7.3.0",
+    "include-media": "^1.4.8"
   }
 }
