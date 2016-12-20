@@ -50,6 +50,8 @@
     "proxyquire": "^1.7.10",
     "run-sequence": "^1.2.2",
     "sinon": "^1.17.5",
+    "ts-node": "^1.7.2",
+    "typescript": "^2.1.4",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
