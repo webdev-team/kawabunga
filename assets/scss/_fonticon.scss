@@ -198,6 +198,8 @@
 .icon-twitter-square:before { content: "\EAA2" }
 .icon-twitter:before { content: "\EAA3" }
 .icon-youtube-sign:before { content: "\EAA4" }
+.icon-youtube-square:before { content: "\EAA5" }
+.icon-youtube:before { content: "\EAA6" }
 
 
 /*
@@ -367,3 +369,5 @@
 @mixin icon-twitter-square() { content: "\EAA2" }
 @mixin icon-twitter() { content: "\EAA3" }
 @mixin icon-youtube-sign() { content: "\EAA4" }
+@mixin icon-youtube-square() { content: "\EAA5" }
+@mixin icon-youtube() { content: "\EAA6" }
