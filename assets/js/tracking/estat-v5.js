@@ -10,8 +10,8 @@ var dom = require('../utils/dom')
  * <noscript><img src="https://prof.estat.com/m/web/{SERIAL}?c={LEVEL1}&p={LEVEL2}&l3={LEVEL3}&l4={LEVEL4}&st=0&sjs=0" border="0" width="1" height="1"/></noscript>
  */
 
-var SCRIPT = '//prof.estat.com/js/mu-5.2.1.js';
-var SCRIPT_INTEGRATION = '//prof.estat.com/js/mu-integration-5.2.1.js';
+var SCRIPT = 'https://prof.estat.com/js/mu-5.2.1.js';
+var SCRIPT_INTEGRATION = 'https://prof.estat.com/js/mu-integration-5.2.1.js';
 
 exports.ensureLoaded = function () {
     return new Promise(function (resolve) {

@@ -7,7 +7,7 @@ exports.insertScriptWithSerial = function(serial, apiCallback, playerCallback) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
-    script.src = global.document.location.protocol + '//prof.estat.com/js/' + serial + '.js';
+    script.src = 'https://prof.estat.com/js/' + serial + '.js';
 
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(script, s);
