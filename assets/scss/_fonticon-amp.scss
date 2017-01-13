@@ -80,6 +80,8 @@
 .icon-amp-twitter-square:before { content: "\EA2C" }
 .icon-amp-twitter:before { content: "\EA2D" }
 .icon-amp-youtube-sign:before { content: "\EA2E" }
+.icon-amp-youtube-square:before { content: "\EA2F" }
+.icon-amp-youtube:before { content: "\EA30" }
 
 
 /*
@@ -131,3 +133,5 @@
 @mixin icon-amp-twitter-square() { content: "\EA2C" }
 @mixin icon-amp-twitter() { content: "\EA2D" }
 @mixin icon-amp-youtube-sign() { content: "\EA2E" }
+@mixin icon-amp-youtube-square() { content: "\EA2F" }
+@mixin icon-amp-youtube() { content: "\EA30" }
