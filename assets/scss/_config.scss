@@ -21,11 +21,3 @@ $media-queries-large   : px-to-rem(1300px) !default; // 1280px 4cols size + 20px
 /* Grid gutters
 ----------------------------------------- */
 $grid-gutter: px-to-rem(10px);
-
-/* Main Header heights
------------------------------------------ */
-$main-nav-height: px-to-rem(66px);
-$main-mq-small-nav-height: px-to-rem(48px);
-$main-subnav-height: px-to-rem(38px);
-$main-mq-small-subnav-height: px-to-rem(30px);
-$main-uppernav-height: px-to-rem(34px);
