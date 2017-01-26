@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "chai": "registry:npm/chai#3.5.0+20160723033700",
-    "jsdom": "registry:dt/jsdom#2.0.0+20160915014424"
-  }
-}

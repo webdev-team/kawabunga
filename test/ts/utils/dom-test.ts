@@ -1,6 +1,4 @@
-/// <reference path="../../../typings/globals/mocha/index.d.ts" />
-
-import { expect } from 'chai';
+import {expect} from 'chai';
 import * as testEnv from '../test-env';
 
 import dom from '../../../assets/ts/utils/dom';
@@ -9,6 +7,7 @@ describe('dom', () => {
     describe('select', () => {
 
         describe('first level selection', () => {
+
             it('should select right nodes by className querySelector', () => {
                 testEnv.initWithHtml('<div class="a" id="good"></div><div class="b"></div>');
 
@@ -28,6 +27,7 @@ describe('dom', () => {
                 expect($dom[0]).to.equal(elem);
                 expect($dom.length).to.equal(1);
             });
+
             it('should accept HTML Element', () => {
                 testEnv.initWithHtml('<div id="a"></div>');
 
@@ -37,6 +37,7 @@ describe('dom', () => {
                 expect($dom.length).to.equal(1);
                 expect($dom[0]).to.equal(elem);
             });
+
             it('should select right elements in correct order', () => {
                 testEnv.initWithHtml('<div class="a" id="first"></div><div class="a" id="second"><div class="a" id="third"></div></div><div class="b"></div>');
 
@@ -51,24 +52,27 @@ describe('dom', () => {
                 expect($dom[1]).to.equal(second);
                 expect($dom[2]).to.equal(third);
             });
+
         });
 
         describe('sub level selection', () => {
-            it('should find correct child', () => {
-                testEnv.initWithHtml('<div class="a" id="parent"><div class="c" id="good"></div></div><div class="b" id="uncle"><div class="c" id="bad"></div></div>');
 
-                let parent = document.getElementById('parent');
-                let $dom = dom('.a');
+             it('should find correct child', () => {
+             testEnv.initWithHtml('<div class="a" id="parent"><div class="c" id="good"></div></div><div class="b" id="uncle"><div class="c" id="bad"></div></div>');
 
-                expect($dom.length).to.equal(1);
-                expect($dom[0]).to.equal(parent);
+             let parent = document.getElementById('parent');
+             let $dom = dom('.a');
 
-                let good = document.getElementById('good');
-                //let $good = $dom.select('.c');
+             expect($dom.length).to.equal(1);
+             expect($dom[0]).to.equal(parent);
 
-                //expect($good.length).to.equal(1);
-                //expect($good[0]).to.equal(good);
-            });
+             let good = document.getElementById('good');
+             //let $good = $dom.select('.c');
+
+             //expect($good.length).to.equal(1);
+             //expect($good[0]).to.equal(good);
+             });
+
         });
     });
 });

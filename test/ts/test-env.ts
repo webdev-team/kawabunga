@@ -1,6 +1,4 @@
-/// <reference path="../../typings/modules/jsdom/index.d.ts" />
-/// <reference path="./test-env.d.ts" />
-
+import './globals';
 import * as jsdom from 'jsdom';
 
 let initHtml = function (html: string, options?):void {
