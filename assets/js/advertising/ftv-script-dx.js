@@ -19,7 +19,7 @@ exports.getDxScriptSrc = function () {
     oas_tag.version = '1';
     oas_tag.allowSizeOverride = 'true';
     oas_tag.taxonomy = (oas_tag.taxonomy ? oas_tag.taxonomy : '') + oasKeyValues;
-    oas_tag.query = (oas_tag.query ? oas_tag.query : '?') + oasKeyValues;
+    oas_tag.query = (oas_tag.query ? oas_tag.query : '') + oasKeyValues;
     oas_tag.sizes = definePositions;
 
     var protocol = 'https:' === document.location.protocol ? 'https://' : 'http://';
