@@ -84,6 +84,6 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/tests-jest/*.(ts|tsx|js)"]
+    "testMatch": ["**/tests-jest/**/?(*.)(spec|test).(ts|tsx|js)"]
   }
 }
