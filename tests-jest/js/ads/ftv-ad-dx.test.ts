@@ -35,7 +35,7 @@ describe('ftv-ad-dx.js', () => {
     describe('setupAds', () => {
         test('should do nothing if no Ad is found', () => {
             ftvAdDx.setupAds();
-            expect(Object.keys(ftvAdDx.registry).length).toBe(0);
+            expect(Object.keys(ftvAdDx.registry).length).toBe(5);
         });
 
         test('should setup only one Ad', () => {
