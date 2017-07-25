@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "allowUnreachableCode": true
+  }
+}
