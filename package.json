@@ -1,6 +1,6 @@
 {
   "name": "kawabunga",
-  "version": "0.0.183",
+  "version": "0.0.184",
   "private": false,
   "browserify": {
     "transform": [
@@ -84,6 +84,8 @@
     "transform": {
       "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/tests-jest/**/?(*.)(spec|test).(ts|js)"]
+    "testMatch": [
+      "**/tests-jest/**/?(*.)(spec|test).(ts|js)"
+    ]
   }
 }
