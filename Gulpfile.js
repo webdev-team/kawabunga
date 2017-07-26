@@ -169,7 +169,9 @@ gulp.task('fonticon-standard', function () {
 gulp.task('fonticon-amp', function () {
     return buildFontIcon({name: 'Kawabunga-Amp-Icon', scssFile: '_fonticon-amp.scss', className: 'icon-amp'}, [
         'assets/svg/common/others/search.svg',
+        'assets/svg/common/others/search-v2.svg',
         'assets/svg/common/others/user.svg',
+        'assets/svg/common/others/user-v2.svg',
         'assets/svg/common/others/quote-end.svg',
         'assets/svg/common/others/quote-start.svg',
         'assets/svg/common/others/quote-v2.svg',
