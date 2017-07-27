@@ -14,7 +14,7 @@ describe('estat-script.js', function () {
         env.initWithHtml('<div><script></script></div>');
     });
 
-    it('should setup estat marker', function () {
+    test('should setup estat marker', function () {
         estat.insertScriptWithSerial('219019211308' /* rtl serial */);
 
         expect(global._PJS).toBe(0);
