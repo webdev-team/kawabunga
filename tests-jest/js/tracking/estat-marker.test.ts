@@ -14,10 +14,10 @@ import * as estatScript from '../../../assets/js/tracking/estat-script.js';
 
 describe('estat-marker.js', () => {
     describe('init', () => {
-        let spyEstatScript;
+        let spyEstatScript = jest.spyOn(estatScript, 'insertScriptWithSerial');
 
         beforeEach(() => {
-            spyEstatScript = jest.spyOn(estatScript, 'insertScriptWithSerial');
+            spyEstatScript.mockReset();
         });
 
         test('should do nothing if no marker is found', () => {
