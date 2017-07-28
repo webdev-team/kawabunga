@@ -16,7 +16,7 @@ describe('estat-marker.js', () => {
     describe('init', () => {
         let spyEstatScript = jest.spyOn(estatScript, 'insertScriptWithSerial');
 
-        beforeEach(() => {
+        afterEach(() => {
             spyEstatScript.mockReset();
         });
 
