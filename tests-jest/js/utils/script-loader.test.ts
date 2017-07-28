@@ -12,7 +12,6 @@ let scriptSrc = 'http://static.rtl.fr/versions/www/3.0.263/js/header_partner.min
 // Unit Tests
 //
 
-
 describe('script-loader.js', () => {
     beforeEach(() => {
         env.initWithHtml('<div><script></script></div>');
