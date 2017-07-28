@@ -2,8 +2,6 @@
 // Imports
 //
 
-import * as env from '../../test-env';
-
 import * as utils from '../../../assets/js/utils/utils.js';
 
 // ..
