@@ -47,8 +47,8 @@
 .icon-amp-arrow-right-circle:before { content: "\EA0B" }
 .icon-amp-clock:before { content: "\EA0C" }
 .icon-amp-close:before { content: "\EA0D" }
-.icon-amp-hamburger-menu:before { content: "\EA0E" }
-.icon-amp-home:before { content: "\EA0F" }
+.icon-amp-home:before { content: "\EA0E" }
+.icon-amp-menu-hamburger:before { content: "\EA0F" }
 .icon-amp-out:before { content: "\EA10" }
 .icon-amp-play-circle-leaning:before { content: "\EA11" }
 .icon-amp-play-circle:before { content: "\EA12" }
@@ -108,8 +108,8 @@
 @mixin icon-amp-arrow-right-circle() { content: "\EA0B" }
 @mixin icon-amp-clock() { content: "\EA0C" }
 @mixin icon-amp-close() { content: "\EA0D" }
-@mixin icon-amp-hamburger-menu() { content: "\EA0E" }
-@mixin icon-amp-home() { content: "\EA0F" }
+@mixin icon-amp-home() { content: "\EA0E" }
+@mixin icon-amp-menu-hamburger() { content: "\EA0F" }
 @mixin icon-amp-out() { content: "\EA10" }
 @mixin icon-amp-play-circle-leaning() { content: "\EA11" }
 @mixin icon-amp-play-circle() { content: "\EA12" }
