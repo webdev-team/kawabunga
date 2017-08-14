@@ -2,7 +2,7 @@
 // Imports
 //
 
-import * as Promise from 'Promise';
+import * as Promise from 'promise';
 import * as estatV5 from '../../../assets/js/tracking/estat-v5.js';
 import * as scriptLoader from '../../../assets/js/utils/script-loader.js';
 

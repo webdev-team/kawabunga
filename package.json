@@ -60,7 +60,6 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "jsdom": "^9.4.2",
     "lodash": "^4.13.1",
     "promise": "^7.1.1",
     "babelify": "^7.3.0",
