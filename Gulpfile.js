@@ -15,14 +15,12 @@ var source = require('vinyl-source-stream');
 var glob = require('glob');
 var eventStream = require('event-stream');
 var watchify = require('watchify');
-var mocha = require('gulp-mocha');
 var _ = require('lodash');
 var flatten = require('gulp-flatten');
 var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
 var babelify = require('babelify');
-var babelRegister = require('babel-register');
 
 var package = require('./package.json');
 require('gulp-rtl-publish')(gulp, package);
@@ -253,18 +251,8 @@ gulp.task('webserver', function () {
 });
 
 /*
- * Tests
+ * Tests => run 'npm test'
  */
-
-gulp.task('test', function () {
-    return gulp.src(['test/**/*-test.js', 'test/**/*-test.es6'])
-        .pipe(mocha({compilers: {
-            js: babelRegister
-        }}))
-        .once('end', function () {
-            process.exit();
-        });
-});
 
 // CUSTOM TASKS :
 

@@ -2,9 +2,7 @@
 // Imports
 //
 
-jest.mock('../../../assets/js/utils/script-loader.js');
-
-import * as env from '../../test-env';
+import * as Promise from 'Promise';
 import * as estatV5 from '../../../assets/js/tracking/estat-v5.js';
 import * as scriptLoader from '../../../assets/js/utils/script-loader.js';
 
@@ -13,26 +11,27 @@ import * as scriptLoader from '../../../assets/js/utils/script-loader.js';
 //
 
 describe('estat-script.js', function () {
-    let spyScriptLoader = jest.spyOn(scriptLoader, 'ensureLoaded');
+    let ensureLoaded = jest.spyOn(scriptLoader, 'ensureLoaded')
+        .mockImplementation(Promise.resolve);
 
     beforeEach(() => {
-        env.initWithHtml('<div></div>');
+        document.body.innerHTML = '<div></div>';
     });
+
     afterEach(() => {
-        spyScriptLoader.mockRestore();
+        ensureLoaded.mockClear();
     });
 
     describe('ensureLoaded', function () {
         test('should load estat script', done => {
             estatV5.ensureLoaded().then(() => {
-                expect(spyScriptLoader).toHaveBeenCalledTimes(1);
+                expect(ensureLoaded).toHaveBeenCalledTimes(1);
                 done();
             });
         });
 
         test('should pass estat module in resolve function', (done) => {
             estatV5.ensureLoaded().then((module) => {
-                expect(spyScriptLoader).toHaveBeenCalledTimes(1);
                 expect(module).toBe(estatV5);
                 done();
             });
@@ -41,7 +40,7 @@ describe('estat-script.js', function () {
 
     describe('readPageConfig', () => {
         test('should read page tag from html', () => {
-            env.initWithHtml('<div data-role="estat" data-serial="123" data-level1="level1" data-level2="level2" data-level3="level3" data-level4="level4"></div>');
+            document.body.innerHTML = '<div data-role="estat" data-serial="123" data-level1="level1" data-level2="level2" data-level3="level3" data-level4="level4"></div>';
 
             expect(estatV5.readPageConfig()).toMatchObject({
                 serial: '123',
@@ -56,7 +55,7 @@ describe('estat-script.js', function () {
         });
 
         test('should read page tag with crmID from html', () => {
-            env.initWithHtml('<div data-role="estat" data-serial="123" data-level1="level1" data-level2="level2" data-level3="level3" data-level4="level4" data-crmID="idxxx"></div>');
+            document.body.innerHTML = '<div data-role="estat" data-serial="123" data-level1="level1" data-level2="level2" data-level3="level3" data-level4="level4" data-crmID="idxxx"></div>';
 
             expect(estatV5.readPageConfig()).toMatchObject({
                 serial: '123',

@@ -15,7 +15,7 @@ exports.ensureLoaded = function (src) {
     return new Promise(function (resolve) {
         var scripts = exports.getScriptsBySrc(src);
 
-        if (scripts.length == 0) {
+        if (scripts.length === 0) {
             insertScript(src).then(function () {
                 if (loadingQueues[src]) {
                     loadingQueues[src].forEach(function(item) {

@@ -2,8 +2,6 @@
 // Imports
 //
 
-import * as env from '../../test-env';
-
 import * as ftvScriptDx from '../../../assets/js/advertising/ftv-script-dx.js';
 import * as ftvAdDx from '../../../assets/js/advertising/ftv-ad-dx.js';
 
@@ -14,12 +12,10 @@ let jsAdClassName = ftvScriptDx.JS_FTV_CLASS;
 //
 
 let initWithTwoAds = function () {
-    let html = `<div class="${jsAdClassName}" data-position="Top"></div><div class="${jsAdClassName}" data-position="Middle"></div>`;
-    env.initWithHtml(html);
+    document.body.innerHTML = `<div class="${jsAdClassName}" data-position="Top"></div><div class="${jsAdClassName}" data-position="Middle"></div>`;
 };
 let initWithSingleAd = function (attribute: string) {
-    let html = `<div class="${jsAdClassName}" data-position="Top" ${attribute}></div>`;
-    env.initWithHtml(html);
+    document.body.innerHTML = `<div class="${jsAdClassName}" data-position="Top" ${attribute}></div>`;
 };
 
 // ..
@@ -29,7 +25,7 @@ let initWithSingleAd = function (attribute: string) {
 describe('ftv-ad-dx.js', () => {
     beforeEach(() => {
         ftvAdDx.registry = {};
-        env.resetHtml();
+        document.body.innerHTML = '';
     });
 
     describe('setupAds', () => {

@@ -11,23 +11,23 @@ import * as utils from '../../../assets/js/utils/utils.js';
 describe('utils.js', () => {
 
     describe('hyphenToCamel', () => {
-        it('should hyphen string to camel case', () => {
+        test('should hyphen string to camel case', () => {
             expect(utils.hyphenToCamel('my-hyphen-string')).toBe('myHyphenString');
         });
     });
 
     describe('hyphenate', () => {
-        it('should camel case to hyphen string', () => {
+        test('should camel case to hyphen string', () => {
             expect(utils.hyphenate('myCamelCase')).toBe('my-camel-case');
         });
     });
 
     describe('isArray', () => {
-        it('should parameter is array', () => {
+        test('should parameter is array', () => {
             expect(utils.isArray(['red', 'blue', 'green'])).toBe(true);
         });
 
-        it('should parameter is not array', () => {
+        test('should parameter is not array', () => {
             expect(utils.isArray('String')).toBe(false);
         });
     });
