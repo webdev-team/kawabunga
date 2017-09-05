@@ -144,6 +144,7 @@ gulp.task('fonticon-standard', function () {
     return buildFontIcon({name: 'Kawabunga-Icon', scssFile: '_fonticon.scss'}, [
             'assets/svg/common/astro/*.svg',
             'assets/svg/common/meteofrance/*.svg',
+            'assets/svg/common/orlc/*.svg',
             'assets/svg/common/others/*.svg',
             'assets/svg/common/social/facebook/*.svg',
             'assets/svg/common/social/googleplus/*.svg',
