@@ -104,15 +104,15 @@
 .icon-horserace-trot:before { content: "\EA44" }
 .icon-horsewhip:before { content: "\EA45" }
 .icon-laurel:before { content: "\EA46" }
-.icon-level-1:before { content: "\EA47" }
-.icon-level-2:before { content: "\EA48" }
-.icon-level-3:before { content: "\EA49" }
-.icon-level-4:before { content: "\EA4A" }
-.icon-level-5:before { content: "\EA4B" }
-.icon-level-6:before { content: "\EA4C" }
-.icon-level-7:before { content: "\EA4D" }
-.icon-level-8:before { content: "\EA4E" }
-.icon-level-9:before { content: "\EA4F" }
+.icon-level-crack:before { content: "\EA47" }
+.icon-level-etalon:before { content: "\EA48" }
+.icon-level-foal:before { content: "\EA49" }
+.icon-level-miler:before { content: "\EA4A" }
+.icon-level-poney:before { content: "\EA4B" }
+.icon-level-poulain:before { content: "\EA4C" }
+.icon-level-pursang:before { content: "\EA4D" }
+.icon-level-stayer:before { content: "\EA4E" }
+.icon-level-yearling:before { content: "\EA4F" }
 .icon-winner:before { content: "\EA50" }
 .icon-answer:before { content: "\EA51" }
 .icon-arrow-bottom:before { content: "\EA52" }
@@ -324,15 +324,15 @@
 @mixin icon-horserace-trot() { content: "\EA44" }
 @mixin icon-horsewhip() { content: "\EA45" }
 @mixin icon-laurel() { content: "\EA46" }
-@mixin icon-level-1() { content: "\EA47" }
-@mixin icon-level-2() { content: "\EA48" }
-@mixin icon-level-3() { content: "\EA49" }
-@mixin icon-level-4() { content: "\EA4A" }
-@mixin icon-level-5() { content: "\EA4B" }
-@mixin icon-level-6() { content: "\EA4C" }
-@mixin icon-level-7() { content: "\EA4D" }
-@mixin icon-level-8() { content: "\EA4E" }
-@mixin icon-level-9() { content: "\EA4F" }
+@mixin icon-level-crack() { content: "\EA47" }
+@mixin icon-level-etalon() { content: "\EA48" }
+@mixin icon-level-foal() { content: "\EA49" }
+@mixin icon-level-miler() { content: "\EA4A" }
+@mixin icon-level-poney() { content: "\EA4B" }
+@mixin icon-level-poulain() { content: "\EA4C" }
+@mixin icon-level-pursang() { content: "\EA4D" }
+@mixin icon-level-stayer() { content: "\EA4E" }
+@mixin icon-level-yearling() { content: "\EA4F" }
 @mixin icon-winner() { content: "\EA50" }
 @mixin icon-answer() { content: "\EA51" }
 @mixin icon-arrow-bottom() { content: "\EA52" }
