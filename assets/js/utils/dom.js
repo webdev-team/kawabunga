@@ -305,6 +305,6 @@ var array_on = function(type, delegateSelector, callback, capture) {
             } else {
                 callback(e, element)
             }
-        }, capture || false);
+        }, capture || false);
     });
 };
