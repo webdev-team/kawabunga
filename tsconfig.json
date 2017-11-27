@@ -4,5 +4,8 @@
     "allowJs": true,
     "noImplicitAny": false,
     "allowUnreachableCode": true
-  }
+  },
+  "include": [
+    "assets/js/**/*"
+  ]
 }
