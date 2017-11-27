@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>Ads sandbox</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="../css/m6pub.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <%- include('widgets/_navbar.html', {active: 'm6pub'}) %>
+
+<div class="container kawa">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Javascript</h2>
+
+            <p>Le javascript recherche les divs data-role="m6pub" afin d'injecter les pubs</p>
+
+            <pre class="prettyprint lang-js"><%= include('../js/m6pub.js') %></pre>
+
+            <p>Pour fonctionner, le javascript a besoin de la config suivante dans la page (avant chargement du js)</p>
+
+            <pre class="prettyprint lang-js"><%= include('../../assets/sample/advertising/m6pub-config.html') %></pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Bannière</h2>
+            <form class="code-example col-md-12">
+                <%- include('../../assets/sample/advertising/m6pub-banner.html') %>
+            </form>
+            <div>
+                <ul class="nav nav-tabs nav-child">
+                    <li class="active"><a data-toggle="tab" href="#ads-banner-html">HTML</a></li>
+                    <li><a data-toggle="tab" href="#ads-banner-css">CSS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="ads-banner-html" class="tab-pane fade in active">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-html"><%= include('../../assets/sample/advertising/m6pub-banner.html')%></pre>
+                        </figure>
+                    </div>
+                    <div id="ads-banner-css" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-css"><%= include('../../assets/scss/component/advertising/_ftv-ad-dx.scss')%></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Pavé</h2>
+            <form class="code-example col-md-12">
+                <%- include('../../assets/sample/advertising/m6pub-pave.html')%>
+            </form>
+            <div>
+                <ul class="nav nav-tabs nav-child">
+                    <li class="active"><a data-toggle="tab" href="#ads-pave-html">HTML</a></li>
+                    <li><a data-toggle="tab" href="#ads-pave-css">CSS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="ads-pave-html" class="tab-pane fade in active">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-html"><%= include('../../assets/sample/advertising/m6pub-pave.html')%></pre>
+                        </figure>
+                    </div>
+                    <div id="ads-pave-css" class="tab-pane fade">
+                        <figure class="highlighted col-md-12">
+                            <pre class="prettyprint lang-css"><%= include('../../assets/scss/component/advertising/_ftv-ad-dx.scss')%></pre>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="grid-helper"></div>
+
+<%- include('../../assets/sample/advertising/m6pub-config.html')%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../js/m6pub.js"></script>
+</body>
+</html>
