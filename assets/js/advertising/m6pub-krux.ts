@@ -26,8 +26,6 @@ export function init() {
     window.Krux.user = retrieve('user');
     window.Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
 
-    console.log(location.href);
-
     let match = location.href.match(/\bkxsrc=([^&]+)/);
     let src = match && decodeURIComponent(match[1]);
 

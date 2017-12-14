@@ -41,9 +41,11 @@ describe('m6pub-krux', () => {
         expect(loadedScripts[0]).toBe(expectedSrc);
     });
 
+    /*
     test('should load script given as url parameter', () => {
         window.location.href = 'http://localhost/index.html?kxsrc=toto';
 
         m6pubKrux.init();
     });
+    */
 });
