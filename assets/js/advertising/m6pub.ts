@@ -1,12 +1,15 @@
-
+import * as Promise from 'promise';
 import * as $ from '../utils/dom';
 import * as scriptLoader from '../utils/script-loader';
+import './m6pub-krux';
+
+let domain = 'RTL';
 
 export const NETWORK_CODE = 42159803;
-export const ADUNIT_CODE = 'RTL/OTHERS';
+export const ADUNIT_CODE = `${domain}/OTHERS`;
 
-export const PREBID_SCRIPT = 'http://static-preprod.m6tech.net/radins/prebid-radins.js';
-export const PREBID_LOADER_SCRIPT = 'http://static-preprod.m6tech.net/radins/prebid-loader.js';
+export const PREBID_SCRIPT = `http://static.m6tech.net/${(domain === 'RTL' ? 'rtl' : domain)}/prebid-${(domain === 'RTL' ? 'rtl' : domain)}.js`;
+export const PREBID_LOADER_SCRIPT = `http://static.m6tech.net/${(domain === 'RTL' ? 'rtl' : domain)}/prebid-loader.js`;
 
 interface NameValue {
     name: string;
@@ -24,9 +27,6 @@ declare global {
 
         // gravity
         pageDataLayer: any;
-
-        // Krux
-        Krux: any;
     }
 }
 
@@ -38,8 +38,7 @@ export let init = function() : Promise<void> {
 
     return new Promise(resolve => {
         scriptLoader.ensureLoaded(PREBID_SCRIPT).then(() => {
-            initGravity();
-
+            //initGravity();
             initKrux();
 
             window._activeAdslots.forEach(slot => {
@@ -65,6 +64,7 @@ let initGravity = function() {
 
 let initKrux = function() {
     if (window.Krux) {
+
         window.pageCriterias.push({name:"ksg", value: window.Krux.segments});
     }
 

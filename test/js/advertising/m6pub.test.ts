@@ -1,9 +1,7 @@
 import {testEnv} from '../test-env';
 
 import * as m6pub from '../../../assets/js/advertising/m6pub';
-
 import * as scriptLoader from '../../../assets/js/utils/script-loader';
-
 
 let loadedScripts = [];
 let ensureLoadedMock = jest.spyOn(scriptLoader, 'ensureLoaded').mockImplementation((src: String) => {
