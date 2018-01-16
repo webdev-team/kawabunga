@@ -174,7 +174,6 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/common/others/search.svg',
         'assets/svg/common/others/search-v2.svg',
         'assets/svg/common/others/user.svg',
-        'assets/svg/common/others/user-v2.svg',
         'assets/svg/common/others/home.svg',
         'assets/svg/common/others/out.svg',
         'assets/svg/common/others/quote-end.svg',
