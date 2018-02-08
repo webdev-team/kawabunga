@@ -1,7 +1,7 @@
 @import "../../config";
 @import "../../functions";
 
-@mixin ftv-ad-base {
+@mixin ad-base {
     display: block;
     overflow: hidden;
     max-width: 100%;
@@ -10,12 +10,12 @@
     }
 }
 
-.ftv-ad-slot {
+.ad-slot {
     min-height: 1px; // avoid offsets width and height 0x0 (invisible slots are not generated)
 }
 
-.ftv-ad-banner {
-    @include ftv-ad-base;
+.ad-banner {
+    @include ad-base;
     iframe {
         margin-left: auto;
         margin-right: auto;
@@ -25,15 +25,15 @@
     }
 }
 
-.ftv-ad-pave {
-    @include ftv-ad-base;
+.ad-pave {
+    @include ad-base;
     min-width: 300px;
     margin-left:auto;
     margin-right:auto;
 }
 
-.ftv-ad-sumo {
-    @include ftv-ad-base;
+.ad-sumo {
+    @include ad-base;
     min-width: 300px;
     height: auto;
     margin-left:auto;

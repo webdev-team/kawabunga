@@ -6,7 +6,7 @@ var ftvKrux = require('./ftv-krux');
 
 var dom = require('../utils/dom');
 
-exports.JS_FTV_CLASS = 'js-ftv-ad-dx';
+exports.JS_FTV_CLASS = 'js-ad-dx';
 
 exports.getDxScriptSrc = function () {
     global.oas_tag = global.oas_tag || {};
