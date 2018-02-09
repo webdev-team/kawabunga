@@ -1,0 +1,30 @@
+#!groovy​
+
+node('nodejs') {
+    properties([
+        disableConcurrentBuilds()
+    ])
+
+
+    stage('checkout') {
+        checkout scm
+    }
+
+    stage('remove node_modules') {
+        sh 'rm -rf node_modules'
+    }
+
+    stage('install modules') {
+        sh "/opt/webdev/.npm-packages/bin/npm set progress=false"
+
+        sh "/opt/webdev/.npm-packages/bin/npm install"
+    }
+
+    stage('build') {
+        sh "gulp build"
+    }
+
+    stage('release') {
+        sh "gulp release"
+    }
+}
