@@ -1,6 +1,6 @@
 {
   "name": "kawabunga",
-  "version": "0.0.204",
+  "version": "0.0.205",
   "private": false,
   "browserify": {
     "transform": [
