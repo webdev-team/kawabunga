@@ -67,7 +67,7 @@
   },
   "scripts": {
     "test": "jest",
-    "generateJs": "tsc -d --listEmittedFiles"
+    "generateJs": "tsc"
   },
   "jest": {
     "moduleFileExtensions": [

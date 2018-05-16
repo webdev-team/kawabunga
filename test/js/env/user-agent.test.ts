@@ -1,5 +1,5 @@
 
-import * as userAgent from '../../../assets/js/env/user-agent';
+import * as userAgent from '../../../assets/ts/env/user-agent';
 
 describe('user-agent', () => {
     describe('isMobile', () => {
