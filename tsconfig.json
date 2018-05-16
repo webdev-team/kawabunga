@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "allowJs": true,
+    "allowJs": false,
     "noImplicitAny": false,
     "allowUnreachableCode": true
   },
   "include": [
-    "assets/js/**/*"
+    "assets/js/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.d.ts"
   ]
 }

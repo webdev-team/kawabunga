@@ -11,7 +11,7 @@ export const ADUNIT_CODE = `${domain}/OTHERS`;
 export const PREBID_SCRIPT = `http://static.m6tech.net/${(domain === 'RTL' ? 'rtl' : domain)}/prebid-${(domain === 'RTL' ? 'rtl' : domain)}.js`;
 export const PREBID_LOADER_SCRIPT = `http://static.m6tech.net/${(domain === 'RTL' ? 'rtl' : domain)}/prebid-loader.js`;
 
-interface NameValue {
+export interface NameValue {
     name: string;
     value: string;
 }
