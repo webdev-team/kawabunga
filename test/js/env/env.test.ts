@@ -2,6 +2,10 @@
 import * as env from '../../../assets/ts/env/env';
 
 describe('env', () => {
+    beforeEach(() => {
+        delete window['flags'];
+    });
+
     describe('getCookieDomain', () => {
         test('it should work on root domains', () => {
             expect(env.getCookieDomain('rtl.fr')).toBe('rtl.fr');
@@ -21,10 +25,6 @@ describe('env', () => {
     });
 
     describe('getFlags', () => {
-        beforeEach(() => {
-            delete window['flags'];
-        });
-
         test('should be defaulted to []', () => {
             expect(env.getFlags()).toMatchObject([]);
         });
@@ -37,15 +37,11 @@ describe('env', () => {
     });
 
     describe('isFlag', () => {
-        beforeEach(() => {
-            delete window['flags'];
-        });
-
         test('should be false if no flags', () => {
             expect(env.isFlag('flag1')).toBe(false);
         });
 
-        test('should read var in global', () => {
+        test('should read var in window', () => {
             window['flags'] = ["flag1", "flag2"];
 
             expect(env.isFlag('flag1')).toBe(true);
