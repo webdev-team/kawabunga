@@ -38,6 +38,8 @@ describe('env', () => {
 
     describe('isFlag', () => {
         test('should be false if no flags', () => {
+            console.log('whaaaaat', env.getFlags());
+            console.log('whaaaaat', env.isFlag('flag1'));
             expect(env.isFlag('flag1')).toBe(false);
         });
 
