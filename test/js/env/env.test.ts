@@ -3,7 +3,7 @@ import * as env from '../../../assets/ts/env/env';
 
 describe('env', () => {
     beforeEach(() => {
-        delete window['flags'];
+        window['flags'] = null;
     });
 
     describe('getCookieDomain', () => {
@@ -38,8 +38,6 @@ describe('env', () => {
 
     describe('isFlag', () => {
         test('should be false if no flags', () => {
-            console.log('whaaaaat', env.getFlags());
-            console.log('whaaaaat', env.isFlag('flag1'));
             expect(env.isFlag('flag1')).toBe(false);
         });
 
