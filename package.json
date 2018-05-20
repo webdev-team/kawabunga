@@ -30,7 +30,7 @@
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.2.1",
     "include-media": "^1.4.8",
-    "jest": "^20.0.4",
+    "jest": "^22.4.4",
     "proxyquire": "^1.7.10",
     "run-sequence": "^1.2.2",
     "ts-jest": "^20.0.14",
@@ -56,13 +56,14 @@
   },
   "jest": {
     "moduleFileExtensions": [
-      "ts"
+      "ts",
+      "js"
     ],
     "transform": {
       "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testMatch": [
-      "**/test/**/?(*.)(spec|test).ts"
+      "**/test/**/?(*.)(spec|test).(ts|js)"
     ]
   }
 }
