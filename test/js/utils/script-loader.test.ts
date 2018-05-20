@@ -34,7 +34,7 @@ describe('script-loader.js', () => {
             document.body.innerHTML = '<div><script></script></div>';
 
             return scriptLoader.ensureLoaded(scriptSrc).then(function() {
-                let script = document.querySelector('script[data-loaded=true]');
+                let script = document.querySelector('script[data-loaded=true]') as HTMLScriptElement;
 
                 return expect(script.src).toEqual(scriptSrc);
             });
@@ -55,7 +55,7 @@ describe('script-loader.js', () => {
 
             // second call when script has not finish loading yet
             return scriptLoader.ensureLoaded(scriptSrc).then(function() {
-                let script = document.querySelector('script[data-loaded=true]');
+                let script = document.querySelector('script[data-loaded=true]') as HTMLScriptElement;
 
                 return expect(script.src).toEqual(scriptSrc);
             });

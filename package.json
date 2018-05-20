@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "lodash": "^4.15.0",
+    "lodash": "^4.13.1",
     "promise": "^7.1.1",
     "include-media": "^1.4.8",
     "js-cookie": "^2.2.0"

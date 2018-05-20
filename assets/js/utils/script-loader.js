@@ -49,7 +49,7 @@ exports.getScriptsToLoad = function() {
     return dom('[data-role="load-script"]').map(function (item) {
         return item.getAttribute('data-src');
     });
-}
+};
 
 var isLoaded = function (script) {
     return script.getAttribute('data-loaded') != null;
