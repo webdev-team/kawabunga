@@ -15,13 +15,15 @@ node('nodejs') {
     }
 
     stage('install modules') {
-        sh "/opt/webdev/.npm-packages/bin/npm set progress=false"
-
-        sh "/opt/webdev/.npm-packages/bin/npm install"
+        sh 'yarn install --no-progress'
     }
 
     stage('build') {
         sh "gulp build"
+    }
+
+    stage('test') {
+        sh "yarn run test"
     }
 
     stage('release') {

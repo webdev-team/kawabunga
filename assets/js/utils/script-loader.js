@@ -20,7 +20,7 @@ exports.ensureLoaded = function (src) {
                 if (loadingQueues[src]) {
                     loadingQueues[src].forEach(function(item) {
                         item();
-                    })
+                    });
 
                     delete loadingQueues[src];
                 }

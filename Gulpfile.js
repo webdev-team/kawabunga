@@ -20,7 +20,6 @@ var flatten = require('gulp-flatten');
 var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
-var babelify = require('babelify');
 var tsify = require('tsify');
 
 var package = require('./package.json');
@@ -85,8 +84,6 @@ var bundleJsFile = function(file, options) {
     bundler.on('log', gutil.log);
 
     bundler = bundler.plugin(tsify);
-    // https://www.npmjs.com/package/babelify
-    bundler = bundler.transform(babelify, {presets: ["es2015"], extensions: [".es6"]});
 
     function bundle() {
         gutil.log('building js file ' + file);
