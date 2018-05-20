@@ -59,7 +59,7 @@ gulp.task('js-watchify', function (done) {
 var bundleAllJsFile = function(done, options) {
     var files = glob.sync('sandbox/js/*.js');
 
-    var tasks = _.map(files, function(file) {
+    var tasks = files.map(function(file) {
         return bundleJsFile(file, options)
     });
 

@@ -1,5 +1,6 @@
 
-var find = require('lodash/find');
+require('../polyfill/array/find');
+
 var Promise = require('promise');
 var dom = require('./dom');
 
@@ -27,7 +28,7 @@ exports.ensureLoaded = function (src) {
 
                 resolve();
             });
-        } else if (find(scripts, isLoaded)) {
+        } else if (scripts.find(isLoaded)) {
             resolve();
         } else {
             if (!loadingQueues[src]) {

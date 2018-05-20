@@ -10,10 +10,6 @@ node('nodejs') {
         checkout scm
     }
 
-    stage('remove node_modules') {
-        sh 'rm -rf node_modules'
-    }
-
     stage('install modules') {
         sh 'yarn install --no-progress'
     }

@@ -30,6 +30,7 @@
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.2.1",
     "include-media": "^1.4.8",
+    "lodash": "^4.13.1",
     "jest": "^20.0.4",
     "proxyquire": "^1.7.10",
     "run-sequence": "^1.2.2",
@@ -45,7 +46,6 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "lodash": "^4.13.1",
     "promise": "^7.1.1",
     "include-media": "^1.4.8",
     "js-cookie": "^2.2.0"
