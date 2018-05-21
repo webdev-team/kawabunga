@@ -19,7 +19,7 @@ node('nodejs') {
     }
 
     stage('test') {
-        sh "yarn run test"
+        sh "yarn test"
     }
 
     stage('release') {
