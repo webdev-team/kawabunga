@@ -1,9 +1,8 @@
 {
   "name": "kawabunga",
-  "version": "0.0.209",
+  "version": "0.0.210",
   "private": false,
-  "browserify": {
-  },
+  "browserify": {},
   "devDependencies": {
     "@types/es6-promise": "0.0.32",
     "@types/jest": "20.0.3",
