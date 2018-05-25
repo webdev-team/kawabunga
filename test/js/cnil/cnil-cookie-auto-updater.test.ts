@@ -66,7 +66,7 @@ describe('cnil-cookie-auto-updater.ts', () => {
     //         expect(cnilCookie.hasValidCookie()).toBe(false);
     //         expect(writeValuesSpy).not.toHaveBeenCalled();
     //     });
-    // });
+    });
 
     // describe('Consent on scrolling', () => {
     //     beforeEach(() => {
