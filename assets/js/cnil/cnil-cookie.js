@@ -17,6 +17,12 @@ var cnilCookie;
         cookies.set(exports.COOKIE_NAME, JSON.stringify(categories), { expires: exports.COOKIE_DURATION, path: '/', domain: env.getCookieDomain() });
     }
     cnilCookie.writeValues = writeValues;
+    function setCategory(category, value) {
+        var cookie = this.readValues() || { ads: true, analytics: true, social: true, player: true };
+        cookie[category] = value;
+        this.writeValues(cookie);
+    }
+    cnilCookie.setCategory = setCategory;
     function readValues() {
         var values = cookies.get(exports.COOKIE_NAME);
         try {
@@ -28,11 +34,11 @@ var cnilCookie;
     }
     cnilCookie.readValues = readValues;
     function hasValidCookie() {
-        return this.readValues() != null;
+        return readValues() != null;
     }
     cnilCookie.hasValidCookie = hasValidCookie;
     function isOn(category) {
-        var categories = this.readValues();
+        var categories = readValues();
         if (categories) {
             return categories[category];
         }

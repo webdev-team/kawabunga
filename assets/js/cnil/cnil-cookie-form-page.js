@@ -5,22 +5,21 @@ var cnil_cookie_1 = require("./cnil-cookie");
 var cnilCookieFormPage;
 (function (cnilCookieFormPage) {
     function init() {
-        var _this = this;
         var form = document.forms['form-cnil'];
         if (form) {
-            this.initFormWithCookie();
-            form.addEventListener('submit', function (e) {
-                cnil_cookie_1.cnilCookie.writeValues(_this.getValue());
-                _this.fakeSave($(e.target));
-                e.preventDefault();
+            initFormWithCookie();
+            $("input[type=checkbox]").forEach(function (input) {
+                input.addEventListener('change', function () {
+                    cnil_cookie_1.cnilCookie.writeValues(getValue());
+                });
             });
         }
     }
     cnilCookieFormPage.init = init;
-    function isFormPage() {
-        return document.forms['form-cnil'] != undefined;
+    function isCnilSafe() {
+        return document.querySelector('[data-cnil-safe="true"]') != undefined;
     }
-    cnilCookieFormPage.isFormPage = isFormPage;
+    cnilCookieFormPage.isCnilSafe = isCnilSafe;
     function initFormWithCookie() {
         var categories = cnil_cookie_1.cnilCookie.readValues();
         if (categories) {
@@ -28,6 +27,9 @@ var cnilCookieFormPage;
             $("input[name=cookiesForAnalytics]")[0].checked = categories.analytics;
             $("input[name=cookiesForSocial]")[0].checked = categories.social;
             $("input[name=cookiesForPlayer]")[0].checked = categories.player;
+        }
+        else {
+            $("input[type=checkbox]").forEach(function (input) { return input.checked = true; });
         }
     }
     cnilCookieFormPage.initFormWithCookie = initFormWithCookie;
@@ -40,15 +42,4 @@ var cnilCookieFormPage;
         };
     }
     cnilCookieFormPage.getValue = getValue;
-    function fakeSave($form) {
-        var $submitBtn = $form.select('button');
-        var defaultText = $submitBtn[0].innerText;
-        $submitBtn[0].innerText = "Chargement...";
-        $submitBtn[0].disabled = true;
-        setTimeout(function () {
-            $submitBtn[0].innerText = defaultText;
-            $submitBtn[0].disabled = false;
-        }, 300);
-    }
-    cnilCookieFormPage.fakeSave = fakeSave;
 })(cnilCookieFormPage = exports.cnilCookieFormPage || (exports.cnilCookieFormPage = {}));

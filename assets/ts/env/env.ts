@@ -18,3 +18,7 @@ export let getFlags = function (): Array<string> {
 export let isFlag = function (name: string): boolean {
     return getFlags().indexOf(name) != -1;
 };
+
+export let getSite = function (): string {
+  return window.location.hostname;
+};

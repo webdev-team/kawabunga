@@ -25,6 +25,13 @@ export namespace cnilCookie {
         cookies.set(COOKIE_NAME, JSON.stringify(categories), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
     }
 
+    export function setCategory(category: string, value: boolean): void {
+        let cookie: CnilCategories = this.readValues() || {ads: true, analytics: true, social: true, player: true};
+
+        cookie[category] = value;
+        this.writeValues(cookie);
+    }
+
     export function readValues(): CnilCategories {
         let values = cookies.get(COOKIE_NAME);
 
@@ -36,11 +43,11 @@ export namespace cnilCookie {
     }
 
     export function hasValidCookie(): boolean {
-        return this.readValues() != null;
+        return readValues() != null;
     }
 
     export function isOn(category: string) {
-        let categories = this.readValues();
+        let categories = readValues();
 
         if (categories) {
             return categories[category];

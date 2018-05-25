@@ -1,5 +1,5 @@
-import * as userAgent from '../env/user-agent';
-import {ALL_OFF, ALL_ON, CnilCategories, PLAYER} from './cnil-cookie';
+import * as userAgent from '../../js/env/user-agent';
+import {ALL_ON, PLAYER} from './cnil-cookie';
 import * as $ from '../../js/utils/dom';
 import {cnilCookie} from './cnil-cookie';
 import {cnilCookieFormPage} from './cnil-cookie-form-page';
@@ -8,44 +8,27 @@ export type OkCallback = () => void;
 
 export namespace cnilCookieBanner {
     export let $banner: any;
-    export let $playerBanners: any[] = [];
 
     export function init() {
-        if (this.isActive()) {
-            this.injectBanner($('#main-wrapper'));
-        }
-    }
-
-    export function setCookieOn(category: string = null): void {
-
-        if (category) {
-            this.$playerBanners.forEach(banner => banner.css('display', 'none'));
-
-            let cookie = cnilCookie.readValues();
-
-            if (!cookie) {
-                cnilCookie.writeValues(ALL_ON);
-                return;
-            }
-
-            cookie[category] = true;
-            cnilCookie.writeValues(cookie);
-        } else {
-            this.hide();
-            cnilCookie.writeValues(ALL_ON);
+        if (isActive()) {
+            injectBanner($('#main-wrapper'));
         }
     }
 
     export function isActive() {
-        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieFormPage.isFormPage();
+        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieFormPage.isCnilSafe();
     }
 
     export function injectBanner($mainWrapper: any): void {
-        $mainWrapper.prepend(this.createBannerHtml());
+        $mainWrapper.prepend(createBannerHtml());
 
-        this.$banner = $mainWrapper.select('[data-role=cnil-banner]');
+        $banner = $mainWrapper.select('[data-role=cnil-banner]');
 
-        this.$banner.select('button').on('click', e => this.setCookieOn());
+        $banner.select('button').on('click', e => {
+            cnilCookie.writeValues(ALL_ON);
+
+            hide();
+        });
     }
 
     export function createBannerHtml(): string {
@@ -54,11 +37,11 @@ export namespace cnilCookieBanner {
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-lg-9 g-gutter">
-                            <p class="cnil-banner-v2__text">En poursuivant votre navigation sur notre service, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des mesures d'audience, vous proposer des services, contenus et publicités adaptés à vos centres d’intérêt sur internet ou par communication directe de RTL, et pour vous proposer des boutons de partage et de remontées de contenus sur les réseaux sociaux. <a class="cnil-banner-v2__more" href="/cnil/preferences" data-cnil="1">En savoir plus / paramétrer</a>.</p>
+                            <p class="cnil-banner-v2__text">En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <a class="cnil-banner-v2__more" href="/cnil/preferences" data-cnil="1">En savoir plus et modifier les paramètres</a>.</p>
                         </div>
                         <div class="col-12 col-lg-3 g-gutter">
-                            <button type="button" class="cnil-banner-v2__btn btn btn-flat btn-flat--sm my-2" data-action="accept">J'accepte</button>
-                            <a href="/cnil/preferences" class="cnil-banner-v2__link my-2" data-cnil="1"><span class="icon icon-arrow-right-circle"></span>Paramétrer les traceurs</a>
+                            <button type="button" class="cnil-banner-v2__btn btn btn-flat btn-flat--sm" data-action="accept">J'accepte</button>
+                            <a href="/cnil/preferences" class="cnil-banner-v2__link" data-cnil="1"><span class="icon icon-arrow-right-circle"></span>Paramétrer les traceurs</a>
                         </div>
                     </div>
                 </div>
@@ -70,15 +53,14 @@ export namespace cnilCookieBanner {
     }
 
     export function injectPlayerBanner($holder: any, callback?: OkCallback): void {
-        $holder.prepend(this.createBannerPlayerHtml());
+        $holder.prepend(createBannerPlayerHtml());
 
         let newPlayerBanner = $holder.select('[data-role=cnil-banner]');
         newPlayerBanner.select('button').on('click', e => {
-            this.setCookieOn(PLAYER);
+            cnilCookie.setCategory(PLAYER, true);
+            newPlayerBanner.css('display', 'none');
             callback();
         });
-
-        this.$playerBanners.push(newPlayerBanner);
     }
 
     export function createBannerPlayerHtml(): string {
@@ -87,11 +69,11 @@ export namespace cnilCookieBanner {
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <p class="cnil-banner-v2__text">En poursuivant votre navigation sur notre service, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des mesures d'audience, vous proposer des services, contenus et publicités adaptés à vos centres d’intérêt sur internet ou par communication directe de RTL, et pour vous proposer des boutons de partage et de remontées de contenus sur les réseaux sociaux. <a class="cnil-banner-v2__more" href="/cnil/preferences" data-cnil="1">En savoir plus / paramétrer</a>.</p>
+                            <p class="cnil-banner-v2__text">En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <a class="cnil-banner-v2__more" href="/cnil/preferences" data-cnil="1">En savoir plus et modifier les paramètres</a>.</p>
                         </div>
                         <div class="col-12">
-                            <button type="button" class="cnil-banner-v2__btn btn btn-flat btn-flat--sm my-2" data-action="accept">J'accepte</button>
-                            <a href="/cnil/preferences" class="cnil-banner-v2__link my-2" data-cnil="1"><span class="icon icon-arrow-right-circle"></span>Paramétrer les traceurs</a>
+                            <button type="button" class="cnil-banner-v2__btn btn btn-flat btn-flat--sm" data-action="accept">J'accepte</button>
+                            <a href="/cnil/preferences" class="cnil-banner-v2__link" data-cnil="1"><span class="icon icon-arrow-right-circle"></span>Paramétrer les traceurs</a>
                         </div>
                     </div>
                 </div>
@@ -100,6 +82,6 @@ export namespace cnilCookieBanner {
     }
 
     export function hide(): void {
-        this.$banner.css('display', 'none');
+        $banner.css('display', 'none');
     }
 }

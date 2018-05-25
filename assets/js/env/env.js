@@ -14,3 +14,6 @@ exports.getFlags = function () {
 exports.isFlag = function (name) {
     return exports.getFlags().indexOf(name) != -1;
 };
+exports.getSite = function () {
+    return window.location.hostname;
+};

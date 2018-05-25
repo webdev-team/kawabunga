@@ -14,6 +14,7 @@ export declare const ALL_ON: CnilCategories;
 export declare const ALL_OFF: CnilCategories;
 export declare namespace cnilCookie {
     function writeValues(categories: CnilCategories): void;
+    function setCategory(category: string, value: boolean): void;
     function readValues(): CnilCategories;
     function hasValidCookie(): boolean;
     function isOn(category: string): any;
