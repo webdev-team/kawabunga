@@ -54,6 +54,7 @@
     "generateJs": "tsc"
   },
   "jest": {
+    "testURL": "http://www.rtl2.fr",
     "moduleFileExtensions": [
       "ts",
       "js"

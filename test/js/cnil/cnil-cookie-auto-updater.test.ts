@@ -10,38 +10,63 @@ let writeValuesSpy = jest.spyOn(cnilCookie, "writeValues");
 describe('cnil-cookie-auto-updater.ts', () => {
 
     describe('Consent by navigating through website', () => {
+        beforeAll(() => {
+            cnilCookieAutoUpdater.init();
+        });
+
         beforeEach(() => {
+
             cookies.remove(COOKIE_NAME);
             writeValuesSpy.mockClear();
 
             testEnv.setHTML(`
                 <div id="main-wrapper">
-                    <a href="#" id="consenting-link"></a>
-                    <a href="#" data-cnil="1" id="non-consenting-link"></a>
+                    <a href="http://www.rtl2.fr" id="internal-link"></a>
+                    <a href="http://www.rtl2.fr">
+                        <span id="internal-link-span"></span>
+                    </a>
+                    <a href="http://www.rtl2.fr" data-cnil="1" id="non-consenting-link"></a>
+                    
+                    <a href="http://www.externalwebsite.fr" id="external-link"></a>
                 </div>
             `);
         });
 
-        test('Should create cookie when any link clicked', () => {
-            cnilCookieAutoUpdater.init();
-
+        test('Should create cookie when an internal link clicked', () => {
             expect(cnilCookie.hasValidCookie()).toBe(false);
 
-            $('#consenting-link')[0].click();
+            $('#internal-link')[0].click();
 
-            expect(cnilCookie.hasValidCookie()).toBe(true);
+            expect(cnilCookie.hasValidCookie()). toBe(true);
             expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
 
-        test('Should not create cookie when specific cnil link clicked', () => {
-            cnilCookieAutoUpdater.init();
-
-            $('#non-consenting-link')[0].click();
-
-            expect(cnilCookie.hasValidCookie()).toBe(false);
-            expect(writeValuesSpy).not.toHaveBeenCalled();
-        });
-    });
+    //     test('Should create cookie when an element within internal link clicked', () => {
+    //         console.log('2', cnilCookie.hasValidCookie(), cnilCookie.readValues(), document.cookie);
+    //         expect(cnilCookie.hasValidCookie()).toBe(false);
+    //
+    //         $('#internal-link-span')[0].click();
+    //
+    //         expect(cnilCookie.hasValidCookie()). toBe(true);
+    //         expect(writeValuesSpy).toHaveBeenCalledTimes(1);
+    //     });
+    //
+    //     test('Should not create cookie when external link clicked', () => {
+    //         expect(cnilCookie.hasValidCookie()).toBe(false);
+    //
+    //         $('#external-link')[0].click();
+    //
+    //         expect(cnilCookie.hasValidCookie()).toBe(false);
+    //         expect(writeValuesSpy).not.toHaveBeenCalled();;
+    //     });
+    //
+    //     test('Should not create cookie when specific cnil link clicked', () => {
+    //         $('#non-consenting-link')[0].click();
+    //
+    //         expect(cnilCookie.hasValidCookie()).toBe(false);
+    //         expect(writeValuesSpy).not.toHaveBeenCalled();
+    //     });
+    // });
 
     // describe('Consent on scrolling', () => {
     //     beforeEach(() => {

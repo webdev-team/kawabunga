@@ -1,10 +1,24 @@
 import {CnilCategories, cnilCookie} from "../../../assets/ts/cnil/cnil-cookie";
-import {COOKIE_NAME} from '../../../assets/ts/cnil/cnil-cookie';
+import {COOKIE_NAME, PLAYER, ANALYTICS} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
 
 describe('cnil-cookie.ts', () => {
     beforeEach(() => {
         cookies.remove(COOKIE_NAME);
+    });
+
+    describe('class CnilCookie', () => {
+
+        test('setCategory()', () => {
+            cnilCookie.setCategory(PLAYER, true);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+
+            cookies.remove(COOKIE_NAME);
+            cnilCookie.setCategory(ANALYTICS, false);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":true}');
+            cnilCookie.setCategory(PLAYER, false);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}');
+        });
     });
 
     test('should write cookie value', () => {

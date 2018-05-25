@@ -12,14 +12,12 @@ describe('cnil-cookie-form-page.ts', () => {
         cookies.remove(COOKIE_NAME);
 
         testEnv.setHTML(`
-            <div id="main-wrapper">
+            <div id="main-wrapper" data-cnil-safe="true">
                 <form action="" name="form-cnil">
-                    <input type="checkbox" name="cookiesForAds" checked>
-                    <input type="checkbox" name="cookiesForAnalytics" checked>
-                    <input type="checkbox" name="cookiesForSocial" checked>
-                    <input type="checkbox" name="cookiesForPlayer" checked>
-                    
-                    <button type="submit" data-cnil="1">Mettre à jour</button>
+                    <input type="checkbox" name="cookiesForAds">
+                    <input type="checkbox" name="cookiesForAnalytics">
+                    <input type="checkbox" name="cookiesForSocial">
+                    <input type="checkbox" name="cookiesForPlayer">
                 </form>
             </div>
         `);
@@ -30,14 +28,14 @@ describe('cnil-cookie-form-page.ts', () => {
         test('Should detect form page when form element is found', () => {
             cnilCookieFormPage.init();
 
-            expect(cnilCookieFormPage.isFormPage()).toBe(true);
+            expect(cnilCookieFormPage.isCnilSafe()).toBe(true);
         });
 
         test('Should not detect form page when no form element found', () => {
             testEnv.setHTML(`<div id="main-wrapper"></div>`);
             cnilCookieFormPage.init();
 
-            expect(cnilCookieFormPage.isFormPage()).toBe(false);
+            expect(cnilCookieFormPage.isCnilSafe()).toBe(false);
         });
 
         test('Should init form inputs function to existing cookie', () => {
@@ -50,28 +48,36 @@ describe('cnil-cookie-form-page.ts', () => {
 
     describe('Behavior and cookie management', () => {
 
-        test('Should create cookie with all consents at true when submit button clicked', () => {
+        test('Should set all inputs to "checked" on init, but without any cookie created', () => {
+            cnilCookieFormPage.init();
+
+            expect( $('input[name="cookiesForAds"]')[0].checked ).toBe(true);
+            expect( $('input[name="cookiesForAnalytics"]')[0].checked ).toBe(true);
+            expect( $('input[name="cookiesForSocial"]')[0].checked ).toBe(true);
+            expect( $('input[name="cookiesForPlayer"]')[0].checked ).toBe(true);
+
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+        });
+
+        test('Should create cookie with all consents at true when any input clicked, except the consent that is clicked', () => {
             cnilCookieFormPage.init();
 
             expect(cnilCookie.hasValidCookie()).toBe(false);
 
-            $('button[type=submit]')[0].click();
+            $('input[name="cookiesForAnalytics"]')[0].click();
 
             expect(cnilCookie.hasValidCookie()).toBe(true);
-            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":true,"social":true,"player":true});
+            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true,"player":true});
         });
 
         test('Should update existing cookie when submit button clicked', () => {
             cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"social":true,"player":true}');
             cnilCookieFormPage.init();
 
-            $('input[name="cookiesForAnalytics"]')[0].checked = false;
-            $('input[name="cookiesForPlayer"]')[0].checked = false;
+            $('input[name="cookiesForAnalytics"]')[0].click();
+            $('input[name="cookiesForPlayer"]')[0].click();
 
             expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true,"player":false});
-
-            $('button[type=submit]')[0].click();
-
             expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}')
         });
     });

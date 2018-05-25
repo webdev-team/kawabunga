@@ -1,5 +1,5 @@
 import * as $ from '../../../assets/js/utils/dom';
-import * as userAgent from '../../../assets/ts/env/user-agent';
+import * as userAgent from '../../../assets/js/env/user-agent';
 import {testEnv} from '../test-env';
 import {cnilCookie} from "../../../assets/ts/cnil/cnil-cookie";
 import {cnilCookieBanner} from "../../../assets/ts/cnil/cnil-cookie-banner";
@@ -8,7 +8,7 @@ import {cnilCookieFormPage} from "../../../assets/ts/cnil/cnil-cookie-form-page"
 let isBotSpy = jest.spyOn(userAgent, "isBot");
 let hasValidCookieSpy = jest.spyOn(cnilCookie, "hasValidCookie");
 let writeValuesSpy = jest.spyOn(cnilCookie, "writeValues");
-let isFormPageSpy = jest.spyOn(cnilCookieFormPage, "isFormPage");
+let isCnilSafeSpy = jest.spyOn(cnilCookieFormPage, "isCnilSafe");
 
 describe('cnil-cookie-banner.ts', () => {
 
@@ -21,7 +21,7 @@ describe('cnil-cookie-banner.ts', () => {
 
         afterEach(() => {
             isBotSpy.mockReturnValue(false);
-            isFormPageSpy.mockReturnValue(false);
+            isCnilSafeSpy.mockReturnValue(false);
             hasValidCookieSpy.mockReturnValue(false);
         });
 
@@ -39,10 +39,10 @@ describe('cnil-cookie-banner.ts', () => {
         });
 
         test('Should not display banner when current page is form page', () => {
-            isFormPageSpy.mockReturnValue(true);
+            isCnilSafeSpy.mockReturnValue(true);
 
             cnilCookieBanner.init();
-            expect(isFormPageSpy).toHaveBeenCalledTimes(1);
+            expect(isCnilSafeSpy).toHaveBeenCalledTimes(1);
             expect($('.cnil-banner-v2')[0]).toBeUndefined();
         });
 
