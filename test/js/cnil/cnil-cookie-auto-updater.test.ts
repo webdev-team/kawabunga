@@ -4,18 +4,21 @@ import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-up
 import {COOKIE_NAME} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
 import {testEnv} from "../test-env";
+import * as env from "../../../assets/ts/env/env";
 
 let writeValuesSpy = jest.spyOn(cnilCookie, "writeValues");
+let getSiteSpy = jest.spyOn(env, "getSite");
 
 describe('cnil-cookie-auto-updater.ts', () => {
 
     describe('Consent by navigating through website', () => {
         beforeAll(() => {
             cnilCookieAutoUpdater.init();
+
+            getSiteSpy.mockReturnValue('www.rtl2.fr');
         });
 
         beforeEach(() => {
-
             cookies.remove(COOKIE_NAME);
             writeValuesSpy.mockClear();
 
@@ -42,6 +45,7 @@ describe('cnil-cookie-auto-updater.ts', () => {
         });
 
         test('Should create cookie when an element within internal link clicked', () => {
+            console.log('2', cnilCookie.hasValidCookie(), cnilCookie.readValues(), document.cookie);
             expect(cnilCookie.hasValidCookie()).toBe(false);
 
             $('#internal-link-span')[0].click();
@@ -50,14 +54,14 @@ describe('cnil-cookie-auto-updater.ts', () => {
             expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
 
-        // test('Should not create cookie when external link clicked', () => {
-        //     expect(cnilCookie.hasValidCookie()).toBe(false);
-        //
-        //     $('#external-link')[0].click();
-        //
-        //     expect(cnilCookie.hasValidCookie()).toBe(false);
-        //     expect(writeValuesSpy).not.toHaveBeenCalled();;
-        // });
+        test('Should not create cookie when external link clicked', () => {
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+
+            $('#external-link')[0].click();
+
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+            expect(writeValuesSpy).not.toHaveBeenCalled();
+        });
 
         test('Should not create cookie when specific cnil link clicked', () => {
             $('#non-consenting-link')[0].click();
@@ -67,41 +71,41 @@ describe('cnil-cookie-auto-updater.ts', () => {
         });
     });
 
-    // describe('Consent on scrolling', () => {
-    //     beforeEach(() => {
-    //         testEnv.setHTML(`
-    //         <div id="main-wrapper">
-    //             <div style="
-    //                 display: block;
-    //                 height: 4000px;
-    //                 width: 10px;
-    //             "></div>
-    //         </div>
-    //     `);
-    //
-    //         global.scroll = jest.fn((x, y) => {
-    //             global.pageXOffset = x
-    //             global.pageYOffset = y
-    //             global.dispatchEvent(new global.UIEvent('scroll'))
-    //         })
-    //     });
-    //
-    //     test('Should not set cookie when scroll is lower than 1.5 times page height', () => {
-    //         global.innerHeight = 500;
-    //         global.document.height = 1200;
-    //
-    //         cnilCookieAutoUpdater.init();
-    //         expect(writeValuesSpy).not.toHaveBeenCalled();
-    //     });
-    //
-    //     test('Should set cookie when scroll is greater than 1.5 times page height', () => {
-    //         global.innerHeight = 500;
-    //         global.scrollTo(0, 2000);
-    //
-    //         console.log('pageYOffset' global.pageYOffset);
-    //
-    //         cnilCookieAutoUpdater.init();
-    //         expect(writeValuesSpy).toHaveBeenCalled();
-    //     });
-    // });
+    describe('Consent on scrolling', () => {
+        beforeEach(() => {
+            testEnv.setHTML(`
+            <div id="main-wrapper">
+                <div style="
+                    display: block;
+                    height: 4000px;
+                    width: 10px;
+                "></div>
+            </div>
+        `);
+
+            window.scroll = jest.fn((x, y) => {
+                window.pageXOffset = x
+                window.pageYOffset = y
+                window.dispatchEvent(new window.UIEvent('scroll'))
+            })
+        });
+
+        test('Should not set cookie when scroll is lower than 1.5 times page height', () => {
+            window.innerHeight = 500;
+            window.document.height = 1200;
+
+            cnilCookieAutoUpdater.init();
+            expect(writeValuesSpy).not.toHaveBeenCalled();
+        });
+
+        // test('Should set cookie when scroll is greater than 1.5 times page height', () => {
+        //     window.innerHeight = 500;
+        //     window.scrollTo(0, 2000);
+        //
+        //     console.log('pageYOffset', window.pageYOffset);
+        //
+        //     cnilCookieAutoUpdater.init();
+        //     expect(writeValuesSpy).toHaveBeenCalled();
+        // });
+    });
 });

@@ -9,7 +9,7 @@ export namespace testEnv {
     container = document.getElementById('test-env-container');
 
     export let setHTML = function(html: string): void {
-        this.container.innerHTML = html;
+        container.innerHTML = html;
     }
 
     export let setHTMLFromEJSTemplate = function(filePath: string, data?) {
@@ -19,7 +19,7 @@ export namespace testEnv {
             dataEjs.rootPath = '../../../..'
         }
 
-        this.setHTML(ejs.render(fs.readFileSync(filePath, "utf8"), dataEjs, {
+        setHTML(ejs.render(fs.readFileSync(filePath, "utf8"), dataEjs, {
             filename: filePath
         }));
     }
