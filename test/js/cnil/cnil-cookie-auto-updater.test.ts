@@ -41,31 +41,30 @@ describe('cnil-cookie-auto-updater.ts', () => {
             expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
 
-    //     test('Should create cookie when an element within internal link clicked', () => {
-    //         console.log('2', cnilCookie.hasValidCookie(), cnilCookie.readValues(), document.cookie);
-    //         expect(cnilCookie.hasValidCookie()).toBe(false);
-    //
-    //         $('#internal-link-span')[0].click();
-    //
-    //         expect(cnilCookie.hasValidCookie()). toBe(true);
-    //         expect(writeValuesSpy).toHaveBeenCalledTimes(1);
-    //     });
-    //
-    //     test('Should not create cookie when external link clicked', () => {
-    //         expect(cnilCookie.hasValidCookie()).toBe(false);
-    //
-    //         $('#external-link')[0].click();
-    //
-    //         expect(cnilCookie.hasValidCookie()).toBe(false);
-    //         expect(writeValuesSpy).not.toHaveBeenCalled();;
-    //     });
-    //
-    //     test('Should not create cookie when specific cnil link clicked', () => {
-    //         $('#non-consenting-link')[0].click();
-    //
-    //         expect(cnilCookie.hasValidCookie()).toBe(false);
-    //         expect(writeValuesSpy).not.toHaveBeenCalled();
-    //     });
+        test('Should create cookie when an element within internal link clicked', () => {
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+
+            $('#internal-link-span')[0].click();
+
+            expect(cnilCookie.hasValidCookie()). toBe(true);
+            expect(writeValuesSpy).toHaveBeenCalledTimes(1);
+        });
+
+        // test('Should not create cookie when external link clicked', () => {
+        //     expect(cnilCookie.hasValidCookie()).toBe(false);
+        //
+        //     $('#external-link')[0].click();
+        //
+        //     expect(cnilCookie.hasValidCookie()).toBe(false);
+        //     expect(writeValuesSpy).not.toHaveBeenCalled();;
+        // });
+
+        test('Should not create cookie when specific cnil link clicked', () => {
+            $('#non-consenting-link')[0].click();
+
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+            expect(writeValuesSpy).not.toHaveBeenCalled();
+        });
     });
 
     // describe('Consent on scrolling', () => {
