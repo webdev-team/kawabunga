@@ -12,7 +12,7 @@ export namespace cnil {
     export let formPage = cnilCookieFormPage;
 
     export function v2Active() : boolean {
-        return env.getCookieDomain() == 'rtl2.fr' || cookies.get('cnil-cookie-mode') == 'v2';
+        return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'FUN_RADIO' || cookies.get('cnil-cookie-mode') == 'v2';
     }
 
     export function activateV2() : void {
