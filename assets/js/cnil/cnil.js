@@ -12,7 +12,7 @@ var cnil;
     cnil.banner = cnil_cookie_banner_1.cnilCookieBanner;
     cnil.formPage = cnil_cookie_form_page_1.cnilCookieFormPage;
     function v2Active() {
-        return env.getCookieDomain() == 'rtl2.fr' || cookies.get('cnil-cookie-mode') == 'v2';
+        return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'funradio.fr' || cookies.get('cnil-cookie-mode') == 'v2';
     }
     cnil.v2Active = v2Active;
     function activateV2() {
