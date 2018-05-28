@@ -45,7 +45,6 @@ describe('cnil-cookie-auto-updater.ts', () => {
         });
 
         test('Should create cookie when an element within internal link clicked', () => {
-            console.log('2', cnilCookie.hasValidCookie(), cnilCookie.readValues(), document.cookie);
             expect(cnilCookie.hasValidCookie()).toBe(false);
 
             $('#internal-link-span')[0].click();
