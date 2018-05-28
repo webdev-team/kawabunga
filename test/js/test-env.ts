@@ -1,20 +1,18 @@
 import * as fs from 'fs';
 import * as ejs from 'ejs';
 
-class TestEnv {
-    container: HTMLElement;
+export namespace testEnv {
+    let container: HTMLElement;
 
-    constructor() {
-        document.body.innerHTML = '<div id="test-env-container"></div><div id="mq-state"></div>';
+    document.body.innerHTML = '<div id="test-env-container"></div><div id="mq-state"></div>';
 
-        this.container = document.getElementById('test-env-container');
-    }
+    container = document.getElementById('test-env-container');
 
-    setHTML(html: string): void {
+    export let setHTML = function(html: string): void {
         this.container.innerHTML = html;
     }
 
-    setHTMLFromEJSTemplate(filePath: string, data?) {
+    export let setHTMLFromEJSTemplate = function(filePath: string, data?) {
         let dataEjs = data || {};
 
         if (!dataEjs.rootPath) {
@@ -26,5 +24,3 @@ class TestEnv {
         }));
     }
 }
-
-export let testEnv = new TestEnv();

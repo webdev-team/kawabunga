@@ -17,15 +17,19 @@ describe('script-loader.js', () => {
 
     describe('getScriptsBySrc', () => {
         test('should find script by src', () => {
-            document.body.innerHTML = '<div><script src="1"></script></div>';
+            document.body.innerHTML = '<div><script src="https://static.rtl.fr/1.js"></script></div>';
 
-            expect(scriptLoader.getScriptsBySrc('1').length).toBe(1);
+            expect(scriptLoader.getScriptsBySrc('https://static.rtl.fr/1.js').length).toBe(1);
         });
 
         test('should find multiple scripts by src', () => {
-            document.body.innerHTML = '<div><script src="1"></script><script src="1"></script><script src="2"></script></div>';
+            document.body.innerHTML = '<div>' +
+                '<script src="https://static.rtl.fr/1.js"></script>' +
+                '<script src="https://static.rtl.fr/1.js"></script>' +
+                '<script src="https://static.rtl.fr/2.js"></script>' +
+                '</div>';
 
-            expect(scriptLoader.getScriptsBySrc('1').length).toBe(2);
+            expect(scriptLoader.getScriptsBySrc('https://static.rtl.fr/1.js').length).toBe(2);
         });
     });
 

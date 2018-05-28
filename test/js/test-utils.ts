@@ -3,7 +3,7 @@ export function click(target: HTMLElement): void {
 }
 
 export function fireMouseEvent(type: string, target: HTMLElement): void {
-    let mouseEvent = global.document.createEvent("MouseEvents");
+    let mouseEvent = window.document.createEvent("MouseEvents");
 
     mouseEvent.initEvent(type, true, true);
     target.dispatchEvent(mouseEvent);
