@@ -24,6 +24,18 @@ describe('env', () => {
         });
     });
 
+    describe('getSite', () => {
+        test('should have a default site', () => {
+            expect(env.getSite()).toBe('www.rtl.fr');
+        });
+
+        test('should read var in window', () => {
+            window.site = 'www.funradio.fr';
+
+            expect(env.getSite()).toBe('www.funradio.fr');
+        });
+    });
+
     describe('getFlags', () => {
         test('should be defaulted to []', () => {
             expect(env.getFlags()).toMatchObject([]);

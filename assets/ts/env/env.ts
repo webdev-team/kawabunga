@@ -1,4 +1,8 @@
 
+declare global {
+    interface Window { site: any; }
+}
+
 export let getCookieDomain = function (hostname?: string) {
     hostname = hostname || window.location.hostname;
 
@@ -20,5 +24,5 @@ export let isFlag = function (name: string): boolean {
 };
 
 export let getSite = function (): string {
-  return window.location.hostname;
+  return window.site || 'www.rtl.fr';
 };
