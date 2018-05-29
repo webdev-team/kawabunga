@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var userAgent = require("../../js/env/user-agent");
 var cookies = require("js-cookie");
 var env = require("../env/env");
+var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
 // categories
 exports.ADS = 'ads';
 exports.ANALYTICS = 'analytics';
@@ -47,4 +49,8 @@ var cnilCookie;
         }
     }
     cnilCookie.isOn = isOn;
+    function isActive() {
+        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.isCnilSafe();
+    }
+    cnilCookie.isActive = isActive;
 })(cnilCookie = exports.cnilCookie || (exports.cnilCookie = {}));

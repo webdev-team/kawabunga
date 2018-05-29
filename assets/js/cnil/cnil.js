@@ -37,6 +37,5 @@ if (window.location.search.indexOf('cnil-cookie-mode-v2') != -1) {
 }
 if (cnil.v2Active()) {
     cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.init();
-    cnil_cookie_banner_1.cnilCookieBanner.init();
     cnil_cookie_form_page_1.cnilCookieFormPage.init();
 }

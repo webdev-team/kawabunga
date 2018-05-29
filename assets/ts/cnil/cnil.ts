@@ -39,6 +39,5 @@ if (window.location.search.indexOf('cnil-cookie-mode-v2') != -1) {
 
 if (cnil.v2Active()) {
     cnilCookieAutoUpdater.init();
-    cnilCookieBanner.init();
     cnilCookieFormPage.init();
 }

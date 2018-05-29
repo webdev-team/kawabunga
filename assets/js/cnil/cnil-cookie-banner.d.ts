@@ -1,11 +1,9 @@
 export declare type OkCallback = () => void;
+export interface BannerOptions {
+    $container: any;
+    html: string;
+}
 export declare namespace cnilCookieBanner {
-    let $banner: any;
-    function init(): void;
-    function isActive(): boolean;
-    function injectBanner($mainWrapper: any): void;
-    function createBannerHtml(): string;
-    function injectPlayerBanner($holder: any, callback?: OkCallback): void;
-    function createBannerPlayerHtml(): string;
+    function injectBanner2(options: BannerOptions, cb?: OkCallback): void;
     function hide(): void;
 }

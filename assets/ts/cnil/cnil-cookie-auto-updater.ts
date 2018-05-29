@@ -1,4 +1,3 @@
-import * as userAgent from '../../js/env/user-agent';
 import * as $ from '../../js/utils/dom';
 import debounce from '../../js/utils/debounce';
 import {ALL_ON, cnilCookie} from './cnil-cookie';
@@ -7,7 +6,7 @@ import * as env from '../env/env';
 
 export namespace cnilCookieAutoUpdater {
     export function init() {
-        if (isActive()) {
+        if (cnilCookie.isActive()) {
 
             $(document.body).on('click', 'a:not([data-cnil="1"])', e => {
                 let $anchor = $(e.target).parent('A');
@@ -28,9 +27,5 @@ export namespace cnilCookieAutoUpdater {
 
     export function isCnilSafe(): boolean {
         return document.querySelector('[data-cnil-safe="true"]') != undefined;
-    }
-
-    export function isActive() {
-        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !isCnilSafe();
     }
 }

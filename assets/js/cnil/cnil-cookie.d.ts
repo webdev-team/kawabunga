@@ -18,4 +18,5 @@ export declare namespace cnilCookie {
     function readValues(): CnilCategories;
     function hasValidCookie(): boolean;
     function isOn(category: string): any;
+    function isActive(): boolean;
 }

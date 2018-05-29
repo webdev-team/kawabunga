@@ -1,5 +1,7 @@
+import * as userAgent from '../../js/env/user-agent';
 import * as cookies from 'js-cookie';
 import * as env from '../env/env';
+import {cnilCookieAutoUpdater} from "./cnil-cookie-auto-updater";
 
 export interface CnilCategories {
     ads: boolean;
@@ -54,5 +56,9 @@ export namespace cnilCookie {
         } else {
             return false;
         }
+    }
+
+    export function isActive() {
+        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieAutoUpdater.isCnilSafe();
     }
 }

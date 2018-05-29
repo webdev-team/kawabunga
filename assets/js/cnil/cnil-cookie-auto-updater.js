@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var userAgent = require("../../js/env/user-agent");
 var $ = require("../../js/utils/dom");
 var debounce_1 = require("../../js/utils/debounce");
 var cnil_cookie_1 = require("./cnil-cookie");
@@ -9,7 +8,7 @@ var env = require("../env/env");
 var cnilCookieAutoUpdater;
 (function (cnilCookieAutoUpdater) {
     function init() {
-        if (isActive()) {
+        if (cnil_cookie_1.cnilCookie.isActive()) {
             $(document.body).on('click', 'a:not([data-cnil="1"])', function (e) {
                 var $anchor = $(e.target).parent('A');
                 if ($anchor.length == 1 && $anchor[0].href.indexOf(env.getSite()) !== -1) {
@@ -29,8 +28,4 @@ var cnilCookieAutoUpdater;
         return document.querySelector('[data-cnil-safe="true"]') != undefined;
     }
     cnilCookieAutoUpdater.isCnilSafe = isCnilSafe;
-    function isActive() {
-        return !userAgent.isBot() && !cnil_cookie_1.cnilCookie.hasValidCookie() && !isCnilSafe();
-    }
-    cnilCookieAutoUpdater.isActive = isActive;
 })(cnilCookieAutoUpdater = exports.cnilCookieAutoUpdater || (exports.cnilCookieAutoUpdater = {}));
