@@ -4,6 +4,7 @@ import {COOKIE_NAME} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
 import {cnilCookie} from "../../../assets/ts/cnil/cnil-cookie";
 import {cnilCookieFormPage} from "../../../assets/ts/cnil/cnil-cookie-form-page";
+import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-updater";
 
 
 describe('cnil-cookie-form-page.ts', () => {
@@ -28,14 +29,14 @@ describe('cnil-cookie-form-page.ts', () => {
         test('Should detect form page when form element is found', () => {
             cnilCookieFormPage.init();
 
-            expect(cnilCookieFormPage.isCnilSafe()).toBe(true);
+            expect(cnilCookieAutoUpdater.isCnilSafe()).toBe(true);
         });
 
         test('Should not detect form page when no form element found', () => {
             testEnv.setHTML(`<div id="main-wrapper"></div>`);
             cnilCookieFormPage.init();
 
-            expect(cnilCookieFormPage.isCnilSafe()).toBe(false);
+            expect(cnilCookieAutoUpdater.isCnilSafe()).toBe(false);
         });
 
         test('Should init form inputs function to existing cookie', () => {

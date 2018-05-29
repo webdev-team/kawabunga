@@ -5,7 +5,6 @@ var $ = require("../../js/utils/dom");
 var debounce_1 = require("../../js/utils/debounce");
 var cnil_cookie_1 = require("./cnil-cookie");
 var cnil_cookie_banner_1 = require("./cnil-cookie-banner");
-var cnil_cookie_form_page_1 = require("./cnil-cookie-form-page");
 var env = require("../env/env");
 var cnilCookieAutoUpdater;
 (function (cnilCookieAutoUpdater) {
@@ -26,8 +25,12 @@ var cnilCookieAutoUpdater;
         }
     }
     cnilCookieAutoUpdater.init = init;
+    function isCnilSafe() {
+        return document.querySelector('[data-cnil-safe="true"]') != undefined;
+    }
+    cnilCookieAutoUpdater.isCnilSafe = isCnilSafe;
     function isActive() {
-        return !userAgent.isBot() && !cnil_cookie_1.cnilCookie.hasValidCookie() && !cnil_cookie_form_page_1.cnilCookieFormPage.isCnilSafe();
+        return !userAgent.isBot() && !cnil_cookie_1.cnilCookie.hasValidCookie() && !isCnilSafe();
     }
     cnilCookieAutoUpdater.isActive = isActive;
 })(cnilCookieAutoUpdater = exports.cnilCookieAutoUpdater || (exports.cnilCookieAutoUpdater = {}));

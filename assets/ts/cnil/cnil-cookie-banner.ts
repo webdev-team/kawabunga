@@ -2,7 +2,7 @@ import * as userAgent from '../../js/env/user-agent';
 import {ALL_ON, PLAYER} from './cnil-cookie';
 import * as $ from '../../js/utils/dom';
 import {cnilCookie} from './cnil-cookie';
-import {cnilCookieFormPage} from './cnil-cookie-form-page';
+import {cnilCookieAutoUpdater} from "./cnil-cookie-auto-updater";
 
 export type OkCallback = () => void;
 
@@ -16,7 +16,7 @@ export namespace cnilCookieBanner {
     }
 
     export function isActive() {
-        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieFormPage.isCnilSafe();
+        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieAutoUpdater.isCnilSafe();
     }
 
     export function injectBanner($mainWrapper: any): void {

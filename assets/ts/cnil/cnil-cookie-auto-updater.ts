@@ -3,7 +3,6 @@ import * as $ from '../../js/utils/dom';
 import debounce from '../../js/utils/debounce';
 import {ALL_ON, cnilCookie} from './cnil-cookie';
 import {cnilCookieBanner} from "./cnil-cookie-banner";
-import {cnilCookieFormPage} from './cnil-cookie-form-page';
 import * as env from '../env/env';
 
 export namespace cnilCookieAutoUpdater {
@@ -27,7 +26,11 @@ export namespace cnilCookieAutoUpdater {
         }
     }
 
+    export function isCnilSafe(): boolean {
+        return document.querySelector('[data-cnil-safe="true"]') != undefined;
+    }
+
     export function isActive() {
-        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieFormPage.isCnilSafe();
+        return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !isCnilSafe();
     }
 }

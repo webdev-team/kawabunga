@@ -3,12 +3,12 @@ import * as userAgent from '../../../assets/js/env/user-agent';
 import {testEnv} from '../test-env';
 import {cnilCookie} from "../../../assets/ts/cnil/cnil-cookie";
 import {cnilCookieBanner} from "../../../assets/ts/cnil/cnil-cookie-banner";
-import {cnilCookieFormPage} from "../../../assets/ts/cnil/cnil-cookie-form-page";
+import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-updater";
 
 let isBotSpy = jest.spyOn(userAgent, "isBot");
 let hasValidCookieSpy = jest.spyOn(cnilCookie, "hasValidCookie");
 let writeValuesSpy = jest.spyOn(cnilCookie, "writeValues");
-let isCnilSafeSpy = jest.spyOn(cnilCookieFormPage, "isCnilSafe");
+let isCnilSafeSpy = jest.spyOn(cnilCookieAutoUpdater, "isCnilSafe");
 
 describe('cnil-cookie-banner.ts', () => {
 

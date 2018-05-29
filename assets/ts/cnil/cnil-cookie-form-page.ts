@@ -16,10 +16,6 @@ export namespace cnilCookieFormPage {
         }
     }
 
-    export function isCnilSafe(): boolean {
-        return document.querySelector('[data-cnil-safe="true"]') != undefined;
-    }
-
     export function initFormWithCookie(): void {
         let categories = cnilCookie.readValues();
 

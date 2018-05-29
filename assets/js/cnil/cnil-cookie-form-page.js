@@ -16,10 +16,6 @@ var cnilCookieFormPage;
         }
     }
     cnilCookieFormPage.init = init;
-    function isCnilSafe() {
-        return document.querySelector('[data-cnil-safe="true"]') != undefined;
-    }
-    cnilCookieFormPage.isCnilSafe = isCnilSafe;
     function initFormWithCookie() {
         var categories = cnil_cookie_1.cnilCookie.readValues();
         if (categories) {

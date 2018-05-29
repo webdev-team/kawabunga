@@ -4,7 +4,7 @@ var userAgent = require("../../js/env/user-agent");
 var cnil_cookie_1 = require("./cnil-cookie");
 var $ = require("../../js/utils/dom");
 var cnil_cookie_2 = require("./cnil-cookie");
-var cnil_cookie_form_page_1 = require("./cnil-cookie-form-page");
+var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
 var cnilCookieBanner;
 (function (cnilCookieBanner) {
     function init() {
@@ -14,7 +14,7 @@ var cnilCookieBanner;
     }
     cnilCookieBanner.init = init;
     function isActive() {
-        return !userAgent.isBot() && !cnil_cookie_2.cnilCookie.hasValidCookie() && !cnil_cookie_form_page_1.cnilCookieFormPage.isCnilSafe();
+        return !userAgent.isBot() && !cnil_cookie_2.cnilCookie.hasValidCookie() && !cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.isCnilSafe();
     }
     cnilCookieBanner.isActive = isActive;
     function injectBanner($mainWrapper) {
