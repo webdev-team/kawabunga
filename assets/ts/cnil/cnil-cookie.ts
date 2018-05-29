@@ -26,10 +26,10 @@ export namespace cnilCookie {
     }
 
     export function setCategory(category: string, value: boolean): void {
-        let cookie: CnilCategories = this.readValues() || {ads: true, analytics: true, social: true, player: true};
+        let cookie: CnilCategories = readValues() || {ads: true, analytics: true, social: true, player: true};
 
         cookie[category] = value;
-        this.writeValues(cookie);
+        writeValues(cookie);
     }
 
     export function readValues(): CnilCategories {

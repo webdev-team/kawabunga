@@ -32,10 +32,10 @@ var cnilCookieBanner;
     cnilCookieBanner.createBannerHtml = createBannerHtml;
     function injectPlayerBanner($holder, callback) {
         $holder.prepend(createBannerPlayerHtml());
-        var newPlayerBanner = $holder.select('[data-role=cnil-banner]');
-        newPlayerBanner.select('button').on('click', function (e) {
+        var $playerBanner = $holder.select('[data-role=cnil-banner]');
+        $playerBanner.select('button').on('click', function (e) {
             cnil_cookie_2.cnilCookie.setCategory(cnil_cookie_1.PLAYER, true);
-            newPlayerBanner.css('display', 'none');
+            $playerBanner.css('display', 'none');
             callback();
         });
     }

@@ -30,17 +30,4 @@ export namespace cnilCookieAutoUpdater {
     export function isActive() {
         return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieFormPage.isCnilSafe();
     }
-
-    function isInternalLink(linkElem): boolean {
-        let internalSites: string[] = ['www.rtl.fr', 'www.rtl2.fr', 'www.funradio.fr'];
-        let isInternalLink: boolean = false;
-
-        internalSites.forEach((site) => {
-            if (linkElem.href.indexOf(site) !== -1) {
-                isInternalLink = true;
-            }
-        });
-
-        return isInternalLink;
-    }
 }

@@ -15,5 +15,5 @@ exports.isFlag = function (name) {
     return exports.getFlags().indexOf(name) != -1;
 };
 exports.getSite = function () {
-    return window.location.hostname;
+    return window.site || 'www.rtl.fr';
 };

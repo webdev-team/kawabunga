@@ -55,10 +55,13 @@ export namespace cnilCookieBanner {
     export function injectPlayerBanner($holder: any, callback?: OkCallback): void {
         $holder.prepend(createBannerPlayerHtml());
 
-        let newPlayerBanner = $holder.select('[data-role=cnil-banner]');
-        newPlayerBanner.select('button').on('click', e => {
+        let $playerBanner = $holder.select('[data-role=cnil-banner]');
+
+        $playerBanner.select('button').on('click', e => {
             cnilCookie.setCategory(PLAYER, true);
-            newPlayerBanner.css('display', 'none');
+
+            $playerBanner.css('display', 'none');
+
             callback();
         });
     }

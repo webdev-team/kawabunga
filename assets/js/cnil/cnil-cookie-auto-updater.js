@@ -30,14 +30,4 @@ var cnilCookieAutoUpdater;
         return !userAgent.isBot() && !cnil_cookie_1.cnilCookie.hasValidCookie() && !cnil_cookie_form_page_1.cnilCookieFormPage.isCnilSafe();
     }
     cnilCookieAutoUpdater.isActive = isActive;
-    function isInternalLink(linkElem) {
-        var internalSites = ['www.rtl.fr', 'www.rtl2.fr', 'www.funradio.fr'];
-        var isInternalLink = false;
-        internalSites.forEach(function (site) {
-            if (linkElem.href.indexOf(site) !== -1) {
-                isInternalLink = true;
-            }
-        });
-        return isInternalLink;
-    }
 })(cnilCookieAutoUpdater = exports.cnilCookieAutoUpdater || (exports.cnilCookieAutoUpdater = {}));

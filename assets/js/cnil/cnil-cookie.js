@@ -18,9 +18,9 @@ var cnilCookie;
     }
     cnilCookie.writeValues = writeValues;
     function setCategory(category, value) {
-        var cookie = this.readValues() || { ads: true, analytics: true, social: true, player: true };
+        var cookie = readValues() || { ads: true, analytics: true, social: true, player: true };
         cookie[category] = value;
-        this.writeValues(cookie);
+        writeValues(cookie);
     }
     cnilCookie.setCategory = setCategory;
     function readValues() {
