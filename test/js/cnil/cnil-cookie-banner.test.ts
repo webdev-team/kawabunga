@@ -33,6 +33,15 @@ describe('cnil-cookie-banner.ts', () => {
         };
     });
 
+    describe( 'Class', () => {
+
+        test('hideMainBanner()', () => {
+            cnilCookieBanner.init(bannerOptions);
+            cnilCookieBanner.hideMainBanner();
+            expect($('#cnil-banner').css('display')).toBe('none');
+        });
+    });
+
     describe('Display', () => {
 
         afterEach(() => {

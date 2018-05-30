@@ -7,11 +7,12 @@ export interface BannerOptions {
 }
 
 export namespace cnilCookieBanner {
-    let options: BannerOptions;
+    let $mainBanner: any;
 
     export function init(options: BannerOptions, cb?: OkCallback) {
         if (cnilCookie.isActive()) {
             injectBanner(options, cb);
+            $mainBanner = options.$container.select('[data-role=cnil-banner]');
         }
     }
 
@@ -36,7 +37,7 @@ export namespace cnilCookieBanner {
         });
     }
 
-    export function hide(): void {
-        options.$container.select('[data-role=cnil-banner]').css('display', 'none');
+    export function hideMainBanner(): void {
+        $mainBanner.css('display', 'none');
     }
 }

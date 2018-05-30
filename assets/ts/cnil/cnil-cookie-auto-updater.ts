@@ -19,7 +19,7 @@ export namespace cnilCookieAutoUpdater {
             window.addEventListener('scroll', debounce(() => {
                 if (window.pageYOffset > window.innerHeight) {
                     cnilCookie.writeValues(ALL_ON);
-                    cnilCookieBanner.hide();
+                    cnilCookieBanner.hideMainBanner();
                 }
             }, 500));
         }
