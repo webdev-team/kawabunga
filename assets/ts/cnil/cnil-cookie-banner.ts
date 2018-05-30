@@ -17,7 +17,7 @@ export namespace cnilCookieBanner {
     }
 
     export function injectBanner(options: BannerOptions, cb?: OkCallback) {
-        options.$container.prepend(options.html);
+        prependHTML(options.$container[0], options.html);
 
         let $banner = options.$container.select('[data-role=cnil-banner]');
 
@@ -39,5 +39,12 @@ export namespace cnilCookieBanner {
 
     export function hideMainBanner(): void {
         $mainBanner.css('display', 'none');
+    }
+
+    function prependHTML(elParent, html): void {
+        let elChild = document.createElement('div');
+        elChild.innerHTML = html;
+
+        elParent.insertBefore(elChild, elParent.firstChild);
     }
 }

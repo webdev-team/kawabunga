@@ -12,7 +12,7 @@ var cnilCookieBanner;
     }
     cnilCookieBanner.init = init;
     function injectBanner(options, cb) {
-        options.$container.prepend(options.html);
+        prependHTML(options.$container[0], options.html);
         var $banner = options.$container.select('[data-role=cnil-banner]');
         $banner.select('[data-action=accept]').on('click', function (e) {
             var category = e.target.getAttribute('data-category');
@@ -33,4 +33,9 @@ var cnilCookieBanner;
         $mainBanner.css('display', 'none');
     }
     cnilCookieBanner.hideMainBanner = hideMainBanner;
+    function prependHTML(elParent, html) {
+        var elChild = document.createElement('div');
+        elChild.innerHTML = html;
+        elParent.insertBefore(elChild, elParent.firstChild);
+    }
 })(cnilCookieBanner = exports.cnilCookieBanner || (exports.cnilCookieBanner = {}));
