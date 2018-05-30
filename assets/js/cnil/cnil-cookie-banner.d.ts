@@ -4,6 +4,7 @@ export interface BannerOptions {
     html: string;
 }
 export declare namespace cnilCookieBanner {
-    function injectBanner2(options: BannerOptions, cb?: OkCallback): void;
+    function init(options: BannerOptions, cb?: OkCallback): void;
+    function injectBanner(options: BannerOptions, cb?: OkCallback): void;
     function hide(): void;
 }

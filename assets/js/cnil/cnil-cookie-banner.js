@@ -4,10 +4,13 @@ var cnil_cookie_1 = require("./cnil-cookie");
 var cnilCookieBanner;
 (function (cnilCookieBanner) {
     var options;
-    function injectBanner2(options, cb) {
-        if (!cnil_cookie_1.cnilCookie.isActive()) {
-            return;
+    function init(options, cb) {
+        if (cnil_cookie_1.cnilCookie.isActive()) {
+            injectBanner(options, cb);
         }
+    }
+    cnilCookieBanner.init = init;
+    function injectBanner(options, cb) {
         options.$container.prepend(options.html);
         var $banner = options.$container.select('[data-role=cnil-banner]');
         $banner.select('[data-action=accept]').on('click', function (e) {
@@ -24,7 +27,7 @@ var cnilCookieBanner;
             }
         });
     }
-    cnilCookieBanner.injectBanner2 = injectBanner2;
+    cnilCookieBanner.injectBanner = injectBanner;
     function hide() {
         options.$container.select('[data-role=cnil-banner]').css('display', 'none');
     }
