@@ -42,14 +42,14 @@ describe('cnil-cookie-banner.ts', () => {
         });
 
         test('Should display banner on any page', () => {
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             expect($('#cnil-banner').css('display')).toBe('block');
         });
 
         test('Should not display banner when useragent is a bot', () => {
             isBotSpy.mockReturnValue(true);
 
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             expect(isBotSpy).toHaveBeenCalledTimes(1);
             expect($('#cnil-banner')[0]).toBeUndefined();
         });
@@ -57,7 +57,7 @@ describe('cnil-cookie-banner.ts', () => {
         test('Should not display banner when current page is form page', () => {
             isCnilSafeSpy.mockReturnValue(true);
 
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             expect(isCnilSafeSpy).toHaveBeenCalledTimes(1);
             expect($('#cnil-banner')[0]).toBeUndefined();
         });
@@ -65,7 +65,7 @@ describe('cnil-cookie-banner.ts', () => {
         test('Should not display banner when valid cookie exists', () => {
             hasValidCookieSpy.mockReturnValue(true);
 
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             expect(hasValidCookieSpy).toHaveBeenCalledTimes(1);
             expect($('#cnil-banner')[0]).toBeUndefined();
         });
@@ -74,7 +74,7 @@ describe('cnil-cookie-banner.ts', () => {
     describe('Behavior and cookie management', () => {
 
         test('Should set cookie when accept button clicked', () => {
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             $('#cnil-banner').select('#accept-btn')[0].click();
 
             expect(cnilCookie.readValues()).toEqual(ALL_ON);
@@ -82,7 +82,7 @@ describe('cnil-cookie-banner.ts', () => {
 
         test('Should set cookie when close icon clicked', () => {
 
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             $('#cnil-banner').select('#close-btn')[0].click();
 
             expect(cnilCookie.readValues()).toEqual(ALL_ON);
@@ -90,7 +90,7 @@ describe('cnil-cookie-banner.ts', () => {
 
         test('Should set corresponding category to true when category accept btn clicked', () => {
 
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             cnilCookie.writeValues(ALL_OFF);
             expect(cnilCookie.readValues()).toEqual(ALL_OFF);
 
@@ -102,7 +102,7 @@ describe('cnil-cookie-banner.ts', () => {
         });
 
         test('Should not set cookie when other links are clicked in banner', () => {
-            cnilCookieBanner.injectBanner2(bannerOptions);
+            cnilCookieBanner.init(bannerOptions);
             $('#cnil-banner').select('[data-cnil="1"]')[0].click();
             $('#cnil-banner').select('[data-cnil="1"]')[1].click();
 

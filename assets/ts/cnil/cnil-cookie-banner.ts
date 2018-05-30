@@ -9,12 +9,13 @@ export interface BannerOptions {
 export namespace cnilCookieBanner {
     let options: BannerOptions;
 
-    export function injectBanner2(options: BannerOptions, cb?: OkCallback) {
-
-        if (!cnilCookie.isActive()) {
-            return;
+    export function init(options: BannerOptions, cb?: OkCallback) {
+        if (cnilCookie.isActive()) {
+            injectBanner(options, cb);
         }
+    }
 
+    export function injectBanner(options: BannerOptions, cb?: OkCallback) {
         options.$container.prepend(options.html);
 
         let $banner = options.$container.select('[data-role=cnil-banner]');
