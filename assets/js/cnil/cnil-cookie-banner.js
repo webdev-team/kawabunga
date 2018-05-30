@@ -3,10 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var cnil_cookie_1 = require("./cnil-cookie");
 var cnilCookieBanner;
 (function (cnilCookieBanner) {
-    var options;
+    var $mainBanner;
     function init(options, cb) {
         if (cnil_cookie_1.cnilCookie.isActive()) {
             injectBanner(options, cb);
+            $mainBanner = options.$container.select('[data-role=cnil-banner]');
         }
     }
     cnilCookieBanner.init = init;
@@ -28,8 +29,8 @@ var cnilCookieBanner;
         });
     }
     cnilCookieBanner.injectBanner = injectBanner;
-    function hide() {
-        options.$container.select('[data-role=cnil-banner]').css('display', 'none');
+    function hideMainBanner() {
+        $mainBanner.css('display', 'none');
     }
-    cnilCookieBanner.hide = hide;
+    cnilCookieBanner.hideMainBanner = hideMainBanner;
 })(cnilCookieBanner = exports.cnilCookieBanner || (exports.cnilCookieBanner = {}));

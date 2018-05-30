@@ -18,7 +18,7 @@ var cnilCookieAutoUpdater;
             window.addEventListener('scroll', debounce_1.default(function () {
                 if (window.pageYOffset > window.innerHeight) {
                     cnil_cookie_1.cnilCookie.writeValues(cnil_cookie_1.ALL_ON);
-                    cnil_cookie_banner_1.cnilCookieBanner.hide();
+                    cnil_cookie_banner_1.cnilCookieBanner.hideMainBanner();
                 }
             }, 500));
         }
