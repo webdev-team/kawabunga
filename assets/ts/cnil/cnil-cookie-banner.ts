@@ -1,4 +1,3 @@
-import {cnil} from "./cnil";
 import {cnilCookie, ALL_ON} from './cnil-cookie';
 
 export type OkCallback = () => void;
@@ -12,10 +11,6 @@ export namespace cnilCookieBanner {
 
     export function init(options: BannerOptions, cb?: OkCallback) {
 
-        if (!cnil.v2Active()) { // TODO: Remove when v2 in production
-            return;
-        }
-
         if (cnilCookie.isActive()) {
             injectBanner(options, cb);
             $mainBanner = options.$container.select('[data-role=cnil-banner]');
@@ -23,13 +18,6 @@ export namespace cnilCookieBanner {
     }
 
     export function injectBanner(options: BannerOptions, cb?: OkCallback) {
-
-        if (!cnil.v2Active()) { // TODO: Remove when v2 in production
-            if (cb) {
-                cb();
-            }
-            return;
-        }
 
         prependHTML(options.$container[0], options.html);
 

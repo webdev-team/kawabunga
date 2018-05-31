@@ -121,17 +121,4 @@ describe('cnil-cookie-banner.ts', () => {
             expect(cnilCookie.readValues()).toBeNull();
         });
     });
-
-    describe('Coexistence between version 1 ad 2', () => { // Todo: Remove tests when v2 in production
-
-        beforeEach(() => {
-            v2ActiveSpy.mockClear();
-            v2ActiveSpy.mockReturnValue(false);
-        });
-
-        test('Should not create banner if v2 not active', () => {
-            cnilCookieBanner.init(bannerOptions);
-            expect($('#cnil-banner').length).toBe(0);
-        });
-    });
 });
