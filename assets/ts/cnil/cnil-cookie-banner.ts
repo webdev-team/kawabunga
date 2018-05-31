@@ -60,6 +60,10 @@ export namespace cnilCookieBanner {
     }
 
     function prependHTML(elParent, html): void {
+        if (!elParent) {
+            return;
+        }
+
         let elChild = document.createElement('div');
         elChild.innerHTML = html;
 

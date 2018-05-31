@@ -48,6 +48,9 @@ var cnilCookieBanner;
     }
     cnilCookieBanner.hideMainBanner = hideMainBanner;
     function prependHTML(elParent, html) {
+        if (!elParent) {
+            return;
+        }
         var elChild = document.createElement('div');
         elChild.innerHTML = html;
         elParent.insertBefore(elChild, elParent.firstChild);
