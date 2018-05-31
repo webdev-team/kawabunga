@@ -1,3 +1,4 @@
+import {cnil} from "./cnil";
 import {cnilCookie, ALL_ON} from './cnil-cookie';
 
 export type OkCallback = () => void;
@@ -10,6 +11,11 @@ export namespace cnilCookieBanner {
     let $mainBanner: any;
 
     export function init(options: BannerOptions, cb?: OkCallback) {
+
+        if (!cnil.v2Active()) { // TODO: Remove when v2 in production
+            return;
+        }
+
         if (cnilCookie.isActive()) {
             injectBanner(options, cb);
             $mainBanner = options.$container.select('[data-role=cnil-banner]');
@@ -17,6 +23,14 @@ export namespace cnilCookieBanner {
     }
 
     export function injectBanner(options: BannerOptions, cb?: OkCallback) {
+
+        if (!cnil.v2Active()) { // TODO: Remove when v2 in production
+            if (cb) {
+                cb();
+            }
+            return;
+        }
+
         prependHTML(options.$container[0], options.html);
 
         let $banner = options.$container.select('[data-role=cnil-banner]');
@@ -29,7 +43,9 @@ export namespace cnilCookieBanner {
                 cnilCookie.writeValues(ALL_ON);
             }
 
-            $banner.css('display', 'none');
+            if ($banner) {
+                $banner.css('display', 'none');
+            }
 
             if (cb) {
                 cb();
@@ -38,7 +54,9 @@ export namespace cnilCookieBanner {
     }
 
     export function hideMainBanner(): void {
-        $mainBanner.css('display', 'none');
+        if ($mainBanner) {
+            $mainBanner.css('display', 'none');
+        }
     }
 
     function prependHTML(elParent, html): void {

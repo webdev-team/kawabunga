@@ -2,11 +2,13 @@ import * as $ from '../../../assets/js/utils/dom';
 import * as userAgent from '../../../assets/js/env/user-agent';
 import {testEnv} from '../test-env';
 import * as cookies from 'js-cookie';
+import {cnil} from "../../../assets/ts/cnil/cnil";
 import {ALL_ON, ALL_OFF, cnilCookie, COOKIE_NAME} from "../../../assets/ts/cnil/cnil-cookie";
 import {BannerOptions, cnilCookieBanner} from "../../../assets/ts/cnil/cnil-cookie-banner";
 import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-updater";
 
 let isBotSpy = jest.spyOn(userAgent, "isBot");
+let v2ActiveSpy = jest.spyOn(cnil, "v2Active");
 let hasValidCookieSpy = jest.spyOn(cnilCookie, "hasValidCookie");
 let isCnilSafeSpy = jest.spyOn(cnilCookieAutoUpdater, "isCnilSafe");
 
@@ -16,6 +18,7 @@ describe('cnil-cookie-banner.ts', () => {
     beforeEach(() => {
         testEnv.setHTML('<div id="main-wrapper"></div>');
         jest.resetAllMocks();
+        v2ActiveSpy.mockReturnValue(true);
         cookies.remove(COOKIE_NAME);
 
         bannerOptions = {
@@ -116,6 +119,19 @@ describe('cnil-cookie-banner.ts', () => {
             $('#cnil-banner').select('[data-cnil="1"]')[1].click();
 
             expect(cnilCookie.readValues()).toBeNull();
+        });
+    });
+
+    describe('Coexistence between version 1 ad 2', () => { // Todo: Remove tests when v2 in production
+
+        beforeEach(() => {
+            v2ActiveSpy.mockClear();
+            v2ActiveSpy.mockReturnValue(false);
+        });
+
+        test('Should not create banner if v2 not active', () => {
+            cnilCookieBanner.init(bannerOptions);
+            expect($('#cnil-banner').length).toBe(0);
         });
     });
 });
