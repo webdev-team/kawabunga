@@ -5,6 +5,8 @@ var cookies = require("js-cookie");
 var env = require("../env/env");
 var random = require("../utils/random");
 var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
+var cnil_log_service_1 = require("./cnil-log-service");
+var cnil_log_1 = require("./cnil-log");
 // categories
 exports.ADS = 'ads';
 exports.ANALYTICS = 'analytics';
@@ -31,14 +33,15 @@ var cnilCookie;
         return cookies.get(exports.COOKIE_ID_NAME);
     }
     cnilCookie.getId = getId;
-    function writeValues(categories) {
+    function writeValues(categories, actionType) {
         cookies.set(exports.COOKIE_NAME, JSON.stringify(categories), { expires: exports.COOKIE_DURATION, path: '/', domain: env.getCookieDomain() });
+        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
     }
     cnilCookie.writeValues = writeValues;
-    function setCategory(category, value) {
+    function setCategory(category, value, actionType) {
         var cookie = readValues() || { ads: true, analytics: true, social: true, player: true };
         cookie[category] = value;
-        writeValues(cookie);
+        writeValues(cookie, actionType);
     }
     cnilCookie.setCategory = setCategory;
     function readValues() {

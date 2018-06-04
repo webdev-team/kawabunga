@@ -3,6 +3,8 @@ import * as cookies from 'js-cookie';
 import * as env from '../env/env';
 import * as random from '../utils/random';
 import {cnilCookieAutoUpdater} from "./cnil-cookie-auto-updater";
+import {cnilLogService} from './cnil-log-service';
+import {CnilLog} from './cnil-log';
 
 export interface CnilCategories {
     ads: boolean;
@@ -40,15 +42,17 @@ export namespace cnilCookie {
         return cookies.get(COOKIE_ID_NAME);
     }
 
-    export function writeValues(categories: CnilCategories): void {
+    export function writeValues(categories: CnilCategories, actionType?: string): void {
         cookies.set(COOKIE_NAME, JSON.stringify(categories), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
+
+        cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
     }
 
-    export function setCategory(category: string, value: boolean): void {
+    export function setCategory(category: string, value: boolean, actionType?: string): void {
         let cookie: CnilCategories = readValues() || {ads: true, analytics: true, social: true, player: true};
 
         cookie[category] = value;
-        writeValues(cookie);
+        writeValues(cookie, actionType);
     }
 
     export function readValues(): CnilCategories {

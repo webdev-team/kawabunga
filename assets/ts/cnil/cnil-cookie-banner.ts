@@ -25,10 +25,11 @@ export namespace cnilCookieBanner {
 
         $banner.select('[data-action=accept]').on('click', e => {
             let category = e.target.getAttribute('data-category');
+
             if (category) {
-                cnilCookie.setCategory(category, true);
+                cnilCookie.setCategory(category, true, 'banner');
             } else {
-                cnilCookie.writeValues(ALL_ON);
+                cnilCookie.writeValues(ALL_ON, 'banner');
             }
 
             if ($banner) {

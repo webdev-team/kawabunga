@@ -17,10 +17,10 @@ var cnilCookieBanner;
         $banner.select('[data-action=accept]').on('click', function (e) {
             var category = e.target.getAttribute('data-category');
             if (category) {
-                cnil_cookie_1.cnilCookie.setCategory(category, true);
+                cnil_cookie_1.cnilCookie.setCategory(category, true, 'banner');
             }
             else {
-                cnil_cookie_1.cnilCookie.writeValues(cnil_cookie_1.ALL_ON);
+                cnil_cookie_1.cnilCookie.writeValues(cnil_cookie_1.ALL_ON, 'banner');
             }
             if ($banner) {
                 $banner.css('display', 'none');

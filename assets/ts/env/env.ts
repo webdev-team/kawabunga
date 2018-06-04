@@ -1,7 +1,33 @@
 
 declare global {
-    interface Window { site: any; }
+    interface Window {
+        site: any;
+        staticRoot; any;
+        env: any; // lab or prod
+        appwebview: string; // 'true' if in rtl mobile app
+        flags: Array<string>;
+    }
 }
+
+export let getEnv = function(): string {
+    return window.env ? window.env : 'prod';
+};
+
+export let isProd = function(): boolean {
+    return getEnv() == 'prod';
+};
+
+export let isLab = function(): boolean {
+    return !isProd();
+};
+
+export let isSecured = function(): boolean {
+    return location && location.protocol === 'https:';
+};
+
+export let getStaticRoot = function() {
+    return window.staticRoot;
+};
 
 export let getCookieDomain = function (hostname?: string) {
     hostname = hostname || window.location.hostname;
@@ -10,13 +36,11 @@ export let getCookieDomain = function (hostname?: string) {
         return '';
     }
 
-    hostname = hostname.split('.').reverse().splice(0,2).reverse().join('.');
-
-    return hostname;
+    return extractDomain(hostname);
 };
 
 export let getFlags = function (): Array<string> {
-    return window['flags'] == undefined ? [] : window['flags'];
+    return window.flags == undefined ? [] : window.flags;
 };
 
 export let isFlag = function (name: string): boolean {
@@ -26,3 +50,19 @@ export let isFlag = function (name: string): boolean {
 export let getSite = function (): string {
   return window.site || 'www.rtl.fr';
 };
+
+export let getDomain = function (): string {
+    return extractDomain(getSite());
+};
+
+export let getRenaissanceDomain = function (): string {
+    switch (getSite()) {
+        case 'www.rtl2.fr' : return 'RTL2';
+        case 'www.funradio.fr' : return 'FUN_RADIO';
+        default : return 'RTL';
+    }
+};
+
+let extractDomain = function(site: string): string {
+    return site.split('.').reverse().splice(0,2).reverse().join('.');
+}

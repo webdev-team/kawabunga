@@ -3,7 +3,43 @@ import * as env from '../../../assets/ts/env/env';
 
 describe('env', () => {
     beforeEach(() => {
-        window['flags'] = null;
+        window.flags = null;
+        window.site = null;
+    });
+
+    describe('getEnv()', () => {
+        it('should default to prod', () => {
+            expect(env.getEnv()).toBe('prod');
+        });
+
+        it('should read global env variable', () => {
+            window.env = 'local';
+
+            expect(env.getEnv()).toBe('local');
+        });
+    });
+
+    describe('isSecured()', () => {
+        afterEach(() => {
+            Object.defineProperty(window.location, 'protocol', {
+                writable: true,
+                value: 'http:'
+            });
+        });
+
+        test('should no be secured in test env', () => {
+            expect(env.isSecured()).toBe(false);
+        });
+
+        test('should be secured with https url', () => {
+            // update protocol
+            Object.defineProperty(window.location, 'protocol', {
+                writable: true,
+                value: 'https:'
+            });
+
+            expect(env.isSecured()).toBe(true);
+        });
     });
 
     describe('getCookieDomain', () => {
@@ -29,10 +65,40 @@ describe('env', () => {
             expect(env.getSite()).toBe('www.rtl.fr');
         });
 
-        test('should read var in window', () => {
+        test('should read property on window', () => {
             window.site = 'www.funradio.fr';
 
             expect(env.getSite()).toBe('www.funradio.fr');
+        });
+    });
+
+    describe('getDomain', () => {
+        it('should have a default value', function () {
+            expect(env.getDomain()).toBe('rtl.fr');
+        });
+
+        it('should read property on window', function () {
+            window.site = 'www.funradio.fr';
+
+            expect(env.getDomain()).toBe('funradio.fr');
+        });
+
+        it('should compute www site bases on current site', function () {
+            window.site = 'astro.rtl.fr';
+
+            expect(env.getDomain()).toBe('rtl.fr');
+        });
+    });
+
+    describe('getRenaissanceDomain', () => {
+        test('should have a default domain', () => {
+            expect(env.getRenaissanceDomain()).toBe('RTL');
+        });
+
+        test('should use current site', () => {
+            window.site = 'www.funradio.fr';
+
+            expect(env.getRenaissanceDomain()).toBe('FUN_RADIO');
         });
     });
 

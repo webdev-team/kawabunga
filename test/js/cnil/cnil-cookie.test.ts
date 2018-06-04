@@ -2,13 +2,19 @@ import {CnilCategories, cnilCookie, COOKIE_ID_NAME} from "../../../assets/ts/cni
 import {COOKIE_NAME, PLAYER, ANALYTICS} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
 import * as random from '../../../assets/ts/utils/random';
+import {cnilLogService} from '../../../assets/ts/cnil/cnil-log-service';
+import {CnilLog} from '../../../assets/ts/cnil/cnil-log';
 
 let uuidSpy = jest.spyOn(random, "uuid");
 
-describe('cnil-cookie.ts', () => {
+let saveSpy = jest.spyOn(cnilLogService, "save");
+
+describe('cnil-cookie', () => {
     beforeEach(() => {
         cookies.remove(COOKIE_NAME);
         cookies.remove(COOKIE_ID_NAME);
+
+        saveSpy.mockClear();
     });
 
     describe('ensureId', () => {
@@ -44,52 +50,79 @@ describe('cnil-cookie.ts', () => {
         });
     });
 
-    test('setCategory()', () => {
-        cnilCookie.setCategory(PLAYER, true);
-        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+    describe('setCategory', () => {
+        it('should update category in cookie', () => {
+            cnilCookie.setCategory(PLAYER, true);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
 
-        cookies.remove(COOKIE_NAME);
-        cnilCookie.setCategory(ANALYTICS, false);
-        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":true}');
-        cnilCookie.setCategory(PLAYER, false);
-        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}');
+            cookies.remove(COOKIE_NAME);
+
+            cnilCookie.setCategory(ANALYTICS, false);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":true}');
+
+            cnilCookie.setCategory(PLAYER, false);
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}');
+        });
+
+        it('should save a log', () => {
+            cookies.set(COOKIE_ID_NAME, 'existing');
+
+            cnilCookie.setCategory(ANALYTICS, false, 'scroll');
+
+            expect(saveSpy).toHaveBeenCalledWith(new CnilLog('existing', 'scroll', {ads: true,analytics: false,social: true,player: true}));
+        });
     });
 
-    test('should write cookie value', () => {
-        let cnilCategories: CnilCategories = {ads: true, analytics: true, social: true, player: true};
-        cnilCookie.writeValues(cnilCategories);
+    describe('writeValues', () => {
+        it('should write cookie value', () => {
+            let cnilCategories: CnilCategories = {ads: true, analytics: true, social: true, player: true};
+            cnilCookie.writeValues(cnilCategories);
 
-        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+        });
+
+        it('should save a log', () => {
+            cookies.set(COOKIE_ID_NAME, 'existing');
+
+            let cnilCategories: CnilCategories = {ads: true, analytics: false, social: true, player: false};
+            cnilCookie.writeValues(cnilCategories, 'form');
+
+            expect(saveSpy).toHaveBeenCalledWith(new CnilLog('existing', 'form', cnilCategories));
+        });
     });
 
-    test('should read cookie value', () => {
-        cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"player":false}');
+    describe('readValues', () => {
+        test('should read cookie value', () => {
+            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"player":false}');
 
-        expect(cnilCookie.readValues()).toEqual({ads: true, analytics: true, player: false});
+            expect(cnilCookie.readValues()).toEqual({ads: true, analytics: true, player: false});
+        });
+
+        test('should return default value if cookie is empty', () => {
+            expect(cnilCookie.readValues()).toEqual(null);
+        });
+
+        test('should return default value if cookie is invalid', () => {
+            cookies.set(COOKIE_NAME, 'dsfdsfdsfds');
+
+            expect(cnilCookie.readValues()).toEqual(null);
+        });
     });
 
-    test('should return default value if cookie is empty', () => {
-        expect(cnilCookie.readValues()).toEqual(null);
-    });
+    describe('isOn', () => {
+        test('should tell if a category is on', () => {
+            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"player":false}');
 
-    test('should return default value if cookie is invalid', () => {
-        cookies.set(COOKIE_NAME, 'dsfdsfdsfds');
+            expect(cnilCookie.isOn('ads')).toEqual(true);
+            expect(cnilCookie.isOn('player')).toEqual(false);
+        });
 
-        expect(cnilCookie.readValues()).toEqual(null);
-    });
+        test('should say all categories are off if cookie is invalid', () => {
+            cookies.set(COOKIE_NAME, 'fdsfdsfdsfds');
 
-    test('should tell if a category is on', () => {
-        cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"player":false}');
-
-        expect(cnilCookie.isOn('ads')).toEqual(true);
-        expect(cnilCookie.isOn('player')).toEqual(false);
-    });
-
-    test('should say all categories are off if cookie is invalid', () => {
-        cookies.set(COOKIE_NAME, 'fdsfdsfdsfds');
-
-        expect(cnilCookie.isOn('ads')).toEqual(false);
-        expect(cnilCookie.isOn('player')).toEqual(false);
-        expect(cnilCookie.isOn('not exist')).toEqual(false);
+            expect(cnilCookie.isOn('ads')).toEqual(false);
+            expect(cnilCookie.isOn('player')).toEqual(false);
+            expect(cnilCookie.isOn('not exist')).toEqual(false);
+        });
     });
 });
