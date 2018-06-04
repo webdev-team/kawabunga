@@ -9,6 +9,9 @@ exports.isProd = function () {
 exports.isLab = function () {
     return !exports.isProd();
 };
+exports.isAppwebview = function () {
+    return window.appwebview == 'true';
+};
 exports.isSecured = function () {
     return location && location.protocol === 'https:';
 };

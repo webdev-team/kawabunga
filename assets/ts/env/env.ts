@@ -21,6 +21,10 @@ export let isLab = function(): boolean {
     return !isProd();
 };
 
+export let isAppwebview = function (): boolean {
+    return window.appwebview == 'true';
+};
+
 export let isSecured = function(): boolean {
     return location && location.protocol === 'https:';
 };
