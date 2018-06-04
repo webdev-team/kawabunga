@@ -1,9 +1,10 @@
 
 declare global {
     interface Window {
-        site: any;
-        staticRoot; any;
-        env: any; // lab or prod
+        site: string;
+        contextRoot: string
+        staticRoot: string;
+        env: string; // lab or prod
         appwebview: string; // 'true' if in rtl mobile app
         flags: Array<string>;
     }
