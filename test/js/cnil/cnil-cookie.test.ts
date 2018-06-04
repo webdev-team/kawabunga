@@ -1,24 +1,58 @@
-import {CnilCategories, cnilCookie} from "../../../assets/ts/cnil/cnil-cookie";
+import {CnilCategories, cnilCookie, COOKIE_ID_NAME} from "../../../assets/ts/cnil/cnil-cookie";
 import {COOKIE_NAME, PLAYER, ANALYTICS} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
+import * as random from '../../../assets/ts/utils/random';
+
+let uuidSpy = jest.spyOn(random, "uuid");
 
 describe('cnil-cookie.ts', () => {
     beforeEach(() => {
         cookies.remove(COOKIE_NAME);
+        cookies.remove(COOKIE_ID_NAME);
     });
 
-    describe('class CnilCookie', () => {
+    describe('ensureId', () => {
+        test('it should write cookie with generated id', () => {
+            uuidSpy.mockReturnValue('123456');
 
-        test('setCategory()', () => {
-            cnilCookie.setCategory(PLAYER, true);
-            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+            cnilCookie.ensureId();
 
-            cookies.remove(COOKIE_NAME);
-            cnilCookie.setCategory(ANALYTICS, false);
-            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":true}');
-            cnilCookie.setCategory(PLAYER, false);
-            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}');
+            expect(cookies.get(COOKIE_ID_NAME)).toBe('123456');
         });
+
+        test('it should not overwrite existing cookie', () => {
+            cookies.set(COOKIE_ID_NAME, 'existing')
+            uuidSpy.mockReturnValue('123456');
+
+            cnilCookie.ensureId();
+
+            expect(cookies.get(COOKIE_ID_NAME)).toBe('existing');
+        });
+    });
+
+    describe('getId', () => {
+        test('it should read existing cookie', () => {
+            cookies.set(COOKIE_ID_NAME, 'existing')
+
+            expect(cnilCookie.getId()).toBe('existing');
+        });
+
+        test('it should ensure cookie is existing', () => {
+            uuidSpy.mockReturnValue('123456');
+
+            expect(cnilCookie.getId()).toBe('123456');
+        });
+    });
+
+    test('setCategory()', () => {
+        cnilCookie.setCategory(PLAYER, true);
+        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true,"player":true}');
+
+        cookies.remove(COOKIE_NAME);
+        cnilCookie.setCategory(ANALYTICS, false);
+        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":true}');
+        cnilCookie.setCategory(PLAYER, false);
+        expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}');
     });
 
     test('should write cookie value', () => {
