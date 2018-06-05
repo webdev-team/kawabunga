@@ -51,7 +51,9 @@ export namespace cnilCookie {
     export function writeValues(categories: CnilCategories, actionType?: string): void {
         cookies.set(COOKIE_NAME, JSON.stringify(categories), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
 
-        cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
+        if (env.getSite() == 'www.rtl2.fr') {
+            cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
+        }
     }
 
     export function setCategory(category: string, value: boolean, actionType?: string): void {
