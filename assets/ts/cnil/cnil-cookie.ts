@@ -27,6 +27,12 @@ export const COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
 export const ALL_ON : CnilCategories = {ads: true, analytics: true, social: true, player: true};
 export const ALL_OFF : CnilCategories = {ads: false, analytics: false, social: false, player: false};
 
+// action types
+export const BANNER_ACTION = 'banner';
+export const CLICK_ACTION = 'click';
+export const SCROLL_ACTION = 'scroll';
+export const PREFERENCES_ACTION = 'preferences';
+
 export namespace cnilCookie {
     export function ensureId(): void {
         if (!cookies.get(COOKIE_ID_NAME)) {

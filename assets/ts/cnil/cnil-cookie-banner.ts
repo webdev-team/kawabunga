@@ -1,4 +1,4 @@
-import {cnilCookie, ALL_ON} from './cnil-cookie';
+import {cnilCookie, ALL_ON, BANNER_ACTION} from './cnil-cookie';
 
 export type OkCallback = () => void;
 export interface BannerOptions {
@@ -27,9 +27,9 @@ export namespace cnilCookieBanner {
             let category = e.target.getAttribute('data-category');
 
             if (category) {
-                cnilCookie.setCategory(category, true, 'banner');
+                cnilCookie.setCategory(category, true, BANNER_ACTION);
             } else {
-                cnilCookie.writeValues(ALL_ON, 'banner');
+                cnilCookie.writeValues(ALL_ON, BANNER_ACTION);
             }
 
             if ($banner) {

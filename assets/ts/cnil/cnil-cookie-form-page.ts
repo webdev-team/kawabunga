@@ -1,5 +1,5 @@
 import * as $ from '../../js/utils/dom';
-import {cnilCookie} from './cnil-cookie';
+import {cnilCookie, PREFERENCES_ACTION} from './cnil-cookie';
 
 export namespace cnilCookieFormPage {
     export function init() {
@@ -10,7 +10,7 @@ export namespace cnilCookieFormPage {
 
             $(`input[type=checkbox]`).forEach((input) => {
                 input.addEventListener('change', () => {
-                    cnilCookie.writeValues(getValue());
+                    cnilCookie.writeValues(getValue(), PREFERENCES_ACTION);
                 });
             });
         }
