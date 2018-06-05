@@ -7,6 +7,7 @@ var random = require("../utils/random");
 var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
 var cnil_log_service_1 = require("./cnil-log-service");
 var cnil_log_1 = require("./cnil-log");
+var observable_1 = require("../utils/observable");
 // categories
 exports.ADS = 'ads';
 exports.ANALYTICS = 'analytics';
@@ -16,6 +17,7 @@ exports.COOKIE_NAME = 'cnil-cookie-v2';
 exports.COOKIE_ID_NAME = 'cnil-cookie-id';
 var ONE_YEAR = 365;
 exports.COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
+exports.COOKIE_ID_DURATION = 10 * ONE_YEAR;
 exports.ALL_ON = { ads: true, analytics: true, social: true, player: true };
 exports.ALL_OFF = { ads: false, analytics: false, social: false, player: false };
 // action types
@@ -25,9 +27,10 @@ exports.SCROLL_ACTION = 'scroll';
 exports.PREFERENCES_ACTION = 'preferences';
 var cnilCookie;
 (function (cnilCookie) {
+    var observable = new observable_1.Observable();
     function ensureId() {
         if (!cookies.get(exports.COOKIE_ID_NAME)) {
-            cookies.set(exports.COOKIE_ID_NAME, random.uuid(), { expires: 10 * ONE_YEAR, path: '/', domain: env.getCookieDomain() });
+            cookies.set(exports.COOKIE_ID_NAME, random.uuid(), { expires: exports.COOKIE_ID_DURATION, path: '/', domain: env.getCookieDomain() });
         }
     }
     cnilCookie.ensureId = ensureId;
@@ -43,6 +46,7 @@ var cnilCookie;
         if (env.getSite() == 'www.rtl2.fr') {
             cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
         }
+        observable.fire(readValues());
     }
     cnilCookie.writeValues = writeValues;
     function setCategory(category, value, actionType) {
@@ -79,4 +83,8 @@ var cnilCookie;
         return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.isCnilSafe();
     }
     cnilCookie.isActive = isActive;
+    function onChange(handler) {
+        observable.observe(handler);
+    }
+    cnilCookie.onChange = onChange;
 })(cnilCookie = exports.cnilCookie || (exports.cnilCookie = {}));

@@ -11,6 +11,7 @@ export declare const PLAYER = "player";
 export declare const COOKIE_NAME = "cnil-cookie-v2";
 export declare const COOKIE_ID_NAME = "cnil-cookie-id";
 export declare const COOKIE_DURATION: number;
+export declare const COOKIE_ID_DURATION: number;
 export declare const ALL_ON: CnilCategories;
 export declare const ALL_OFF: CnilCategories;
 export declare const BANNER_ACTION = "banner";
@@ -26,4 +27,5 @@ export declare namespace cnilCookie {
     function hasValidCookie(): boolean;
     function isOn(category: string): any;
     function isActive(): boolean;
+    function onChange(handler: (categories: CnilCategories) => void): void;
 }
