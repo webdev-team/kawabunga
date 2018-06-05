@@ -18,6 +18,11 @@ var ONE_YEAR = 365;
 exports.COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
 exports.ALL_ON = { ads: true, analytics: true, social: true, player: true };
 exports.ALL_OFF = { ads: false, analytics: false, social: false, player: false };
+// action types
+exports.BANNER_ACTION = 'banner';
+exports.CLICK_ACTION = 'click';
+exports.SCROLL_ACTION = 'scroll';
+exports.PREFERENCES_ACTION = 'preferences';
 var cnilCookie;
 (function (cnilCookie) {
     function ensureId() {
@@ -35,7 +40,9 @@ var cnilCookie;
     cnilCookie.getId = getId;
     function writeValues(categories, actionType) {
         cookies.set(exports.COOKIE_NAME, JSON.stringify(categories), { expires: exports.COOKIE_DURATION, path: '/', domain: env.getCookieDomain() });
-        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
+        if (env.getSite() == 'www.rtl2.fr') {
+            cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
+        }
     }
     cnilCookie.writeValues = writeValues;
     function setCategory(category, value, actionType) {

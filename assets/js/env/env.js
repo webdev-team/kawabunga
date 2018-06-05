@@ -18,6 +18,9 @@ exports.isSecured = function () {
 exports.getStaticRoot = function () {
     return window.staticRoot;
 };
+exports.getContextRoot = function () {
+    return window.contextRoot;
+};
 exports.getCookieDomain = function (hostname) {
     hostname = hostname || window.location.hostname;
     if (hostname == 'localhost' || hostname == '0.0.0.0') {

@@ -10,7 +10,7 @@ var cnilCookieFormPage;
             initFormWithCookie();
             $("input[type=checkbox]").forEach(function (input) {
                 input.addEventListener('change', function () {
-                    cnil_cookie_1.cnilCookie.writeValues(getValue());
+                    cnil_cookie_1.cnilCookie.writeValues(getValue(), cnil_cookie_1.PREFERENCES_ACTION);
                 });
             });
         }

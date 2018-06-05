@@ -13,6 +13,10 @@ export declare const COOKIE_ID_NAME = "cnil-cookie-id";
 export declare const COOKIE_DURATION: number;
 export declare const ALL_ON: CnilCategories;
 export declare const ALL_OFF: CnilCategories;
+export declare const BANNER_ACTION = "banner";
+export declare const CLICK_ACTION = "click";
+export declare const SCROLL_ACTION = "scroll";
+export declare const PREFERENCES_ACTION = "preferences";
 export declare namespace cnilCookie {
     function ensureId(): void;
     function getId(): string;
