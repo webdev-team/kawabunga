@@ -15,6 +15,8 @@ describe('cnil-cookie', () => {
         cookies.remove(COOKIE_ID_NAME);
 
         saveSpy.mockClear();
+
+        window.site = null;
     });
 
     describe('ensureId', () => {
@@ -66,6 +68,7 @@ describe('cnil-cookie', () => {
 
         it('should save a log', () => {
             cookies.set(COOKIE_ID_NAME, 'existing');
+            window.site = 'www.rtl2.fr';
 
             cnilCookie.setCategory(ANALYTICS, false, 'scroll');
 
@@ -83,6 +86,7 @@ describe('cnil-cookie', () => {
 
         it('should save a log', () => {
             cookies.set(COOKIE_ID_NAME, 'existing');
+            window.site = 'www.rtl2.fr';
 
             let cnilCategories: CnilCategories = {ads: true, analytics: false, social: true, player: false};
             cnilCookie.writeValues(cnilCategories, 'form');
