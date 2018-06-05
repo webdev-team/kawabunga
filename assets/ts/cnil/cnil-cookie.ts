@@ -5,6 +5,7 @@ import * as random from '../utils/random';
 import {cnilCookieAutoUpdater} from "./cnil-cookie-auto-updater";
 import {cnilLogService} from './cnil-log-service';
 import {CnilLog} from './cnil-log';
+import {Observable} from '../utils/observable';
 
 export interface CnilCategories {
     ads: boolean;
@@ -23,6 +24,7 @@ export const COOKIE_NAME = 'cnil-cookie-v2';
 export const COOKIE_ID_NAME = 'cnil-cookie-id';
 const ONE_YEAR = 365;
 export const COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
+export const COOKIE_ID_DURATION = 10 * ONE_YEAR;
 
 export const ALL_ON : CnilCategories = {ads: true, analytics: true, social: true, player: true};
 export const ALL_OFF : CnilCategories = {ads: false, analytics: false, social: false, player: false};
@@ -34,9 +36,11 @@ export const SCROLL_ACTION = 'scroll';
 export const PREFERENCES_ACTION = 'preferences';
 
 export namespace cnilCookie {
+    let observable = new Observable<CnilCategories>();
+
     export function ensureId(): void {
         if (!cookies.get(COOKIE_ID_NAME)) {
-            cookies.set(COOKIE_ID_NAME, random.uuid(), {expires: 10 * ONE_YEAR, path: '/', domain: env.getCookieDomain()})
+            cookies.set(COOKIE_ID_NAME, random.uuid(), {expires: COOKIE_ID_DURATION, path: '/', domain: env.getCookieDomain()})
         }
     }
 
@@ -54,6 +58,8 @@ export namespace cnilCookie {
         if (env.getSite() == 'www.rtl2.fr') {
             cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
         }
+
+        observable.fire(readValues());
     }
 
     export function setCategory(category: string, value: boolean, actionType?: string): void {
@@ -89,5 +95,9 @@ export namespace cnilCookie {
 
     export function isActive() {
         return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieAutoUpdater.isCnilSafe();
+    }
+
+    export function onChange(handler: (categories: CnilCategories) => void) {
+        observable.observe(handler);
     }
 }

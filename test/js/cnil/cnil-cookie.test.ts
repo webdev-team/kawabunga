@@ -129,4 +129,17 @@ describe('cnil-cookie', () => {
             expect(cnilCookie.isOn('not exist')).toEqual(false);
         });
     });
+
+    describe('onChange', () => {
+        it('should call handler on change', (done) => {
+            cnilCookie.onChange(categories => {
+                expect(categories.social).toBeTruthy();
+                expect(categories.analytics).toBeFalsy();
+
+                done();
+            });
+
+            cnilCookie.setCategory(ANALYTICS, false, 'scroll');
+        });
+    });
 });
