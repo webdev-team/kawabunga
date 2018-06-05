@@ -1,10 +1,10 @@
 
 declare global {
     interface Window {
+        env: string; // lab or prod
         site: string;
         contextRoot: string
         staticRoot: string;
-        env: string; // lab or prod
         appwebview: string; // 'true' if in rtl mobile app
         flags: Array<string>;
     }
@@ -32,6 +32,10 @@ export let isSecured = function(): boolean {
 
 export let getStaticRoot = function() {
     return window.staticRoot;
+};
+
+export let getContextRoot = function() {
+    return window.contextRoot;
 };
 
 export let getCookieDomain = function (hostname?: string) {
