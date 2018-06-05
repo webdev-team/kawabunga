@@ -5,23 +5,41 @@ import {cnilCookieBanner} from "./cnil-cookie-banner";
 import * as env from '../env/env';
 
 export namespace cnilCookieAutoUpdater {
+    export let consumed = false;
+
+    function onClick(e) {
+        if (consumed) {
+            return;
+        }
+
+        let $anchor = $(e.target).parent('A');
+
+        if ($anchor.length == 1 && $anchor[0].href.indexOf(env.getSite()) !== -1) {
+            cnilCookie.writeValues(ALL_ON, CLICK_ACTION);
+        }
+    }
+
+    function onScroll() {
+        if (consumed) {
+            return;
+        }
+
+        if (window.pageYOffset > window.innerHeight) {
+            cnilCookie.writeValues(ALL_ON, SCROLL_ACTION);
+            cnilCookieBanner.hideMainBanner();
+        }
+    }
+
     export function init() {
         if (cnilCookie.isActive()) {
+            $(document.body).on('click', 'a:not([data-cnil="1"])', onClick);
 
-            $(document.body).on('click', 'a:not([data-cnil="1"])', e => {
-                let $anchor = $(e.target).parent('A');
+            window.addEventListener('scroll', debounce(() => onScroll(), 300));
 
-                if ($anchor.length == 1 && $anchor[0].href.indexOf(env.getSite()) !== -1) {
-                    cnilCookie.writeValues(ALL_ON, CLICK_ACTION);
-                }
-            });
-
-            window.addEventListener('scroll', debounce(() => {
-                if (window.pageYOffset > window.innerHeight) {
-                    cnilCookie.writeValues(ALL_ON, SCROLL_ACTION);
-                    cnilCookieBanner.hideMainBanner();
-                }
-            }, 500));
+            cnilCookie.onChange(() => {
+                // cookie has been written (through this module code or even banner or else)
+                consumed = true;
+            })
         }
     }
 

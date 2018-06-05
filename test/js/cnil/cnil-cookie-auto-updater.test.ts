@@ -20,7 +20,6 @@ describe('cnil-cookie-auto-updater.ts', () => {
 
         beforeEach(() => {
             cookies.remove(COOKIE_NAME);
-            writeValuesSpy.mockClear();
 
             testEnv.setHTML(`
                 <div id="main-wrapper">
@@ -35,12 +34,18 @@ describe('cnil-cookie-auto-updater.ts', () => {
             `);
         });
 
+        afterEach(() => {
+            cnilCookieAutoUpdater.consumed = false;
+
+            writeValuesSpy.mockClear();
+        })
+
         test('Should create cookie when an internal link clicked', () => {
             expect(cnilCookie.hasValidCookie()).toBe(false);
 
             $('#internal-link')[0].click();
 
-            expect(cnilCookie.hasValidCookie()). toBe(true);
+            expect(cnilCookie.hasValidCookie()).toBe(true);
             expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -49,7 +54,7 @@ describe('cnil-cookie-auto-updater.ts', () => {
 
             $('#internal-link-span')[0].click();
 
-            expect(cnilCookie.hasValidCookie()). toBe(true);
+            expect(cnilCookie.hasValidCookie()).toBe(true);
             expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -67,6 +72,16 @@ describe('cnil-cookie-auto-updater.ts', () => {
 
             expect(cnilCookie.hasValidCookie()).toBe(false);
             expect(writeValuesSpy).not.toHaveBeenCalled();
+        });
+
+        it('should only write cookie once', () => {
+            expect(cnilCookie.hasValidCookie()).toBe(false);
+
+            $('#internal-link')[0].click();
+            $('#internal-link')[0].click();
+
+            expect(cnilCookie.hasValidCookie()).toBe(true);
+            expect(writeValuesSpy).toHaveBeenCalledTimes(1);
         });
     });
 
