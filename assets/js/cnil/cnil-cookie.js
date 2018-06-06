@@ -43,9 +43,7 @@ var cnilCookie;
     cnilCookie.getId = getId;
     function writeValues(categories, actionType) {
         cookies.set(exports.COOKIE_NAME, JSON.stringify(categories), { expires: exports.COOKIE_DURATION, path: '/', domain: env.getCookieDomain() });
-        if (env.getSite() == 'www.rtl2.fr') {
-            cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
-        }
+        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
         observable.fire(readValues());
     }
     cnilCookie.writeValues = writeValues;
