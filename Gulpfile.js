@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var webserver = require('gulp-webserver');
 var autoprefixer = require('gulp-autoprefixer');
-var runSequence = require('run-sequence');
 var del = require('del');
 var iconfont = require('gulp-iconfont');
 var consolidate = require("gulp-consolidate");
@@ -13,14 +12,14 @@ var spritesmith = require('gulp.spritesmith');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var glob = require('glob');
-var eventStream = require('event-stream');
+var mergeStream = require('merge-stream');
 var watchify = require('watchify');
 var _ = require('lodash');
 var flatten = require('gulp-flatten');
-var gutil = require('gulp-util');
 var ejs = require('gulp-ejs');
 var replace = require('gulp-replace');
 var tsify = require('tsify');
+var log = require('fancy-log');
 
 var package = require('./package.json');
 require('gulp-rtl-publish')(gulp, package);
@@ -42,28 +41,28 @@ gulp.task('html', function () {
     return gulp.src(['sandbox/**/*.html', '!sandbox/**/_*.html'])
         .pipe(ejs({}))
         .on('error', function(err) {
-            gutil.log(err);
+            log(err);
             this.emit('end'); // end this stream
         })
         .pipe(gulp.dest('build/sandbox'));
 });
 
-gulp.task('js', function (done) {
-    bundleAllJsFile(done, {watchify: false});
+gulp.task('js', function () {
+    return bundleAllJsFile({watchify: false});
 });
 
-gulp.task('js-watchify', function (done) {
-    bundleAllJsFile(done, {watchify: true});
+gulp.task('js-watchify', function () {
+    return bundleAllJsFile({watchify: true});
 });
 
-var bundleAllJsFile = function(done, options) {
+var bundleAllJsFile = function(options) {
     var files = glob.sync('sandbox/js/*.js');
 
     var tasks = files.map(function(file) {
         return bundleJsFile(file, options)
     });
 
-    eventStream.merge(tasks).on('end', done);
+    return mergeStream(tasks);
 };
 
 var bundleJsFile = function(file, options) {
@@ -81,15 +80,15 @@ var bundleJsFile = function(file, options) {
     }
 
     bundler.on('update', bundle);
-    bundler.on('log', gutil.log);
+    bundler.on('log', log);
 
     bundler = bundler.plugin(tsify);
 
     function bundle() {
-        gutil.log('building js file ' + file);
+        log('building js file ' + file);
 
         var task = bundler.bundle()
-            .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+            .on('error', log)
             .pipe(source(file))
             .pipe(flatten());
 
@@ -112,7 +111,7 @@ gulp.task('sprite', function () {
             retinaImgPath: '../img/sprite-partners@2x.png'
         }));
 
-    return eventStream.merge(
+    return mergeStream(
         spriteData.img.pipe(gulp.dest('assets/img')),
         spriteData.css
             .pipe(replace('.icon-', '.sprite-partner-'))
@@ -136,8 +135,6 @@ gulp.task('font', function () {
     return gulp.src(['assets/font/*.*'])
         .pipe(gulp.dest('build/sandbox/font/'))
 });
-
-gulp.task('fonticon', ['fonticon-standard', 'fonticon-amp']);
 
 gulp.task('fonticon-standard', function () {
     return buildFontIcon({name: 'Kawabunga-Icon', scssFile: '_fonticon.scss'}, [
@@ -207,6 +204,8 @@ gulp.task('fonticon-amp', function () {
     ]);
 });
 
+gulp.task('fonticon', gulp.series('fonticon-standard', 'fonticon-amp'));
+
 var buildFontIcon = function(options, src) {
     return gulp.src(src)
         .pipe(iconfont({
@@ -233,9 +232,9 @@ var buildFontIcon = function(options, src) {
  */
 
 gulp.task('watch', function () {
-    gulp.watch(['sandbox/**/*.html', 'assets/**/*.html'], ['html']);
-    gulp.watch('sandbox/img/**', ['img']);
-    gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], ['css']);
+    gulp.watch(['sandbox/**/*.html', 'assets/**/*.html'], gulp.series('html'));
+    gulp.watch('sandbox/img/**', gulp.series('img'));
+    gulp.watch(['sandbox/**/*.scss', 'assets/**/*.scss'], gulp.series('css'));
 });
 
 /*
@@ -263,11 +262,9 @@ gulp.task('clean', function () {
     return del(['build']);
 });
 
-gulp.task('compile', ['img', 'svg', 'css', 'font', 'sprite', 'js', 'html']);
+gulp.task('compile', gulp.series('img', 'svg', 'css', 'font', 'sprite', 'js', 'html'));
 
-gulp.task('build', function(cb) {
-    runSequence('clean', 'compile', cb);
-});
+gulp.task('build', gulp.series('clean', 'compile'));
 
-gulp.task('work', ['img', 'svg', 'css', 'font', 'sprite', 'js-watchify', 'html', 'webserver', 'watch']);
-gulp.task('default', ['work']);
+gulp.task('work', gulp.series('img', 'svg', 'css', 'font', 'sprite', 'js-watchify', 'html', 'webserver', 'watch'));
+gulp.task('default', gulp.series('work'));
