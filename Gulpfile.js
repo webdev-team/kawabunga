@@ -1,28 +1,28 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var webserver = require('gulp-webserver');
-var autoprefixer = require('gulp-autoprefixer');
-var del = require('del');
-var iconfont = require('gulp-iconfont');
-var consolidate = require("gulp-consolidate");
-var rename = require('gulp-rename');
-var base64 = require('gulp-base64');
-var imagemin = require('gulp-imagemin');
-var spritesmith = require('gulp.spritesmith');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var glob = require('glob');
-var mergeStream = require('merge-stream');
-var watchify = require('watchify');
-var _ = require('lodash');
-var flatten = require('gulp-flatten');
-var ejs = require('gulp-ejs');
-var replace = require('gulp-replace');
-var tsify = require('tsify');
-var log = require('fancy-log');
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let webserver = require('gulp-webserver');
+let autoprefixer = require('gulp-autoprefixer');
+let del = require('del');
+let iconfont = require('gulp-iconfont');
+let consolidate = require("gulp-consolidate");
+let rename = require('gulp-rename');
+let base64 = require('gulp-base64');
+let imagemin = require('gulp-imagemin');
+let spritesmith = require('gulp.spritesmith');
+let browserify = require('browserify');
+let source = require('vinyl-source-stream');
+let glob = require('glob');
+let mergeStream = require('merge-stream');
+let watchify = require('watchify');
+let _ = require('lodash');
+let flatten = require('gulp-flatten');
+let ejs = require('gulp-ejs');
+let replace = require('gulp-replace');
+let tsify = require('tsify');
+let log = require('fancy-log');
 
-var package = require('./package.json');
-require('gulp-rtl-publish')(gulp, package);
+let packageJson = require('./package.json');
+require('gulp-rtl-publish')(gulp, packageJson);
 
 gulp.task('css', function () {
     return gulp.src('sandbox/scss/*.scss')
@@ -55,25 +55,25 @@ gulp.task('js-watchify', function () {
     return bundleAllJsFile({watchify: true});
 });
 
-var bundleAllJsFile = function(options) {
-    var files = glob.sync('sandbox/js/*.js');
+let bundleAllJsFile = function(options) {
+    let files = glob.sync('sandbox/js/*.js');
 
-    var tasks = files.map(function(file) {
+    let tasks = files.map(function(file) {
         return bundleJsFile(file, options)
     });
 
     return mergeStream(tasks);
 };
 
-var bundleJsFile = function(file, options) {
-    var customOpts = {
+let bundleJsFile = function(file, options) {
+    let customOpts = {
         entries: [file],
         debug: true,
         extensions: ['.js', '.es6']
     };
 
-    var opts = _.assign({}, watchify.args, customOpts);
-    var bundler = browserify(opts);
+    let opts = _.assign({}, watchify.args, customOpts);
+    let bundler = browserify(opts);
 
     if (options.watchify) {
         bundler = watchify(bundler);
@@ -87,7 +87,7 @@ var bundleJsFile = function(file, options) {
     function bundle() {
         log('building js file ' + file);
 
-        var task = bundler.bundle()
+        let task = bundler.bundle()
             .on('error', log)
             .pipe(source(file))
             .pipe(flatten());
@@ -99,7 +99,7 @@ var bundleJsFile = function(file, options) {
 };
 
 gulp.task('sprite', function () {
-    var spriteData = gulp.src('assets/sprite/partners/*.png')
+    let spriteData = gulp.src('assets/sprite/partners/*.png')
         .pipe(spritesmith({
             cssName: '_sprite-partners.scss',
             cssFormat: 'css_retina',
@@ -206,7 +206,7 @@ gulp.task('fonticon-amp', function () {
 
 gulp.task('fonticon', gulp.series('fonticon-standard', 'fonticon-amp'));
 
-var buildFontIcon = function(options, src) {
+let buildFontIcon = function(options, src) {
     return gulp.src(src)
         .pipe(iconfont({
             fontName: options.name,
