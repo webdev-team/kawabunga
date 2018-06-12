@@ -6,7 +6,8 @@
     "allowUnreachableCode": true,
     "outDir": "assets/js",
     "listEmittedFiles": true,
-    "declaration": true
+    "declaration": true,
+    "lib": ["dom", "es5", "ScriptHost", "es2015.promise"]
   },
   "include": [
     "assets/ts/**/*.ts"

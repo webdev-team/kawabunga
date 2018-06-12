@@ -4,7 +4,7 @@
 
 import * as scriptLoader from '../../../assets/js/utils/script-loader.js';
 
-let scriptSrc = 'http://static.rtl.fr/versions/www/3.0.263/js/header_partner.min.js';
+let scriptSrc = 'http://static.rtl.fr/versions/www/6.0.672/js/debug.js';
 
 // ..
 // Unit Tests
@@ -40,7 +40,7 @@ describe('script-loader.js', () => {
             return scriptLoader.ensureLoaded(scriptSrc).then(function() {
                 let script = document.querySelector('script[data-loaded=true]') as HTMLScriptElement;
 
-                return expect(script.src).toEqual(scriptSrc);
+                expect(script.src).toEqual(scriptSrc);
             });
         });
 

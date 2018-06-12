@@ -259,8 +259,8 @@ gulp.task('webserver', function () {
 
 // CUSTOM TASKS :
 
-gulp.task('clean', function (cb) {
-    del(['build'], cb);
+gulp.task('clean', function () {
+    return del(['build']);
 });
 
 gulp.task('compile', ['img', 'svg', 'css', 'font', 'sprite', 'js', 'html']);

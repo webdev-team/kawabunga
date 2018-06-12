@@ -20,25 +20,8 @@ describe('env', () => {
     });
 
     describe('isSecured()', () => {
-        afterEach(() => {
-            Object.defineProperty(window.location, 'protocol', {
-                writable: true,
-                value: 'http:'
-            });
-        });
-
         test('should no be secured in test env', () => {
             expect(env.isSecured()).toBe(false);
-        });
-
-        test('should be secured with https url', () => {
-            // update protocol
-            Object.defineProperty(window.location, 'protocol', {
-                writable: true,
-                value: 'https:'
-            });
-
-            expect(env.isSecured()).toBe(true);
         });
     });
 
