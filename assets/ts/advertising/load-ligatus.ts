@@ -8,7 +8,6 @@ export let init = function() {
     $('.js-async').forEach(function(item) {
         let type = item.getAttribute('data-type');
         let url = item.getAttribute('data-src');
-        debugger;
 
         if (type == "ligatus-script" && url) {
             scriptLoader.ensureLoaded(url)
