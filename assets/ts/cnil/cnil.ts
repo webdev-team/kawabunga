@@ -12,7 +12,8 @@ export namespace cnil {
     export let formPage = cnilCookieFormPage;
 
     export function v2Active() : boolean {
-        return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'funradio.fr' || cookies.get('cnil-cookie-mode') == 'v2';
+        // return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'funradio.fr' || cookies.get('cnil-cookie-mode') == 'v2';  TODO WEBDEV-3591 : remove and clean files when done
+        return true;
     }
 
     export function activateV2() : void {
@@ -37,7 +38,5 @@ if (window.location.search.indexOf('cnil-cookie-mode-v2') != -1) {
     cnil.activateV2();
 }
 
-if (cnil.v2Active()) {
-    cnilCookieAutoUpdater.init();
-    cnilCookieFormPage.init();
-}
+cnilCookieAutoUpdater.init();
+cnilCookieFormPage.init();

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var env = require("../env/env");
 var cookies = require("js-cookie");
 var cnil_cookie_1 = require("./cnil-cookie");
 var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
@@ -12,7 +11,8 @@ var cnil;
     cnil.banner = cnil_cookie_banner_1.cnilCookieBanner;
     cnil.formPage = cnil_cookie_form_page_1.cnilCookieFormPage;
     function v2Active() {
-        return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'funradio.fr' || cookies.get('cnil-cookie-mode') == 'v2';
+        // return env.getCookieDomain() == 'rtl2.fr' || env.getCookieDomain() == 'funradio.fr' || cookies.get('cnil-cookie-mode') == 'v2';  TODO WEBDEV-3591 : remove and clean files when done
+        return true;
     }
     cnil.v2Active = v2Active;
     function activateV2() {
@@ -35,7 +35,5 @@ var cnil;
 if (window.location.search.indexOf('cnil-cookie-mode-v2') != -1) {
     cnil.activateV2();
 }
-if (cnil.v2Active()) {
-    cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.init();
-    cnil_cookie_form_page_1.cnilCookieFormPage.init();
-}
+cnil_cookie_auto_updater_1.cnilCookieAutoUpdater.init();
+cnil_cookie_form_page_1.cnilCookieFormPage.init();

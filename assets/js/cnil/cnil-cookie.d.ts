@@ -25,7 +25,7 @@ export declare namespace cnilCookie {
     function setCategory(category: string, value: boolean, actionType?: string): void;
     function readValues(): CnilCategories;
     function hasValidCookie(): boolean;
-    function isOn(category: string): any;
+    function isOn(category: string): boolean;
     function isActive(): boolean;
     function onChange(handler: (categories: CnilCategories) => void): void;
 }

@@ -81,7 +81,7 @@ export namespace cnilCookie {
         return readValues() != null;
     }
 
-    export function isOn(category: string) {
+    export function isOn(category: string): boolean {
         let categories = readValues();
 
         if (categories) {
