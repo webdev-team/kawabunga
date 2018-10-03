@@ -48,6 +48,12 @@ export namespace cnilCookieBanner {
         }
     }
 
+    export function showMainBanner(): void {
+        if ($mainBanner) {
+            $mainBanner.css('display', '');
+        }
+    }
+
     function prependHTML(elParent, html): void {
         if (!elParent) {
             return;

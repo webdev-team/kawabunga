@@ -1,5 +1,4 @@
 
-import * as env from '../env/env';
 import * as cookies from 'js-cookie';
 import {cnilCookie} from './cnil-cookie';
 import {cnilCookieAutoUpdater} from './cnil-cookie-auto-updater';
