@@ -4,7 +4,7 @@ export {}; // this file needs to be a module
 
 declare global {
     interface Window {
-        __cmp: (command: string, parameter?: any, callback?: any) => void; // lab or prod
+        __cmp: (command: string, parameter?: any, callback?: any) => void;
     }
 }
 
@@ -19,8 +19,16 @@ export class VendorConsentData {
     hasGlobalScope: boolean;
 }
 
+export class VendorConsents {
+    metadata: string;
+    gpdrApplies: boolean;
+    hasGlobalScope: boolean;
+    purposeConsents: any;
+    vendorConsents: any;
+}
+
 // M6 Web vendor list
-export let vendors: VendorList = {
+export let m6Vendors: VendorList = {
     "vendorListVersion": 2,
     /* "lastUpdated": "2018-07-04T09:32:13.524Z", */
     "purposes": [{

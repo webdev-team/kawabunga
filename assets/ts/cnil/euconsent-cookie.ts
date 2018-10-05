@@ -6,7 +6,9 @@
 
 import { ConsentString } from 'consent-string/src';
 import * as cookies from 'js-cookie';
-import {vendors} from './iab';
+import {m6Vendors} from './iab';
+import {COOKIE_DURATION} from './cnil-cookie';
+import * as env from '../env/env';
 
 
 export namespace euconsent {
@@ -23,14 +25,26 @@ export namespace euconsent {
         consent.setCmpId(euconsent.CMP_ID);
         consent.setCmpVersion(CMP_VERSION);
         consent.setConsentLanguage('fr');
-        consent.setGlobalVendorList(vendors);
-        consent.setPurposesAllowed([1, 2, 3, 4, 5]);
-        consent.setVendorsAllowed(vendors.vendors.map(vendor => vendor.id));
+        consent.setGlobalVendorList(m6Vendors);
+        consent.setPurposesAllowed(allPurposeIds());
+        consent.setVendorsAllowed(allVendorIds());
 
         return consent;
     }
 
+    export function allPurposeIds() : number[] {
+        return m6Vendors.purposes.map(purpose => purpose.id);
+    }
+
+    export function allVendorIds() :number[] {
+        return m6Vendors.vendors.map(vendor => vendor.id)
+    }
+
     export namespace cookie {
+        export function exists() : boolean {
+            return read() != null;
+        }
+
         export function read() : ConsentString {
             let value = cookies.get(COOKIE_NAME);
 
@@ -38,7 +52,7 @@ export namespace euconsent {
         }
 
         export function write(consent: ConsentString) : void {
-            cookies.set(COOKIE_NAME, consent.getConsentString());
+            cookies.set(COOKIE_NAME, consent.getConsentString(), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
         }
     }
 }
