@@ -7,4 +7,5 @@ export declare namespace cnilCookieBanner {
     function init(options: BannerOptions, cb?: OkCallback): void;
     function injectBanner(options: BannerOptions, cb?: OkCallback): void;
     function hideMainBanner(): void;
+    function showMainBanner(): void;
 }

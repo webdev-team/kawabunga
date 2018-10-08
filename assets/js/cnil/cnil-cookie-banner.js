@@ -37,6 +37,12 @@ var cnilCookieBanner;
         }
     }
     cnilCookieBanner.hideMainBanner = hideMainBanner;
+    function showMainBanner() {
+        if ($mainBanner) {
+            $mainBanner.css('display', '');
+        }
+    }
+    cnilCookieBanner.showMainBanner = showMainBanner;
     function prependHTML(elParent, html) {
         if (!elParent) {
             return;
