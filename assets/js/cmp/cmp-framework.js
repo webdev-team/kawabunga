@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var vendor_list_1 = require("./vendor-list");
 var euconsent_cookie_1 = require("./euconsent-cookie");
 var cnil_1 = require("../cnil/cnil");
-var env = require("../env/env");
 var PingReturn = /** @class */ (function () {
     function PingReturn() {
     }
@@ -83,30 +82,24 @@ function onCnilCategoriesChange(categories) {
     euconsent_cookie_1.euconsent.cookie.write(consent);
 }
 exports.onCnilCategoriesChange = onCnilCategoriesChange;
-if (env.isFlag("cmp")) {
-    window.__cmp = function (command, parameter, callback) {
-        if (parameter === void 0) { parameter = null; }
-        if (callback === void 0) { callback = null; }
-        switch (command) {
-            case 'ping':
-                ping(callback);
-                break;
-            case 'getVendorConsents':
-                getVendorConsents(parameter, callback);
-                break;
-            case 'getConsentData':
-                getConsentData(parameter, callback);
-                break;
-            case 'showConsentTool':
-                cnil_1.cnil.banner.showMainBanner();
-                break;
-            default:
-                console.error('unsupported __cmp command');
-        }
-    };
-    // init euconsent cookie with cnil cookie if euconsent wasn't there
-    if (cnil_1.cnil.cookie.hasValidCookie() && !euconsent_cookie_1.euconsent.cookie.exists()) {
-        onCnilCategoriesChange(cnil_1.cnil.cookie.readValues());
+function __cmp(command, parameter, callback) {
+    if (parameter === void 0) { parameter = null; }
+    if (callback === void 0) { callback = null; }
+    switch (command) {
+        case 'ping':
+            ping(callback);
+            break;
+        case 'getVendorConsents':
+            getVendorConsents(parameter, callback);
+            break;
+        case 'getConsentData':
+            getConsentData(parameter, callback);
+            break;
+        case 'showConsentTool':
+            cnil_1.cnil.banner.showMainBanner();
+            break;
+        default:
+            console.error('unsupported __cmp command');
     }
-    cnil_1.cnil.cookie.onChange(onCnilCategoriesChange);
 }
+exports.__cmp = __cmp;

@@ -1,14 +1,7 @@
 import {m6Vendors} from './vendor-list';
 import {euconsent} from './euconsent-cookie';
 import {cnil} from '../cnil/cnil';
-import * as env from '../env/env';
 import {CnilCategories} from '../cnil/cnil-cookie';
-
-declare global {
-    interface Window {
-        __cmp: (command: string, parameter?: any, callback?: any) => void;
-    }
-}
 
 export class PingReturn {
     gpdrAppliesGlobaly: boolean;
@@ -103,30 +96,21 @@ export function onCnilCategoriesChange(categories: CnilCategories) {
     euconsent.cookie.write(consent);
 }
 
-if (env.isFlag("cmp")) {
-    window.__cmp = function (command, parameter = null, callback = null) {
-        switch (command) {
-            case 'ping':
-                ping(callback);
-                break;
-            case 'getVendorConsents':
-                getVendorConsents(parameter, callback);
-                break;
-            case 'getConsentData':
-                getConsentData(parameter, callback);
-                break;
-            case 'showConsentTool':
-                cnil.banner.showMainBanner();
-                break;
-            default:
-                console.error('unsupported __cmp command');
-        }
+export function __cmp(command, parameter = null, callback = null) {
+    switch (command) {
+        case 'ping':
+            ping(callback);
+            break;
+        case 'getVendorConsents':
+            getVendorConsents(parameter, callback);
+            break;
+        case 'getConsentData':
+            getConsentData(parameter, callback);
+            break;
+        case 'showConsentTool':
+            cnil.banner.showMainBanner();
+            break;
+        default:
+            console.error('unsupported __cmp command');
     }
-
-    // init euconsent cookie with cnil cookie if euconsent wasn't there
-    if (cnil.cookie.hasValidCookie() && !euconsent.cookie.exists()) {
-        onCnilCategoriesChange(cnil.cookie.readValues());
-    }
-
-    cnil.cookie.onChange(onCnilCategoriesChange);
 }
