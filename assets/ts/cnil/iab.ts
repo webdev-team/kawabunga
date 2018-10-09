@@ -1,4 +1,4 @@
-import {VendorList} from 'consent-string/src';
+import { VendorList } from 'consent-string';
 
 export {}; // this file needs to be a module
 

@@ -1,10 +1,4 @@
-/**
- * https://github.com/InteractiveAdvertisingBureau/Consent-String-SDK-JS has not been released with correct typings yet
- * See https://github.com/InteractiveAdvertisingBureau/Consent-String-SDK-JS/issues/21
- * Once release import may change
- */
-
-import { ConsentString } from 'consent-string/src';
+import {ConsentString} from 'consent-string';
 import * as cookies from 'js-cookie';
 import {m6Vendors} from './iab';
 import {COOKIE_DURATION} from './cnil-cookie';

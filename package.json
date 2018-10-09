@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "consent-string": "https://github.com/InteractiveAdvertisingBureau/Consent-String-SDK-JS#d1931476bccb83d615806f62f0eda5eb9010b608",
+    "consent-string": "git+ssh://git@github.com/webdev-team/Consent-String-SDK-JS#1.2.4-patch1",
     "include-media": "^1.4.8",
     "js-cookie": "^2.2.0",
     "promise": "^8.0.1",

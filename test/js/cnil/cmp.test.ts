@@ -1,9 +1,8 @@
 import {getConsentData, getVendorConsents, onCnilCategoriesChange, ping} from '../../../assets/ts/cnil/cmp';
-import {PingReturn, VendorConsentData, VendorConsents, m6Vendors} from '../../../assets/ts/cnil/iab';
+import {PingReturn, VendorConsentData, VendorConsents} from '../../../assets/ts/cnil/iab';
 import {euconsent} from '../../../assets/ts/cnil/euconsent-cookie';
 import {ALL_OFF} from '../../../assets/ts/cnil/cnil-cookie';
 import {ALL_ON} from '../../../assets/js/cnil/cnil-cookie';
-import allVendorsId = euconsent.allVendorIds;
 import allPurposesId = euconsent.allPurposeIds;
 
 let readSpy = jest.spyOn(euconsent.cookie, "read");
