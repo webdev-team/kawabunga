@@ -1,6 +1,5 @@
-import {getConsentData, getVendorConsents, onCnilCategoriesChange, ping} from '../../../assets/ts/cnil/cmp';
-import {PingReturn, VendorConsentData, VendorConsents} from '../../../assets/ts/cnil/iab';
-import {euconsent} from '../../../assets/ts/cnil/euconsent-cookie';
+import {PingReturn, VendorConsentData, VendorConsents, getConsentData, getVendorConsents, onCnilCategoriesChange, ping} from '../../../assets/ts/cmp/cmp-framework';
+import {euconsent} from '../../../assets/ts/cmp/euconsent-cookie';
 import {ALL_OFF} from '../../../assets/ts/cnil/cnil-cookie';
 import {ALL_ON} from '../../../assets/js/cnil/cnil-cookie';
 import allPurposesId = euconsent.allPurposeIds;
@@ -8,7 +7,7 @@ import allPurposesId = euconsent.allPurposeIds;
 let readSpy = jest.spyOn(euconsent.cookie, "read");
 let writeSpy = jest.spyOn(euconsent.cookie, "write");
 
-describe('cmp', () => {
+describe('cmp-framework', () => {
     beforeEach(() => {
         readSpy.mockClear();
         writeSpy.mockClear();

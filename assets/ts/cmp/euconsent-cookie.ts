@@ -1,7 +1,7 @@
 import {ConsentString} from 'consent-string';
 import * as cookies from 'js-cookie';
-import {m6Vendors} from './iab';
-import {COOKIE_DURATION} from './cnil-cookie';
+import {m6Vendors} from './vendor-list';
+import {COOKIE_DURATION} from '../cnil/cnil-cookie';
 import * as env from '../env/env';
 
 

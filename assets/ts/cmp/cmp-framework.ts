@@ -1,8 +1,33 @@
-import {m6Vendors, PingReturn, VendorConsentData, VendorConsents} from './iab';
+import {m6Vendors} from './vendor-list';
 import {euconsent} from './euconsent-cookie';
-import {cnil} from './cnil';
+import {cnil} from '../cnil/cnil';
 import * as env from '../env/env';
-import {CnilCategories} from './cnil-cookie';
+import {CnilCategories} from '../cnil/cnil-cookie';
+
+declare global {
+    interface Window {
+        __cmp: (command: string, parameter?: any, callback?: any) => void;
+    }
+}
+
+export class PingReturn {
+    gpdrAppliesGlobaly: boolean;
+    cmpLoaded: boolean;
+}
+
+export class VendorConsentData {
+    consentData: string;
+    gpdrApplies: boolean;
+    hasGlobalScope: boolean;
+}
+
+export class VendorConsents {
+    metadata: string;
+    gpdrApplies: boolean;
+    hasGlobalScope: boolean;
+    purposeConsents: any;
+    vendorConsents: any;
+}
 
 export function ping(callback: (pingReturn: PingReturn, success: boolean) => void)  {
     let result = new PingReturn();

@@ -1,4 +1,4 @@
-import {euconsent} from '../../../assets/ts/cnil/euconsent-cookie';
+import {euconsent} from '../../../assets/ts/cmp/euconsent-cookie';
 import * as cookies from 'js-cookie';
 
 describe('euconsent-cookie', () => {
