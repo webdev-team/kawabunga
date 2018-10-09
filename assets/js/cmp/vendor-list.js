@@ -1,23 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var PingReturn = /** @class */ (function () {
-    function PingReturn() {
-    }
-    return PingReturn;
-}());
-exports.PingReturn = PingReturn;
-var VendorConsentData = /** @class */ (function () {
-    function VendorConsentData() {
-    }
-    return VendorConsentData;
-}());
-exports.VendorConsentData = VendorConsentData;
-var VendorConsents = /** @class */ (function () {
-    function VendorConsents() {
-    }
-    return VendorConsents;
-}());
-exports.VendorConsents = VendorConsents;
 // M6 Web vendor list
 exports.m6Vendors = {
     "vendorListVersion": 2,

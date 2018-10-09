@@ -1,18 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var iab_1 = require("./iab");
+var vendor_list_1 = require("./vendor-list");
 var euconsent_cookie_1 = require("./euconsent-cookie");
-var cnil_1 = require("./cnil");
+var cnil_1 = require("../cnil/cnil");
 var env = require("../env/env");
+var PingReturn = /** @class */ (function () {
+    function PingReturn() {
+    }
+    return PingReturn;
+}());
+exports.PingReturn = PingReturn;
+var VendorConsentData = /** @class */ (function () {
+    function VendorConsentData() {
+    }
+    return VendorConsentData;
+}());
+exports.VendorConsentData = VendorConsentData;
+var VendorConsents = /** @class */ (function () {
+    function VendorConsents() {
+    }
+    return VendorConsents;
+}());
+exports.VendorConsents = VendorConsents;
 function ping(callback) {
-    var result = new iab_1.PingReturn();
+    var result = new PingReturn();
     result.gpdrAppliesGlobaly = true;
     result.cmpLoaded = true;
     callback(result, true);
 }
 exports.ping = ping;
 function getConsentData(consentStringVersion, callback) {
-    var result = new iab_1.VendorConsentData();
+    var result = new VendorConsentData();
     result.gpdrApplies = true;
     result.hasGlobalScope = true;
     result.consentData = euconsent_cookie_1.euconsent.cookie.read().getConsentString();
@@ -21,9 +39,9 @@ function getConsentData(consentStringVersion, callback) {
 exports.getConsentData = getConsentData;
 function getVendorConsents(vendorsId, callback) {
     var consent = euconsent_cookie_1.euconsent.cookie.read();
-    var result = new iab_1.VendorConsents();
+    var result = new VendorConsents();
     var purposeConsents = {};
-    for (var _i = 0, _a = iab_1.m6Vendors.purposes; _i < _a.length; _i++) {
+    for (var _i = 0, _a = vendor_list_1.m6Vendors.purposes; _i < _a.length; _i++) {
         var purpose = _a[_i];
         purposeConsents[purpose.id] = true;
     }

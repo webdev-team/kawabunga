@@ -1,9 +1,4 @@
-/**
- * https://github.com/InteractiveAdvertisingBureau/Consent-String-SDK-JS has not been released with correct typings yet
- * See https://github.com/InteractiveAdvertisingBureau/Consent-String-SDK-JS/issues/21
- * Once release import may change
- */
-import { ConsentString } from 'consent-string/src';
+import { ConsentString } from 'consent-string';
 export declare namespace euconsent {
     const COOKIE_NAME = "euconsent";
     const CMP_VERSION = 1;
