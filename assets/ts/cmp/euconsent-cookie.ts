@@ -26,6 +26,19 @@ export namespace euconsent {
         return consent;
     }
 
+    export function newNoConsent() : ConsentString {
+        let consent = new ConsentString();
+
+        consent.setCmpId(euconsent.CMP_ID);
+        consent.setCmpVersion(CMP_VERSION);
+        consent.setConsentLanguage('fr');
+        consent.setGlobalVendorList(m6Vendors);
+        consent.setPurposesAllowed([]);
+        consent.setVendorsAllowed([]);
+
+        return consent;
+    }
+
     export function allPurposeIds() : number[] {
         return m6Vendors.purposes.map(purpose => purpose.id);
     }
@@ -42,7 +55,15 @@ export namespace euconsent {
         export function read() : ConsentString {
             let value = cookies.get(COOKIE_NAME);
 
-            return value ? new ConsentString(value) : null;
+            if (value) {
+                let consent = new ConsentString(value);
+
+                consent.setGlobalVendorList(m6Vendors);
+
+                return consent;
+            } else {
+                return null;
+            }
         }
 
         export function write(consent: ConsentString) : void {

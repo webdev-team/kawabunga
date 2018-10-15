@@ -4,11 +4,13 @@ import {ALL_OFF} from '../../../assets/ts/cnil/cnil-cookie';
 import {ALL_ON} from '../../../assets/js/cnil/cnil-cookie';
 import allPurposesId = euconsent.allPurposeIds;
 
+let existsSpy = jest.spyOn(euconsent.cookie, "exists");
 let readSpy = jest.spyOn(euconsent.cookie, "read");
 let writeSpy = jest.spyOn(euconsent.cookie, "write");
 
 describe('cmp-framework', () => {
     beforeEach(() => {
+        existsSpy.mockClear();
         readSpy.mockClear();
         writeSpy.mockClear();
     });
@@ -28,6 +30,7 @@ describe('cmp-framework', () => {
         test('should callback with correct VendorConsentData', done => {
             let consent = euconsent.newFullConsent();
 
+            existsSpy.mockReturnValue(true);
             readSpy.mockReturnValue(consent);
 
             getConsentData('1', (vendorConsentData: VendorConsentData, success: boolean) => {

@@ -36,14 +36,22 @@ export function getConsentData(consentStringVersion: string, callback: (vendorCo
 
     result.gpdrApplies = true;
     result.hasGlobalScope = true;
-    result.consentData = euconsent.cookie.read().getConsentString();
 
+    if (euconsent.cookie.exists()) {
+        result.consentData = euconsent.cookie.read().getConsentString();
+    } else {
+        result.consentData = euconsent.newNoConsent().getConsentString();
+    }
 
     callback(result, true);
 }
 
 export function getVendorConsents(vendorsId: number[], callback: (vendorConsents: VendorConsents, success: boolean) => void) {
     let consent = euconsent.cookie.read();
+
+    if (consent == null) {
+        consent = euconsent.newNoConsent();
+    }
 
     let result = new VendorConsents();
 

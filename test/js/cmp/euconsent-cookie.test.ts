@@ -27,6 +27,20 @@ describe('euconsent-cookie', () => {
 
             expect(consent).toBeNull();
         });
+
+        /**
+         * writing and then reading empties vendor list and raises :
+         * Error: ConsentString - A vendor list is required to encode a consent string
+         */
+        test('should be able to write and then read and call getConsentString', () => {
+            let consent = euconsent.newFullConsent();
+
+            euconsent.cookie.write(consent);
+
+            consent = euconsent.cookie.read();
+
+            expect(consent.getConsentString()).toBeTruthy();
+        })
     });
 
     describe('write', () => {

@@ -32,12 +32,20 @@ function getConsentData(consentStringVersion, callback) {
     var result = new VendorConsentData();
     result.gpdrApplies = true;
     result.hasGlobalScope = true;
-    result.consentData = euconsent_cookie_1.euconsent.cookie.read().getConsentString();
+    if (euconsent_cookie_1.euconsent.cookie.exists()) {
+        result.consentData = euconsent_cookie_1.euconsent.cookie.read().getConsentString();
+    }
+    else {
+        result.consentData = euconsent_cookie_1.euconsent.newNoConsent().getConsentString();
+    }
     callback(result, true);
 }
 exports.getConsentData = getConsentData;
 function getVendorConsents(vendorsId, callback) {
     var consent = euconsent_cookie_1.euconsent.cookie.read();
+    if (consent == null) {
+        consent = euconsent_cookie_1.euconsent.newNoConsent();
+    }
     var result = new VendorConsents();
     var purposeConsents = {};
     for (var _i = 0, _a = vendor_list_1.m6Vendors.purposes; _i < _a.length; _i++) {

@@ -24,6 +24,17 @@ var euconsent;
         return consent;
     }
     euconsent.newFullConsent = newFullConsent;
+    function newNoConsent() {
+        var consent = new consent_string_1.ConsentString();
+        consent.setCmpId(euconsent.CMP_ID);
+        consent.setCmpVersion(euconsent.CMP_VERSION);
+        consent.setConsentLanguage('fr');
+        consent.setGlobalVendorList(vendor_list_1.m6Vendors);
+        consent.setPurposesAllowed([]);
+        consent.setVendorsAllowed([]);
+        return consent;
+    }
+    euconsent.newNoConsent = newNoConsent;
     function allPurposeIds() {
         return vendor_list_1.m6Vendors.purposes.map(function (purpose) { return purpose.id; });
     }
@@ -40,7 +51,14 @@ var euconsent;
         cookie.exists = exists;
         function read() {
             var value = cookies.get(euconsent.COOKIE_NAME);
-            return value ? new consent_string_1.ConsentString(value) : null;
+            if (value) {
+                var consent = new consent_string_1.ConsentString(value);
+                consent.setGlobalVendorList(vendor_list_1.m6Vendors);
+                return consent;
+            }
+            else {
+                return null;
+            }
         }
         cookie.read = read;
         function write(consent) {

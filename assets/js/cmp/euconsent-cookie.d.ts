@@ -7,6 +7,7 @@ export declare namespace euconsent {
      */
     const CMP_ID = 12345678;
     function newFullConsent(): ConsentString;
+    function newNoConsent(): ConsentString;
     function allPurposeIds(): number[];
     function allVendorIds(): number[];
     namespace cookie {
