@@ -76,16 +76,21 @@ function getVendorConsents(vendorsId, callback) {
     callback(result, true);
 }
 exports.getVendorConsents = getVendorConsents;
-function onCnilCategoriesChange(categories) {
+function onCnilCategoriesChange(event) {
+    if (event.oldValue != null && event.oldValue.ads == event.value.ads) {
+        return;
+    }
     var consent = euconsent_cookie_1.euconsent.cookie.read();
     if (consent == null) {
         consent = euconsent_cookie_1.euconsent.newFullConsent();
     }
-    if (categories.ads) {
+    if (event.value.ads) {
         consent.setPurposesAllowed(euconsent_cookie_1.euconsent.allPurposeIds());
+        consent.setVendorsAllowed(euconsent_cookie_1.euconsent.allVendorIds());
     }
     else {
         consent.setPurposesAllowed([]);
+        consent.setVendorsAllowed([]);
     }
     euconsent_cookie_1.euconsent.cookie.write(consent);
 }

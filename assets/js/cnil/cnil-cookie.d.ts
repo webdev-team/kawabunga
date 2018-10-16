@@ -4,6 +4,10 @@ export interface CnilCategories {
     social: boolean;
     player: boolean;
 }
+export interface CnilCategoriesChangeEvent {
+    value: CnilCategories;
+    oldValue: CnilCategories;
+}
 export declare const ADS = "ads";
 export declare const ANALYTICS = "analytics";
 export declare const SOCIAL = "social";
@@ -27,5 +31,5 @@ export declare namespace cnilCookie {
     function hasValidCookie(): boolean;
     function isOn(category: string): boolean;
     function isActive(): boolean;
-    function onChange(handler: (categories: CnilCategories) => void): void;
+    function onChange(handler: (event: CnilCategoriesChangeEvent) => void): void;
 }
