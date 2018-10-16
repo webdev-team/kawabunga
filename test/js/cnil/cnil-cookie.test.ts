@@ -133,8 +133,8 @@ describe('cnil-cookie', () => {
     describe('onChange', () => {
         it('should call handler on change', (done) => {
             cnilCookie.onChange(categories => {
-                expect(categories.social).toBeTruthy();
-                expect(categories.analytics).toBeFalsy();
+                expect(categories.value.social).toBeTruthy();
+                expect(categories.value.analytics).toBeFalsy();
 
                 done();
             });
