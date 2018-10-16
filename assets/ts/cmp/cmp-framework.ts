@@ -1,7 +1,7 @@
 import {m6Vendors} from './vendor-list';
 import {euconsent} from './euconsent-cookie';
 import {cnil} from '../cnil/cnil';
-import {CnilCategories} from '../cnil/cnil-cookie';
+import {CnilCategoriesChangeEvent} from '../cnil/cnil-cookie';
 
 export class PingReturn {
     gpdrAppliesGlobaly: boolean;
@@ -88,17 +88,23 @@ export function getVendorConsents(vendorsId: number[], callback: (vendorConsents
     callback(result, true);
 }
 
-export function onCnilCategoriesChange(categories: CnilCategories) {
+export function onCnilCategoriesChange(event: CnilCategoriesChangeEvent) {
+    if (event.oldValue != null && event.oldValue.ads == event.value.ads) {
+        return;
+    }
+
     let consent = euconsent.cookie.read();
 
     if (consent == null) {
         consent = euconsent.newFullConsent();
     }
 
-    if (categories.ads) {
+    if (event.value.ads) {
         consent.setPurposesAllowed(euconsent.allPurposeIds());
+        consent.setVendorsAllowed(euconsent.allVendorIds());
     } else {
         consent.setPurposesAllowed([]);
+        consent.setVendorsAllowed([]);
     }
 
     euconsent.cookie.write(consent);

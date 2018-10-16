@@ -3,6 +3,7 @@ import {euconsent} from '../../../assets/ts/cmp/euconsent-cookie';
 import {ALL_OFF} from '../../../assets/ts/cnil/cnil-cookie';
 import {ALL_ON} from '../../../assets/js/cnil/cnil-cookie';
 import allPurposesId = euconsent.allPurposeIds;
+import allVendorIds = euconsent.allVendorIds;
 
 let existsSpy = jest.spyOn(euconsent.cookie, "exists");
 let readSpy = jest.spyOn(euconsent.cookie, "read");
@@ -86,30 +87,45 @@ describe('cmp-framework', () => {
         test('should create euconsent cookie if needed', () => {
             readSpy.mockReturnValue(null);
 
-            onCnilCategoriesChange(ALL_ON);
+            onCnilCategoriesChange({value: ALL_ON, oldValue: null});
 
             expect(writeSpy.mock.calls[0][0].getPurposesAllowed()).toEqual(allPurposesId());
         });
 
-        test('should add all purposes if ads is on', () => {
+        test('should add all purposes if ads changed to on', () => {
             let consent = euconsent.newFullConsent();
             consent.setPurposesAllowed([]);
+            consent.setVendorsAllowed([]);
 
             readSpy.mockReturnValue(consent);
 
-            onCnilCategoriesChange(ALL_ON);
+            onCnilCategoriesChange({value: ALL_ON, oldValue: null});
 
             expect(writeSpy.mock.calls[0][0].getPurposesAllowed()).toEqual(allPurposesId());
+            expect(writeSpy.mock.calls[0][0].getVendorsAllowed()).toEqual(allVendorIds());
         });
 
-        test('should remove all purposes if ads is off', () => {
+        test('should remove all purposes if ads changed to off', () => {
             let consent = euconsent.newFullConsent();
 
             readSpy.mockReturnValue(consent);
 
-            onCnilCategoriesChange(ALL_OFF);
+            onCnilCategoriesChange({value: ALL_OFF, oldValue: null});
 
             expect(writeSpy.mock.calls[0][0].getPurposesAllowed()).toEqual([]);
+            expect(writeSpy.mock.calls[0][0].getVendorsAllowed()).toEqual([]);
+        });
+
+        test('should do nothing if ads has not changed', () => {
+            let consent = euconsent.newFullConsent();
+            consent.setPurposesAllowed([]);
+            consent.setVendorsAllowed([]);
+
+            readSpy.mockReturnValue(consent);
+
+            onCnilCategoriesChange({value: ALL_ON, oldValue: ALL_ON});
+
+            expect(writeSpy.mock.calls).toHaveLength(0);
         });
     });
 });

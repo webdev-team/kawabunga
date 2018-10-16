@@ -14,6 +14,11 @@ export interface CnilCategories {
     player: boolean;
 }
 
+export interface CnilCategoriesChangeEvent {
+    value: CnilCategories;
+    oldValue: CnilCategories;
+}
+
 // categories
 export const ADS = 'ads';
 export const ANALYTICS = 'analytics';
@@ -36,7 +41,7 @@ export const SCROLL_ACTION = 'scroll';
 export const PREFERENCES_ACTION = 'preferences';
 
 export namespace cnilCookie {
-    let observable = new Observable<CnilCategories>();
+    let observable = new Observable<CnilCategoriesChangeEvent>();
 
     export function ensureId(): void {
         if (!cookies.get(COOKIE_ID_NAME)) {
@@ -53,11 +58,13 @@ export namespace cnilCookie {
     }
 
     export function writeValues(categories: CnilCategories, actionType?: string): void {
+        let oldValue = readValues();
+
         cookies.set(COOKIE_NAME, JSON.stringify(categories), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
 
         cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
 
-        observable.fire(readValues());
+        observable.fire({value: readValues(), oldValue: oldValue});
     }
 
     export function setCategory(category: string, value: boolean, actionType?: string): void {
@@ -95,7 +102,7 @@ export namespace cnilCookie {
         return !userAgent.isBot() && !cnilCookie.hasValidCookie() && !cnilCookieAutoUpdater.isCnilSafe();
     }
 
-    export function onChange(handler: (categories: CnilCategories) => void) {
+    export function onChange(handler: (event: CnilCategoriesChangeEvent) => void) {
         observable.observe(handler);
     }
 }

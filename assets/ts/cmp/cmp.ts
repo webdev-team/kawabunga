@@ -15,7 +15,7 @@ if (env.isFlag("cmp")) {
 
     // init euconsent cookie with cnil cookie if euconsent wasn't there
     if (cnil.cookie.hasValidCookie() && !euconsent.cookie.exists()) {
-        onCnilCategoriesChange(cnil.cookie.readValues());
+        onCnilCategoriesChange({value: cnil.cookie.readValues(), oldValue: null});
     }
 
     cnil.cookie.onChange(onCnilCategoriesChange);
