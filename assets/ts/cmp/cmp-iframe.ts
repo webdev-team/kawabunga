@@ -15,16 +15,23 @@ interface CmpReturn {
     callId: any;
 }
 
+export function init() {
+    window.addEventListener('message', onWindowMessage, false);
+
+    ensureFrame();
+}
+
 export function ensureFrame() {
     if (document.getElementsByName('__cmpLocator').length > 0) {
         return;
     }
 
-    let body = document.body
     let iframe = document.createElement('iframe');
     iframe.name = '__cmpLocator';
+    iframe.width = '0';
+    iframe.height = '0';
     iframe.style.display = 'none';
-    body.appendChild(iframe);
+    document.body.appendChild(iframe);
 }
 
 export function onWindowMessage(event) {
@@ -32,21 +39,25 @@ export function onWindowMessage(event) {
 
     let messageIsString = typeof json === "string";
 
-    if ( messageIsString ) {
-        json = JSON.parse(json);
-    }
+    try {
+        if (messageIsString) {
+            json = JSON.parse(json);
+        }
 
-    let call = json.__cmpCall as CmpCall;
+        let call = json.__cmpCall as CmpCall;
 
-    if (call) {
-        __cmp(call.command, call.parameter, function(result, success) {
-            let returnMsg = {
-                __cmpReturn: {
-                    returnValue: result, success: success, callId: call.callId
-                } as CmpReturn
-            };
+        if (call) {
+            __cmp(call.command, call.parameter, function (result, success) {
+                let returnMsg = {
+                    __cmpReturn: {
+                        returnValue: result, success: success, callId: call.callId
+                    } as CmpReturn
+                };
 
-            event.source.postMessage(messageIsString ? JSON.stringify(returnMsg) : returnMsg, '*');
-        });
+                event.source.postMessage(messageIsString ? JSON.stringify(returnMsg) : returnMsg, '*');
+            });
+        }
+    } catch (e) {
+        // event.data was not well formatted or not targeted to us
     }
 }

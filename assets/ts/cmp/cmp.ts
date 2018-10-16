@@ -2,7 +2,7 @@ import {__cmp, onCnilCategoriesChange} from './cmp-framework';
 import * as env from '../env/env';
 import {cnil} from '../cnil/cnil';
 import {euconsent} from './euconsent-cookie';
-import {onWindowMessage} from './cmp-iframe';
+import * as cmpIframe from './cmp-iframe';
 
 declare global {
     interface Window {
@@ -20,5 +20,5 @@ if (env.isFlag("cmp")) {
 
     cnil.cookie.onChange(onCnilCategoriesChange);
 
-    window.addEventListener('message', onWindowMessage, false);
+    cmpIframe.init();
 }
