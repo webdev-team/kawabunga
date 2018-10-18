@@ -8,10 +8,7 @@ import * as env from '../env/env';
 export namespace euconsent {
     export const COOKIE_NAME = 'euconsent';
     export const CMP_VERSION = 1;
-    /**
-     * TODO : use correct id
-     */
-    export const CMP_ID = 12345678;
+    export const CMP_ID = 136; // cmp id m6web
 
     export function newFullConsent() : ConsentString {
         let consent = new ConsentString();
