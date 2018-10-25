@@ -49,6 +49,7 @@ describe('cmp-framework', () => {
         test('should callback with correct VendorConsents', done => {
             let consent = euconsent.newFullConsent();
             consent.setVendorsAllowed([27, 28]); // ADventori SAS and TripleLift, Inc.
+            consent.setPurposesAllowed([1, 2])
 
             readSpy.mockReturnValue(consent);
 
@@ -56,7 +57,7 @@ describe('cmp-framework', () => {
                 expect(success).toBeTruthy();
                 expect(vendorConsents.gpdrApplies).toBeTruthy();
                 expect(vendorConsents.hasGlobalScope).toBeTruthy();
-                expect(vendorConsents.purposeConsents).toEqual({1: true, 2: true, 3: true, 4: true, 5: true});
+                expect(vendorConsents.purposeConsents).toEqual({1: true, 2: true});
                 expect(vendorConsents.vendorConsents).toEqual({27: true, 28: true});
                 expect(vendorConsents.metadata).toBeTruthy(); // not empty
 

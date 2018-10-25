@@ -1,4 +1,3 @@
-import {m6Vendors} from './vendor-list';
 import {euconsent} from './euconsent-cookie';
 import {cnil} from '../cnil/cnil';
 import {CnilCategoriesChangeEvent} from '../cnil/cnil-cookie';
@@ -57,8 +56,8 @@ export function getVendorConsents(vendorsId: number[], callback: (vendorConsents
 
     let purposeConsents = {};
 
-    for (const purpose of m6Vendors.purposes) {
-        purposeConsents[purpose.id] = true
+    for (const purpose of consent.getPurposesAllowed()) {
+        purposeConsents[purpose] = true
     }
 
     let vendorConsents = {};
