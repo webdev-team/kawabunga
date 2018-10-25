@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var vendor_list_1 = require("./vendor-list");
 var euconsent_cookie_1 = require("./euconsent-cookie");
 var cnil_1 = require("../cnil/cnil");
 var PingReturn = /** @class */ (function () {
@@ -48,9 +47,9 @@ function getVendorConsents(vendorsId, callback) {
     }
     var result = new VendorConsents();
     var purposeConsents = {};
-    for (var _i = 0, _a = vendor_list_1.m6Vendors.purposes; _i < _a.length; _i++) {
+    for (var _i = 0, _a = consent.getPurposesAllowed(); _i < _a.length; _i++) {
         var purpose = _a[_i];
-        purposeConsents[purpose.id] = true;
+        purposeConsents[purpose] = true;
     }
     var vendorConsents = {};
     for (var _b = 0, _c = consent.getVendorsAllowed(); _b < _c.length; _b++) {

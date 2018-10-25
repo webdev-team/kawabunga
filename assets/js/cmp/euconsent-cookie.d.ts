@@ -2,10 +2,7 @@ import { ConsentString } from 'consent-string';
 export declare namespace euconsent {
     const COOKIE_NAME = "euconsent";
     const CMP_VERSION = 1;
-    /**
-     * TODO : use correct id
-     */
-    const CMP_ID = 12345678;
+    const CMP_ID = 136;
     function newFullConsent(): ConsentString;
     function newNoConsent(): ConsentString;
     function allPurposeIds(): number[];

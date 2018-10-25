@@ -9,10 +9,7 @@ var euconsent;
 (function (euconsent) {
     euconsent.COOKIE_NAME = 'euconsent';
     euconsent.CMP_VERSION = 1;
-    /**
-     * TODO : use correct id
-     */
-    euconsent.CMP_ID = 12345678;
+    euconsent.CMP_ID = 136; // cmp id m6web
     function newFullConsent() {
         var consent = new consent_string_1.ConsentString();
         consent.setCmpId(euconsent.CMP_ID);
