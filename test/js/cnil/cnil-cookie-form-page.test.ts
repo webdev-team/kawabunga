@@ -18,7 +18,6 @@ describe('cnil-cookie-form-page.ts', () => {
                     <input type="checkbox" name="cookiesForAds">
                     <input type="checkbox" name="cookiesForAnalytics">
                     <input type="checkbox" name="cookiesForSocial">
-                    <input type="checkbox" name="cookiesForPlayer">
                 </form>
             </div>
         `);
@@ -40,10 +39,10 @@ describe('cnil-cookie-form-page.ts', () => {
         });
 
         test('Should init form inputs function to existing cookie', () => {
-            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":false,"social":false,"player":false}');
+            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":false,"social":false}');
             cnilCookieFormPage.init();
 
-            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":false,"player":false});
+            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":false});
         });
     });
 
@@ -55,7 +54,6 @@ describe('cnil-cookie-form-page.ts', () => {
             expect( $('input[name="cookiesForAds"]')[0].checked ).toBe(true);
             expect( $('input[name="cookiesForAnalytics"]')[0].checked ).toBe(true);
             expect( $('input[name="cookiesForSocial"]')[0].checked ).toBe(true);
-            expect( $('input[name="cookiesForPlayer"]')[0].checked ).toBe(true);
 
             expect(cnilCookie.hasValidCookie()).toBe(false);
         });
@@ -68,18 +66,17 @@ describe('cnil-cookie-form-page.ts', () => {
             $('input[name="cookiesForAnalytics"]')[0].click();
 
             expect(cnilCookie.hasValidCookie()).toBe(true);
-            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true,"player":true});
+            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true});
         });
 
         test('Should update existing cookie when submit button clicked', () => {
-            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"social":true,"player":true}');
+            cookies.set(COOKIE_NAME, '{"ads":true,"analytics":true,"social":true}');
             cnilCookieFormPage.init();
 
             $('input[name="cookiesForAnalytics"]')[0].click();
-            $('input[name="cookiesForPlayer"]')[0].click();
 
-            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true,"player":false});
-            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true,"player":false}')
+            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true});
+            expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":true}')
         });
     });
 });

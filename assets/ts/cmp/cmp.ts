@@ -10,15 +10,13 @@ declare global {
     }
 }
 
-if (env.isFlag("cmp")) {
-    window.__cmp = __cmp;
+window.__cmp = __cmp;
 
-    // init euconsent cookie with cnil cookie if euconsent wasn't there
-    if (cnil.cookie.hasValidCookie() && !euconsent.cookie.exists()) {
-        onCnilCategoriesChange({value: cnil.cookie.readValues(), oldValue: null});
-    }
-
-    cnil.cookie.onChange(onCnilCategoriesChange);
-
-    cmpIframe.init();
+// init euconsent cookie with cnil cookie if euconsent wasn't there
+if (cnil.cookie.hasValidCookie() && !euconsent.cookie.exists()) {
+    onCnilCategoriesChange({value: cnil.cookie.readValues(), oldValue: null});
 }
+
+cnil.cookie.onChange(onCnilCategoriesChange);
+
+cmpIframe.init();

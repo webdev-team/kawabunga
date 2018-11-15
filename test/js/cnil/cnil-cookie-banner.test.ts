@@ -27,7 +27,7 @@ describe('cnil-cookie-banner.ts', () => {
                 <div id="cnil-banner" data-role="cnil-banner">
                     <p>Lorem <a href="/cnil/preferences" data-cnil="1">En savoir plus</a>.</p>
                     <button id="accept-btn" data-action="accept"></button>
-                    <button id="accept-player-btn" data-action="accept" data-category="player"></button>
+                    <button id="accept-ads-btn" data-action="accept" data-category="ads"></button>
                     <button id="accept-analytics-btn" data-action="accept" data-category="analytics"></button>
                     <a href="/cnil/preferences" data-cnil="1">Paramétrer les traceurs</a>
                             
@@ -106,11 +106,11 @@ describe('cnil-cookie-banner.ts', () => {
             cnilCookie.writeValues(ALL_OFF);
             expect(cnilCookie.readValues()).toEqual(ALL_OFF);
 
-            $('#cnil-banner').select('#accept-player-btn')[0].click();
-            expect(cnilCookie.readValues()).toEqual({ads: false, analytics: false, social: false, player: true});
+            $('#cnil-banner').select('#accept-ads-btn')[0].click();
+            expect(cnilCookie.readValues()).toEqual({ads: true, analytics: false, social: false});
 
             $('#cnil-banner').select('#accept-analytics-btn')[0].click();
-            expect(cnilCookie.readValues()).toEqual({ads: false, analytics: true, social: false, player: true});
+            expect(cnilCookie.readValues()).toEqual({ads: true, analytics: true, social: false});
         });
 
         test('Should not set cookie when other links are clicked in banner', () => {

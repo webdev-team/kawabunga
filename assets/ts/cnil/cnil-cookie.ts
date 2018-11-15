@@ -11,7 +11,6 @@ export interface CnilCategories {
     ads: boolean;
     analytics: boolean;
     social: boolean;
-    player: boolean;
 }
 
 export interface CnilCategoriesChangeEvent {
@@ -23,7 +22,6 @@ export interface CnilCategoriesChangeEvent {
 export const ADS = 'ads';
 export const ANALYTICS = 'analytics';
 export const SOCIAL = 'social';
-export const PLAYER = 'player';
 
 export const COOKIE_NAME = 'cnil-cookie-v2';
 export const COOKIE_ID_NAME = 'cnil-cookie-id';
@@ -31,8 +29,8 @@ const ONE_YEAR = 365;
 export const COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
 export const COOKIE_ID_DURATION = 10 * ONE_YEAR;
 
-export const ALL_ON : CnilCategories = {ads: true, analytics: true, social: true, player: true};
-export const ALL_OFF : CnilCategories = {ads: false, analytics: false, social: false, player: false};
+export const ALL_ON : CnilCategories = {ads: true, analytics: true, social: true};
+export const ALL_OFF : CnilCategories = {ads: false, analytics: false, social: false};
 
 // action types
 export const BANNER_ACTION = 'banner';
@@ -68,7 +66,7 @@ export namespace cnilCookie {
     }
 
     export function setCategory(category: string, value: boolean, actionType?: string): void {
-        let cookie: CnilCategories = readValues() || {ads: true, analytics: true, social: true, player: true};
+        let cookie: CnilCategories = readValues() || {ads: true, analytics: true, social: true};
 
         cookie[category] = value;
         writeValues(cookie, actionType);
