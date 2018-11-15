@@ -2,7 +2,6 @@ export interface CnilCategories {
     ads: boolean;
     analytics: boolean;
     social: boolean;
-    player: boolean;
 }
 export interface CnilCategoriesChangeEvent {
     value: CnilCategories;
@@ -11,7 +10,6 @@ export interface CnilCategoriesChangeEvent {
 export declare const ADS = "ads";
 export declare const ANALYTICS = "analytics";
 export declare const SOCIAL = "social";
-export declare const PLAYER = "player";
 export declare const COOKIE_NAME = "cnil-cookie-v2";
 export declare const COOKIE_ID_NAME = "cnil-cookie-id";
 export declare const COOKIE_DURATION: number;

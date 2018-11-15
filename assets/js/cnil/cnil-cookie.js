@@ -12,14 +12,13 @@ var observable_1 = require("../utils/observable");
 exports.ADS = 'ads';
 exports.ANALYTICS = 'analytics';
 exports.SOCIAL = 'social';
-exports.PLAYER = 'player';
 exports.COOKIE_NAME = 'cnil-cookie-v2';
 exports.COOKIE_ID_NAME = 'cnil-cookie-id';
 var ONE_YEAR = 365;
 exports.COOKIE_DURATION = ONE_YEAR + 28; // about 13 months
 exports.COOKIE_ID_DURATION = 10 * ONE_YEAR;
-exports.ALL_ON = { ads: true, analytics: true, social: true, player: true };
-exports.ALL_OFF = { ads: false, analytics: false, social: false, player: false };
+exports.ALL_ON = { ads: true, analytics: true, social: true };
+exports.ALL_OFF = { ads: false, analytics: false, social: false };
 // action types
 exports.BANNER_ACTION = 'banner';
 exports.CLICK_ACTION = 'click';
@@ -49,7 +48,7 @@ var cnilCookie;
     }
     cnilCookie.writeValues = writeValues;
     function setCategory(category, value, actionType) {
-        var cookie = readValues() || { ads: true, analytics: true, social: true, player: true };
+        var cookie = readValues() || { ads: true, analytics: true, social: true };
         cookie[category] = value;
         writeValues(cookie, actionType);
     }
