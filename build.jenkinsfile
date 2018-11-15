@@ -11,6 +11,7 @@ node('nodejs') {
     }
 
     stage('install modules') {
+        sh 'rm -rf node_modules'
         sh 'yarn install --no-progress'
     }
 
