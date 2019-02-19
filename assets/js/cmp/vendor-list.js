@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// M6 Web vendor list
+// M6 Web vendor list + gravity (WEBDEV-4026)
 exports.m6Vendors = {
     "vendorListVersion": 2,
     /* "lastUpdated": "2018-07-04T09:32:13.524Z", */
@@ -696,5 +696,12 @@ exports.m6Vendors = {
             "purposeIds": [1],
             "legIntPurposeIds": [2, 3, 4, 5],
             "featureIds": [1, 2, 3]
+        }, {
+            "id": 501,
+            "name": "Alliance Gravity Data Media",
+            "policyUrl": "https://www.alliancegravity.com/politiquedeprotectiondesdonneespersonnelles",
+            "purposeIds": [1, 2, 3, 4, 5],
+            "legIntPurposeIds": [],
+            "featureIds": [1, 2]
         }]
 };
