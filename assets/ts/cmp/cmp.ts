@@ -1,5 +1,4 @@
 import {__cmp, onCnilCategoriesChange} from './cmp-framework';
-import * as env from '../env/env';
 import {cnil} from '../cnil/cnil';
 import {euconsent} from './euconsent-cookie';
 import * as cmpIframe from './cmp-iframe';
