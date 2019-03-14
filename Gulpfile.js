@@ -21,11 +21,6 @@ let replace = require('gulp-replace');
 let tsify = require('tsify');
 let log = require('fancy-log');
 
-let rtlPublish = require('gulp-rtl-publish');
-let packageJson = require('./package.json');
-
-rtlPublish.addTasks(packageJson);
-
 gulp.task('css', function () {
     return gulp.src('sandbox/scss/*.scss')
         .pipe(sass({includePaths: ['./']}))
