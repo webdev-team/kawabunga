@@ -20,7 +20,7 @@ describe('cmp-framework', () => {
         test('should callback with correct PingReturn', done => {
             ping((pingReturn: PingReturn, success: boolean) => {
                 expect(success).toBeTruthy();
-                expect(pingReturn.gpdrAppliesGlobaly).toBeTruthy();
+                expect(pingReturn.gdprAppliesGlobaly).toBeTruthy();
                 expect(pingReturn.cmpLoaded).toBeTruthy();
                 done();
             });
@@ -36,7 +36,7 @@ describe('cmp-framework', () => {
 
             getConsentData('1', (vendorConsentData: VendorConsentData, success: boolean) => {
                 expect(success).toBeTruthy();
-                expect(vendorConsentData.gpdrApplies).toBeTruthy();
+                expect(vendorConsentData.gdprApplies).toBeTruthy();
                 expect(vendorConsentData.hasGlobalScope).toBeTruthy();
                 expect(vendorConsentData.consentData).toBe(consent.getConsentString());
 
@@ -55,7 +55,7 @@ describe('cmp-framework', () => {
 
             getVendorConsents(null, (vendorConsents: VendorConsents, success: boolean) => {
                 expect(success).toBeTruthy();
-                expect(vendorConsents.gpdrApplies).toBeTruthy();
+                expect(vendorConsents.gdprApplies).toBeTruthy();
                 expect(vendorConsents.hasGlobalScope).toBeTruthy();
                 expect(vendorConsents.purposeConsents).toEqual({1: true, 2: true});
                 expect(vendorConsents.vendorConsents).toEqual({27: true, 28: true});
@@ -73,7 +73,7 @@ describe('cmp-framework', () => {
 
             getVendorConsents([27], (vendorConsents: VendorConsents, success: boolean) => {
                 expect(success).toBeTruthy();
-                expect(vendorConsents.gpdrApplies).toBeTruthy();
+                expect(vendorConsents.gdprApplies).toBeTruthy();
                 expect(vendorConsents.hasGlobalScope).toBeTruthy();
                 expect(vendorConsents.purposeConsents).toEqual({1: true, 2: true, 3: true, 4: true, 5: true});
                 expect(vendorConsents.vendorConsents).toEqual({27: true});

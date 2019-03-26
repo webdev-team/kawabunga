@@ -3,19 +3,19 @@ import {cnil} from '../cnil/cnil';
 import {CnilCategoriesChangeEvent} from '../cnil/cnil-cookie';
 
 export class PingReturn {
-    gpdrAppliesGlobaly: boolean;
+    gdprAppliesGlobaly: boolean;
     cmpLoaded: boolean;
 }
 
 export class VendorConsentData {
     consentData: string;
-    gpdrApplies: boolean;
+    gdprApplies: boolean;
     hasGlobalScope: boolean;
 }
 
 export class VendorConsents {
     metadata: string;
-    gpdrApplies: boolean;
+    gdprApplies: boolean;
     hasGlobalScope: boolean;
     purposeConsents: any;
     vendorConsents: any;
@@ -24,7 +24,7 @@ export class VendorConsents {
 export function ping(callback: (pingReturn: PingReturn, success: boolean) => void)  {
     let result = new PingReturn();
 
-    result.gpdrAppliesGlobaly = true;
+    result.gdprAppliesGlobaly = true;
     result.cmpLoaded = true;
 
     callback(result, true);
@@ -33,7 +33,7 @@ export function ping(callback: (pingReturn: PingReturn, success: boolean) => voi
 export function getConsentData(consentStringVersion: string, callback: (vendorConsentData: VendorConsentData, success: boolean) => void)  {
     let result = new VendorConsentData();
 
-    result.gpdrApplies = true;
+    result.gdprApplies = true;
     result.hasGlobalScope = true;
 
     if (euconsent.cookie.exists()) {
@@ -78,7 +78,7 @@ export function getVendorConsents(vendorsId: number[], callback: (vendorConsents
 
     let metadata = consent.getConsentString();
 
-    result.gpdrApplies = true;
+    result.gdprApplies = true;
     result.hasGlobalScope = true;
     result.purposeConsents = purposeConsents;
     result.vendorConsents = vendorConsents;

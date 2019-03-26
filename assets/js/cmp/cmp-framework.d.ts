@@ -1,16 +1,16 @@
 import { CnilCategoriesChangeEvent } from '../cnil/cnil-cookie';
 export declare class PingReturn {
-    gpdrAppliesGlobaly: boolean;
+    gdprAppliesGlobaly: boolean;
     cmpLoaded: boolean;
 }
 export declare class VendorConsentData {
     consentData: string;
-    gpdrApplies: boolean;
+    gdprApplies: boolean;
     hasGlobalScope: boolean;
 }
 export declare class VendorConsents {
     metadata: string;
-    gpdrApplies: boolean;
+    gdprApplies: boolean;
     hasGlobalScope: boolean;
     purposeConsents: any;
     vendorConsents: any;

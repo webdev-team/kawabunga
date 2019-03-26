@@ -22,14 +22,14 @@ var VendorConsents = /** @class */ (function () {
 exports.VendorConsents = VendorConsents;
 function ping(callback) {
     var result = new PingReturn();
-    result.gpdrAppliesGlobaly = true;
+    result.gdprAppliesGlobaly = true;
     result.cmpLoaded = true;
     callback(result, true);
 }
 exports.ping = ping;
 function getConsentData(consentStringVersion, callback) {
     var result = new VendorConsentData();
-    result.gpdrApplies = true;
+    result.gdprApplies = true;
     result.hasGlobalScope = true;
     if (euconsent_cookie_1.euconsent.cookie.exists()) {
         result.consentData = euconsent_cookie_1.euconsent.cookie.read().getConsentString();
@@ -67,7 +67,7 @@ function getVendorConsents(vendorsId, callback) {
     consent.setPurposesAllowed([]);
     consent.setVendorsAllowed([]);
     var metadata = consent.getConsentString();
-    result.gpdrApplies = true;
+    result.gdprApplies = true;
     result.hasGlobalScope = true;
     result.purposeConsents = purposeConsents;
     result.vendorConsents = vendorConsents;
