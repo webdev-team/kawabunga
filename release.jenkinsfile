@@ -11,7 +11,7 @@ node('nodejs') {
     }
 
     stage('rm modules') {
-        sh 'rm -rf nodes_modules'
+        sh 'rm -rf node_modules'
     }
 
     stage('install modules') {
