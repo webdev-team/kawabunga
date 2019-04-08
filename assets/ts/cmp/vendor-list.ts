@@ -697,6 +697,13 @@ export let m6Vendors: VendorList = {
         "legIntPurposeIds": [2, 3, 4, 5],
         "featureIds": [1, 2, 3]
     }, {
+        "id": 436,
+        "name": "INVIBES GROUP",
+        "policyUrl": "http://www.invibes.com/terms",
+        "purposeIds": [2, 3, 4],
+        "legIntPurposeIds": [1, 5],
+        "featureIds": [1, 2, 3]
+    }, {
         "id": 501,
         "name": "Alliance Gravity Data Media",
         "policyUrl": "https://www.alliancegravity.com/politiquedeprotectiondesdonneespersonnelles",
