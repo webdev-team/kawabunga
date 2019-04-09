@@ -1,4 +1,4 @@
-declare global  {
+declare global {
     interface Window {
         _eStat_Whap_loaded_func: any;
         eStatWhap: any;
