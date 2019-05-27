@@ -179,6 +179,7 @@ gulp.task('fonticon-amp', function () {
         'assets/svg/common/others/mini-logo-futur.svg',
         'assets/svg/common/others/mini-logo-girls.svg',
         'assets/svg/common/others/mini-logo-super.svg',
+        'assets/svg/common/others/rss.svg',
         'assets/svg/common/social/facebook/*.svg',
         'assets/svg/common/social/googleplus/*.svg',
         'assets/svg/common/social/instagram/*.svg',
