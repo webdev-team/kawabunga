@@ -31,7 +31,7 @@ describe('cnil-cookie-banner.ts', () => {
                     <button id="accept-analytics-btn" data-action="accept" data-category="analytics"></button>
                     <a href="/cnil/preferences" data-cnil="1">Paramétrer les traceurs</a>
                             
-                    <button id="close-btn" data-action="accept"></button>
+                    <button id="close-btn" data-action="close"></button>
                 </div>`
         };
     });
@@ -92,12 +92,12 @@ describe('cnil-cookie-banner.ts', () => {
             expect(cnilCookie.readValues()).toEqual(ALL_ON);
         });
 
-        test('Should set cookie when close icon clicked', () => {
+        test('Should not set cookie when close icon clicked', () => {
 
             cnilCookieBanner.init(bannerOptions);
             $('#cnil-banner').select('#close-btn')[0].click();
 
-            expect(cnilCookie.readValues()).toEqual(ALL_ON);
+            expect(cnilCookie.readValues()).toBeNull();
         });
 
         test('Should set corresponding category to true when category accept btn clicked', () => {

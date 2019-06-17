@@ -40,6 +40,12 @@ export namespace cnilCookieBanner {
                 cb();
             }
         });
+
+        $banner.select('[data-action=close]').on('click', e => {
+            if ($banner) {
+                $banner.css('display', 'none');
+            }
+        });
     }
 
     export function hideMainBanner(): void {

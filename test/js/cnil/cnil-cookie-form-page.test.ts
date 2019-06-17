@@ -48,17 +48,17 @@ describe('cnil-cookie-form-page.ts', () => {
 
     describe('Behavior and cookie management', () => {
 
-        test('Should set all inputs to "checked" on init, but without any cookie created', () => {
+        test('Should set all inputs to "unchecked" on init, but without any cookie created', () => {
             cnilCookieFormPage.init();
 
-            expect( $('input[name="cookiesForAds"]')[0].checked ).toBe(true);
-            expect( $('input[name="cookiesForAnalytics"]')[0].checked ).toBe(true);
-            expect( $('input[name="cookiesForSocial"]')[0].checked ).toBe(true);
+            expect( $('input[name="cookiesForAds"]')[0].checked ).toBe(false);
+            expect( $('input[name="cookiesForAnalytics"]')[0].checked ).toBe(false);
+            expect( $('input[name="cookiesForSocial"]')[0].checked ).toBe(false);
 
             expect(cnilCookie.hasValidCookie()).toBe(false);
         });
 
-        test('Should create cookie with all consents at true when any input clicked, except the consent that is clicked', () => {
+        test('Should create cookie with all consents at false when any input clicked, except the consent that is clicked', () => {
             cnilCookieFormPage.init();
 
             expect(cnilCookie.hasValidCookie()).toBe(false);
@@ -66,7 +66,7 @@ describe('cnil-cookie-form-page.ts', () => {
             $('input[name="cookiesForAnalytics"]')[0].click();
 
             expect(cnilCookie.hasValidCookie()).toBe(true);
-            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":true,"analytics":false,"social":true});
+            expect(cnilCookieFormPage.getValue()).toMatchObject({"ads":false,"analytics":true,"social":false});
         });
 
         test('Should update existing cookie when submit button clicked', () => {

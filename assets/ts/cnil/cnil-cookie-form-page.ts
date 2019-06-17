@@ -24,7 +24,7 @@ export namespace cnilCookieFormPage {
             $(`input[name=cookiesForAnalytics]`)[0].checked = categories.analytics;
             $(`input[name=cookiesForSocial]`)[0].checked = categories.social;
         } else {
-            $(`input[type=checkbox]`).forEach((input) => input.checked = true);
+            $(`input[type=checkbox]`).forEach((input) => input.checked = false);
         }
     }
 
