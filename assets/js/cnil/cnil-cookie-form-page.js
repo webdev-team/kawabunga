@@ -24,7 +24,7 @@ var cnilCookieFormPage;
             $("input[name=cookiesForSocial]")[0].checked = categories.social;
         }
         else {
-            $("input[type=checkbox]").forEach(function (input) { return input.checked = true; });
+            $("input[type=checkbox]").forEach(function (input) { return input.checked = false; });
         }
     }
     cnilCookieFormPage.initFormWithCookie = initFormWithCookie;

@@ -29,6 +29,11 @@ var cnilCookieBanner;
                 cb();
             }
         });
+        $banner.select('[data-action=close]').on('click', function (e) {
+            if ($banner) {
+                $banner.css('display', 'none');
+            }
+        });
     }
     cnilCookieBanner.injectBanner = injectBanner;
     function hideMainBanner() {
