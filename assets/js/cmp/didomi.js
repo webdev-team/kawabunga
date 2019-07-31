@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var env = require("../../../assets/ts/env/env");
+var env = require("../env/env");
 var scriptLoader = require("../../js/utils/script-loader.js");
 var getThemeColor = function () {
     var themeColor;
@@ -100,5 +100,7 @@ exports.init = function () {
     };
     scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', console.log('didomi loader.js loaded'));
 };
-exports.init();
+if (env.isFlag('didomi')) {
+    exports.init();
+}
 // <script type="text/javascript" id="spcloader" src="" async></script>
