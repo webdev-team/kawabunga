@@ -1,4 +1,4 @@
-import * as env from '../../../assets/ts/env/env';
+import * as env from '../env/env';
 import * as scriptLoader from '../../js/utils/script-loader.js';
 
 declare global {
