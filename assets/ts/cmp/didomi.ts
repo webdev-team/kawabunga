@@ -74,6 +74,8 @@ export let init = function()  {
     scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', console.log('didomi loader.js loaded'));
 };
 
-init();
+if (env.isFlag('didomi')) {
+    init();
+}
 
 // <script type="text/javascript" id="spcloader" src="" async></script>
