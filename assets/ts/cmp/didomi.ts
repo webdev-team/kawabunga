@@ -46,7 +46,9 @@ export let init = function(): void {
 
     window.didomiConfig = didomiConfig();
 
-    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', attachEventListeners);
+    attachEventListeners();
+
+    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
 };
 
 let didomiConfig = function(): object {
