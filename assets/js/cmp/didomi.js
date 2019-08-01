@@ -71,7 +71,8 @@ exports.init = function () {
         }
     } n(); })();
     window.didomiConfig = didomiConfig();
-    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', function () { return attachEventListeners(); });
+    attachEventListeners();
+    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
 };
 var didomiConfig = function () {
     var themeColor = getThemeColor();
