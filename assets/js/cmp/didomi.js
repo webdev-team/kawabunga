@@ -2,6 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var env = require("../env/env");
 var scriptLoader = require("../../js/utils/script-loader.js");
+var observable_1 = require("../utils/observable");
+var Purpose;
+(function (Purpose) {
+    Purpose["COOKIE"] = "cookies";
+    Purpose["AD_PERSONALIZATION"] = "advertising_personalization";
+    Purpose["CONTENT_PERSONALIZATION"] = "content_personalization";
+    Purpose["ANALYTICS"] = "analytics";
+    Purpose["AD_DELIVERY"] = "ad_delivery";
+})(Purpose = exports.Purpose || (exports.Purpose = {}));
+var consentChanged$ = new observable_1.Observable();
 var getThemeColor = function () {
     var themeColor;
     switch (env.getSite()) {
@@ -60,8 +70,12 @@ exports.init = function () {
             window.attachEvent("onmessage", t);
         }
     } n(); })();
+    window.didomiConfig = didomiConfig();
+    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', attachEventListeners);
+};
+var didomiConfig = function () {
     var themeColor = getThemeColor();
-    window.didomiConfig = {
+    return {
         app: {
             apiKey: '<Your API key>',
             vendors: {
@@ -98,9 +112,19 @@ exports.init = function () {
             }
         }
     };
-    scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', console.log('didomi loader.js loaded'));
 };
-if (env.isFlag('didomi')) {
-    exports.init();
-}
-// <script type="text/javascript" id="spcloader" src="" async></script>
+var attachEventListeners = function () {
+    window.didomiEventListeners = window.didomiEventListeners || [];
+    window.didomiEventListeners.push({
+        event: 'consent.changed',
+        listener: function (context) {
+            consentChanged$.fire(context);
+        }
+    });
+};
+exports.isConsentedPurpose = function (purpose) {
+    return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose);
+};
+exports.onChange = function (handler) {
+    consentChanged$.observe(handler);
+};
