@@ -118,3 +118,18 @@ exports.attach = function (eventType, action) {
     window[eventType] = window[eventType] || [];
     window[eventType].push(action);
 };
+exports.isCookiesAllowed = function () {
+    return exports.isConsentedPurpose(Purpose.COOKIE);
+};
+exports.isAdPersonalizationAllowed = function () {
+    return exports.isConsentedPurpose(Purpose.AD_PERSONALIZATION);
+};
+exports.isContentPersonalizationAllowed = function () {
+    return exports.isConsentedPurpose(Purpose.CONTENT_PERSONALIZATION);
+};
+exports.isAnalyticsAllowed = function () {
+    return exports.isConsentedPurpose(Purpose.ANALYTICS);
+};
+exports.isAdDeliveryAllowed = function () {
+    return exports.isConsentedPurpose(Purpose.AD_DELIVERY);
+};

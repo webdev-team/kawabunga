@@ -97,3 +97,23 @@ export let attach = function(eventType, action) {
     window[eventType] = window[eventType] || [];
     window[eventType].push(action);
 };
+
+export let isCookiesAllowed = function() {
+    return isConsentedPurpose(Purpose.COOKIE);
+};
+
+export let isAdPersonalizationAllowed = function() {
+    return isConsentedPurpose(Purpose.AD_PERSONALIZATION);
+};
+
+export let isContentPersonalizationAllowed = function() {
+    return isConsentedPurpose(Purpose.CONTENT_PERSONALIZATION);
+};
+
+export let isAnalyticsAllowed = function() {
+    return isConsentedPurpose(Purpose.ANALYTICS);
+};
+
+export let isAdDeliveryAllowed = function() {
+    return isConsentedPurpose(Purpose.AD_DELIVERY);
+};
