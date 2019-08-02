@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var env = require("../env/env");
 var scriptLoader = require("../../js/utils/script-loader.js");
-var observable_1 = require("../utils/observable");
 var Purpose;
 (function (Purpose) {
     Purpose["COOKIE"] = "cookies";
@@ -11,7 +10,6 @@ var Purpose;
     Purpose["ANALYTICS"] = "analytics";
     Purpose["AD_DELIVERY"] = "ad_delivery";
 })(Purpose = exports.Purpose || (exports.Purpose = {}));
-var consentChanged$ = new observable_1.Observable();
 var getThemeColor = function () {
     var themeColor;
     switch (env.getSite()) {
@@ -71,7 +69,6 @@ exports.init = function () {
         }
     } n(); })();
     window.didomiConfig = didomiConfig();
-    attachEventListeners();
     scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
 };
 var didomiConfig = function () {
@@ -114,18 +111,10 @@ var didomiConfig = function () {
         }
     };
 };
-var attachEventListeners = function () {
-    window.didomiEventListeners = window.didomiEventListeners || [];
-    window.didomiEventListeners.push({
-        event: 'consent.changed',
-        listener: function (context) {
-            consentChanged$.fire(context);
-        }
-    });
-};
 exports.isConsentedPurpose = function (purpose) {
     return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose);
 };
-exports.onChange = function (handler) {
-    consentChanged$.observe(handler);
+exports.attach = function (eventType, action) {
+    window[eventType] = window[eventType] || [];
+    window[eventType].push(action);
 };

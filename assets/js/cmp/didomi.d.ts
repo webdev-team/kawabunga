@@ -2,6 +2,7 @@ declare global {
     interface Window {
         gdprAppliesGlobally: any;
         didomiConfig: any;
+        didomiOnReady: any;
         didomiEventListeners: Array<any>;
         Didomi: any;
     }
@@ -15,4 +16,4 @@ export declare enum Purpose {
 }
 export declare let init: () => void;
 export declare let isConsentedPurpose: (purpose: Purpose) => boolean;
-export declare let onChange: (handler: (event: object) => void) => void;
+export declare let attach: (eventType: any, action: any) => void;
