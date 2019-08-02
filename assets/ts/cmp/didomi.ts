@@ -90,7 +90,7 @@ let didomiConfig = function(): object {
 };
 
 export let isConsentedPurpose = function(purpose: Purpose): boolean {
-    return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose);
+    return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose) || false;
 };
 
 export let attach = function(eventType, action) {

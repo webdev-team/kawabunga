@@ -112,7 +112,7 @@ var didomiConfig = function () {
     };
 };
 exports.isConsentedPurpose = function (purpose) {
-    return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose);
+    return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose) || false;
 };
 exports.attach = function (eventType, action) {
     window[eventType] = window[eventType] || [];
