@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var env = require("../env/env");
 var scriptLoader = require("../../js/utils/script-loader.js");
+var didomi_config_1 = require("./didomi-config");
 var Purpose;
 (function (Purpose) {
     Purpose["COOKIE"] = "cookies";
@@ -10,21 +10,7 @@ var Purpose;
     Purpose["ANALYTICS"] = "analytics";
     Purpose["AD_DELIVERY"] = "ad_delivery";
 })(Purpose = exports.Purpose || (exports.Purpose = {}));
-var getThemeColor = function () {
-    var themeColor;
-    switch (env.getSite()) {
-        case 'www.rtl.fr':
-            themeColor = '#E1001B';
-            break;
-        case 'www.funradio.fr':
-            themeColor = '#00AFEC';
-            break;
-        default:
-            themeColor = '#E1001B';
-    }
-    return themeColor;
-};
-exports.init = function () {
+exports.init = function (options) {
     window.gdprAppliesGlobally = true;
     // @ts-ignore
     (function () { function n() { if (!window.frames.__cmpLocator) {
@@ -68,48 +54,8 @@ exports.init = function () {
             window.attachEvent("onmessage", t);
         }
     } n(); })();
-    window.didomiConfig = didomiConfig();
+    window.didomiConfig = didomi_config_1.didomiConfig(options);
     scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
-};
-var didomiConfig = function () {
-    var themeColor = getThemeColor();
-    return {
-        app: {
-            apiKey: '<Your API key>',
-            vendors: {
-                iab: {
-                    all: true
-                }
-            }
-        },
-        preferences: {
-            enableAllButtons: true,
-        },
-        notice: {
-            position: 'top'
-        },
-        theme: {
-            color: '#D1D1D1',
-            linkColor: themeColor,
-            font: 'Arial',
-            buttons: {
-                regularButtons: {
-                    backgroundColor: '#eeeeee',
-                    textColor: '#212121',
-                    borderColor: 'rgba(34, 34, 34, 0.2)',
-                    borderWidth: '1px',
-                    borderRadius: '0px'
-                },
-                highlightButtons: {
-                    backgroundColor: themeColor,
-                    textColor: '#ffffff',
-                    borderColor: themeColor,
-                    borderWidth: '1px',
-                    borderRadius: '0px'
-                }
-            }
-        }
-    };
 };
 exports.isConsentedPurpose = function (purpose) {
     return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose) || false;

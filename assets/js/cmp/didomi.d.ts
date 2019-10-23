@@ -1,4 +1,5 @@
-declare global {
+import { DidomiOptions } from "./didomi-config";
+declare global  {
     interface Window {
         gdprAppliesGlobally: any;
         didomiConfig: any;
@@ -12,9 +13,9 @@ export declare enum Purpose {
     AD_PERSONALIZATION = "advertising_personalization",
     CONTENT_PERSONALIZATION = "content_personalization",
     ANALYTICS = "analytics",
-    AD_DELIVERY = "ad_delivery"
+    AD_DELIVERY = "ad_delivery",
 }
-export declare let init: () => void;
+export declare let init: (options: DidomiOptions) => void;
 export declare let isConsentedPurpose: (purpose: Purpose) => boolean;
 export declare let attach: (eventType: any, action: any) => void;
 export declare let isCookiesAllowed: () => boolean;
