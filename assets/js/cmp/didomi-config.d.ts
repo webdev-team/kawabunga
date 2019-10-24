@@ -1,9 +1,11 @@
 export interface DidomiOptions {
     apiKey: string;
+    logoUrl: string;
 }
 export declare let didomiConfig: (options: DidomiOptions) => {
     app: {
         apiKey: string;
+        logoUrl: string;
         vendors: {
             didomi: string[];
             iab: {
