@@ -2,6 +2,7 @@ import * as env from "../env/env";
 
 export interface DidomiOptions {
     apiKey: string;
+    logoUrl: string;
 }
 
 let getThemeColor = function(): string {
@@ -27,6 +28,7 @@ export let didomiConfig = function(options: DidomiOptions) {
     return {
         app: {
             apiKey: options.apiKey,
+            logoUrl: options.logoUrl,
             vendors: {
                 didomi: ['google', 'amazon', 'facebook', 'twitter'],
                 iab: {
@@ -54,16 +56,7 @@ export let didomiConfig = function(options: DidomiOptions) {
                         fr: "Mesure d'audience"
                     },
                     description: {
-                        fr: "Nous permet de mesurer l'audience, de faire des statistiques et d'améliorer la qualité de nos services."
-                    }
-                },
-                {
-                    id: 'customisation',
-                    name: {
-                        fr: 'Personnalisation'
-                    },
-                    description: {
-                        fr: 'Nous permet de suivre votre navigation et de réaliser des profils, afin de vous faire des recommandations de contenus pour une expérience personnalisée.'
+                        fr: "Ces cookies permettent d’établir des statistiques de fréquentation de nos services. Les désactiver nous empêche de suivre et d’améliorer la qualité de nos services."
                     }
                 },
                 {
@@ -72,7 +65,7 @@ export let didomiConfig = function(options: DidomiOptions) {
                         fr: 'Publicité ciblée'
                     },
                     description: {
-                        fr: "Nous permet de suivre votre navigation et de réaliser des profils, afin de vous proposer des publicités plus pertinentes car adaptées à vos centres d'intérêt, et de mesurer l'efficacité des campagnes publicitaires."
+                        fr: "Ces cookies permettent d’analyser votre navigation et de définir vos centres d’intérêts pour vous proposer des publicités plus pertinentes. Les désactiver n’a aucun impact sur le volume de publicité que vous recevrez."
                     }
                 },
                 {
@@ -95,9 +88,9 @@ export let didomiConfig = function(options: DidomiOptions) {
                 content: {
                     popup:{fr:'Votre vie privée nous importe'},
                     title:{fr:'Votre vie privée nous importe'},
-                    text: {fr: 'En poursuivant votre navigation sur notre service, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
+                    text: {fr: 'En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
                     learnMore: {fr: 'Paramétrer les cookies'},
-                    agreeAndClose: {fr: 'OK CONTINUER SUR LE SITE'}
+                    agreeAndClose: {fr: 'J\'accepte'}
                 }
 
             },
