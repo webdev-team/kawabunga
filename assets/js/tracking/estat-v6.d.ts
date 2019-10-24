@@ -1,5 +1,5 @@
 import * as Promise from 'promise';
-declare global  {
+declare global {
     interface Window {
         eStatTag(config: any): void;
     }

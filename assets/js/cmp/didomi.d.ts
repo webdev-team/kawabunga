@@ -9,17 +9,12 @@ declare global {
     }
 }
 export declare enum Purpose {
-    COOKIE = "cookies",
-    AD_PERSONALIZATION = "advertising_personalization",
-    CONTENT_PERSONALIZATION = "content_personalization",
-    ANALYTICS = "analytics",
-    AD_DELIVERY = "ad_delivery"
+    ANALYTICS = "audience_measurement",
+    ADS = "targeted_advertising",
+    SOCIAL = "social_network"
 }
-export declare let init: (options: DidomiOptions) => void;
-export declare let isConsentedPurpose: (purpose: Purpose) => boolean;
-export declare let attach: (eventType: any, action: any) => void;
-export declare let isCookiesAllowed: () => boolean;
-export declare let isAdPersonalizationAllowed: () => boolean;
-export declare let isContentPersonalizationAllowed: () => boolean;
-export declare let isAnalyticsAllowed: () => boolean;
-export declare let isAdDeliveryAllowed: () => boolean;
+export declare namespace CmpDidomi {
+    let init: (options: DidomiOptions) => void;
+    let isConsentedPurpose: (purpose: Purpose) => boolean;
+    let attach: (eventType: any, action: any) => void;
+}
