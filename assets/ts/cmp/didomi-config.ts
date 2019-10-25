@@ -80,9 +80,9 @@ export let didomiConfig = function(options: DidomiOptions) {
             ]
         },
         preferences: {
-            enableAllButtons: false,
+            enableAllButtons: true,
             canCloseWhenConsentIsMissing: false,
-            // showWhenConsentIsMissing: true,
+            showWhenConsentIsMissing: true,
             information: {
                 enable: true, // Enable block popin (don't miss disabable notice)
                 content: {
@@ -115,7 +115,7 @@ export let didomiConfig = function(options: DidomiOptions) {
             ]
         },
         notice: {
-            position: 'top'
+            enable: false
         },
         languages: {
             enabled: ['fr'],
