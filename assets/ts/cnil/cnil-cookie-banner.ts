@@ -1,4 +1,5 @@
 import {cnilCookie, ALL_ON, BANNER_ACTION} from './cnil-cookie';
+import {CmpDidomi, Purpose} from "../cmp/didomi";
 
 export type OkCallback = () => void;
 export interface BannerOptions {
@@ -31,6 +32,20 @@ export namespace cnilCookieBanner {
             } else {
                 cnilCookie.writeValues(ALL_ON, BANNER_ACTION);
             }
+
+            if ($banner) {
+                $banner.css('display', 'none');
+            }
+
+            if (cb) {
+                cb();
+            }
+        });
+
+        $banner.select('[data-action=consent]').on('click', e => {
+            let purpose = e.target.getAttribute('data-purpose');
+
+            CmpDidomi.enablePurpose(<Purpose>Purpose[purpose]);
 
             if ($banner) {
                 $banner.css('display', 'none');

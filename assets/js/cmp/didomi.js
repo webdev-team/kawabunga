@@ -64,4 +64,8 @@ var CmpDidomi;
         window[eventType] = window[eventType] || [];
         window[eventType].push(action);
     };
+    CmpDidomi.enablePurpose = function (purpose) {
+        var transaction = window.Didomi.openTransaction();
+        transaction.enablePurpose(purpose);
+    };
 })(CmpDidomi = exports.CmpDidomi || (exports.CmpDidomi = {}));

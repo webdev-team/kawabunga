@@ -39,4 +39,9 @@ export namespace CmpDidomi {
         window[eventType] = window[eventType] || [];
         window[eventType].push(action);
     };
+
+    export let enablePurpose = function(purpose: Purpose): void {
+        const transaction = window.Didomi.openTransaction();
+        transaction.enablePurpose(purpose);
+    }
 }

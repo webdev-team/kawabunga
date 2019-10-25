@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var cnil_cookie_1 = require("./cnil-cookie");
+var didomi_1 = require("../cmp/didomi");
 var cnilCookieBanner;
 (function (cnilCookieBanner) {
     var $mainBanner;
@@ -22,6 +23,16 @@ var cnilCookieBanner;
             else {
                 cnil_cookie_1.cnilCookie.writeValues(cnil_cookie_1.ALL_ON, cnil_cookie_1.BANNER_ACTION);
             }
+            if ($banner) {
+                $banner.css('display', 'none');
+            }
+            if (cb) {
+                cb();
+            }
+        });
+        $banner.select('[data-action=consent]').on('click', function (e) {
+            var purpose = e.target.getAttribute('data-purpose');
+            didomi_1.CmpDidomi.enablePurpose(didomi_1.Purpose[purpose]);
             if ($banner) {
                 $banner.css('display', 'none');
             }
