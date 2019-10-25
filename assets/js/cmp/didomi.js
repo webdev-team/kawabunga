@@ -67,5 +67,6 @@ var CmpDidomi;
     CmpDidomi.enablePurpose = function (purpose) {
         var transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purpose);
+        transaction.commit();
     };
 })(CmpDidomi = exports.CmpDidomi || (exports.CmpDidomi = {}));

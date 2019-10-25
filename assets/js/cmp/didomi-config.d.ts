@@ -63,6 +63,10 @@ export declare let didomiConfig: (options: DidomiOptions) => {
                 fr: string;
             };
         };
+        categories: {
+            type: string;
+            purposeId: string;
+        }[];
     };
     notice: {
         position: string;

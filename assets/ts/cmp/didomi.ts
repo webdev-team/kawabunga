@@ -43,5 +43,6 @@ export namespace CmpDidomi {
     export let enablePurpose = function(purpose: Purpose): void {
         const transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purpose);
+        transaction.commit();
     }
 }

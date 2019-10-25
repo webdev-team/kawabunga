@@ -89,7 +89,21 @@ exports.didomiConfig = function (options) {
                 title: { fr: 'Votre vie privée nous importe' },
                 agreeToAll: { fr: 'Accepter tout' },
                 disagreeToAll: { fr: 'Refuser tout' },
-            }
+            },
+            categories: [
+                {
+                    type: 'purpose',
+                    purposeId: 'audience_measurement'
+                },
+                {
+                    type: 'purpose',
+                    purposeId: 'targeted_advertising'
+                },
+                {
+                    type: 'purpose',
+                    purposeId: 'social_network'
+                }
+            ]
         },
         notice: {
             position: 'top'
