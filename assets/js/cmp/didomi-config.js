@@ -72,9 +72,9 @@ exports.didomiConfig = function (options) {
             ]
         },
         preferences: {
-            enableAllButtons: true,
+            enableAllButtons: false,
             canCloseWhenConsentIsMissing: false,
-            showWhenConsentIsMissing: true,
+            // showWhenConsentIsMissing: true,
             information: {
                 enable: true,
                 content: {

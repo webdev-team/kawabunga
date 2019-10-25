@@ -80,9 +80,9 @@ export let didomiConfig = function(options: DidomiOptions) {
             ]
         },
         preferences: {
-            enableAllButtons: true,
+            enableAllButtons: false,
             canCloseWhenConsentIsMissing: false,
-            showWhenConsentIsMissing: true,
+            // showWhenConsentIsMissing: true,
             information: {
                 enable: true, // Enable block popin (don't miss disabable notice)
                 content: {
@@ -119,7 +119,7 @@ export let didomiConfig = function(options: DidomiOptions) {
         },
         languages: {
             enabled: ['fr'],
-        default: 'fr'
+            default: 'fr'
         },
         theme: {
             color: '#D1D1D1', // Principal color used by the SDK
