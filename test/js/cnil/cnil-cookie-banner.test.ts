@@ -3,9 +3,10 @@ import * as userAgent from '../../../assets/js/env/user-agent';
 import {testEnv} from '../test-env';
 import * as cookies from 'js-cookie';
 import {cnil} from "../../../assets/ts/cnil/cnil";
-import {ALL_ON, ALL_OFF, cnilCookie, COOKIE_NAME} from "../../../assets/ts/cnil/cnil-cookie";
+import {ALL_OFF, ALL_ON, cnilCookie, COOKIE_NAME} from "../../../assets/ts/cnil/cnil-cookie";
 import {BannerOptions, cnilCookieBanner} from "../../../assets/ts/cnil/cnil-cookie-banner";
 import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-updater";
+import {Purpose} from "../../../assets/ts/cmp/didomi";
 
 let isBotSpy = jest.spyOn(userAgent, "isBot");
 let v2ActiveSpy = jest.spyOn(cnil, "v2Active");
@@ -14,6 +15,7 @@ let isCnilSafeSpy = jest.spyOn(cnilCookieAutoUpdater, "isCnilSafe");
 
 describe('cnil-cookie-banner.ts', () => {
     let bannerOptions: BannerOptions;
+    let multiBannerOptions: BannerOptions;
 
     beforeEach(() => {
         testEnv.setHTML('<div id="main-wrapper"></div>');
@@ -34,6 +36,14 @@ describe('cnil-cookie-banner.ts', () => {
                     <button id="close-btn" data-action="close"></button>
                 </div>`
         };
+
+        multiBannerOptions = {
+            $container: $('#main-wrapper'),
+            html: `
+                <div id="cnil-banner-ads-1" data-role="cnil-banner" data-purpose="${Purpose.ADS}"></div>
+                <div id="cnil-banner-ads-2" data-role="cnil-banner" data-purpose="${Purpose.ADS}"></div>
+                <div id="cnil-banner-analytics" data-role="cnil-banner" data-purpose="${Purpose.ANALYTICS}"></div>`
+        };
     });
 
     describe( 'Class', () => {
@@ -42,6 +52,19 @@ describe('cnil-cookie-banner.ts', () => {
             cnilCookieBanner.init(bannerOptions);
             cnilCookieBanner.hideMainBanner();
             expect($('#cnil-banner').css('display')).toBe('none');
+        });
+
+        test('hideDidomiBanner() multiple banners', () => {
+            cnilCookieBanner.init(multiBannerOptions);
+            cnilCookieBanner.displayDidomiBanners(Purpose.ADS, false);
+            expect($('#cnil-banner-ads-1').css('display')).toBe('none');
+            expect($('#cnil-banner-ads-2').css('display')).toBe('none');
+        });
+
+        test('hideDidomiBanner() single banner', () => {
+            cnilCookieBanner.init(multiBannerOptions);
+            cnilCookieBanner.displayDidomiBanners(Purpose.ANALYTICS, false);
+            expect($('#cnil-banner-analytics').css('display')).toBe('none');
         });
     });
 

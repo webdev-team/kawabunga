@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var $ = require("../../../assets/js/utils/dom");
 var cnil_cookie_1 = require("./cnil-cookie");
 var didomi_1 = require("../cmp/didomi");
 var cnilCookieBanner;
@@ -67,4 +68,11 @@ var cnilCookieBanner;
         elChild.innerHTML = html;
         elParent.insertBefore(elChild, elParent.firstChild);
     }
+    function displayDidomiBanners(purpose, display) {
+        var $banners = $(document.body).select("[data-role=cnil-banner][data-purpose=" + purpose + "]");
+        if ($banners.length) {
+            $banners.forEach(function (banner) { return $(banner).css('display', display ? 'block' : 'none'); });
+        }
+    }
+    cnilCookieBanner.displayDidomiBanners = displayDidomiBanners;
 })(cnilCookieBanner = exports.cnilCookieBanner || (exports.cnilCookieBanner = {}));
