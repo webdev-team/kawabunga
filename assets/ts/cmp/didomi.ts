@@ -1,4 +1,4 @@
-import * as env from '../env/env';
+import * as $ from '../../../assets/js/utils/dom';
 import * as scriptLoader from '../../js/utils/script-loader.js';
 import {didomiConfig, DidomiOptions} from "./didomi-config";
 
@@ -44,5 +44,32 @@ export namespace CmpDidomi {
         const transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purpose);
         transaction.commit();
+    };
+
+    export let doOnDidomiConsent = (purpose: Purpose, fnDo, fnElseDo): void => {
+        CmpDidomi.attach('didomiOnReady', () => {
+            if (isConsentedPurpose(purpose)) {
+                fnDo();
+            } else {
+                fnElseDo();
+
+                CmpDidomi.attach('didomiEventListeners', {
+                    event: 'consent.changed',
+                    listener: () => {
+                        if (isConsentedPurpose(purpose)) {
+                            displayDidomiBanners(purpose, false);
+                            fnDo();
+                        }
+                    }
+                });
+            }
+        });
+    };
+
+    export let displayDidomiBanners = (purpose: Purpose, display: boolean) => {
+        let $banners = $(document.body).select(`[data-role=cnil-banner][data-purpose=${purpose}]`);
+        if ($banners.length) {
+            $banners.forEach(banner => $(banner).css('display', display ? 'block': 'none'));
+        }
     }
 }

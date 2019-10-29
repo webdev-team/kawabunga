@@ -18,4 +18,6 @@ export declare namespace CmpDidomi {
     let isConsentedPurpose: (purpose: Purpose) => boolean;
     let attach: (eventType: any, action: any) => void;
     let enablePurpose: (purpose: Purpose) => void;
+    let doOnDidomiConsent: (purpose: Purpose, fnDo: any, fnElseDo: any) => void;
+    let displayDidomiBanners: (purpose: Purpose, display: boolean) => void;
 }

@@ -1,6 +1,5 @@
-import * as $ from '../../../assets/js/utils/dom';
 import {cnilCookie, ALL_ON, BANNER_ACTION} from './cnil-cookie';
-import {CmpDidomi, Purpose} from "../cmp/didomi";
+import {CmpDidomi} from "../cmp/didomi";
 
 export type OkCallback = () => void;
 export interface BannerOptions {
@@ -85,12 +84,5 @@ export namespace cnilCookieBanner {
         elChild.innerHTML = html;
 
         elParent.insertBefore(elChild, elParent.firstChild);
-    }
-
-    export function displayDidomiBanners(purpose: Purpose, display: boolean) {
-        let $banners = $(document.body).select(`[data-role=cnil-banner][data-purpose=${purpose}]`);
-        if ($banners.length) {
-            $banners.forEach(banner => $(banner).css('display', display ? 'block': 'none'));
-        }
     }
 }

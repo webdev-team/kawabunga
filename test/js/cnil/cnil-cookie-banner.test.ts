@@ -6,7 +6,7 @@ import {cnil} from "../../../assets/ts/cnil/cnil";
 import {ALL_OFF, ALL_ON, cnilCookie, COOKIE_NAME} from "../../../assets/ts/cnil/cnil-cookie";
 import {BannerOptions, cnilCookieBanner} from "../../../assets/ts/cnil/cnil-cookie-banner";
 import {cnilCookieAutoUpdater} from "../../../assets/ts/cnil/cnil-cookie-auto-updater";
-import {Purpose} from "../../../assets/ts/cmp/didomi";
+import {CmpDidomi, Purpose} from "../../../assets/ts/cmp/didomi";
 
 let isBotSpy = jest.spyOn(userAgent, "isBot");
 let v2ActiveSpy = jest.spyOn(cnil, "v2Active");
@@ -56,14 +56,14 @@ describe('cnil-cookie-banner.ts', () => {
 
         test('hideDidomiBanner() multiple banners', () => {
             cnilCookieBanner.init(multiBannerOptions);
-            cnilCookieBanner.displayDidomiBanners(Purpose.ADS, false);
+            CmpDidomi.displayDidomiBanners(Purpose.ADS, false);
             expect($('#cnil-banner-ads-1').css('display')).toBe('none');
             expect($('#cnil-banner-ads-2').css('display')).toBe('none');
         });
 
         test('hideDidomiBanner() single banner', () => {
             cnilCookieBanner.init(multiBannerOptions);
-            cnilCookieBanner.displayDidomiBanners(Purpose.ANALYTICS, false);
+            CmpDidomi.displayDidomiBanners(Purpose.ANALYTICS, false);
             expect($('#cnil-banner-analytics').css('display')).toBe('none');
         });
     });

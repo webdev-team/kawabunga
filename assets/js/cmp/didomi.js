@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var $ = require("../../../assets/js/utils/dom");
 var scriptLoader = require("../../js/utils/script-loader.js");
 var didomi_config_1 = require("./didomi-config");
 var Purpose;
@@ -68,5 +69,30 @@ var CmpDidomi;
         var transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purpose);
         transaction.commit();
+    };
+    CmpDidomi.doOnDidomiConsent = function (purpose, fnDo, fnElseDo) {
+        CmpDidomi.attach('didomiOnReady', function () {
+            if (CmpDidomi.isConsentedPurpose(purpose)) {
+                fnDo();
+            }
+            else {
+                fnElseDo();
+                CmpDidomi.attach('didomiEventListeners', {
+                    event: 'consent.changed',
+                    listener: function () {
+                        if (CmpDidomi.isConsentedPurpose(purpose)) {
+                            CmpDidomi.displayDidomiBanners(purpose, false);
+                            fnDo();
+                        }
+                    }
+                });
+            }
+        });
+    };
+    CmpDidomi.displayDidomiBanners = function (purpose, display) {
+        var $banners = $(document.body).select("[data-role=cnil-banner][data-purpose=" + purpose + "]");
+        if ($banners.length) {
+            $banners.forEach(function (banner) { return $(banner).css('display', display ? 'block' : 'none'); });
+        }
     };
 })(CmpDidomi = exports.CmpDidomi || (exports.CmpDidomi = {}));

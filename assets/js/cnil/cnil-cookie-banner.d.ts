@@ -1,4 +1,3 @@
-import { Purpose } from "../cmp/didomi";
 export declare type OkCallback = () => void;
 export interface BannerOptions {
     $container: any;
@@ -9,5 +8,4 @@ export declare namespace cnilCookieBanner {
     function injectBanner(options: BannerOptions, cb?: OkCallback): void;
     function hideMainBanner(): void;
     function showMainBanner(): void;
-    function displayDidomiBanners(purpose: Purpose, display: boolean): void;
 }
