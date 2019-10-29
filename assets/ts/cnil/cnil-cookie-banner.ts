@@ -46,7 +46,7 @@ export namespace cnilCookieBanner {
         $banner.select('[data-action=consent]').on('click', e => {
             let purpose = e.target.getAttribute('data-purpose');
 
-            CmpDidomi.enablePurpose(<Purpose>Purpose[purpose]);
+            CmpDidomi.enablePurpose(purpose);
 
             if ($banner) {
                 $banner.css('display', 'none');

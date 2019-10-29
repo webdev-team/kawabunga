@@ -33,7 +33,7 @@ var cnilCookieBanner;
         });
         $banner.select('[data-action=consent]').on('click', function (e) {
             var purpose = e.target.getAttribute('data-purpose');
-            didomi_1.CmpDidomi.enablePurpose(didomi_1.Purpose[purpose]);
+            didomi_1.CmpDidomi.enablePurpose(purpose);
             if ($banner) {
                 $banner.css('display', 'none');
             }
