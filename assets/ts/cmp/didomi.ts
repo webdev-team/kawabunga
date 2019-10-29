@@ -47,13 +47,13 @@ export namespace CmpDidomi {
     };
 
     export let doOnDidomiConsent = (purpose: Purpose, fnDo, fnElseDo): void => {
-        CmpDidomi.attach('didomiOnReady', () => {
+        attach('didomiOnReady', () => {
             if (isConsentedPurpose(purpose)) {
                 fnDo();
             } else {
                 fnElseDo();
 
-                CmpDidomi.attach('didomiEventListeners', {
+                attach('didomiEventListeners', {
                     event: 'consent.changed',
                     listener: () => {
                         if (isConsentedPurpose(purpose)) {
