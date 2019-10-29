@@ -41,7 +41,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass": "^3.4.1",
     "consent-string": "git+ssh://git@github.com/webdev-team/Consent-String-SDK-JS#1.2.4-patch1",
     "include-media": "^1.4.8",
     "js-cookie": "^2.2.0",
