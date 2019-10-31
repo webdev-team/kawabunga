@@ -16,11 +16,13 @@ var getThemeColor = function () {
     return themeColor;
 };
 exports.didomiConfig = function (options) {
-    var themeColor = getThemeColor();
+    options.themeColor = getThemeColor();
     return {
         app: {
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
+            gdprAppliesGlobally: true,
+            gdprAppliesWhenUnknown: true,
             vendors: {
                 didomi: ['google', 'amazon', 'facebook', 'twitter'],
                 iab: {
@@ -71,10 +73,18 @@ exports.didomiConfig = function (options) {
                 }
             ]
         },
+        notice: {
+            enable: false,
+            position: 'top',
+            logoAlignment: 'center',
+            closeOnClick: true,
+            closeOnClickNavigationDelay: 500,
+            closeOnClickBackdrop: true
+        },
         preferences: {
-            enableAllButtons: true,
             canCloseWhenConsentIsMissing: false,
             showWhenConsentIsMissing: true,
+            // enableAllButtons: true,
             information: {
                 enable: true,
                 content: {
@@ -105,16 +115,13 @@ exports.didomiConfig = function (options) {
                 }
             ]
         },
-        notice: {
-            enable: false
-        },
         languages: {
             enabled: ['fr'],
             default: 'fr'
         },
         theme: {
             color: '#D1D1D1',
-            linkColor: themeColor,
+            linkColor: options.themeColor,
             font: 'Arial',
             buttons: {
                 regularButtons: {
@@ -125,9 +132,9 @@ exports.didomiConfig = function (options) {
                     borderRadius: '0px'
                 },
                 highlightButtons: {
-                    backgroundColor: themeColor,
+                    backgroundColor: options.themeColor,
                     textColor: '#ffffff',
-                    borderColor: themeColor,
+                    borderColor: options.themeColor,
                     borderWidth: '1px',
                     borderRadius: '0px'
                 }

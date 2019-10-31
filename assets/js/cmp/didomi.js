@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var $ = require("../../../assets/js/utils/dom");
 var scriptLoader = require("../../js/utils/script-loader.js");
 var didomi_config_1 = require("./didomi-config");
+var didomi_css_1 = require("./didomi-css");
 var Purpose;
 (function (Purpose) {
     Purpose["ANALYTICS"] = "audience_measurement";
@@ -56,6 +57,9 @@ var CmpDidomi;
             }
         } n(); })();
         window.didomiConfig = didomi_config_1.didomiConfig(options);
+        var style = document.createElement('style');
+        style.innerHTML = didomi_css_1.didomiCustomCss(options);
+        document.head.appendChild(style);
         scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
     };
     CmpDidomi.isConsentedPurpose = function (purpose) {

@@ -20,8 +20,7 @@ let getThemeColor = function(): string {
             themeColor = '#E1001B';
     }
 
-    // return themeColor;
-    return '#FFFF00';
+    return themeColor;
 };
 
 export let didomiConfig = function(options: DidomiOptions) {

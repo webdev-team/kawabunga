@@ -1,11 +1,14 @@
 export interface DidomiOptions {
     apiKey: string;
     logoUrl: string;
+    themeColor?: string;
 }
 export declare let didomiConfig: (options: DidomiOptions) => {
     app: {
         apiKey: string;
         logoUrl: string;
+        gdprAppliesGlobally: boolean;
+        gdprAppliesWhenUnknown: boolean;
         vendors: {
             didomi: string[];
             iab: {
@@ -28,8 +31,15 @@ export declare let didomiConfig: (options: DidomiOptions) => {
             };
         }[];
     };
+    notice: {
+        enable: boolean;
+        position: string;
+        logoAlignment: string;
+        closeOnClick: boolean;
+        closeOnClickNavigationDelay: number;
+        closeOnClickBackdrop: boolean;
+    };
     preferences: {
-        enableAllButtons: boolean;
         canCloseWhenConsentIsMissing: boolean;
         showWhenConsentIsMissing: boolean;
         information: {
@@ -67,9 +77,6 @@ export declare let didomiConfig: (options: DidomiOptions) => {
             type: string;
             purposeId: string;
         }[];
-    };
-    notice: {
-        enable: boolean;
     };
     languages: {
         enabled: string[];
