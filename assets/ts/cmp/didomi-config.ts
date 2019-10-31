@@ -19,7 +19,8 @@ let getThemeColor = function(): string {
             themeColor = '#E1001B';
     }
 
-    return themeColor;
+    // return themeColor;
+    return '#FFFF00';
 };
 
 export let didomiConfig = function(options: DidomiOptions) {
@@ -29,6 +30,8 @@ export let didomiConfig = function(options: DidomiOptions) {
         app: {
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
+            gdprAppliesGlobally: true,
+            gdprAppliesWhenUnknown: true,
             vendors: {
                 didomi: ['google', 'amazon', 'facebook', 'twitter'],
                 iab: {
@@ -107,20 +110,20 @@ export let didomiConfig = function(options: DidomiOptions) {
                 agreeToAll : {fr: 'Accepter tout'},
                 disagreeToAll : {fr: 'Refuser tout'},
             },
-            // categories: [
-            //     {
-            //         type: 'purpose',
-            //         purposeId: 'audience_measurement'
-            //     },
-            //     {
-            //         type: 'purpose',
-            //         purposeId: 'targeted_advertising'
-            //     },
-            //     {
-            //         type: 'purpose',
-            //         purposeId: 'social_network'
-            //     }
-            // ]
+            categories: [
+                {
+                    type: 'purpose',
+                    purposeId: 'audience_measurement'
+                },
+                {
+                    type: 'purpose',
+                    purposeId: 'targeted_advertising'
+                },
+                {
+                    type: 'purpose',
+                    purposeId: 'social_network'
+                }
+            ]
         },
         languages: {
             enabled: ['fr'],
