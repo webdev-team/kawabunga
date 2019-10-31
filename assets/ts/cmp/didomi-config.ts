@@ -3,6 +3,7 @@ import * as env from "../env/env";
 export interface DidomiOptions {
     apiKey: string;
     logoUrl: string;
+    themeColor?: string;
 }
 
 let getThemeColor = function(): string {
@@ -24,7 +25,7 @@ let getThemeColor = function(): string {
 };
 
 export let didomiConfig = function(options: DidomiOptions) {
-    let themeColor = getThemeColor();
+    options.themeColor = getThemeColor();
 
     return {
         app: {
@@ -131,7 +132,7 @@ export let didomiConfig = function(options: DidomiOptions) {
         },
         theme: {
             color: '#D1D1D1', // Principal color used by the SDK
-            linkColor: themeColor,
+            linkColor: options.themeColor,
             font: 'Arial', // Font used by the SDK
             buttons: {
                 regularButtons: { // Learn more/disagree/disagree to all buttons.
@@ -142,9 +143,9 @@ export let didomiConfig = function(options: DidomiOptions) {
                         borderRadius: '0px'
                 },
                 highlightButtons: { // Agree/save/agree to all buttons.
-                    backgroundColor: themeColor,
+                    backgroundColor: options.themeColor,
                         textColor: '#ffffff',
-                        borderColor: themeColor,
+                        borderColor: options.themeColor,
                         borderWidth: '1px',
                         borderRadius: '0px'
                 }
