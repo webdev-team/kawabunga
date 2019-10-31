@@ -79,10 +79,18 @@ export let didomiConfig = function(options: DidomiOptions) {
                 }
             ]
         },
+        notice: {
+            enable: false,
+            position: 'top',
+            logoAlignment: 'center',
+            closeOnClick: true,
+            closeOnClickNavigationDelay: 500,
+            closeOnClickBackdrop: true
+        },
         preferences: {
-            enableAllButtons: true,
             canCloseWhenConsentIsMissing: false,
             showWhenConsentIsMissing: true,
+            // enableAllButtons: true,
             information: {
                 enable: true, // Enable block popin (don't miss disabable notice)
                 content: {
@@ -99,23 +107,20 @@ export let didomiConfig = function(options: DidomiOptions) {
                 agreeToAll : {fr: 'Accepter tout'},
                 disagreeToAll : {fr: 'Refuser tout'},
             },
-            categories: [
-                {
-                    type: 'purpose',
-                    purposeId: 'audience_measurement'
-                },
-                {
-                    type: 'purpose',
-                    purposeId: 'targeted_advertising'
-                },
-                {
-                    type: 'purpose',
-                    purposeId: 'social_network'
-                }
-            ]
-        },
-        notice: {
-            enable: false
+            // categories: [
+            //     {
+            //         type: 'purpose',
+            //         purposeId: 'audience_measurement'
+            //     },
+            //     {
+            //         type: 'purpose',
+            //         purposeId: 'targeted_advertising'
+            //     },
+            //     {
+            //         type: 'purpose',
+            //         purposeId: 'social_network'
+            //     }
+            // ]
         },
         languages: {
             enabled: ['fr'],
@@ -123,9 +128,9 @@ export let didomiConfig = function(options: DidomiOptions) {
         },
         theme: {
             color: '#D1D1D1', // Principal color used by the SDK
-                linkColor: themeColor,
-                font: 'Arial', // Font used by the SDK
-                buttons: {
+            linkColor: themeColor,
+            font: 'Arial', // Font used by the SDK
+            buttons: {
                 regularButtons: { // Learn more/disagree/disagree to all buttons.
                     backgroundColor: '#eeeeee',
                         textColor: '#212121',
@@ -148,8 +153,8 @@ export let didomiConfig = function(options: DidomiOptions) {
         user: {
             bots: {
                 consentRequired: false,
-                    types: ['crawlers','performance'],
-                    extraUserAgents: []
+                types: ['crawlers','performance'],
+                extraUserAgents: []
             }
         }
     }
