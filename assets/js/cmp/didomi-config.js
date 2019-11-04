@@ -21,6 +21,7 @@ exports.didomiConfig = function (options) {
         app: {
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
+            privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite',
             gdprAppliesGlobally: true,
             gdprAppliesWhenUnknown: true,
             vendors: {

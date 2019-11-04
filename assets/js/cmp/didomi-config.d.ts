@@ -7,6 +7,7 @@ export declare let didomiConfig: (options: DidomiOptions) => {
     app: {
         apiKey: string;
         logoUrl: string;
+        privacyPolicyURL: string;
         gdprAppliesGlobally: boolean;
         gdprAppliesWhenUnknown: boolean;
         vendors: {
