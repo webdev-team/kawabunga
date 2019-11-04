@@ -93,7 +93,7 @@ export let didomiConfig = function(options: DidomiOptions) {
         preferences: {
             canCloseWhenConsentIsMissing: false,
             showWhenConsentIsMissing: true,
-            // enableAllButtons: true,
+            enableAllButtons: true,
             information: {
                 enable: true, // Enable block popin (don't miss disabable notice)
                 content: {

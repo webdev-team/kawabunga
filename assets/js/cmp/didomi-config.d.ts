@@ -42,6 +42,7 @@ export declare let didomiConfig: (options: DidomiOptions) => {
     preferences: {
         canCloseWhenConsentIsMissing: boolean;
         showWhenConsentIsMissing: boolean;
+        enableAllButtons: boolean;
         information: {
             enable: boolean;
             content: {
