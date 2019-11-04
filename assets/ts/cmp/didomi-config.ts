@@ -28,6 +28,7 @@ export let didomiConfig = function(options: DidomiOptions) {
 
     return {
         app: {
+            name: 'RTL',
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
             privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite',
@@ -81,84 +82,84 @@ export let didomiConfig = function(options: DidomiOptions) {
                         fr: "Ces cookies vous permettent de partager des contenus avec d'autres personnes ou de faire connaître votre consultation ou votre opinion (boutons J'aime). Les désactiver peut vous empêcher de vous connecter à votre réseau social."
                     }
                 }
-            ],
-            notice: {
-                enable: false,
-                position: 'top',
-                logoAlignment: 'center',
-                closeOnClick: true,
-                closeOnClickNavigationDelay: 500,
-                closeOnClickBackdrop: true
-            },
-            preferences: {
-                canCloseWhenConsentIsMissing: false,
-                showWhenConsentIsMissing: true,
-                enableAllButtons: true,
-                information: {
-                    enable: true, // Enable block popin (don't miss disabable notice)
-                    content: {
-                        popup:{fr:'Votre vie privée nous importe'},
-                        title:{fr:'Votre vie privée nous importe'},
-                        text: {fr: 'En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
-                        learnMore: {fr: 'Paramétrer les cookies'},
-                        agreeAndClose: {fr: 'J\'accepte'}
-                    }
-
-                },
+            ]
+        },
+        notice: {
+            enable: false,
+            position: 'top',
+            logoAlignment: 'center',
+            closeOnClick: true,
+            closeOnClickNavigationDelay: 500,
+            closeOnClickBackdrop: true
+        },
+        preferences: {
+            canCloseWhenConsentIsMissing: false,
+            showWhenConsentIsMissing: true,
+            enableAllButtons: true,
+            information: {
+                enable: true, // Enable block popin (don't miss disabable notice)
                 content: {
+                    // popup:{fr:'Votre vie privée nous importe'},
                     title:{fr:'Votre vie privée nous importe'},
-                    agreeToAll : {fr: 'Accepter tout'},
-                    disagreeToAll : {fr: 'Refuser tout'},
+                    text: {fr: 'En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
+                    learnMore: {fr: 'Paramétrer les cookies'},
+                    agreeAndClose: {fr: 'J\'accepte'}
+                }
+
+            },
+            content: {
+                title:{fr:'Votre vie privée nous importe'},
+                agreeToAll : {fr: 'Accepter tout'},
+                disagreeToAll : {fr: 'Refuser tout'},
+            },
+            categories: [
+                {
+                    type: 'purpose',
+                    purposeId: 'audience_measurement'
                 },
-                categories: [
-                    {
-                        type: 'purpose',
-                        purposeId: 'audience_measurement'
-                    },
-                    {
-                        type: 'purpose',
-                        purposeId: 'targeted_advertising'
-                    },
-                    {
-                        type: 'purpose',
-                        purposeId: 'social_network'
-                    }
-                ]
-            },
-            languages: {
-                enabled: ['fr'],
-                default: 'fr'
-            },
-            theme: {
-                color: '#D1D1D1', // Principal color used by the SDK
-                linkColor: options.themeColor,
-                font: 'Arial', // Font used by the SDK
-                buttons: {
-                    regularButtons: { // Learn more/disagree/disagree to all buttons.
-                        backgroundColor: '#eeeeee',
-                            textColor: '#212121',
-                            borderColor: 'rgba(34, 34, 34, 0.2)',
-                            borderWidth: '1px',
-                            borderRadius: '0px'
-                    },
-                    highlightButtons: { // Agree/save/agree to all buttons.
-                        backgroundColor: options.themeColor,
-                            textColor: '#ffffff',
-                            borderColor: options.themeColor,
-                            borderWidth: '1px',
-                            borderRadius: '0px'
-                    }
+                {
+                    type: 'purpose',
+                    purposeId: 'targeted_advertising'
+                },
+                {
+                    type: 'purpose',
+                    purposeId: 'social_network'
                 }
-            },
-            tagManager: {
-                provider: 'gtm'
-            },
-            user: {
-                bots: {
-                    consentRequired: false,
-                    types: ['crawlers','performance'],
-                    extraUserAgents: []
+            ]
+        },
+        languages: {
+            enabled: ['fr'],
+            default: 'fr'
+        },
+        theme: {
+            color: '#D1D1D1', // Principal color used by the SDK
+            linkColor: options.themeColor,
+            font: 'Arial', // Font used by the SDK
+            buttons: {
+                regularButtons: { // Learn more/disagree/disagree to all buttons.
+                    backgroundColor: '#eeeeee',
+                        textColor: '#212121',
+                        borderColor: 'rgba(34, 34, 34, 0.2)',
+                        borderWidth: '1px',
+                        borderRadius: '0px'
+                },
+                highlightButtons: { // Agree/save/agree to all buttons.
+                    backgroundColor: options.themeColor,
+                        textColor: '#ffffff',
+                        borderColor: options.themeColor,
+                        borderWidth: '1px',
+                        borderRadius: '0px'
                 }
+            }
+        },
+        tagManager: {
+            provider: 'gtm'
+        },
+        user: {
+            bots: {
+                consentRequired: false,
+                types: ['crawlers','performance'],
+                extraUserAgents: []
             }
         }
     }

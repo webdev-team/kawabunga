@@ -5,6 +5,7 @@ export interface DidomiOptions {
 }
 export declare let didomiConfig: (options: DidomiOptions) => {
     app: {
+        name: string;
         apiKey: string;
         logoUrl: string;
         privacyPolicyURL: string;
@@ -31,88 +32,85 @@ export declare let didomiConfig: (options: DidomiOptions) => {
                 fr: string;
             };
         }[];
-        notice: {
+    };
+    notice: {
+        enable: boolean;
+        position: string;
+        logoAlignment: string;
+        closeOnClick: boolean;
+        closeOnClickNavigationDelay: number;
+        closeOnClickBackdrop: boolean;
+    };
+    preferences: {
+        canCloseWhenConsentIsMissing: boolean;
+        showWhenConsentIsMissing: boolean;
+        enableAllButtons: boolean;
+        information: {
             enable: boolean;
-            position: string;
-            logoAlignment: string;
-            closeOnClick: boolean;
-            closeOnClickNavigationDelay: number;
-            closeOnClickBackdrop: boolean;
-        };
-        preferences: {
-            canCloseWhenConsentIsMissing: boolean;
-            showWhenConsentIsMissing: boolean;
-            enableAllButtons: boolean;
-            information: {
-                enable: boolean;
-                content: {
-                    popup: {
-                        fr: string;
-                    };
-                    title: {
-                        fr: string;
-                    };
-                    text: {
-                        fr: string;
-                    };
-                    learnMore: {
-                        fr: string;
-                    };
-                    agreeAndClose: {
-                        fr: string;
-                    };
-                };
-            };
             content: {
                 title: {
                     fr: string;
                 };
-                agreeToAll: {
+                text: {
                     fr: string;
                 };
-                disagreeToAll: {
+                learnMore: {
+                    fr: string;
+                };
+                agreeAndClose: {
                     fr: string;
                 };
             };
-            categories: {
-                type: string;
-                purposeId: string;
-            }[];
         };
-        languages: {
-            enabled: string[];
-            default: string;
-        };
-        theme: {
-            color: string;
-            linkColor: string;
-            font: string;
-            buttons: {
-                regularButtons: {
-                    backgroundColor: string;
-                    textColor: string;
-                    borderColor: string;
-                    borderWidth: string;
-                    borderRadius: string;
-                };
-                highlightButtons: {
-                    backgroundColor: string;
-                    textColor: string;
-                    borderColor: string;
-                    borderWidth: string;
-                    borderRadius: string;
-                };
+        content: {
+            title: {
+                fr: string;
+            };
+            agreeToAll: {
+                fr: string;
+            };
+            disagreeToAll: {
+                fr: string;
             };
         };
-        tagManager: {
-            provider: string;
-        };
-        user: {
-            bots: {
-                consentRequired: boolean;
-                types: string[];
-                extraUserAgents: any[];
+        categories: {
+            type: string;
+            purposeId: string;
+        }[];
+    };
+    languages: {
+        enabled: string[];
+        default: string;
+    };
+    theme: {
+        color: string;
+        linkColor: string;
+        font: string;
+        buttons: {
+            regularButtons: {
+                backgroundColor: string;
+                textColor: string;
+                borderColor: string;
+                borderWidth: string;
+                borderRadius: string;
             };
+            highlightButtons: {
+                backgroundColor: string;
+                textColor: string;
+                borderColor: string;
+                borderWidth: string;
+                borderRadius: string;
+            };
+        };
+    };
+    tagManager: {
+        provider: string;
+    };
+    user: {
+        bots: {
+            consentRequired: boolean;
+            types: string[];
+            extraUserAgents: any[];
         };
     };
 };
