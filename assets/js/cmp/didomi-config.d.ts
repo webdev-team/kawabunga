@@ -1,4 +1,5 @@
 export interface DidomiOptions {
+    name: string;
     apiKey: string;
     logoUrl: string;
     themeColor?: string;
@@ -48,6 +49,9 @@ export declare let didomiConfig: (options: DidomiOptions) => {
         information: {
             enable: boolean;
             content: {
+                popup: {
+                    fr: string;
+                };
                 title: {
                     fr: string;
                 };
@@ -112,10 +116,5 @@ export declare let didomiConfig: (options: DidomiOptions) => {
             types: string[];
             extraUserAgents: any[];
         };
-    };
-};
-export declare let turboConfig: () => {
-    preferences: {
-        enableAllButtons: boolean;
     };
 };
