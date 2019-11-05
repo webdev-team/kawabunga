@@ -1,11 +1,17 @@
+import * as env from "../env/env";
 import * as scriptLoader from "../../js/utils/script-loader";
 import * as $ from '../../js/utils/dom';
 import {cnil} from "../cnil/cnil";
 import {ADS} from "../cnil/cnil-cookie";
+import {CmpDidomi, Purpose} from "../cmp/didomi";
 
 export let init = function() {
 
-    if(cnil.isOff(ADS)) {
+    if (env.isFlag('didomi')) {
+        if (!CmpDidomi.isConsentedPurpose(Purpose.ADS)) {
+            return;
+        }
+    } else if (cnil.isOff(ADS)) {
         return;
     }
 

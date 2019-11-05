@@ -56,8 +56,7 @@ var CmpDidomi;
                 window.attachEvent("onmessage", t);
             }
         } n(); })();
-        // window.didomiConfig = didomiConfig(options);
-        window.didomiConfig = didomi_config_1.turboConfig();
+        window.didomiConfig = didomi_config_1.didomiConfig(options);
         var style = document.createElement('style');
         style.innerHTML = didomi_css_1.didomiCustomCss(options);
         document.head.appendChild(style);
