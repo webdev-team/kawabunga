@@ -59,7 +59,7 @@ export let didomiConfig = function(options: DidomiOptions) {
                 {
                     id: 'audience_measurement',
                     name: {
-                        fr: "Mesure d'audience"
+                        fr: `${options.name} - Mesure d'audience`
                     },
                     description: {
                         fr: "Ces cookies permettent d’établir des statistiques de fréquentation de nos services. Les désactiver nous empêche de suivre et d’améliorer la qualité de nos services."
@@ -68,7 +68,7 @@ export let didomiConfig = function(options: DidomiOptions) {
                 {
                     id: 'targeted_advertising',
                     name: {
-                        fr: 'Publicité ciblée'
+                        fr: `${options.name} - Publicité ciblée`
                     },
                     description: {
                         fr: "Ces cookies permettent d’analyser votre navigation et de définir vos centres d’intérêts pour vous proposer des publicités plus pertinentes. Les désactiver n’a aucun impact sur le volume de publicité que vous recevrez."
@@ -77,7 +77,7 @@ export let didomiConfig = function(options: DidomiOptions) {
                 {
                     id: 'social_network',
                     name: {
-                        fr: 'Réseaux sociaux'
+                        fr: `${options.name} - Réseaux sociaux`
                     },
                     description: {
                         fr: "Ces cookies vous permettent de partager des contenus avec d'autres personnes ou de faire connaître votre consultation ou votre opinion (boutons J'aime). Les désactiver peut vous empêcher de vous connecter à votre réseau social."
