@@ -70,7 +70,7 @@ export let didomiCustomCss = (options: DidomiOptions) => {
         flex-direction: column-reverse !important;
     }
     
-    #didomi-host .didomi-consent-popup-information .didomi-button {
+    #didomi-host #didomi-consent-popup .didomi-consent-popup-information .didomi-buttons .didomi-button {
         font-family: Montserrat,sans-serif;
         padding: 16px 0px;
         font-size: 14px;
