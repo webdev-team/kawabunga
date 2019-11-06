@@ -37,11 +37,16 @@ export let didomiCustomCss = (options: DidomiOptions) => {
     
     #didomi-host .didomi-popup-container {
         border: none!important;
-        padding: 0 60px!important;
         display: block!important;
         border-radius: 6px!important;
-        width: 540px!important;
         box-sizing: content-box!important;
+    }
+    
+    @media (min-width: 660px) {
+        #didomi-host .didomi-popup-container {
+          padding: 0 60px!important;
+          width: 540px!important;
+        }
     }
     
     #didomi-host .didomi-popup-header {
