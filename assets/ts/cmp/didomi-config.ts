@@ -1,38 +1,34 @@
 import * as env from "../env/env";
 
 export interface DidomiOptions {
-    name: string;
-    apiKey: string;
-    logoUrl: string;
+    name?: string;
+    apiKey?: string;
+    logoUrl?: string;
     themeColor?: string;
+    privacyPolicyURL?: string;
 }
 
-let getThemeColor = function(): string {
-    let themeColor: string;
-
-    switch(env.getSite()) {
-        case 'www.rtl.fr':
-            themeColor = '#E1001B';
-            break;
-        case 'www.funradio.fr':
-            themeColor = '#00AFEC';
-            break;
-        default:
-            themeColor = '#E1001B';
-    }
-
-    return themeColor;
+const DEFAULT_OPTIONS: DidomiOptions = {
+    name: 'rtl.fr',
+    apiKey: '4801407c-7ff1-4aed-aa34-71b05434f911',
+    logoUrl: 'https://cdn-static.rtl.fr/versions/www/6.0.816/img/logo-rtl-86x60.jpg',
+    themeColor: '#E1001B',
+    privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite'
 };
 
-export let didomiConfig = function(options: DidomiOptions) {
-    options.themeColor = getThemeColor();
+export let didomiConfig = function(options: DidomiOptions = DEFAULT_OPTIONS) {
+    options.name = options.name || DEFAULT_OPTIONS.name;
+    options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
+    options.logoUrl = options.logoUrl || DEFAULT_OPTIONS.logoUrl;
+    options.themeColor = options.themeColor || DEFAULT_OPTIONS.themeColor;
+    options.privacyPolicyURL = options.privacyPolicyURL || DEFAULT_OPTIONS.privacyPolicyURL;
 
     return {
         app: {
             name: options.name,
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
-            privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite',
+            privacyPolicyURL: options.privacyPolicyURL,
             gdprAppliesGlobally: true,
             gdprAppliesWhenUnknown: true,
             vendors: {

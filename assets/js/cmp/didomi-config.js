@@ -1,28 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var env = require("../env/env");
-var getThemeColor = function () {
-    var themeColor;
-    switch (env.getSite()) {
-        case 'www.rtl.fr':
-            themeColor = '#E1001B';
-            break;
-        case 'www.funradio.fr':
-            themeColor = '#00AFEC';
-            break;
-        default:
-            themeColor = '#E1001B';
-    }
-    return themeColor;
+var DEFAULT_OPTIONS = {
+    name: 'rtl.fr',
+    apiKey: '4801407c-7ff1-4aed-aa34-71b05434f911',
+    logoUrl: 'https://cdn-static.rtl.fr/versions/www/6.0.816/img/logo-rtl-86x60.jpg',
+    themeColor: '#E1001B',
+    privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite'
 };
 exports.didomiConfig = function (options) {
-    options.themeColor = getThemeColor();
+    if (options === void 0) { options = DEFAULT_OPTIONS; }
+    options.name = options.name || DEFAULT_OPTIONS.name;
+    options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
+    options.logoUrl = options.logoUrl || DEFAULT_OPTIONS.logoUrl;
+    options.themeColor = options.themeColor || DEFAULT_OPTIONS.themeColor;
+    options.privacyPolicyURL = options.privacyPolicyURL || DEFAULT_OPTIONS.privacyPolicyURL;
     return {
         app: {
             name: options.name,
             apiKey: options.apiKey,
             logoUrl: options.logoUrl,
-            privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite',
+            privacyPolicyURL: options.privacyPolicyURL,
             gdprAppliesGlobally: true,
             gdprAppliesWhenUnknown: true,
             vendors: {

@@ -1,10 +1,11 @@
 export interface DidomiOptions {
-    name: string;
-    apiKey: string;
-    logoUrl: string;
+    name?: string;
+    apiKey?: string;
+    logoUrl?: string;
     themeColor?: string;
+    privacyPolicyURL?: string;
 }
-export declare let didomiConfig: (options: DidomiOptions) => {
+export declare let didomiConfig: (options?: DidomiOptions) => {
     app: {
         name: string;
         apiKey: string;

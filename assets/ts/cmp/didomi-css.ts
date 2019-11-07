@@ -23,11 +23,18 @@ export let didomiCustomCss = (options: DidomiOptions) => {
     
     #didomi-host .didomi-popup-title:before {
         display: block;
-        margin: 20px auto 30px;
-        padding-top: 10.1%;
+        margin: 0 auto 20px;
+        padding-top: 14.1%;
         content: "";
         background: url(${options.logoUrl}) no-repeat center center;
         background-size: contain;
+    }
+    
+    @media (min-width: 660px) {
+        #didomi-host .didomi-popup-title:before {
+            padding-top: 10.1%;
+            margin: 20px auto 30px;
+        }
     }
     
     #didomi-host .didomi-popup-body {
