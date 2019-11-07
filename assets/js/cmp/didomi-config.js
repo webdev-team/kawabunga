@@ -8,7 +8,7 @@ var DEFAULT_OPTIONS = {
     privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite'
 };
 exports.didomiConfig = function (options) {
-    if (options === void 0) { options = DEFAULT_OPTIONS; }
+    options = options || DEFAULT_OPTIONS;
     options.name = options.name || DEFAULT_OPTIONS.name;
     options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
     options.logoUrl = options.logoUrl || DEFAULT_OPTIONS.logoUrl;

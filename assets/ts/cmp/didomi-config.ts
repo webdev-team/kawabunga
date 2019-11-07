@@ -16,7 +16,8 @@ const DEFAULT_OPTIONS: DidomiOptions = {
     privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite'
 };
 
-export let didomiConfig = function(options: DidomiOptions = DEFAULT_OPTIONS) {
+export let didomiConfig = function(options?: DidomiOptions) {
+    options = options || DEFAULT_OPTIONS;
     options.name = options.name || DEFAULT_OPTIONS.name;
     options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
     options.logoUrl = options.logoUrl || DEFAULT_OPTIONS.logoUrl;
