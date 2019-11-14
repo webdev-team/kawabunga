@@ -2,6 +2,8 @@ import * as $ from '../../../assets/js/utils/dom';
 import * as scriptLoader from '../../js/utils/script-loader.js';
 import {didomiConfig, DidomiOptions} from "./didomi-config";
 import {didomiCustomCss} from "./didomi-css";
+import {cnilLogService} from "../cnil/cnil-log-service";
+import {CnilLog} from "../cnil/cnil-log";
 
 declare global {
     interface Window {
@@ -33,7 +35,14 @@ export namespace CmpDidomi {
         style.innerHTML = didomiCustomCss(options);
         document.head.appendChild(style);
 
-        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
+        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', () => {
+            attach('didomiEventListeners', {
+                event: 'consent.changed',
+                listener: () => {
+                    cnilLogService.save(new CnilLog('didomi_token', 'popup', window.Didomi.getUserConsentStatusForAll().purposes));
+                }
+            });
+        });
     };
 
     export let isConsentedPurpose = function(purpose: Purpose): boolean {

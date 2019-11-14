@@ -4,6 +4,8 @@ var $ = require("../../../assets/js/utils/dom");
 var scriptLoader = require("../../js/utils/script-loader.js");
 var didomi_config_1 = require("./didomi-config");
 var didomi_css_1 = require("./didomi-css");
+var cnil_log_service_1 = require("../cnil/cnil-log-service");
+var cnil_log_1 = require("../cnil/cnil-log");
 var Purpose;
 (function (Purpose) {
     Purpose["ANALYTICS"] = "audience_measurement";
@@ -60,7 +62,14 @@ var CmpDidomi;
         var style = document.createElement('style');
         style.innerHTML = didomi_css_1.didomiCustomCss(options);
         document.head.appendChild(style);
-        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js');
+        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', function () {
+            CmpDidomi.attach('didomiEventListeners', {
+                event: 'consent.changed',
+                listener: function () {
+                    cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog('didomi_token', 'popup', window.Didomi.getUserConsentStatusForAll().purposes));
+                }
+            });
+        });
     };
     CmpDidomi.isConsentedPurpose = function (purpose) {
         return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purpose) || false;
