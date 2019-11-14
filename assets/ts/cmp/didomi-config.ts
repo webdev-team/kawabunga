@@ -101,7 +101,7 @@ export let didomiConfig = function(options?: DidomiOptions) {
                     title:{fr:'Votre vie privée nous importe'},
                     text: {fr: 'En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
                     learnMore: {fr: 'Paramétrer les cookies'},
-                    agreeAndClose: {fr: 'J\'accepte'}
+                    agreeAndClose: {fr: 'OK continuer sur le site'}
                 }
 
             },
