@@ -35,7 +35,7 @@ export namespace CmpDidomi {
         style.innerHTML = didomiCustomCss(options);
         document.head.appendChild(style);
 
-        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', () => {
+        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js').then(() => {
             attach('didomiEventListeners', {
                 event: 'consent.changed',
                 listener: () => {

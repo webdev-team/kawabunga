@@ -62,7 +62,7 @@ var CmpDidomi;
         var style = document.createElement('style');
         style.innerHTML = didomi_css_1.didomiCustomCss(options);
         document.head.appendChild(style);
-        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js', function () {
+        scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js').then(function () {
             CmpDidomi.attach('didomiEventListeners', {
                 event: 'consent.changed',
                 listener: function () {
