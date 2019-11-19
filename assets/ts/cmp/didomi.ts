@@ -43,9 +43,9 @@ export namespace CmpDidomi {
                     let id = cookies.get('didomi_token');
                     if (id) {
                         cnilLogService.save(new CnilLog(id, 'popup', {
-                            ads: isConsentedPurpose[Purpose.ADS],
-                            analytics: isConsentedPurpose[Purpose.ANALYTICS],
-                            social: isConsentedPurpose[Purpose.SOCIAL]
+                            ads: isConsentedPurpose(Purpose.ADS),
+                            analytics: isConsentedPurpose(Purpose.ANALYTICS),
+                            social: isConsentedPurpose(Purpose.SOCIAL)
                         }));
                     }
                 }

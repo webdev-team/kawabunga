@@ -70,9 +70,9 @@ var CmpDidomi;
                     var id = cookies.get('didomi_token');
                     if (id) {
                         cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(id, 'popup', {
-                            ads: CmpDidomi.isConsentedPurpose[Purpose.ADS],
-                            analytics: CmpDidomi.isConsentedPurpose[Purpose.ANALYTICS],
-                            social: CmpDidomi.isConsentedPurpose[Purpose.SOCIAL]
+                            ads: CmpDidomi.isConsentedPurpose(Purpose.ADS),
+                            analytics: CmpDidomi.isConsentedPurpose(Purpose.ANALYTICS),
+                            social: CmpDidomi.isConsentedPurpose(Purpose.SOCIAL)
                         }));
                     }
                 }
