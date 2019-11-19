@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = require("../../../assets/js/utils/dom");
 var scriptLoader = require("../../js/utils/script-loader.js");
+var cookies = require("js-cookie");
 var didomi_config_1 = require("./didomi-config");
 var didomi_css_1 = require("./didomi-css");
 var cnil_log_service_1 = require("../cnil/cnil-log-service");
@@ -66,7 +67,14 @@ var CmpDidomi;
             CmpDidomi.attach('didomiEventListeners', {
                 event: 'consent.changed',
                 listener: function () {
-                    cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog('didomi_token', 'popup', window.Didomi.getUserConsentStatusForAll().purposes));
+                    var id = cookies.get('didomi_token');
+                    if (id) {
+                        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(id, 'popup', {
+                            ads: CmpDidomi.isConsentedPurpose[Purpose.ADS],
+                            analytics: CmpDidomi.isConsentedPurpose[Purpose.ANALYTICS],
+                            social: CmpDidomi.isConsentedPurpose[Purpose.SOCIAL]
+                        }));
+                    }
                 }
             });
         });

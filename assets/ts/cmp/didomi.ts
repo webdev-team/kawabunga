@@ -1,5 +1,6 @@
 import * as $ from '../../../assets/js/utils/dom';
 import * as scriptLoader from '../../js/utils/script-loader.js';
+import * as cookies from 'js-cookie';
 import {didomiConfig, DidomiOptions} from "./didomi-config";
 import {didomiCustomCss} from "./didomi-css";
 import {cnilLogService} from "../cnil/cnil-log-service";
@@ -39,7 +40,14 @@ export namespace CmpDidomi {
             attach('didomiEventListeners', {
                 event: 'consent.changed',
                 listener: () => {
-                    cnilLogService.save(new CnilLog('didomi_token', 'popup', window.Didomi.getUserConsentStatusForAll().purposes));
+                    let id = cookies.get('didomi_token');
+                    if (id) {
+                        cnilLogService.save(new CnilLog(id, 'popup', {
+                            ads: isConsentedPurpose[Purpose.ADS],
+                            analytics: isConsentedPurpose[Purpose.ANALYTICS],
+                            social: isConsentedPurpose[Purpose.SOCIAL]
+                        }));
+                    }
                 }
             });
         });
