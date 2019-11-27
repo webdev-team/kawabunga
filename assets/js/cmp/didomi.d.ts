@@ -15,6 +15,8 @@ export declare enum Purpose {
 }
 export declare namespace CmpDidomi {
     let init: (options: DidomiOptions) => void;
+    let logConsent: () => void;
+    let trackConsent: () => void;
     let isConsentedPurpose: (purpose: Purpose) => boolean;
     let attach: (eventType: any, action: any) => void;
     let enablePurpose: (purpose: Purpose) => void;

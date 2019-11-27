@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var env = require("../env/env");
 var $ = require("../../../assets/js/utils/dom");
 var scriptLoader = require("../../js/utils/script-loader.js");
 var cookies = require("js-cookie");
@@ -64,19 +65,52 @@ var CmpDidomi;
         style.innerHTML = didomi_css_1.didomiCustomCss(options);
         document.head.appendChild(style);
         scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js').then(function () {
-            CmpDidomi.attach('didomiEventListeners', {
-                event: 'consent.changed',
-                listener: function () {
-                    var id = cookies.get('didomi_token');
-                    if (id) {
-                        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(id, 'popup', {
-                            ads: CmpDidomi.isConsentedPurpose(Purpose.ADS),
-                            analytics: CmpDidomi.isConsentedPurpose(Purpose.ANALYTICS),
-                            social: CmpDidomi.isConsentedPurpose(Purpose.SOCIAL)
-                        }));
-                    }
+            CmpDidomi.trackConsent();
+            CmpDidomi.logConsent();
+        });
+    };
+    CmpDidomi.logConsent = function () {
+        CmpDidomi.attach('didomiEventListeners', {
+            event: 'consent.changed',
+            listener: function () {
+                var id = cookies.get('didomi_token');
+                if (id) {
+                    cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(id, 'popup', {
+                        ads: CmpDidomi.isConsentedPurpose(Purpose.ADS),
+                        analytics: CmpDidomi.isConsentedPurpose(Purpose.ANALYTICS),
+                        social: CmpDidomi.isConsentedPurpose(Purpose.SOCIAL)
+                    }));
                 }
-            });
+            }
+        });
+    };
+    CmpDidomi.trackConsent = function () {
+        var isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain());
+        if (!isEitherRtlOrFun) {
+            return;
+        }
+        CmpDidomi.attach('didomiOnReady', function (Didomi) {
+            if (Didomi.notice.isVisible()) {
+                var img = document.createElement('img');
+                img.src = 'https://www.dahta.fr/c/cs';
+                document.getElementsByTagName('body')[0].appendChild(img);
+            }
+        });
+        CmpDidomi.attach('didomiEventListeners', {
+            event: 'consent.changed',
+            listener: function () {
+                var statusForAll = window.Didomi.getUserConsentStatusForAll();
+                var status = '';
+                if (statusForAll.purposes.enabled.length > 0 && statusForAll.purposes.disabled.length === 0)
+                    status = 'ca';
+                else if (statusForAll.purposes.enabled.length === 0 && statusForAll.purposes.disabled.length > 0)
+                    status = 'cr';
+                else if (statusForAll.purposes.enabled.length > 0 && statusForAll.purposes.disabled.length > 0)
+                    status = 'cp';
+                var img = document.createElement('img');
+                img.src = 'https://www.dahta.fr/c/' + status;
+                document.getElementsByTagName('body')[0].appendChild(img);
+            }
         });
     };
     CmpDidomi.isConsentedPurpose = function (purpose) {

@@ -1,3 +1,4 @@
+import * as env from "../env/env";
 import * as $ from '../../../assets/js/utils/dom';
 import * as scriptLoader from '../../js/utils/script-loader.js';
 import * as cookies from 'js-cookie';
@@ -37,19 +38,58 @@ export namespace CmpDidomi {
         document.head.appendChild(style);
 
         scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js').then(() => {
-            attach('didomiEventListeners', {
-                event: 'consent.changed',
-                listener: () => {
-                    let id = cookies.get('didomi_token');
-                    if (id) {
-                        cnilLogService.save(new CnilLog(id, 'popup', {
-                            ads: isConsentedPurpose(Purpose.ADS),
-                            analytics: isConsentedPurpose(Purpose.ANALYTICS),
-                            social: isConsentedPurpose(Purpose.SOCIAL)
-                        }));
-                    }
+            trackConsent();
+            logConsent();
+        });
+    };
+
+    export let logConsent = () => {
+        attach('didomiEventListeners', {
+            event: 'consent.changed',
+            listener: () => {
+                let id = cookies.get('didomi_token');
+                if (id) {
+                    cnilLogService.save(new CnilLog(id, 'popup', {
+                        ads: isConsentedPurpose(Purpose.ADS),
+                        analytics: isConsentedPurpose(Purpose.ANALYTICS),
+                        social: isConsentedPurpose(Purpose.SOCIAL)
+                    }));
                 }
-            });
+            }
+        });
+    };
+
+    export let trackConsent = () => {
+        let isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain());
+
+        if (!isEitherRtlOrFun) {
+            return;
+        }
+
+        attach('didomiOnReady', (Didomi) => {
+            if (Didomi.notice.isVisible()) {
+                let img = document.createElement('img');
+                img.src = 'https://www.dahta.fr/c/cs';
+                document.getElementsByTagName('body')[0].appendChild(img);
+            }
+        });
+
+        attach('didomiEventListeners', {
+            event: 'consent.changed',
+            listener: () => {
+                let statusForAll = window.Didomi.getUserConsentStatusForAll();
+                let status = '';
+                if (statusForAll.purposes.enabled.length > 0 && statusForAll.purposes.disabled.length === 0)
+                    status = 'ca';
+                else if (statusForAll.purposes.enabled.length === 0 && statusForAll.purposes.disabled.length > 0)
+                    status = 'cr';
+                else if (statusForAll.purposes.enabled.length > 0 && statusForAll.purposes.disabled.length > 0)
+                    status = 'cp';
+
+                let img = document.createElement('img');
+                img.src = 'https://www.dahta.fr/c/' + status;
+                document.getElementsByTagName('body')[0].appendChild(img);
+            }
         });
     };
 
