@@ -60,7 +60,7 @@ export namespace CmpDidomi {
     };
 
     export let trackConsent = () => {
-        let isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain());
+        let isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain()) > -1;
 
         if (!isEitherRtlOrFun) {
             return;

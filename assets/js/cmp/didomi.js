@@ -85,7 +85,7 @@ var CmpDidomi;
         });
     };
     CmpDidomi.trackConsent = function () {
-        var isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain());
+        var isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain()) > -1;
         if (!isEitherRtlOrFun) {
             return;
         }
