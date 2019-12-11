@@ -45,6 +45,7 @@
     "consent-string": "git+ssh://git@github.com/webdev-team/Consent-String-SDK-JS#1.2.4-patch1",
     "include-media": "^1.4.8",
     "js-cookie": "^2.2.0",
+    "moment": "^2.24.0",
     "promise": "^8.0.1",
     "superagent": "^3.8.3"
   },
