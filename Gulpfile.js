@@ -155,7 +155,8 @@ gulp.task('fonticon-standard', function () {
             'assets/svg/brand/orlc/*.svg',
             'assets/svg/brand/ipfrance/*.svg',
             'assets/svg/brand/mediapanel/*.svg',
-            'assets/svg/brand/6play/*.svg'
+            'assets/svg/brand/6play/*.svg',
+            'assets/svg/brand/passmedia/*.svg'
         ]);
 });
 

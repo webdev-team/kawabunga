@@ -253,6 +253,8 @@
 .icon-ipfrance-logo:before { content: "\EAD9" }
 .icon-mediapanel-logo:before { content: "\EADA" }
 .icon-6play-logo:before { content: "\EADB" }
+.icon-passmedia-logo-mini:before { content: "\EADC" }
+.icon-passmedia-logo:before { content: "\EADD" }
 
 
 /*
@@ -477,3 +479,5 @@
 @mixin icon-ipfrance-logo() { content: "\EAD9" }
 @mixin icon-mediapanel-logo() { content: "\EADA" }
 @mixin icon-6play-logo() { content: "\EADB" }
+@mixin icon-passmedia-logo-mini() { content: "\EADC" }
+@mixin icon-passmedia-logo() { content: "\EADD" }
