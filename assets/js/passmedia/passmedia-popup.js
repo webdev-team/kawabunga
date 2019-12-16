@@ -33,8 +33,10 @@ var PassMediaPopup = /** @class */ (function () {
     PassMediaPopup.prototype.delayProgress = function (seconds) {
         var _this = this;
         return new Promise(function (resolve) {
-            var current = 0;
             var progressEl = _this.$el[0].querySelector('.progress-bar');
+            if (!progressEl)
+                return;
+            var current = 0;
             var cssAnimationSecond = 1;
             var timerId = setInterval(function () {
                 var progressPercentage = 100 * (current + cssAnimationSecond) / seconds || 0;
@@ -67,11 +69,13 @@ var PassMediaPopup = /** @class */ (function () {
         var $btnOk = this.$el.select('[data-role="pm-popup-ok"]');
         $btnOk.on('click', function () {
             _this._options.onOk();
+            _this._options.afterDelay = noop;
             _this.hide();
         });
         var $btnClose = this.$el.select('[data-role="pm-popup-close"]');
         $btnClose.on('click', function () {
             _this._options.onClose();
+            _this._options.afterDelay = noop;
             _this.hide();
         });
         if (this._options.afterDelay) {

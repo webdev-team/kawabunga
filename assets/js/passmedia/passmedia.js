@@ -43,40 +43,6 @@ var PassMedia = /** @class */ (function () {
     PassMedia.prototype.loadGigya = function () {
         return scriptLoader.ensureLoaded("https://cdns.eu1.gigya.com/js/gigya.js?apikey=" + passmedia_env_1.API.GIGYA_KEY);
     };
-    PassMedia.prototype.getTokenJWT_onLogin = function () {
-        return new Promise(function (resolve, reject) {
-            window.gigya.accounts.addEventHandlers({
-                onLogin: function () {
-                    window.gigya.accounts.getJWT({
-                        fields: 'profile.email,data.mailVerified',
-                        callback: function (result) {
-                            if (result.status === 'OK') {
-                                resolve(result);
-                            }
-                            else {
-                                reject(new Error('Passmedia Email not verified'));
-                            }
-                        }
-                    });
-                }
-            });
-        });
-    };
-    PassMedia.prototype.getTokenJWT = function () {
-        return new Promise(function (resolve, reject) {
-            window.gigya.accounts.getJWT({
-                fields: 'profile.email,data.mailVerified',
-                callback: function (result) {
-                    if (result.status === 'OK') {
-                        resolve(result);
-                    }
-                    else {
-                        reject(new Error('Passmedia Email not verified'));
-                    }
-                }
-            });
-        });
-    };
     PassMedia.prototype.requestAutologin = function (result) {
         return new Promise(function (resolve) {
             if (!('id_token' in result)) {
@@ -104,12 +70,6 @@ var PassMedia = /** @class */ (function () {
             });
         });
     };
-    PassMedia.prototype.sendValidationEmail = function (email) {
-        window.gigya.accounts.resendVerificationCode({
-            email: email
-        });
-    };
-    ;
     PassMedia.prototype.isAuthorizedToLoad = function () {
         return this.capping.canHit() && !window.disablePassmedia;
     };
@@ -126,6 +86,7 @@ var PassMedia = /** @class */ (function () {
     };
     PassMedia.prototype.countHit = function () {
         this.capping.hit();
+        cookies.set(passmedia_env_1.COOKIE.NAME, this.capping.getJSON(), passmedia_env_1.COOKIE.PATH_AND_DOMAIN);
     };
     return PassMedia;
 }());

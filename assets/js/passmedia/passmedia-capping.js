@@ -8,14 +8,7 @@ var elapsedDays = function (t1, t2) { return elapsedTime(t1, t2, 'days'); };
 var PassMediaCapping = /** @class */ (function () {
     function PassMediaCapping(val) {
         if (val === void 0) { val = null; }
-        this._cookieExists = false;
-        if (val === null) {
-            this._capping = { hits: [] };
-        }
-        else {
-            this._cookieExists = true;
-            this._capping = val;
-        }
+        this._capping = (val === null) ? { hits: [] } : val;
         this._phase = this.computePhase();
     }
     Object.defineProperty(PassMediaCapping.prototype, "value", {
@@ -79,7 +72,7 @@ var PassMediaCapping = /** @class */ (function () {
     };
     PassMediaCapping.prototype.canHit = function (date) {
         if (date === void 0) { date = null; }
-        if (this._cookieExists) {
+        if (this._capping.hits.length > 0) {
             date = date ? date : moment().valueOf();
             return (this._phase === 1) ? this.isQuantityRespected() && this.isFrequencyRespected(date) : this._phase <= PHASE_LIMIT;
         }
@@ -97,5 +90,4 @@ var PassMediaCapping = /** @class */ (function () {
     };
     return PassMediaCapping;
 }());
-exports.PassMediaCapping = PassMediaCapping;
 exports.default = PassMediaCapping;

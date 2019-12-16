@@ -1,4 +1,4 @@
-declare global  {
+declare global {
     interface Window {
         location: Location;
         gigya: any;
@@ -6,7 +6,9 @@ declare global  {
     }
 }
 export declare namespace PassMediaCtrl {
-    let init: () => Promise<boolean>;
+    let init: (options?: {
+        onLogin: boolean;
+    }) => Promise<boolean>;
     let displayLoginPopup: (resolve: any) => void;
     let handleLogin: (res: any, resolve: any) => void;
     let displayVerifyEmailPopup: (email: any) => void;

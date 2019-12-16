@@ -3,19 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var env = require("../env/env");
 var passmedia_popup_1 = require("./passmedia-popup");
 var passmedia_1 = require("./passmedia");
+var gigya_accounts_1 = require("./gigya-accounts");
 var PassMediaCtrl;
 (function (PassMediaCtrl) {
     var passmedia = new passmedia_1.PassMedia();
-    PassMediaCtrl.init = function () {
+    var DEFAULT_OPTIONS = { onLogin: false };
+    PassMediaCtrl.init = function (options) {
+        if (options === void 0) { options = DEFAULT_OPTIONS; }
         return new Promise(function (resolve) {
             if (!passmedia.isAuthorizedToLoad()) {
                 resolve(false);
                 return;
             }
             passmedia.loadGigya()
-                .then(env.isProd() ? passmedia.getTokenJWT_onLogin : passmedia.getTokenJWT) // event onLogin isn't fired on local
+                .then(options.onLogin ? gigya_accounts_1.GigyaAccounts.getTokenJWT_onLogin : gigya_accounts_1.GigyaAccounts.getTokenJWT)
                 .then(passmedia.requestAutologin)
-                .then(askAutologinApproval)
+                .then(handleAutologinApproval)
                 .then(resolve)
                 .catch(function (err) {
                 console.error('Gigya Error :', err);
@@ -23,7 +26,7 @@ var PassMediaCtrl;
             });
         });
     };
-    var askAutologinApproval = function (res) {
+    var handleAutologinApproval = function (res) {
         passmedia.token = res.token;
         return new Promise(function (resolve) {
             switch (res.body.type) {
@@ -46,7 +49,14 @@ var PassMediaCtrl;
         });
     };
     PassMediaCtrl.displayLoginPopup = function (resolve) {
-        var requestLogin = function () { return env.isProd() ? passmedia.requestLogin().then(function (result) { return PassMediaCtrl.handleLogin(result, resolve); }) : console.log('REQUEST LOGIN'); };
+        var requestLogin = function () {
+            if (env.getEnv() == 'prod' || env.getEnv() == 'lab') {
+                passmedia.requestLogin().then(function (result) { return PassMediaCtrl.handleLogin(result, resolve); });
+            }
+            else {
+                console.log('REQUEST LOGIN');
+            }
+        };
         // todo fill CGU link
         new passmedia_popup_1.default({
             type: 'login',
@@ -85,8 +95,7 @@ var PassMediaCtrl;
                 email: email,
             },
             onOk: function () {
-                // passmedia.enableAutologin(true);
-                passmedia.sendValidationEmail(email);
+                gigya_accounts_1.GigyaAccounts.sendValidationEmail(email);
                 PassMediaCtrl.displayFeedbackPopup(email);
             },
             onClose: function () {
