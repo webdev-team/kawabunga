@@ -1,6 +1,8 @@
 import * as env from '../env/env';
 import PassMediaPopup from './passmedia-popup';
 import {PassMedia, Response} from "./passmedia";
+import {GigyaAccounts} from "./gigya-accounts";
+
 
 declare global {
     interface Window {
@@ -12,8 +14,9 @@ declare global {
 
 export namespace PassMediaCtrl {
     let passmedia = new PassMedia();
+    const DEFAULT_OPTIONS = { onLogin: false };
 
-    export let init = function (): Promise<boolean> {
+    export let init = function (options= DEFAULT_OPTIONS): Promise<boolean> {
         return new Promise((resolve) => {
 
             if (!passmedia.isAuthorizedToLoad()) {
@@ -23,9 +26,9 @@ export namespace PassMediaCtrl {
             }
 
             passmedia.loadGigya()
-                .then(env.isProd() ? passmedia.getTokenJWT_onLogin : passmedia.getTokenJWT) // event onLogin isn't fired on local
+                .then(options.onLogin ? GigyaAccounts.getTokenJWT_onLogin : GigyaAccounts.getTokenJWT)
                 .then(passmedia.requestAutologin)
-                .then(askAutologinApproval)
+                .then(handleAutologinApproval)
                 .then(resolve)
                 .catch((err) => {
                     console.error('Gigya Error :', err);
@@ -34,7 +37,7 @@ export namespace PassMediaCtrl {
         });
     };
 
-    let askAutologinApproval = function(res) {
+    let handleAutologinApproval = function(res) {
         passmedia.token = res.token;
 
         return new Promise( (resolve) => {
@@ -59,7 +62,13 @@ export namespace PassMediaCtrl {
     };
 
     export let displayLoginPopup = function (resolve) {
-        const requestLogin = () => env.isProd() ? passmedia.requestLogin().then((result) => handleLogin(result, resolve)) : console.log('REQUEST LOGIN');
+        const requestLogin = function() {
+            if (env.getEnv() == 'prod' || env.getEnv() == 'lab') {
+                passmedia.requestLogin().then((result) => handleLogin(result, resolve))
+            } else {
+                console.log('REQUEST LOGIN');
+            }
+        };
 
         // todo fill CGU link
         new PassMediaPopup({
@@ -101,8 +110,7 @@ export namespace PassMediaCtrl {
                 email: email,
             },
             onOk: () => {
-                // passmedia.enableAutologin(true);
-                passmedia.sendValidationEmail(email);
+                GigyaAccounts.sendValidationEmail(email);
                 displayFeedbackPopup(email);
             },
             onClose: () => {

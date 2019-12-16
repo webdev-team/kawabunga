@@ -42,8 +42,11 @@ export default class PassMediaPopup {
 
     delayProgress(seconds) {
         return new Promise((resolve) => {
-            let current = 0;
             let progressEl = <HTMLProgressElement>this.$el[0].querySelector('.progress-bar');
+
+            if (!progressEl) return;
+
+            let current = 0;
             let cssAnimationSecond = 1;
 
             let timerId = setInterval(() => {
@@ -80,12 +83,14 @@ export default class PassMediaPopup {
         let $btnOk = this.$el.select('[data-role="pm-popup-ok"]');
         $btnOk.on('click', () => {
             this._options.onOk();
+            this._options.afterDelay = noop;
             this.hide();
         });
 
         let $btnClose = this.$el.select('[data-role="pm-popup-close"]');
         $btnClose.on('click', () => {
             this._options.onClose();
+            this._options.afterDelay = noop;
             this.hide();
         });
 

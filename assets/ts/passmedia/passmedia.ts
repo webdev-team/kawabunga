@@ -35,40 +35,6 @@ export class PassMedia {
         return scriptLoader.ensureLoaded(`https://cdns.eu1.gigya.com/js/gigya.js?apikey=${API.GIGYA_KEY}`);
     }
 
-    getTokenJWT_onLogin(): Promise<boolean> {
-        return new Promise((resolve, reject) => {
-            window.gigya.accounts.addEventHandlers({
-                onLogin: () => {
-                    window.gigya.accounts.getJWT({
-                        fields: 'profile.email,data.mailVerified',
-                        callback: (result) => {
-                            if (result.status === 'OK') {
-                                resolve(result);
-                            } else {
-                                reject(new Error('Passmedia Email not verified'));
-                            }
-                        }
-                    });
-                }
-            });
-        });
-    }
-
-    getTokenJWT(): Promise<boolean> {
-        return new Promise((resolve, reject) => {
-            window.gigya.accounts.getJWT({
-                fields: 'profile.email,data.mailVerified',
-                callback: (result) => {
-                    if (result.status === 'OK') {
-                        resolve(result);
-                    } else {
-                        reject(new Error('Passmedia Email not verified'));
-                    }
-                }
-            });
-        });
-    }
-
     requestAutologin(result): Promise<any> {
         return new Promise((resolve) => {
 
@@ -101,12 +67,6 @@ export class PassMedia {
         });
     }
 
-    sendValidationEmail(email: string) {
-        window.gigya.accounts.resendVerificationCode({
-            email: email
-        });
-    };
-
     isAuthorizedToLoad(): boolean {
         return this.capping.canHit() && !window.disablePassmedia;
     }
@@ -125,5 +85,6 @@ export class PassMedia {
 
     countHit() {
         this.capping.hit();
+        cookies.set(COOKIE.NAME, this.capping.getJSON(), COOKIE.PATH_AND_DOMAIN);
     }
 }

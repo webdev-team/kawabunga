@@ -1,7 +1,7 @@
 import * as env from "../env/env";
 
 export const COOKIE = {
-    NAME: 'pm_autolog_reject',
+    NAME: 'passmedia_reject_autologin',
     DURATION: {expires: 365},
     PATH_AND_DOMAIN: {path: '/', domain: env.getCookieDomain()}
 };
@@ -16,14 +16,14 @@ const getKey = () => {
 
 const api = function (path: string): string {
     if (env.isProd()) {
-        return 'https://compte.rtl.fr' + path;
+        return 'https://compte.rtl.fr/passmedia/api/' + path;
     } else {
-        return 'https://compte.lab.rtl.fr' + path;
+        return 'https://compte.lab.rtl.fr/passmedia/api/' + path;
     }
 };
 
 export const API = {
     GIGYA_KEY: getKey(),
-    AUTOLOGIN: api('/passmedia/autologin'),
-    LOGIN: api('/passmedia/login'),
+    AUTOLOGIN: api('autologin'),
+    LOGIN: api('login'),
 };

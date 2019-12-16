@@ -10,20 +10,12 @@ const MAX_HITS_ON_PHASE_ONE = 3;
 const elapsedTime = (t1, t2, unit) => Math.abs(moment(t1).diff(t2, unit));
 const elapsedDays = (t1, t2) => elapsedTime(t1, t2, 'days');
 
-export class PassMediaCapping {
+export default class PassMediaCapping {
     private _capping: Capping;
     private _phase: number;
-    private _cookieExists: boolean = false;
 
     constructor(val: Capping = null) {
-
-        if (val === null) {
-            this._capping = { hits: [] };
-        } else {
-            this._cookieExists = true;
-            this._capping = val;
-        }
-
+        this._capping = (val === null) ? { hits: [] } : val;
         this._phase = this.computePhase();
     }
 
@@ -81,7 +73,7 @@ export class PassMediaCapping {
     }
 
     canHit(date: number = null): boolean {
-        if (this._cookieExists) {
+        if (this._capping.hits.length > 0) {
             date = date ? date : moment().valueOf();
             return (this._phase === 1) ? this.isQuantityRespected() && this.isFrequencyRespected(date) : this._phase <= PHASE_LIMIT;
         } else {
@@ -99,5 +91,3 @@ export class PassMediaCapping {
         return (this._phase === 1) ? moreThanOneDayElapsed : moreThanThirtyDaysElapsed;
     }
 }
-
-export default PassMediaCapping;

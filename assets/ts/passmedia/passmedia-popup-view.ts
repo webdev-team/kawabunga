@@ -4,9 +4,14 @@ export interface PopupData {
 
 export let renderLoginPopup = (): string => `
     <div class="row">
-        <div class="col d-md-none">
-            <div class="title">PASSMEDIA</div>
+        <div class="d-none d-md-flex logo">
+            <i class="icon icon-passmedia-logo-mini"><span class="d-none">Passmedia</span></i>
         </div>
+        <div class="col d-md-none logo--full">
+            <i class="icon icon-passmedia-logo"><span class="d-none">Passmedia</span></i>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12">
             <p class="mb-3">Félicitations, vous bénéficiez dès à présent d'un accès connecté à l'ensemble de RTL</p>
         </div>
@@ -35,12 +40,14 @@ export let renderVerifyEmailPopup = (data: PopupData): string => `
         </div>
     </div>
     <div class="row">
+        <div class="col-12 logo--full">
+            <i class="icon icon-passmedia-logo"><span class="d-none">Passmedia</span></i>
+        </div>
         <div class="col">
-            <div class="title">PASSMEDIA</div>
             <div class="subtitle">Session PassMedia détectée</div>
             <p class="mb-3">Vous disposez déjà d'un compte RTL avec l'adresse email ${data.email}</p>
             <p class="mb-3">Pour associer votre compte PassMedia avec votre compte RTL, veuillez vérifier votre adresse email</p>
-            <a class="btn btn-action btn-primary d-block mb-3" data-role="pm-popup-ok">Recevoir un email de vérification</a>
+            <a class="btn btn-action btn-primary d-block" data-role="pm-popup-ok">Recevoir un email de vérification</a>
         </div>
     </div>`;
 
@@ -51,10 +58,13 @@ export let renderFeedbackPopup = (data: PopupData): string => `
         </div>
     </div>
     <div class="row">
+        <div class="col-12 logo--full">
+            <i class="icon icon-passmedia-logo"><span class="d-none">Passmedia</span></i>
+        </div>
         <div class="col">
-            <div class="title">PASSMEDIA</div>
             <div class="subtitle">Un email vous a été envoyé à l'adresse suivante</div>
             <p class="mb-3">${data.email}</p>
+            <a class="btn btn-action btn-primary d-block" data-role="pm-popup-ok">Ok</a>
         </div>
     </div>
 `;
