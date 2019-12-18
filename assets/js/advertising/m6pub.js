@@ -14,7 +14,6 @@ exports.init = function () {
     return new Promise(function (resolve) {
         scriptLoader.ensureLoaded(exports.PREBID_SCRIPT).then(function () {
             initGravity();
-            initKrux();
             window._activeAdslots.forEach(function (slot) {
                 window.displayAd(slot);
             });
@@ -32,18 +31,4 @@ var initGravity = function () {
         template: "news-hp",
         keywords: []
     };
-};
-var initKrux = function () {
-    if (window.Krux) {
-        window.pageCriterias.push({ name: "ksg", value: window.Krux.segments });
-    }
-    if (typeof window.Krux === 'undefined') {
-        window.pageCriterias.push({ name: "kuid", value: 'undefined' });
-    }
-    else if (window.Krux.user.length == 0) {
-        window.pageCriterias.push({ name: "kuid", value: 'empty' });
-    }
-    else {
-        window.pageCriterias.push({ name: "kuid", value: window.Krux.user });
-    }
 };

@@ -1,7 +1,6 @@
 import * as Promise from 'promise';
 import * as $ from '../utils/dom';
 import * as scriptLoader from '../utils/script-loader';
-import './m6pub-krux';
 
 let domain = 'RTL';
 
@@ -39,7 +38,6 @@ export let init = function() : Promise<void> {
     return new Promise(resolve => {
         scriptLoader.ensureLoaded(PREBID_SCRIPT).then(() => {
             //initGravity();
-            initKrux();
 
             window._activeAdslots.forEach(slot => {
                 window.displayAd(slot);
@@ -59,20 +57,5 @@ let initGravity = function() {
         subCat: "",
         template: "news-hp",
         keywords: []
-    }
-};
-
-let initKrux = function() {
-    if (window.Krux) {
-
-        window.pageCriterias.push({name:"ksg", value: window.Krux.segments});
-    }
-
-    if (typeof window.Krux === 'undefined') {
-        window.pageCriterias.push({name:"kuid", value: 'undefined'});
-    } else if (window.Krux.user.length == 0) {
-        window.pageCriterias.push({name:"kuid", value: 'empty'});
-    } else {
-        window.pageCriterias.push({name:"kuid", value: window.Krux.user});
     }
 };

@@ -35,7 +35,7 @@ describe('m6pub', () => {
         return m6pub.init().then(() => {
             expect(window._networkCode).toEqual(m6pub.NETWORK_CODE);
             expect(window._adunitCode).toEqual(m6pub.ADUNIT_CODE);
-            expect(window.pageCriterias).toEqual([{name:"kuid", value: 'undefined'}]);
+            expect(window.pageCriterias).toEqual([]);
             expect(window._activeAdslots).toEqual([]);
         });
     });
@@ -47,7 +47,7 @@ describe('m6pub', () => {
         return m6pub.init().then(() => {
             expect(window._networkCode).toEqual(123);
             expect(window._adunitCode).toEqual('test/123');
-            expect(window.pageCriterias).toEqual([{name:"kuid", value: 'undefined'}]);
+            expect(window.pageCriterias).toEqual([]);
             expect(window._activeAdslots).toEqual([]);
         });
     });

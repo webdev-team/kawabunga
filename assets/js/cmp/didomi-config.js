@@ -33,12 +33,6 @@ exports.didomiConfig = function (options) {
                         name: 'OSD',
                         purposeIds: ['cookies', 'advertising_personalization', 'content_personalization', 'ad_delivery', 'analytics'],
                         policyUrl: ''
-                    },
-                    {
-                        id: 'custom-vendor-krux',
-                        name: 'Krux',
-                        purposeIds: ['cookies', 'advertising_personalization', 'content_personalization', 'ad_delivery', 'analytics'],
-                        policyUrl: 'https://www.salesforce.com/products/marketing-cloud/sfmc/salesforce-dmp-privacy/'
                     }
                 ]
             },

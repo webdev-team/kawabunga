@@ -14,7 +14,6 @@ declare global  {
         _activeAdslots: Array<string>;
         displayAd(slot: string): void;
         pageDataLayer: any;
-        Krux: any;
     }
 }
 export declare let init: () => Promise<void>;
