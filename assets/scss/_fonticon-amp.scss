@@ -85,16 +85,17 @@
 .icon-amp-snapchat-square:before { content: "\EA31" }
 .icon-amp-snapchat:before { content: "\EA32" }
 .icon-amp-sms:before { content: "\EA33" }
-.icon-amp-rtl-logo:before { content: "\EA34" }
-.icon-amp-rtl-square:before { content: "\EA35" }
-.icon-amp-rtl2-logo:before { content: "\EA36" }
-.icon-amp-rtl2-logo-alt:before { content: "\EA37" }
-.icon-amp-funradio-logo:before { content: "\EA38" }
-.icon-amp-funradio-square:before { content: "\EA39" }
-.icon-amp-girls-logo:before { content: "\EA3A" }
-.icon-amp-girls-logo-new:before { content: "\EA3B" }
-.icon-amp-girls-square:before { content: "\EA3C" }
-.icon-amp-orlc-logo:before { content: "\EA3D" }
+.icon-amp-whatsapp:before { content: "\EA34" }
+.icon-amp-rtl-logo:before { content: "\EA35" }
+.icon-amp-rtl-square:before { content: "\EA36" }
+.icon-amp-rtl2-logo:before { content: "\EA37" }
+.icon-amp-rtl2-logo-alt:before { content: "\EA38" }
+.icon-amp-funradio-logo:before { content: "\EA39" }
+.icon-amp-funradio-square:before { content: "\EA3A" }
+.icon-amp-girls-logo:before { content: "\EA3B" }
+.icon-amp-girls-logo-new:before { content: "\EA3C" }
+.icon-amp-girls-square:before { content: "\EA3D" }
+.icon-amp-orlc-logo:before { content: "\EA3E" }
 
 
 /*
@@ -151,13 +152,14 @@
 @mixin icon-amp-snapchat-square() { content: "\EA31" }
 @mixin icon-amp-snapchat() { content: "\EA32" }
 @mixin icon-amp-sms() { content: "\EA33" }
-@mixin icon-amp-rtl-logo() { content: "\EA34" }
-@mixin icon-amp-rtl-square() { content: "\EA35" }
-@mixin icon-amp-rtl2-logo() { content: "\EA36" }
-@mixin icon-amp-rtl2-logo-alt() { content: "\EA37" }
-@mixin icon-amp-funradio-logo() { content: "\EA38" }
-@mixin icon-amp-funradio-square() { content: "\EA39" }
-@mixin icon-amp-girls-logo() { content: "\EA3A" }
-@mixin icon-amp-girls-logo-new() { content: "\EA3B" }
-@mixin icon-amp-girls-square() { content: "\EA3C" }
-@mixin icon-amp-orlc-logo() { content: "\EA3D" }
+@mixin icon-amp-whatsapp() { content: "\EA34" }
+@mixin icon-amp-rtl-logo() { content: "\EA35" }
+@mixin icon-amp-rtl-square() { content: "\EA36" }
+@mixin icon-amp-rtl2-logo() { content: "\EA37" }
+@mixin icon-amp-rtl2-logo-alt() { content: "\EA38" }
+@mixin icon-amp-funradio-logo() { content: "\EA39" }
+@mixin icon-amp-funradio-square() { content: "\EA3A" }
+@mixin icon-amp-girls-logo() { content: "\EA3B" }
+@mixin icon-amp-girls-logo-new() { content: "\EA3C" }
+@mixin icon-amp-girls-square() { content: "\EA3D" }
+@mixin icon-amp-orlc-logo() { content: "\EA3E" }

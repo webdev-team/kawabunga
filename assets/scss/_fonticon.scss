@@ -230,31 +230,32 @@
 .icon-snapchat-square:before { content: "\EAC2" }
 .icon-snapchat:before { content: "\EAC3" }
 .icon-sms:before { content: "\EAC4" }
-.icon-funradio-club-alt:before { content: "\EAC5" }
-.icon-funradio-club:before { content: "\EAC6" }
-.icon-funradio-logo-alt:before { content: "\EAC7" }
-.icon-funradio-logo:before { content: "\EAC8" }
-.icon-funradio-square:before { content: "\EAC9" }
-.icon-girls-logo-alt:before { content: "\EACA" }
-.icon-girls-logo-new:before { content: "\EACB" }
-.icon-girls-logo:before { content: "\EACC" }
-.icon-girls-square:before { content: "\EACD" }
-.icon-rtl-club-alt:before { content: "\EACE" }
-.icon-rtl-club:before { content: "\EACF" }
-.icon-rtl-logo:before { content: "\EAD0" }
-.icon-rtl-square:before { content: "\EAD1" }
-.icon-rtl2-logo-alt:before { content: "\EAD2" }
-.icon-rtl2-logo-alt2:before { content: "\EAD3" }
-.icon-rtl2-logo-alt3:before { content: "\EAD4" }
-.icon-rtl2-logo:before { content: "\EAD5" }
-.icon-orlc-logo-mini:before { content: "\EAD6" }
-.icon-orlc-logo:before { content: "\EAD7" }
-.icon-pmu-logo:before { content: "\EAD8" }
-.icon-ipfrance-logo:before { content: "\EAD9" }
-.icon-mediapanel-logo:before { content: "\EADA" }
-.icon-6play-logo:before { content: "\EADB" }
-.icon-passmedia-logo-mini:before { content: "\EADC" }
-.icon-passmedia-logo:before { content: "\EADD" }
+.icon-whatsapp:before { content: "\EAC5" }
+.icon-funradio-club-alt:before { content: "\EAC6" }
+.icon-funradio-club:before { content: "\EAC7" }
+.icon-funradio-logo-alt:before { content: "\EAC8" }
+.icon-funradio-logo:before { content: "\EAC9" }
+.icon-funradio-square:before { content: "\EACA" }
+.icon-girls-logo-alt:before { content: "\EACB" }
+.icon-girls-logo-new:before { content: "\EACC" }
+.icon-girls-logo:before { content: "\EACD" }
+.icon-girls-square:before { content: "\EACE" }
+.icon-rtl-club-alt:before { content: "\EACF" }
+.icon-rtl-club:before { content: "\EAD0" }
+.icon-rtl-logo:before { content: "\EAD1" }
+.icon-rtl-square:before { content: "\EAD2" }
+.icon-rtl2-logo-alt:before { content: "\EAD3" }
+.icon-rtl2-logo-alt2:before { content: "\EAD4" }
+.icon-rtl2-logo-alt3:before { content: "\EAD5" }
+.icon-rtl2-logo:before { content: "\EAD6" }
+.icon-orlc-logo-mini:before { content: "\EAD7" }
+.icon-orlc-logo:before { content: "\EAD8" }
+.icon-pmu-logo:before { content: "\EAD9" }
+.icon-ipfrance-logo:before { content: "\EADA" }
+.icon-mediapanel-logo:before { content: "\EADB" }
+.icon-6play-logo:before { content: "\EADC" }
+.icon-passmedia-logo-mini:before { content: "\EADD" }
+.icon-passmedia-logo:before { content: "\EADE" }
 
 
 /*
@@ -456,28 +457,29 @@
 @mixin icon-snapchat-square() { content: "\EAC2" }
 @mixin icon-snapchat() { content: "\EAC3" }
 @mixin icon-sms() { content: "\EAC4" }
-@mixin icon-funradio-club-alt() { content: "\EAC5" }
-@mixin icon-funradio-club() { content: "\EAC6" }
-@mixin icon-funradio-logo-alt() { content: "\EAC7" }
-@mixin icon-funradio-logo() { content: "\EAC8" }
-@mixin icon-funradio-square() { content: "\EAC9" }
-@mixin icon-girls-logo-alt() { content: "\EACA" }
-@mixin icon-girls-logo-new() { content: "\EACB" }
-@mixin icon-girls-logo() { content: "\EACC" }
-@mixin icon-girls-square() { content: "\EACD" }
-@mixin icon-rtl-club-alt() { content: "\EACE" }
-@mixin icon-rtl-club() { content: "\EACF" }
-@mixin icon-rtl-logo() { content: "\EAD0" }
-@mixin icon-rtl-square() { content: "\EAD1" }
-@mixin icon-rtl2-logo-alt() { content: "\EAD2" }
-@mixin icon-rtl2-logo-alt2() { content: "\EAD3" }
-@mixin icon-rtl2-logo-alt3() { content: "\EAD4" }
-@mixin icon-rtl2-logo() { content: "\EAD5" }
-@mixin icon-orlc-logo-mini() { content: "\EAD6" }
-@mixin icon-orlc-logo() { content: "\EAD7" }
-@mixin icon-pmu-logo() { content: "\EAD8" }
-@mixin icon-ipfrance-logo() { content: "\EAD9" }
-@mixin icon-mediapanel-logo() { content: "\EADA" }
-@mixin icon-6play-logo() { content: "\EADB" }
-@mixin icon-passmedia-logo-mini() { content: "\EADC" }
-@mixin icon-passmedia-logo() { content: "\EADD" }
+@mixin icon-whatsapp() { content: "\EAC5" }
+@mixin icon-funradio-club-alt() { content: "\EAC6" }
+@mixin icon-funradio-club() { content: "\EAC7" }
+@mixin icon-funradio-logo-alt() { content: "\EAC8" }
+@mixin icon-funradio-logo() { content: "\EAC9" }
+@mixin icon-funradio-square() { content: "\EACA" }
+@mixin icon-girls-logo-alt() { content: "\EACB" }
+@mixin icon-girls-logo-new() { content: "\EACC" }
+@mixin icon-girls-logo() { content: "\EACD" }
+@mixin icon-girls-square() { content: "\EACE" }
+@mixin icon-rtl-club-alt() { content: "\EACF" }
+@mixin icon-rtl-club() { content: "\EAD0" }
+@mixin icon-rtl-logo() { content: "\EAD1" }
+@mixin icon-rtl-square() { content: "\EAD2" }
+@mixin icon-rtl2-logo-alt() { content: "\EAD3" }
+@mixin icon-rtl2-logo-alt2() { content: "\EAD4" }
+@mixin icon-rtl2-logo-alt3() { content: "\EAD5" }
+@mixin icon-rtl2-logo() { content: "\EAD6" }
+@mixin icon-orlc-logo-mini() { content: "\EAD7" }
+@mixin icon-orlc-logo() { content: "\EAD8" }
+@mixin icon-pmu-logo() { content: "\EAD9" }
+@mixin icon-ipfrance-logo() { content: "\EADA" }
+@mixin icon-mediapanel-logo() { content: "\EADB" }
+@mixin icon-6play-logo() { content: "\EADC" }
+@mixin icon-passmedia-logo-mini() { content: "\EADD" }
+@mixin icon-passmedia-logo() { content: "\EADE" }
