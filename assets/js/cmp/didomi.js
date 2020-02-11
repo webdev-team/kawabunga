@@ -150,4 +150,17 @@ var CmpDidomi;
             $banners.forEach(function (banner) { return $(banner).css('display', display ? 'block' : 'none'); });
         }
     };
+    CmpDidomi.getDidomiUserConsentStatusForVendor = function (id) {
+        return window.Didomi.getUserConsentStatusForVendor(id);
+    };
+    CmpDidomi.getDidomiConsentData = function () {
+        try {
+            window.__cmp('getConsentData', null, function (result) {
+                return result.consentData;
+            });
+        }
+        catch (e) {
+            return '';
+        }
+    };
 })(CmpDidomi = exports.CmpDidomi || (exports.CmpDidomi = {}));
