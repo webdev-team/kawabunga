@@ -134,18 +134,4 @@ export namespace CmpDidomi {
             $banners.forEach(banner => $(banner).css('display', display ? 'block': 'none'));
         }
     };
-
-    export let getDidomiUserConsentStatusForVendor = function (id: string): boolean {
-        return window.Didomi.getUserConsentStatusForVendor(id);
-    };
-
-    export let getDidomiConsentData = function (): string {
-        try {
-            window.__cmp('getConsentData', null, function (result) {
-                return result.consentData
-            });
-        } catch (e) {
-            return ''
-        }
-    };
 }
