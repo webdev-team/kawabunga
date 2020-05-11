@@ -93,9 +93,9 @@ export let didomiConfig = function(options?: DidomiOptions) {
                 content: {
                     popup:{fr:'Votre vie privée nous importe'},
                     title:{fr:'Votre vie privée nous importe'},
-                    text: {fr: 'En poursuivant votre navigation sur notre service ou en ouvrant nos communications directes, vous acceptez l’utilisation de cookies, y compris de partenaires tiers, pour réaliser des statistiques de visites, pour vous proposer des services et des publicités adaptés à vos centres d’intérêt (sur internet et via nos communications directes), pour vous proposer des fonctionnalités relatives aux réseaux sociaux ainsi que de la lecture directe de vidéos. <br/><a href="#" onclick="Didomi.preferences.show(\'vendors\');" class="didomi-content-p-link">Voir la liste des partenaires</a>'},
-                    learnMore: {fr: 'Paramétrer les cookies'},
-                    agreeAndClose: {fr: 'OK continuer sur le site'}
+                    text: {fr: 'En poursuivant votre navigation sur notre service vous acceptez que le Groupe M6 et ses partenaires utilisent des traceurs (comme des cookies ou l’identifiant unique de votre appareil) et traitent des données à caractère personnel (comme vos données de navigation et votre adresse IP) dans le but : d’afficher de la publicité personnalisée en fonction de votre navigation et de votre profil, de personnaliser l’affichage de nos produits, services et contenus en fonction de ceux que vous avez précédemment consultés, de mesurer l’audience de notre service, de vous permettre de partager du contenu sur les réseaux sociaux. Vous pouvez choisir de ne pas consentir à ces exploitations en cliquant sur le bouton « Paramétrer mes choix » et modifier vos préférences à tout moment en cliquant sur le lien « Préférences Cookies » figurant sur notre service.'},
+                    learnMore: {fr: 'Paramétrer mes choix'},
+                    agreeAndClose: {fr: 'Accepter en continuant sur le site'}
                 }
 
             },
