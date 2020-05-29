@@ -16,7 +16,8 @@ export declare let didomiConfig: (options?: DidomiOptions) => {
         vendors: {
             didomi: string[];
             iab: {
-                include: number[];
+                all: boolean;
+                exclude: number[];
             };
             custom: {
                 id: string;
