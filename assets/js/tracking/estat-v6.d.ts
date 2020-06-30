@@ -1,10 +1,9 @@
-import * as Promise from 'promise';
 declare global {
     interface Window {
         eStatTag(config: any): void;
     }
 }
-export declare let ensureLoaded: () => Promise<{}>;
+export declare let ensureLoaded: () => any;
 /**
  * estat should be loaded before calling this function
  */

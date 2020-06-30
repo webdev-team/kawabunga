@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Toaster = /** @class */ (function () {
     function Toaster(message) {
-        if (message === void 0) { message = 'Hello toaster'; }
         var _this = this;
+        if (message === void 0) { message = 'Hello toaster'; }
         this.showing = false;
         this.element = this.buildElement(message);
         this.element.addEventListener("animationend", function () {

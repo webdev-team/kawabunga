@@ -5,10 +5,10 @@ export default class PassMediaCapping {
     private _capping;
     private _phase;
     constructor(val?: Capping);
-    value: Capping;
-    hits: Array<number>;
-    readonly firstHit: number;
-    readonly lastHit: number;
+    set value(capping: Capping);
+    set hits(hits: Array<number>);
+    get firstHit(): number;
+    get lastHit(): number;
     getPhase(): number;
     getJSON(): Capping;
     create(date: any): Capping;

@@ -118,5 +118,8 @@ export declare let didomiConfig: (options?: DidomiOptions) => {
             types: string[];
             extraUserAgents: any[];
         };
+        externalConsent: {
+            enabled: boolean;
+        };
     };
 };

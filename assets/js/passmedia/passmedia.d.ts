@@ -9,8 +9,8 @@ export declare class PassMedia {
     emailVerified: boolean;
     private _token;
     constructor();
-    token: string;
-    readonly state: {
+    set token(token: string);
+    get state(): {
         emailVerified: boolean;
     };
     loadGigya(): any;

@@ -142,6 +142,9 @@ exports.didomiConfig = function (options) {
                 consentRequired: false,
                 types: ['crawlers', 'performance'],
                 extraUserAgents: []
+            },
+            externalConsent: {
+                enabled: true
             }
         }
     };

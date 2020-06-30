@@ -13,7 +13,7 @@ export default class PassMediaPopup {
     _options: PassMediaPopupOptions;
     constructor(options?: PassMediaPopupOptions);
     renderPopup(): any;
-    delayProgress(seconds: any): Promise<{}>;
+    delayProgress(seconds: any): Promise<unknown>;
     appendElementToDOM(): void;
     show(): void;
     hide(): void;
