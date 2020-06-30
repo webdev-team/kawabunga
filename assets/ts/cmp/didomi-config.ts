@@ -153,6 +153,9 @@ export let didomiConfig = function(options?: DidomiOptions) {
                 consentRequired: false,
                 types: ['crawlers','performance'],
                 extraUserAgents: []
+            },
+            externalConsent: {
+                enabled: true
             }
         }
     }
