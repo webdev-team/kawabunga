@@ -43,6 +43,7 @@ export declare let didomiConfig: (options?: DidomiOptions) => {
         closeOnClick: boolean;
         closeOnClickNavigationDelay: number;
         closeOnClickBackdrop: boolean;
+        daysBeforeShowingAgain: number;
     };
     preferences: {
         canCloseWhenConsentIsMissing: boolean;

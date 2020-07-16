@@ -83,7 +83,8 @@ export let didomiConfig = function(options?: DidomiOptions) {
             logoAlignment: 'center',
             closeOnClick: true,
             closeOnClickNavigationDelay: 500,
-            closeOnClickBackdrop: true
+            closeOnClickBackdrop: true,
+            daysBeforeShowingAgain: 360
         },
         preferences: {
             canCloseWhenConsentIsMissing: false,

@@ -73,7 +73,8 @@ exports.didomiConfig = function (options) {
             logoAlignment: 'center',
             closeOnClick: true,
             closeOnClickNavigationDelay: 500,
-            closeOnClickBackdrop: true
+            closeOnClickBackdrop: true,
+            daysBeforeShowingAgain: 360
         },
         preferences: {
             canCloseWhenConsentIsMissing: false,
