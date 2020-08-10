@@ -11,7 +11,8 @@ declare global {
 export declare enum Purpose {
     ANALYTICS = "audience_measurement",
     ADS = "targeted_advertising",
-    SOCIAL = "social_network"
+    SOCIAL = "social_network",
+    PERSONNALISATION = "personnalisation"
 }
 export declare namespace CmpDidomi {
     let init: (options: DidomiOptions) => void;

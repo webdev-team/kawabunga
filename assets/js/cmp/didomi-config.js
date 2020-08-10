@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var DEFAULT_OPTIONS = {
+exports.DEFAULT_OPTIONS = {
     name: 'rtl.fr',
     apiKey: '4801407c-7ff1-4aed-aa34-71b05434f911',
     logoUrl: 'https://cdn-static.rtl.fr/versions/www/6.0.816/img/logo-rtl-86x60.jpg',
@@ -8,12 +8,12 @@ var DEFAULT_OPTIONS = {
     privacyPolicyURL: 'https://www.rtl.fr/cnil/charte-de-confidentialite'
 };
 exports.didomiConfig = function (options) {
-    options = options || DEFAULT_OPTIONS;
-    options.name = options.name || DEFAULT_OPTIONS.name;
-    options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
-    options.logoUrl = options.logoUrl || DEFAULT_OPTIONS.logoUrl;
-    options.themeColor = options.themeColor || DEFAULT_OPTIONS.themeColor;
-    options.privacyPolicyURL = options.privacyPolicyURL || DEFAULT_OPTIONS.privacyPolicyURL;
+    options = options || exports.DEFAULT_OPTIONS;
+    options.name = options.name || exports.DEFAULT_OPTIONS.name;
+    options.apiKey = options.apiKey || exports.DEFAULT_OPTIONS.apiKey;
+    options.logoUrl = options.logoUrl || exports.DEFAULT_OPTIONS.logoUrl;
+    options.themeColor = options.themeColor || exports.DEFAULT_OPTIONS.themeColor;
+    options.privacyPolicyURL = options.privacyPolicyURL || exports.DEFAULT_OPTIONS.privacyPolicyURL;
     return {
         app: {
             name: options.name,

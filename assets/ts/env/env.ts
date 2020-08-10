@@ -74,4 +74,4 @@ export let getRenaissanceDomain = function (): string {
 
 let extractDomain = function(site: string): string {
     return site.split('.').reverse().splice(0,2).reverse().join('.');
-}
+};

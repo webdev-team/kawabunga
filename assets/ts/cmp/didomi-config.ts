@@ -8,7 +8,7 @@ export interface DidomiOptions {
     privacyPolicyURL?: string;
 }
 
-const DEFAULT_OPTIONS: DidomiOptions = {
+export const DEFAULT_OPTIONS: DidomiOptions = {
     name: 'rtl.fr',
     apiKey: '4801407c-7ff1-4aed-aa34-71b05434f911',
     logoUrl: 'https://cdn-static.rtl.fr/versions/www/6.0.816/img/logo-rtl-86x60.jpg',

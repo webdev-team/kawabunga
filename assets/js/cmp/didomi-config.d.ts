@@ -5,6 +5,7 @@ export interface DidomiOptions {
     themeColor?: string;
     privacyPolicyURL?: string;
 }
+export declare const DEFAULT_OPTIONS: DidomiOptions;
 export declare let didomiConfig: (options?: DidomiOptions) => {
     app: {
         name: string;
