@@ -16,16 +16,16 @@ var Purpose;
     Purpose["PERSONNALISATION"] = "personnalisation";
 })(Purpose = exports.Purpose || (exports.Purpose = {}));
 var RTLPurposeIds = {
-    ANALYTICS: 'mesurerl-TH6fifgP',
-    ADS: 'publicite-qfTFazXj',
-    SOCIAL: 'reseauxso-e7EUAMeD',
-    PERSONNALISATION: 'personnali-jCkrDhEj',
+    'audience_measurement': 'mesurerl-TH6fifgP',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
 };
 var FunRadioPurposeIds = {
-    ANALYTICS: 'mesurerl-TH6fifgP',
-    ADS: 'publicite-qfTFazXj',
-    SOCIAL: 'reseauxso-e7EUAMeD',
-    PERSONNALISATION: 'personnali-jCkrDhEj',
+    'audience_measurement': 'mesurerl-TH6fifgP',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
 };
 var CmpDidomi;
 (function (CmpDidomi) {
@@ -182,7 +182,7 @@ var CmpDidomi;
         });
     };
     CmpDidomi.isConsentedPurpose = function (purpose) {
-        var purposeId = toPurposeId(purpose);
+        var purposeId = CmpDidomi.toPurposeId(purpose);
         return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purposeId) || false;
     };
     CmpDidomi.attach = function (eventType, action) {
@@ -190,7 +190,7 @@ var CmpDidomi;
         window[eventType].push(action);
     };
     CmpDidomi.enablePurpose = function (purpose) {
-        var purposeId = toPurposeId(purpose);
+        var purposeId = CmpDidomi.toPurposeId(purpose);
         var transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purposeId);
         transaction.commit();
@@ -220,7 +220,7 @@ var CmpDidomi;
             $banners.forEach(function (banner) { return $(banner).css('display', display ? 'block' : 'none'); });
         }
     };
-    var toPurposeId = function (purpose) {
+    CmpDidomi.toPurposeId = function (purpose) {
         if (env.isFlag('tcfv2')) {
             var ids = env.getDomain() == 'funradio.fr' ? FunRadioPurposeIds : RTLPurposeIds;
             return ids[purpose];

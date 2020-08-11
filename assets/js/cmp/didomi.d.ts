@@ -23,4 +23,5 @@ export declare namespace CmpDidomi {
     let enablePurpose: (purpose: Purpose) => void;
     let doOnDidomiConsent: (purpose: Purpose, fnDo: any, fnElseDo: any) => void;
     let displayDidomiBanners: (purpose: Purpose, display: boolean) => void;
+    let toPurposeId: (purpose: Purpose) => String;
 }
