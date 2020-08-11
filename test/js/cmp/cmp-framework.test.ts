@@ -27,6 +27,7 @@ describe('cmp-framework', () => {
         });
     });
 
+    /*
     describe('getConsentData', () => {
         test('should callback with correct VendorConsentData', done => {
             let consent = euconsent.newFullConsent();
@@ -44,6 +45,7 @@ describe('cmp-framework', () => {
             });
         });
     });
+    */
 
     describe('getVendorConsents', () => {
         test('should callback with correct VendorConsents', done => {
