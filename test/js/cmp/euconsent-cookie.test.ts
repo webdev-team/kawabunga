@@ -4,12 +4,12 @@ import * as cookies from 'js-cookie';
 describe('euconsent-cookie', () => {
     beforeEach(() => {
         cookies.remove(euconsent.COOKIE_NAME);
-    })
+    });
 
     describe('read', () => {
         beforeEach(() => {
             cookies.remove(euconsent.COOKIE_NAME);
-        })
+        });
 
         test('should read cookie and return ConsentString', () => {
             // sample value from http://www.meteocity.com

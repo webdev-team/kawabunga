@@ -25,17 +25,17 @@ export enum Purpose {
 }
 
 let RTLPurposeIds = {
-    ANALYTICS: 'mesurerl-TH6fifgP',
-    ADS: 'publicite-qfTFazXj',
-    SOCIAL: 'reseauxso-e7EUAMeD',
-    PERSONNALISATION: 'personnali-jCkrDhEj',
+    'audience_measurement': 'mesurerl-TH6fifgP',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
 };
 
 let FunRadioPurposeIds = {
-    ANALYTICS: 'mesurerl-TH6fifgP',
-    ADS: 'publicite-qfTFazXj',
-    SOCIAL: 'reseauxso-e7EUAMeD',
-    PERSONNALISATION: 'personnali-jCkrDhEj',
+    'audience_measurement': 'mesurerl-TH6fifgP',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
 };
 
 export namespace CmpDidomi {
@@ -173,7 +173,7 @@ export namespace CmpDidomi {
         }
     };
 
-    let toPurposeId = (purpose: Purpose): String => {
+    export let toPurposeId = (purpose: Purpose): String => {
         if (env.isFlag('tcfv2')) {
             let ids = env.getDomain() == 'funradio.fr' ? FunRadioPurposeIds : RTLPurposeIds;
 
