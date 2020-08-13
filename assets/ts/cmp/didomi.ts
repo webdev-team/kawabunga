@@ -43,9 +43,6 @@ export namespace CmpDidomi {
     export let init = function(options: DidomiOptions): void {
         window.gdprAppliesGlobally = true;
 
-        if (env.isFlag('tcfv2')) {
-            console.log("tcfv2");
-
             options.apiKey = options.apiKey || DEFAULT_OPTIONS.apiKey;
 
             // @ts-ignore
@@ -60,21 +57,7 @@ export namespace CmpDidomi {
                 trackConsent();
                 logConsent();
             });
-        } else {
-            // @ts-ignore
-            (function(){function n(){if(!window.frames.__cmpLocator){if(document.body&&document.body.firstChild){var e=document.body;var t=document.createElement("iframe");t.style.display="none";t.name="__cmpLocator";e.insertBefore(t,e.firstChild)}else{setTimeout(n,5)}}}function e(e,t,n){if(typeof n!=="function"){return}if(!window.__cmpBuffer){window.__cmpBuffer=[]}if(e==="ping"){n({gdprAppliesGlobally:window.gdprAppliesGlobally,cmpLoaded:false},true)}else{window.__cmpBuffer.push({command:e,parameter:t,callback:n})}}e.stub=true;function t(a){if(!window.__cmp||window.__cmp.stub!==true){return}if(!a.data){return}var r=typeof a.data==="string";var e;try{e=r?JSON.parse(a.data):a.data}catch(t){return}if(e.__cmpCall){var i=e.__cmpCall;window.__cmp(i.command,i.parameter,function(e,t){var n={__cmpReturn:{returnValue:e,success:t,callId:i.callId}};a.source.postMessage(r?JSON.stringify(n):n,"*")})}}if(typeof window.__cmp!=="function"){window.__cmp=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}n()})();
 
-            window.didomiConfig = didomiConfig(options);
-
-            let style = document.createElement('style');
-            style.innerHTML = didomiCustomCss(options);
-            document.head.appendChild(style);
-
-            scriptLoader.ensureLoaded('https://sdk.privacy-center.org/loader.js').then(() => {
-                trackConsent();
-                logConsent();
-            });
-        }
     };
 
     export let logConsent = () => {
@@ -174,12 +157,8 @@ export namespace CmpDidomi {
     };
 
     export let toPurposeId = (purpose: Purpose): String => {
-        if (env.isFlag('tcfv2')) {
-            let ids = env.getDomain() == 'funradio.fr' ? FunRadioPurposeIds : RTLPurposeIds;
+            let ids =  RTLPurposeIds;
 
             return ids[purpose];
-        } else {
-            return purpose;
-        }
     }
 }
