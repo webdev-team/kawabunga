@@ -72,11 +72,6 @@ export namespace CmpDidomi {
     };
 
     export let trackConsent = () => {
-        let isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain()) > -1;
-
-        if (!isEitherRtlOrFun) {
-            return;
-        }
 
         attach('didomiOnReady', (Didomi) => {
             if (Didomi.notice.isVisible()) {

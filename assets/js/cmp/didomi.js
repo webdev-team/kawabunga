@@ -95,10 +95,6 @@ var CmpDidomi;
         });
     };
     CmpDidomi.trackConsent = function () {
-        var isEitherRtlOrFun = ['RTL', 'FUN_RADIO'].indexOf(env.getRenaissanceDomain()) > -1;
-        if (!isEitherRtlOrFun) {
-            return;
-        }
         CmpDidomi.attach('didomiOnReady', function (Didomi) {
             if (Didomi.notice.isVisible()) {
                 var img = document.createElement('img');
