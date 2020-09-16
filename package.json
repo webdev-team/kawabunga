@@ -49,6 +49,9 @@
     "promise": "^8.0.1",
     "superagent": "^3.8.3"
   },
+  "resolutions": {
+    "sass-graph": "2.2.4"
+  },
   "scripts": {
     "test": "jest",
     "generateJs": "tsc"
