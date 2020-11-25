@@ -120,8 +120,21 @@ var CmpDidomi;
         });
     };
     CmpDidomi.isConsentedPurpose = function (purpose) {
+        if (window.Didomi.isConsentRequired() == false) {
+            return true;
+        }
         var purposeId = CmpDidomi.toPurposeId(purpose);
-        return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purposeId) || false;
+        return window.Didomi.getUserConsentStatusForPurpose(purposeId) || false;
+    };
+    /**
+     * can return true or false or undefined (if CMP is still displayed)
+     */
+    CmpDidomi.getUserConsentStatusForPurpose = function (purpose) {
+        if (window.Didomi.isConsentRequired() == false) {
+            return true;
+        }
+        var purposeId = CmpDidomi.toPurposeId(purpose);
+        return window.Didomi.getUserConsentStatusForPurpose(purposeId);
     };
     CmpDidomi.attach = function (eventType, action) {
         window[eventType] = window[eventType] || [];
@@ -132,6 +145,28 @@ var CmpDidomi;
         var transaction = window.Didomi.openTransaction();
         transaction.enablePurpose(purposeId);
         transaction.commit();
+    };
+    /**
+     * Calls fnDo then consent is available.
+     * Otherwise wait for user to choose through displayed notice
+     */
+    CmpDidomi.waitForDidomiConsent = function (purpose, fnDo) {
+        CmpDidomi.attach('didomiOnReady', function () {
+            if (CmpDidomi.getUserConsentStatusForPurpose(purpose) == true || CmpDidomi.getUserConsentStatusForPurpose(purpose) == false) {
+                fnDo();
+            }
+            else if (window.Didomi.notice.isVisible()) {
+                CmpDidomi.attach('didomiEventListeners', {
+                    event: 'consent.changed',
+                    listener: function () {
+                        fnDo();
+                    }
+                });
+            }
+            else {
+                fnDo();
+            }
+        });
     };
     CmpDidomi.doOnDidomiConsent = function (purpose, fnDo, fnElseDo) {
         CmpDidomi.attach('didomiOnReady', function () {

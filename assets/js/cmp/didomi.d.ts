@@ -19,8 +19,17 @@ export declare namespace CmpDidomi {
     let logConsent: () => void;
     let trackConsent: () => void;
     let isConsentedPurpose: (purpose: Purpose) => boolean;
+    /**
+     * can return true or false or undefined (if CMP is still displayed)
+     */
+    let getUserConsentStatusForPurpose: (purpose: Purpose) => boolean;
     let attach: (eventType: any, action: any) => void;
     let enablePurpose: (purpose: Purpose) => void;
+    /**
+     * Calls fnDo then consent is available.
+     * Otherwise wait for user to choose through displayed notice
+     */
+    let waitForDidomiConsent: (purpose: Purpose, fnDo: any) => void;
     let doOnDidomiConsent: (purpose: Purpose, fnDo: any, fnElseDo: any) => void;
     let displayDidomiBanners: (purpose: Purpose, display: boolean) => void;
     let toPurposeId: (purpose: Purpose) => String;
