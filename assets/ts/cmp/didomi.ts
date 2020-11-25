@@ -101,9 +101,26 @@ export namespace CmpDidomi {
     };
 
     export let isConsentedPurpose = function(purpose: Purpose): boolean {
+        if (window.Didomi.isConsentRequired() == false) {
+            return true;
+        }
+
         let purposeId = toPurposeId(purpose);
 
-        return window.Didomi.isConsentRequired() && window.Didomi.getUserConsentStatusForPurpose(purposeId) || false;
+        return window.Didomi.getUserConsentStatusForPurpose(purposeId) || false;
+    };
+
+    /**
+     * can return true or false or undefined (if CMP is still displayed)
+     */
+    export let getUserConsentStatusForPurpose = function(purpose: Purpose): boolean {
+        if (window.Didomi.isConsentRequired() == false) {
+            return true;
+        }
+
+        let purposeId = toPurposeId(purpose);
+
+        return window.Didomi.getUserConsentStatusForPurpose(purposeId);
     };
 
     export let attach = function(eventType, action) {
@@ -118,6 +135,27 @@ export namespace CmpDidomi {
         transaction.enablePurpose(purposeId);
         transaction.commit();
     };
+
+    /**
+     * Calls fnDo then consent is available.
+     * Otherwise wait for user to choose through displayed notice
+     */
+    export let waitForDidomiConsent = (purpose: Purpose, fnDo): void => {
+        attach('didomiOnReady', () => {
+            if (getUserConsentStatusForPurpose(purpose) == true || getUserConsentStatusForPurpose(purpose) == false) {
+                fnDo();
+            } else if (window.Didomi.notice.isVisible()) {
+                attach('didomiEventListeners', {
+                    event: 'consent.changed',
+                    listener: () => {
+                        fnDo();
+                    }
+                });
+            } else {
+                fnDo();
+            }
+        });
+    }
 
     export let doOnDidomiConsent = (purpose: Purpose, fnDo, fnElseDo): void => {
         attach('didomiOnReady', () => {
