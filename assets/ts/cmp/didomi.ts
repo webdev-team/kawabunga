@@ -143,8 +143,10 @@ export namespace CmpDidomi {
     export let waitForDidomiConsent = (purpose: Purpose, fnDo): void => {
         attach('didomiOnReady', () => {
             if (getUserConsentStatusForPurpose(purpose) == true || getUserConsentStatusForPurpose(purpose) == false) {
+                console.log("getUserConsentStatusForPurpose(" + purpose + ") is " + getUserConsentStatusForPurpose(purpose));
                 fnDo();
             } else if (window.Didomi.notice.isVisible()) {
+                console.log("window.Didomi.notice.isVisible()");
                 attach('didomiEventListeners', {
                     event: 'consent.changed',
                     listener: () => {
@@ -152,6 +154,7 @@ export namespace CmpDidomi {
                     }
                 });
             } else {
+                console.log("notice not visible");
                 fnDo();
             }
         });

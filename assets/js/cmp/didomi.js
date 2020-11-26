@@ -153,9 +153,11 @@ var CmpDidomi;
     CmpDidomi.waitForDidomiConsent = function (purpose, fnDo) {
         CmpDidomi.attach('didomiOnReady', function () {
             if (CmpDidomi.getUserConsentStatusForPurpose(purpose) == true || CmpDidomi.getUserConsentStatusForPurpose(purpose) == false) {
+                console.log("getUserConsentStatusForPurpose(" + purpose + ") is " + CmpDidomi.getUserConsentStatusForPurpose(purpose));
                 fnDo();
             }
             else if (window.Didomi.notice.isVisible()) {
+                console.log("window.Didomi.notice.isVisible()");
                 CmpDidomi.attach('didomiEventListeners', {
                     event: 'consent.changed',
                     listener: function () {
@@ -164,6 +166,7 @@ var CmpDidomi;
                 });
             }
             else {
+                console.log("notice not visible");
                 fnDo();
             }
         });
