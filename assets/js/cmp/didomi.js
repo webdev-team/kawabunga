@@ -152,21 +152,25 @@ var CmpDidomi;
      */
     CmpDidomi.waitForDidomiConsent = function (purpose, fnDo) {
         CmpDidomi.attach('didomiOnReady', function () {
+            // avoid calling fnDo multiple times when receiving consent.changed
+            var consumed = false;
             if (CmpDidomi.getUserConsentStatusForPurpose(purpose) == true || CmpDidomi.getUserConsentStatusForPurpose(purpose) == false) {
-                console.log("getUserConsentStatusForPurpose(" + purpose + ") is " + CmpDidomi.getUserConsentStatusForPurpose(purpose));
+                consumed = true;
                 fnDo();
             }
             else if (window.Didomi.notice.isVisible()) {
-                console.log("window.Didomi.notice.isVisible()");
                 CmpDidomi.attach('didomiEventListeners', {
                     event: 'consent.changed',
                     listener: function () {
-                        fnDo();
+                        if (!consumed) {
+                            consumed = true;
+                            fnDo();
+                        }
                     }
                 });
             }
             else {
-                console.log("notice not visible");
+                consumed = true;
                 fnDo();
             }
         });
