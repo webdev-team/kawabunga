@@ -157,22 +157,25 @@ var CmpDidomi;
             if (CmpDidomi.getUserConsentStatusForPurpose(purpose) == true || CmpDidomi.getUserConsentStatusForPurpose(purpose) == false) {
                 consumed = true;
                 fnDo();
+                return;
             }
-            else if (window.Didomi.notice.isVisible()) {
-                CmpDidomi.attach('didomiEventListeners', {
-                    event: 'consent.changed',
-                    listener: function () {
-                        if (!consumed) {
-                            consumed = true;
-                            fnDo();
-                        }
+            CmpDidomi.attach('didomiEventListeners', {
+                event: 'consent.changed',
+                listener: function () {
+                    if (!consumed) {
+                        consumed = true;
+                        fnDo();
                     }
-                });
-            }
-            else {
-                consumed = true;
-                fnDo();
-            }
+                }
+            });
+            window.setTimeout(function () {
+                if (!window.Didomi.notice.isVisible()) {
+                    if (!consumed) {
+                        consumed = true;
+                        fnDo();
+                    }
+                }
+            }, 1000);
         });
     };
     CmpDidomi.doOnDidomiConsent = function (purpose, fnDo, fnElseDo) {

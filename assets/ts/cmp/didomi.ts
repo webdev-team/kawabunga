@@ -149,22 +149,30 @@ export namespace CmpDidomi {
                 consumed = true;
 
                 fnDo();
-            } else if (window.Didomi.notice.isVisible()) {
-                attach('didomiEventListeners', {
-                    event: 'consent.changed',
-                    listener: () => {
-                        if (!consumed) {
-                            consumed = true;
 
-                            fnDo();
-                        }
-                    }
-                });
-            } else {
-                consumed = true;
-
-                fnDo();
+                return;
             }
+
+            attach('didomiEventListeners', {
+                event: 'consent.changed',
+                listener: () => {
+                    if (!consumed) {
+                        consumed = true;
+
+                        fnDo();
+                    }
+                }
+            });
+
+            window.setTimeout(() => {
+                if (!window.Didomi.notice.isVisible()) {
+                    if (!consumed) {
+                        consumed = true;
+
+                        fnDo();
+                    }
+                }
+            }, 1000);
         });
     }
 
