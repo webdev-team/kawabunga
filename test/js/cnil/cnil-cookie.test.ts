@@ -2,19 +2,13 @@ import {CnilCategories, cnilCookie, COOKIE_ID_NAME} from "../../../assets/ts/cni
 import {COOKIE_NAME, SOCIAL, ANALYTICS} from '../../../assets/ts/cnil/cnil-cookie';
 import * as cookies from 'js-cookie';
 import * as random from '../../../assets/ts/utils/random';
-import {cnilLogService} from '../../../assets/ts/cnil/cnil-log-service';
-import {CnilLog} from '../../../assets/ts/cnil/cnil-log';
 
 let uuidSpy = jest.spyOn(random, "uuid");
-
-let saveSpy = jest.spyOn(cnilLogService, "save");
 
 describe('cnil-cookie', () => {
     beforeEach(() => {
         cookies.remove(COOKIE_NAME);
         cookies.remove(COOKIE_ID_NAME);
-
-        saveSpy.mockClear();
 
         window.site = null;
     });
@@ -65,15 +59,6 @@ describe('cnil-cookie', () => {
             cnilCookie.setCategory(SOCIAL, false);
             expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":false,"social":false}');
         });
-
-        it('should save a log', () => {
-            cookies.set(COOKIE_ID_NAME, 'existing');
-            window.site = 'www.rtl2.fr';
-
-            cnilCookie.setCategory(ANALYTICS, false, 'scroll');
-
-            expect(saveSpy).toHaveBeenCalledWith(new CnilLog('existing', 'scroll', {ads: true,analytics: false,social: true}));
-        });
     });
 
     describe('writeValues', () => {
@@ -82,16 +67,6 @@ describe('cnil-cookie', () => {
             cnilCookie.writeValues(cnilCategories);
 
             expect(cookies.get(COOKIE_NAME)).toBe('{"ads":true,"analytics":true,"social":true}');
-        });
-
-        it('should save a log', () => {
-            cookies.set(COOKIE_ID_NAME, 'existing');
-            window.site = 'www.rtl2.fr';
-
-            let cnilCategories: CnilCategories = {ads: true, analytics: false, social: true};
-            cnilCookie.writeValues(cnilCategories, 'form');
-
-            expect(saveSpy).toHaveBeenCalledWith(new CnilLog('existing', 'form', cnilCategories));
         });
     });
 

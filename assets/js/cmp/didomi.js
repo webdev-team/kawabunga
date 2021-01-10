@@ -2,10 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var env = require("../env/env");
 var $ = require("../../../assets/js/utils/dom");
-var cookies = require("js-cookie");
 var didomi_config_1 = require("./didomi-config");
-var cnil_log_service_1 = require("../cnil/cnil-log-service");
-var cnil_log_1 = require("../cnil/cnil-log");
 var Purpose;
 (function (Purpose) {
     Purpose["ANALYTICS"] = "audience_measurement";
@@ -76,22 +73,6 @@ var CmpDidomi;
         (function (e) { var t = document.createElement("script"); t.id = "spcloader"; t.type = "text/javascript"; t.async = true; t.src = "https://sdk.privacy-center.org/" + e + "/loader.js?target=" + document.location.hostname; t.charset = "utf-8"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); })(options.apiKey);
         CmpDidomi.attach('didomiOnReady', function (Didomi) {
             CmpDidomi.trackConsent();
-            CmpDidomi.logConsent();
-        });
-    };
-    CmpDidomi.logConsent = function () {
-        CmpDidomi.attach('didomiEventListeners', {
-            event: 'consent.changed',
-            listener: function () {
-                var id = cookies.get('didomi_token');
-                if (id) {
-                    cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(id, 'popup', {
-                        ads: CmpDidomi.isConsentedPurpose(Purpose.ADS),
-                        analytics: CmpDidomi.isConsentedPurpose(Purpose.ANALYTICS),
-                        social: CmpDidomi.isConsentedPurpose(Purpose.SOCIAL)
-                    }));
-                }
-            }
         });
     };
     CmpDidomi.trackConsent = function () {

@@ -1,9 +1,6 @@
 import * as env from "../env/env";
 import * as $ from '../../../assets/js/utils/dom';
-import * as cookies from 'js-cookie';
 import {DidomiOptions, DEFAULT_OPTIONS} from "./didomi-config";
-import {cnilLogService} from "../cnil/cnil-log-service";
-import {CnilLog} from "../cnil/cnil-log";
 
 declare global {
     interface Window {
@@ -51,28 +48,10 @@ export namespace CmpDidomi {
 
         attach('didomiOnReady', (Didomi) => {
             trackConsent();
-            logConsent();
-        });
-    };
-
-    export let logConsent = () => {
-        attach('didomiEventListeners', {
-            event: 'consent.changed',
-            listener: () => {
-                let id = cookies.get('didomi_token');
-                if (id) {
-                    cnilLogService.save(new CnilLog(id, 'popup', {
-                        ads: isConsentedPurpose(Purpose.ADS),
-                        analytics: isConsentedPurpose(Purpose.ANALYTICS),
-                        social: isConsentedPurpose(Purpose.SOCIAL)
-                    }));
-                }
-            }
         });
     };
 
     export let trackConsent = () => {
-
         attach('didomiOnReady', (Didomi) => {
             if (Didomi.notice.isVisible()) {
                 let img = document.createElement('img');

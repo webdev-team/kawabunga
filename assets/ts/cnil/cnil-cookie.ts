@@ -3,8 +3,6 @@ import * as cookies from 'js-cookie';
 import * as env from '../env/env';
 import * as random from '../utils/random';
 import {cnilCookieAutoUpdater} from "./cnil-cookie-auto-updater";
-import {cnilLogService} from './cnil-log-service';
-import {CnilLog} from './cnil-log';
 import {Observable} from '../utils/observable';
 
 export interface CnilCategories {
@@ -59,8 +57,6 @@ export namespace cnilCookie {
         let oldValue = readValues();
 
         cookies.set(COOKIE_NAME, JSON.stringify(categories), {expires: COOKIE_DURATION, path: '/', domain: env.getCookieDomain()});
-
-        cnilLogService.save(new CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
 
         observable.fire({value: readValues(), oldValue: oldValue});
     }

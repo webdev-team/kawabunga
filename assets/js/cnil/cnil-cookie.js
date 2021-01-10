@@ -5,8 +5,6 @@ var cookies = require("js-cookie");
 var env = require("../env/env");
 var random = require("../utils/random");
 var cnil_cookie_auto_updater_1 = require("./cnil-cookie-auto-updater");
-var cnil_log_service_1 = require("./cnil-log-service");
-var cnil_log_1 = require("./cnil-log");
 var observable_1 = require("../utils/observable");
 // categories
 exports.ADS = 'ads';
@@ -43,7 +41,6 @@ var cnilCookie;
     function writeValues(categories, actionType) {
         var oldValue = readValues();
         cookies.set(exports.COOKIE_NAME, JSON.stringify(categories), { expires: exports.COOKIE_DURATION, path: '/', domain: env.getCookieDomain() });
-        cnil_log_service_1.cnilLogService.save(new cnil_log_1.CnilLog(getId(), actionType ? actionType : 'unknown', readValues()));
         observable.fire({ value: readValues(), oldValue: oldValue });
     }
     cnilCookie.writeValues = writeValues;
