@@ -33,6 +33,13 @@ let FunRadioPurposeIds = {
     'personnalisation': 'personnali-jCkrDhEj',
 };
 
+let M6PurposeIds = {
+    'audience_measurement': 'mesurerl-TH6fifgP',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
+};
+
 export namespace CmpDidomi {
 
     export let init = function(options: DidomiOptions): void {
@@ -183,8 +190,16 @@ export namespace CmpDidomi {
     };
 
     export let toPurposeId = (purpose: Purpose): String => {
-        let ids = env.getDomain() == 'funradio.fr' ? FunRadioPurposeIds : RTLPurposeIds;
+        let ids = toPurposeIdsByDomain(env.getDomain());
 
         return ids[purpose];
+    }
+
+    let toPurposeIdsByDomain = (domain: string): any => {
+        switch (domain) {
+            case 'funradio.fr': return FunRadioPurposeIds;
+            case 'm6.fr': return M6PurposeIds;
+            default: return RTLPurposeIds;
+        }
     }
 }
