@@ -22,6 +22,12 @@ var FunRadioPurposeIds = {
     'social_network': 'reseauxso-e7EUAMeD',
     'personnalisation': 'personnali-jCkrDhEj',
 };
+var M6PurposeIds = {
+    'audience_measurement': 'mesureda-bUeXBLyn',
+    'targeted_advertising': 'publicite-qfTFazXj',
+    'social_network': 'reseauxso-e7EUAMeD',
+    'personnalisation': 'personnali-jCkrDhEj',
+};
 var CmpDidomi;
 (function (CmpDidomi) {
     CmpDidomi.init = function (options) {
@@ -185,7 +191,14 @@ var CmpDidomi;
         }
     };
     CmpDidomi.toPurposeId = function (purpose) {
-        var ids = env.getDomain() == 'funradio.fr' ? FunRadioPurposeIds : RTLPurposeIds;
+        var ids = toPurposeIdsByDomain(env.getDomain());
         return ids[purpose];
+    };
+    var toPurposeIdsByDomain = function (domain) {
+        switch (domain) {
+            case 'funradio.fr': return FunRadioPurposeIds;
+            case 'm6.fr': return M6PurposeIds;
+            default: return RTLPurposeIds;
+        }
     };
 })(CmpDidomi = exports.CmpDidomi || (exports.CmpDidomi = {}));

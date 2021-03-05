@@ -34,7 +34,7 @@ let FunRadioPurposeIds = {
 };
 
 let M6PurposeIds = {
-    'audience_measurement': 'mesurerl-TH6fifgP',
+    'audience_measurement': 'mesureda-bUeXBLyn',
     'targeted_advertising': 'publicite-qfTFazXj',
     'social_network': 'reseauxso-e7EUAMeD',
     'personnalisation': 'personnali-jCkrDhEj',
